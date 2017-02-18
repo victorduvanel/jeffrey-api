@@ -1,0 +1,33 @@
+<h1>Mot de passe</h1>
+<div class="row">
+  <div class="col-12">
+    <form {{action "updatePassword" on="submit"}}>
+
+      <fieldset disabled={{isLoading}}>
+        {{ input-field
+           label="Mot de passe actuel"
+           placeholder="Entrez votre mot de passe"
+           error=currentPasswordError
+           value=currentPassword
+           type="password"
+        }}
+
+        {{ input-field
+           label="Nouveau mot de passe"
+           placeholder="Mot de passe"
+           error=newPasswordError
+           value=newPassword
+           type="password"
+        }}
+
+        <button type="submit" class="btn btn-primary btn-block">
+          {{#if isLoading}}
+            <i class="fa fa-spinner fa-pulse fa-fw"></i>
+          {{else}}
+            Modifier mon mot de passe
+          {{/if}}
+        </button>
+      </fieldset>
+    </form>
+  </div>
+</div>

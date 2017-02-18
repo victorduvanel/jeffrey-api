@@ -1,0 +1,21 @@
+{
+  "products": [{
+    "id": "c20ff7a5-bd85-479a-96ff-a429b5be8b59",
+    "sulg": "french_mobile_phone_number",
+    "name": {
+      "fr": "Numéro de téléphone mobile"
+    }
+  }, {
+    "id": "cfe1028a-b175-4f32-8087-a67e0b5efddf",
+    "sulg": "french_incomming_sms",
+    "name": {
+      "fr": "SMS reçu"
+    }
+  }, {
+    "id": "8739cdec-413c-459f-94f3-248fb43c49db",
+    "sulg": "french_outgoing_sms",
+    "name": {
+      "fr": "SMS envoyé"
+    }
+  }]
+}

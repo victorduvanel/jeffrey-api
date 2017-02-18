@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="jumbotron">
+    <h2>Factures</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each invoices as |invoice|}}
+          <tr>
+            <td>{{ invoice.id }}</td>
+            <td>{{moment-format invoice.createdAt 'DD/MM/YYYY'}}</td>
+            <td>{{log invoice.amount}} {{format-currency invoice.amount currency=invoice.currency}}</td>
+            <td>{{ invoice.status }}</td>
+            <td><button type="button" {{ action "openInvoicePopup" invoice }}>Download</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

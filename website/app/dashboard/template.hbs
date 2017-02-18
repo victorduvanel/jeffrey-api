@@ -1,0 +1,29 @@
+<header id="header" class="full-header">
+  <div id="header-wrap">
+    <div class="container clearfix">
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+      <div id="logo">
+        {{#link-to "dashboard"}}
+          <img src="/assets/images/logo.png" alt="Prestine">
+        {{/link-to}}
+      </div>
+
+      <nav id="primary-menu">
+        <ul>
+          <li>
+            {{#link-to "dashboard.settings"}}
+              Mon compte
+            {{/link-to}}
+          </li>
+        </ul>
+
+        <button class="button button-small button-3d button-white button-light header-button" type="button" {{ action "logout" }}>
+          Déconnexion
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+{{outlet}}

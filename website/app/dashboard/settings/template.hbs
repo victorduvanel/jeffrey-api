@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Paramétres</h1>
+      <div class="row">
+        <div class="col-12 col-6 col-md-8">
+          {{outlet}}
+        </div>
+        <div class="col-6 col-md-4 p-t-3">
+
+          <div class="list-group">
+            {{#link-to "dashboard.settings.account" class="list-group-item clearfix"}}
+              Mon compte <i class="icon-user pull-right"></i>
+            {{/link-to}}
+
+            {{#link-to "dashboard.settings.password" class="list-group-item clearfix"}}
+              Mot de passe
+            {{/link-to}}
+
+            {{#link-to "dashboard.settings.billing" class="list-group-item clearfix"}}
+              Facturation <i class="icon-credit-cards pull-right"></i>
+            {{/link-to}}
+
+            {{#link-to "dashboard.settings.payment-methods" class="list-group-item clearfix"}}
+              Moyens de paiment <i class="icon-credit-cards pull-right"></i>
+            {{/link-to}}
+
+            <button type="button" class="list-group-item clearfix">
+              Déconnexion <i class="icon-line2-logout pull-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

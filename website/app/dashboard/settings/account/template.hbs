@@ -1,0 +1,43 @@
+<h1>Mon compte</h1>
+
+<form {{action "signin" on="submit"}}>
+  <fieldset disabled={{isLoading}}>
+    <div class="row">
+      <div class="col-6">
+        {{ input-field
+           label="Prénom"
+           placeholder="Votre prénom"
+           error=firstNameError
+           value=firstName
+           type="text"
+        }}
+      </div>
+      <div class="col-6">
+        {{ input-field
+           label="Nom"
+           placeholder="Votre nom"
+           error=lastNameError
+           value=lastName
+           type="text"
+        }}
+      </div>
+    </div>
+
+    {{ input-field
+       label="Adresse email"
+       placeholder="Votre adresse email"
+       error=emailError
+       value=email
+       type="text"
+    }}
+
+    <button type="submit" class="btn btn-primary btn-block" disabled={{submitButtonDisabled}}>
+      {{#if isLoading}}
+        <i class="fa fa-spinner fa-pulse fa-fw"></i>
+      {{else}}
+        Enregistrer les modifications
+      {{/if}}
+    </button>
+
+  </fieldset>
+</form>

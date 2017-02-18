@@ -1,0 +1,21 @@
+<div class="form-group {{if error "has-danger"}}">
+  {{#if label}}
+    <label for="{{elementId}}-input">{{ label }}</label>
+  {{/if}}
+  {{ input
+     type=type
+     class="form-control form-control-danger"
+     maxlength=maxlength
+     id=inputId
+     aria-describedby="{{elementId}}-help"
+     placeholder=placeholder
+     value=value
+     disabled=disabled
+  }}
+  {{#if error}}
+    <div class="form-control-feedback">{{error}}</div>
+  {{/if}}
+  {{#if hint}}
+    <small id="{{elementId}}-help" class="form-text text-muted">{{ hint }}</small>
+  {{/if}}
+</div>

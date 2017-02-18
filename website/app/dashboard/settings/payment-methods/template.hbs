@@ -1,0 +1,73 @@
+{{#if paymentMethod}}
+  <div class="row">
+    <div class="jumbotron">
+      <h2>Moyens de payment</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Card</th>
+            <th>Number</th>
+            <th>Expiration</th>
+            <th>Name on card</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ paymentMethod.type }}</td>
+            <td>XXXX-XXXX-XXXX-{{ paymentMethod.lastFour }}</td>
+            <td>{{ paymentMethod.expMonth }}/{{ paymentMethod.expYear }}</td>
+            <td>{{ paymentMethod.holderName }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{/if}}
+
+
+<form {{action "createCard" on="submit"}}>
+
+  <fieldset disabled={{isLoading}}>
+
+    {{ input-field
+       label="Card number"
+       placeholder="XXXX XXXX XXXX XXXX"
+       error=cardNumberError
+       value=cardNumber
+       type="text"
+    }}
+
+    {{ input-field
+       label="Card holder"
+       placeholder="First name Last name"
+       error=cardholderNameError
+       value=cardholderName
+       type="text"
+    }}
+
+    {{ input-field
+       label="Expiration date"
+       placeholder="MM / YY"
+       error=expirationDateError
+       value=expirationDate
+       type="text"
+    }}
+
+    {{ input-field
+       label="CVV"
+       placeholder="XXX"
+       error=cvcError
+       value=cvc
+       type="text"
+    }}
+
+    <button type="submit" class="btn btn-primary btn-block">
+      {{#if isLoading}}
+        <i class="fa fa-spinner fa-pulse fa-fw"></i>
+      {{else}}
+        Save
+      {{/if}}
+    </button>
+  </fieldset>
+</form>

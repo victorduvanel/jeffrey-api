@@ -1,0 +1,54 @@
+
+<div class="content-wrap">
+<div class="container clearfix">
+<div class="pricing-box pricing-extended bottommargin clearfix">
+
+  <div class="pricing-desc">
+    <div class="pricing-title">
+      <h3>Obtenez votre numéro Prestine</h3>
+    </div>
+    <div class="pricing-features">
+      <ul class="clearfix">
+        <li>Sans engagement</li>
+        <li>Envoyez et recevez des SMS</li>
+        <li>Assistance 24/7</li>
+        <li>Recevez vos SMS sur votre boite mail</li>
+        <li>Obtenez un Numéro de téléphone mobile (06 ou 07)</li>
+        <li>Envoyez et recevez depuis et vers l’international</li>
+        <li>Aucune carte SIM requise</li>
+        <li>Téléphone mobile non requis</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pricing-action-area">
+    <div class="pricing-meta">
+      Votre numéro
+    </div>
+    <div class="pricing-price">
+      <span class="price-unit">&euro;</span>8<span class="price-tenure">par mois</span>
+    </div>
+    <div class="pricing-action">
+      {{#link-to "dashboard.phone-number.new" class="button button-3d button-xlarge btn-block nomargin"}}
+        Souscrire
+      {{/link-to}}
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+{{#link-to "dashboard.phone-number.new"}}Obtenir un numero{{/link-to}}
+<ul>
+  {{#each phoneNumbers as |phoneNumber| }}
+    <li>
+      {{#link-to "dashboard.phone-number.phone-number" phoneNumber}}
+        {{phoneNumber.phoneNumber}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}

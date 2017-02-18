@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form {{action "finishRegistration" on="submit"}}>
+        <fieldset disabled={{isLoading}}>
+          <div class="row">
+            <div class="col-xs-6">
+              {{ input-field
+                 label="Prénom"
+                 placeholder="Entrez votre prénom"
+                 error=firstNameError
+                 value=firstName
+                 type="text"
+              }}
+            </div>
+            <div class="col-xs-6">
+              {{ input-field
+                 label="Nom"
+                 placeholder="Entrez votre nom"
+                 error=lastNameError
+                 value=lastName
+                 type="text"
+              }}
+            </div>
+          </div>
+
+          {{ input-field
+             label="Mot de passe"
+             placeholder="Choisissez un mot de passe"
+             error=passwordError
+             value=password
+             type="password"
+          }}
+
+          {{ input-field
+             label="Adresse email"
+             error=emailError
+             value=model.email
+             type="email"
+             disabled="true"
+          }}
+
+          <button type="submit" class="btn btn-primary btn-block">
+            {{#if isLoading}}
+              <i class="fa fa-spinner fa-pulse fa-fw"></i>
+            {{else}}
+              Créer mon compte
+            {{/if}}
+          </button>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

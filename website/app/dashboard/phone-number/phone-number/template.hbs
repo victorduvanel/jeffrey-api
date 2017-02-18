@@ -1,0 +1,8 @@
+{{#link-to "dashboard.phone-number"}}Close{{/link-to}}
+{{phoneNumber.phoneNumber}}
+
+<form {{action "sendMessage" on="submit"}}>
+  {{input value=toPhoneNumber}}
+  {{textarea value=message}}
+  <button type="submit">Envoyer</button>
+</form>

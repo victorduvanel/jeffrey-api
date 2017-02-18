@@ -1,0 +1,10 @@
+FROM node:7.1.0
+MAINTAINER William Riancho <william@reptilians.io>
+
+WORKDIR /app
+
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN npm install bower -g
+
+EXPOSE 4200
+CMD /root/.yarn/bin/yarn install && bower install --allow-root && ./node_modules/ember-cli/bin/ember server --live-reload-port=49156
