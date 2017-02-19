@@ -12,6 +12,11 @@ export default Ember.Component.extend({
 
   token: null,
 
+
+  // events
+  validated: null,
+  expired: null,
+
   didInsertElement() {
     const recaptchaService = this.get('recaptcha');
     recaptchaService.then((recaptcha) => {
@@ -26,10 +31,17 @@ export default Ember.Component.extend({
         hl      : this.get('hl'),
         callback(token) {
           self.set('token', token);
+
+          if (self.get('validated')) {
+            self.get('validated')(token);
+          }
         },
 
         'expired-callback'() {
           self.set('token', null);
+          if (self.get('expired')) {
+            self.get('expired')();
+          }
         }
       });
     });

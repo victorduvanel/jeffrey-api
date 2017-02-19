@@ -1,10 +1,10 @@
-<div class="form-group {{if error "has-danger"}}">
+<div class="form-group {{if error "has-error"}}">
   {{#if label}}
-    <label for="{{elementId}}-input">{{ label }}</label>
+    <label class="control-label" for="{{elementId}}-input">{{ label }}</label>
   {{/if}}
   {{ input
      type=type
-     class="form-control form-control-danger"
+     class="form-control"
      maxlength=maxlength
      id=inputId
      aria-describedby="{{elementId}}-help"
@@ -12,10 +12,10 @@
      value=value
      disabled=disabled
   }}
-  {{#if error}}
-    <div class="form-control-feedback">{{error}}</div>
-  {{/if}}
   {{#if hint}}
-    <small id="{{elementId}}-help" class="form-text text-muted">{{ hint }}</small>
+    <span id="{{elementId}}-help" class="help-block">{{ hint }}</span>
+  {{/if}}
+  {{#if error}}
+    <span id="{{elementId}}-feedback" class="help-block">{{ error }}</span>
   {{/if}}
 </div>

@@ -3,45 +3,54 @@ import email from '../utils/email';
 
 export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
+  session: Ember.inject.service(),
+
+  inputClassNames: '',
 
   isLoading  : false,
-  emailError : null,
   email      : '',
   error      : null,
-  captcha    : null,
   success    : null,
+
+  showCaptcaha: false,
 
   reset() {
     this.setProperties({
-      email   : '',
-      error   : null,
-      captcha : null,
-      success : null
+      isLoading   : false,
+      email       : '',
+      error       : null,
+      success     : null,
+      showCaptcha : false
     });
   },
 
-  submitDisabled: Ember.computed('captcha', 'email', function() {
-    return !this.get('email') || !this.get('captcha');
-  }),
-
   actions: {
-    signup() {
-      this.set('error', null);
-
+    submitEmail() {
       const emailAddress = this.get('email');
-      if (!email.isValid(emailAddress)) {
-        this.set('emailError', 'Invalid email address');
-        return;
+      if (!email || !email.isValid(emailAddress)) {
+        setTimeout(() => {
+          this.set('inputClassNames', '');
+          setTimeout(() => {
+            this.set('inputClassNames', 'fx-shake');
+            setTimeout(() => {
+              this.set('inputClassNames', '');
+            }, 800);
+          }, 0);
+        }, 0);
+      } else {
+        this.set('showCaptcha', true);
       }
+    },
 
-      this.set('emailError', null);
+    captchaValidated(captcha) {
+      const emailAddress = this.get('email');
 
       this.set('isLoading', true);
 
       this.get('ajax').post('/signup', {
         data: {
-          email   : emailAddress,
-          captcha : this.get('captcha')
+          email: emailAddress,
+          captcha
         }
       })
         .then(() => {
@@ -56,6 +65,14 @@ export default Ember.Controller.extend({
         .finally(() => {
           this.set('isLoading', false);
         });
+    },
+
+    retry() {
+      this.setProperties({
+        success: false,
+        error: null,
+        showCaptcha: false
+      });
     }
   }
 });

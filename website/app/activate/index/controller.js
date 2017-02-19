@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
+  session: Ember.inject.service(),
 
   isLoading      : false,
 
@@ -91,7 +92,11 @@ export default Ember.Controller.extend({
         }
       )
         .then(() => {
-          this.transitionToRoute('login');
+          this.get('session')
+            .authenticate('authenticator:oauth2', {
+              access_token: accessToken,
+              token_type: 'Bearer'
+            });
         })
         .finally(() => this.set('isLoading', false));
     }

@@ -2,41 +2,46 @@
   <div class="row">
     <div class="logic-block col-md-8 offset-md-2 p-t-1">
       <h1>Créer un compte</h1>
-      <form {{action "signup" on="submit"}}>
-        <fieldset disabled={{isLoading}}>
-
-          {{ input-field
-             label="Adresse email"
-             hint="Nous ne partagerons jamais votre adresse email avec un tier."
-             placeholder="Entrez votre adresse email"
-             error=emailError
-             value=email
-             type="email"
-          }}
-
-          <div class="form-group">
-            {{re-captcha token=captcha hl="fr"}}
-          </div>
-
-          <button type="submit" disabled={{submitDisabled}} class="btn btn-success btn-block">
-            {{#if isLoading}}
-              <i class="fa fa-spinner fa-pulse fa-fw"></i>
-            {{else}}
-              Créer un compte
-            {{/if}}
-          </button>
-        </fieldset>
-      </form>
-
-      {{#if error}}
-        <div class="alert alert-danger m-t-1" role="alert">{{error}}</div>
-      {{/if}}
 
       {{#if success}}
         <div class="alert alert-success m-t-1" role="alert">
           Vérifiez votre boite mail pour finaliser votre inscription
         </div>
+      {{else}}
+        {{#if error}}
+          <div class="alert alert-danger m-t-1" role="alert">{{error}}</div>
+          <button {{ action "retry" }}>Réessayer</button>
+        {{else}}
+          {{#if isLoading}}
+            <i class="fa fa-spinner fa-pulse fa-fw"></i>
+          {{else}}
+            {{#if showCaptcha}}
+              {{re-captcha hl="fr" validated=(action "captchaValidated")}}
+            {{else}}
+
+              <form {{action "submitEmail" on="submit"}}>
+                <fieldset>
+                  <div class={{inputClassNames}}>
+                    {{ input-field
+                       label="Adresse email"
+                       hint="Nous ne partagerons jamais votre adresse email avec un tier."
+                       placeholder="Entrez votre adresse email"
+                       value=email
+                       type="email"
+                       classNames=inputClassNames
+                    }}
+                  </div>
+
+                  <button type="submit" class="btn btn-success btn-block">
+                    Créer un compte
+                  </button>
+                </fieldset>
+              </form>
+            {{/if}}
+          {{/if}}
+        {{/if}}
       {{/if}}
+
 
       <hr />
 
