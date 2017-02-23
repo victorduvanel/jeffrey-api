@@ -8,6 +8,7 @@
     "migrate": "babel-node index.js migrate",
     "seed": "babel-node index.js seed",
     "start": "babel-node index.js",
+    "subscriptions": "babel-node index.js subscriptions",
     "watch": "nodemon --exec \"npm start\"",
     "lint": "eslint .",
     "build": "babel src -d dist",

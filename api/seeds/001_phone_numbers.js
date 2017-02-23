@@ -20,5 +20,17 @@ exports.seed = function(knex) {
       phoneNumber : '+33644641504',
       owned       : true
     });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "phone_numbers" (
+        "id", "phone_number", "owned", "created_at", "updated_at"
+      ) VALUES (:id, :phoneNumber, :owned, NOW(), NOW())
+      ON CONFLICT DO NOTHING
+    `, {
+      id          : '59c3e601-d8b0-432a-b344-2d8849d80355',
+      phoneNumber : '+33651648566',
+      owned       : false
+    });
   });
 };

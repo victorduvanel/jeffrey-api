@@ -1,7 +1,7 @@
 import server from '../src/server';
 
 const serve = () => {
-  return server;
+  return server();
 };
 
 export default serve;

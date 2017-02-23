@@ -73,17 +73,16 @@ export const post = [
     await invoice.addProduct({ product });
     await invoice.charge();
 
-    await Subscription.create({
-      user,
-      product,
-      frequency: 'monthly'
-    });
-
     let phoneNumber = await PhoneNumber.associateAvailable(user);
-
     if (!phoneNumber) {
       phoneNumber = await PhoneNumber.purchase(user);
     }
+
+    await Subscription.create({
+      user,
+      phoneNumber,
+      frequency: 'monthly'
+    });
 
     res.send({
       data: jsonAPISerialize(phoneNumber)

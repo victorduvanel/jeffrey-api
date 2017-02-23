@@ -60,7 +60,7 @@ export default Ember.Controller.extend({
           });
         })
         .catch(() => {
-          this.set('error', 'Unable to sign you up.');
+          this.set('error', 'Désolé, impossible de vous enregistrer. Veuillez réessayer.');
         })
         .finally(() => {
           this.set('isLoading', false);

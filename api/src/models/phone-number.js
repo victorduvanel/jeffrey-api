@@ -25,6 +25,14 @@ const PhoneNumber = Base.extend({
 
   users: function() {
     return this.belongsTo('User');
+  },
+
+  incomingMessages: function() {
+    return this.hasMany('Message', 'to_id');
+  },
+
+  outgoingMessages: function() {
+    return this.hasMany('Message', 'from_id');
   }
 }, {
   purchase: async function(user) {

@@ -40,7 +40,7 @@ const Invoice = Base.extend({
     await this.load(['items.product']);
     const items = this.related('items');
 
-    const amount = await items.reduce(async (total, item) => {
+    const amount = await items.reduce((total, item) => {
       return total + item.get('amount') * item.get('quantity');
     }, 0);
 
@@ -94,9 +94,13 @@ const Invoice = Base.extend({
   },
 
   findAll: function({ user }) {
-    return this.where({
-      user_id: user.get('id')
-    }).fetchAll();
+    return this.query((qb) => {
+      qb.where({
+        user_id: user.get('id')
+      })
+      .whereNotNull('amount');
+    })
+      .fetchAll();
   },
 
   find: function(id) {
