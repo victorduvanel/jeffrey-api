@@ -1,0 +1,30 @@
+environment: development
+port: 3002
+protocol: 'http'
+host: localhost:4200
+mailgun:
+  apiBaseURL: https://api.mailgun.net/v3/prestine.io
+  apiKey: key-4uxc32rva7pgw0ia1blpcmgjjznh3y82
+northsigner:
+  appId: 6d3bb2f0576825cc7a96095404b1378c
+  appSecret: aee460338f422db44cf50d0aaa28b273
+recaptcha:
+  secretKey: 6LdxAREUAAAAAHccd3lKq753FqLDonulEd_QtOX0
+db:
+  client: 'pg'
+  connection:
+    user: postgres
+    database: postgres
+    host: postgres
+    password: ''
+    port: 5432
+    max: 10
+    idleTimeoutMillis: 30000
+  debug: false
+stripe:
+  secretKey: sk_test_QiJITpQTx1S0NkFv3DiySXi3
+twilio:
+  accountSid: AC410a7b5e527762412690b23e1be2d6bb
+  authToken: 6801847ac16da1a775cf78d6f9713c20
+app:
+  phoneNumberProductId: c20ff7a5-bd85-479a-96ff-a429b5be8b59

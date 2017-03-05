@@ -1,0 +1,12 @@
+version: '2'
+services:
+  api:
+    build: ./api
+    depends_on:
+      - postgres
+    volumes:
+      - ./config:/config
+    environment:
+      CONFIG: /config/config-test.yml
+  postgres:
+    image: postgres:9.6.1
