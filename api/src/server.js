@@ -64,7 +64,6 @@ export const listen = () => {
     httpServer.on('close', resolve);
   });
 
-  console.log('listen');
   httpServer.listen(config.port, () => {
     const addr = httpServer.address();
     /* eslint-disable no-console */

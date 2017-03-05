@@ -1,10 +1,11 @@
 FROM node:7.1.0
 MAINTAINER William Riancho <william@reptilians.io>
 
-WORKDIR /app
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
-ADD package.json ./package.json
-RUN npm install
+WORKDIR /app
+ADD package.json yarn.lock ./
+RUN $HOME/.yarn/bin/yarn --pure-lockfile
 
 ADD . .
 RUN npm run build

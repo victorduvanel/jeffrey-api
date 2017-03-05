@@ -1,12 +1,14 @@
 image: tmaier/docker-compose
 services:
-- docker:dind
+  - docker:dind
+
+after_script:
+  - docker-compose down
 
 stages:
-- test
+  - test
 
 test:
   script:
-  - cd dev
-  - docker-compose -p prestine up -d
-  - docker-compose -p prestine exec -T api npm test
+    - docker-compose up -d
+    - docker-compose exec -T api npm test
