@@ -7,5 +7,6 @@ stages:
 
 test:
   script:
-  - cd dev && docker-compose up -d
-  - cd dev && docker-compose exec -T api npm test
+  - cd dev
+  - docker-compose -p prestine up -d
+  - docker-compose -p prestine exec -T api npm test
