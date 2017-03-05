@@ -2,9 +2,6 @@ image: tmaier/docker-compose
 services:
   - docker:dind
 
-after_script:
-  - docker-compose down
-
 stages:
   - test
 
