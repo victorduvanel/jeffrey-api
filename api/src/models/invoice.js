@@ -1,6 +1,8 @@
 import uuid        from 'uuid';
 import bookshelf   from '../services/bookshelf';
 import stripe      from '../services/stripe';
+import * as handlebars from '../services/handlebars';
+import { sendEmail }   from '../services/mailgun';
 import Base        from './base';
 import InvoiceItem from './invoice-item';
 
@@ -29,6 +31,23 @@ const Invoice = Base.extend({
       invoice: this,
       product,
       quantity
+    });
+  },
+
+  sendEmailNotification: async function() {
+    await this.load('user');
+
+    const user = this.related('user');
+
+    const message = await handlebars.render('email/new-invoice', {
+      title: 'Prestine - Nouvelle facture disponible'
+    });
+
+    return sendEmail({
+      from: '"Prestine" <noreply@prestine.io>',
+      to: user.get('email'),
+      subject: 'Prestine - Nouvelle facture disponible',
+      message
     });
   },
 
@@ -72,6 +91,8 @@ const Invoice = Base.extend({
 
     this.set('status', Invoice.status.paid);
     await this.save();
+
+    await this.sendEmailNotification();
   }
 }, {
 

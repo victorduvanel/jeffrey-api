@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "export NODE_ENV=test && npm run migrate && npm run seed && mocha --compilers js:babel-register",
+    "test": "export NODE_ENV=test && mocha --compilers js:babel-register",
     "migrate": "babel-node index.js migrate",
     "seed": "babel-node index.js seed",
     "start": "babel-node index.js",

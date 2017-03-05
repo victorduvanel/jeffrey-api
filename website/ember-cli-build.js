@@ -23,22 +23,22 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/font-awesome/fonts/FontAwesome.otf', {
-    destDir: 'assets'
+    destDir: 'assets/fonts'
   });
   app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', {
-    destDir: 'assets'
+    destDir: 'assets/fonts'
   });
   app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {
-    destDir: 'assets'
+    destDir: 'assets/fonts'
   });
   app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
-    destDir: 'assets'
+    destDir: 'assets/fonts'
   });
   app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {
-    destDir: 'assets'
+    destDir: 'assets/fonts'
   });
   app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff2', {
-    destDir: 'assets'
+    destDir: 'assets/fonts'
   });
 
   return app.toTree();

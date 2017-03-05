@@ -1,7 +1,8 @@
 <div class="form-group {{if error "has-error"}}">
   {{#if label}}
-    <label class="control-label" for="{{elementId}}-input">{{ label }}</label>
+    <label class="form-control-label" for="{{elementId}}-input">{{ label }}</label>
   {{/if}}
+
   {{ input
      type=type
      class="form-control"
@@ -12,10 +13,12 @@
      value=value
      disabled=disabled
   }}
-  {{#if hint}}
-    <span id="{{elementId}}-help" class="help-block">{{ hint }}</span>
-  {{/if}}
+
   {{#if error}}
-    <span id="{{elementId}}-feedback" class="help-block">{{ error }}</span>
+    <div class="form-control-feedback">{{ error }}</div>
+  {{/if}}
+
+  {{#if hint}}
+    <div class="form-text text-muted">{{ hint }}</div>
   {{/if}}
 </div>

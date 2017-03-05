@@ -1,7 +1,7 @@
-import server from '../src/server';
+import { listen } from '../src/server';
 
 const serve = () => {
-  return server();
+  return listen();
 };
 
 export default serve;

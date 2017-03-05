@@ -1,7 +1,7 @@
 import basicAuth  from 'basic-auth';
 import bodyParser from 'body-parser';
-import User       from '../../models/user';
-import { Unauthorized, BadRequest } from '../../errors';
+import User, { InvalidCredentials } from '../../models/user';
+import { Unauthorized, BadRequest, InvalidUserCredentials } from '../../errors';
 
 export const post = [
   bodyParser.urlencoded({ extended: false }),
@@ -23,13 +23,21 @@ export const post = [
       throw BadRequest;
     }
 
-    const user = await User.authenticate({ email: username, password });
+    try {
+      const user = await User.authenticate({ email: username, password });
 
-    const accessToken = await user.createAccessToken({});
+      const accessToken = await user.createAccessToken({});
 
-    res.send({
-      access_token: accessToken.get('token'),
-      token_type: 'Bearer'
-    });
+      res.send({
+        access_token: accessToken.get('token'),
+        token_type: 'Bearer'
+      });
+    } catch (err) {
+      if (err === InvalidCredentials) {
+        throw InvalidUserCredentials;
+      } else {
+        throw err;
+      }
+    }
   }
 ];

@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
   session: Ember.inject.service(),
 
+  emailInputFocused: true,
   inputClassNames: '',
 
   isLoading  : false,
@@ -20,7 +21,22 @@ export default Ember.Controller.extend({
       email       : '',
       error       : null,
       success     : null,
-      showCaptcha : false
+      showCaptcha : false,
+      emailInputFocused : true
+    });
+  },
+
+  shakeInput() {
+    const next = Ember.run.next;
+
+    next(() => {
+      this.set('inputClassNames', '');
+      next(() => {
+        this.set('inputClassNames', 'shake');
+        setTimeout(() => {
+          this.set('inputClassNames', '');
+        }, 800);
+      });
     });
   },
 
@@ -28,15 +44,7 @@ export default Ember.Controller.extend({
     submitEmail() {
       const emailAddress = this.get('email');
       if (!email || !email.isValid(emailAddress)) {
-        setTimeout(() => {
-          this.set('inputClassNames', '');
-          setTimeout(() => {
-            this.set('inputClassNames', 'fx-shake');
-            setTimeout(() => {
-              this.set('inputClassNames', '');
-            }, 800);
-          }, 0);
-        }, 0);
+        this.shakeInput();
       } else {
         this.set('showCaptcha', true);
       }
@@ -73,6 +81,11 @@ export default Ember.Controller.extend({
         error: null,
         showCaptcha: false
       });
+    },
+
+    subscribeButtonPressed() {
+      this.set('emailInputFocused', true);
+      this.shakeInput();
     }
   }
 });

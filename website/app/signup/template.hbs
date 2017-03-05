@@ -1,141 +1,55 @@
-<div id="wrapper" class="clearfix">
-  <header id="header" class="no-sticky transparent-header dark">
-    <div id="header-wrap">
-      <div class="container clearfix">
-
-        <div id="logo">
-          <img width="126" height="100" src="/assets/images/logo-dark_252x200.png" alt="Prestine Logo">
-        </div>
-
-        <div class="fright dark hidden-sm hidden-xs clearfix" style="margin-top: 30px;">
-          <a href="#" data-toggle="modal" data-target="#contactFormModal" class="social-icon si-light si-email3">
-            <i class="icon-email3"></i>
-            <i class="icon-email3"></i>
-          </a>
-        </div>
-      </div>
+<div class="container-fluid h-100">
+  <div class="row">
+    <div class="offset-md-4 col-4 text-center py-5">
+      <img width="200" height="53.66" src="/assets/images/logo.svg" />
     </div>
-  </header>
+  </div>
 
-  <section id="slider" class="full-screen dark" style="background: url(/assets/images/mommy2.jpg) center;">
+  <div class="container pricing rounded">
+    <div class="row">
+      <div class="col-9 py-4 px-3">
+        <h3>Obtenez votre numéro Prestine</h3>
 
-    <div class="container align-self-center">
+        <hr />
 
-      <div class="heading-block title-center nobottomborder">
-        <h1>Commencez l'aventure Prestine dès maintenant</h1>
-        <span>Créez un compte et récupérer votre premier numéro de téléphone virtuel.</span>
+        <ul class="pricing-features">
+          <li>Sans engagement</li>
+          <li>Envoyez et recevez des SMS</li>
+          <li>Assistance 24/7</li>
+          <li>Recevez vos SMS sur votre boite mail</li>
+          <li>Numéro de téléphone mobile (06 ou 07)</li>
+          <li>Envoyez et recevez depuis et vers l’international</li>
+          <li>Aucune carte SIM requise</li>
+          <li>Téléphone mobile non requis</li>
+        </ul>
       </div>
 
-      <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-        <div class="input-group input-group-lg divcenter" style="max-width:600px;">
-          <span class="input-group-addon"><i class="icon-email2"></i></span>
-          <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Entrez votre email">
-          <span class="input-group-btn">
-            <button class="btn btn-info" type="submit">Créer un compte</button>
-          </span>
+      <div class="col-3 pricing-action-area">
+        <div class="pricing-meta">
+          Votre numéro
         </div>
-      </form>
-
-      <div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
-      <div class="title-center nobottomborder">
-        <span>Nous ne partegerons jamais votre adresse avec un tier. <br />Vous avez déjà un compte ? <a href="#">Cliquez ici</a></span>
-      </div>
-    </div>
-  </section>
-
-  <div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="contactFormModalLabel">Envoyez nous un email</h4>
+        <div class="pricing-price">
+          5<span class="price-unit">&euro;</span>
+          <div class="price-tenure">par mois</div>
         </div>
-        <div class="modal-body">
-
-          <div class="contact-widget">
-
-            <div class="contact-form-result"></div>
-
-            <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
-
-              <div class="col_half">
-                <label for="template-contactform-name">Nom <small>*</small></label>
-                <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
-              </div>
-
-              <div class="col_half col_last">
-                <label for="template-contactform-email">Email <small>*</small></label>
-                <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
-              </div>
-
-              <div class="clear"></div>
-
-              <div class="col_half">
-                <label for="template-contactform-phone">Numéro</label>
-                <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
-              </div>
-
-              <div class="col_half col_last">
-                <label for="template-contactform-service">Services</label>
-                <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
-                  <option value="">-- Choississez --</option>
-                  <option value="Commercial">Commercial</option>
-                  <option value="Technique">Technique</option>
-                  <option value="Administratif">Administratif</option>
-                </select>
-              </div>
-
-              <div class="clear"></div>
-
-              <div class="col_full">
-                <label for="template-contactform-subject">Sujet <small>*</small></label>
-                <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
-              </div>
-
-              <div class="col_full">
-                <label for="template-contactform-message">Message <small>*</small></label>
-                <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
-              </div>
-
-              <div class="col_full hidden">
-                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-              </div>
-
-              <div class="col_full">
-                <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer Message</button>
-              </div>
-
-            </form>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <div class="pricing-action">
+          <button type="button" class="btn btn-primary button-xlarge btn-block" {{ action "subscribeButtonPressed" }}>
+            Souscrire
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div id="gotoTop" class="icon-angle-up"></div>
-
-
-
-
-
-
-<div class="container">
   <div class="row">
-    <div class="logic-block col-md-8 offset-md-2 p-t-1">
-      <h1>Créer un compte</h1>
-
+    <div class="col-8 offset-2 col-4 px-5 py-4 light-background">
       {{#if success}}
-        <div class="alert alert-success m-t-1" role="alert">
+        <div class="alert alert-success mt-1" role="alert">
           Vérifiez votre boite mail pour finaliser votre inscription
         </div>
       {{else}}
         {{#if error}}
-          <div class="alert alert-danger m-t-1" role="alert">{{error}}</div>
+          <div class="alert alert-danger mt-1" role="alert">{{error}}</div>
           <button {{ action "retry" }}>Réessayer</button>
         {{else}}
           {{#if isLoading}}
@@ -155,10 +69,11 @@
                        value=email
                        type="email"
                        classNames=inputClassNames
+                       focused=emailInputFocused
                     }}
                   </div>
 
-                  <button type="submit" class="btn btn-success btn-block">
+                  <button type="submit" class="btn btn-primary btn-block">
                     Créer un compte
                   </button>
                 </fieldset>

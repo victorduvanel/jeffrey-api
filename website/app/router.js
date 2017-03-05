@@ -18,7 +18,10 @@ Router.map(function() {
     });
     this.route('phone-number', function() {
       this.route('phone-number', { path: '/:phone_number_id' });
-      this.route('new');
+      this.route('new', function() {
+        this.route('payment-details');
+        this.route('confirm');
+      });
     });
   });
   this.route('reset-password');

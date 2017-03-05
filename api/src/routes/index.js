@@ -8,8 +8,10 @@ import * as paymentMethods from './payment-methods';
 import * as phoneNumber    from './phone-number';
 import * as messages       from './messages';
 import * as invoices       from './invoices';
+import * as terms          from './terms';
 
 export default {
   webhook, oauth, me, activate, signup, northsigner,
-  paymentMethods, phoneNumber, messages, invoices
+  paymentMethods, phoneNumber, messages, invoices,
+  terms
 };

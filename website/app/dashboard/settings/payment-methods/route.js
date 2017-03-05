@@ -4,7 +4,16 @@ export default Ember.Route.extend({
   ajax: Ember.inject.service(),
 
   setupController(controller, model) {
-    controller.set('paymentMethod', model['payment-method']);
+    const paymentMethod = model['payment-method'];
+      if (paymentMethod) {
+    controller.set('paymentMethod', Ember.Object.create({
+      type       : paymentMethod.type,
+      lastFour   : paymentMethod['last-four'],
+      expMonth   : paymentMethod['exp-month'],
+      expYear    : paymentMethod['exp-year'],
+      holderName : paymentMethod['holder-name']
+    }));
+      }
   },
 
   model() {

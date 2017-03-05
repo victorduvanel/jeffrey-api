@@ -1,16 +1,14 @@
 import chai     from 'chai';
 import chaiHTTP from 'chai-http';
 
-import serve   from '../commands/serve';
-
-const server = serve();
+import { httpServer} from '../src/server';
 
 chai.should();
 chai.use(chaiHTTP);
 
 describe('GET /', () => {
-  it('it should GET a 200 OK', () => {
-    return chai.request(server)
+  it('it should get a 200 OK', () => {
+    return chai.request(httpServer)
       .get('/')
       .then((res) => {
         res.should.have.status(200);

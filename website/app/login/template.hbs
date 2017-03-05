@@ -1,63 +1,41 @@
-<div id="wrapper" class="clearfix">
-  <section id="content">
-    <div class="content-wrap nopadding">
-      <div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #444;"></div>
-      <div class="section nobg full-screen nopadding nomargin">
-        <div class="container vertical-middle divcenter clearfix">
-          <div class="row center">
-            <a href="index.html"><img width="126" height="100" src="/assets/images/logo-dark_252x200.png" alt="Prestine"></a>
+<div class="container-fluid dark-background h-100">
+  <div class="row">
+    <div class="offset-md-4 col-4 text-center py-5">
+      <img width="200" height="53.66" src="/assets/images/logo.svg" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-md-4 col-4 px-5 py-4 light-background">
+      <form {{ action "login" on="submit" }}>
+        <fieldset disabled={{ isLoading }}>
+          <h3 class="mb-3">Connexion</h3>
+
+          {{ input-field value=email label="Adresse e-mail" type="email" }}
+
+          {{ input-field value=password label="Mot de passe" type="password" }}
+
+          <div class="d-flex justify-content-between align-items-center">
+            {{#if isLoading}}
+              <button type="submit" class="btn btn-primary"><i class="fa fa-spinner fa-pulse fa-fw"></i></button>
+            {{else}}
+              <button type="submit" class="btn btn-primary">Connexion</button>
+            {{/if}}
+            {{#link-to "reset-password"}}Mot de passe oublié ?{{/link-to}}
           </div>
 
-          <div class="panel panel-default divcenter noradius noborder" style="max-width: 400px;">
-            <div class="panel-body" style="padding: 40px;">
-              <form id="login-form" name="login-form" class="nobottommargin" {{ action "login" on="submit" }}>
-                <fieldset disabled={{ isLoading }}>
-                  <h3>Se connecter</h3>
+          {{#if error}}
+            <div class="alert alert-danger mt-2">{{error}}</div>
+          {{/if}}
+        </fieldset>
+      </form>
 
-                  <div class="col_full">
-                    <label for="login-form-username">Adresse email:</label>
-                    {{ input type="email" id="login-form-username" name="login-form-username" value=email class="form-control not-dark" }}
-                  </div>
+      <hr />
 
-                  <div class="col_full">
-                    <label for="login-form-password">Mot de passe:</label>
-                    {{input type="password" id="login-form-password" name="login-form-password" value=password class="form-control not-dark" }}
-                  </div>
-
-                  <div class="col_full nobottommargin">
-                    <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">
-                      {{#if isLoading}}
-                        <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                      {{else}}
-                        Se connecter
-                      {{/if}}
-                    </button>
-                    {{#link-to "reset-password" class="fright"}}
-                      Mot de passe oublié ?
-                    {{/link-to}}
-                  </div>
-
-                  {{#if error}}
-                    <div class="m-t-1 alert alert-danger">{{error}}</div>
-                  {{/if}}
-
-                </fieldset>
-              </form>
-
-              <div class="line line-sm"></div>
-
-              <div class="center">
-                {{#link-to "signup" class="button button-rounded si-colored"}}
-                  Je ne posséde pas de compte
-                {{/link-to}}
-              </div>
-            </div>
-          </div>
-
-          <div class="row center dark"><small>2017 Prestine - Créez pour vous avec ♥</small></div>
-
-        </div>
+      <div class="text-center">
+        {{#link-to "signup" class="button button-rounded si-colored"}}
+          Je ne posséde pas de compte
+        {{/link-to}}
       </div>
     </div>
-  </section>
+  </div>
 </div>

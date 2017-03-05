@@ -1,8 +1,20 @@
-{{#link-to "dashboard.phone-number"}}Close{{/link-to}}
-{{phoneNumber.phoneNumber}}
-
 <form {{action "sendMessage" on="submit"}}>
-  {{input value=toPhoneNumber}}
-  {{textarea value=message}}
-  <button type="submit">Envoyer</button>
+  <fieldset>
+    <h3 class="mb-3">Envoyer un message</h3>
+    {{ input-field
+       label="Destinataire"
+       placeholder="Numéro de téléphone"
+       value=toPhoneNumber
+    }}
+
+    <div class="form-group">
+      {{ textarea
+         value=message
+         placeholder="Message"
+         class="form-control"
+      }}
+    </div>
+
+    <button class="btn btn-primary" type="submit">Envoyer</button>
+  </fieldset>
 </form>

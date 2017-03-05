@@ -33,13 +33,14 @@ const PendingUser = Base.extend({
 
     const message = await handlebars.render('email/register', {
       email: emailAddress,
-      activationLink: `/activate?code=${id}`
+      activationLink: `/activate?code=${id}`,
+      title: 'Prestine - Confirmez votre adresse mail',
     });
 
     return sendEmail({
       from: '"Prestine" <noreply@prestine.io>',
       to: emailAddress,
-      subject: 'Activate your Prestine account',
+      subject: 'Prestine - Confirmez votre adresse mail',
       message
     });
   },

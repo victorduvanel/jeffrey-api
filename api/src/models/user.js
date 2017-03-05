@@ -4,8 +4,8 @@ import bookshelf    from '../services/bookshelf';
 import uuid         from 'uuid';
 import Base         from './base';
 import AccessToken  from './access-token';
-import { InvalidUserCredentials } from '../errors';
 
+export const InvalidCredentials = new Error('Invalid Credentials');
 export const DuplicatedUser = new Error('Duplicated User');
 
 const bcrypt = Promise.promisifyAll(nativeBcrypt);
@@ -34,6 +34,31 @@ const User = Base.extend({
       });
   },
 
+  paymentMethodStatus: async function() {
+    await this.load('stripeCustomer');
+
+    const customers = this.related('stripeCustomer');
+    if (!customers.length) {
+      return 'not_set';
+    }
+
+    const customer = customers.at(0);
+    const expYear = customer.get('expYear');
+    const expMonth = customer.get('expMonth');
+
+    const now = new Date();
+    const expirationDate = new Date(expYear, expMonth - 1);
+
+    if (now >= expirationDate) {
+      return 'expired';
+    } else if ((now - expirationDate) / (1000 * 60 * 60 * 24) >= 30) {
+      // expires in 30 days or less
+      return 'expired_soon';
+    } else {
+      return 'ok';
+    }
+  },
+
   toJSON() {
     let attrs = Base.prototype.toJSON.apply(this, arguments);
 
@@ -54,7 +79,7 @@ const User = Base.extend({
       }
     }
 
-    throw InvalidUserCredentials;
+    throw InvalidCredentials;
   },
 
   create: async function({ email }) {

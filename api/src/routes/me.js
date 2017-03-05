@@ -5,11 +5,15 @@ export const get = [
   oauth2,
   async (req, res) => {
     const user = req.user;
+
+    const paymentMethodStatus = await user.paymentMethodStatus();
+
     res.send({
       id: user.get('id'),
       first_name: user.get('firstName'),
       last_name: user.get('lastName'),
-      email: user.get('email')
+      email: user.get('email'),
+      payment_method_status: paymentMethodStatus
     });
   }
 ];
