@@ -17,8 +17,6 @@ const Message = Base.extend({
   }
 }, {
   create: async function({ sid, from, to, body }) {
-    const id = uuid.v4();
-
     await bookshelf.knex.raw(
       `INSERT INTO messages
         (id, sid, body, from_id, to_id, created_at, updated_at)
@@ -34,7 +32,7 @@ const Message = Base.extend({
       }
     );
 
-    return await new this({ id }).fetch();
+    return await new this({ sid }).fetch();
   }
 });
 

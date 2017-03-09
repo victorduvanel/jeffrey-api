@@ -89,3 +89,30 @@ export const post = [
     });
   }
 ];
+
+export const destroy = [
+  oauth2,
+  async (req, res) => {
+    const user = req.user;
+    const phoneNumberId = req.params.phone_number_id;
+
+    let phoneNumber = await PhoneNumber
+      .forge({
+        id: phoneNumberId,
+        userId: user.get('id')
+      })
+      .fetch();
+
+    if (phoneNumber) {
+      const subscription = await Subscription.find({ user, phoneNumber });
+
+      await subscription.cancel();
+
+      res.send({
+        meta: {}
+      });
+    } else {
+      throw NotFound;
+    }
+  }
+];

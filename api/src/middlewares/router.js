@@ -46,3 +46,7 @@ export const get = (pathname, handler) => {
 export const patch = (pathname, handler) => {
   return addRoute('patch', pathname, handler);
 };
+
+export const del = (pathname, handler) => {
+  return addRoute('delete', pathname, handler);
+};

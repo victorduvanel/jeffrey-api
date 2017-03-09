@@ -7,7 +7,8 @@
 
 @import "../../bower_components/animatewithsass/animate.scss";
 
-@import "_recaptcha";
+.minw-100 { min-width: 100% !important; }
+.minh-100 { min-height: 100% !important; }
 
 html, body, body > .ember-view {
   width: 100%;

@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
+const { service } = Ember.inject;
+
 export default Ember.Controller.extend({
-  user: Ember.inject.service(),
+  currentUser: service(),
+  user: Ember.computed.alias('currentUser.user'),
 
   firstName      : '',
   firstNameError : null,

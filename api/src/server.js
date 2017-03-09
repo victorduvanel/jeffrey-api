@@ -12,7 +12,7 @@ import logger                from './middlewares/logger';
 import corsPolicy            from './middlewares/cors-policy';
 import notFound              from './middlewares/not-found';
 import errorHandler from './middlewares/error-handler';
-import { router, get, post, patch } from './middlewares/router';
+import { router, get, post, patch, del } from './middlewares/router';
 
 export const httpServer = http.createServer();
 const app = express();
@@ -50,6 +50,7 @@ get('/payment-methods', routes.paymentMethods.get);
 
 get('/phone-numbers', routes.phoneNumber.get);
 get('/phone-numbers/:phone_number_id', routes.phoneNumber.getOne);
+del('/phone-numbers/:phone_number_id', routes.phoneNumber.destroy);
 post('/phone-numbers', routes.phoneNumber.post);
 
 post('/messages', routes.messages.post);
@@ -59,17 +60,27 @@ get('/invoices/:invoice_id', routes.invoices.getOne);
 
 get('/terms', routes.terms.get);
 
+let _listenProm = null;
 export const listen = () => {
-  const prom = new Promise((resolve) => {
-    httpServer.on('close', resolve);
-  });
+  if (!_listenProm) {
+    _listenProm = new Promise((resolve) => {
+      httpServer.listen(config.port, () => {
+        const addr = httpServer.address();
 
-  httpServer.listen(config.port, () => {
-    const addr = httpServer.address();
-    /* eslint-disable no-console */
-    console.log(chalk.green(`Listening on ${addr.address}:${addr.port}`));
-    /* eslint-enable no-console */
-  });
+        /* eslint-disable no-console */
+        console.log(chalk.green(`Listening on ${addr.address}:${addr.port}`));
+        /* eslint-enable no-console */
 
-  return prom;
+        const wait = () => {
+          return new Promise((resolve) => {
+            httpServer.on('close', resolve);
+          });
+        };
+
+        resolve(Object.assign(addr, { wait }));
+      });
+    });
+  }
+
+  return _listenProm;
 };

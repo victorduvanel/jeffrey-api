@@ -9,6 +9,12 @@ function up(knex) {
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
 
+      table
+        .uuid('phone_number_id')
+        .references('phone_numbers.id')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+
       table.enum('frequency', ['monthly', 'yearly']);
 
       table.date('last_renewal');
@@ -18,15 +24,6 @@ function up(knex) {
 
       table.dateTime('created_at');
       table.dateTime('updated_at');
-    })
-    .createTable('phone_numbers_subscriptions', (table) => {
-      table.uuid('subscription_id');
-      table.uuid('phone_number_id');
-
-      table.dateTime('created_at');
-      table.dateTime('updated_at');
-
-      table.primary(['subscription_id', 'phone_number_id']);
     });
 }
 

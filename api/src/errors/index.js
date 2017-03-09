@@ -66,6 +66,12 @@ export const Unauthorized = new APIError({
   title    : 'This resource requires authentication'
 });
 
+export const Forbidden = new APIError({
+  status   : statusCodes.forbidden,
+  category : PROTOCOL,
+  title    : 'This resource requires authentication'
+});
+
 export const InternalServerError = new APIError ({
   status   : statusCodes.internalServerError,
   category : OTHER,

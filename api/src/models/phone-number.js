@@ -5,6 +5,9 @@ import twilio    from '../services/twilio';
 import config    from '../config';
 import './user';
 
+export const PhoneNumberNotAttached = new Error('Phone Number Not Attached');
+export const PhoneNumberNotOwned = new Error('Phone Number Not Owned');
+
 const getAvailablePhoneNumber = async () => {
   if (config.PRODUCTION) {
     const result = await twilio
@@ -23,16 +26,28 @@ const getAvailablePhoneNumber = async () => {
 const PhoneNumber = Base.extend({
   tableName: 'phone_numbers',
 
-  users: function() {
+  user() {
     return this.belongsTo('User');
   },
 
-  incomingMessages: function() {
+  incomingMessages() {
     return this.hasMany('Message', 'to_id');
   },
 
-  outgoingMessages: function() {
+  outgoingMessages() {
     return this.hasMany('Message', 'from_id');
+  },
+
+  async detach() {
+    const userId = this.get('userId');
+
+    if (!userId) {
+      throw PhoneNumberNotAttached;
+    }
+
+    if (!this.get('owned')) {
+      throw PhoneNumberNotOwned;
+    }
   }
 }, {
   purchase: async function(user) {

@@ -17,7 +17,9 @@ Router.map(function() {
       this.route('payment-methods');
     });
     this.route('phone-number', function() {
-      this.route('phone-number', { path: '/:phone_number_id' });
+      this.route('phone-number', { path: '/:phone_number_id' }, function() {
+        this.route('cancel');
+      });
       this.route('new', function() {
         this.route('payment-details');
         this.route('confirm');

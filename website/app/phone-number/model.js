@@ -7,6 +7,10 @@ export default DS.Model.extend({
   formated: Ember.computed('phoneNumber', function() {
     let phoneNumber = this.get('phoneNumber');
 
+    if (!phoneNumber) {
+      return '';
+    }
+
     phoneNumber = '0' + phoneNumber.slice(3);
     const length = phoneNumber.length;
     let formated = '';

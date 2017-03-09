@@ -1,3 +1,3 @@
 import { listen } from './server';
 
-listen();
+export default listen();

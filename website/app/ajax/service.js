@@ -17,5 +17,17 @@ export default AjaxService.extend({
       }
       return headers;
     }
-  })
+  }),
+
+  request() {
+    return this._super(...arguments)
+      .catch((err) => {
+        const error = err.errors[0];
+
+        if (error.status === '401') {
+          this.get('session').invalidate();
+        }
+        throw error;
+      });
+  }
 });

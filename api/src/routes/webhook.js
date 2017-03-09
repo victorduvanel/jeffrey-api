@@ -16,11 +16,11 @@ export const post = [
       to, from, body: body.Body, sid: body.Sid
     });
 
-    await to.load('users');
+    if (to.get('userId')) {
+      await to.load('user');
 
-    const users = to.related('users').map((user) => user.get('email'));
+      const user = to.related('user');
 
-    if (users.length) {
       message = await render('email/new-message', {
         to     : to.get('phoneNumber'),
         from   : from.get('phoneNumber'),
@@ -28,7 +28,7 @@ export const post = [
       });
 
       await sendEmail({
-        to: users.join(),
+        to: user.get('email'),
         from: 'noreply@prestine.io',
         subject: 'Prestine: New Message',
         message

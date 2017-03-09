@@ -1,4 +1,4 @@
-FROM node:7.1.0
+FROM node:7.7.1
 MAINTAINER William Riancho <william@reptilians.io>
 
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash

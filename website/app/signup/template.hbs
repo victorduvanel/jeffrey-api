@@ -1,4 +1,4 @@
-<div class="container-fluid h-100">
+<div class="container-fluid minh-100">
   <div class="row">
     <div class="offset-md-4 col-4 text-center py-5">
       <img width="200" height="53.66" src="/assets/images/logo.svg" />
@@ -55,30 +55,25 @@
           {{#if isLoading}}
             <i class="fa fa-spinner fa-pulse fa-fw"></i>
           {{else}}
-            {{#if showCaptcha}}
-              {{re-captcha hl="fr" validated=(action "captchaValidated")}}
-            {{else}}
+            <form {{action "submitEmail" on="submit"}}>
+              <fieldset>
+                {{#animable-content shake=shakeEmailInput}}
+                  {{ input-field
+                     label="Adresse email"
+                     hint="Nous ne partagerons jamais votre adresse email avec un tier."
+                     placeholder="Entrez votre adresse email"
+                     value=email
+                     type="email"
+                     classNames=inputClassNames
+                     focused=emailInputFocused
+                  }}
+                {{/animable-content}}
 
-              <form {{action "submitEmail" on="submit"}}>
-                <fieldset>
-                  <div class={{inputClassNames}}>
-                    {{ input-field
-                       label="Adresse email"
-                       hint="Nous ne partagerons jamais votre adresse email avec un tier."
-                       placeholder="Entrez votre adresse email"
-                       value=email
-                       type="email"
-                       classNames=inputClassNames
-                       focused=emailInputFocused
-                    }}
-                  </div>
-
-                  <button type="submit" class="btn btn-primary btn-block">
-                    Créer un compte
-                  </button>
-                </fieldset>
-              </form>
-            {{/if}}
+                <button type="submit" class="btn btn-primary btn-block">
+                  Créer un compte
+                </button>
+              </fieldset>
+            </form>
           {{/if}}
         {{/if}}
       {{/if}}

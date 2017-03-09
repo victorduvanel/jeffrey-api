@@ -1,7 +1,16 @@
 <div class="container-fluid h-100 d-flex justify-content-center">
   <div class="text-center align-self-center">
-    <h2>Patientez un instant</h2>
-    <h4>Voila votre nouveau numéro</h4>
-    <h2>06 51 64 85 66</h2>
+    {{#if phoneNumber}}
+      {{#if phoneNumber.isNew}}
+        <h2>Patientez un instant</h2>
+      {{else}}
+        <h4>Voila votre nouveau numéro</h4>
+        <h2>
+          {{#link-to 'dashboard.phone-number.phone-number' phoneNumber}}
+            {{ phoneNumber.formated }}
+          {{/link-to}}
+        </h2>
+      {{/if}}
+    {{/if}}
   </div>
 </div>

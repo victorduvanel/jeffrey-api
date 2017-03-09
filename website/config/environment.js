@@ -18,6 +18,7 @@ module.exports = function(environment) {
     },
 
     APP: {
+      RECAPTCHA_LANGUAGE: 'fr'
       // Here you can pass flags/options to your application instance
       // when it is created
     },
@@ -38,7 +39,7 @@ module.exports = function(environment) {
     ENV.APP.API_HOST      = 'http://localhost:3002';
     ENV.APP.API_NAMESPACE = '/';
     ENV.APP.API_CLIENT_ID = '0e7814b6-b793-44f5-aab0-9644be51f1ae';
-    ENV.APP.RECAPTCHA_SITE_KEY = '6LdxAREUAAAAAIkuknaRuw_r2TWAPF2pOSeyr6xG';
+    ENV.APP.RECAPTCHA_SITE_KEY = '6Ld0SBgUAAAAADZIZ4zTp1l1bnX0JDxlOYIVyvOf';
     ENV.APP.STRIPE_PUBLISHABLE_KEY = 'pk_test_ytM3zWErx4sK19p2lcC85y2v';
   }
 
@@ -57,7 +58,7 @@ module.exports = function(environment) {
     ENV.APP.API_HOST      = 'https://api.prestine.io';
     ENV.APP.API_NAMESPACE = '/';
     ENV.APP.API_CLIENT_ID = '0e7814b6-b793-44f5-aab0-9644be51f1ae';
-    ENV.APP.RECAPTCHA_SITE_KEY = '6LdxAREUAAAAAIkuknaRuw_r2TWAPF2pOSeyr6xG';
+    ENV.APP.RECAPTCHA_SITE_KEY = '6Ld0SBgUAAAAADZIZ4zTp1l1bnX0JDxlOYIVyvOf';
     ENV.APP.STRIPE_PUBLISHABLE_KEY = 'pk_test_ytM3zWErx4sK19p2lcC85y2v';
   }
 

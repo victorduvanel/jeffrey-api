@@ -1,14 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
-  user: Ember.inject.service(),
+const { service } = Ember.inject;
 
-  setupController(controller) {
-    controller.reset();
-    return this._super(...arguments);
-  },
+export default Ember.Route.extend({
+  currentUser: service(),
 
   model() {
-    return this.get('user').check();
+    return this.get('currentUser').load();
   }
 });
