@@ -3,11 +3,7 @@ import email from '../utils/email';
 
 export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
-  session: Ember.inject.service(),
   recaptcha: Ember.inject.service(),
-
-  emailInputFocused: true,
-  inputClassNames: '',
 
   isLoading  : false,
   email      : '',
@@ -24,21 +20,20 @@ export default Ember.Controller.extend({
     });
   },
 
-  shakeInput() {
-    this.set('shakeEmailInput', true);
-  },
+  resetPassword(emailAddress, captchaToken) {
+    this.setProperties({
+      isLoading: true,
+      success: false,
+      error: null
+    });
 
-  captchaValidated(token) {
-    const emailAddress = this.get('email');
-
-    this.set('isLoading', true);
-
-    this.get('ajax').post('/signup', {
-      data: {
-        email: emailAddress,
-        captcha: token
-      }
-    })
+    this.get('ajax')
+      .post('/reset-password', {
+        data: {
+          email: emailAddress,
+          captcha: captchaToken
+        }
+      })
       .then(() => {
         this.setProperties({
           email   : '',
@@ -46,7 +41,7 @@ export default Ember.Controller.extend({
         });
       })
       .catch(() => {
-        this.set('error', 'Désolé, impossible de vous enregistrer. Veuillez réessayer.');
+        this.set('error', 'Désolé, une erreur est survenue. Veuillez réessayer.');
       })
       .finally(() => {
         this.set('isLoading', false);
@@ -54,29 +49,20 @@ export default Ember.Controller.extend({
   },
 
   actions: {
-    submitEmail() {
+    submit() {
       const emailAddress = this.get('email');
       if (!emailAddress || !email.isValid(emailAddress)) {
-        this.shakeInput();
+        this.set('shakeEmailInput', true);
       } else {
+        this.resetPassword(emailAddress, '');
+        /*
         this.get('recaptcha')
           .check()
-          .then((token) => {
-            this.captchaValidated(token);
+          .then((captchaToken) => {
+            this.resetPassword(email, captchaToken);
           });
+          */
       }
-    },
-
-    retry() {
-      this.setProperties({
-        success: false,
-        error: null
-      });
-    },
-
-    subscribeButtonPressed() {
-      this.set('emailInputFocused', true);
-      this.shakeInput();
     }
   }
 });

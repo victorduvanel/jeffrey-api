@@ -13,7 +13,7 @@ export default AjaxService.extend({
       let headers = {};
       const auth = this.get('session.data.authenticated');
       if (auth && auth.token_type === 'Bearer') {
-        headers['Authorization'] = 'Bearer ' + auth.access_token;
+        headers.Authorization = `Bearer ${auth.access_token}`;
       }
       return headers;
     }

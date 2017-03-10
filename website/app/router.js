@@ -26,9 +26,10 @@ Router.map(function() {
       });
     });
   });
-  this.route('reset-password');
-  this.route('activate', function() {
-  });
+  this.route('reset-password', { path: '/reset-password/:token' });
+  this.route('activate');
+  this.route('forgot-password');
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;

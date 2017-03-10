@@ -3,6 +3,7 @@
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.6",
     "font-awesome": "4.7.0",
-    "animatewithsass": "^3.2.2"
+    "animatewithsass": "^3.2.2",
+    "toastr": "^2.1.3"
   }
 }
