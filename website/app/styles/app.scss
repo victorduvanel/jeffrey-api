@@ -83,10 +83,6 @@ html, body, body > .ember-view {
   font-weight: normal;
 }
 
-.pricing-unit {
-
-}
-
 .price-tenure {
   margin: 10px 0 0 0;
   font-weight: 300;
@@ -96,4 +92,21 @@ html, body, body > .ember-view {
 
 .pricing {
   border: 1px solid rgba(0,0,0,0.05);
+}
+
+.prestine-logo-small, .prestine-logo {
+  display: inline-block;
+  background-image: url('/assets/images/logo.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.prestine-logo {
+  width: 200px;
+  height: 53.66px;
+}
+
+.prestine-logo-small {
+  width: 111.781px;
+  height: 30px;
 }
