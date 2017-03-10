@@ -23,12 +23,15 @@ export default Ember.Controller.extend({
       this.get('session')
         .authenticate('authenticator:oauth2', email, password)
         .catch((err) => {
-          err = err.error;
-          if (err.title === 'Invalid Credentials') {
-            this.set('error', 'La connexion a échouée. Veuillez verifier vos identifiants.');
-          } else {
-            this.set('error', 'Impossible de vous identifier');
+          if (err) {
+            err = err.error;
+            if (err.title === 'Invalid Credentials') {
+              this.set('error', 'La connexion a échouée. Veuillez verifier vos identifiants.');
+              return;
+            }
           }
+
+          this.set('error', 'Impossible de vous identifier');
         });
     }
   }

@@ -31,9 +31,7 @@ export default Ember.Controller.extend({
   captchaValidated(token) {
     const emailAddress = this.get('email');
 
-    this.set('isLoading', true);
-
-    this.get('ajax').post('/signup', {
+    return this.get('ajax').post('/signup', {
       data: {
         email: emailAddress,
         captcha: token
@@ -47,9 +45,6 @@ export default Ember.Controller.extend({
       })
       .catch(() => {
         this.set('error', 'Désolé, impossible de vous enregistrer. Veuillez réessayer.');
-      })
-      .finally(() => {
-        this.set('isLoading', false);
       });
   },
 
@@ -59,10 +54,14 @@ export default Ember.Controller.extend({
       if (!emailAddress || !email.isValid(emailAddress)) {
         this.shakeInput();
       } else {
+        this.set('isLoading', true);
         this.get('recaptcha')
           .check()
           .then((token) => {
-            this.captchaValidated(token);
+            return this.captchaValidated(token);
+          })
+          .finally(() => {
+            this.set('isLoading', false);
           });
       }
     },

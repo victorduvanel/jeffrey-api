@@ -64,11 +64,11 @@ export default Ember.Component.extend({
         cvc,
         cardholderName
       })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.error(err);
+        .then(() => {
+          const onValidated = this.get('onValidated');
+          if (onValidated) {
+            onValidated();
+          }
         })
         .finally(() => {
           this.set('isLoading', false);
