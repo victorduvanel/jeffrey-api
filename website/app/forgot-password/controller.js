@@ -8,26 +8,25 @@ export default Ember.Controller.extend({
   isLoading  : false,
   email      : '',
   error      : null,
-  success    : null,
+  success    : false,
 
   reset() {
     this.setProperties({
       isLoading   : false,
       email       : '',
       error       : null,
-      success     : null,
+      success     : false,
       emailInputFocused : true
     });
   },
 
   resetPassword(emailAddress, captchaToken) {
     this.setProperties({
-      isLoading: true,
       success: false,
       error: null
     });
 
-    this.get('ajax')
+    return this.get('ajax')
       .post('/reset-password', {
         data: {
           email: emailAddress,
@@ -40,28 +39,31 @@ export default Ember.Controller.extend({
           success : true
         });
       })
-      .catch(() => {
+      .catch((err) => {
         this.set('error', 'Désolé, une erreur est survenue. Veuillez réessayer.');
-      })
-      .finally(() => {
-        this.set('isLoading', false);
+        throw err;
       });
   },
 
   actions: {
     submit() {
+      if (this.get('isLoading')) {
+        return;
+      }
+
       const emailAddress = this.get('email');
       if (!emailAddress || !email.isValid(emailAddress)) {
         this.set('shakeEmailInput', true);
       } else {
-        this.resetPassword(emailAddress, '');
-        /*
+        this.set('isLoading', true);
         this.get('recaptcha')
           .check()
           .then((captchaToken) => {
-            this.resetPassword(email, captchaToken);
+            return this.resetPassword(emailAddress, captchaToken);
+          })
+          .finally(() => {
+            this.set('isLoading', false);
           });
-          */
       }
     }
   }

@@ -35,7 +35,7 @@ const ResetPasswordToken = Base.extend({
   find: async function(id) {
     return this
       .where({ id })
-      .where('expired_at', '<', bookshelf.knex.raw('NOW()'))
+      .where('expired_at', '>', bookshelf.knex.raw('NOW()'))
       .fetch();
   },
 

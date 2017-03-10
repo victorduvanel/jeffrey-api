@@ -22,12 +22,16 @@ export default AjaxService.extend({
   request() {
     return this._super(...arguments)
       .catch((err) => {
-        const error = err.errors[0];
+        if (err && err.errors && err.errors.length) {
+          const error = err.errors[0];
 
-        if (error.status === '401') {
-          this.get('session').invalidate();
+          if (error.status === '401') {
+            this.get('session').invalidate();
+          }
+          throw error;
         }
-        throw error;
+
+        throw err;
       });
   }
 });

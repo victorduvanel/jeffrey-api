@@ -6,25 +6,31 @@
   </div>
   <div class="row">
     <div class="offset-md-4 col-4 px-5 py-4 light-background">
-      <form {{ action "submit" on="submit" }}>
-        <fieldset disabled={{ isLoading }}>
-          <h3 class="mb-3">Mot de passe oublié</h3>
+      {{#if success}}
+        <div class="alert alert-success mt-2">
+          Consultez votre boite mail afin de réinitiliser votre mot de passe.
+        </div>
+      {{else}}
+        <form {{ action "submit" on="submit" }}>
+          <fieldset disabled={{ isLoading }}>
+            <h3 class="mb-3">Mot de passe oublié</h3>
 
-          {{#animable-content shake=shakeEmailInput}}
-            {{ input-field value=email label="Adresse e-mail" placeholder="Adresse e-mail" type="email" focused=true }}
-          {{/animable-content}}
+            {{#animable-content shake=shakeEmailInput}}
+              {{ input-field value=email label="Adresse e-mail" placeholder="Adresse e-mail" type="email" focused=true }}
+            {{/animable-content}}
 
-          {{#if isLoading}}
-            <button type="submit" class="btn btn-primary"><i class="fa fa-spinner fa-pulse fa-fw"></i></button>
-          {{else}}
-            <button type="submit" class="btn btn-primary">Valider</button>
-          {{/if}}
+            {{#if isLoading}}
+              <button type="submit" class="btn btn-primary"><i class="fa fa-spinner fa-pulse fa-fw"></i></button>
+            {{else}}
+              <button type="submit" class="btn btn-primary">Valider</button>
+            {{/if}}
 
-          {{#if error}}
-            <div class="alert alert-danger mt-2">{{error}}</div>
-          {{/if}}
-        </fieldset>
-      </form>
+            {{#if error}}
+              <div class="alert alert-danger mt-2">{{error}}</div>
+            {{/if}}
+          </fieldset>
+        </form>
+      {{/if}}
     </div>
   </div>
 </div>

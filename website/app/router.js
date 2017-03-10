@@ -27,7 +27,9 @@ Router.map(function() {
     });
   });
   this.route('reset-password', { path: '/reset-password/:token' });
-  this.route('activate');
+  this.route('activate', function() {
+    this.route('index', { path: '/' });
+  });
   this.route('forgot-password');
   this.route('not-found', { path: '/*path' });
 });
