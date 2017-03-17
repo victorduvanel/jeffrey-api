@@ -17,7 +17,7 @@ function up(knex) {
         .onDelete('CASCADE');
 
       table.dateTime('started_at');
-      table.dateTime('ended_at');
+      table.integer('duration').unsigned();
 
       table.dateTime('created_at');
       table.dateTime('updated_at');
