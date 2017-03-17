@@ -1,0 +1,43 @@
+{{#paper-card as |card|}}
+  {{#paper-toolbar}}
+    {{#paper-toolbar-tools}}
+      <h2>Phone Dialer</h2>
+    {{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
+  {{#card.content class="layout-column layout-align-space-between"}}
+    <div class="layout-row">
+      {{screen}}
+    </div>
+    <div class="layout-row layout-align-space-around">
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "1")}}1{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "2")}}2{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "3")}}3{{/paper-button}}
+    </div>
+    <div class="layout-row layout-align-space-around">
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "4")}}4{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "5")}}5{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "6")}}6{{/paper-button}}
+    </div>
+    <div class="layout-row layout-align-space-around">
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "7")}}7{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "8")}}8{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "9")}}9{{/paper-button}}
+    </div>
+    <div class="layout-row layout-align-space-around">
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "7")}}*{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "8")}}0{{/paper-button}}
+      {{#paper-button raised=true fab=true onClick=(action "buttonPressed" "9")}}#{{/paper-button}}
+    </div>
+    <div class="layout-row layout-align-space-around">
+      {{#paper-button onClick=(action "startCall")}}
+        {{paper-icon "phone"  size=36}}
+      {{/paper-button}}
+      {{#paper-button onClick=(action "buttonPressed" "1")}}
+        {{paper-icon "dialpad"  size=36}}
+      {{/paper-button}}
+      {{#paper-button onClick=(action "buttonPressed" "1")}}
+        {{paper-icon "backspace"  size=36}}
+      {{/paper-button}}
+    </div>
+  {{/card.content}}
+{{/paper-card}}

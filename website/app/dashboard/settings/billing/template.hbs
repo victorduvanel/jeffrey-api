@@ -1,28 +1,52 @@
-<div class="row">
-  <div class="jumbotron">
-    <h2>Factures</h2>
+{{#paper-card as |card|}}
+  {{#paper-toolbar}}
+    {{#paper-toolbar-tools}}
+      <h2>Factures</h2>
+    {{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Status</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each invoices as |invoice|}}
-          <tr>
-            <td>{{ invoice.id }}</td>
-            <td>{{moment-format invoice.createdAt 'DD/MM/YYYY'}}</td>
-            <td>{{format-currency invoice.amount currency=invoice.currency}}</td>
-            <td>{{ invoice.status }}</td>
-            <td><button type="button" {{ action "openInvoicePopup" invoice }}>Download</button></td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-</div>
+  {{#card.content class="layout-column layout-align-space-between"}}
+    {{#paper-list}}
+      {{#each invoices as |invoice|}}
+        {{#paper-item class="md-3-line" as |controls|}}
+          <div class="md-list-item-text">
+            <h3>{{moment-format invoice.createdAt 'DD/MM/YYYY'}} - {{format-currency invoice.amount currency=invoice.currency}} - {{ invoice.status }}</h3>
+            <h5>{{ invoice.id }}</h5>
+          </div>
+          {{#controls.button iconButton=true secondary=true onClick=(action "openInvoicePopup" invoice)}}
+            {{paper-icon "file download"}}
+          {{/controls.button}}
+        {{/paper-item}}
+      {{/each}}
+    {{/paper-list}}
+  {{/card.content}}
+{{/paper-card}}
+
+{{!-- <div class="row"> --}}
+  {{!-- <div class="jumbotron"> --}}
+    {{!-- <h2>Factures</h2> --}}
+
+    {{!-- <table class="table"> --}}
+      {{!-- <thead> --}}
+        {{!-- <tr> --}}
+          {{!-- <th>#</th> --}}
+          {{!-- <th>Date</th> --}}
+          {{!-- <th>Amount</th> --}}
+          {{!-- <th>Status</th> --}}
+          {{!-- <th></th> --}}
+        {{!-- </tr> --}}
+      {{!-- </thead> --}}
+      {{!-- <tbody> --}}
+        {{!-- {{#each invoices as |invoice|}} --}}
+          {{!-- <tr> --}}
+            {{!-- <td>{{ invoice.id }}</td> --}}
+            {{!-- <td>{{moment-format invoice.createdAt 'DD/MM/YYYY'}}</td> --}}
+            {{!-- <td>{{format-currency invoice.amount currency=invoice.currency}}</td> --}}
+            {{!-- <td>{{ invoice.status }}</td> --}}
+            {{!-- <td><button type="button" {{ action "openInvoicePopup" invoice }}>Download</button></td> --}}
+          {{!-- </tr> --}}
+        {{!-- {{/each}} --}}
+      {{!-- </tbody> --}}
+    {{!-- </table> --}}
+  {{!-- </div> --}}
+{{!-- </div> --}}

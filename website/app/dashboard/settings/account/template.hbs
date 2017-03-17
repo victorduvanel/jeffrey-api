@@ -1,43 +1,73 @@
-<h1>Mon compte</h1>
+{{#paper-card as |card|}}
+  {{#paper-toolbar}}
+    {{#paper-toolbar-tools}}
+      <h2>Mon compte</h2>
+    {{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
 
-<form {{action "signin" on="submit"}}>
-  <fieldset disabled={{isLoading}}>
-    <div class="row">
-      <div class="col-6">
-        {{ input-field
-           label="Prénom"
-           placeholder="Votre prénom"
-           error=firstNameError
-           value=firstName
-           type="text"
-        }}
+  {{#paper-form onSubmit=(action "saveInfo") as |form|}}
+    {{#card.content class="layout-column layout-align-space-between"}}
+      <div class="layout-row">
+        <div class="layout-column flex-50">
+          {{form.input label="Prénom" value=firstName onChange=(action (mut firstName)) required=true}}
+        </div>
+        <div class="layout-column flex-50">
+          {{form.input label="Nom" value=lastName onChange=(action (mut lastName))}}
+        </div>
       </div>
-      <div class="col-6">
-        {{ input-field
-           label="Nom"
-           placeholder="Votre nom"
-           error=lastNameError
-           value=lastName
-           type="text"
-        }}
+      <div class="layout-row">
+        <div class="layout-column flex-100">
+          {{form.input label="Adresse email" value=email type="email" onChange=(action (mut email))}}
+        </div>
       </div>
-    </div>
+    {{/card.content}}
 
-    {{ input-field
-       label="Adresse email"
-       placeholder="Votre adresse email"
-       error=emailError
-       value=email
-       type="text"
-    }}
+    {{#card.actions}}
+      {{#form.submit-button disabled=submitButtonDisabled raised=true primary=true }}
+        Enregistrer
+      {{/form.submit-button}}
+    {{/card.actions}}
+  {{/paper-form}}
+{{/paper-card}}
 
-    <button type="submit" class="btn btn-primary btn-block" disabled={{submitButtonDisabled}}>
-      {{#if isLoading}}
-        <i class="fa fa-spinner fa-pulse fa-fw"></i>
-      {{else}}
-        Enregistrer les modifications
-      {{/if}}
-    </button>
+{{!-- <form {{action "signin" on="submit"}}> --}}
+  {{!-- <fieldset disabled={{isLoading}}> --}}
+    {{!-- <div class="row"> --}}
+      {{!-- <div class="col-6"> --}}
+        {{!-- {{ input-field --}}
+           {{!-- label="Prénom" --}}
+           {{!-- placeholder="Votre prénom" --}}
+           {{!-- error=firstNameError --}}
+           {{!-- value=firstName --}}
+           {{!-- type="text" --}}
+        {{!-- }} --}}
+      {{!-- </div> --}}
+      {{!-- <div class="col-6"> --}}
+        {{!-- {{ input-field --}}
+           {{!-- label="Nom" --}}
+           {{!-- placeholder="Votre nom" --}}
+           {{!-- error=lastNameError --}}
+           {{!-- value=lastName --}}
+           {{!-- type="text" --}}
+        {{!-- }} --}}
+      {{!-- </div> --}}
+    {{!-- </div> --}}
 
-  </fieldset>
-</form>
+    {{!-- {{ input-field --}}
+       {{!-- label="Adresse email" --}}
+       {{!-- placeholder="Votre adresse email" --}}
+       {{!-- error=emailError --}}
+       {{!-- value=email --}}
+       {{!-- type="text" --}}
+    {{!-- }} --}}
+
+    {{!-- <button type="submit" class="btn btn-primary btn-block" disabled={{submitButtonDisabled}}> --}}
+      {{!-- {{#if isLoading}} --}}
+        {{!-- <i class="fa fa-spinner fa-pulse fa-fw"></i> --}}
+      {{!-- {{else}} --}}
+        {{!-- Enregistrer les modifications --}}
+      {{!-- {{/if}} --}}
+    {{!-- </button> --}}
+
+  {{!-- </fieldset> --}}
+{{!-- </form> --}}

@@ -63,6 +63,8 @@ get('/terms', routes.terms.get);
 post('/reset-password', routes.resetPassword.post);
 get('/reset-password/:token', routes.resetPassword.get);
 
+post('/twilio/token', routes.twilio.token.post);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {

@@ -1,33 +1,74 @@
-<h1>Mot de passe</h1>
-<div class="row">
-  <div class="col-12">
-    <form {{action "updatePassword" on="submit"}}>
+{{#paper-card as |card|}}
+  {{#paper-toolbar}}
+    {{#paper-toolbar-tools}}
+      <h2>Mot de passe</h2>
+    {{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
 
-      <fieldset disabled={{isLoading}}>
-        {{ input-field
-           label="Mot de passe actuel"
-           placeholder="Entrez votre mot de passe"
-           error=currentPasswordError
-           value=currentPassword
-           type="password"
-        }}
+  {{#paper-form onSubmit=(action "updatePassword") as |form|}}
+    {{#card.content class="layout-column layout-align-space-between"}}
+      <div class="layout-row">
+        <div class="layout-column flex-100">
+          {{form.input
+            label="Mot de passe actuel"
+            value=currentPassword
+            type="password"
+            onChange=(action (mut currentPassword))
+            required=true
+          }}
+        </div>
+      </div>
+      <div class="layout-row">
+        <div class="layout-column flex-100">
+          {{form.input
+            label="Nouveau mot de passe"
+            value=newPassword
+            type="password"
+            onChange=(action (mut newPassword))
+            required=true
+          }}
+        </div>
+      </div>
+    {{/card.content}}
 
-        {{ input-field
-           label="Nouveau mot de passe"
-           placeholder="Mot de passe"
-           error=newPasswordError
-           value=newPassword
-           type="password"
-        }}
+    {{#card.actions}}
+      {{#form.submit-button disabled=submitButtonDisabled raised=true primary=true }}
+        Enregistrer
+      {{/form.submit-button}}
+    {{/card.actions}}
+  {{/paper-form}}
+{{/paper-card}}
 
-        <button type="submit" class="btn btn-primary btn-block">
-          {{#if isLoading}}
-            <i class="fa fa-spinner fa-pulse fa-fw"></i>
-          {{else}}
-            Modifier mon mot de passe
-          {{/if}}
-        </button>
-      </fieldset>
-    </form>
-  </div>
-</div>
+{{!-- <h1>Mot de passe</h1> --}}
+{{!-- <div class="row"> --}}
+  {{!-- <div class="col-12"> --}}
+    {{!-- <form {{action "updatePassword" on="submit"}}> --}}
+
+      {{!-- <fieldset disabled={{isLoading}}> --}}
+        {{!-- {{ input-field --}}
+           {{!-- label="Mot de passe actuel" --}}
+           {{!-- placeholder="Entrez votre mot de passe" --}}
+           {{!-- error=currentPasswordError --}}
+           {{!-- value=currentPassword --}}
+           {{!-- type="password" --}}
+        {{!-- }} --}}
+
+        {{!-- {{ input-field --}}
+           {{!-- label="Nouveau mot de passe" --}}
+           {{!-- placeholder="Mot de passe" --}}
+           {{!-- error=newPasswordError --}}
+           {{!-- value=newPassword --}}
+           {{!-- type="password" --}}
+        {{!-- }} --}}
+
+        {{!-- <button type="submit" class="btn btn-primary btn-block"> --}}
+          {{!-- {{#if isLoading}} --}}
+            {{!-- <i class="fa fa-spinner fa-pulse fa-fw"></i> --}}
+          {{!-- {{else}} --}}
+            {{!-- Modifier mon mot de passe --}}
+          {{!-- {{/if}} --}}
+        {{!-- </button> --}}
+      {{!-- </fieldset> --}}
+    {{!-- </form> --}}
+  {{!-- </div> --}}
+{{!-- </div> --}}

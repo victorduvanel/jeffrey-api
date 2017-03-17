@@ -7,6 +7,25 @@ export default Ember.Controller.extend({
   currentUser: service(),
   user: Ember.computed.alias('currentUser.user'),
 
+  phoneNumberController: Ember.inject.controller('dashboard.phone-number.phone-number'),
+  phoneNumbersController: Ember.inject.controller('dashboard.phone-number'),
+
+  selectedPhoneNumber: Ember.computed.alias('phoneNumberController.phoneNumber'),
+  phoneNumbers: Ember.computed.alias('phoneNumbersController.phoneNumbers'),
+
+  availablePhoneNumbers: Ember.computed('selectedPhoneNumber', 'phoneNumbers', function() {
+    const selectedPhoneNumber = this.get('selectedPhoneNumber');
+    const phoneNumbers = this.get('phoneNumbers');
+
+    if (!selectedPhoneNumber) {
+      return phoneNumbers;
+    }
+
+    if (!phoneNumbers) {
+      return phoneNumbers.filter((phoneNumber) => phoneNumber !== selectedPhoneNumber);
+    }
+  }),
+
   userLinkLabel: Ember.computed('user.firstName', 'user.lastName', function() {
     let label = 'Mon compte';
 

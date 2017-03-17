@@ -10,9 +10,10 @@ import * as messages       from './messages';
 import * as invoices       from './invoices';
 import * as terms          from './terms';
 import * as resetPassword  from './reset-password';
+import * as twilio         from './twilio';
 
 export default {
   webhook, oauth, me, activate, signup, northsigner,
   paymentMethods, phoneNumber, messages, invoices,
-  terms, resetPassword
+  terms, resetPassword, twilio
 };

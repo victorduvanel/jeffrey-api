@@ -1,31 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="row">
-        <div class="col-12 col-6 col-md-8">
-          {{outlet}}
-        </div>
-        <div class="col-6 col-md-4 p-t-3">
+<div class="layout-row">
+  <div class="layout-column flex-20">
+    {{#paper-list}}
+      {{#paper-item onClick=(action (transition-to "dashboard.settings.account")) as |controls|}}
+        {{paper-icon "person"}}
+        <p>Mon compte</p>
+      {{/paper-item}}
 
-          <div class="list-group">
-            {{#link-to "dashboard.settings.account" class="list-group-item clearfix"}}
-              Mon compte <i class="icon-user pull-right"></i>
-            {{/link-to}}
+      {{#paper-item onClick=(action (transition-to "dashboard.settings.password")) as |controls|}}
+        {{paper-icon "vpn key"}}
+        <p>Mot de passe</p>
+      {{/paper-item}}
 
-            {{#link-to "dashboard.settings.password" class="list-group-item clearfix"}}
-              Mot de passe
-            {{/link-to}}
+      {{#paper-item onClick=(action (transition-to "dashboard.settings.billing")) as |controls|}}
+        {{paper-icon "receipt"}}
+        <p>Facturation</p>
+      {{/paper-item}}
 
-            {{#link-to "dashboard.settings.billing" class="list-group-item clearfix"}}
-              Facturation <i class="icon-credit-cards pull-right"></i>
-            {{/link-to}}
-
-            {{#link-to "dashboard.settings.payment-methods" class="list-group-item clearfix"}}
-              Moyens de paiment <i class="icon-credit-cards pull-right"></i>
-            {{/link-to}}
-          </div>
-        </div>
-      </div>
-    </div>
+      {{#paper-item onClick=(action (transition-to "dashboard.settings.payment-methods")) as |controls|}}
+        {{paper-icon "credit card"}}
+        <p>Moyens de paiment</p>
+      {{/paper-item}}
+    {{/paper-list}}
+  </div>
+  <div class="layout-column flex-80">
+    {{outlet}}
   </div>
 </div>

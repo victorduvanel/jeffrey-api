@@ -62,5 +62,11 @@ export default Ember.Controller.extend({
       email,
       emailError     : null
     });
+  },
+
+  actions: {
+    saveInfo() {
+
+    }
   }
 });

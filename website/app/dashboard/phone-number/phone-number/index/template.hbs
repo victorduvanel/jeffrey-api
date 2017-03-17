@@ -1,24 +1,68 @@
-<form {{action "sendMessage" on="submit"}}>
-  <fieldset>
-    <h3 class="mb-3">Envoyer un message</h3>
-    {{ input-field
-       label="Destinataire"
-       placeholder="Numéro de téléphone"
-       value=toPhoneNumber
-    }}
+<div class="layout-row layout-align-center-center">
+  <div class="layout-column flex-50">
+    {{#paper-card as |card|}}
+      {{#paper-toolbar}}
+        {{#paper-toolbar-tools}}
+          <h2>Nouveau message</h2>
+          <span class="flex"></span>
 
-    <div class="form-group">
-      {{ textarea
-         value=message
-         placeholder="Message"
-         class="form-control"
-      }}
-    </div>
+          {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
+            {{#menu.trigger}}
+              {{#paper-button iconButton=true}}
+                {{paper-icon "more_vert"}}
+              {{/paper-button}}
+            {{/menu.trigger}}
 
-    <button class="btn btn-primary" type="submit">Envoyer</button>
-  </fieldset>
-</form>
+            {{#menu.content as |content|}}
+              {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.phone-number.cancel"))}}
+                <span>Annuler mon abonement</span>
+              {{/content.menu-item}}
+            {{/menu.content}}
+          {{/paper-menu}}
+        {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
 
-{{#link-to 'dashboard.phone-number.phone-number.cancel'}}
-  Annuler mon abonement
-{{/link-to}}
+      {{#paper-form as |form|}}
+        {{#card.content class="layout-column"}}
+          {{paper-input placeholder="Phone Number" type="text" value=user.phone onChange=(action (mut user.phone)) }}
+          {{ paper-input
+             textarea=true
+             block=true
+             label="Message"
+             maxlength=160
+             passThru=(hash rows=5 maxRows=5)
+             value=message
+             onChange=(action (mut message))
+          }}
+        {{/card.content}}
+
+        {{#card.actions}}
+          {{#form.submit-button raised=true primary=true }}
+            Envoyer
+          {{/form.submit-button}}
+        {{/card.actions}}
+      {{/paper-form}}
+    {{/paper-card}}
+  </div>
+</div>
+
+{{!-- <form {{action "sendMessage" on="submit"}}> --}}
+  {{!-- <fieldset> --}}
+    {{!-- <h3 class="mb-3">Envoyer un message</h3> --}}
+    {{!-- {{ input-field --}}
+       {{!-- label="Destinataire" --}}
+       {{!-- placeholder="Numéro de téléphone" --}}
+       {{!-- value=toPhoneNumber --}}
+    {{!-- }} --}}
+
+    {{!-- <div class="form-group"> --}}
+      {{!-- {{ textarea --}}
+         {{!-- value=message --}}
+         {{!-- placeholder="Message" --}}
+         {{!-- class="form-control" --}}
+      {{!-- }} --}}
+    {{!-- </div> --}}
+
+    {{!-- <button class="btn btn-primary" type="submit">Envoyer</button> --}}
+  {{!-- </fieldset> --}}
+{{!-- </form> --}}

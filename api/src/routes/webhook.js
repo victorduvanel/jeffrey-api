@@ -1,12 +1,15 @@
-import bodyParser     from 'body-parser';
-import { sendEmail }  from '../services/mailgun';
-import { render }     from '../services/handlebars';
+import twilioMiddleware from '../middlewares/twilio';
+import bodyParser       from 'body-parser';
+import { sendEmail }    from '../services/mailgun';
+import { render }       from '../services/handlebars';
 
-import PhoneNumber    from '../models/phone-number';
-import Message        from '../models/message';
+import PhoneNumber      from '../models/phone-number';
+import Message          from '../models/message';
 
 export const post = [
   bodyParser.urlencoded({ extended: false }),
+
+  twilioMiddleware,
 
   async (req, res) => {
     const body  = req.body;

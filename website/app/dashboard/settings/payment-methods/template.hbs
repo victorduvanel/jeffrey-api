@@ -1,15 +1,19 @@
 {{#if paymentMethod}}
-  <div class="row">
-    <div class="jumbotron">
-      <h2>Moyens de payment</h2>
+  {{#paper-card as |card|}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        <h2>Vos moyens de paiment</h2>
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
 
+    {{#card.content class="layout-column layout-align-space-between"}}
       <table class="table">
         <thead>
           <tr>
-            <th>Card</th>
-            <th>Number</th>
-            <th>Expiration</th>
-            <th>Name on card</th>
+            <th>Type</th>
+            <th>Numéro de carte</th>
+            <th>Date d'expiration</th>
+            <th>Propriétaire</th>
           </tr>
         </thead>
         <tbody>
@@ -21,8 +25,8 @@
           </tr>
         </tbody>
       </table>
-    </div>
-  </div>
+    {{/card.content}}
+  {{/paper-card}}
 {{/if}}
 
-{{payment-details}}
+{{payment-details title="Mettre à jour"}}

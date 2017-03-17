@@ -1,9 +1,6 @@
 
-@import "_bootstrap-variables";
-@import "../../bower_components/bootstrap/scss/bootstrap";
 
-@import "_font-awesome-variables";
-@import "../../bower_components/font-awesome/scss/font-awesome";
+@import 'ember-paper';
 
 @import "../../bower_components/animatewithsass/animate.scss";
 
@@ -110,3 +107,14 @@ html, body, body > .ember-view {
   width: 111.781px;
   height: 30px;
 }
+
+.nav-link {
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@import "phone-dialer.scss";

@@ -1,22 +1,40 @@
-<nav class="navbar navbar-toggleable-xl navbar-inverse bg-inverse">
-  {{#link-to "dashboard" class="navbar-brand"}}
-    <div class="prestine-logo-small align-top"></div>
-  {{/link-to}}
+{{phone-dialer}}
+
+{{#paper-toolbar}}
+  {{#paper-toolbar-tools}}
+    {{#link-to "dashboard" class="prestine-logo-small"}}{{/link-to}}
+
+    <span class="flex"></span>
+
+    {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button onClick=null}}
+          {{selectedPhoneNumber.formated}}
+        {{/paper-button}}
+      {{/menu.trigger}}
+
+      {{#menu.content as |content|}}
+        {{#each availablePhoneNumbers as |phoneNumber| }}
+          {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.phone-number" phoneNumber))}}
+            <span>{{phoneNumber.formated}}</span>
+          {{/content.menu-item}}
+        {{/each}}
+
+        {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.new"))}}
+          <span>Obtenir un numero</span>
+        {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}}
+
+    {{#paper-button onClick=(action (transition-to "dashboard.settings"))}}
+      {{userLinkLabel}}
+    {{/paper-button}}
+
+    {{#paper-button iconButton=true onClick=(action "logout")}}
+      {{paper-icon "exit to app"}}
+    {{/paper-button}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
 
 
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      {{#link-to "dashboard.settings" class="nav-link"}}
-        {{userLinkLabel}}
-      {{/link-to}}
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-link logout-button" {{ action "logout" }}>
-        <i class="fa fa-sign-out" aria-hidden="true"></i>
-      </button>
-    </li>
-  </ul>
-</nav>
-<div class="h-100 pt-3">
-  {{outlet}}
-</div>
+{{outlet}}

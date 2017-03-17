@@ -2,21 +2,7 @@
   <div class="row h-100">
     <div class="col-12 h-100">
       <div class="h-100 row">
-        {{#if phoneNumbers}}
-          <div class="col-6 col-md-4 p-t-3">
-            <div class="list-group">
-              {{#link-to "dashboard.phone-number.new" class="list-group-item"}}Obtenir un numero{{/link-to}}
-
-              {{#each phoneNumbers as |phoneNumber| }}
-                {{#link-to "dashboard.phone-number.phone-number" phoneNumber class="list-group-item"}}
-                  {{phoneNumber.formated}}
-                {{/link-to}}
-              {{/each}}
-            </div>
-          </div>
-        {{/if}}
-
-        <div class="h-100 {{if phoneNumbers 'col-6 col-md-8' 'col-12'}}">
+        <div class="h-100 col-6">
           {{outlet}}
         </div>
       </div>
