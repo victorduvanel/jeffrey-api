@@ -1,88 +1,46 @@
-<div class="container-fluid minh-100">
-  <div class="row">
-    <div class="offset-md-4 col-4 text-center py-5">
-      <div class="prestine-logo"></div>
-    </div>
+<div class="signup-view">
+  <div class="layout-column layout-align-center-center">
+    <div class="flat-shadow-logo"></div>
+    <h1 class="text-logo">prestine.io</h1>
   </div>
-
-  <div class="container pricing rounded">
-    <div class="row">
-      <div class="col-9 py-4 px-3">
-        <h3>Obtenez votre numéro Prestine</h3>
-
-        <hr />
-
-        <ul class="pricing-features">
-          <li>Sans engagement</li>
-          <li>Envoyez et recevez des SMS</li>
-          <li>Assistance 24/7</li>
-          <li>Recevez vos SMS sur votre boite mail</li>
-          <li>Numéro de téléphone mobile (06 ou 07)</li>
-          <li>Envoyez et recevez depuis et vers l’international</li>
-          <li>Aucune carte SIM requise</li>
-          <li>Téléphone mobile non requis</li>
-        </ul>
-      </div>
-
-      <div class="col-3 pricing-action-area">
-        <div class="pricing-meta">
-          Votre numéro
-        </div>
-        <div class="pricing-price">
-          5<span class="price-unit">&euro;</span>
-          <div class="price-tenure">par mois</div>
-        </div>
-        <div class="pricing-action">
-          <button type="button" class="btn btn-primary button-xlarge btn-block" {{ action "subscribeButtonPressed" }}>
-            Souscrire
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-8 offset-2 col-4 px-5 py-4 light-background">
-      {{#if success}}
-        <div class="alert alert-success mt-1" role="alert">
-          Vérifiez votre boite mail pour finaliser votre inscription
-        </div>
-      {{else}}
-        {{#if error}}
-          <div class="alert alert-danger mt-1" role="alert">{{error}}</div>
-          <button {{ action "retry" }}>Réessayer</button>
-        {{else}}
-          <form {{action "submitEmail" on="submit"}}>
-            <fieldset disabled={{ isLoading }}>
-              {{#animable-content shake=shakeEmailInput}}
-                {{ input-field
-                   label="Adresse email"
-                   hint="Nous ne partagerons jamais votre adresse email avec un tier."
-                   placeholder="Entrez votre adresse email"
-                   value=email
-                   type="email"
-                   classNames=inputClassNames
-                   focused=emailInputFocused
-                }}
-              {{/animable-content}}
-
-              <button type="submit" class="btn btn-primary btn-block">
-                {{#if isLoading}}
-                  <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                {{else}}
-                  Créer un compte
-                {{/if}}
-              </button>
-            </fieldset>
-          </form>
-        {{/if}}
-      {{/if}}
-
-      <hr />
-
-      {{#link-to "login" class="btn btn-link btn-block"}}
+  <div class="layout-row layout-align-center">
+    <div class="layout-column flex-40">
+      {{#paper-card as |card|}}
+        {{#paper-form onSubmit=(action "submitEmail") as |form|}}
+          {{#card.content class="layout-column layout-align-space-between"}}
+            {{#animable-content shake=shakeEmailInput}}
+            <div class="layout-row">
+                <div class="layout-column flex-100">
+                    {{form.input label="Adresse e-mail" value=email onChange=(action (mut email))}}
+                </div>
+            </div>
+            {{/animable-content}}
+            {{#form.submit-button disabled=isLoading raised=true primary=true }}
+              Créer un compte
+            {{/form.submit-button}}
+          {{/card.content}}
+        {{/paper-form}}
+      {{/paper-card}}
+      {{#paper-button class="white-link" onClick=(action (transition-to "login"))}}
         Je posséde déjà un compte
-      {{/link-to}}
+      {{/paper-button}}
+    </div>
+  </div>
+
+  <div class="container-fluid minh-100">
+    <div class="row">
+      <div class="col-8 offset-2 col-4 px-5 py-4 light-background">
+        {{#if success}}
+          <div class="alert alert-success mt-1" role="alert">
+            Vérifiez votre boite mail pour finaliser votre inscription
+          </div>
+        {{else}}
+          {{#if error}}
+            <div class="alert alert-danger mt-1" role="alert">{{error}}</div>
+            <button {{ action "retry" }}>Réessayer</button>
+          {{/if}}
+        {{/if}}
+      </div>
     </div>
   </div>
 </div>

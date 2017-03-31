@@ -1,40 +1,50 @@
-{{phone-dialer}}
+{{!-- {{phone-dialer}} --}}
 
-{{#paper-toolbar}}
-  {{#paper-toolbar-tools}}
-    {{#link-to "dashboard" class="prestine-logo-small"}}{{/link-to}}
+<div class="layout-column dashboard-view">
+  <div class="flex-none">
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        {{#link-to "dashboard" class="prestine-logo-small"}}{{/link-to}}
 
-    <span class="flex"></span>
+        <span class="flex"></span>
 
-    {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
-      {{#menu.trigger}}
-        {{#paper-button onClick=null}}
-          {{selectedPhoneNumber.formated}}
+        {{#paper-button onClick=(action (transition-to "dashboard.conversations"))}}
+          Conversations
         {{/paper-button}}
-      {{/menu.trigger}}
 
-      {{#menu.content as |content|}}
-        {{#each availablePhoneNumbers as |phoneNumber| }}
-          {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.phone-number" phoneNumber))}}
-            <span>{{phoneNumber.formated}}</span>
-          {{/content.menu-item}}
-        {{/each}}
+        {{#paper-button onClick=(action "enablePushNotifications")}}
+          Enable push notifications
+        {{/paper-button}}
 
-        {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.new"))}}
-          <span>Obtenir un numero</span>
-        {{/content.menu-item}}
-      {{/menu.content}}
-    {{/paper-menu}}
+        {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
+          {{#menu.trigger}}
+            {{#paper-button onClick=null}}
+              {{selectedPhoneNumber.formated}}
+            {{/paper-button}}
+          {{/menu.trigger}}
 
-    {{#paper-button onClick=(action (transition-to "dashboard.settings"))}}
-      {{userLinkLabel}}
-    {{/paper-button}}
+          {{#menu.content as |content|}}
+            {{#each availablePhoneNumbers as |phoneNumber| }}
+              {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.phone-number" phoneNumber))}}
+                <span>{{phoneNumber.formated}}</span>
+              {{/content.menu-item}}
+            {{/each}}
 
-    {{#paper-button iconButton=true onClick=(action "logout")}}
-      {{paper-icon "exit to app"}}
-    {{/paper-button}}
-  {{/paper-toolbar-tools}}
-{{/paper-toolbar}}
+            {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.new"))}}
+              <span>Obtenir un numero</span>
+            {{/content.menu-item}}
+          {{/menu.content}}
+        {{/paper-menu}}
 
+        {{#paper-button onClick=(action (transition-to "dashboard.settings"))}}
+          {{userLinkLabel}}
+        {{/paper-button}}
 
-{{outlet}}
+        {{#paper-button iconButton=true onClick=(action "logout")}}
+          {{paper-icon "exit to app"}}
+        {{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+  </div>
+  {{outlet}}
+</div>

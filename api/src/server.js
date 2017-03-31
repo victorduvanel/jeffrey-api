@@ -1,18 +1,20 @@
 import 'regenerator-runtime/runtime';
 
-import chalk                 from 'chalk';
-import http                  from 'http';
-import express               from 'express';
-import Promise               from 'bluebird';
+import chalk                             from 'chalk';
+import http                              from 'http';
+import express                           from 'express';
+import Promise                           from 'bluebird';
 
-import config                from './config';
-import routes                from './routes';
+import config                            from './config';
+import routes                            from './routes';
 
-import logger                from './middlewares/logger';
-import corsPolicy            from './middlewares/cors-policy';
-import notFound              from './middlewares/not-found';
-import errorHandler from './middlewares/error-handler';
+import logger                            from './middlewares/logger';
+import corsPolicy                        from './middlewares/cors-policy';
+import notFound                          from './middlewares/not-found';
+import errorHandler                      from './middlewares/error-handler';
 import { router, get, post, patch, del } from './middlewares/router';
+
+import notificationService               from './services/notification';
 
 export const httpServer = http.createServer();
 const app = express();
@@ -23,6 +25,8 @@ if (config.PRODUCTION) {
 }
 
 app.use(logger, corsPolicy, router, notFound, errorHandler);
+
+notificationService(httpServer);
 
 httpServer.on('request', app);
 
@@ -53,6 +57,7 @@ get('/phone-numbers/:phone_number_id', routes.phoneNumber.getOne);
 del('/phone-numbers/:phone_number_id', routes.phoneNumber.destroy);
 post('/phone-numbers', routes.phoneNumber.post);
 
+get('/messages', routes.messages.get);
 post('/messages', routes.messages.post);
 
 get('/invoices', routes.invoices.get);
@@ -65,6 +70,12 @@ get('/reset-password/:token', routes.resetPassword.get);
 
 post('/twilio/token', routes.twilio.token.post);
 post('/twilio/hook', routes.twilio.hook.post);
+
+post('/web-notification', routes.webNotification.post);
+
+get('/conversations', routes.conversations.get);
+post('/conversations', routes.conversations.post);
+get('/conversations/:conversation_id', routes.conversations.getOne);
 
 let _listenProm = null;
 export const listen = () => {

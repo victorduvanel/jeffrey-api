@@ -1,6 +1,8 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
+var uglify = require('broccoli-uglify-sourcemap');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -8,6 +10,18 @@ module.exports = function(defaults) {
       prepend: 'https://static.prestine.io/'
     }
   });
+
+  var workers = new Funnel('workers', {
+    include: ['*.js'],
+    destDir: '/assets/workers'
+  });
+
+  if (process.env.EMBER_ENV === 'production') {
+    workers = uglify(workers, {
+      mangle: true,
+      compress: true
+    });
+  }
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -41,5 +55,5 @@ module.exports = function(defaults) {
     destDir: 'assets/fonts'
   });
 
-  return app.toTree();
+  return app.toTree(workers);
 };

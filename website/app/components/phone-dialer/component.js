@@ -15,7 +15,7 @@ export default Ember.Component.extend({
     startCall() {
       const twilio = this.get('twilio');
 
-      twilio.startCall('+33644641618', '+33651648566');
+      twilio.startCall('+33644641618', /* '+33651648566' */ '+333957');
     }
   }
 });

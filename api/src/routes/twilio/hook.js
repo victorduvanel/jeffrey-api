@@ -50,7 +50,7 @@ const ringing = async (req, res) => {
   res.send([
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<Response>',
-    `<Dial callerId="${fromNumber.get('phoneNumber')}" method="POST" action="https://api.prestine.io/twilio/hook">`,
+    `<Dial callerId="${fromNumber.get('phoneNumber')}" method="POST" action="https://eb9cc133.ngrok.io/twilio/hook">`,
     toNumber.get('phoneNumber'),
     '</Dial>',
     '</Response>'

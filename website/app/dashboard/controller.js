@@ -4,6 +4,8 @@ const { service } = Ember.inject;
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  pushNotification: Ember.inject.service(),
+
   currentUser: service(),
   user: Ember.computed.alias('currentUser.user'),
 
@@ -45,6 +47,24 @@ export default Ember.Controller.extend({
   actions: {
     logout() {
       this.get('session').invalidate();
+    },
+
+    enablePushNotifications() {
+      const pushNotification = this.get('pushNotification');
+      if (pushNotification.get('platformSupported')) {
+
+        pushNotification.getSubscription()
+          .then((subscription) => {
+            if (!subscription) {
+              return pushNotification.createSubscription()
+                .then((subscription) => {
+                  return subscription;
+                });
+            } else {
+              return subscription;
+            }
+          });
+      }
     }
   }
 });

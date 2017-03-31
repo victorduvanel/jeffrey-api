@@ -1,9 +1,10 @@
-import Promise      from 'bluebird';
-import nativeBcrypt from 'bcryptjs';
-import bookshelf    from '../services/bookshelf';
-import uuid         from 'uuid';
-import Base         from './base';
-import AccessToken  from './access-token';
+import Promise                      from 'bluebird';
+import nativeBcrypt                 from 'bcryptjs';
+import bookshelf                    from '../services/bookshelf';
+import uuid                         from 'uuid';
+import Base                         from './base';
+import AccessToken                  from './access-token';
+import { send as sendNotification } from '../services/notification';
 
 export const InvalidCredentials = new Error('Invalid Credentials');
 export const DuplicatedUser = new Error('Duplicated User');
@@ -13,19 +14,19 @@ const bcrypt = Promise.promisifyAll(nativeBcrypt);
 const User = Base.extend({
   tableName: 'users',
 
-  stripeCustomer: function() {
+  stripeCustomer() {
     return this.hasMany('StripeCustomer');
   },
 
-  phoneNumbers: function() {
+  phoneNumbers() {
     return this.hasMany('PhoneNumber');
   },
 
-  createAccessToken: function({ singleUse = false }) {
+  createAccessToken({ singleUse = false }) {
     return AccessToken.create({ user: this, singleUse });
   },
 
-  updatePassword: function(newPassword) {
+  updatePassword(newPassword) {
     const saltRounds = 10;
 
     return bcrypt.hashAsync(newPassword, saltRounds)
@@ -34,7 +35,7 @@ const User = Base.extend({
       });
   },
 
-  paymentMethodStatus: async function() {
+  async paymentMethodStatus() {
     await this.load('stripeCustomer');
 
     const customers = this.related('stripeCustomer');
@@ -57,6 +58,10 @@ const User = Base.extend({
     } else {
       return 'ok';
     }
+  },
+
+  sendMessage(message) {
+    sendNotification(this, message);
   },
 
   toJSON() {

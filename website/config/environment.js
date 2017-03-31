@@ -18,6 +18,7 @@ module.exports = function(environment) {
     },
 
     APP: {
+      PUSH_NOTIFICATION_PUBLIC_KEY: 'BFARvvLAfWlPm9fGIYMWdOsPXxIfpkRMyi-Cdd1Z6iFAHz8Za84IEVjWGc79yTkSFPkIOQiK9_xyxsfzDunupyU',
       RECAPTCHA_LANGUAGE: 'fr'
       // Here you can pass flags/options to your application instance
       // when it is created

@@ -4,5 +4,12 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 const { service } = Ember.inject;
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  currentUser: service()
+  currentUser: service(),
+  notification: service(),
+  session: service(),
+
+  afterModel() {
+    this._super(...arguments);
+    this.get('notification').connect();
+  },
 });

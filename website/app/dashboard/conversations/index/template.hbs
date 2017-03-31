@@ -1,0 +1,27 @@
+{{#paper-select
+  label="Numéro de téléphone"
+  options=phoneNumbers
+  selected=phoneNumber
+  onChange=(action (mut phoneNumber))
+  as |phoneNumber|}}
+  {{phoneNumber.formated}}
+{{/paper-select}}
+
+{{ paper-input
+   block=true
+   label="To"
+   value=to
+   onChange=(action (mut to))
+}}
+
+{{ paper-input
+   block=true
+   label="Message"
+   maxlength=160
+   value=message
+   onChange=(action (mut message))
+}}
+
+{{#paper-button onClick=(action "createConversation")}}
+  Envoyer
+{{/paper-button}}

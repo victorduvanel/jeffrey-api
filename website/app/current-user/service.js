@@ -21,5 +21,15 @@ export default Ember.Service.extend({
     } else {
       return Ember.RSVP.resolve();
     }
+  },
+
+  getSingleUseToken() {
+    return this.get('ajax')
+      .request('/oauth/single-use-token', {
+        method: 'POST'
+      })
+      .then((res) => {
+        return res.access_token;
+      });
   }
 });

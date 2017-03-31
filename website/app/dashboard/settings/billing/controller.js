@@ -2,15 +2,14 @@ import Ember from 'ember';
 import config from '../../../config/environment';
 
 export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
+  currentUser: Ember.inject.service(),
+
   actions: {
     openInvoicePopup(invoice) {
-      this.get('ajax')
-        .request('/oauth/single-use-token', {
-          method: 'POST'
-        })
-        .then((res) => {
-          const token = encodeURIComponent(res.access_token);
+      this.get('currentUser')
+        .getSingleUseToken()
+        .then((token) => {
+          token = encodeURIComponent(token);
           const apiHost = config.APP.API_HOST;
 
           const invoiceId = encodeURIComponent(invoice.get('id'));

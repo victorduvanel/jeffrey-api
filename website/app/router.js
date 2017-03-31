@@ -25,6 +25,9 @@ Router.map(function() {
         this.route('confirm');
       });
     });
+    this.route('conversations', function() {
+      this.route('conversation', { path: '/:conversation_id' });
+    });
   });
   this.route('reset-password', { path: '/reset-password/:token' });
   this.route('activate', function() {

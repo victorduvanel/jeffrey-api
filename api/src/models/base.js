@@ -28,4 +28,9 @@ export default bookshelf.Model.extend({
 
     return this.format(attrs);
   }
+}, {
+  find: function(id) {
+    return this.forge({ id })
+      .fetch();
+  }
 });

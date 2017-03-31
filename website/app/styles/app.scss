@@ -1,4 +1,13 @@
 
+$primary: "teal";
+$accent: "light-green";
+$warn: "pink";
+
+// If desired, import the palettes and modify to your liking.
+@import "color-palette";
+$color-teal: map-merge($color-teal, ('contrast':  $light-contrast-color));
+$color-light-green: map-merge($color-light-green, ('contrast':  $light-contrast-color));
+
 
 @import 'ember-paper';
 
@@ -9,6 +18,10 @@
 
 html, body, body > .ember-view {
   width: 100%;
+  height: 100%;
+}
+
+.dashboard-view {
   height: 100%;
 }
 
@@ -117,4 +130,56 @@ button {
   cursor: pointer;
 }
 
+.signup-view, .login-view {
+  padding-top: 50px;
+  min-height: 100%;
+  background-color: #00B28B;
+  box-sizing: border-box;
+
+  .white-link {
+    color: #ffffff;
+  }
+}
+
+.flat-shadow-logo {
+  width: 220px;
+  height: 220px;
+  background-image: url('/assets/images/flat-shadow-logo.png');
+  background-size: 100%;
+}
+
+.text-logo {
+  color: #ffffff;
+  font-family: 'Rift';
+  font-size: 40pt;
+}
+
+.scroll-y {
+  overflow-y: scroll;
+}
+
+.delimited, .delimited-top, .delimited-right,
+.delimited-bottom, .delimited-left
+{
+  border-style: solid;
+  border-color: color($primary, '200');
+  border-width: 0;
+}
+.delimited {
+  border-width: 1px;
+}
+.delimited-top {
+  border-top-width: 1px;
+}
+.delimited-right {
+  border-right-width: 1px;
+}
+.delimited-bottom {
+  border-bottom-width: 1px;
+}
+.delimited-left {
+  border-left-width: 1px;
+}
+
 @import "phone-dialer.scss";
+@import "conversation.scss";
