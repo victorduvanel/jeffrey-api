@@ -54,5 +54,5 @@ export default async (httpServer) => {
 };
 
 export const send = (user, message) => {
-  redis.pub.publish(channelNameForUser(user), message);
+  redis.pub.publish(channelNameForUser(user), JSON.stringify(message));
 };

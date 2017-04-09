@@ -1,45 +1,15 @@
-<div class="flex-none">
-  {{#paper-toolbar}}
-    {{ paper-input
-       block=true
-       label="To"
-       value=to
-       onChange=(action (mut to))
-    }}
-  {{/paper-toolbar}}
+<div local-class="header">
+  {{phone-number number=conversation.to}}
 </div>
-
 <div class="flex-grow scroll-y conversation">
   {{#if messages.loading}}
     Loading
   {{else}}
-    <ul class="messages-list">
-    {{#each messages as |message|}}
-      <li class="message message-{{message.type}}">
-        <div class="message-message">{{message.message}}</div>
-      </li>
-    {{/each}}
-    </ul>
+    {{conversation-messages messages=messages}}
   {{/if}}
 </div>
-
-<div class="flex-none">
-  {{#paper-form onSubmit=(action "sendMessage") as |form|}}
-    <div class="layout-row">
-      <div class="flex-grow">
-        {{ paper-input
-           block=true
-           label="Message"
-           maxlength=160
-           value=message
-           onChange=(action (mut message))
-        }}
-      </div>
-      <div class="flex-none layout-column layout-align-center">
-        {{#form.submit-button iconButton=true}}
-          {{paper-icon "send"}}
-        {{/form.submit-button}}
-      </div>
-    </div>
-  {{/paper-form}}
+<div>
+  <form {{ action "sendMessage" on="submit" }}>
+    {{ input placeholder="Message" local-class="message-input" value=message }}
+  </form>
 </div>

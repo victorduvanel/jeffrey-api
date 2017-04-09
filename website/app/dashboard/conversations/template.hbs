@@ -9,7 +9,7 @@
           {{#each conversations as |conversation|}}
             {{#paper-item onClick=(action (transition-to "dashboard.conversations.conversation" conversation)) as |controls|}}
               {{conversation.name}}
-              {{conversation.to}}
+              {{phone-number number=conversation.to}}
             {{/paper-item}}
           {{/each}}
         {{/paper-list}}

@@ -8,6 +8,9 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     fingerprint: {
       prepend: 'https://static.prestine.io/'
+    },
+    cssModules: {
+      intermediateOutputPath: 'app/styles/_modules.scss'
     }
   });
 

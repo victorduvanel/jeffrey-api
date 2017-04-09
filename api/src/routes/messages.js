@@ -4,7 +4,6 @@ import config           from '../config';
 import oauth2           from '../middlewares/oauth2';
 import Message          from '../models/message';
 import Conversation     from '../models/conversation';
-import PhoneNumber      from '../models/phone-number';
 import twilio           from '../services/twilio';
 
 export const post = [
@@ -16,26 +15,33 @@ export const post = [
     const conversationId = req.body.conversation_id;
     const messageContent = req.body.message;
 
-    const conversation = await Conversation.find(conversationId);
+    const conversation = await Conversation.find({
+      id: conversationId,
+      user
+    });
 
-    console.log(conversation);
+    if (!conversation) {
+      res.status(404);
+      return;
+    }
 
-    return;
+    await conversation.load(['to', 'from']);
+
+    const toPhoneNumber = conversation.related('to');
+    const fromPhoneNumber = conversation.related('from');
 
     let sid;
     if (config.PRODUCTION) {
       const sms = await twilio.messages.create({
         body: message,
-        to,
-        from
+        to: toPhoneNumber.get('phoneNumber'),
+        from: fromPhoneNumber.get('phoneNumber')
       });
       sid = sms.sid;
     } else {
       sid = uuid.v4();
     }
 
-    const toPhoneNumber = await PhoneNumber.findOrCreate({ phoneNumber: to });
-    const fromPhoneNumber = await PhoneNumber.findOrCreate({ phoneNumber: from });
     const message = await Message.create({
       to: toPhoneNumber,
       from: fromPhoneNumber,
@@ -43,31 +49,20 @@ export const post = [
       sid
     });
 
-    await toPhoneNumber.load('user');
-    await fromPhoneNumber.load('user');
+    if (toPhoneNumber.get('userId')) {
+      await toPhoneNumber.load('user');
 
-    const toUser = toPhoneNumber.related('user');
-    const fromUser = fromPhoneNumber.related('user');
-
-    if (toUser) {
-      const conversation = Conversation.findOrCreate({
+      const toUser = toPhoneNumber.related('user');
+      const conversation = await Conversation.findOrCreate({
         user: toUser,
-        to: toPhoneNumber,
-        from: fromPhoneNumber
+        from: toPhoneNumber,
+        to: fromPhoneNumber
       });
 
       await conversation.incoming(message);
     }
 
-    if (fromUser) {
-      const conversation = Conversation.findOrCreate({
-        user: fromUser,
-        to: toPhoneNumber,
-        from: fromPhoneNumber
-      });
-
-      await conversation.outgoing(message);
-    }
+    await conversation.outgoing(message);
 
     res.send({
       success: true
@@ -78,31 +73,33 @@ export const post = [
 export const get = [
   oauth2,
   async (req, res) => {
-    // const conversationId = req.query.conversation_id;
+    const conversationId = req.query.conversation_id;
+    const user = req.user;
+
+    const conversation = await Conversation.find({
+      id: conversationId,
+      user
+    });
+
+    await conversation.load(['conversationMessages.message']);
+    const conversationMessages = conversation.related('conversationMessages');
+
+    const responseData = conversationMessages.map((conversationMessage) => {
+      const message = conversationMessage.related('message');
+
+      return {
+        id: message.get('id'),
+        type: 'message',
+        attributes: {
+          message: message.get('body'),
+          type: conversationMessage.get('type'),
+          date: message.get('createdAt')
+        }
+      };
+    });
 
     res.send({
-      data: [{
-        id: '0E2B6C3A-239B-48F2-8677-5FDF001E4597',
-        type: 'message',
-        attributes: {
-          message: 'hello world!',
-          type: 'outgoing'
-        }
-      }, {
-        id: '0E2B8C3A-239B-48F2-8677-5FDF001E4597',
-        type: 'message',
-        attributes: {
-          message: 'How are you doing:',
-          type: 'incoming'
-        }
-      }, {
-        id: '1E2B8C3A-239B-48F2-8677-5FDF001E4597',
-        type: 'message',
-        attributes: {
-          message: 'I am good and you?',
-          type: 'outgoing'
-        }
-      }]
+      data: responseData
     });
   }
 ];

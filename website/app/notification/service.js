@@ -1,7 +1,7 @@
 import Ember  from 'ember';
 import config from '../config/environment';
 
-export default Ember.Service.extend({
+export default Ember.Service.extend(Ember.Evented, {
   host: config.APP.API_HOST,
   session: Ember.inject.service(),
   currentUser: Ember.inject.service(),
@@ -108,7 +108,13 @@ export default Ember.Service.extend({
   },
 
   messageReceived(event) {
-    console.log('messageReceived', event.data);
+    const payload = JSON.parse(event.data);
+
+    if (typeof payload === 'object') {
+      if (typeof payload.type === 'string') {
+        this.trigger(payload.type, payload.attributes);
+      }
+    }
   },
 
   connectionObserver: Ember.observer('connected', function() {

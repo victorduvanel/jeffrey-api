@@ -16,7 +16,10 @@ export default Ember.Controller.extend({
           to,
           from: phoneNumber.get('phoneNumber')
         }
-      });
+      })
+        .then(() => {
+          this.set('message', '');
+        });
     }
   }
 });

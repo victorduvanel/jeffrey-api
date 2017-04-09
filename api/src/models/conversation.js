@@ -11,14 +11,29 @@ const Conversation = Base.extend({
   },
 
   to() {
-    return this.belongsTo('PhoneNumber');
+    return this.belongsTo('PhoneNumber', 'to_id');
   },
 
   from() {
-    return this.belongsTo('PhoneNumber');
+    return this.belongsTo('PhoneNumber', 'from_id');
   },
 
-  incoming(message) {
+  conversationMessages() {
+    return this.hasMany('ConversationMessage');
+  },
+
+  async incoming(message) {
+    await this.load('user');
+
+    const user = this.related('user');
+
+    user.sendMessage({
+      type: 'conversation-activity',
+      attributes: {
+        conversation_id: this.get('id')
+      }
+    });
+
     return ConversationMessage.create({
       conversation: this,
       message: message,
@@ -26,7 +41,18 @@ const Conversation = Base.extend({
     });
   },
 
-  outgoing(message) {
+  async outgoing(message) {
+    await this.load('user');
+
+    const user = this.related('user');
+
+    user.sendMessage({
+      type: 'conversation-activity',
+      attributes: {
+        conversation_id: this.get('id')
+      }
+    });
+
     return ConversationMessage.create({
       conversation: this,
       message: message,
@@ -68,6 +94,14 @@ const Conversation = Base.extend({
 
     return await new this({ userId, fromId, toId }).fetch();
   },
+
+  find: function({ id, user }) {
+    return this.forge({
+      id,
+      userId: user.get('id'),
+    })
+      .fetch();
+  }
 });
 
 export default bookshelf.model('Conversation', Conversation);
