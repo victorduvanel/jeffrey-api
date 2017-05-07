@@ -13,10 +13,11 @@ import * as resetPassword   from './reset-password';
 import * as twilio          from './twilio';
 import * as webNotification from './web-notification';
 import * as conversations   from './conversations';
+import * as ms              from './ms';
 
 export default {
   webhook, oauth, me, activate, signup, northsigner,
   paymentMethods, phoneNumber, messages, invoices,
   terms, resetPassword, twilio, webNotification,
-  conversations
+  conversations, ms
 };

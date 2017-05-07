@@ -77,6 +77,8 @@ get('/conversations', routes.conversations.get);
 post('/conversations', routes.conversations.post);
 get('/conversations/:conversation_id', routes.conversations.getOne);
 
+get('/ms', routes.ms.get);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {
