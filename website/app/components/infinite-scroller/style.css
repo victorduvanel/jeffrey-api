@@ -1,0 +1,27 @@
+.component {
+  background: #efefef;
+  width: 500px;
+  height: 600px;
+
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  contain: layout;
+  will-change: transform;
+}
+
+.messages {
+  width: 100%;
+  height: 500%;
+  background: red;
+}
+
+.run-away {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  transition: transform .2s;
+}

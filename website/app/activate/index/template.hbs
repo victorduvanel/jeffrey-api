@@ -5,21 +5,21 @@
         <fieldset disabled={{isLoading}}>
           <div class="row">
             <div class="col-xs-6">
-              {{ input-field
+              {{ paper-input
                  label="Prénom"
-                 placeholder="Entrez votre prénom"
-                 error=firstNameError
                  value=firstName
-                 type="text"
+                 onChange=(action (mut firstName))
+                 required=true
+                 errorMessages=firstNameError
               }}
             </div>
             <div class="col-xs-6">
-              {{ input-field
+              {{ paper-input
                  label="Nom"
-                 placeholder="Entrez votre nom"
-                 error=lastNameError
                  value=lastName
-                 type="text"
+                 onChange=(action (mut lastName))
+                 required=true
+                 errorMessages=lastNameError
               }}
             </div>
           </div>

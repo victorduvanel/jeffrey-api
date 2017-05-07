@@ -1,24 +1,28 @@
 <div class="layout-row flex-grow ">
-  {{#paper-card class="flex-grow " as |card|}}
-    {{#card.content class="layout-row flex-grow"}}
-      <div class="flex-20 scroll-y delimited-right">
-        {{#paper-list}}
-          {{#paper-item onClick=(action (transition-to "dashboard.conversations.index")) as |controls|}}
-            Nouveau message
-          {{/paper-item}}
-          {{#each conversations as |conversation|}}
-            {{#paper-item onClick=(action (transition-to "dashboard.conversations.conversation" conversation)) as |controls|}}
-              {{conversation.name}}
-              {{phone-number number=conversation.to}}
-            {{/paper-item}}
-          {{/each}}
-        {{/paper-list}}
-      </div>
-      <div class="flex-80 layout-column flex-grow">
-        <div class="layout-column flex-grow">
-          {{outlet}}
-        </div>
-      </div>
-    {{/card.content}}
-  {{/paper-card}}
+  <div local-class="conversations-list" class="flex-30 scroll-y">
+    {{#link-to "dashboard.conversations.index" local-class="new-message-button"}}
+      Nouveau message
+    {{/link-to}}
+
+    {{#each conversations as |conversation|}}
+      {{#link-to "dashboard.conversations.conversation" conversation }}
+        {{conversation.name}}
+        {{phone-number number=conversation.to}}
+      {{/link-to}}
+    {{/each}}
+
+    {{#paper-list}}
+      {{#each conversations as |conversation|}}
+        {{#paper-item onClick=(action (transition-to "dashboard.conversations.conversation" conversation)) as |controls|}}
+          {{conversation.name}}
+          {{phone-number number=conversation.to}}
+        {{/paper-item}}
+      {{/each}}
+    {{/paper-list}}
+  </div>
+  <div class="flex-70 layout-column flex-grow">
+    <div class="layout-column flex-grow">
+      {{outlet}}
+    </div>
+  </div>
 </div>

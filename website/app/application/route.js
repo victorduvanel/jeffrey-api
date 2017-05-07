@@ -14,9 +14,9 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     this._super(...arguments);
     this._loadCurrentUser();
 
+    /*
     this.get('notification').connect();
 
-    /*
     const attemptedTransition = this.get('session.attemptedTransition');
 
     if (attemptedTransition) {
