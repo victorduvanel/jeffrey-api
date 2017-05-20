@@ -10,9 +10,6 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    return Ember.RSVP.Promise.resolve({
-      access_token: '1234'
-    });
     if (params.code) {
       const code = encodeURIComponent(params.code);
 

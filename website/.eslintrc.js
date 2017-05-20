@@ -1,15 +1,14 @@
-{
-  "parser": "babel-eslint",
-  "env": {
+module.exports = {
+  parserOptions: {
+    sourceType: 'module'
+  },
+  extends: 'eslint:recommended',
+  env: {
     "browser": true,
     "es6": true,
     "node": true
   },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "rules": {
+  rules: {
     "strict": 0,
     "indent": [
       "error",
@@ -41,4 +40,4 @@
       "as-needed"
     ]
   }
-}
+};

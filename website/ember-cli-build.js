@@ -20,10 +20,10 @@ module.exports = function(defaults) {
   });
 
   if (process.env.EMBER_ENV === 'production') {
-    workers = uglify(workers, {
-      mangle: true,
-      compress: true
-    });
+    //workers = uglify(workers, {
+      //mangle: true,
+      //compress: true
+    //});
   }
 
   // Use `app.import` to add additional libraries to the generated
@@ -58,5 +58,5 @@ module.exports = function(defaults) {
     destDir: 'assets/fonts'
   });
 
-  return app.toTree(workers);
+  return app.toTree(/* workers */);
 };
