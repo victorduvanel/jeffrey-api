@@ -23,8 +23,8 @@ export default bookshelf.Model.extend({
   toJSON(options) {
     let attrs = bookshelf.Model.prototype.toJSON.call(this, options);
 
-    delete attrs.createdAt;
-    delete attrs.updatedAt;
+    //delete attrs.createdAt;
+    //delete attrs.updatedAt;
 
     return this.format(attrs);
   }

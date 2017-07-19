@@ -70,6 +70,13 @@ get('/reset-password/:token', routes.resetPassword.get);
 
 post('/twilio/token', routes.twilio.token.post);
 post('/twilio/hook', routes.twilio.hook.post);
+post('/twilio/access-token', routes.twilio.accessToken.post);
+get('/twilio/access-token', routes.twilio.accessToken.get);
+post('/twilio/webhook', routes.twilio.webhook.post);
+post('/twilio/incoming', routes.twilio.incoming.post);
+get('/twilio/incoming', routes.twilio.incoming.get);
+
+get('/placeCall', routes.twilio.placeCall.get);
 
 post('/web-notification', routes.webNotification.post);
 
@@ -79,6 +86,10 @@ get('/conversations/:conversation_id', routes.conversations.getOne);
 
 get('/ms', routes.ms.get);
 
+get('/fixture/messages', routes.fixtureMessages.get);
+
+post('/apple/ios-receipt', routes.apple.iosReceipt.post);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {
@@ -87,7 +98,11 @@ export const listen = () => {
         const addr = httpServer.address();
 
         /* eslint-disable no-console */
-        console.log(chalk.green(`Listening on ${addr.address}:${addr.port}`));
+        if (addr.family === 'IPv6') {
+          console.info(chalk.green(`Serving at http://[${addr.address}]:${addr.port}`));
+        } else {
+          console.info(chalk.green(`Serving at http://${addr.address}:${addr.port}`));
+        }
         /* eslint-enable no-console */
 
         const wait = () => {

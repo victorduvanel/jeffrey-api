@@ -29,5 +29,27 @@ exports.seed = function(knex) {
       id   : '8739cdec-413c-459f-94f3-248fb43c49db',
       slug : 'french_outgoing_sms'
     });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "products" (
+        "id", "slug", "created_at", "updated_at"
+      ) VALUES (:id, :slug, NOW(), NOW())
+      ON CONFLICT DO NOTHING
+    `, {
+      id   : '3fe3e763-eb2b-435c-af6e-61113e27aa44',
+      slug : 'apple-io-credit-small'
+    });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "products" (
+        "id", "slug", "created_at", "updated_at"
+      ) VALUES (:id, :slug, NOW(), NOW())
+      ON CONFLICT DO NOTHING
+    `, {
+      id   : 'd9edce77-d0f4-4773-94de-6fb53812bbae',
+      slug : 'apple-io-credit-medium'
+    });
   });
 };

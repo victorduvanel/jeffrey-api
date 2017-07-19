@@ -1,10 +1,12 @@
 import Promise                      from 'bluebird';
+import request                      from 'request-promise';
 import nativeBcrypt                 from 'bcryptjs';
 import bookshelf                    from '../services/bookshelf';
 import uuid                         from 'uuid';
 import Base                         from './base';
 import AccessToken                  from './access-token';
 import { send as sendNotification } from '../services/notification';
+import googleService                from '../services/google';
 
 export const InvalidCredentials = new Error('Invalid Credentials');
 export const DuplicatedUser = new Error('Duplicated User');
@@ -91,10 +93,64 @@ const User = Base.extend({
     throw InvalidCredentials;
   },
 
-  create: async function({ email }) {
+  facebookAuthenticate: async function(token) {
+    const response = await request({
+      method: 'GET',
+      uri: 'https://graph.facebook.com/v2.9/me?fields=id,first_name,last_name,email,verified',
+      auth: {
+        bearer: token
+      },
+      form: {
+        id_token: token
+      }
+    });
+
+    const facebookUser = JSON.parse(response);
+
+    if (!facebookUser.verified) {
+      throw new Error('user not verified');
+    }
+
+    const user = await this.forge({
+      facebookId: facebookUser.id
+    }).fetch();
+
+    if (user) {
+      return user;
+    }
+
+    return this.create({
+      facebookId: facebookUser.id,
+      firstName: facebookUser.first_name,
+      lastName: facebookUser.last_name,
+      email: facebookUser.email
+    });
+  },
+
+  googleAuthenticate: async function(token) {
+    const googleUser = await googleService.verifyToken(token)
+    const user = await this.forge({ googleId: googleUser.id }).fetch();
+
+    if (user) {
+      return user;
+    }
+
+    if (!googleUser.verified) {
+      throw new Error('User not verified');
+    }
+
+    return this.create({
+      googleId: googleUser.id,
+      email: googleUser.email,
+      firstName: googleUser.firstName,
+      lastName: googleUser.lastName
+    });
+  },
+
+  create: async function(props) {
     const id = uuid.v4();
 
-    return this.forge({ id, email })
+    return this.forge({ id, ...props })
       .save(null, { method: 'insert' })
       .catch((err) => {
         if (err.code === '23505') {

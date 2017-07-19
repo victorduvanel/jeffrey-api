@@ -47,5 +47,39 @@ exports.seed = function(knex) {
       availableAt : '2017-01-01 00:00:00',
       productId   : '8739cdec-413c-459f-94f3-248fb43c49db'
     });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "product_prices" (
+        "id", "currency", "value", "available_at",
+        "product_id", "created_at", "updated_at"
+      ) VALUES (:id, :currency, :value, :availableAt,
+        :productId, NOW(), NOW()
+      )
+      ON CONFLICT DO NOTHING
+    `, {
+      id          : '960cecc7-259e-4ba6-9641-d68a0856823b',
+      currency    : 'eur',
+      value       : 549,
+      availableAt : '2017-01-01 00:00:00',
+      productId   : '3fe3e763-eb2b-435c-af6e-61113e27aa44'
+    });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "product_prices" (
+        "id", "currency", "value", "available_at",
+        "product_id", "created_at", "updated_at"
+      ) VALUES (:id, :currency, :value, :availableAt,
+        :productId, NOW(), NOW()
+      )
+      ON CONFLICT DO NOTHING
+    `, {
+      id          : '6f0484b0-9551-495a-8383-c55f4f7fba62',
+      currency    : 'eur',
+      value       : 1099,
+      availableAt : '2017-01-01 00:00:00',
+      productId   : 'd9edce77-d0f4-4773-94de-6fb53812bbae'
+    });
   });
 };

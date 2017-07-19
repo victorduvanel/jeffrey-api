@@ -14,10 +14,12 @@ import * as twilio          from './twilio';
 import * as webNotification from './web-notification';
 import * as conversations   from './conversations';
 import * as ms              from './ms';
+import * as fixtureMessages from './fixture-messages';
+import * as apple           from './apple';
 
 export default {
   webhook, oauth, me, activate, signup, northsigner,
   paymentMethods, phoneNumber, messages, invoices,
   terms, resetPassword, twilio, webNotification,
-  conversations, ms
+  conversations, ms, fixtureMessages, apple
 };

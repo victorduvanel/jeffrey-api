@@ -36,6 +36,9 @@ const PendingUser = Base.extend({
       title: 'Prestine - Confirmez votre adresse mail',
     });
 
+    console.log(message);
+    console.log(emailAddress);
+
     return sendEmail({
       from: '"Prestine" <noreply@prestine.io>',
       to: emailAddress,
