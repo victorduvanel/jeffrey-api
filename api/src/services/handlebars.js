@@ -11,7 +11,7 @@ const viewsDirectory = './src/views';
 Handlebars.registerHelper('link', function(path) {
   path  = Handlebars.Utils.escapeExpression(path);
 
-  const result = `${config.protocol}://${config.webappHost}${path}"`;
+  const result = `${config.webappProtocol}://${config.webappHost}${path}"`;
 
   return new Handlebars.SafeString(result);
 });

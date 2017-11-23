@@ -16,7 +16,7 @@ export const post = [
     const to    = await PhoneNumber.findOrCreate({ phoneNumber: body.To });
     const from  = await PhoneNumber.findOrCreate({ phoneNumber: body.From });
     let message = await Message.create({
-      to, from, body: body.Body, sid: body.Sid
+      to, from, body: body.Body, sid: body.SmsSid
     });
 
     if (to.get('userId')) {
