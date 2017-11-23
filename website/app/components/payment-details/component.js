@@ -54,8 +54,14 @@ export default Ember.Component.extend({
       );
 
       const expirationDateSplit = expirationDate.split('/');
+      if (expirationDateSplit.length !== 2) {
+        this.set('isLoading', false);
+        console.error('invalid expiration date');
+        return;
+      }
       const expMonth = expirationDateSplit[0].trim();
       const expYear = expirationDateSplit[1].trim();
+
 
       this.createCard({
         cardNumber,
@@ -66,6 +72,7 @@ export default Ember.Component.extend({
       })
         .then(() => {
           const onValidated = this.get('onValidated');
+
           if (onValidated) {
             onValidated();
           }

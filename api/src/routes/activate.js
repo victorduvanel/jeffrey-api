@@ -12,7 +12,7 @@ export const post = [
 
     const pendingUser = await PendingUser.find(code);
     if (!pendingUser) {
-      throw errors.ResourceNotFound.detail('Invalid code');
+      throw errors.InvalidParameterType.detail('Invalid code');
     }
 
     let user;

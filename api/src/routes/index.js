@@ -16,10 +16,13 @@ import * as conversations   from './conversations';
 import * as ms              from './ms';
 import * as fixtureMessages from './fixture-messages';
 import * as apple           from './apple';
+import * as appLink         from './app-link';
+import * as appRedirect     from './app-redirect';
 
 export default {
   webhook, oauth, me, activate, signup, northsigner,
   paymentMethods, phoneNumber, messages, invoices,
   terms, resetPassword, twilio, webNotification,
-  conversations, ms, fixtureMessages, apple
+  conversations, ms, fixtureMessages, apple,
+  appLink, appRedirect
 };

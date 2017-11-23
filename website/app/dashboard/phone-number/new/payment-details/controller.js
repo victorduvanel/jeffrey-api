@@ -5,7 +5,8 @@ export default Ember.Controller.extend({
 
   actions: {
     paymentDetailsValidated() {
-      this.get('confirmController').userInitiatedTransition();
+      console.log('ok');
+      //this.get('confirmController').userInitiatedTransition();
     }
   }
 });

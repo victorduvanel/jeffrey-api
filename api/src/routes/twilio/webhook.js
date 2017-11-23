@@ -23,8 +23,8 @@ export const post = [
             '<?xml version="1.0" encoding="UTF-8"?>',
             '<Response>',
             `<Dial callerId="+33644641618" method="POST" action="${config.protocol}://${config.host}/twilio/webhook">`,
-            //'+33651648566',
-            '<Client>voice_test</Client>',
+            '+33651648566',
+            //'<Client>voice_test</Client>',
             '</Dial>',
             '</Response>'
           ].join(''));

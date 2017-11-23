@@ -43,8 +43,6 @@ export const post = [
       return;
     }
 
-
-
     if (typeof email !== 'string' || !email.length) {
       throw errors.MissingParameter.detail('email is required');
     }
@@ -61,16 +59,24 @@ export const post = [
       }
     }
 
-    return PendingUser.createFromEmail(email)
-      .then(() => {
-        return res.send({
-          success: true
-        });
-      })
-      .catch(errors.EmailRejected, () => {
-        res.send({
-          success: true
-        });
+    const user = await User.forge({ email }).fetch();
+
+    if (user) {
+      await user.sendLoginEmail();
+
+      res.send({
+        success: true,
+        login_email_sent: true
       });
+
+      return;
+    }
+
+    await PendingUser.createFromEmail(email)
+
+    res.send({
+      success: true,
+      pending_user_created: true
+    });
   }
 ];

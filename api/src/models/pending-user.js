@@ -6,6 +6,7 @@ import errors          from '../errors';
 import uuid            from 'uuid';
 import * as handlebars from '../services/handlebars';
 import { sendEmail }   from '../services/mailgun';
+import config          from '../config';
 
 const PendingUser = Base.extend({
   tableName: 'pending_users',
@@ -32,12 +33,10 @@ const PendingUser = Base.extend({
       .save(null, { method: 'insert' });
 
     const message = await handlebars.render('email/register', {
-      activationLink: `/activate?code=${id}`,
+      // activationLink: `/app-redirect/activate?code=${id}`,
+       activationLink: `/activate?code=${id}`,
       title: 'Prestine - Confirmez votre adresse mail',
     });
-
-    console.log(message);
-    console.log(emailAddress);
 
     return sendEmail({
       from: '"Prestine" <noreply@prestine.io>',

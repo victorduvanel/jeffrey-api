@@ -17,12 +17,12 @@ export default Ember.Service.extend(Ember.Evented, {
     const now = (new Date()).getTime();
     const lastTry = this.get('lastTry');
 
-    if (lastTry && now - lastTry < 10000) {
-      Ember.run.later(() => {
-        this._connect();
-      }, 10000 - (now - lastTry));
-      return;
-    }
+    //if (lastTry && now - lastTry < 10000) {
+      //Ember.run.later(() => {
+        //this._connect();
+      //}, 10000 - (now - lastTry));
+      //return;
+    //}
 
     this._connect();
   },
@@ -78,8 +78,8 @@ export default Ember.Service.extend(Ember.Evented, {
             socket.addEventListener('error', (event) => {
               this.set('connected', false);
               this.set('socket', null);
-
               reject(event);
+
             });
 
             socket.addEventListener('close', () => {

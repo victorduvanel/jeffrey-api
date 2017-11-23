@@ -7,6 +7,9 @@ import Base                         from './base';
 import AccessToken                  from './access-token';
 import { send as sendNotification } from '../services/notification';
 import googleService                from '../services/google';
+import * as handlebars              from '../services/handlebars';
+import { sendEmail }                from '../services/mailgun';
+import LoginToken                   from '../models/login-token';
 
 export const InvalidCredentials = new Error('Invalid Credentials');
 export const DuplicatedUser = new Error('Duplicated User');
@@ -70,6 +73,26 @@ const User = Base.extend({
     sendNotification(this, message);
   },
 
+  sendLoginEmail: async function() {
+    const emailAddress = this.get('email');
+
+    const loginToken = await LoginToken.create({ user: this });
+
+    const title = 'Prestine - Identifiez vous';
+
+    const message = await handlebars.render('email/login', {
+      loginLink: `/login-link/${loginToken.get('id')}`,
+      title
+    });
+
+    return sendEmail({
+      from: '"Prestine" <noreply@prestine.io>',
+      to: emailAddress,
+      subject: title,
+      message
+    });
+  },
+
   toJSON() {
     let attrs = Base.prototype.toJSON.apply(this, arguments);
 
@@ -82,7 +105,7 @@ const User = Base.extend({
   authenticate: async function({ email, password }) {
     const user = await this.forge({ email }).fetch();
 
-    if (user) {
+    if (user && user.get('password') !== null) {
       const passwordMatch = await bcrypt.compareAsync(password, user.get('password'));
 
       if (passwordMatch) {
