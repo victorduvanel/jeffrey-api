@@ -10,6 +10,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   afterModel() {
     this._super(...arguments);
-    this.get('notification').connect();
+    // this.get('notification').connect();
   },
 });
