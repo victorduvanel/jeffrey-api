@@ -1,11 +1,9 @@
-FROM node:7.7.1
+FROM node:8.9.1
 MAINTAINER William Riancho <william@reptilians.io>
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-
 WORKDIR /app
-ADD package.json yarn.lock ./
-RUN $HOME/.yarn/bin/yarn --pure-lockfile
+ADD package.json ./
+RUN npm install
 
 ADD . .
 RUN npm run build
