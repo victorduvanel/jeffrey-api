@@ -2,7 +2,7 @@ FROM node:8.9.1
 MAINTAINER William Riancho <william@reptilians.io>
 
 WORKDIR /app
-ADD package.json ./
+ADD package.json package-lock.json ./
 RUN npm install
 
 ADD . .
