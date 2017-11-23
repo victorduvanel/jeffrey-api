@@ -14,6 +14,7 @@ if (config.PRODUCTION) {
     }
 
     _write(chunk, enc, next) {
+      process.stdout.write(chunk, enc);
       this.logger.info(chunk.toString());
       next();
     }
