@@ -34,6 +34,8 @@ export default Ember.Controller.extend({
   },
 
   actions: {
+    _() {},
+
     finishRegistration() {
       if (this.get('isLoading')) {
         return;

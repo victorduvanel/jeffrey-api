@@ -1,5 +1,13 @@
-<div class="alert alert-danger m-t-1" role="alert">
-  La création du compte a échoué. Votre code d’activation n’est pas valide.
-  <br />
-  <a href="https://support.prestine.io/">Obtenir de l’aide</a>
+<div class="layout-column layout-align-center-center">
+  {{#paper-card as |card|}}
+    {{#card.content}}
+      <div class="layout-column layout-align-center-center">
+        La création du compte a échoué. Votre code d’activation n’est pas valide.
+        <br />
+        {{#paper-button href="https://support.prestine.io/" target="_blank" raised=true primary=true}}
+          Obtenir de l’aide
+        {{/paper-button}}
+      </div>
+    {{/card.content}}
+  {{/paper-card}}
 </div>

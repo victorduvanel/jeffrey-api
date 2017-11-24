@@ -1,25 +1,26 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="container pricing rounded">
-      <div class="row">
-        <div class="col-9 py-4 px-3">
-          <h3>Obtenez votre numéro Prestine</h3>
+<div class="layout-row layout-align-center">
+  <div class="layout-column flex-80">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Obtenez votre numéro Prestine
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        <ul class="pricing-features">
+          <li>Sans engagement</li>
+          <li>Envoyez et recevez des SMS</li>
+          <li>Assistance 24/7</li>
+          <li>Recevez vos SMS sur votre boite mail</li>
+          <li>Numéro de téléphone mobile (06 ou 07)</li>
+          <li>Envoyez et recevez depuis et vers l’international</li>
+          <li>Aucune carte SIM requise</li>
+          <li>Téléphone mobile non requis</li>
+        </ul>
 
-          <hr />
-
-          <ul class="pricing-features">
-            <li>Sans engagement</li>
-            <li>Envoyez et recevez des SMS</li>
-            <li>Assistance 24/7</li>
-            <li>Recevez vos SMS sur votre boite mail</li>
-            <li>Numéro de téléphone mobile (06 ou 07)</li>
-            <li>Envoyez et recevez depuis et vers l’international</li>
-            <li>Aucune carte SIM requise</li>
-            <li>Téléphone mobile non requis</li>
-          </ul>
-        </div>
-
-        <div class="col-3 pricing-action-area">
+        <div class="pricing-action-area">
           <div class="pricing-meta">
             Votre numéro
           </div>
@@ -28,12 +29,12 @@
             <div class="price-tenure">par mois</div>
           </div>
           <div class="pricing-action">
-            <button type="button" class="btn btn-primary button-xlarge btn-block" {{ action "subscribeButtonPressed" }}>
+            {{#paper-button onClick=(action "subscribeButtonPressed") raised=true primary=true}}
               Souscrire
-            </button>
+            {{/paper-button}}
           </div>
         </div>
-      </div>
-    </div>
+      {{/card.content}}
+    {{/paper-card}}
   </div>
 </div>

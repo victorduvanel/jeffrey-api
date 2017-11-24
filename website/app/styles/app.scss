@@ -130,8 +130,7 @@ button {
   cursor: pointer;
 }
 
-.signup-view, .login-view {
-  padding-top: 50px;
+.signup-view, .login-view, .activate-view, .dashboard-view {
   min-height: 100%;
   background-color: #00B28B;
   box-sizing: border-box;
@@ -139,6 +138,10 @@ button {
   .white-link {
     color: #ffffff;
   }
+}
+
+.signup-view, .login-view, .activate-view {
+  padding-top: 50px;
 }
 
 .flat-shadow-logo {

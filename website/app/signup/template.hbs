@@ -3,44 +3,69 @@
     <div class="flat-shadow-logo"></div>
     <h1 class="text-logo">prestine.io</h1>
   </div>
-  <div class="layout-row layout-align-center">
-    <div class="layout-column flex-40">
+  {{#if isLoading}}
+    <div class="layout-column layout-align-center-center">
       {{#paper-card as |card|}}
-        {{#paper-form onSubmit=(action "submitEmail") as |form|}}
-          {{#card.content class="layout-column layout-align-space-between"}}
-            {{#animable-content shake=shakeEmailInput}}
-            <div class="layout-row">
-                <div class="layout-column flex-100">
-                    {{form.input label="Adresse e-mail" value=email onChange=(action (mut email))}}
-                </div>
-            </div>
-            {{/animable-content}}
-            {{#form.submit-button disabled=isLoading raised=true primary=true }}
-              Créer un compte
-            {{/form.submit-button}}
-          {{/card.content}}
-        {{/paper-form}}
+        {{paper-progress-circular}}
       {{/paper-card}}
-      {{#paper-button class="white-link" onClick=(action (transition-to "login"))}}
-        Je posséde déjà un compte
-      {{/paper-button}}
     </div>
-  </div>
+  {{/if}}
 
-  <div class="container-fluid minh-100">
-    <div class="row">
-      <div class="col-8 offset-2 col-4 px-5 py-4 light-background">
-        {{#if success}}
-          <div class="alert alert-success mt-1" role="alert">
-            Vérifiez votre boite mail pour finaliser votre inscription
-          </div>
-        {{else}}
-          {{#if error}}
-            <div class="alert alert-danger mt-1" role="alert">{{error}}</div>
-            <button {{ action "retry" }}>Réessayer</button>
-          {{/if}}
-        {{/if}}
+  {{#unless success}}
+    {{#unless isLoading}}
+      <div class="layout-row layout-align-center">
+        <div class="layout-column flex-40">
+          {{#paper-card as |card|}}
+            {{#paper-form onSubmit=(action "submitEmail") as |form|}}
+              {{#card.content class="layout-column layout-align-space-between"}}
+                {{#animable-content shake=shakeEmailInput}}
+                <div class="layout-row">
+                    <div class="layout-column flex-100">
+                        {{form.input label="Adresse e-mail" value=email onChange=(action (mut email))}}
+                    </div>
+                </div>
+                {{/animable-content}}
+                {{#form.submit-button raised=true primary=true }}
+                  Créer un compte
+                {{/form.submit-button}}
+              {{/card.content}}
+            {{/paper-form}}
+          {{/paper-card}}
+          {{#paper-button class="white-link" onClick=(action (transition-to "login"))}}
+            Je posséde déjà un compte
+          {{/paper-button}}
+        </div>
       </div>
+    {{/unless}}
+  {{/unless}}
+
+  {{#if success}}
+    <div class="layout-column layout-align-center-center">
+      {{#paper-card as |card|}}
+        {{#card.content}}
+          <div class="layout-column layout-align-center-center">
+            Vérifiez votre boite mail pour finaliser votre inscription
+            {{#paper-button onClick=(action (transition-to "login")) raised=true primary=true}}
+              OK
+            {{/paper-button}}
+          </div>
+        {{/card.content}}
+      {{/paper-card}}
     </div>
-  </div>
+  {{/if}}
+
+  {{#if error}}
+    <div class="layout-column layout-align-center-center">
+      {{#paper-card as |card|}}
+        {{#card.content}}
+          <div class="layout-column layout-align-center-center">
+            {{error}}
+          </div>
+          {{#paper-button onClick=(action "retry") raised=true primary=true}}
+            Réessayer
+          {{/paper-button}}
+        {{/card.content}}
+      {{/paper-card}}
+    </div>
+  {{/if}}
 </div>
