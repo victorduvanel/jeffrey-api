@@ -130,8 +130,9 @@ button {
   cursor: pointer;
 }
 
-.signup-view, .login-view, .activate-view, .dashboard-view {
+.signup-view, .login-view, .activate-view, .dashboard-view, .dashboard-phone-number-new-view {
   min-height: 100%;
+  height: 100%;
   background-color: #00B28B;
   box-sizing: border-box;
 

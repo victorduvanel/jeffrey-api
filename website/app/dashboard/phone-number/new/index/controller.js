@@ -9,6 +9,11 @@ export default Ember.Controller.extend({
   confirmController: Ember.inject.controller('dashboard.phone-number.new.confirm'),
 
   actions: {
+    paymentDetailsValidated() {
+      console.log('ok');
+      //this.get('confirmController').userInitiatedTransition();
+    },
+
     subscribeButtonPressed() {
       switch (this.get('user.paymentMethodStatus')) {
         case 'ok':
