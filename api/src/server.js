@@ -57,6 +57,8 @@ post('/northsigner/register', routes.northsigner.register.post);
 post('/payment-methods', routes.paymentMethods.post);
 get('/payment-methods', routes.paymentMethods.get);
 
+post('/contact-details', routes.contactDetails.post);
+
 get('/phone-numbers', routes.phoneNumber.get);
 get('/phone-numbers/:phone_number_id', routes.phoneNumber.getOne);
 del('/phone-numbers/:phone_number_id', routes.phoneNumber.destroy);

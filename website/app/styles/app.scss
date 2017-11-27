@@ -16,15 +16,6 @@ $color-light-green: map-merge($color-light-green, ('contrast':  $light-contrast-
 .minw-100 { min-width: 100% !important; }
 .minh-100 { min-height: 100% !important; }
 
-html, body, body > .ember-view {
-  width: 100%;
-  height: 100%;
-}
-
-.dashboard-view {
-  height: 100%;
-}
-
 .dark-background {
   background: #444;
 }
@@ -131,8 +122,7 @@ button {
 }
 
 .signup-view, .login-view, .activate-view, .dashboard-view, .dashboard-phone-number-new-view {
-  min-height: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: #00B28B;
   box-sizing: border-box;
 
@@ -296,4 +286,8 @@ button {
 }
 .invisible {
   display: none;
+}
+
+.phone-number-confirm-phone-number {
+  padding: 50px 0;
 }

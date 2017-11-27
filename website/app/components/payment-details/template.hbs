@@ -1,66 +1,76 @@
-{{#paper-card as |card|}}
-  {{#if title}}
-    {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-        <h2>{{title}}</h2>
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-  {{/if}}
+{{#if isLoading}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{paper-progress-circular}}
+    {{/paper-card}}
+  </div>
+{{/if}}
 
-  {{#paper-form onSubmit=(action "createCard") as |form|}}
-    {{#card.content class="layout-column layout-align-space-between"}}
+{{#unless isLoading}}
+  {{#paper-card as |card|}}
+    {{#if title}}
+      {{#paper-toolbar}}
+        {{#paper-toolbar-tools}}
+          <h2>{{title}}</h2>
+        {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
+    {{/if}}
 
-      <div class="layout-row">
-        <div class="layout-column flex-100">
-          {{form.input
-            label="Numéro de carte"
-            value=cardNumber
-            type="text"
-            onChange=(action (mut cardNumber))
-            required=true
-          }}
-        </div>
-      </div>
+    {{#paper-form onSubmit=(action "createCard") as |form|}}
+      {{#card.content class="layout-column layout-align-space-between"}}
 
-      <div class="layout-row">
-        <div class="layout-column flex-100">
-          {{form.input
-            label="Nom et Prénom du propriétaire"
-            value=cardholderName
-            type="text"
-            onChange=(action (mut cardholderName))
-            required=true
-          }}
-        </div>
-      </div>
-
-      <div class="layout-row">
-        <div class="layout-column flex-50">
-          {{form.input
-            label="Date d'expiration"
-            value=expirationDate
-            type="text"
-            onChange=(action (mut expirationDate))
-            required=true
-          }}
+        <div class="layout-row">
+          <div class="layout-column flex-100">
+            {{form.input
+              label="Numéro de carte"
+              value=cardNumber
+              type="text"
+              onChange=(action (mut cardNumber))
+              required=true
+            }}
+          </div>
         </div>
 
-        <div class="layout-column flex-50">
-          {{form.input
-            label="Cryptograme visuel"
-            value=cvc
-            type="text"
-            onChange=(action (mut cvc))
-            required=true
-          }}
+        <div class="layout-row">
+          <div class="layout-column flex-100">
+            {{form.input
+              label="Nom et Prénom du propriétaire"
+              value=cardholderName
+              type="text"
+              onChange=(action (mut cardholderName))
+              required=true
+            }}
+          </div>
         </div>
-      </div>
 
-    {{/card.content}}
-    {{#card.actions}}
-      {{#form.submit-button disabled=isLoading raised=true primary=true }}
-        Valider
-      {{/form.submit-button}}
-    {{/card.actions}}
-  {{/paper-form}}
-{{/paper-card}}
+        <div class="layout-row">
+          <div class="layout-column flex-50">
+            {{form.input
+              label="Date d'expiration"
+              value=expirationDate
+              type="text"
+              onChange=(action (mut expirationDate))
+              required=true
+            }}
+          </div>
+
+          <div class="layout-column flex-50">
+            {{form.input
+              label="Cryptograme visuel"
+              value=cvc
+              type="text"
+              onChange=(action (mut cvc))
+              required=true
+            }}
+          </div>
+        </div>
+
+      {{/card.content}}
+      {{#card.actions}}
+        {{#form.submit-button disabled=isLoading raised=true primary=true }}
+          Valider
+        {{/form.submit-button}}
+      {{/card.actions}}
+    {{/paper-form}}
+  {{/paper-card}}
+{{/unless}}

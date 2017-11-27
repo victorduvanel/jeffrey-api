@@ -23,6 +23,7 @@ Router.map(function() {
       this.route('new', function() {
         this.route('payment-details');
         this.route('confirm');
+        this.route('contact-details');
       });
     });
     this.route('conversations', function() {

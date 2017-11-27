@@ -5,9 +5,7 @@
   </div>
   {{#if isLoading}}
     <div class="layout-column layout-align-center-center">
-      {{#paper-card as |card|}}
-        {{paper-progress-circular}}
-      {{/paper-card}}
+      {{paper-progress-circular}}
     </div>
   {{/if}}
 
@@ -20,9 +18,9 @@
               {{#card.content class="layout-column layout-align-space-between"}}
                 {{#animable-content shake=shakeEmailInput}}
                 <div class="layout-row">
-                    <div class="layout-column flex-100">
-                        {{form.input label="Adresse e-mail" value=email onChange=(action (mut email))}}
-                    </div>
+                  <div class="layout-column flex-100">
+                    {{form.input label="Adresse e-mail" value=email onChange=(action (mut email))}}
+                  </div>
                 </div>
                 {{/animable-content}}
                 {{#form.submit-button raised=true primary=true }}

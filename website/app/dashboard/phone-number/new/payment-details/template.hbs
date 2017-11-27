@@ -1,0 +1,18 @@
+<div class="layout-row layout-align-center">
+  <div class="layout-column flex-80">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Informations de paiment
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        {{payment-details
+          onValidated=(action "paymentDetailsValidated")
+        }}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+</div>

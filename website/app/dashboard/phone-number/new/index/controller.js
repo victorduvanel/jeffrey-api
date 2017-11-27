@@ -1,8 +1,9 @@
 import Ember from 'ember';
+import Controller from '@ember/controller';
 
 const { service } = Ember.inject;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   currentUser: service(),
   user: Ember.computed.alias('currentUser.user'),
 
@@ -24,7 +25,7 @@ export default Ember.Controller.extend({
         case 'not_set':
         case 'expired':
         case 'expired_soon':
-          this.transitionToRoute('dashboard.phone-number.new.payment-details');
+          this.transitionToRoute('dashboard.phone-number.new.contact-details');
           break;
       }
     }

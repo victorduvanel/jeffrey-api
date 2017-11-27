@@ -30,6 +30,10 @@ const PhoneNumber = Base.extend({
     return this.belongsTo('User');
   },
 
+  contactDetails() {
+    return this.hasMany('ContactDetail');
+  },
+
   incomingMessages() {
     return this.hasMany('Message', 'to_id');
   },

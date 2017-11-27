@@ -1,12 +1,26 @@
 import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
-  cardNumber: '',
+export default Component.extend({
+  isLoading: false,
+
+  cardNumber: '4000002500000003',
+  cardholderName: 'William Riancho',
+  expirationDate: '10/24',
+  cvc: '123',
 
   stripe: Ember.inject.service(),
   ajax: Ember.inject.service(),
 
-  paymentMethod: null,
+  reset() {
+    this.setProperties({
+      isLoading: false,
+      cardNumber: '',
+      cardholderName: '',
+      expirationDate: '',
+      cvc: '',
+    });
+  },
 
   createCard({
     cardholderName,
@@ -59,9 +73,9 @@ export default Ember.Component.extend({
         console.error('invalid expiration date');
         return;
       }
+
       const expMonth = expirationDateSplit[0].trim();
       const expYear = expirationDateSplit[1].trim();
-
 
       this.createCard({
         cardNumber,
@@ -78,7 +92,7 @@ export default Ember.Component.extend({
           }
         })
         .finally(() => {
-          this.set('isLoading', false);
+          this.reset();
         });
     }
   }

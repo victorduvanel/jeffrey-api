@@ -1,16 +1,62 @@
-<div class="container-fluid h-100 d-flex justify-content-center">
-  <div class="text-center align-self-center">
+
+{{#if isLoading}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        {{paper-progress-circular}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/if}}
+
+<div class="layout-row layout-align-center">
+  <div class="layout-column flex-80">
+
+    {{#unless phoneNumber}}
+      {{#unless isLoading}}
+        {{#paper-card as |card|}}
+          {{#card.title as |cardTitle|}}
+            {{#cardTitle.text as |text|}}
+              {{#text.headline}}
+                Confirmer mon achat
+              {{/text.headline}}
+            {{/cardTitle.text}}
+          {{/card.title}}
+          {{#card.content class="layout-column layout-align-space-between"}}
+            Vous pouvez annuler votre abonnement quand vous le souhaitez ;)
+          {{/card.content}}
+          {{#paper-button raised=true primary=true onClick=(action "confirmPurchase")}}
+            Valider
+          {{/paper-button}}
+        {{/paper-card}}
+      {{/unless}}
+    {{/unless}}
+
     {{#if phoneNumber}}
-      {{#if phoneNumber.isNew}}
-        <h2>Patientez un instant</h2>
-      {{else}}
-        <h4>Voila votre nouveau numéro</h4>
-        <h2>
-          {{#link-to 'dashboard.phone-number.phone-number' phoneNumber}}
-            {{ phoneNumber.formated }}
-          {{/link-to}}
-        </h2>
-      {{/if}}
+      {{#paper-card as |card|}}
+        {{#card.title as |cardTitle|}}
+          {{#cardTitle.text as |text|}}
+            {{#text.headline}}
+              Voila votre nouveau numéro
+            {{/text.headline}}
+          {{/cardTitle.text}}
+        {{/card.title}}
+        {{#card.content class="layout-column layout-align-space-between"}}
+          <div class="layout-column layout-align-center-center phone-number-confirm-phone-number">
+            <h3>{{ phoneNumber.formated }}</h3>
+          </div>
+          <div class="layout-row">
+            les messages envoyé vers ce numéro vous seront transféré vers
+          </div>
+          <div class="layout-column layout-align-center-center phone-number-confirm-phone-number">
+            <h3>{{user.email}}</h3>
+          </div>
+
+          {{#paper-button raised=true primary=true onClick=(action (transition-to 'dashboard.phone-number.phone-number' phoneNumber))}}
+            Start Texting
+          {{/paper-button}}
+        {{/card.content}}
+      {{/paper-card}}
     {{/if}}
   </div>
 </div>

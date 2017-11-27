@@ -19,7 +19,7 @@ export default Ember.Route.extend({
         this.transitionTo(to, phoneNumber);
       }
     } else {
-      this.transitionTo('dashboard.phone-number.new');
+      //this.transitionTo('dashboard.phone-number.new');
     }
   }
 });

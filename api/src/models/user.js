@@ -31,6 +31,10 @@ const User = Base.extend({
     return this.hasMany('PhoneNumber');
   },
 
+  contactDetail() {
+    return this.hasMany('ContactDetail');
+  },
+
   createAccessToken({ singleUse = false }) {
     return AccessToken.create({ user: this, singleUse });
   },
