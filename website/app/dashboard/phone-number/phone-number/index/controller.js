@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
         'phoneNumber'
       );
 
-      this.get('ajax').request('/messages', {
+      this.get('ajax').request('/conversations', {
         method: 'POST',
         data: {
           to: toPhoneNumber,

@@ -31,7 +31,7 @@ export const post = [
     let sid;
     if (config.PRODUCTION) {
       const sms = await twilio.messages.create({
-        body: message,
+        body: messageContent,
         to,
         from
       });

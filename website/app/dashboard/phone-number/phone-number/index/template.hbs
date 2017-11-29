@@ -22,9 +22,9 @@
         {{/paper-toolbar-tools}}
       {{/paper-toolbar}}
 
-      {{#paper-form as |form|}}
+      {{#paper-form onSubmit=(action "sendMessage") as |form|}}
         {{#card.content class="layout-column"}}
-          {{paper-input placeholder="Phone Number" type="text" value=user.phone onChange=(action (mut user.phone)) }}
+          {{paper-input placeholder="Phone Number" type="text" value=toPhoneNumber onChange=(action (mut toPhoneNumber)) }}
           {{ paper-input
              textarea=true
              block=true
@@ -38,7 +38,7 @@
 
         {{#card.actions}}
           {{#form.submit-button iconButton=true raised=true primary=true }}
-            {{paper-icon "accessibility"}}
+            {{paper-icon "send"}}
           {{/form.submit-button}}
         {{/card.actions}}
       {{/paper-form}}
