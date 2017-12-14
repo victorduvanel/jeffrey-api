@@ -1,0 +1,46 @@
+<div class="layout-row layout-align-center">
+  <div class="layout-column flex-80">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Créditer mon compte
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        {{#paper-button raised=true primary=true onClick=(action "purchase")}}
+          Créditer mon compte de 10€
+        {{/paper-button}}
+      {{/card.content}}
+    {{/paper-card}}
+
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Rechargement automatique
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        <p>
+        Le rechargement automatique vous permet de créditer automatique votre
+        compte de 10€ dès lors que vos crédit sont inférieurs à 2€.
+        </p>
+
+        {{#if user.creditAutoReload}}
+          <p>Le rechargement automatique est actuellement activé.</p>
+          {{#paper-button raised=true primary=true onClick=(action "disableCreditAutoReload")}}
+            Desactiver le rechargement automatique
+          {{/paper-button}}
+        {{else}}
+          <p>Le rechargement automatique est actuellement desactivé.</p>
+          {{#paper-button raised=true primary=true onClick=(action "enableCreditAutoReload")}}
+            Activer le rechargement automatique
+          {{/paper-button}}
+        {{/if}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+</div>
