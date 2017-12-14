@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import User from 'prestine/user';
 
 export default Ember.Service.extend({
   session: Ember.inject.service(),
@@ -9,13 +10,16 @@ export default Ember.Service.extend({
       return this.get('ajax')
         .request('/me')
         .then((res) => {
-          this.set('user', Ember.Object.create({
+          this.set('user', User.create({
             id                  : res.id,
+            accountDisabled     : res.account_disabled,
             firstName           : res.first_name,
             lastName            : res.last_name,
             email               : res.email,
             paymentMethodStatus : res.payment_method_status,
-            isAuthenticated     : true
+            isAuthenticated     : true,
+            credit              : Ember.Object.create(res.credit),
+            creditAutoReload    : res.credit_auto_reload
           }));
         });
     } else {

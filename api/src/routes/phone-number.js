@@ -62,8 +62,6 @@ export const post = [
   async (req, res) => {
     const user = req.user;
 
-    await user.load('stripeCustomer');
-
     const invoice = await Invoice.create({
       user,
       currency: 'eur'

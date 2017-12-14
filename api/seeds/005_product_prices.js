@@ -81,5 +81,22 @@ exports.seed = function(knex) {
       availableAt : '2017-01-01 00:00:00',
       productId   : 'd9edce77-d0f4-4773-94de-6fb53812bbae'
     });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "product_prices" (
+        "id", "currency", "value", "available_at",
+        "product_id", "created_at", "updated_at"
+      ) VALUES (:id, :currency, :value, :availableAt,
+        :productId, NOW(), NOW()
+      )
+      ON CONFLICT DO NOTHING
+    `, {
+      id          : 'b170f6e7-f26e-48ea-b8a1-72c847e921ab',
+      currency    : 'eur',
+      value       : 1000,
+      availableAt : '2017-01-01 00:00:00',
+      productId   : 'cfcc7d2d-b704-4083-a775-38b9d229cc90'
+    });
   });
 };

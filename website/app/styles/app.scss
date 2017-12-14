@@ -1,12 +1,13 @@
 
 $primary: "teal";
 $accent: "light-green";
-$warn: "pink";
+$warn: "red";
 
 // If desired, import the palettes and modify to your liking.
 @import "color-palette";
 $color-teal: map-merge($color-teal, ('contrast':  $light-contrast-color));
 $color-light-green: map-merge($color-light-green, ('contrast':  $light-contrast-color));
+
 
 
 @import 'ember-paper';
@@ -121,14 +122,14 @@ button {
   cursor: pointer;
 }
 
-.signup-view, .login-view, .activate-view, .dashboard-view, .dashboard-phone-number-new-view {
+.app-view {
   min-height: 100vh;
   background-color: #00B28B;
   box-sizing: border-box;
+}
 
-  .white-link {
-    color: #ffffff;
-  }
+.white-link {
+  color: #ffffff;
 }
 
 .signup-view, .login-view, .activate-view {
@@ -290,4 +291,12 @@ button {
 
 .phone-number-confirm-phone-number {
   padding: 50px 0;
+}
+
+.account-disabled-alert {
+  padding: 20px 0;
+  width: 100%;
+  background: #FF4E4E;
+  color: #fff;
+  text-align: center;
 }

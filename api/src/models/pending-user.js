@@ -34,7 +34,7 @@ const PendingUser = Base.extend({
 
     const message = await handlebars.render('email/register', {
       // activationLink: `/app-redirect/activate?code=${id}`,
-       activationLink: `/activate?code=${id}`,
+      activationLink: `/activate?code=${id}`,
       title: 'Prestine - Confirmez votre adresse mail',
     });
 

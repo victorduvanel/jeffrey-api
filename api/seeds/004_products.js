@@ -51,5 +51,16 @@ exports.seed = function(knex) {
       id   : 'd9edce77-d0f4-4773-94de-6fb53812bbae',
       slug : 'apple-io-credit-medium'
     });
+  })
+  .then(() => {
+    return knex.raw(`
+      INSERT INTO "products" (
+        "id", "slug", "created_at", "updated_at"
+      ) VALUES (:id, :slug, NOW(), NOW())
+      ON CONFLICT DO NOTHING
+    `, {
+      id   : 'cfcc7d2d-b704-4083-a775-38b9d229cc90',
+      slug : 'ten-euros-credit'
+    });
   });
 };

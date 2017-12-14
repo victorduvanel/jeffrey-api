@@ -7,6 +7,7 @@ exports.seed = function(knex) {
   `, {
     id          : '9fa666e8-556e-400e-a356-3078fdb3f8e3',
     phoneNumber : '+33644641618',
+    sid         : 'PNc418bfdb02a5a6c44268d4a3b294ffc2',
     owned       : true,
     userId      : '2fe88767-9af9-4944-abb0-03fbdb2ab1da'
   })
@@ -19,6 +20,7 @@ exports.seed = function(knex) {
     `, {
       id          : 'dcd5d5bc-426f-44be-9a23-0fa7bb2da5bd',
       phoneNumber : '+33644641504',
+      sid         : 'PNf23bf8bafb1ee5db5b74756d19126d65',
       owned       : true
     });
   })

@@ -2,6 +2,7 @@ function up(knex) {
   return knex.schema.createTable('phone_numbers', (table) => {
     table.uuid('id').primary();
     table.string('phone_number').unique();
+    table.string('sid').unique();
     table.boolean('owned');
     table
       .uuid('user_id')

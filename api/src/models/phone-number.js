@@ -42,6 +42,20 @@ const PhoneNumber = Base.extend({
     return this.hasMany('Message', 'from_id');
   },
 
+  async disable() {
+    const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
+    await phoneNumber.update({
+      smsUrl: ''
+    });
+  },
+
+  async enable() {
+    const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
+    await phoneNumber.update({
+      smsUrl: 'https://api.prestine.io/webhook'
+    });
+  },
+
   async detach() {
     const userId = this.get('userId');
 
@@ -58,7 +72,7 @@ const PhoneNumber = Base.extend({
     const id = uuid.v4();
     const phoneNumber = await getAvailablePhoneNumber();
 
-    await twilio.incomingPhoneNumbers.create({
+    const result = await twilio.incomingPhoneNumbers.create({
       phoneNumber,
       // voiceUrl: 'https://api.prestine.io/webhook',
       smsmUrl: 'https://api.prestine.io/webhook'
@@ -67,6 +81,7 @@ const PhoneNumber = Base.extend({
     return this.forge({
       id,
       userId: user.get('id'),
+      sid: result.sid,
       phoneNumber,
       owned: true
     })

@@ -87,6 +87,8 @@ get('/placeCall', routes.twilio.placeCall.get);
 
 post('/web-notification', routes.webNotification.post);
 
+post('/credits', routes.credits.post);
+
 get('/conversations', routes.conversations.get);
 post('/conversations', routes.conversations.post);
 get('/conversations/:conversation_id', routes.conversations.getOne);

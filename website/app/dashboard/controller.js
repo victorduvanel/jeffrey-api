@@ -1,21 +1,20 @@
-import Ember from 'ember';
-
-const { service } = Ember.inject;
+import Controller from '@ember/controller';
+import EmberObject, { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service(),
-  pushNotification: Ember.inject.service(),
+  session: service(),
+  pushNotification: service(),
 
   currentUser: service(),
-  user: Ember.computed.alias('currentUser.user'),
+  user: computed.alias('currentUser.user'),
 
-  phoneNumberController: Ember.inject.controller('dashboard.phone-number.phone-number'),
-  phoneNumbersController: Ember.inject.controller('dashboard.phone-number'),
+  selectedPhoneNumber: computed('phoneNumbers', function() {
+    const phoneNumbers = this.get('phoneNumbers');
+    return phoneNumbers.objectAt(0);
+  }),
 
-  selectedPhoneNumber: Ember.computed.alias('phoneNumberController.phoneNumber'),
-  phoneNumbers: Ember.computed.alias('phoneNumbersController.phoneNumbers'),
-
-  availablePhoneNumbers: Ember.computed('selectedPhoneNumber', 'phoneNumbers', function() {
+  availablePhoneNumbers: computed('selectedPhoneNumber', 'phoneNumbers', function() {
     const selectedPhoneNumber = this.get('selectedPhoneNumber');
     const phoneNumbers = this.get('phoneNumbers');
 
@@ -28,7 +27,7 @@ export default Ember.Controller.extend({
     }
   }),
 
-  userLinkLabel: Ember.computed('user.firstName', 'user.lastName', function() {
+  userLinkLabel: computed('user.firstName', 'user.lastName', function() {
     let label = 'Mon compte';
 
     const firstName = this.get('user.firstName');

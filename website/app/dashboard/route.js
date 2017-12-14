@@ -8,6 +8,16 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   notification: service(),
   session: service(),
 
+  setupController(controller, model) {
+    controller.set('phoneNumbers', model);
+  },
+
+  model() {
+    return this
+      .get('store')
+      .findAll('phone-number');
+  },
+
   afterModel() {
     this._super(...arguments);
     // this.get('notification').connect();

@@ -16,6 +16,10 @@
           {{!-- Enable push notifications --}}
         {{!-- {{/paper-button}} --}}
 
+        {{#paper-button onClick=(action (transition-to "dashboard.credits"))}}
+          {{ user.formattedCredit }}
+        {{/paper-button}}
+
         {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
           {{#menu.trigger}}
             {{#paper-button onClick=null}}
@@ -47,6 +51,13 @@
     {{/paper-toolbar}}
   </div>
   <div class="dashboard-view">
+    <div class="account-disabled-alert">
+      Votre compte est desactivé. Rechargez votre compte pour le réactivé.
+      <br/>
+      {{#paper-button raised=true warn=true onClick=(action (transition-to "dashboard.credits"))}}
+        Recharger mon compte
+      {{/paper-button}}
+    </div>
     {{outlet}}
   </div>
 </div>

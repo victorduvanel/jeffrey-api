@@ -7,7 +7,7 @@ export default Controller.extend({
   currentUser: service(),
   user: Ember.computed.alias('currentUser.user'),
 
-  confirmController: Ember.inject.controller('dashboard.phone-number.new.confirm'),
+  //confirmController: Ember.inject.controller('dashboard.phone-number.new.confirm'),
 
   actions: {
     paymentDetailsValidated() {
@@ -18,7 +18,8 @@ export default Controller.extend({
     subscribeButtonPressed() {
       switch (this.get('user.paymentMethodStatus')) {
         case 'ok':
-          this.get('confirmController').userInitiatedTransition();
+          // this.get('confirmController').userInitiatedTransition();
+          this.transitionToRoute('dashboard.phone-number.new.confirm');
           break;
 
         default:

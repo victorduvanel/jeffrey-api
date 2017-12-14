@@ -1,7 +1,9 @@
 import uuid                from 'uuid';
+import config              from '../config';
 import bookshelf           from '../services/bookshelf';
 import Base                from './base';
 import ConversationMessage from './conversation-message';
+import Product             from './product';
 
 const Conversation = Base.extend({
   tableName: 'conversations',
@@ -27,6 +29,10 @@ const Conversation = Base.extend({
 
     const user = this.related('user');
 
+    const product = await Product.find(config.app.incomingMessageProductId);
+    const productPrice = await product.price({ currency: 'eur' });
+    await user.addCredits(-1 * productPrice.get('value'));
+
     user.sendMessage({
       type: 'conversation-activity',
       attributes: {
@@ -45,6 +51,10 @@ const Conversation = Base.extend({
     await this.load('user');
 
     const user = this.related('user');
+
+    const product = await Product.find(config.app.outgoingMessageProductId);
+    const productPrice = await product.price({ currency: 'eur' });
+    await user.addCredits(-1 * productPrice.get('value'));
 
     user.sendMessage({
       type: 'conversation-activity',

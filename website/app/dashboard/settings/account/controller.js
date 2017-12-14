@@ -22,8 +22,8 @@ export default Ember.Controller.extend({
     let newLastName  = this.get('lastName');
     let newEmail     = this.get('email');
 
-    let userFirstName = user.get('firstName');
-    let userLastName  = user.get('lastName');
+    let userFirstName = user.get('firstName') || '';
+    let userLastName  = user.get('lastName') || '';
     let userEmail     = user.get('email');
 
     newFirstName  = newFirstName.trim().toLowerCase();
@@ -42,15 +42,10 @@ export default Ember.Controller.extend({
 
   reset() {
     const user = this.get('user');
-    const {
-      firstName,
-      lastName,
-      email,
-    } = user.getProperties(
-      'firstName',
-      'lastName',
-      'email'
-    );
+
+    let firstName = user.get('firstName') || '';
+    let lastName  = user.get('lastName') || '';
+    let email     = user.get('email');
 
     this.setProperties({
       firstName,

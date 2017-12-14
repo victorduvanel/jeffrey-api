@@ -99,6 +99,7 @@ const Subscription = Base.extend({
     const user = subscription.related('user');
     const phoneNumber = subscription.related('phoneNumber');
 
+    /*
     const outgoing = parseInt((await bookshelf.knex('messages')
       .count('* as total')
       .where('from_id', '=', phoneNumber.get('id'))
@@ -126,6 +127,7 @@ const Subscription = Base.extend({
         '<',
         knex.raw(`'${subscription.get('nextRenewal').toISOString()}'::date`)
       ))[0].total, 10);
+    */
 
     const invoice = await Invoice.create({
       user,
@@ -137,6 +139,7 @@ const Subscription = Base.extend({
       product  : phoneNumberProduct
     });
 
+    /*
     const incomingMessageProduct = await Product.find(config.app.incomingMessageProductId);
     await invoice.addProduct({
       product  : incomingMessageProduct,
@@ -148,6 +151,7 @@ const Subscription = Base.extend({
       product  : outgoingMessageProduct,
       quantity : outgoing
     });
+    */
 
     let charged = false;
     try {

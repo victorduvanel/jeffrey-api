@@ -7,13 +7,20 @@ export const get = [
     const user = req.user;
 
     const paymentMethodStatus = await user.paymentMethodStatus();
+    const credits = await user.credits();
 
     res.send({
       id: user.get('id'),
       first_name: user.get('firstName'),
       last_name: user.get('lastName'),
       email: user.get('email'),
-      payment_method_status: paymentMethodStatus
+      payment_method_status: paymentMethodStatus,
+      credit_auto_reload: user.get('creditAutoReload'),
+      accountDisabled: user.get('accountDisabled'),
+      credit: {
+        amount: credits,
+        currency: 'EUR'
+      }
     });
   }
 ];
@@ -36,6 +43,10 @@ export const patch = [
 
     if (body.password) {
       await user.updatePassword(body.password);
+    }
+
+    if (body.credit_auto_reload) {
+      user.set('creditAutoReload', body.credit_auto_reload);
     }
 
     if (user.hasChanged()) {
