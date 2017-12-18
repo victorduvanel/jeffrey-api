@@ -16,7 +16,7 @@ export const get = [
       email: user.get('email'),
       payment_method_status: paymentMethodStatus,
       credit_auto_reload: user.get('creditAutoReload'),
-      accountDisabled: user.get('accountDisabled'),
+      account_disabled: user.get('accountDisabled'),
       credit: {
         amount: credits,
         currency: 'EUR'

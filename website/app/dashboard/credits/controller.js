@@ -6,7 +6,6 @@ import SweetAlertMixin from 'ember-sweetalert/mixins/sweetalert-mixin';
 export default Controller.extend(SweetAlertMixin, {
   ajax: Ember.inject.service(),
   currentUser: service(),
-  user: computed.alias('currentUser.user'),
 
   actions: {
     purchase() {
@@ -18,6 +17,10 @@ export default Controller.extend(SweetAlertMixin, {
         showCancelButton: true,
         confirmButtonText: 'Créditer mon compte'
       }).then((confirm)=> {
+        if (confirm.dismiss === 'cancel') {
+          return;
+        }
+
         sweetAlert({
           showCancelButton: false,
           onOpen: () => {
@@ -26,7 +29,7 @@ export default Controller.extend(SweetAlertMixin, {
             this.get('ajax').post('/credits', { })
               .then((res) => {
                 if (res.success) {
-                  this.get('user').set('credit.amount', res.credits);
+                  this.get('currentUser').load();
                 }
 
                 sweetAlert.close();
@@ -35,13 +38,9 @@ export default Controller.extend(SweetAlertMixin, {
                   title: 'Votre compte a bien été crédité',
                   type: 'success',
                   confirmButtonText: 'OK'
-                }).then((confirm)=> {
-
                 });
               });
           }
-        }).then((confirm)=> {
-          // ...
         });
       });
     },

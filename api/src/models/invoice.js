@@ -69,7 +69,8 @@ const Invoice = Base.extend({
     const currency = this.get('currency');
 
     await this.load('user.stripeCustomer');
-    const customers = this.related('user').related('stripeCustomer');
+    const user = this.related('user');
+    const customers = user.related('stripeCustomer');
 
     if (!customers.length) {
       throw UserCannotBeCharged;
@@ -77,16 +78,18 @@ const Invoice = Base.extend({
 
     const customerId = customers.at(0).get('id');
 
-    try {
-      await stripe.charges.create({
-        amount,
-        currency,
-        customer: customerId,
-      });
-    } catch (err) {
-      this.set('status', Invoice.status.failed);
-      await this.save();
-      throw PaymentFailed;
+    if (user.get('friend') !== true) {
+      try {
+        await stripe.charges.create({
+          amount,
+          currency,
+          customer: customerId,
+        });
+      } catch (err) {
+        this.set('status', Invoice.status.failed);
+        await this.save();
+        throw PaymentFailed;
+      }
     }
 
     this.set('status', Invoice.status.paid);

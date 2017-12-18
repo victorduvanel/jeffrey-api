@@ -7,6 +7,9 @@ export default Ember.Service.extend({
 
   load() {
     if (this.get('session.isAuthenticated')) {
+      const auth = this.get('session.data.authenticated');
+      console.log(auth);
+
       return this.get('ajax')
         .request('/me')
         .then((res) => {

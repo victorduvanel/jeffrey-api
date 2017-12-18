@@ -43,17 +43,25 @@ const PhoneNumber = Base.extend({
   },
 
   async disable() {
-    const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
-    await phoneNumber.update({
-      smsUrl: ''
-    });
+    if (config.PRODUCTION) {
+      const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
+      await phoneNumber.update({
+        smsUrl: ''
+      });
+    }
+
+    return Promise.resolve();
   },
 
   async enable() {
-    const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
-    await phoneNumber.update({
-      smsUrl: 'https://api.prestine.io/webhook'
-    });
+    if (config.PRODUCTION) {
+      const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
+      await phoneNumber.update({
+        smsUrl: 'https://api.prestine.io/webhook'
+      });
+    }
+
+    return Promise.resolve();
   },
 
   async detach() {
@@ -75,7 +83,7 @@ const PhoneNumber = Base.extend({
     const result = await twilio.incomingPhoneNumbers.create({
       phoneNumber,
       // voiceUrl: 'https://api.prestine.io/webhook',
-      smsmUrl: 'https://api.prestine.io/webhook'
+      smsmUrl: ''
     });
 
     return this.forge({

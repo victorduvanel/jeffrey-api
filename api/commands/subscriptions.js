@@ -6,8 +6,8 @@ import knex  from '../src/services/knex';
 import Subscription from '../src/models/subscription';
 
 export default async () => {
-  // const today = 'current_date';
-  const date = '2017-03-23';
+  const today = 'current_date';
+  // const date = '2017-03-23';
 
   const result = await knex.raw(
     `select id from subscriptions where next_renewal = '${date}'`

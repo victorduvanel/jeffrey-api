@@ -52,6 +52,17 @@ const User = Base.extend({
       });
   },
 
+  async enableAccount() {
+    await this.load('phoneNumbers');
+
+    await Promise.all(this.related('phoneNumbers').map((phoneNumber) => {
+      return phoneNumber.enable();
+    }));
+
+    this.set('accountDisabled', false);
+    await this.save();
+  },
+
   async disableAccount() {
     await this.load('phoneNumbers');
 
@@ -91,6 +102,10 @@ const User = Base.extend({
 
     if (credits < 100) {
       await this.disableAccount();
+    }
+
+    if (this.get('accountDisabled') && credits >= 200) {
+      await this.enableAccount();
     }
 
     return credits;
@@ -238,6 +253,10 @@ const User = Base.extend({
 
   create: async function(props) {
     const id = uuid.v4();
+
+    if (!props.hasOwnProperty('accountDisabled')) {
+      props.accountDisabled = true;
+    }
 
     return this.forge({ id, ...props })
       .save(null, { method: 'insert' })

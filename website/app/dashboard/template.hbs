@@ -20,25 +20,27 @@
           {{ user.formattedCredit }}
         {{/paper-button}}
 
-        {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
-          {{#menu.trigger}}
-            {{#paper-button onClick=null}}
-              {{selectedPhoneNumber.formated}}
-            {{/paper-button}}
-          {{/menu.trigger}}
+        {{#if selectedPhoneNumber}}
+          {{#paper-menu isOpen=menuThreeIsOpen offset="0 -5" as |menu|}}
+            {{#menu.trigger}}
+              {{#paper-button onClick=null}}
+                {{selectedPhoneNumber.formated}}
+              {{/paper-button}}
+            {{/menu.trigger}}
 
-          {{#menu.content as |content|}}
-            {{#each availablePhoneNumbers as |phoneNumber| }}
-              {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.phone-number" phoneNumber))}}
-                <span>{{phoneNumber.formated}}</span>
+            {{#menu.content as |content|}}
+              {{#each availablePhoneNumbers as |phoneNumber| }}
+                {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.phone-number" phoneNumber))}}
+                  <span>{{phoneNumber.formated}}</span>
+                {{/content.menu-item}}
+              {{/each}}
+
+              {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.new"))}}
+                <span>Obtenir un numero</span>
               {{/content.menu-item}}
-            {{/each}}
-
-            {{#content.menu-item onClick=(action (transition-to "dashboard.phone-number.new"))}}
-              <span>Obtenir un numero</span>
-            {{/content.menu-item}}
-          {{/menu.content}}
-        {{/paper-menu}}
+            {{/menu.content}}
+          {{/paper-menu}}
+        {{/if}}
 
         {{#paper-button onClick=(action (transition-to "dashboard.settings"))}}
           {{userLinkLabel}}
@@ -51,13 +53,15 @@
     {{/paper-toolbar}}
   </div>
   <div class="dashboard-view">
-    <div class="account-disabled-alert">
-      Votre compte est desactivé. Rechargez votre compte pour le réactivé.
-      <br/>
-      {{#paper-button raised=true warn=true onClick=(action (transition-to "dashboard.credits"))}}
-        Recharger mon compte
-      {{/paper-button}}
-    </div>
+    {{#if user.accountDisabled}}
+      <div class="account-disabled-alert">
+        Votre compte est desactivé. Rechargez votre compte pour le réactivé.
+        <br/>
+        {{#paper-button raised=true warn=true onClick=(action (transition-to "dashboard.credits"))}}
+          Recharger mon compte
+        {{/paper-button}}
+      </div>
+    {{/if}}
     {{outlet}}
   </div>
 </div>

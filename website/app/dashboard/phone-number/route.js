@@ -13,13 +13,16 @@ export default Ember.Route.extend({
 
   redirect(phoneNumbers, transition) {
     if (phoneNumbers.get('length')) {
-      const phoneNumber = phoneNumbers.objectAt(0);
       const to = 'dashboard.phone-number.phone-number';
       if (transition.targetName.substr(0, to.length) !== to) {
+        const phoneNumber = phoneNumbers.objectAt(0);
         this.transitionTo(to, phoneNumber);
       }
     } else {
-      //this.transitionTo('dashboard.phone-number.new');
+      const newPhoneNumberRoute = 'dashboard.phone-number.new';
+      if (transition.targetName.substr(0, newPhoneNumberRoute.length) !== newPhoneNumberRoute) {
+        this.transitionTo(newPhoneNumberRoute);
+      }
     }
   }
 });

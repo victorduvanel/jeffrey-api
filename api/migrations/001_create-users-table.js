@@ -7,6 +7,7 @@ function up(knex) {
       table.string('facebook_id').unique();
       table.boolean('credit_auto_reload');
       table.boolean('account_disabled');
+      table.boolean('friend');
       table.string('password');
       table.string('first_name');
       table.string('last_name');
