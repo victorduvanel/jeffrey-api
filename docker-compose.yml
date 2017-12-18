@@ -9,4 +9,4 @@ services:
     environment:
       CONFIG: /config/config-test.yml
   postgres:
-    image: postgres:9.6.1
+    image: postgres:10.1
