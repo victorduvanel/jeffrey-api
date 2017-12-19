@@ -20,11 +20,13 @@ import * as appLink         from './app-link';
 import * as appRedirect     from './app-redirect';
 import * as contactDetails  from './contact-details';
 import * as credits         from './credits';
+import * as subscriptions   from './subscriptions';
 
 export default {
   webhook, oauth, me, activate, signup, northsigner,
   paymentMethods, phoneNumber, messages, invoices,
   terms, resetPassword, twilio, webNotification,
   conversations, ms, fixtureMessages, apple,
-  appLink, appRedirect, contactDetails, credits
+  appLink, appRedirect, contactDetails, credits,
+  subscriptions
 };

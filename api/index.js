@@ -29,12 +29,6 @@ commander
     pending = commands.serve();
   });
 
-commander
-  .command('subscriptions')
-  .action(() => {
-    pending = commands.subscriptions();
-  });
-
 commander.parse(process.argv);
 
 if (pending === null) {

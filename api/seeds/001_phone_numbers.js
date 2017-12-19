@@ -1,21 +1,20 @@
 exports.seed = function(knex) {
   return knex.raw(`
     INSERT INTO "phone_numbers" (
-      "id", "phone_number", "owned", "user_id", "created_at", "updated_at"
-    ) VALUES (:id, :phoneNumber, :owned, :userId, NOW(), NOW())
+      "id", "phone_number", "owned", "sid", "created_at", "updated_at"
+    ) VALUES (:id, :phoneNumber, :owned, :sid, NOW(), NOW())
     ON CONFLICT DO NOTHING
   `, {
     id          : '9fa666e8-556e-400e-a356-3078fdb3f8e3',
     phoneNumber : '+33644641618',
     sid         : 'PNc418bfdb02a5a6c44268d4a3b294ffc2',
-    owned       : true,
-    userId      : '2fe88767-9af9-4944-abb0-03fbdb2ab1da'
+    owned       : true
   })
   .then(() => {
     return knex.raw(`
       INSERT INTO "phone_numbers" (
-        "id", "phone_number", "owned", "created_at", "updated_at"
-      ) VALUES (:id, :phoneNumber, :owned, NOW(), NOW())
+        "id", "phone_number", "owned", "sid", "created_at", "updated_at"
+      ) VALUES (:id, :phoneNumber, :owned, :sid, NOW(), NOW())
       ON CONFLICT DO NOTHING
     `, {
       id          : 'dcd5d5bc-426f-44be-9a23-0fa7bb2da5bd',

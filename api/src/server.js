@@ -103,6 +103,8 @@ get('/app-link', routes.appLink.get);
 
 get('/app-redirect/:action', routes.appRedirect.get);
 
+post('/subscriptions/renew', routes.subscriptions.renew.post);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {
