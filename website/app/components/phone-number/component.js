@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
+import Component from '@ember/component';
 import styles from './style';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'span',
   localClassNames: ['phone-number'],
 
@@ -9,7 +11,7 @@ export default Ember.Component.extend({
 
   number: null,
 
-  formatted: Ember.computed('number', function() {
+  formatted: computed('number', function() {
     let phoneNumber = this.get('number');
 
     if (!phoneNumber) {
@@ -29,6 +31,6 @@ export default Ember.Component.extend({
     }
     formatted += phoneNumber[i];
 
-    return Ember.String.htmlSafe(formatted);
+    return htmlSafe(formatted);
   })
 });

@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  ajax: Ember.inject.service(),
+export default Route.extend({
+  ajax: service(),
 
   queryParams: {
     code: {
@@ -17,7 +19,7 @@ export default Ember.Route.extend({
         method: 'POST'
       });
     } else {
-      return Ember.RSVP.Promise.reject(new Error('Code d’activation manquant'));
+      return RSVP.Promise.reject(new Error('Code d’activation manquant'));
     }
   },
 

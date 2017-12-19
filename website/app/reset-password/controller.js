@@ -1,8 +1,10 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { next } from '@ember/runloop';
 
-export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
-  toast: Ember.inject.service(),
+export default Controller.extend({
+  ajax: service(),
+  toast: service(),
 
   resetToken: null,
 
@@ -40,7 +42,7 @@ export default Ember.Controller.extend({
           .then(() => {
             this.transitionToRoute('login');
 
-            Ember.run.next(() => {
+            next(() => {
               const toast = this.get('toast');
 
               toast.success(

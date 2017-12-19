@@ -1,10 +1,9 @@
 import Controller from '@ember/controller';
-import EmberObject, { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
 import SweetAlertMixin from 'ember-sweetalert/mixins/sweetalert-mixin';
 
 export default Controller.extend(SweetAlertMixin, {
-  ajax: Ember.inject.service(),
+  ajax: service(),
   currentUser: service(),
 
   actions: {
@@ -46,6 +45,7 @@ export default Controller.extend(SweetAlertMixin, {
     },
 
     enableCreditAutoReload() {
+      const sweetAlert = this.get('sweetAlert');
       sweetAlert({
         showCancelButton: false,
         onOpen: () => {
@@ -55,17 +55,13 @@ export default Controller.extend(SweetAlertMixin, {
               credit_auto_reload: true
             }
           })
-            .then((res) => {
-              console.log(res);
-
+            .then(() => {
               sweetAlert.close();
 
               sweetAlert({
                 title: 'Le rechargement automatique a bien été activé',
                 type: 'success',
                 confirmButtonText: 'OK'
-              }).then((confirm)=> {
-
               });
             });
         }

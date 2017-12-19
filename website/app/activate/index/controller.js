@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
-  session: Ember.inject.service(),
+export default Controller.extend({
+  ajax: service(),
+  session: service(),
 
   isLoading      : false,
 

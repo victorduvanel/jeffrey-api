@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service(),
-  toast: Ember.inject.service(),
+export default Controller.extend({
+  session: service(),
+  toast: service(),
 
   error: null,
   email: '',
@@ -24,8 +25,6 @@ export default Ember.Controller.extend({
       this.get('session')
         .authenticate('authenticator:oauth2', email, password)
         .catch((err) => {
-          console.error(err);
-
           if (err && err.error) {
             err = err.error;
             if (err.title === 'Invalid Credentials') {

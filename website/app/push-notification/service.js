@@ -1,11 +1,15 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
+import Service, { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 import config from '../config/environment';
 
 const urlB64ToUint8Array = (base64String) => {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  /* eslint-disable no-useless-escape */
   const base64 = (base64String + padding)
     .replace(/\-/g, '+')
     .replace(/_/g, '/');
+  /* eslint-enable no-useless-escape */
 
   const rawData = window.atob(base64);
   const outputArray = new Uint8Array(rawData.length);
@@ -16,12 +20,12 @@ const urlB64ToUint8Array = (base64String) => {
   return outputArray;
 };
 
-export default Ember.Service.extend({
-  ajax: Ember.inject.service(),
+export default Service.extend({
+  ajax: service(),
 
   publicKey: config.APP.PUSH_NOTIFICATION_PUBLIC_KEY,
 
-  workerScriptUrl: Ember.computed(function() {
+  workerScriptUrl: computed(function() {
     const metas = document.head.getElementsByTagName('meta');
     for (const meta of metas) {
       if (meta.getAttribute('name') === 'notification-worker') {
@@ -32,7 +36,7 @@ export default Ember.Service.extend({
     return null;
   }),
 
-  platformSupported: Ember.computed(function() {
+  platformSupported: computed(function() {
     return ('serviceWorker' in navigator && 'PushManager' in window);
   }),
 
@@ -73,7 +77,7 @@ export default Ember.Service.extend({
   registerWorker() {
     let _registerProm = this.get('_registerProm');
     if (!_registerProm) {
-      _registerProm = new Ember.RSVP.Promise((resolve, reject) => {
+      _registerProm = new RSVP.Promise((resolve, reject) => {
         if (!this.get('platformSupported')) {
           reject(new Error('Platform not supported'));
           return;

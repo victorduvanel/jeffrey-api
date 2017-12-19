@@ -1,8 +1,11 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
+import { debug } from '@ember/debug';
+import Service, { inject as service } from '@ember/service';
+import Evented from '@ember/object/evented';
 
-export default Ember.Service.extend(Ember.Evented, {
-  ajax: Ember.inject.service(),
-  session: Ember.inject.service(),
+export default Service.extend(Evented, {
+  ajax: service(),
+  session: service(),
 
   twilio: null,
   deviceReady: false,
@@ -10,7 +13,7 @@ export default Ember.Service.extend(Ember.Evented, {
   init() {
     this._super(...arguments);
 
-    const promise = new Ember.RSVP.Promise((resolve, reject) => {
+    const promise = new RSVP.Promise((resolve, reject) => {
       const sdkUrl = '//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js';
 
       const script = document.createElement('script');
@@ -47,7 +50,7 @@ export default Ember.Service.extend(Ember.Evented, {
     });
 
     twilio.Device.error((err) => {
-      console.error(err);
+      debug(err);
     });
   },
 
@@ -65,21 +68,21 @@ export default Ember.Service.extend(Ember.Evented, {
 
   startCall(fromNumber, toNumber) {
     this.initDevice()
-    .then(() => {
-      const twilio = this.get('twilio');
+      .then(() => {
+        const twilio = this.get('twilio');
 
-      twilio.Device.connect({
-        fromNumber,
-        toNumber,
-        token: this.getToken()
+        twilio.Device.connect({
+          fromNumber,
+          toNumber,
+          token: this.getToken()
+        });
       });
-    });
   },
 
   _initDevicePromise: null,
   initDevice() {
     if (this.get('deviceReady')) {
-      return Ember.RSVP.Promise.resolve();
+      return RSVP.Promise.resolve();
     }
 
     let _initDevicePromise = this.get('_initDevicePromise');
@@ -93,7 +96,7 @@ export default Ember.Service.extend(Ember.Evented, {
             .then((res) => {
               const token = res.token;
 
-              return new Ember.RSVP.Promise((resolve) => {
+              return new RSVP.Promise((resolve) => {
                 if (this.get('deviceReady')) {
                   resolve();
                 } else {

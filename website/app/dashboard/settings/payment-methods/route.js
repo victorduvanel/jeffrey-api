@@ -1,12 +1,14 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import EmberObject from '@ember/object';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  ajax: Ember.inject.service(),
+export default Route.extend({
+  ajax: service(),
 
   setupController(controller, model) {
     const paymentMethod = model['payment-method'];
     if (paymentMethod) {
-      controller.set('paymentMethod', Ember.Object.create({
+      controller.set('paymentMethod', EmberObject.create({
         type       : paymentMethod.type,
         lastFour   : paymentMethod['last-four'],
         expMonth   : paymentMethod['exp-month'],

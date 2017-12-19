@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { alias } from '@ember/object/computed';
 
-const { service } = Ember.inject;
-
-export default Ember.Controller.extend({
+export default Controller.extend({
 
   currentUser: service(),
-  user: Ember.computed.alias('currentUser.user'),
+  user: alias('currentUser.user'),
 
   phoneNumber: null,
   isLoading: false,

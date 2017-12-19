@@ -1,10 +1,14 @@
-import Ember  from 'ember';
+import RSVP from 'rsvp';
+import { observer } from '@ember/object';
+import Evented from '@ember/object/evented';
+import { next } from '@ember/runloop';
+import Service, { inject as service } from '@ember/service';
 import config from '../config/environment';
 
-export default Ember.Service.extend(Ember.Evented, {
+export default Service.extend(Evented, {
   host: config.APP.API_HOST,
-  session: Ember.inject.service(),
-  currentUser: Ember.inject.service(),
+  session: service(),
+  currentUser: service(),
 
   lastTry: null,
 
@@ -14,15 +18,17 @@ export default Ember.Service.extend(Ember.Evented, {
   connectingPromise: null,
 
   connect() {
+    /*
     const now = (new Date()).getTime();
     const lastTry = this.get('lastTry');
 
-    //if (lastTry && now - lastTry < 10000) {
-      //Ember.run.later(() => {
-        //this._connect();
-      //}, 10000 - (now - lastTry));
-      //return;
-    //}
+    if (lastTry && now - lastTry < 10000) {
+      run.later(() => {
+        this._connect();
+      }, 10000 - (now - lastTry));
+      return;
+    }
+    */
 
     this._connect();
   },
@@ -30,13 +36,13 @@ export default Ember.Service.extend(Ember.Evented, {
   _connect() {
     this.set('shouldBeConnected', true);
     if (this.get('connected')) {
-      return Ember.RSVP.Promise.resolve();
+      return RSVP.Promise.resolve();
     }
 
     return this.initWebSocket()
-    .catch(() => {
-      this.connect();
-    });
+      .catch(() => {
+        this.connect();
+      });
   },
 
   initWebSocket() {
@@ -52,7 +58,7 @@ export default Ember.Service.extend(Ember.Evented, {
       } else if (host.indexOf('http:') === 0) {
         url = `ws://${host.substr(7)}/notifications`;
       } else {
-        return Ember.RSVP.Promise.reject(new Error('Unspported protocol'));
+        return RSVP.Promise.reject(new Error('Unspported protocol'));
       }
 
       connectingPromise = this.get('currentUser')
@@ -62,7 +68,7 @@ export default Ember.Service.extend(Ember.Evented, {
           token = encodeURIComponent(token);
           url = `${url}?access_token=${token}`;
 
-          return new Ember.RSVP.Promise((resolve, reject) => {
+          return new RSVP.Promise((resolve, reject) => {
             const socket = new WebSocket(url);
             this.set('lastTry', (new Date()).getTime());
 
@@ -83,14 +89,14 @@ export default Ember.Service.extend(Ember.Evented, {
             });
 
             socket.addEventListener('close', () => {
-              Ember.run.next(() => {
+              next(() => {
                 this.set('connected', false);
                 this.set('socket', null);
               });
             });
 
             socket.addEventListener('message', (event) => {
-              Ember.run.next(() => {
+              next(() => {
                 this.messageReceived(event);
               });
             });
@@ -117,7 +123,7 @@ export default Ember.Service.extend(Ember.Evented, {
     }
   },
 
-  connectionObserver: Ember.observer('connected', function() {
+  connectionObserver: observer('connected', function() {
     if (!this.get('connected') && this.get('shouldBeConnected')) {
       this.connect();
     }

@@ -1,9 +1,10 @@
-import Ember from 'ember';
-import email from '../utils/email';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import email from 'prestine/utils/email';
 
-export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
-  recaptcha: Ember.inject.service(),
+export default Controller.extend({
+  ajax: service(),
+  recaptcha: service(),
 
   isLoading  : false,
   email      : '',

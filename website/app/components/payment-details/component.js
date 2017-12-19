@@ -1,5 +1,6 @@
-import Ember from 'ember';
 import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import { debug } from '@ember/debug';
 
 export default Component.extend({
   isLoading: false,
@@ -9,8 +10,8 @@ export default Component.extend({
   expirationDate: '10/24',
   cvc: '123',
 
-  stripe: Ember.inject.service(),
-  ajax: Ember.inject.service(),
+  stripe: service(),
+  ajax: service(),
 
   reset() {
     this.setProperties({
@@ -37,14 +38,14 @@ export default Component.extend({
         cvc,
         name: cardholderName
       })
-    .then((token) => {
-      return this.get('ajax').request('/payment-methods', {
-        method: 'POST',
-        data: {
-          stripe_token: token.id
-        }
+      .then((token) => {
+        return this.get('ajax').request('/payment-methods', {
+          method: 'POST',
+          data: {
+            stripe_token: token.id
+          }
+        });
       });
-    });
   },
 
   actions: {
@@ -70,7 +71,7 @@ export default Component.extend({
       const expirationDateSplit = expirationDate.split('/');
       if (expirationDateSplit.length !== 2) {
         this.set('isLoading', false);
-        console.error('invalid expiration date');
+        debug('invalid expiration date');
         return;
       }
 

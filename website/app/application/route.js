@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import { debug } from '@ember/debug';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-const { service } = Ember.inject;
-
-export default Ember.Route.extend(ApplicationRouteMixin, {
+export default Route.extend(ApplicationRouteMixin, {
   currentUser: service(),
 
   beforeModel() {
@@ -32,7 +32,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     return this.get('currentUser')
       .load()
       .catch((err) => {
-        Ember.Logger.error(err);
+        debug(err);
         this.get('session').invalidate();
       });
   },

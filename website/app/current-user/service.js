@@ -1,14 +1,17 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
+import EmberObject from '@ember/object';
+import { debug } from '@ember/debug';
+import Service, { inject as service } from '@ember/service';
 import User from 'prestine/user';
 
-export default Ember.Service.extend({
-  session: Ember.inject.service(),
-  ajax: Ember.inject.service(),
+export default Service.extend({
+  session: service(),
+  ajax: service(),
 
   load() {
     if (this.get('session.isAuthenticated')) {
       const auth = this.get('session.data.authenticated');
-      console.log(auth);
+      debug(auth);
 
       return this.get('ajax')
         .request('/me')
@@ -21,12 +24,12 @@ export default Ember.Service.extend({
             email               : res.email,
             paymentMethodStatus : res.payment_method_status,
             isAuthenticated     : true,
-            credit              : Ember.Object.create(res.credit),
+            credit              : EmberObject.create(res.credit),
             creditAutoReload    : res.credit_auto_reload
           }));
         });
     } else {
-      return Ember.RSVP.resolve();
+      return RSVP.resolve();
     }
   },
 

@@ -1,8 +1,9 @@
-import Ember from 'ember';
-import config from '../../../config/environment';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import config from 'prestine/config/environment';
 
-export default Ember.Controller.extend({
-  currentUser: Ember.inject.service(),
+export default Controller.extend({
+  currentUser: service(),
 
   actions: {
     openInvoicePopup(invoice) {

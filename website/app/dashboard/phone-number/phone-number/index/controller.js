@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { debug } from '@ember/debug';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
+export default Controller.extend({
+  ajax: service(),
   message: '',
   toPhoneNumber: '',
 
@@ -25,9 +27,9 @@ export default Ember.Controller.extend({
           message
         }
       })
-      .then((res) => {
-        console.log(res);
-      });
+        .then((res) => {
+          debug(res);
+        });
     }
   }
 });

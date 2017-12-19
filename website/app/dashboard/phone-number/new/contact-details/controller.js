@@ -1,8 +1,8 @@
-import Ember from 'ember';
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-  ajax: Ember.inject.service(),
+  ajax: service(),
 
   actions: {
     contactDetailsValidated({

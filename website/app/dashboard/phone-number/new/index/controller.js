@@ -1,24 +1,20 @@
-import Ember from 'ember';
 import Controller from '@ember/controller';
-
-const { service } = Ember.inject;
+import { inject as service } from '@ember/service';
+import { alias } from '@ember/object/computed';
+import { debug } from '@ember/debug';
 
 export default Controller.extend({
   currentUser: service(),
-  user: Ember.computed.alias('currentUser.user'),
-
-  //confirmController: Ember.inject.controller('dashboard.phone-number.new.confirm'),
+  user: alias('currentUser.user'),
 
   actions: {
     paymentDetailsValidated() {
-      console.log('ok');
-      //this.get('confirmController').userInitiatedTransition();
+      debug('ok');
     },
 
     subscribeButtonPressed() {
       switch (this.get('user.paymentMethodStatus')) {
         case 'ok':
-          // this.get('confirmController').userInitiatedTransition();
           this.transitionToRoute('dashboard.phone-number.new.confirm');
           break;
 

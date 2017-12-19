@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 
-const { service } = Ember.inject;
-
-export default Ember.Controller.extend({
+export default Controller.extend({
   currentUser: service(),
-  user: Ember.computed.alias('currentUser.user'),
+  user: alias('currentUser.user'),
 
   firstName      : '',
   firstNameError : null,
@@ -15,7 +16,7 @@ export default Ember.Controller.extend({
   email          : '',
   emailError     : null,
 
-  submitButtonDisabled: Ember.computed('firstName', 'lastName', 'email', function() {
+  submitButtonDisabled: computed('firstName', 'lastName', 'email', function() {
     const user = this.get('user');
 
     let newFirstName = this.get('firstName');

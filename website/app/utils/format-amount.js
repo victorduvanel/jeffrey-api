@@ -1,5 +1,4 @@
- const formatAmount = (amount, currency) => {
-
+const formatAmount = (amount, currency) => {
   const symbols = {
     EUR: '€'
   };

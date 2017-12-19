@@ -1,13 +1,14 @@
-import Ember from 'ember';
+import RSVP from 'rsvp';
+import Service from '@ember/service';
 import config from '../config/environment';
 
-export default Ember.Service.extend({
+export default Service.extend({
   promise: null,
 
   init() {
     this._super(...arguments);
 
-    const promise = new Ember.RSVP.Promise((resolve, reject) => {
+    const promise = new RSVP.Promise((resolve, reject) => {
       const script = document.createElement('script');
       script.src = 'https://js.stripe.com/v2/';
 
@@ -58,7 +59,7 @@ export default Ember.Service.extend({
     addressCountry
   }) {
     return this.get('promise').then((stripe) => {
-      return new Ember.RSVP.Promise((resolve, reject) => {
+      return new RSVP.Promise((resolve, reject) => {
         stripe.card.createToken({
           number,
           exp_month: expMonth,

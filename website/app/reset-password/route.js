@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  ajax: Ember.inject.service(),
+export default Route.extend({
+  ajax: service(),
 
   setupController(controller, model) {
     controller.reset();
@@ -16,9 +17,6 @@ export default Ember.Route.extend({
     const token = encodeURIComponent(params.token);
 
     return this.get('ajax')
-      .request(`/reset-password/${token}`)
-      .catch(() => {
-
-      });
+      .request(`/reset-password/${token}`);
   }
 });

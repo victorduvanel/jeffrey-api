@@ -1,13 +1,14 @@
 import Controller from '@ember/controller';
-import EmberObject, { computed } from '@ember/object';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   session: service(),
   pushNotification: service(),
 
   currentUser: service(),
-  user: computed.alias('currentUser.user'),
+  user: alias('currentUser.user'),
 
   selectedPhoneNumber: computed('phoneNumbers', function() {
     const phoneNumbers = this.get('phoneNumbers');

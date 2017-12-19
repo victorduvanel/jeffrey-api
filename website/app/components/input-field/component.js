@@ -1,16 +1,20 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed, observer } from '@ember/object';
+import { on } from '@ember/object/evented';
+import { next } from '@ember/runloop';
+import $ from 'jquery';
 
-export default Ember.Component.extend({
+export default Component.extend({
   focused: false,
 
-  inputId: Ember.computed(function() {
+  inputId: computed(function() {
     return this.get('elementId') + '-input';
   }),
 
-  focusObserver: Ember.on('init', Ember.observer('focused', function() {
+  focusObserver: on('init', observer('focused', function() {
     if (this.get('focused')) {
-      Ember.run.next(() => {
-        Ember.$('#' + this.get('inputId')).focus();
+      next(() => {
+        $('#' + this.get('inputId')).focus();
         this.set('focused', false);
       });
     }

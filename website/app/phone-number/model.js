@@ -1,10 +1,10 @@
-import Ember from 'ember';
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   phoneNumber: DS.attr('string'),
 
-  formated: Ember.computed('phoneNumber', function() {
+  formated: computed('phoneNumber', function() {
     let phoneNumber = this.get('phoneNumber');
 
     if (!phoneNumber) {
