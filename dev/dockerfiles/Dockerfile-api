@@ -1,8 +1,0 @@
-FROM node:7.1.0
-MAINTAINER William Riancho <william@reptilians.io>
-
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-WORKDIR /app
-
-EXPOSE 3002
-CMD /root/.yarn/bin/yarn install && npm run migrate && npm run watch serve

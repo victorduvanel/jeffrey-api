@@ -1,36 +1,66 @@
-<div class="container-fluid dark-background minh-100">
-  <div class="row">
-    <div class="offset-md-4 col-4 text-center py-5">
-      <div class="prestine-logo"></div>
-    </div>
+{{prestine-logo}}
+
+{{#if isLoading}}
+  <div class="layout-column layout-align-center-center">
+    {{paper-progress-circular}}
   </div>
-  <div class="row">
-    <div class="offset-md-4 col-4 px-5 py-4 light-background">
-      {{#if success}}
-        <div class="alert alert-success mt-2">
+{{/if}}
+
+{{#if success}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <div class="layout-column layout-align-center-center">
           Consultez votre boite mail afin de réinitiliser votre mot de passe.
         </div>
-      {{else}}
-        <form {{ action "submit" on="submit" }}>
-          <fieldset disabled={{ isLoading }}>
-            <h3 class="mb-3">Mot de passe oublié</h3>
-
-            {{#animable-content shake=shakeEmailInput}}
-              {{ input-field value=email label="Adresse e-mail" placeholder="Adresse e-mail" type="email" focused=true }}
-            {{/animable-content}}
-
-            {{#if isLoading}}
-              <button type="submit" class="btn btn-primary"><i class="fa fa-spinner fa-pulse fa-fw"></i></button>
-            {{else}}
-              <button type="submit" class="btn btn-primary">Valider</button>
-            {{/if}}
-
-            {{#if error}}
-              <div class="alert alert-danger mt-2">{{error}}</div>
-            {{/if}}
-          </fieldset>
-        </form>
-      {{/if}}
-    </div>
+      {{/card.content}}
+    {{/paper-card}}
   </div>
-</div>
+{{/if}}
+
+{{#if error}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <div class="layout-column layout-align-center-center">
+          {{error}}
+        </div>
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/if}}
+
+{{#unless success}}
+  {{#unless isLoading}}
+    <div class="layout-row layout-align-center">
+      <div class="layout-column flex-80 flex-sm-50">
+        {{#paper-card as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}
+                Mot de passe oublié
+              {{/text.headline}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#paper-form onSubmit=(action "submit") as |form|}}
+            {{#card.content class="layout-column layout-align-space-between"}}
+              <div class="layout-row">
+                <div class="layout-column flex-100">
+                  {{form.input label="Adresse e-mail" value=email onChange=(action (mut email)) required=true}}
+                </div>
+              </div>
+            {{/card.content}}
+            {{#card.actions}}
+              {{#paper-button onClick=(action (transition-to "login"))}}
+                Annuler
+              {{/paper-button}}
+              {{#form.submit-button disabled=isLoading raised=true primary=true }}
+                Valider
+              {{/form.submit-button}}
+            {{/card.actions}}
+          {{/paper-form}}
+        {{/paper-card}}
+      </div>
+    </div>
+  {{/unless}}
+{{/unless}}

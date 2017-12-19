@@ -1,5 +1,4 @@
 import Controller from '@ember/controller';
-import { debug } from '@ember/debug';
 import { inject as service } from '@ember/service';
 
 export default Controller.extend({
@@ -26,10 +25,7 @@ export default Controller.extend({
           from: phoneNumber.get('phoneNumber'),
           message
         }
-      })
-        .then((res) => {
-          debug(res);
-        });
+      });
     }
   }
 });

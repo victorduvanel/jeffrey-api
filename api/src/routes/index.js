@@ -8,7 +8,6 @@ import * as paymentMethods  from './payment-methods';
 import * as phoneNumber     from './phone-number';
 import * as messages        from './messages';
 import * as invoices        from './invoices';
-import * as terms           from './terms';
 import * as resetPassword   from './reset-password';
 import * as twilio          from './twilio';
 import * as webNotification from './web-notification';
@@ -25,7 +24,7 @@ import * as subscriptions   from './subscriptions';
 export default {
   webhook, oauth, me, activate, signup, northsigner,
   paymentMethods, phoneNumber, messages, invoices,
-  terms, resetPassword, twilio, webNotification,
+  resetPassword, twilio, webNotification,
   conversations, ms, fixtureMessages, apple,
   appLink, appRedirect, contactDetails, credits,
   subscriptions

@@ -34,6 +34,7 @@ Router.map(function() {
   });
   this.route('forgot-password');
   this.route('not-found', { path: '/*path' });
+  this.route('contact');
 });
 
 export default Router;

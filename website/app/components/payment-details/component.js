@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import { debug } from '@ember/debug';
 
 export default Component.extend({
   isLoading: false,
@@ -71,7 +70,7 @@ export default Component.extend({
       const expirationDateSplit = expirationDate.split('/');
       if (expirationDateSplit.length !== 2) {
         this.set('isLoading', false);
-        debug('invalid expiration date');
+        console.log('invalid expiration date');
         return;
       }
 

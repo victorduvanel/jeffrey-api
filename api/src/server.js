@@ -70,8 +70,6 @@ post('/messages', routes.messages.post);
 get('/invoices', routes.invoices.get);
 get('/invoices/:invoice_id', routes.invoices.getOne);
 
-get('/terms', routes.terms.get);
-
 post('/reset-password', routes.resetPassword.post);
 get('/reset-password/:token', routes.resetPassword.get);
 

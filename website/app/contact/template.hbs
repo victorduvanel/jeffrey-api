@@ -1,0 +1,28 @@
+{{prestine-logo}}
+
+<div class="layout-row layout-align-center">
+  <div class="layout-column flex-80 flex-sm-50">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Contact
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        <div>
+          Si vous rencontrez le moindre problème, n’hésitez pas à nous écrire
+          à l’adresse suivante:
+          <div class="layout-column layout-align-center-center">
+            <a href="mailto:support@prestine.io">support@prestine.io</a>.
+          </div>
+          Nous vous répondrons dans les plus brefs délais.
+        </div>
+        {{#paper-button raised=true primary=true onClick=(action "goBack")}}
+          Retour
+        {{/paper-button}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+</div>

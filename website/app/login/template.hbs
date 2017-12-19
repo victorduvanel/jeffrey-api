@@ -1,40 +1,43 @@
-<div class="login-view">
-  <div class="layout-column layout-align-center-center">
-    <div class="flat-shadow-logo"></div>
-    <h1 class="text-logo">prestine.io</h1>
-  </div>
-  <div class="layout-row layout-align-center">
-    <div class="layout-column flex-40">
-      {{#paper-card as |card|}}
-        {{#paper-form onSubmit=(action "login") as |form|}}
-          {{#card.content class="layout-column layout-align-space-between"}}
-            <div class="layout-row">
-              <div class="layout-column flex-100">
-                {{form.input label="Adresse e-mail" value=email onChange=(action (mut email)) required=true}}
-              </div>
-            </div>
-            <div class="layout-row">
-              <div class="layout-column flex-100">
-                {{form.input label="Mot de passe" type="password" value=password onChange=(action (mut password))}}
-              </div>
-            </div>
-          {{/card.content}}
+{{prestine-logo}}
 
-          {{#card.actions}}
-            {{#paper-button onClick=(action (transition-to "forgot-password"))}}Mot de passe oublié ?{{/paper-button}}
-            {{#form.submit-button disabled=isLoading raised=true primary=true }}
-              Connexion
-            {{/form.submit-button}}
-          {{/card.actions}}
-        {{/paper-form}}
-      {{/paper-card}}
-      {{#paper-button class="white-link" onClick=(action (transition-to "signup"))}}
-        Je ne posséde pas de compte
-      {{/paper-button}}
-    </div>
-  </div>
+<div class="layout-row layout-align-center">
+  <div class="layout-column flex-80 flex-sm-50">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Connexion
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#paper-form onSubmit=(action "login") as |form|}}
+        {{#card.content class="layout-column layout-align-space-between"}}
+          <div class="layout-row">
+            <div class="layout-column flex-100">
+              {{form.input label="Adresse e-mail" value=email onChange=(action (mut email)) required=true}}
+            </div>
+          </div>
+          <div class="layout-row">
+            <div class="layout-column flex-100">
+              {{form.input label="Mot de passe" type="password" value=password onChange=(action (mut password)) required=true}}
+            </div>
+          </div>
+        {{/card.content}}
 
-  {{#if error}}
-    <div class="alert alert-danger mt-2">{{error}}</div>
-  {{/if}}
+        {{#card.actions}}
+          {{#paper-button onClick=(action (transition-to "forgot-password"))}}Mot de passe oublié ?{{/paper-button}}
+          {{#form.submit-button disabled=isLoading raised=true primary=true }}
+            Connexion
+          {{/form.submit-button}}
+        {{/card.actions}}
+      {{/paper-form}}
+    {{/paper-card}}
+    {{#paper-button class="white-link" onClick=(action (transition-to "signup"))}}
+      Je ne posséde pas de compte
+    {{/paper-button}}
+  </div>
 </div>
+
+{{#if error}}
+  <div class="alert alert-danger mt-2">{{error}}</div>
+{{/if}}

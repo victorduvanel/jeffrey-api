@@ -1,4 +1,3 @@
-
 $primary: "teal";
 $accent: "light-green";
 $warn: "red";
@@ -94,23 +93,6 @@ $color-light-green: map-merge($color-light-green, ('contrast':  $light-contrast-
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-.prestine-logo-small, .prestine-logo {
-  display: inline-block;
-  background-image: url('/assets/images/logo.svg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-.prestine-logo {
-  width: 200px;
-  height: 53.66px;
-}
-
-.prestine-logo-small {
-  width: 111.781px;
-  height: 30px;
-}
-
 .nav-link {
   background: none;
   border: none;
@@ -128,23 +110,6 @@ button {
 
 .white-link {
   color: #ffffff;
-}
-
-.signup-view, .login-view, .activate-view {
-  padding-top: 50px;
-}
-
-.flat-shadow-logo {
-  width: 220px;
-  height: 220px;
-  background-image: url('/assets/images/flat-shadow-logo.png');
-  background-size: 100%;
-}
-
-.text-logo {
-  color: #ffffff;
-  font-family: 'Rift';
-  font-size: 40pt;
 }
 
 .scroll-y {
@@ -186,4 +151,39 @@ button {
   background: #FF4E4E;
   color: #fff;
   text-align: center;
+}
+
+html, body {
+  background-color: #4a4a4a;
+}
+
+.app-footer {
+  text-align: center;
+  background-color: #4a4a4a;
+  padding: 20px 0;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.prestine-logo, .prestine-logo-dashboard-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Rift';
+  font-weight: normal;
+}
+
+.prestine-logo {
+  font-size: 40pt;
+  margin: 0.67em 0;
+}
+
+.prestine-logo-dashboard-link {
+  font-size: 30pt;
 }

@@ -1,69 +1,75 @@
-<div class="signup-view">
-  <div class="layout-column layout-align-center-center">
-    <div class="flat-shadow-logo"></div>
-    <h1 class="text-logo">prestine.io</h1>
-  </div>
-  {{#if isLoading}}
-    <div class="layout-column layout-align-center-center">
-      {{paper-progress-circular}}
-    </div>
-  {{/if}}
+{{prestine-logo}}
 
-  {{#unless success}}
-    {{#unless isLoading}}
-      <div class="layout-row layout-align-center">
-        <div class="layout-column flex-40">
-          {{#paper-card as |card|}}
-            {{#paper-form onSubmit=(action "submitEmail") as |form|}}
-              {{#card.content class="layout-column layout-align-space-between"}}
-                {{#animable-content shake=shakeEmailInput}}
-                <div class="layout-row">
-                  <div class="layout-column flex-100">
-                    {{form.input label="Adresse e-mail" value=email onChange=(action (mut email))}}
-                  </div>
-                </div>
-                {{/animable-content}}
-                {{#form.submit-button raised=true primary=true }}
-                  Créer un compte
-                {{/form.submit-button}}
-              {{/card.content}}
-            {{/paper-form}}
-          {{/paper-card}}
-          {{#paper-button class="white-link" onClick=(action (transition-to "login"))}}
-            Je posséde déjà un compte
+{{#if isLoading}}
+  <div class="layout-column layout-align-center-center">
+    {{paper-progress-circular}}
+  </div>
+{{/if}}
+
+{{#if success}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <div class="layout-column layout-align-center-center">
+          Vérifiez votre boite mail pour finaliser votre inscription
+          {{#paper-button onClick=(action (transition-to "login")) raised=true primary=true}}
+            OK
           {{/paper-button}}
         </div>
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/if}}
+
+{{#if error}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <div class="layout-column layout-align-center-center">
+          {{error}}
+        </div>
+        {{#paper-button onClick=(action "retry") raised=true primary=true}}
+          Réessayer
+        {{/paper-button}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/if}}
+
+{{#unless success}}
+  {{#unless isLoading}}
+    <div class="layout-row layout-align-center">
+      <div class="layout-column flex-80 flex-sm-50">
+        {{#paper-card as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}
+                Inscription
+              {{/text.headline}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#paper-form onSubmit=(action "submitEmail") as |form|}}
+            {{#card.content class="layout-column layout-align-space-between"}}
+              {{#animable-content shake=shakeEmailInput}}
+                <div class="layout-row">
+                  <div class="layout-column flex-100">
+                    {{form.input label="Adresse e-mail" value=email onChange=(action (mut email)) required=true}}
+                  </div>
+                </div>
+              {{/animable-content}}
+              {{#form.submit-button raised=true primary=true }}
+                Créer un compte
+              {{/form.submit-button}}
+              <small>
+                En vous inscrivant, vous concentez à respecter les <a href="/terms.html" target="blank_">conditions générales d'utilisation</a> de Prestine.
+              </small>
+            {{/card.content}}
+          {{/paper-form}}
+        {{/paper-card}}
+        {{#paper-button class="white-link" onClick=(action (transition-to "login"))}}
+          Je posséde déjà un compte
+        {{/paper-button}}
       </div>
-    {{/unless}}
+    </div>
   {{/unless}}
-
-  {{#if success}}
-    <div class="layout-column layout-align-center-center">
-      {{#paper-card as |card|}}
-        {{#card.content}}
-          <div class="layout-column layout-align-center-center">
-            Vérifiez votre boite mail pour finaliser votre inscription
-            {{#paper-button onClick=(action (transition-to "login")) raised=true primary=true}}
-              OK
-            {{/paper-button}}
-          </div>
-        {{/card.content}}
-      {{/paper-card}}
-    </div>
-  {{/if}}
-
-  {{#if error}}
-    <div class="layout-column layout-align-center-center">
-      {{#paper-card as |card|}}
-        {{#card.content}}
-          <div class="layout-column layout-align-center-center">
-            {{error}}
-          </div>
-          {{#paper-button onClick=(action "retry") raised=true primary=true}}
-            Réessayer
-          {{/paper-button}}
-        {{/card.content}}
-      {{/paper-card}}
-    </div>
-  {{/if}}
-</div>
+{{/unless}}

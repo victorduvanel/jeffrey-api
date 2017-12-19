@@ -1,20 +1,12 @@
-{{!-- {{phone-dialer}} --}}
-
 <div class="layout-column dashboard-view">
   <div class="flex-none">
     {{#paper-toolbar}}
       {{#paper-toolbar-tools}}
-        {{#link-to "dashboard" class="prestine-logo-small"}}{{/link-to}}
+        {{#link-to "dashboard" class="prestine-logo-dashboard-link"}}
+          Prestine
+        {{/link-to}}
 
         <span class="flex"></span>
-
-        {{!-- {{#paper-button onClick=(action (transition-to "dashboard.conversations"))}} --}}
-          {{!-- Conversations --}}
-        {{!-- {{/paper-button}} --}}
-
-        {{!-- {{#paper-button onClick=(action "enablePushNotifications")}} --}}
-          {{!-- Enable push notifications --}}
-        {{!-- {{/paper-button}} --}}
 
         {{#paper-button onClick=(action (transition-to "dashboard.credits"))}}
           {{ user.formattedCredit }}
@@ -48,6 +40,10 @@
 
         {{#paper-button iconButton=true onClick=(action "logout")}}
           {{paper-icon "exit to app"}}
+        {{/paper-button}}
+
+        {{#paper-button iconButton=true onClick=(action (transition-to "contact"))}}
+          {{paper-icon "help"}}
         {{/paper-button}}
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}

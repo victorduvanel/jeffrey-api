@@ -1,5 +1,4 @@
 import RSVP from 'rsvp';
-import { debug } from '@ember/debug';
 import Service, { inject as service } from '@ember/service';
 import Evented from '@ember/object/evented';
 
@@ -50,7 +49,7 @@ export default Service.extend(Evented, {
     });
 
     twilio.Device.error((err) => {
-      debug(err);
+      console.log(err);
     });
   },
 

@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { alias } from '@ember/object/computed';
-import { debug } from '@ember/debug';
 
 export default Controller.extend({
   currentUser: service(),
@@ -9,7 +8,6 @@ export default Controller.extend({
 
   actions: {
     paymentDetailsValidated() {
-      debug('ok');
     },
 
     subscribeButtonPressed() {

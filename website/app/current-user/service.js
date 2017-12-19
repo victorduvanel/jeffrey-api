@@ -1,6 +1,5 @@
 import RSVP from 'rsvp';
 import EmberObject from '@ember/object';
-import { debug } from '@ember/debug';
 import Service, { inject as service } from '@ember/service';
 import User from 'prestine/user';
 
@@ -11,7 +10,6 @@ export default Service.extend({
   load() {
     if (this.get('session.isAuthenticated')) {
       const auth = this.get('session.data.authenticated');
-      debug(auth);
 
       return this.get('ajax')
         .request('/me')
