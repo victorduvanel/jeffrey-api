@@ -61,7 +61,7 @@ module.exports = function(environment) {
     ENV.APP.API_NAMESPACE = '/';
     ENV.APP.API_CLIENT_ID = '0e7814b6-b793-44f5-aab0-9644be51f1ae';
     ENV.APP.RECAPTCHA_SITE_KEY = '6Ld0SBgUAAAAADZIZ4zTp1l1bnX0JDxlOYIVyvOf';
-    ENV.APP.STRIPE_PUBLISHABLE_KEY = 'pk_test_ytM3zWErx4sK19p2lcC85y2v';
+    ENV.APP.STRIPE_PUBLISHABLE_KEY = 'pk_live_AQCpzCr77D4MuIC47q2WNGKO';
   }
 
   return ENV;
