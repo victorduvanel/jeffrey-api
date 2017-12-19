@@ -2,7 +2,6 @@ import RSVP from 'rsvp';
 import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
 import { isEmpty } from '@ember/utils';
 import { run } from '@ember/runloop';
-import { assign as emberAssign } from '@ember/polyfills';
 import { assign } from '@ember/polyfills';
 import config from '../config/environment';
 

@@ -9,8 +9,6 @@ export default Service.extend({
 
   load() {
     if (this.get('session.isAuthenticated')) {
-      const auth = this.get('session.data.authenticated');
-
       return this.get('ajax')
         .request('/me')
         .then((res) => {
