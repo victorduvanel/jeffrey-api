@@ -1,9 +1,9 @@
-environment: development
+environment: production
 port: 3002
 protocol: https
-host: ee8fba7e.ngrok.io
-webappProtocol: http
-webappHost: localhost:4200
+host: api.prestine.io
+webappProtocol: https
+webappHost: app.prestine.io
 mailgun:
   apiBaseURL: https://api.mailgun.net/v3/prestine.io
   apiKey: key-4uxc32rva7pgw0ia1blpcmgjjznh3y82
@@ -17,19 +17,19 @@ recaptcha:
 db:
   client: 'pg'
   connection:
-    user: tukula
-    database: prestine
-    host: 127.0.0.1
-    password: ''
+    user: postgres
+    database: postgres
+    host: postgres
+    password: postgres
     port: 5432
     max: 10
     idleTimeoutMillis: 30000
   debug: false
 stripe:
-  secretKey: sk_test_QiJITpQTx1S0NkFv3DiySXi3
+  secretKey: sk_live_Z80c4B7hUWQAMG4qhb2n8TIu
 twilio:
-  accountSid: AC410a7b5e527762412690b23e1be2d6bb
-  authToken: 6801847ac16da1a775cf78d6f9713c20
+  accountSid: AC1593c142aca1157d84f37156be1ef12d
+  authToken: b9877a11f36638173db10a287d97d509
   twiMlAppSid: APad1bdd10f77fc6eda6fa083d3134dc40
   apiKey: SK496bc4825277985ca583427ec80f8b79
   apiSecret: XB12YR7nWAHeQFaRhGikcxzp1QvwcoN0

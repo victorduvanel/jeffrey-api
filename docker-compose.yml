@@ -7,6 +7,8 @@ services:
     volumes:
       - ./config:/config
     environment:
-      CONFIG: /config/config-test.yml
+      CONFIG: /config/config-prod.yml
   postgres:
     image: postgres:10.1
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
