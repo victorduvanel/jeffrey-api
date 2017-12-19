@@ -5,10 +5,10 @@ import { debug } from '@ember/debug';
 export default Component.extend({
   isLoading: false,
 
-  cardNumber: '4000002500000003',
-  cardholderName: 'William Riancho',
-  expirationDate: '10/24',
-  cvc: '123',
+  cardNumber: '',
+  cardholderName: '',
+  expirationDate: '',
+  cvc: '',
 
   stripe: service(),
   ajax: service(),
