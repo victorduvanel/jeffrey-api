@@ -42,6 +42,10 @@ const PhoneNumber = Base.extend({
     return this.hasMany('Message', 'from_id');
   },
 
+  async destroy() {
+
+  },
+
   async disable() {
     if (config.PRODUCTION) {
       const phoneNumber = await twilio.incomingPhoneNumbers.get(this.get('sid'));
@@ -76,14 +80,15 @@ const PhoneNumber = Base.extend({
     }
   }
 }, {
-  purchase: async function(user) {
+  purchase: async function({ user, addressId }) {
     const id = uuid.v4();
     const phoneNumber = await getAvailablePhoneNumber();
 
     const result = await twilio.incomingPhoneNumbers.create({
       phoneNumber,
       // voiceUrl: 'https://api.prestine.io/webhook',
-      smsmUrl: ''
+      smsmUrl: '',
+      addressSid: addressId
     });
 
     return this.forge({
@@ -112,7 +117,7 @@ const PhoneNumber = Base.extend({
     return await new this({ phoneNumber }).fetch();
   },
 
-  associateAvailable: async function(user) {
+  associateAvailable: async function({ user, addressId }) {
     const res = await bookshelf.knex.raw(
       `UPDATE phone_numbers
        SET    user_id = :userId
@@ -132,10 +137,18 @@ const PhoneNumber = Base.extend({
       }
     );
     if (res.rows.length) {
-      return await new this({
+      const phoneNumber = await new this({
         id: res.rows[0].id
       })
         .fetch();
+
+      const sid = phoneNumber.get('sid');
+      await twilio.incomingPhoneNumbers(sid)
+        .update({
+          addressSid: addressId
+        });
+
+      return phoneNumber;
     }
     return null;
   }

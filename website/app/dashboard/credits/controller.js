@@ -1,16 +1,24 @@
-import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
-import { alias } from '@ember/object/computed';
-import SweetAlertMixin from 'ember-sweetalert/mixins/sweetalert-mixin';
+import Controller, { inject as controller } from '@ember/controller';
+import { inject as service }                from '@ember/service';
+import { alias }                            from '@ember/object/computed';
+import SweetAlertMixin                      from 'ember-sweetalert/mixins/sweetalert-mixin';
 
 export default Controller.extend(SweetAlertMixin, {
   ajax: service(),
   currentUser: service(),
-
   user: alias('currentUser.user'),
+
+  paymentDetailsController: controller('dashboard.payment-details'),
 
   actions: {
     purchase() {
+      if (this.get('user.paymentDetailsNeedToBeUpdated')) {
+        const paymentDetailsController = this.get('paymentDetailsController');
+        paymentDetailsController.set('redirectTo', 'dashboard.credits');
+        this.transitionToRoute('dashboard.payment-details');
+        return;
+      }
+
       const sweetAlert = this.get('sweetAlert');
       sweetAlert({
         title: 'Confirmer mon achat',
@@ -19,7 +27,7 @@ export default Controller.extend(SweetAlertMixin, {
         showCancelButton: true,
         confirmButtonText: 'Créditer mon compte'
       }).then((confirm)=> {
-        if (confirm.dismiss === 'cancel') {
+        if (confirm.dismiss) {
           return;
         }
 

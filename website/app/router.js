@@ -21,12 +21,12 @@ Router.map(function() {
         this.route('cancel');
       });
       this.route('new', function() {
-        this.route('payment-details');
         this.route('confirm');
         this.route('contact-details');
       });
     });
     this.route('credits');
+    this.route('payment-details');
   });
   this.route('reset-password', { path: '/reset-password/:token' });
   this.route('activate', function() {

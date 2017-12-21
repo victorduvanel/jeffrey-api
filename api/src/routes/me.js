@@ -1,4 +1,4 @@
-import oauth2 from '../middlewares/oauth2';
+import oauth2     from '../middlewares/oauth2';
 import bodyParser from 'body-parser';
 
 export const get = [

@@ -1,3 +1,4 @@
+import bodyParser   from 'body-parser';
 import oauth2       from '../middlewares/oauth2';
 import PhoneNumber  from '../models/phone-number';
 import Invoice      from '../models/invoice';
@@ -59,8 +60,10 @@ export const getOne = [
 
 export const post = [
   oauth2,
+  bodyParser.urlencoded({ extended: false }),
   async (req, res) => {
     const user = req.user;
+    const addressId = req.body.address_id;
 
     const invoice = await Invoice.create({
       user,
@@ -71,9 +74,9 @@ export const post = [
     await invoice.addProduct({ product });
     await invoice.charge();
 
-    let phoneNumber = await PhoneNumber.associateAvailable(user);
+    let phoneNumber = await PhoneNumber.associateAvailable({ user, addressId });
     if (!phoneNumber) {
-      phoneNumber = await PhoneNumber.purchase(user);
+      phoneNumber = await PhoneNumber.purchase({ user, addressId });
     }
 
     await Subscription.create({
@@ -83,7 +86,8 @@ export const post = [
     });
 
     res.send({
-      data: jsonAPISerialize(phoneNumber)
+      success: true,
+      phone_number_id: phoneNumber.get('id')
     });
   }
 ];

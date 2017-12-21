@@ -18,5 +18,17 @@ export default EmberObject.extend({
     const amountLabel = formatAmount(amount, credit.get('currency'));
 
     return amountLabel;
+  }),
+
+  paymentDetailsNeedToBeUpdated: computed('paymentMethodStatus', function () {
+    switch (this.get('paymentMethodStatus')) {
+      case 'ok':
+        return false;
+      case 'not_set':
+      case 'expired':
+      case 'expired_soon':
+      default:
+        return true;
+    }
   })
 });

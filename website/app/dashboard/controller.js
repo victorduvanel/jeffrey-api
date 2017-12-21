@@ -5,17 +5,16 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   session: service(),
-  pushNotification: service(),
 
   currentUser: service(),
   user: alias('currentUser.user'),
 
-  selectedPhoneNumber: computed('phoneNumbers', function() {
+  selectedPhoneNumber: computed('phoneNumbers.@each', function() {
     const phoneNumbers = this.get('phoneNumbers');
     return phoneNumbers.objectAt(0);
   }),
 
-  availablePhoneNumbers: computed('selectedPhoneNumber', 'phoneNumbers', function() {
+  availablePhoneNumbers: computed('selectedPhoneNumber', 'phoneNumbers.@each', function() {
     const selectedPhoneNumber = this.get('selectedPhoneNumber');
     const phoneNumbers = this.get('phoneNumbers');
 

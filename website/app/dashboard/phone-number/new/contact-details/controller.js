@@ -1,8 +1,14 @@
-import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
+import { inject as service }                from '@ember/service';
+import Controller, { inject as controller } from '@ember/controller';
+import { alias }                            from '@ember/object/computed';
 
 export default Controller.extend({
   ajax: service(),
+  currentUser: service(),
+  user: alias('currentUser.user'),
+
+  confirmController: controller('dashboard.phone-number.new.confirm'),
+  paymentDetailsController: controller('dashboard.payment-details'),
 
   actions: {
     contactDetailsValidated({
@@ -10,10 +16,8 @@ export default Controller.extend({
       lastName,
       city,
       postalCode,
-      addressFirstLine,
-      addressSecondLine,
-      companyName,
-      vatNumber
+      region,
+      street
     }) {
       this.set('isLoading', true);
 
@@ -25,14 +29,24 @@ export default Controller.extend({
             last_name: lastName,
             city,
             postal_code: postalCode,
-            address_first_line: addressFirstLine,
-            address_second_line: addressSecondLine,
-            company_name: companyName,
-            vat_number: vatNumber
+            street,
+            region: region.name
           }
         })
-        .then(() => {
-          this.transitionToRoute('dashboard.phone-number.new.payment-details');
+        .then((res) => {
+          if (res.success) {
+            const addressId = res.address_id;
+            const confirmController = this.get('confirmController');
+            confirmController.set('addressId', addressId);
+
+            if (this.get('user.paymentDetailsNeedToBeUpdated')) {
+              const paymentDetailsController = this.get('paymentDetailsController');
+              paymentDetailsController.set('redirectTo', 'dashboard.phone-number.new.confirm');
+              this.transitionToRoute('dashboard.payment-details');
+            } else {
+              this.transitionToRoute('dashboard.phone-number.new.confirm');
+            }
+          }
         });
     }
   }

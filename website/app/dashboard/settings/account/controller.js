@@ -4,9 +4,11 @@ import { computed } from '@ember/object';
 import { alias } from '@ember/object/computed';
 
 export default Controller.extend({
+  ajax: service(),
   currentUser: service(),
   user: alias('currentUser.user'),
 
+  isLoading      : false,
   firstName      : '',
   firstNameError : null,
 
@@ -21,23 +23,22 @@ export default Controller.extend({
 
     let newFirstName = this.get('firstName');
     let newLastName  = this.get('lastName');
-    let newEmail     = this.get('email');
+    // let newEmail     = this.get('email');
 
     let userFirstName = user.get('firstName') || '';
     let userLastName  = user.get('lastName') || '';
-    let userEmail     = user.get('email');
+    // let userEmail     = user.get('email');
 
-    newFirstName  = newFirstName.trim().toLowerCase();
-    newLastName   = newLastName.trim().toLowerCase();
-    newEmail      = newEmail.trim().toLowerCase();
-    userFirstName = userFirstName.trim().toLowerCase();
-    userLastName  = userLastName.trim().toLowerCase();
-    userEmail     = userEmail.trim().toLowerCase();
+    newFirstName  = newFirstName.trim();
+    newLastName   = newLastName.trim();
+    // newEmail      = newEmail.trim();
+    userFirstName = userFirstName.trim();
+    userLastName  = userLastName.trim();
+    // userEmail     = userEmail.trim();
 
     return (
       (newFirstName === userFirstName) &&
-      (newLastName  === userLastName ) &&
-      (newEmail     === userEmail    )
+      (newLastName  === userLastName )
     );
   }),
 
@@ -62,7 +63,31 @@ export default Controller.extend({
 
   actions: {
     saveInfo() {
+      if (this.get('isLoading')) {
+        return;
+      }
 
+      this.set('isLoading', true);
+
+      const data = {};
+
+      const firstName = this.get('firstName').trim();
+      const lastName  = this.get('lastName').trim();
+
+      this.get('ajax')
+        .request('/me', {
+          method: 'PATCH',
+          data: {
+            first_name: firstName,
+            last_name: lastName
+          }
+        })
+        .then(() => {
+          return this.get('currentUser').load();
+        })
+        .finally(() => {
+          this.set('isLoading', false);
+        });
     }
   }
 });

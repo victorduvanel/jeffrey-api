@@ -1,31 +1,43 @@
-{{#paper-card as |card|}}
-  {{#paper-toolbar}}
-    {{#paper-toolbar-tools}}
-      <h2>Mon compte</h2>
-    {{/paper-toolbar-tools}}
-  {{/paper-toolbar}}
+{{#if isLoading}}
+  <div class="layout-column layout-align-center-center">
+    {{#paper-card as |card|}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        {{paper-progress-circular}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+{{/if}}
 
-  {{#paper-form onSubmit=(action "saveInfo") as |form|}}
-    {{#card.content class="layout-column layout-align-space-between"}}
-      <div class="layout-row">
-        <div class="layout-column flex-50">
-          {{form.input label="Prénom" value=firstName onChange=(action (mut firstName)) required=true}}
-        </div>
-        <div class="layout-column flex-50">
-          {{form.input label="Nom" value=lastName onChange=(action (mut lastName))}}
-        </div>
-      </div>
-      <div class="layout-row">
-        <div class="layout-column flex-100">
-          {{form.input label="Adresse email" value=email type="email" onChange=(action (mut email))}}
-        </div>
-      </div>
-    {{/card.content}}
+{{#unless isLoading}}
+  {{#paper-card as |card|}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        <h2>Mon compte</h2>
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
 
-    {{#card.actions}}
-      {{#form.submit-button disabled=submitButtonDisabled raised=true primary=true }}
-        Enregistrer
-      {{/form.submit-button}}
-    {{/card.actions}}
-  {{/paper-form}}
-{{/paper-card}}
+    {{#paper-form onSubmit=(action "saveInfo") as |form|}}
+      {{#card.content class="layout-column layout-align-space-between"}}
+        <div class="layout-row">
+          <div class="layout-column flex-50">
+            {{form.input label="Prénom" value=firstName onChange=(action (mut firstName)) required=true}}
+          </div>
+          <div class="layout-column flex-50">
+            {{form.input label="Nom" value=lastName onChange=(action (mut lastName))}}
+          </div>
+        </div>
+        <div class="layout-row">
+          <div class="layout-column flex-100">
+            {{form.input label="Adresse email" disabled=true value=email type="email" onChange=(action (mut email))}}
+          </div>
+        </div>
+      {{/card.content}}
+
+      {{#card.actions}}
+        {{#form.submit-button disabled=submitButtonDisabled raised=true primary=true }}
+          Enregistrer
+        {{/form.submit-button}}
+      {{/card.actions}}
+    {{/paper-form}}
+  {{/paper-card}}
+{{/unless}}

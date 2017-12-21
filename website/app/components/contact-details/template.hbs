@@ -42,26 +42,14 @@
           </div>
         </div>
 
-
         <div class="layout-row">
           <div class="layout-column flex-100">
             {{form.input
               label="Adresse"
-              value=addressFirstLine
+              value=street
               type="text"
-              onChange=(action (mut addressFirstLine))
+              onChange=(action (mut street))
               required=true
-            }}
-          </div>
-        </div>
-
-        <div class="layout-row">
-          <div class="layout-column flex-100">
-            {{form.input
-              label="Complément d’adresse"
-              value=addressSecondLine
-              type="text"
-              onChange=(action (mut addressSecondLine))
             }}
           </div>
         </div>
@@ -89,22 +77,18 @@
         </div>
 
         <div class="layout-row">
-          <div class="layout-column flex-50">
-            {{form.input
-              label="Entreprise"
-              value=companyName
-              type="text"
-              onChange=(action (mut companyName))
+          <div class="layout-column flex-100">
+            {{#form.select
+              label="Region"
+              options=regions
+              selected=region
+              required=true
+              searchField="name"
+              onChange=(action (mut region))
+              as |region|
             }}
-          </div>
-
-          <div class="layout-column flex-50">
-            {{form.input
-              label="Numéro de TVA"
-              value=vatNumber
-              type="text"
-              onChange=(action (mut vatNumber))
-            }}
+              {{region.name}}
+            {{/form.select}}
           </div>
         </div>
       {{/card.content}}
