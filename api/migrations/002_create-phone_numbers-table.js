@@ -8,7 +8,7 @@ function up(knex) {
       .uuid('user_id')
       .references('users.id')
       .onUpdate('CASCADE')
-      .onDelete('SET NULL');
+      .onDelete('RESTRICT');
     table.dateTime('created_at');
     table.dateTime('updated_at');
   });

@@ -6,7 +6,7 @@ function up(knex) {
       .uuid('user_id')
       .references('users.id')
       .onUpdate('CASCADE')
-      .onDelete('CASCADE');
+      .onDelete('RESTRICT');
 
     table.integer('amount');
 

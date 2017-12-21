@@ -7,13 +7,13 @@ function up(knex) {
         .uuid('user_id')
         .references('users.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table
         .uuid('phone_number_id')
         .references('phone_numbers.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table.enum('frequency', ['monthly', 'yearly']);
 

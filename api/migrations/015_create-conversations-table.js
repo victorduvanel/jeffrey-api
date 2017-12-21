@@ -7,19 +7,19 @@ function up(knex) {
         .uuid('user_id')
         .references('users.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table
         .uuid('from_id')
         .references('phone_numbers.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table
         .uuid('to_id')
         .references('phone_numbers.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table.dateTime('last_activity');
 

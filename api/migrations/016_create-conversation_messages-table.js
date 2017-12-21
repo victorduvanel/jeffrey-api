@@ -8,13 +8,13 @@ function up(knex) {
         .uuid('conversation_id')
         .references('conversations.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table
         .uuid('message_id')
         .references('messages.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table.enum('type', ['incoming', 'outgoing']);
 

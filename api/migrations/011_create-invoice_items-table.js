@@ -6,13 +6,13 @@ function up(knex) {
         .uuid('invoice_id')
         .references('invoices.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table
         .uuid('product_id')
         .references('products.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table.integer('quantity');
       table.integer('amount');

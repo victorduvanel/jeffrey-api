@@ -9,13 +9,13 @@ function up(knex) {
         .uuid('product_id')
         .references('products.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table
         .uuid('user_id')
         .references('users.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table.dateTime('created_at');
       table.dateTime('updated_at');

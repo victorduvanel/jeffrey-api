@@ -7,7 +7,7 @@ function up(knex) {
         .unique()
         .references('users.id')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('RESTRICT');
 
       table.string('type');
       table.string('last_four');

@@ -74,7 +74,7 @@ export default Controller.extend(SweetAlertMixin, {
                 credit_auto_reload: true
               }
             })
-            .then((res) => {
+            .then(() => {
               this.get('currentUser').load();
 
               sweetAlert.close();
@@ -100,7 +100,7 @@ export default Controller.extend(SweetAlertMixin, {
               credit_auto_reload: false
             }
           })
-            .then((res) => {
+            .then(() => {
               this.get('currentUser').load();
 
               sweetAlert.close();

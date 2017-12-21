@@ -8,13 +8,13 @@ function up(knex) {
       .uuid('from_id')
       .references('phone_numbers.id')
       .onUpdate('CASCADE')
-      .onDelete('CASCADE');
+      .onDelete('RESTRICT');
 
     table
       .uuid('to_id')
       .references('phone_numbers.id')
       .onUpdate('CASCADE')
-      .onDelete('CASCADE');
+      .onDelete('RESTRICT');
 
     table.dateTime('created_at');
     table.dateTime('updated_at');
