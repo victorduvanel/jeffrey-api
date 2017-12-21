@@ -3,7 +3,7 @@ import LeLogger     from 'le_node';
 import { Writable } from 'stream';
 import config       from '../config';
 
-const format = (config.PRODUCTION ) ? 'combined' : 'dev'
+const format = (config.PRODUCTION ) ? 'combined' : 'dev';
 const opts = {};
 
 if (config.PRODUCTION) {

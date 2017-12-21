@@ -16,7 +16,7 @@ export const post = [
     const nsRes = await northsigner.findAuthorization(authorizationId);
     if (nsRes.status === 'granted') {
       const user = await User.forge({ id: nsRes.account_id })
-      .fetch();
+        .fetch();
 
       if (!user) {
         throw errors.Unauthorized;

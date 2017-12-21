@@ -122,7 +122,7 @@ const Invoice = Base.extend({
       qb.where({
         user_id: user.get('id')
       })
-      .whereNotNull('amount');
+        .whereNotNull('amount');
     })
       .fetchAll();
   },

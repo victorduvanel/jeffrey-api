@@ -22,7 +22,7 @@ export const post = [
     }
 
     if (iosAppToken && googleAuthToken) {
-      const user = await User.googleAuthenticate(googleAuthToken)
+      const user = await User.googleAuthenticate(googleAuthToken);
       const accessToken = await user.createAccessToken({});
 
       res.send({
@@ -33,7 +33,7 @@ export const post = [
     }
 
     if (iosAppToken && facebookAuthToken) {
-      const user = await User.facebookAuthenticate(facebookAuthToken)
+      const user = await User.facebookAuthenticate(facebookAuthToken);
       const accessToken = await user.createAccessToken({});
 
       res.send({
@@ -68,14 +68,14 @@ export const post = [
       // await user.sendLoginEmail();
       //
       //res.send({
-        //success: true,
-        //login_email_sent: true
+      //success: true,
+      //login_email_sent: true
       //});
 
       //return;
     }
 
-    await PendingUser.createFromEmail(email)
+    await PendingUser.createFromEmail(email);
 
     res.send({
       success: true,

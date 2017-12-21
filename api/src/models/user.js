@@ -44,7 +44,7 @@ const User = Base.extend({
 
     return bcrypt.hashAsync(newPassword, saltRounds)
       .then((hash) => {
-        this.set('password', hash)
+        this.set('password', hash);
       });
   },
 
@@ -234,7 +234,7 @@ const User = Base.extend({
   },
 
   googleAuthenticate: async function(token) {
-    const googleUser = await googleService.verifyToken(token)
+    const googleUser = await googleService.verifyToken(token);
     const user = await this.forge({ googleId: googleUser.id }).fetch();
 
     if (user) {

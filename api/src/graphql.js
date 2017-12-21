@@ -86,7 +86,7 @@ const resolvers = {
     },
 
     messages: () => {
-      return Promise.resolve(messages)
+      return Promise.resolve(messages);
     },
 
     conversations: async () => {

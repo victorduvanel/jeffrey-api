@@ -10,7 +10,7 @@ export const post = [
     protocol: config.protocol
   }),
 
-  (req, res, next) => {
+  (req, res) => {
     const body = req.body;
     const callStatus = body.CallStatus;
 

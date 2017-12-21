@@ -4,7 +4,7 @@ import config from '../../config';
 
 const handler = (req, res, next) => {
   const resp = new twilio.twiml.VoiceResponse();
-  resp.say('Congratulations! You have received your first inbound call! Good bye.')
+  resp.say('Congratulations! You have received your first inbound call! Good bye.');
   res.send(resp.toString());
 };
 
