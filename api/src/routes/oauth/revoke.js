@@ -1,5 +1,5 @@
 import basicAuth   from 'basic-auth';
-import * as errors      from '../../errors';
+import * as errors from '../../errors';
 import bodyParser  from 'body-parser';
 import AccessToken from '../../models/access-token';
 

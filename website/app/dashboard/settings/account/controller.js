@@ -69,8 +69,6 @@ export default Controller.extend({
 
       this.set('isLoading', true);
 
-      const data = {};
-
       const firstName = this.get('firstName').trim();
       const lastName  = this.get('lastName').trim();
 

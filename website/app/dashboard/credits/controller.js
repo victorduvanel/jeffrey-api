@@ -56,18 +56,27 @@ export default Controller.extend(SweetAlertMixin, {
     },
 
     enableCreditAutoReload() {
+      if (this.get('user.paymentDetailsNeedToBeUpdated')) {
+        const paymentDetailsController = this.get('paymentDetailsController');
+        paymentDetailsController.set('redirectTo', 'dashboard.credits');
+        this.transitionToRoute('dashboard.payment-details');
+        return;
+      }
+
       const sweetAlert = this.get('sweetAlert');
       sweetAlert({
         showCancelButton: false,
         onOpen: () => {
           sweetAlert.showLoading();
-          this.get('ajax').patch('/me', {
-            data: {
-              credit_auto_reload: true
-            }
-          })
-            .then(() => {
-              this.set('user.creditAutoReload', true);
+          this.get('ajax')
+            .patch('/me', {
+              data: {
+                credit_auto_reload: true
+              }
+            })
+            .then((res) => {
+              this.get('currentUser').load();
+
               sweetAlert.close();
 
               sweetAlert({
@@ -91,8 +100,9 @@ export default Controller.extend(SweetAlertMixin, {
               credit_auto_reload: false
             }
           })
-            .then(() => {
-              this.set('user.creditAutoReload', false);
+            .then((res) => {
+              this.get('currentUser').load();
+
               sweetAlert.close();
 
               sweetAlert({

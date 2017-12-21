@@ -84,17 +84,23 @@ const User = Base.extend({
     return total;
   },
 
-  async addCredits(amount) {
-    await Credit.create({
-      user: this, amount
-    });
-
+  async autoReload() {
     const credits = await this.credits();
+
     if (this.get('creditAutoReload')) {
       if (credits < 200) {
         return this.purchaseTenEurosCredits();
       }
     }
+    return Promise.resolve(credits);
+  },
+
+  async addCredits(amount) {
+    await Credit.create({
+      user: this, amount
+    });
+
+    const credits = await this.autoReload();
 
     if (credits < 100) {
       await this.disableAccount();

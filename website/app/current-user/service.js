@@ -1,5 +1,4 @@
 import RSVP from 'rsvp';
-import EmberObject from '@ember/object';
 import Service, { inject as service } from '@ember/service';
 import User from 'prestine/user';
 
@@ -7,22 +6,32 @@ export default Service.extend({
   session: service(),
   ajax: service(),
 
+  init() {
+    this._super(...arguments);
+    this.set('user', User.create({ }));
+  },
+
+  _load(properties) {
+    const user = this.get('user');
+    user.setProperties({
+      id                  : properties.id,
+      accountDisabled     : properties.account_disabled,
+      firstName           : properties.first_name,
+      lastName            : properties.last_name,
+      email               : properties.email,
+      paymentMethodStatus : properties.payment_method_status,
+      creditAutoReload    : properties.credit_auto_reload
+    });
+    user.get('credit').setProperties(properties.credit);
+  },
+
   load() {
     if (this.get('session.isAuthenticated')) {
       return this.get('ajax')
         .request('/me')
         .then((res) => {
-          this.set('user', User.create({
-            id                  : res.id,
-            accountDisabled     : res.account_disabled,
-            firstName           : res.first_name,
-            lastName            : res.last_name,
-            email               : res.email,
-            paymentMethodStatus : res.payment_method_status,
-            isAuthenticated     : true,
-            credit              : EmberObject.create(res.credit),
-            creditAutoReload    : res.credit_auto_reload
-          }));
+          this._load(res);
+          this.set('isAuthenticated', true);
         });
     } else {
       return RSVP.resolve();

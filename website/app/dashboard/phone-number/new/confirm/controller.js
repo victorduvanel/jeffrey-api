@@ -36,10 +36,9 @@ export default Controller.extend({
           return this.get('store')
             .findAll('phone-number')
             .then((phoneNumbers) => {
-              console.log(phoneNumbers);
               this.set('phoneNumber', phoneNumbers.findBy('id', phoneNumberId));
               this.get('dashboardController').set('phoneNumbers', phoneNumbers);
-            })
+            });
         })
         .finally(() => {
           this.set('isLoading', false);

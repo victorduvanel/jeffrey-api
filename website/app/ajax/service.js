@@ -1,14 +1,16 @@
-import Ember       from 'ember';
-import AjaxService from 'ember-ajax/services/ajax';
-import config      from '../config/environment';
+import { inject as service }   from '@ember/service';
+import { computed }            from '@ember/object';
+import AjaxService             from 'ember-ajax/services/ajax';
+import { isUnauthorizedError } from 'ember-ajax/errors';
+import config                  from '../config/environment';
 
 export default AjaxService.extend({
-  session: Ember.inject.service(),
+  session: service(),
 
   host: config.APP.API_HOST,
   // namespace: config.APP.API_NAMESPACE,
 
-  headers: Ember.computed('session.isAuthenticated', {
+  headers: computed('session.isAuthenticated', {
     get() {
       let headers = {};
       const auth = this.get('session.data.authenticated');
@@ -22,13 +24,9 @@ export default AjaxService.extend({
   request() {
     return this._super(...arguments)
       .catch((err) => {
-        if (err && err.errors && err.errors.length) {
-          const error = err.errors[0];
-
-          if (error.status === '401') {
-            this.get('session').invalidate();
-          }
-          throw error;
+        if (isUnauthorizedError(err)) {
+          this.get('session').invalidate();
+          return;
         }
 
         throw err;

@@ -49,14 +49,16 @@
     {{/paper-toolbar}}
   </div>
   <div class="dashboard-view">
-    {{#if user.accountDisabled}}
-      <div class="account-disabled-alert">
-        Votre compte est desactivé. Rechargez votre compte pour le réactivé.
-        <br/>
-        {{#paper-button raised=true warn=true onClick=(action (transition-to "dashboard.credits"))}}
-          Recharger mon compte
-        {{/paper-button}}
-      </div>
+    {{#if selectedPhoneNumber}}
+      {{#if user.accountDisabled}}
+        <div class="account-disabled-alert">
+          Votre compte est desactivé. Rechargez votre compte pour le réactiver.
+          <br/>
+          {{#paper-button raised=true warn=true onClick=(action (transition-to "dashboard.credits"))}}
+            Recharger mon compte
+          {{/paper-button}}
+        </div>
+      {{/if}}
     {{/if}}
     {{outlet}}
   </div>

@@ -12,7 +12,15 @@ export default EmberObject.extend({
   creditAutoReload    : null,
   accountDisabled     : false,
 
-  formattedCredit: computed('credit', 'credit.currency', 'credit.amount', function() {
+  init() {
+    this._super(...arguments);
+    this.set('credit', EmberObject.create({
+      currency: 'EUR',
+      amount: 0
+    }));
+  },
+
+  formattedCredit: computed('credit.currency', 'credit.amount', function() {
     const credit = this.get('credit');
     const amount = credit.get('amount');
     const amountLabel = formatAmount(amount, credit.get('currency'));
@@ -24,10 +32,10 @@ export default EmberObject.extend({
     switch (this.get('paymentMethodStatus')) {
       case 'ok':
         return false;
+      default:
       case 'not_set':
       case 'expired':
       case 'expired_soon':
-      default:
         return true;
     }
   })
