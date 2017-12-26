@@ -10,6 +10,15 @@ module.exports = function(defaults) {
     }
   });
 
+  app.import('vendor/libphonenumber-js/libphonenumber-js.min.js');
+  app.import('vendor/shims/libphonenumber-js.js');
+
+  //app.import('node_modules/libphonenumber-js/index.es6.js', {
+    //using: [
+      //{ transformation: 'amd', as: 'libphonenumber' }
+    //]
+  //});
+
   /*
   const workers = new Funnel('workers', {
     include: ['*.js'],

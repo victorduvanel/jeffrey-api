@@ -14,6 +14,11 @@
         {{#card.content class="layout-column layout-align-space-between"}}
           <div class="layout-row">
             <div class="layout-column flex-100">
+              {{phone-number-input}}
+            </div>
+          </div>
+          <div class="layout-row">
+            <div class="layout-column flex-100">
               {{form.input label="Adresse e-mail" value=email onChange=(action (mut email)) required=true}}
             </div>
           </div>
