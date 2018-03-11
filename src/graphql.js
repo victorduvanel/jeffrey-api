@@ -4,59 +4,15 @@ import { graphqlExpress }       from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import { find, filter }         from 'lodash';
 
+import { geocode }              from './services/google';
+import oauth2                   from './middlewares/oauth2';
+import { graphql } from 'graphql';
+import Service                  from './models/service';
 import Message                  from './models/message';
+import Country                  from './models/country';
 import Conversation             from './models/conversation';
 import User                     from './models/user';
-
-const typeDefs = `
-  type User {
-    id: String!
-    firstName: String!
-    lastName: String!
-  }
-  type Conversation {
-    id: String!
-    name: String!
-    messages(first: Int = 100): [Message]
-  }
-  type Message {
-    id: String!
-    message: String!
-    type: MessageType!
-  }
-  type Author {
-    id: Int!
-    firstName: String
-    lastName: String
-    posts: [Post] # the list of Posts by this author
-  }
-  type Post {
-    id: Int!
-    title: String
-    author: Author
-    votes: Int
-  }
-  # the schema allows the following query:
-  type Query {
-    currentUser: User
-    posts: [Post]
-    conversations: [Conversation]
-    authors: [Author]
-    author(id: Int!): Author
-    messages: [Message]
-  }
-  # this schema allows the following mutation:
-  type Mutation {
-    upvotePost (
-      postId: Int!
-    ): Post
-  }
-
-  enum MessageType {
-    incoming
-    outgoing
-  }
-`;
+import typeDefs                 from './graphql-type-defs.gql';
 
 // example data
 const authors = [
@@ -74,15 +30,57 @@ const messages = [
   { id: '123' },
   { id: '456' }
 ];
+const providers = [
+  {
+    id: '123',
+    name: 'Morray'
+  },
+  {
+    id: '456',
+    name: 'Michel'
+  }
+];
 
 const resolvers = {
   Query: {
-    currentUser: () => {
-      return {
-        id: '1234',
-        firstName: 'william',
-        lastName: 'riancho'
-      };
+    currentUser: (_, __, { user }) => {
+      if (user) {
+        return {
+          id: user.id,
+          firstName: user.get('firstName'),
+          lastName: user.get('lastName')
+        };
+      }
+      return null;
+    },
+
+    locality: async (_, { lat, lng }) => {
+      const location = await geocode({ lat, lng });
+
+      if (location) {
+        const country = await Country.findByCode(location.country);
+
+        if (country) {
+          return {
+            name: location.locality,
+            countryId: country.id
+          };
+        }
+      }
+      return null;
+    },
+
+    services: async () => {
+      const services = await Service.fetchAll();
+
+      return services.map(service => ({
+        id: service.get('id'),
+        name: service.get('name')
+      }));
+    },
+
+    providers: () => {
+      return Promise.resolve(providers);
     },
 
     messages: () => {
@@ -110,7 +108,6 @@ const resolvers = {
 
     posts: () => posts,
     authors: () => authors,
-    author: (_, { id }) => find(authors, { id: id }),
   },
   Mutation: {
     upvotePost: (_, { postId }) => {
@@ -129,6 +126,18 @@ const resolvers = {
 
   Post: {
     author: (post) => find(authors, { id: post.authorId }),
+  },
+
+  Locality: {
+    country: async (locality) => {
+      const country = await Country.find(locality.countryId);
+
+      return {
+        id: country.id,
+        name: country.get('name'),
+        code: country.get('code')
+      };
+    }
   },
 
   Conversation: {
@@ -169,11 +178,12 @@ const schema = makeExecutableSchema({
 export default [
   bodyParser.json(),
   (req, res, next) => {
-    if (req.body.variables) {
-      console.log(req.body.variables.access_token);
+    if (req.headers.authorization) {
+      return oauth2(req, res, next);
     }
-    console.log(req.headers);
     next();
   },
-  graphqlExpress({ schema })
+  (req, res, next) => {
+    graphqlExpress({ schema, context: { user: req.user } })(req, res, next);
+  }
 ];

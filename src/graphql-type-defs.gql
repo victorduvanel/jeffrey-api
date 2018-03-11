@@ -1,0 +1,69 @@
+type Service {
+  id: String!
+  name: String!
+}
+type Provider {
+  id: String!
+  name: String!
+}
+type User {
+  id: String!
+  firstName: String!
+  lastName: String!
+}
+type Conversation {
+  id: String!
+  name: String!
+  messages(first: Int = 100): [Message]
+}
+type Message {
+  id: String!
+  message: String!
+  type: MessageType!
+}
+type Author {
+  id: Int!
+  firstName: String
+  lastName: String
+  posts: [Post] # the list of Posts by this author
+}
+type Post {
+  id: Int!
+  title: String
+  author: Author
+  votes: Int
+}
+# the schema allows the following query:
+type Query {
+  currentUser: User
+  locality(
+    lat: String!
+    lng: String!
+  ): Locality
+  providers: [Provider]
+  services: [Service]
+  posts: [Post]
+  conversations: [Conversation]
+  authors: [Author]
+  author(id: Int!): Author
+  messages: [Message]
+}
+# this schema allows the following mutation:
+type Mutation {
+  upvotePost (
+    postId: Int!
+  ): Post
+}
+type Country {
+  id: String!
+  name: String!
+  code: String!
+}
+type Locality {
+  name: String!
+  country: Country!
+}
+enum MessageType {
+  incoming
+  outgoing
+}

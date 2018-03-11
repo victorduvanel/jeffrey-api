@@ -5,6 +5,11 @@
       "globals": ["Error", "Array"]
     }],
     ["syntax-object-rest-spread"],
-    ["transform-object-rest-spread"]
+    ["transform-object-rest-spread"],
+    ["babel-plugin-inline-import", {
+      "extensions": [
+        ".gql"
+      ]
+    }]
   ]
 }

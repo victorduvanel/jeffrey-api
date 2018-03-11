@@ -1,4 +1,4 @@
-// import 'log.js';
+import 'log.js';
 
 import commander      from 'commander';
 import chalk          from 'chalk';
