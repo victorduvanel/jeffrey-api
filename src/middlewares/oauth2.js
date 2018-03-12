@@ -28,7 +28,6 @@ const oauth2 = async (req) => {
     accessToken = await AccessToken.find(token);
 
     if (accessToken.get('singleUse')) {
-      console.log('destroy access token');
       await accessToken.destroy();
     } else {
       throw Unauthorized;
@@ -36,15 +35,10 @@ const oauth2 = async (req) => {
   }
 
   if (!accessToken) {
-    console.log('no token');
     throw Unauthorized;
   }
 
   const user = accessToken.related('user');
-
-  if (!user) {
-    console.log('user not found');
-  }
 
   return user;
 };

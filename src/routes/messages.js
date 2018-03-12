@@ -3,7 +3,6 @@ import uuid             from 'uuid';
 import config           from '../config';
 import oauth2           from '../middlewares/oauth2';
 import Message          from '../models/message';
-import Conversation     from '../models/conversation';
 import twilio           from '../services/twilio';
 
 export const post = [
@@ -11,6 +10,7 @@ export const post = [
   bodyParser.urlencoded({ extended: false }),
 
   async (req, res) => {
+    /*
     const user = req.user;
     const conversationId = req.body.conversation_id;
     const messageContent = req.body.message;
@@ -63,6 +63,7 @@ export const post = [
     }
 
     await conversation.outgoing(message);
+    */
 
     res.send({
       success: true
@@ -73,6 +74,7 @@ export const post = [
 export const get = [
   oauth2,
   async (req, res) => {
+    /*
     const conversationId = req.query.conversation_id;
     const user = req.user;
 
@@ -100,6 +102,10 @@ export const get = [
 
     res.send({
       data: responseData
+    });
+    */
+    res.send({
+      data: []
     });
   }
 ];

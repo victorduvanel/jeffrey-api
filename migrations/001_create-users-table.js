@@ -11,6 +11,8 @@ function up(knex) {
       table.string('password');
       table.string('first_name');
       table.string('last_name');
+      table.string('profile_picture');
+      table.string('phone_number');
       table.dateTime('created_at');
       table.dateTime('updated_at');
     });

@@ -10,7 +10,7 @@ const wrapHandler = (handler) => {
   return (request, response, next) => {
     handler(request, response)
       .then(() => {
-        response.end();
+        // response.end();
       })
       .catch((err) => {
         if (!err) {

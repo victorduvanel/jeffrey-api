@@ -10,7 +10,6 @@ import googleService                from '../services/google';
 import * as handlebars              from '../services/handlebars';
 import { sendEmail }                from '../services/mailgun';
 import LoginToken                   from './login-token';
-import Credit                       from './credit';
 import Product                      from './product';
 import Invoice                      from './invoice';
 import config                       from '../config';
@@ -31,10 +30,6 @@ const User = Base.extend({
     return this.hasMany('StripeCustomer');
   },
 
-  phoneNumbers() {
-    return this.hasMany('PhoneNumber');
-  },
-
   createAccessToken({ singleUse = false }) {
     return AccessToken.create({ user: this, singleUse });
   },
@@ -49,82 +44,13 @@ const User = Base.extend({
   },
 
   async enableAccount() {
-    await this.load('phoneNumbers');
-
-    await Promise.all(this.related('phoneNumbers').map((phoneNumber) => {
-      return phoneNumber.enable();
-    }));
-
     this.set('accountDisabled', false);
     await this.save();
   },
 
   async disableAccount() {
-    await this.load('phoneNumbers');
-
     this.set('accountDisabled', true);
-
     await this.save();
-
-    await Promise.all(this.related('phoneNumbers').map((phoneNumber) => {
-      return phoneNumber.disable();
-    }));
-  },
-
-  async credits() {
-    const total = await bookshelf
-      .knex('credits')
-      .sum('amount')
-      .where('user_id', this.get('id'))
-      .then(res => res[0].sum);
-
-    if (total === null) {
-      return 0;
-    }
-    return total;
-  },
-
-  async autoReload() {
-    const credits = await this.credits();
-
-    if (this.get('creditAutoReload')) {
-      if (credits < 200) {
-        return this.purchaseTenEurosCredits();
-      }
-    }
-    return Promise.resolve(credits);
-  },
-
-  async addCredits(amount) {
-    await Credit.create({
-      user: this, amount
-    });
-
-    const credits = await this.autoReload();
-
-    if (credits < 100) {
-      await this.disableAccount();
-    }
-
-    if (this.get('accountDisabled') && credits >= 200) {
-      await this.enableAccount();
-    }
-
-    return credits;
-  },
-
-  async purchaseTenEurosCredits() {
-    const invoice = await Invoice.create({
-      user: this,
-      currency: 'eur'
-    });
-
-    const product = await Product.find(config.app.tenEurosCreditProductId);
-    await invoice.addProduct({ product });
-    await invoice.charge();
-
-    const productPrice = await product.price({ currency: 'eur' });
-    return this.addCredits(productPrice.get('value'));
   },
 
   async paymentMethodStatus() {
@@ -161,7 +87,7 @@ const User = Base.extend({
 
     const loginToken = await LoginToken.create({ user: this });
 
-    const title = 'Prestine - Identifiez vous';
+    const title = 'Jeffrey - Identifiez vous';
 
     const message = await handlebars.render('email/login', {
       loginLink: `/login-link/${loginToken.get('id')}`,
@@ -169,7 +95,7 @@ const User = Base.extend({
     });
 
     return sendEmail({
-      from: '"Prestine" <noreply@prestine.io>',
+      from: '"Jeffrey" <noreply@jeffrey-services.com>',
       to: emailAddress,
       subject: title,
       message

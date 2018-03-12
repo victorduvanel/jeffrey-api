@@ -1,31 +1,24 @@
-import * as webhook         from './webhook';
 import * as oauth           from './oauth';
 import * as me              from './me';
 import * as signup          from './signup';
 import * as activate        from './activate';
-import * as northsigner     from './northsigner';
 import * as paymentMethods  from './payment-methods';
-import * as phoneNumber     from './phone-number';
 import * as messages        from './messages';
 import * as invoices        from './invoices';
 import * as resetPassword   from './reset-password';
-import * as twilio          from './twilio';
-import * as webNotification from './web-notification';
-import * as conversations   from './conversations';
 import * as ms              from './ms';
 import * as fixtureMessages from './fixture-messages';
 import * as apple           from './apple';
 import * as appLink         from './app-link';
 import * as appRedirect     from './app-redirect';
 import * as contactDetails  from './contact-details';
-import * as credits         from './credits';
-import * as subscriptions   from './subscriptions';
+import * as profilePic      from './profile-pic';
 
 export default {
-  webhook, oauth, me, activate, signup, northsigner,
-  paymentMethods, phoneNumber, messages, invoices,
-  resetPassword, twilio, webNotification,
-  conversations, ms, fixtureMessages, apple,
-  appLink, appRedirect, contactDetails, credits,
-  subscriptions
+  oauth, me, activate, signup,
+  paymentMethods, messages, invoices,
+  resetPassword, ms,
+  fixtureMessages, apple, appLink,
+  appRedirect, contactDetails,
+  profilePic
 };

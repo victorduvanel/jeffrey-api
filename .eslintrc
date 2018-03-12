@@ -39,6 +39,9 @@
     "quote-props": [
       "error",
       "as-needed"
+    ],
+    "no-console": [
+      "allow"
     ]
   }
 }

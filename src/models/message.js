@@ -2,17 +2,15 @@ import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
 import Base      from './base';
 
-import PhoneNumber from './phone-number';
-
 const Message = Base.extend({
   tableName: 'messages',
 
   to() {
-    return this.belongsTo(PhoneNumber);
+    return this.belongsTo('User');
   },
 
   from() {
-    return this.belongsTo(PhoneNumber);
+    return this.belongsTo('User');
   }
 }, {
   create: async function({ sid, from, to, body }) {

@@ -39,7 +39,7 @@ router.use('/graphiql', ...graphiql);
 get('/', (req, res) => {
   res.send({ hello: 'world' });
 });
-post('/webhook', routes.webhook.post);
+// post('/webhook', routes.webhook.post);
 
 post('/signup', routes.signup.post);
 post('/activate/:code', routes.activate.post);
@@ -51,18 +51,10 @@ post('/oauth/token', routes.oauth.token.post);
 post('/oauth/revoke', routes.oauth.revoke.post);
 post('/oauth/single-use-token', routes.oauth.singleUseToken.post);
 
-post('/northsigner/token', routes.northsigner.token.post);
-post('/northsigner/register', routes.northsigner.register.post);
-
 post('/payment-methods', routes.paymentMethods.post);
 get('/payment-methods', routes.paymentMethods.get);
 
 post('/contact-details', routes.contactDetails.post);
-
-get('/phone-numbers', routes.phoneNumber.get);
-get('/phone-numbers/:phone_number_id', routes.phoneNumber.getOne);
-del('/phone-numbers/:phone_number_id', routes.phoneNumber.destroy);
-post('/phone-numbers', routes.phoneNumber.post);
 
 get('/messages', routes.messages.get);
 post('/messages', routes.messages.post);
@@ -72,24 +64,6 @@ get('/invoices/:invoice_id', routes.invoices.getOne);
 
 post('/reset-password', routes.resetPassword.post);
 get('/reset-password/:token', routes.resetPassword.get);
-
-post('/twilio/token', routes.twilio.token.post);
-post('/twilio/hook', routes.twilio.hook.post);
-post('/twilio/access-token', routes.twilio.accessToken.post);
-get('/twilio/access-token', routes.twilio.accessToken.get);
-post('/twilio/webhook', routes.twilio.webhook.post);
-post('/twilio/incoming', routes.twilio.incoming.post);
-get('/twilio/incoming', routes.twilio.incoming.get);
-
-get('/placeCall', routes.twilio.placeCall.get);
-
-post('/web-notification', routes.webNotification.post);
-
-post('/credits', routes.credits.post);
-
-get('/conversations', routes.conversations.get);
-post('/conversations', routes.conversations.post);
-get('/conversations/:conversation_id', routes.conversations.getOne);
 
 get('/ms', routes.ms.get);
 
@@ -101,7 +75,7 @@ get('/app-link', routes.appLink.get);
 
 get('/app-redirect/:action', routes.appRedirect.get);
 
-post('/subscriptions/renew', routes.subscriptions.renew.post);
+post('/profile-pic', routes.profilePic.post);
 
 let _listenProm = null;
 export const listen = () => {

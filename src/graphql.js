@@ -6,26 +6,13 @@ import { find, filter }         from 'lodash';
 
 import { geocode }              from './services/google';
 import oauth2                   from './middlewares/oauth2';
-import { graphql } from 'graphql';
+import { graphql }              from 'graphql';
 import Service                  from './models/service';
 import Message                  from './models/message';
 import Country                  from './models/country';
-import Conversation             from './models/conversation';
 import User                     from './models/user';
 import typeDefs                 from './graphql-type-defs.gql';
 
-// example data
-const authors = [
-  { id: 1, firstName: 'Tom', lastName: 'Coleman' },
-  { id: 2, firstName: 'Sashko', lastName: 'Stubailo' },
-  { id: 3, firstName: 'Mikhail', lastName: 'Novikov' },
-];
-const posts = [
-  { id: 1, authorId: 1, title: 'Introduction to GraphQL', votes: 2 },
-  { id: 2, authorId: 2, title: 'Welcome to Meteor', votes: 3 },
-  { id: 3, authorId: 2, title: 'Advanced GraphQL', votes: 1 },
-  { id: 4, authorId: 3, title: 'Launchpad is Cool', votes: 7 },
-];
 const messages = [
   { id: '123' },
   { id: '456' }
@@ -43,12 +30,15 @@ const providers = [
 
 const resolvers = {
   Query: {
-    currentUser: (_, __, { user }) => {
+    currentUser: (_, __, { user }, params) => {
       if (user) {
         return {
           id: user.id,
           firstName: user.get('firstName'),
-          lastName: user.get('lastName')
+          lastName: user.get('lastName'),
+          email: user.get('email'),
+          // phoneNumber: user.get('phoneNumber'),
+          profilePicture: user.get('profilePicture')
         };
       }
       return null;
@@ -86,46 +76,6 @@ const resolvers = {
     messages: () => {
       return Promise.resolve(messages);
     },
-
-    conversations: async () => {
-      const user = await User.forge({
-        id: '2fe88767-9af9-4944-abb0-03fbdb2ab1da'
-      });
-
-      await user.load([
-        'conversations'
-      ]);
-
-      const conversations = user.related('conversations');
-
-      return conversations.map((conversation) => {
-        return {
-          id: conversation.get('id'),
-          name: conversation.get('name') || ''
-        };
-      });
-    },
-
-    posts: () => posts,
-    authors: () => authors,
-  },
-  Mutation: {
-    upvotePost: (_, { postId }) => {
-      const post = find(posts, { id: postId });
-      if (!post) {
-        throw new Error(`Couldn't find post with id ${postId}`);
-      }
-      post.votes += 1;
-      return post;
-    },
-  },
-
-  Author: {
-    posts: (author) => filter(posts, { authorId: author.id }),
-  },
-
-  Post: {
-    author: (post) => find(authors, { id: post.authorId }),
   },
 
   Locality: {
@@ -137,34 +87,6 @@ const resolvers = {
         name: country.get('name'),
         code: country.get('code')
       };
-    }
-  },
-
-  Conversation: {
-    messages: async ({ id: conversationId }, params) => {
-
-      const user = await User.forge({
-        id: '2fe88767-9af9-4944-abb0-03fbdb2ab1da'
-      });
-
-      const conversation = await Conversation.find({
-        id: conversationId,
-        user
-      });
-
-      await conversation.load(['conversationMessages.message']);
-      const conversationMessages = conversation.related('conversationMessages');
-
-      return conversationMessages.map((conversationMessage) => {
-        const message = conversationMessage.related('message');
-
-        return {
-          id: message.get('id'),
-          message: message.get('body'),
-          type: conversationMessage.get('type'),
-          date: message.get('createdAt')
-        };
-      });
     }
   }
 };
@@ -178,6 +100,9 @@ const schema = makeExecutableSchema({
 export default [
   bodyParser.json(),
   (req, res, next) => {
+    let authorization = 'Bearer 9c0f3e37119340e6e9c8f20dad45235434312b783f3290f81a573164574159eb513f3f92b096bb36919e8c396ca8236a533e4cd1b4ae71b40d7b0b191957ed4692d2770733f93f5dc39ebd4fd7e6c7c783c5b168fbe4cce57694e78d0ea9b2ad5a4911f4a61b98cfc0e3cbe1606cfa68b3250d404e575b88ef2e2b533417bb';
+    req.headers.authorization = authorization;
+
     if (req.headers.authorization) {
       return oauth2(req, res, next);
     }

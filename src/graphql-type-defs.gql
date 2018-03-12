@@ -10,28 +10,15 @@ type User {
   id: String!
   firstName: String!
   lastName: String!
-}
-type Conversation {
-  id: String!
-  name: String!
-  messages(first: Int = 100): [Message]
+  email: String
+  phone: String
+  profilePicture: String
+  phoneNumber: String
 }
 type Message {
   id: String!
   message: String!
   type: MessageType!
-}
-type Author {
-  id: Int!
-  firstName: String
-  lastName: String
-  posts: [Post] # the list of Posts by this author
-}
-type Post {
-  id: Int!
-  title: String
-  author: Author
-  votes: Int
 }
 # the schema allows the following query:
 type Query {
@@ -42,17 +29,7 @@ type Query {
   ): Locality
   providers: [Provider]
   services: [Service]
-  posts: [Post]
-  conversations: [Conversation]
-  authors: [Author]
-  author(id: Int!): Author
   messages: [Message]
-}
-# this schema allows the following mutation:
-type Mutation {
-  upvotePost (
-    postId: Int!
-  ): Post
 }
 type Country {
   id: String!
