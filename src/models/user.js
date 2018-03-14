@@ -43,16 +43,6 @@ const User = Base.extend({
       });
   },
 
-  async enableAccount() {
-    this.set('accountDisabled', false);
-    await this.save();
-  },
-
-  async disableAccount() {
-    this.set('accountDisabled', true);
-    await this.save();
-  },
-
   async paymentMethodStatus() {
     await this.load('stripeCustomer');
 
@@ -90,7 +80,7 @@ const User = Base.extend({
     const title = 'Jeffrey - Identifiez vous';
 
     const message = await handlebars.render('email/login', {
-      loginLink: `/login-link/${loginToken.get('id')}`,
+      loginLink: `jeffrey://login/${loginToken.get('id')}`,
       title
     });
 
@@ -128,7 +118,7 @@ const User = Base.extend({
   facebookAuthenticate: async function(token) {
     const response = await request({
       method: 'GET',
-      uri: 'https://graph.facebook.com/v2.9/me?fields=id,first_name,last_name,email,verified',
+      uri: 'https://graph.facebook.com/v2.12/me?fields=id,first_name,last_name,email,verified',
       auth: {
         bearer: token
       },
@@ -181,10 +171,6 @@ const User = Base.extend({
 
   create: async function(props) {
     const id = uuid.v4();
-
-    if (!props.hasOwnProperty('accountDisabled')) {
-      props.accountDisabled = true;
-    }
 
     return this.forge({ id, ...props })
       .save(null, { method: 'insert' })

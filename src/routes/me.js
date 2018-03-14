@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 
 const jsonSerialize = async (user) => {
   const paymentMethodStatus = await user.paymentMethodStatus();
-  const credits = await user.credits();
 
   return {
     id: user.get('id'),
@@ -11,12 +10,6 @@ const jsonSerialize = async (user) => {
     last_name: user.get('lastName'),
     email: user.get('email'),
     payment_method_status: paymentMethodStatus,
-    credit_auto_reload: user.get('creditAutoReload'),
-    account_disabled: user.get('accountDisabled'),
-    credit: {
-      amount: credits,
-      currency: 'EUR'
-    }
   };
 };
 
@@ -47,10 +40,6 @@ export const patch = [
 
     if (body.password) {
       await user.updatePassword(body.password);
-    }
-
-    if (body.credit_auto_reload) {
-      user.set('creditAutoReload', (body.credit_auto_reload === 'true'));
     }
 
     if (user.hasChanged()) {

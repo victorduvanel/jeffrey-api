@@ -62,17 +62,16 @@ export const post = [
     const user = await User.forge({ email }).fetch();
 
     if (user) {
+      // throw errors.BadRequest.detail('email already used');
 
-      throw errors.BadRequest.detail('email already used');
+      await user.sendLoginEmail();
 
-      // await user.sendLoginEmail();
-      //
-      //res.send({
-      //success: true,
-      //login_email_sent: true
-      //});
+      res.send({
+        success: true,
+        login_email_sent: true
+      });
 
-      //return;
+      return;
     }
 
     await PendingUser.createFromEmail(email);
