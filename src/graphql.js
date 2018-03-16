@@ -4,19 +4,25 @@ import { graphqlExpress }       from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import { find, filter }         from 'lodash';
 
+import { PubSub } from 'graphql-subscriptions';
+
+import { SubscriptionServer } from 'subscriptions-transport-ws';
+
 import { geocode }              from './services/google';
 import oauth2                   from './middlewares/oauth2';
-import { graphql }              from 'graphql';
+import { graphql, execute, subscribe }              from 'graphql';
 import Service                  from './models/service';
 import Message                  from './models/message';
 import Country                  from './models/country';
 import User                     from './models/user';
 import typeDefs                 from './graphql-type-defs.gql';
 
-const messages = [
-  { id: '123' },
-  { id: '456' }
-];
+const NEW_MESSAGE_TOPIC = 'NEW_MESSAGE_TOPIC';
+
+const pubsub = new PubSub();
+
+const messages = [];
+
 const providers = [
   {
     id: '123',
@@ -73,7 +79,7 @@ const resolvers = {
       return Promise.resolve(providers);
     },
 
-    messages: () => {
+    conversation: () => {
       return Promise.resolve(messages);
     },
   },
@@ -88,14 +94,46 @@ const resolvers = {
         code: country.get('code')
       };
     }
+  },
+
+  Subscription: {
+    newMessage: {
+      subscribe: () => {
+        return pubsub.asyncIterator(NEW_MESSAGE_TOPIC);
+      }
+    }
   }
+
 };
 
+let id = 2;
+setInterval(() => {
+  pubsub.publish(NEW_MESSAGE_TOPIC, {
+    newMessage: {
+      id: (id++).toString(),
+      message: `Bonjour ${id}`,
+      type: (Math.floor(Math.random() * 1000) % 2) ? 'outgoing' : 'incoming',
+      time: (new Date()).toISOString()
+    }
+  });
+}, 5000);
 
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers,
 });
+
+export const subscriptionServer = (websocketServer) => SubscriptionServer.create(
+  {
+    schema,
+    execute,
+    subscribe,
+  },
+  {
+    server: websocketServer,
+    path: '/graphql',
+  },
+);
 
 export default [
   bodyParser.json(),

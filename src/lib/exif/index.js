@@ -2,13 +2,13 @@ import Promise           from 'bluebird';
 import { ExifImage }     from 'exif';
 import Canvas, { Image } from 'canvas';
 
-const createImage = (buffer) => {
+const createCanvasImage = (src) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
 
     img.onerror = reject;
     img.onload = resolve(img);
-    img.src = buffer;
+    img.src = src;
   });
 };
 
@@ -91,8 +91,7 @@ const getTransformations = async (imageBuffer, img) => {
   });
 };
 
-export const applyExifRotation = async (imageBuffer) => {
-  const image = await createImage(imageBuffer);
+export const applyExifRotation = async (imageBuffer, image) => {
   const transfo = await getTransformations(imageBuffer, image);
 
   const {
@@ -109,5 +108,5 @@ export const applyExifRotation = async (imageBuffer) => {
   ctx.scale(scaleX, scaleY);
   ctx.drawImage(image, dX, dY);
 
-  return canvas.jpegStream({ progressive: true });
+  return createCanvasImage(canvas.toDataURL());
 };

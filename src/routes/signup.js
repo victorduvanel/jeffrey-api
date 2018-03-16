@@ -3,12 +3,14 @@ import request     from 'request-promise';
 import * as errors from '../errors';
 import recaptcha   from '../services/recaptcha';
 
+import localized   from '../middlewares/localized';
 import PendingUser from '../models/pending-user';
 import User        from '../models/user';
 
 export const post = [
   bodyParser.urlencoded({ extended: false }),
   bodyParser.json(),
+  localized,
   async (req, res) => {
     const { body } = req;
     const { email, captcha } = body;
@@ -63,8 +65,7 @@ export const post = [
 
     if (user) {
       // throw errors.BadRequest.detail('email already used');
-
-      await user.sendLoginEmail();
+      await user.sendLoginEmail(req.i18n);
 
       res.send({
         success: true,

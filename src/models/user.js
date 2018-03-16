@@ -8,6 +8,7 @@ import AccessToken                  from './access-token';
 import { send as sendNotification } from '../services/notification';
 import googleService                from '../services/google';
 import * as handlebars              from '../services/handlebars';
+import * as mjml                    from '../services/mjml';
 import { sendEmail }                from '../services/mailgun';
 import LoginToken                   from './login-token';
 import Product                      from './product';
@@ -21,10 +22,6 @@ const bcrypt = Promise.promisifyAll(nativeBcrypt);
 
 const User = Base.extend({
   tableName: 'users',
-
-  conversations() {
-    return this.hasMany('Conversation');
-  },
 
   stripeCustomer() {
     return this.hasMany('StripeCustomer');
@@ -72,32 +69,26 @@ const User = Base.extend({
     sendNotification(this, message);
   },
 
-  sendLoginEmail: async function() {
+  sendLoginEmail: async function(i18n) {
     const emailAddress = this.get('email');
-
     const loginToken = await LoginToken.create({ user: this });
 
-    const title = 'Jeffrey - Identifiez vous';
-
-    const message = await handlebars.render('email/login', {
+    const message = await mjml.render('email/login', i18n, {
+      user: this.serialize(),
       loginLink: `jeffrey://login/${loginToken.get('id')}`,
-      title
     });
 
     return sendEmail({
-      from: '"Jeffrey" <noreply@jeffrey-services.com>',
+      from: i18n('email_from'),
       to: emailAddress,
-      subject: title,
+      subject: i18n('email_login_subject'),
       message
     });
   },
 
   toJSON() {
     let attrs = Base.prototype.toJSON.apply(this, arguments);
-
     delete attrs.password;
-    delete attrs.email;
-
     return attrs;
   }
 }, {

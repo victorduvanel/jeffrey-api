@@ -19,6 +19,7 @@ type Message {
   id: String!
   message: String!
   type: MessageType!
+  time: String!
 }
 # the schema allows the following query:
 type Query {
@@ -29,7 +30,9 @@ type Query {
   ): Locality
   providers: [Provider]
   services: [Service]
-  messages: [Message]
+  conversation(
+    conversationId: String!
+  ): [Message]
 }
 type Country {
   id: String!
@@ -43,4 +46,7 @@ type Locality {
 enum MessageType {
   incoming
   outgoing
+}
+type Subscription {
+  newMessage(conversationId: String!): Message
 }

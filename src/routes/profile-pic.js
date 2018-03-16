@@ -4,8 +4,19 @@ import Busboy                from 'busboy';
 import Buckets               from '../services/google/storage';
 import oauth2                from '../middlewares/oauth2';
 import { applyExifRotation } from '../lib/exif';
+import Canvas, { Image } from 'canvas';
 
-const retreiveImage = (req) => {
+const createCanvasImage = (buffer) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+
+    img.onerror = reject;
+    img.onload = resolve(img);
+    img.src = buffer;
+  });
+};
+
+const retreiveImageFromRequest = (req) => {
   return new Promise((resolve, reject) => {
     const busboy = new Busboy({ headers: req.headers });
 
@@ -34,8 +45,53 @@ const retreiveImage = (req) => {
   });
 };
 
-const uploadImage = (bucket, imageStream, path) => {
+const resizeImage = async (image, { width: dWidth, height: dHeight }) => {
+  const canvas = new Canvas(dWidth, dHeight);
+  const ctx = canvas.getContext('2d');
+
+  const dx = 0;
+  const dy = 0;
+
+
+  if (image.height > image.width) {
+    const sx = 0;
+    const sWidth = image.width;
+    const scale = sWidth / dWidth;
+
+    const sHeight = Math.floor(sWidth * dHeight / dWidth);
+    const sy = Math.floor((sHeight - scale * dHeight) / 2);
+
+    ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+  } else {
+    const sy = 0;
+    const sHeight = image.height;
+    const scale = sHeight / dHeight;
+
+    const sWidth = Math.floor(dWidth * sHeight / dHeight);
+    const sx = Math.floor((sWidth - scale * dWidth) / 2);
+
+    ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+  }
+
+  return createCanvasImage(canvas.toDataURL());
+};
+
+const retreiveImage = async (req) => {
+  const imageBuffer = await retreiveImageFromRequest(req);
+  const canvasImage = await createCanvasImage(imageBuffer);
+
+  return applyExifRotation(imageBuffer, canvasImage);
+};
+
+
+const uploadImage = (bucket, image, path) => {
   return new Promise((resolve, reject) => {
+    const canvas = new Canvas(image.width, image.height);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(image, 0, 0)
+
+    const imageStream = canvas.jpegStream({ progressive: true });
+
     const file = bucket.file(path);
     const fileStream = file.createWriteStream({
       metadata: {
@@ -60,15 +116,18 @@ export const post = [
   oauth2,
   async (req, res) => {
     const { user } = req;
-    const imageBuffer = await retreiveImage(req);
-    const imageStream = await applyExifRotation(imageBuffer);
+    const image = await retreiveImage(req);
+    const smallImage = await resizeImage(image, { width: 50, height: 50 });
 
     const region = req.query.region || 'EU';
     const bucket = Buckets[region] || Buckets.EU;
 
     const dest = uuid.v4();
+
     const path = `profile-pictures/${dest}/original.jpg`;
-    await uploadImage(bucket, imageStream, path);
+
+    await uploadImage(bucket, image, path);
+    await uploadImage(bucket, smallImage, `profile-pictures/${dest}/small.jpg`);
 
     const profilePicture = `https://storage.googleapis.com/${bucket.name}/${path}`;
 

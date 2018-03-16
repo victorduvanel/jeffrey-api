@@ -4,11 +4,12 @@ import chalk                             from 'chalk';
 import http                              from 'http';
 import express                           from 'express';
 import Promise                           from 'bluebird';
+import { ApolloEngine } from 'apollo-engine';
 
 import config                            from './config';
 import routes                            from './routes';
 
-import graphql                           from './graphql';
+import graphql, { subscriptionServer }   from './graphql';
 import graphiql                          from './graphiql';
 
 import logger                            from './middlewares/logger';
@@ -16,7 +17,6 @@ import corsPolicy                        from './middlewares/cors-policy';
 import notFound                          from './middlewares/not-found';
 import errorHandler                      from './middlewares/error-handler';
 import { router, get, post, patch, del } from './middlewares/router';
-import notificationService               from './services/notification';
 
 export const httpServer = http.createServer();
 const app = express();
@@ -28,9 +28,11 @@ if (config.PRODUCTION) {
 
 app.use(logger, corsPolicy, router, notFound, errorHandler);
 
-notificationService(httpServer);
+//notificationService(httpServer);
 
 httpServer.on('request', app);
+
+subscriptionServer(httpServer);
 
 router.use('/graphql', ...graphql);
 router.use('/graphiql', ...graphiql);
@@ -81,7 +83,18 @@ let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {
     _listenProm = new Promise((resolve) => {
-      httpServer.listen(process.env.PORT || 3000, () => {
+
+      const engine = new ApolloEngine({
+        apiKey: config.apolloEngine.apiKey
+      });
+
+      const port = process.env.PORT || 3000;
+
+      engine.listen({
+        port,
+        httpServer: httpServer,
+        graphqlPaths: ['/graphql']
+      }, () => {
         const addr = httpServer.address();
 
         /* eslint-disable no-console */
