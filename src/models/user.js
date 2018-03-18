@@ -23,6 +23,10 @@ const bcrypt = Promise.promisifyAll(nativeBcrypt);
 const User = Base.extend({
   tableName: 'users',
 
+  conversations() {
+    return this.hasMany('Conversation');
+  },
+
   stripeCustomer() {
     return this.hasMany('StripeCustomer');
   },

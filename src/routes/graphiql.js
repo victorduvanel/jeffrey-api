@@ -1,6 +1,6 @@
 import { graphiqlExpress } from 'apollo-server-express';
 
-export default [
+export const get = [
   graphiqlExpress({
     endpointURL: '/graphql',
   })

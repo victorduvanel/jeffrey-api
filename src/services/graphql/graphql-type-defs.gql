@@ -19,6 +19,7 @@ type Message {
   id: String!
   message: String!
   type: MessageType!
+  from: User!
   time: String!
 }
 # the schema allows the following query:
@@ -33,6 +34,12 @@ type Query {
   conversation(
     conversationId: String!
   ): [Message]
+  conversations: [Conversation]
+}
+type Conversation {
+  id: String!
+  participants: [User]!
+  messages: [Message]!
 }
 type Country {
   id: String!
@@ -49,4 +56,7 @@ enum MessageType {
 }
 type Subscription {
   newMessage(conversationId: String!): Message
+}
+type Mutation {
+  newMessage(conversationId: String!, message: String!): Message
 }

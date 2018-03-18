@@ -5,7 +5,6 @@ function up(knex) {
       table.string('email').unique();
       table.string('google_id').unique();
       table.string('facebook_id').unique();
-      table.boolean('friend');
       table.string('password');
       table.string('first_name');
       table.string('last_name');

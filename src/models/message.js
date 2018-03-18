@@ -5,29 +5,27 @@ import Base      from './base';
 const Message = Base.extend({
   tableName: 'messages',
 
-  to() {
-    return this.belongsTo('User');
+  conversation() {
+    return this.belongsTo('Conversation');
   },
 
   from() {
     return this.belongsTo('User');
   }
 }, {
-  create: async function({ sid, from, to, body }) {
+  create: async function({ from, body }) {
     const id = uuid.v4();
 
     await bookshelf.knex.raw(
       `INSERT INTO messages
-        (id, sid, body, from_id, to_id, created_at, updated_at)
-        VALUES (:id, :sid, :body, :fromId, :toId, NOW(), NOW())
+        (id, body, from_id, created_at, updated_at)
+        VALUES (:id, :body, :fromId, NOW(), NOW())
         ON CONFLICT DO NOTHING
       `,
       {
         id,
-        sid,
         body,
-        fromId: from.get('id'),
-        toId  : to.get('id')
+        fromId: from.get('id')
       }
     );
 

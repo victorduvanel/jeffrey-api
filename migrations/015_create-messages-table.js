@@ -1,17 +1,16 @@
 function up(knex) {
   return knex.schema.createTable('messages', (table) => {
     table.uuid('id').primary();
-    table.string('sid').unique();
     table.text('body');
 
     table
-      .uuid('from_id')
-      .references('users.id')
+      .uuid('conversation_id')
+      .references('conversations.id')
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
 
     table
-      .uuid('to_id')
+      .uuid('from_id')
       .references('users.id')
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');

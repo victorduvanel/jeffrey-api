@@ -13,6 +13,7 @@ import * as appLink         from './app-link';
 import * as appRedirect     from './app-redirect';
 import * as contactDetails  from './contact-details';
 import * as profilePic      from './profile-pic';
+import * as graphiql        from './graphiql';
 
 export default {
   oauth, me, activate, signup,
@@ -20,5 +21,5 @@ export default {
   resetPassword, ms,
   fixtureMessages, apple, appLink,
   appRedirect, contactDetails,
-  profilePic
+  profilePic, graphiql
 };

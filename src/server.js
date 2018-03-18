@@ -9,8 +9,7 @@ import { ApolloEngine } from 'apollo-engine';
 import config                            from './config';
 import routes                            from './routes';
 
-import graphql, { subscriptionServer }   from './graphql';
-import graphiql                          from './graphiql';
+import graphql, { subscriptionServer }   from './services/graphql';
 
 import logger                            from './middlewares/logger';
 import corsPolicy                        from './middlewares/cors-policy';
@@ -35,7 +34,7 @@ httpServer.on('request', app);
 subscriptionServer(httpServer);
 
 router.use('/graphql', ...graphql);
-router.use('/graphiql', ...graphiql);
+get('/graphiql', routes.graphiql.get);
 
 // ROUTES
 get('/', (req, res) => {
