@@ -1,0 +1,46 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-text align="center" color="#555" />
+    </mj-attributes>
+  </mj-head>
+
+  <mj-body background-color="#eee">
+    <mj-include path="./header.mjml" />
+    <mj-section background-color="#fff">
+      <mj-column>
+        <mj-text align="left">
+          <h1>Connectez vous à Jeffrey</h1>
+          <h1>Salut, bienvenue chez Jeffrey !</h1>
+          <p>Nous sommes heureux de vous compter parmi nous.<br>
+          Pour authentifier votre email et finaliser votre inscription, cliquez sur le lien suivant :</p>
+        </mj-text>
+
+        <mj-button
+          color="#FFFFFF"
+          border-radius="2px"
+          href="{{activationLink}}"
+          inner-padding="15px 30px"
+          padding-top="20"
+        >
+          Confirmer mon compte
+        </mj-button>
+
+        <mj-text align="left">
+        Ce lien n'est utilisable qu'une seule fois.
+        <br>
+        Si vous rencontrez le moindre problème pour confirmer votre adresse email, nous serons heureux de vous aider.<br>
+        <br>
+        Vous pouvez contacter notre support à l'adresse <a href="mailto:support@jeffrey-services.com">support@jeffrey-services.com</a>.
+        <br><br>
+        A très bientôt,
+        <br>
+        <b>Jeffrey</b>
+        </mj-text>
+      </mj-column>
+
+    </mj-section>
+    <mj-include path="./footer.mjml" />
+
+  </mj-body>
+</mjml>
