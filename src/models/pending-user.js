@@ -4,7 +4,7 @@ import knex            from '../services/knex';
 import * as libEmail   from '../lib/email';
 import errors          from '../errors';
 import uuid            from 'uuid';
-import * as handlebars from '../services/handlebars';
+import * as mjml       from '../services/mjml';
 import { sendEmail }   from '../services/mailgun';
 import config          from '../config';
 
@@ -17,7 +17,7 @@ const PendingUser = Base.extend({
       .del();
   }
 }, {
-  createFromEmail: async function(emailAddress) {
+  createFromEmail: async function(i18n, emailAddress) {
     const id = uuid.v4();
 
     emailAddress = libEmail.sanitize(emailAddress);
@@ -32,16 +32,14 @@ const PendingUser = Base.extend({
     })
       .save(null, { method: 'insert' });
 
-    const message = await handlebars.render('email/register', {
-      // activationLink: `/app-redirect/activate?code=${id}`,
-      activationLink: `/activate?code=${id}`,
-      title: 'Prestine - Confirmez votre adresse mail',
+    const message = await mjml.render('email/register', i18n, {
+      activationLink: `jeffrey://activate?code=${id}`,
     });
 
     return sendEmail({
-      from: '"Prestine" <noreply@prestine.io>',
+      from: '"Jeffrey" <noreply@jeffrey-services.com>',
       to: emailAddress,
-      subject: 'Prestine - Confirmez votre adresse mail',
+      subject: 'Jeffrey - Confirmez votre adresse mail',
       message
     });
   },

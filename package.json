@@ -8,7 +8,7 @@
     "migrate": "babel-node index.js migrate",
     "seed": "babel-node index.js seed",
     "start": "babel-node index.js",
-    "watch": "nodemon --exec \"npm start\"",
+    "watch": "nodemon -e \"gql js\" --exec \"npm start\"",
     "lint": "eslint .",
     "build": "babel src -d dist",
     "serve": "node dist/index.js"

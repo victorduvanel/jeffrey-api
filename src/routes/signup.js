@@ -75,7 +75,7 @@ export const post = [
       return;
     }
 
-    await PendingUser.createFromEmail(email);
+    await PendingUser.createFromEmail(req.i18n, email);
 
     res.send({
       success: true,

@@ -18,7 +18,6 @@ type User {
 type Message {
   id: String!
   message: String!
-  type: MessageType!
   from: User!
   time: String!
 }
@@ -33,7 +32,7 @@ type Query {
   services: [Service]
   conversation(
     conversationId: String!
-  ): [Message]
+  ): Conversation
   conversations: [Conversation]
 }
 type Conversation {
@@ -49,10 +48,6 @@ type Country {
 type Locality {
   name: String!
   country: Country!
-}
-enum MessageType {
-  incoming
-  outgoing
 }
 type Subscription {
   newMessage(conversationId: String!): Message

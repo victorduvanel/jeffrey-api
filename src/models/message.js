@@ -10,26 +10,31 @@ const Message = Base.extend({
   },
 
   from() {
-    return this.belongsTo('User');
+    return this.belongsTo('User', 'from_id');
   }
 }, {
-  create: async function({ from, body }) {
+  create: async function({ from, body, conversation }) {
     const id = uuid.v4();
 
     await bookshelf.knex.raw(
       `INSERT INTO messages
-        (id, body, from_id, created_at, updated_at)
-        VALUES (:id, :body, :fromId, NOW(), NOW())
+        (id, body, from_id, conversation_id, created_at, updated_at)
+        VALUES (:id, :body, :fromId, :conversationId, NOW(), NOW())
         ON CONFLICT DO NOTHING
       `,
       {
         id,
         body,
-        fromId: from.get('id')
+        fromId: from.get('id'),
+        conversationId: conversation.get('id'),
       }
     );
 
     return await new this({ id }).fetch();
+  },
+
+  find: function(id) {
+    return this.forge({ id }).fetch();
   }
 });
 

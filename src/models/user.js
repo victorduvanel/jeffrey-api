@@ -7,7 +7,6 @@ import Base                         from './base';
 import AccessToken                  from './access-token';
 import { send as sendNotification } from '../services/notification';
 import googleService                from '../services/google';
-import * as handlebars              from '../services/handlebars';
 import * as mjml                    from '../services/mjml';
 import { sendEmail }                from '../services/mailgun';
 import LoginToken                   from './login-token';

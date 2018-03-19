@@ -87,8 +87,6 @@ const resolvers = {
         user
       });
 
-      await conversation.load(['messages']);
-
       if (!conversation) {
         return null;
       }
@@ -139,6 +137,54 @@ const resolvers = {
 
       return Promise.resolve(messages);
     },
+
+    conversation: async (_, { conversationId }, { user }, params) => {
+      const conversation = await Conversation.find(conversationId);
+
+      await conversation.load(['participants']);
+
+      const participants = conversation.related('participants');
+      if (participants.map(user => user.id).includes(user.get('id'))) {
+        return {
+          id: conversation.get('id')
+        };
+      }
+
+      return null;
+    }
+  },
+
+  Conversation: {
+    participants: async(conversation) => {
+      await conversation.load(['participants']);
+    },
+
+    messages: async({ id }) => {
+      const conversation = await Conversation.find(id);
+
+      await conversation.load([{
+        messages: query => query.orderBy('created_at', 'desc')
+      }]);
+
+      return conversation.related('messages').map(message => ({
+        id: message.get('id'),
+        message: message.get('body'),
+        fromId: message.get('fromId'),
+        time: message.get('createdAt').toISOString()
+      }));
+    },
+  },
+
+  Message: {
+    from: async({ id }) => {
+      const message = await Message.find(id);
+      await message.load(['from']);
+      const from = message.related('from');
+      return {
+        id: from.get('id'),
+        profilePicture: from.get('profilePicture')
+      };
+    }
   },
 
   Locality: {
@@ -155,8 +201,8 @@ const resolvers = {
 
   Subscription: {
     newMessage: {
-      subscribe: (_, { userId }) => {
-        return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${userId}`);
+      subscribe: (_, { conversationId }, { user }) => {
+        return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
       }
     }
   },
@@ -167,18 +213,18 @@ const resolvers = {
         const conversation = await Conversation.find(conversationId);
         await conversation.load(['participants']);
 
-        const message = await Message.create({ from: user, body });
+        const message = await Message.create({ from: user, body, conversation });
         conversation.notifyParticipants(message);
+
+        return {
+          id: message.get('id'),
+          message: message.get('body'),
+          from: message.get('fromId'),
+          time: message.get('createdAt')
+        };
       } catch (err) {
         console.error(err);
       }
-
-      return {
-        id: message.get('id'),
-        message: message.get('body'),
-        from: message.get('fromId'),
-        time: message.get('createdAt')
-      };
     }
   },
 
