@@ -10,7 +10,7 @@
     "start": "babel-node index.js",
     "watch": "nodemon -e \"gql js\" --exec \"npm start\"",
     "lint": "eslint .",
-    "build": "babel src -d dist",
+    "build": "babel src -d dist --copy-files",
     "serve": "node dist/index.js"
   },
   "engines": {

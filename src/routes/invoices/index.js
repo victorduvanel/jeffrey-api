@@ -3,7 +3,7 @@ import { render }   from '../../services/handlebars';
 import oauth2       from '../../middlewares/oauth2';
 import Invoice      from '../../models/invoice';
 import { NotFound } from '../../errors';
-import { products } from '../../../resources/products.json';
+import { products } from '../../resources/products.json';
 
 export const get = [
   oauth2,

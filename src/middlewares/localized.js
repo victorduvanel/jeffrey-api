@@ -1,5 +1,5 @@
 import IntlMessageFormat          from 'intl-messageformat';
-import locales, { defaultLocale } from '../../resources/locales';
+import locales, { defaultLocale } from '../resources/locales';
 
 const localeNames = Object.keys(locales);
 

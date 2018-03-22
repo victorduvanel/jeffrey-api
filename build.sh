@@ -1,3 +1,5 @@
 #!/bin/sh
 
-docker build . -t jffr/api:latest --no-cache
+VERSION="$(head -1 VERSION)"
+
+docker build . -t "eu.gcr.io/jeffrey-197808/api:$VERSION"

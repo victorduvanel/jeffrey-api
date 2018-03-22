@@ -2,7 +2,7 @@ import Promise    from 'bluebird';
 import mjml2html  from 'mjml';
 import nativeFs   from 'fs';
 import path       from 'path';
-import locales    from '../../resources/locales';
+import locales    from '../resources/locales';
 import handlebars from './handlebars';
 import config     from '../config';
 
