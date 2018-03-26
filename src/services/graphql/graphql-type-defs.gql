@@ -1,26 +1,3 @@
-type Service {
-  id: String!
-  name: String!
-}
-type Provider {
-  id: String!
-  name: String!
-}
-type User {
-  id: String!
-  firstName: String!
-  lastName: String!
-  email: String
-  phone: String
-  profilePicture: String
-  phoneNumber: String
-}
-type Message {
-  id: String!
-  message: String!
-  from: User!
-  time: String!
-}
 # the schema allows the following query:
 type Query {
   currentUser: User
@@ -34,16 +11,6 @@ type Query {
     conversationId: String!
   ): Conversation
   conversations: [Conversation]
-}
-type Conversation {
-  id: String!
-  participants: [User]!
-  messages: [Message]!
-}
-type Country {
-  id: String!
-  name: String!
-  code: String!
 }
 type Locality {
   name: String!

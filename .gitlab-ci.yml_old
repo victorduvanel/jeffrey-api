@@ -8,8 +8,11 @@ stages:
 - release
 
 variables:
-  CONTAINER_TEST_IMAGE: registry.gitlab.com/prestine/api:$CI_BUILD_REF_NAME
-  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/prestine/api:latest
+  DOCKER_DRIVER: overlay
+  GCP_PROJECT_ID: jeffrey-197808
+  IMAGE_NAME: eu.gcr.io/$GCP_PROJECT_ID/api
+  CONTAINER_TEST_IMAGE: $IMAGE_NAME:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $IMAGE_NAME:latest
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
@@ -18,7 +21,6 @@ build:
   stage: build
   script:
     - docker build --pull -t $CONTAINER_TEST_IMAGE .
-    - docker push $CONTAINER_TEST_IMAGE
 
 test:
   stage: test
@@ -29,7 +31,28 @@ test:
 release-image:
   stage: release
   script:
+    # Install CA certs, openssl to https downloads, python for gcloud sdk
+    - apk add --update make ca-certificates openssl python
+    - update-ca-certificates
+    # Write our GCP service account private key into a file
+    - echo $GCLOUD_SERVICE_KEY | base64 -d > ${HOME}/gcloud-service-key.json
+    # Download and install Google Cloud SDK
+    - wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz
+    - tar zxvf google-cloud-sdk.tar.gz && ./google-cloud-sdk/install.sh --usage-reporting=false --path-update=true
+    - google-cloud-sdk/bin/gcloud --quiet components update
+    - google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+    # Create our image. Expected to create an image 'image_id'
     - docker pull $CONTAINER_TEST_IMAGE
+
+    - make-my-image
+    # Tag our image for container registry
+    - docker tag $IMAGE_NAME gcr.io/$GCP_PROJECT_ID/$IMAGE_NAME
+    # Optionally tag the image with the commit short-sha
+    - docker tag $IMAGE_NAME gcr.io/$GCP_PROJECT_ID/$IMAGE_NAME:$(echo $CI_COMMIT_SHA | cut -c1-8)
+    - google-cloud-sdk/bin/gcloud docker -- push gcr.io/$GCP_PROJECT_ID/$IMAGE_NAME:latest
+    - google-cloud-sdk/bin/gcloud docker -- push gcr.io/$GCP_PROJECT_ID/$IMAGE_NAME:$(echo $CI_COMMIT_SHA | cut -c1-8)
+
+
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
     - docker push $CONTAINER_RELEASE_IMAGE
   only:

@@ -4,7 +4,6 @@ import chalk                             from 'chalk';
 import http                              from 'http';
 import express                           from 'express';
 import Promise                           from 'bluebird';
-import { ApolloEngine } from 'apollo-engine';
 
 import config                            from './config';
 import routes                            from './routes';
@@ -72,7 +71,7 @@ get('/fixture/messages', routes.fixtureMessages.get);
 
 post('/apple/ios-receipt', routes.apple.iosReceipt.post);
 
-get('/app-link', routes.appLink.get);
+get('/app-link/*', routes.appLink.get);
 
 get('/app-redirect/:action', routes.appRedirect.get);
 
@@ -83,16 +82,10 @@ export const listen = () => {
   if (!_listenProm) {
     _listenProm = new Promise((resolve) => {
 
-      const engine = new ApolloEngine({
-        apiKey: config.apolloEngine.apiKey
-      });
-
       const port = process.env.PORT || 3000;
 
-      engine.listen({
-        port,
-        httpServer: httpServer,
-        graphqlPaths: ['/graphql']
+      httpServer.listen({
+        port
       }, () => {
         const addr = httpServer.address();
 

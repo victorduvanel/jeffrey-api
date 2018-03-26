@@ -78,7 +78,7 @@ const User = Base.extend({
 
     const message = await mjml.render('email/login', i18n, {
       user: this.serialize(),
-      loginLink: `jeffrey://login/${loginToken.get('id')}`,
+      loginLink: `http://localhost:3000/app-link/login/${loginToken.get('id')}`,
     });
 
     return sendEmail({
@@ -175,6 +175,38 @@ const User = Base.extend({
 
         throw err;
       });
+  },
+
+  graphqlDef: function() {
+    return `
+      type User {
+        id: String!
+        firstName: String!
+        lastName: String!
+        email: String
+        phone: String
+        profilePicture: String
+        phoneNumber: String
+      }
+    `;
+  },
+
+  resolver: {
+    Query: {
+      currentUser: (_, __, { user }) => {
+        if (user) {
+          return {
+            id: user.id,
+            firstName: user.get('firstName'),
+            lastName: user.get('lastName'),
+            email: user.get('email'),
+            // phoneNumber: user.get('phoneNumber'),
+            profilePicture: user.get('profilePicture')
+          };
+        }
+        return null;
+      },
+    },
   }
 });
 

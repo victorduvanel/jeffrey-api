@@ -11,6 +11,16 @@ const Country = Base.extend({
 
   find: function(id) {
     return this.forge({ id }).fetch();
+  },
+
+  graphqlDef: function() {
+    return `
+      type Country {
+        id: String!
+        name: String!
+        code: String!
+      }
+    `;
   }
 });
 

@@ -1,5 +1,6 @@
 import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
+import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from '../services/graphql/pubsub';
 import Base      from './base';
 
 const Message = Base.extend({
@@ -35,6 +36,59 @@ const Message = Base.extend({
 
   find: function(id) {
     return this.forge({ id }).fetch();
+  },
+
+  graphqlDef: function() {
+    return `
+      type Message {
+        id: String!
+        message: String!
+        from: User!
+        time: String!
+      }
+    `;
+  },
+
+  resolver: {
+    Message: {
+      from: async({ id }) => {
+        const message = await Message.find(id);
+        await message.load(['from']);
+        const from = message.related('from');
+        return {
+          id: from.get('id'),
+          profilePicture: from.get('profilePicture')
+        };
+      }
+    },
+
+    Mutation: {
+      newMessage: async (_, { conversationId, message: body, ...args }, { user, ...others }) => {
+        try {
+          const conversation = await Conversation.find(conversationId);
+          await conversation.load(['participants']);
+
+          const message = await Message.create({ from: user, body, conversation });
+          conversation.notifyParticipants(message);
+
+          return {
+            id: message.get('id'),
+            message: message.get('body'),
+            from: message.get('fromId'),
+            time: message.get('createdAt')
+          };
+        } catch (err) {
+          console.error(err);
+        }
+      }
+    },
+    Subscription: {
+      newMessage: {
+        subscribe: (_, { conversationId }, { user }) => {
+          return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
+        }
+      }
+    },
   }
 });
 

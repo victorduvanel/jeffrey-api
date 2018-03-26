@@ -33,7 +33,7 @@ const PendingUser = Base.extend({
       .save(null, { method: 'insert' });
 
     const message = await mjml.render('email/register', i18n, {
-      activationLink: `jeffrey://activate?code=${id}`,
+      activationLink: `http://192.168.1.5:3000/app-link/activate?code=${id}`,
     });
 
     return sendEmail({
