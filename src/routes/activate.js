@@ -37,7 +37,7 @@ export const post = [
 
     res.send({
       email,
-      access_token: token
+      access_token: token.get('token')
     });
   }
 ];
