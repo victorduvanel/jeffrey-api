@@ -1,7 +1,7 @@
-import fs             from 'fs';
-import bodyParser     from 'body-parser';
-import oauth2         from '../middlewares/oauth2';
-import StripeCustomer from '../models/stripe-customer';
+import fs         from 'fs';
+import bodyParser from 'body-parser';
+import oauth2     from '../middlewares/oauth2';
+import StripeCard from '../models/stripe-card';
 
 import stripe         from '../services/stripe';
 
@@ -46,7 +46,7 @@ export const post__ = [
       stripeCustomer = stripeCustomer.at(0);
       await stripeCustomer.addCard(stripeToken);
     } else {
-      stripeCustomer = await StripeCustomer.create({
+      stripeCustomer = await StripeCard.create({
         user,
         token: stripeToken
       });
@@ -87,13 +87,13 @@ export const post = [
           internal_id: '744e54fb-7d7b-454c-a6e8-86e9ffe67566',
         },
 
-
         business_name: 'William Riancho',
         legal_entity: {
           first_name: 'William',
           last_name: 'Riancho',
           type: 'individual',
           business_tax_id: '532772563',
+
           address: {
             city: 'Denain',
             country: 'FR',
@@ -101,6 +101,7 @@ export const post = [
             postal_code: '59220',
             state: 'Hauts-de-France',
           },
+
           personal_address: {
             city: 'Denain',
             country: 'FR',

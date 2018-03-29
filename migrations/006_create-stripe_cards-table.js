@@ -1,6 +1,6 @@
 function up(knex) {
   return knex.schema
-    .createTable('stripe_customers', (table) => {
+    .createTable('stripe_cards', (table) => {
       table.string('id').primary();
       table
         .uuid('user_id')
@@ -22,7 +22,7 @@ function up(knex) {
 
 function down(knex) {
   return knex.schema
-    .dropTable('pending_users');
+    .dropTable('stripe_cards');
 }
 
 module.exports = { up, down };

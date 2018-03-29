@@ -1,8 +1,11 @@
+import bodyParser from 'body-parser';
 import * as errors from '../errors';
 import PendingUser from '../models/pending-user';
 import User, { DuplicatedUser } from '../models/user';
 
 export const post = [
+  bodyParser.json(),
+
   async (req, res) => {
     const code = req.params.code;
 
@@ -17,8 +20,14 @@ export const post = [
 
     let user;
     const email = pendingUser.get('email');
+    const { firstName, lastName } = req.body;
+
     try {
-      user = await User.create({ email });
+      user = await User.create({
+        firstName,
+        lastName,
+        email
+      });
     } catch (err) {
       if (err === DuplicatedUser) {
         await pendingUser.cleanup();

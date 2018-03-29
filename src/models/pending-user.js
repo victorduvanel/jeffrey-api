@@ -1,3 +1,4 @@
+import Promise         from 'bluebird';
 import Base            from './base';
 import bookshelf       from '../services/bookshelf';
 import knex            from '../services/knex';
@@ -12,6 +13,7 @@ const PendingUser = Base.extend({
   tableName: 'pending_users',
 
   cleanup: function() {
+    return Promise.resolve();
     return knex('pending_users')
       .where('email', this.get('email'))
       .del();

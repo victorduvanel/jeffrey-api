@@ -4,8 +4,8 @@ import Base      from './base';
 
 export const UnsupportedPaymentType = new Error('Unsupported Payment Type');
 
-const StripeCustomer = Base.extend({
-  tableName: 'stripe_customers',
+const StripeCard = Base.extend({
+  tableName: 'stripe_cards',
 
   user() {
     return this.belongsTo('User');
@@ -57,4 +57,4 @@ const StripeCustomer = Base.extend({
   }
 });
 
-export default bookshelf.model('StripeCustomer', StripeCustomer);
+export default bookshelf.model('StripeCard', StripeCard);

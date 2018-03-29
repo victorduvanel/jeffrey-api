@@ -16,7 +16,7 @@ const Service = Base.extend({
   resolver: {
     Query: {
       services:  async function() {
-        const services = await this.fetchAll();
+        const services = await Service.fetchAll();
 
         return services.map(service => ({
           id: service.get('id'),

@@ -34,6 +34,14 @@ const User = Base.extend({
     return AccessToken.create({ user: this, singleUse });
   },
 
+  postalAddress() {
+    return this.hasOne('PostalAddress');
+  },
+
+  businessAddress() {
+    return this.hasOne('PostalAddress');
+  },
+
   updatePassword(newPassword) {
     const saltRounds = 10;
 
