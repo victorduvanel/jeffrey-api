@@ -118,18 +118,18 @@ export const post = [
     const { user } = req;
     const image = await retreiveImage(req);
     const smallImage = await resizeImage(image, { width: 50, height: 50 });
+    const mediumImage = await resizeImage(image, { width: 250, height: 250 });
 
     const region = req.query.region || 'EU';
     const bucket = Buckets[region] || Buckets.EU;
 
     const dest = uuid.v4();
 
-    const path = `profile-pictures/${dest}/original.jpg`;
-
-    await uploadImage(bucket, image, path);
+    await uploadImage(bucket, image, `profile-pictures/${dest}/original.jpg`);
     await uploadImage(bucket, smallImage, `profile-pictures/${dest}/small.jpg`);
+    await uploadImage(bucket, mediumImage, `profile-pictures/${dest}/medium.jpg`);
 
-    const profilePicture = `https://storage.googleapis.com/${bucket.name}/${path}`;
+    const profilePicture = `https://storage.googleapis.com/${bucket.name}/profile-pictures/${dest}/medium.jpg`;
 
     user.set('profilePicture', profilePicture);
     await user.save();
