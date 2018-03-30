@@ -13,7 +13,6 @@ const PendingUser = Base.extend({
   tableName: 'pending_users',
 
   cleanup: function() {
-    return Promise.resolve();
     return knex('pending_users')
       .where('email', this.get('email'))
       .del();

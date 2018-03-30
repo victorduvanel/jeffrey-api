@@ -8,8 +8,6 @@ function up(knex) {
       .onUpdate('CASCADE')
       .onDelete('CASCADE');
 
-    table.dateTime('used_at');
-
     table.dateTime('created_at');
     table.dateTime('updated_at');
   });

@@ -1,6 +1,7 @@
 import basicAuth  from 'basic-auth';
 import bodyParser from 'body-parser';
 import User, { InvalidCredentials } from '../../models/user';
+import LoginToken from '../../models/login-token';
 import { Unauthorized, BadRequest, InvalidUserCredentials } from '../../errors';
 
 export const post = [
@@ -18,6 +19,31 @@ export const post = [
     }
 
     const { grant_type, username, password } = req.body;
+
+    if (grant_type === 'login-token') {
+      const { token } = req.body
+
+      const loginToken = await LoginToken.find(token);
+      console.log(loginToken);
+      if (!loginToken) {
+        throw Unauthorized;
+      }
+
+      const user = loginToken.related('user');
+      if (!user) {
+        throw Unauthorized;
+      }
+
+      // await loginToken.destroy();
+
+      const accessToken = await user.createAccessToken({});
+      res.send({
+        access_token: accessToken.get('token'),
+        token_type: 'Bearer'
+      });
+
+      return;
+    }
 
     if (grant_type !== 'password') {
       throw BadRequest;

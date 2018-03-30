@@ -65,8 +65,6 @@ const resolvers = _.merge(
   User.resolver
 );
 
-console.dir(resolvers);
-
 const schema = makeExecutableSchema({
   typeDefs: [
     Country.graphqlDef(),
@@ -116,7 +114,6 @@ export default [
     return next();
   },
   (req, res, next) => {
-    console.log(req.user);
     graphqlExpress({ schema, context: { user: req.user } })(req, res, next);
   }
 ];
