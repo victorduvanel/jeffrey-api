@@ -1,25 +1,38 @@
-import _                                       from 'lodash';
-import Promise                                 from 'bluebird';
-import bodyParser                              from 'body-parser';
-import { graphqlExpress }                      from 'apollo-server-express';
-import { makeExecutableSchema }                from 'graphql-tools';
-import { find, filter }                        from 'lodash';
-import { graphql, execute, subscribe }         from 'graphql';
-import { SubscriptionServer }                  from 'subscriptions-transport-ws';
-import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from './pubsub';
-import typeDefs                                from './graphql-type-defs.gql';
-import { Unauthorized }                        from '../../errors';
-import geocode                                 from '../google/geocode';
-import oauth2                                  from '../../middlewares/oauth2';
-import Service                                 from '../../models/service';
-import Provider                                from '../../models/provider';
-import Message                                 from '../../models/message';
-import Conversation                            from '../../models/conversation';
-import AccessToken                             from '../../models/access-token';
-import Country                                 from '../../models/country';
-import User                                    from '../../models/user';
+import _                        from 'lodash';
+import bodyParser               from 'body-parser';
+import { graphqlExpress }       from 'apollo-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
+import { execute, subscribe }   from 'graphql';
+import { SubscriptionServer }   from 'subscriptions-transport-ws';
+import typeDefs                 from './graphql-type-defs.gql';
+import geocode                  from '../google/geocode';
+import oauth2                   from '../../middlewares/oauth2';
+import Service                  from '../../models/service';
+import ServiceCategory          from '../../models/service-category';
+import Provider                 from '../../models/provider';
+import Message                  from '../../models/message';
+import Conversation             from '../../models/conversation';
+import AccessToken              from '../../models/access-token';
+import Country                  from '../../models/country';
+import User                     from '../../models/user';
 
-const messages = [];
+console.log(typeDefs);
+
+const base = {
+  Query: {},
+  Mutation: {
+    updatePassword: async (_, { password }, { user }) => {
+      if (!user) {
+        return false;
+      }
+
+      await user.updatePassword(password);
+
+      return true;
+    }
+  },
+  Subscription: {}
+};
 
 const locality = {
   Query: {
@@ -38,6 +51,11 @@ const locality = {
       }
       return null;
     },
+
+    onBoardingProgression: async () => {
+      return ['hello', 'world'];
+    },
+
   },
 
   Locality: {
@@ -55,26 +73,33 @@ const locality = {
 
 const resolvers = _.merge(
   {
-    Query: {}
+    Query: {},
+    Mutation: {},
+    Subscription: {}
   },
+  base,
   locality,
   Message.resolver,
   Service.resolver,
+  ServiceCategory.resolver,
   Provider.resolver,
   Conversation.resolver,
   User.resolver
 );
 
+const types = [
+  Country.graphqlDef(),
+  Service.graphqlDef(),
+  ServiceCategory.graphqlDef(),
+  Provider.graphqlDef(),
+  User.graphqlDef(),
+  Message.graphqlDef(),
+  Conversation.graphqlDef(),
+  typeDefs
+].join();
+
 const schema = makeExecutableSchema({
-  typeDefs: [
-    Country.graphqlDef(),
-    Service.graphqlDef(),
-    Provider.graphqlDef(),
-    User.graphqlDef(),
-    Message.graphqlDef(),
-    Conversation.graphqlDef(),
-    typeDefs
-  ].join(),
+  typeDefs: types,
   resolvers,
 });
 
@@ -83,7 +108,7 @@ export const subscriptionServer = (websocketServer) => SubscriptionServer.create
     schema,
     execute,
     subscribe,
-    onConnect: async ({ token }, socket) => {
+    onConnect: async ({ token }, /* socket */) => {
       try {
         if (token) {
           const accessToken = await AccessToken.find(token);

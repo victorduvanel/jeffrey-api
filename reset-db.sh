@@ -2,7 +2,7 @@
 
 set -e
 
-dropdb prestine
-createdb prestine
+dropdb jeffrey
+createdb jeffrey
 npm run migrate
 npm run seed

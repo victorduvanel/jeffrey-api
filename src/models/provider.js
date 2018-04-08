@@ -1,31 +1,27 @@
+import Promise   from 'bluebird';
 import bookshelf from '../services/bookshelf';
 import Base      from './base';
+import User      from './user';
 
 const Provider = Base.extend({
   tableName: 'providers',
 }, {
   graphqlDef: function() {
-    return `
-      type Provider {
-        id: String!
-        name: String!
-      }
-    `;
+    return '';
   },
 
   resolver: {
     Query: {
-      providers:  async function() {
-        return [
-          {
-            id: '123',
-            name: 'Morray'
-          },
-          {
-            id: '456',
-            name: 'Michel'
-          }
-        ];
+      providers: async (_, __, { user }, { variableValues: { limit, offset } }) => {
+        const users = await User.query({ limit, offset }).fetchAll();
+
+        return users.map(user => ({
+          id: user.id,
+          firstName: user.get('firstName'),
+          lastName: user.get('lastName'),
+          email: user.get('email'),
+          profilePicture: user.get('profilePicture')
+        }));
       }
     }
   }

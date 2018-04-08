@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  const services = [
+  const categories = [
     {
       id: 'AEB18B90-C1C3-4D8C-A40A-EF29E3060C03',
       name: 'run',
@@ -33,8 +33,8 @@ exports.seed = function(knex, Promise) {
     }
   ];
 
-  return Promise.map(services, service => knex.raw(`
-    INSERT INTO "services" (
+  return Promise.map(categories, category => knex.raw(`
+    INSERT INTO "service_categories" (
       "id", "name",
       "created_at", "updated_at"
     ) VALUES (
@@ -42,5 +42,5 @@ exports.seed = function(knex, Promise) {
       NOW(), NOW()
     )
     ON CONFLICT DO NOTHING
-  `, service));
+  `, category));
 };

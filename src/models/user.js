@@ -5,29 +5,31 @@ import bookshelf                    from '../services/bookshelf';
 import uuid                         from 'uuid';
 import Base                         from './base';
 import AccessToken                  from './access-token';
-import { send as sendNotification } from '../services/notification';
 import googleService                from '../services/google';
 import * as mjml                    from '../services/mjml';
 import { sendEmail }                from '../services/mailgun';
 import LoginToken                   from './login-token';
-import Product                      from './product';
-import Invoice                      from './invoice';
 import config                       from '../config';
 
 export const InvalidCredentials = new Error('Invalid Credentials');
 export const DuplicatedUser = new Error('Duplicated User');
+export const PasswordComplexity = new Error('PasswordComplexity');
 
 const bcrypt = Promise.promisifyAll(nativeBcrypt);
 
 const User = Base.extend({
   tableName: 'users',
 
+  devices() {
+    return this.hasMany('UserDevice', 'owner_id');
+  },
+
   conversations() {
     return this.hasMany('Conversation');
   },
 
-  stripeCustomer() {
-    return this.hasMany('StripeCustomer');
+  stripeCard() {
+    return this.hasMany('StripeCard');
   },
 
   createAccessToken({ singleUse = false }) {
@@ -42,8 +44,15 @@ const User = Base.extend({
     return this.hasOne('PostalAddress');
   },
 
-  updatePassword(newPassword) {
+  async updatePassword(newPassword) {
     const saltRounds = 10;
+
+    const checks = [/.{6,200}/, /[A-Z]/, /[a-z]/, /\d/];
+    const ok = !checks.find(test => !test.test(newPassword));
+
+    if (!ok) {
+      throw PasswordComplexity;
+    }
 
     return bcrypt.hashAsync(newPassword, saltRounds)
       .then((hash) => {
@@ -52,9 +61,9 @@ const User = Base.extend({
   },
 
   async paymentMethodStatus() {
-    await this.load('stripeCustomer');
+    await this.load('stripeCard');
 
-    const customers = this.related('stripeCustomer');
+    const customers = this.related('stripeCard');
     if (!customers.length) {
       return 'not_set';
     }
@@ -76,8 +85,18 @@ const User = Base.extend({
     }
   },
 
-  sendMessage(message) {
-    sendNotification(this, message);
+  sendMessage(notification) {
+    return this.pushNotification(notification);
+  },
+
+  async pushNotification(notification) {
+    await this.load(['devices']);
+
+    const devices = this.related('devices');
+
+    return Promise.all(devices.map((device) => {
+      return device.pushNotification(notification);
+    }));
   },
 
   sendLoginEmail: async function(i18n) {
@@ -86,7 +105,7 @@ const User = Base.extend({
 
     const message = await mjml.render('email/login', i18n, {
       user: this.serialize(),
-      loginLink: `http://localhost:3000/app-link/login/${loginToken.get('id')}`,
+      loginLink: `${config.webappProtocol}://${config.webappHost}/app-link/login/${loginToken.get('id')}`,
     });
 
     return sendEmail({
@@ -188,7 +207,7 @@ const User = Base.extend({
   graphqlDef: function() {
     return `
       type User {
-        id: String!
+        id: ID!
         firstName: String!
         lastName: String!
         email: String

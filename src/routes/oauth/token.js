@@ -21,10 +21,9 @@ export const post = [
     const { grant_type, username, password } = req.body;
 
     if (grant_type === 'login-token') {
-      const { token } = req.body
+      const { token } = req.body;
 
       const loginToken = await LoginToken.find(token);
-      console.log(loginToken);
       if (!loginToken) {
         throw Unauthorized;
       }

@@ -1,7 +1,8 @@
-import uuid      from 'uuid';
-import bookshelf from '../services/bookshelf';
+import uuid         from 'uuid';
+import bookshelf    from '../services/bookshelf';
+import Conversation from '../models/conversation';
+import Base         from './base';
 import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from '../services/graphql/pubsub';
-import Base      from './base';
 
 const Message = Base.extend({
   tableName: 'messages',
@@ -31,7 +32,7 @@ const Message = Base.extend({
       }
     );
 
-    return await new this({ id }).fetch();
+    return this.find(id);
   },
 
   find: function(id) {
@@ -63,7 +64,7 @@ const Message = Base.extend({
     },
 
     Mutation: {
-      newMessage: async (_, { conversationId, message: body, ...args }, { user, ...others }) => {
+      newMessage: async (_, { conversationId, message: body }, { user }) => {
         try {
           const conversation = await Conversation.find(conversationId);
           await conversation.load(['participants']);
@@ -84,7 +85,7 @@ const Message = Base.extend({
     },
     Subscription: {
       newMessage: {
-        subscribe: (_, { conversationId }, { user }) => {
+        subscribe: (_, __ /* { conversationId } */, { user }) => {
           return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
         }
       }

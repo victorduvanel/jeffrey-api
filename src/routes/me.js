@@ -22,9 +22,9 @@ export const get = [
   }
 ];
 
-export const patch = [
+export const post = [
   oauth2,
-  bodyParser.urlencoded({ extended: false }),
+  bodyParser.json(),
 
   async (req, res) => {
     const user = req.user;
@@ -45,8 +45,6 @@ export const patch = [
     if (user.hasChanged()) {
       await user.save();
     }
-
-    await user.autoReload();
 
     res.send(await jsonSerialize(user));
   }

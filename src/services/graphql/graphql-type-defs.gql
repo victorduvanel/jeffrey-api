@@ -1,16 +1,20 @@
 # the schema allows the following query:
 type Query {
   currentUser: User
+  onBoardingProgression: [String]
   locality(
     lat: String!
     lng: String!
   ): Locality
-  providers: [Provider]
+  providers(
+    offset: Int!
+    limit: Int!
+  ): [User]
   services: [Service]
+  serviceCategories: [Service]
   conversation(
     conversationId: String!
   ): Conversation
-  conversations: [Conversation]
 }
 type Locality {
   name: String!
@@ -21,4 +25,5 @@ type Subscription {
 }
 type Mutation {
   newMessage(conversationId: String!, message: String!): Message
+  updatePassword(password: String!): Boolean
 }

@@ -1,10 +1,10 @@
 import request from 'request-promise';
-import config  from '../../config';
+// import config  from '../../config';
 
 const geocode = async ({ lat, lng }) => {
   const latlng = `${lat},${lng}`;
   // @TODO: use key
-  const key = config.google.apiKey;
+  // const key = config.google.apiKey;
 
   const response = await request({
     method: 'GET',

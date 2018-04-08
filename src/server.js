@@ -1,20 +1,24 @@
 import 'regenerator-runtime/runtime';
 
-import chalk                             from 'chalk';
-import http                              from 'http';
-import express                           from 'express';
-import Promise                           from 'bluebird';
+import './services/google/datastore';
 
-import config                            from './config';
-import routes                            from './routes';
+import chalk                           from 'chalk';
+import http                            from 'http';
+import express                         from 'express';
+import Promise                         from 'bluebird';
 
-import graphql, { subscriptionServer }   from './services/graphql';
+import config                          from './config';
+import routes                          from './routes';
 
-import logger                            from './middlewares/logger';
-import corsPolicy                        from './middlewares/cors-policy';
-import notFound                          from './middlewares/not-found';
-import errorHandler                      from './middlewares/error-handler';
-import { router, get, post, patch, del } from './middlewares/router';
+import graphql, { subscriptionServer } from './services/graphql';
+
+import logger                          from './middlewares/logger';
+import corsPolicy                      from './middlewares/cors-policy';
+import notFound                        from './middlewares/not-found';
+import errorHandler                    from './middlewares/error-handler';
+import { router, get, post, patch }    from './middlewares/router';
+
+import User from './models/user';
 
 export const httpServer = http.createServer();
 const app = express();
@@ -36,7 +40,15 @@ router.use('/graphql', ...graphql);
 get('/graphiql', routes.graphiql.get);
 
 // ROUTES
-get('/', (req, res) => {
+get('/', async (req, res) => {
+  const user = await User
+    .forge({ email: 'wr.wllm@gmail.com' })
+    .fetch();
+
+  await user.pushNotification({
+    body: 'Salut!!!!'
+  });
+
   res.send({ hello: 'world' });
 });
 // post('/webhook', routes.webhook.post);
@@ -45,7 +57,7 @@ post('/signup', routes.signup.post);
 post('/activate/:code', routes.activate.post);
 
 get('/me', routes.me.get);
-patch('/me', routes.me.patch);
+post('/me', routes.me.post);
 
 post('/oauth/token', routes.oauth.token.post);
 post('/oauth/revoke', routes.oauth.revoke.post);
@@ -66,16 +78,13 @@ post('/reset-password', routes.resetPassword.post);
 get('/reset-password/:token', routes.resetPassword.get);
 
 get('/ms', routes.ms.get);
-
 get('/fixture/messages', routes.fixtureMessages.get);
-
 post('/apple/ios-receipt', routes.apple.iosReceipt.post);
-
 get('/app-link/*', routes.appLink.get);
-
 get('/app-redirect/:action', routes.appRedirect.get);
-
 post('/profile-pic', routes.profilePic.post);
+post('/user-documents', routes.userDocuments.post);
+post('/user-device', routes.userDevice.post);
 
 let _listenProm = null;
 export const listen = () => {

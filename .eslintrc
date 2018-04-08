@@ -40,8 +40,6 @@
       "error",
       "as-needed"
     ],
-    "no-console": [
-      "allow"
-    ]
+    "no-console": 0
   }
 }
