@@ -16,8 +16,6 @@ import AccessToken              from '../../models/access-token';
 import Country                  from '../../models/country';
 import User                     from '../../models/user';
 
-console.log(typeDefs);
-
 const base = {
   Query: {},
   Mutation: {

@@ -16,16 +16,12 @@ const ServiceCategory = Base.extend({
   resolver: {
     Query: {
       serviceCategories:  async function() {
-        console.log('serviceCategories');
         const categories = await ServiceCategory.fetchAll();
 
-        const rt = categories.map(category => ({
+        return categories.map(category => ({
           id: category.get('id'),
           name: category.get('name')
         }));
-
-        console.log(rt);
-        return rt;
       }
     }
   }

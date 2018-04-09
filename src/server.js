@@ -16,7 +16,7 @@ import logger                          from './middlewares/logger';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
-import { router, get, post, patch }    from './middlewares/router';
+import { router, get, post }           from './middlewares/router';
 
 import User from './models/user';
 
@@ -52,6 +52,8 @@ get('/', async (req, res) => {
   res.send({ hello: 'world' });
 });
 // post('/webhook', routes.webhook.post);
+
+post('/ping', routes.ping.post);
 
 post('/signup', routes.signup.post);
 post('/activate/:code', routes.activate.post);
