@@ -54,10 +54,9 @@ const User = Base.extend({
       throw PasswordComplexity;
     }
 
-    return bcrypt.hashAsync(newPassword, saltRounds)
-      .then((hash) => {
-        this.set('password', hash);
-      });
+    const hash = await bcrypt.hashAsync(newPassword, saltRounds);
+    this.set('password', hash);
+    await this.save();
   },
 
   async paymentMethodStatus() {

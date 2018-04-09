@@ -18,7 +18,21 @@ import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 
-import User from './models/user';
+import User                            from './models/user';
+
+// import datastore from './services/google/datastore';
+// const query = datastore.createQuery('locations')
+//   .filter('user_id', '=', '3c656ce5-1e21-4332-a268-d7599f2f0e40')
+//   .order('created_at', { descending: true });
+//
+// datastore
+//   .runQuery(query)
+//   .then(results => {
+//     console.log(results[0].map(res => res.location));
+//   })
+//   .catch(err => {
+//     console.error('ERROR:', err);
+//   });
 
 export const httpServer = http.createServer();
 const app = express();

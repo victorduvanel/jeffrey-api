@@ -9,6 +9,7 @@ const jsonSerialize = async (user) => {
     first_name: user.get('firstName'),
     last_name: user.get('lastName'),
     email: user.get('email'),
+    profile_picture: user.get('profilePicture'),
     payment_method_status: paymentMethodStatus,
   };
 };

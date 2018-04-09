@@ -1,0 +1,5 @@
+indexes:
+- kind: locations
+  properties:
+  - name: user_id
+  - name: created_at

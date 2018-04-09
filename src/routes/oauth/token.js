@@ -17,6 +17,7 @@ export const post = [
     if (auth.name !== '0e7814b6-b793-44f5-aab0-9644be51f1ae' || auth.pass !== '') {
       throw Unauthorized;
     }
+    console.log('ok');
 
     const { grant_type, username, password } = req.body;
 
