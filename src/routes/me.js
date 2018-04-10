@@ -31,12 +31,27 @@ export const post = [
     const user = req.user;
     const body = req.body;
 
-    if (body.first_name) {
-      user.set('firstName', body.first_name);
+    if (body.hasOwnProperty('first_name')) {
+      if (typeof body.first_name !== 'string') {
+        user.set('firstName', null);
+      } else {
+        const firstName = body.first_name.trim();
+        if (firstName.length > 1) {
+          user.set('firstName', firstName);
+        }
+      }
     }
 
     if (body.last_name) {
       user.set('lastName', body.last_name);
+      if (typeof body.last_name !== 'string') {
+        user.set('lastName', null);
+      } else {
+        const lastName = body.last_name.trim();
+        if (lastName.length > 1) {
+          user.set('lastName', lastName);
+        }
+      }
     }
 
     if (body.password) {

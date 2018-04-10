@@ -19,7 +19,8 @@ exports.seed = async function(knex, Promise) {
     firstName: capitalize(user.name.first),
     lastName: capitalize(user.name.last),
     profilePicture: user.picture.large,
-    phoneNumber: user.phone
+    phoneNumber: user.phone,
+    password: null
   }));
 
   users.push({
@@ -30,18 +31,20 @@ exports.seed = async function(knex, Promise) {
     firstName: 'William',
     lastName: 'Riancho',
     profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
-    phoneNumber: '+33651648566'
+    phoneNumber: '+33651648566',
+    password: '$2a$10$is7MWK4ws1hwG9Aokkh4R.sg5PYo9qg27hyPipO0GUXBntcTozao2'
   });
 
   return Promise.map(users, user => knex.raw(`
     INSERT INTO "users" (
       "id", "email", "facebook_id", "gender",
       "first_name", "last_name", "profile_picture",
-      "phone_number", "created_at", "updated_at"
+      "phone_number", "password", "created_at",
+      "updated_at"
     ) VALUES (
       :id, :email, :facebookId, :gender, :firstName,
       :lastName, :profilePicture, :phoneNumber,
-      NOW(), NOW()
+      :password, NOW(), NOW()
     )
     ON CONFLICT DO NOTHING
   `, user));

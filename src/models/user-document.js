@@ -45,6 +45,14 @@ const UserDocument = Base.extend({
 
     return this.forge({ id, name, uri, mime, ownerId: user.get('id') })
       .save(null, { method: 'insert' });
+  },
+
+  findIdentifyDocuments: function(owner) {
+    return UserDocument.where({
+      owner_id: owner.get('id'),
+      purpose: 'identity_document'
+    })
+      .fetch();
   }
 });
 

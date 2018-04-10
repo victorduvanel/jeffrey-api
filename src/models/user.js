@@ -10,6 +10,10 @@ import * as mjml                    from '../services/mjml';
 import { sendEmail }                from '../services/mailgun';
 import LoginToken                   from './login-token';
 import config                       from '../config';
+import UserDocument                 from './user-document';
+
+import './postal-address';
+import './business';
 
 export const InvalidCredentials = new Error('Invalid Credentials');
 export const DuplicatedUser = new Error('Duplicated User');
@@ -36,12 +40,21 @@ const User = Base.extend({
     return AccessToken.create({ user: this, singleUse });
   },
 
+  business() {
+    return this.hasOne('Business', 'owner_id');
+  },
+
   postalAddress() {
-    return this.hasOne('PostalAddress');
+    return this.belongsTo('PostalAddress');
   },
 
   businessAddress() {
     return this.hasOne('PostalAddress');
+  },
+
+  async hasIdentityDocument() {
+    const documents = await UserDocument.findIdentifyDocuments(this);
+    return documents && documents.length > 0;
   },
 
   async updatePassword(newPassword) {
@@ -82,6 +95,49 @@ const User = Base.extend({
     } else {
       return 'ok';
     }
+  },
+
+  async onboardingProgress() {
+    const progress = [];
+
+    if (this.get('profilePicture')) {
+      progress.push('profile-picture');
+    }
+
+    if (
+      this.get('gender') &&
+      this.get('firstName') &&
+      this.get('lastName') &&
+      this.get('dateOfBirth')
+    ) {
+      progress.push('personal-details');
+    }
+
+    if (this.get('phoneNumber')) {
+      progress.push('phone-number');
+    }
+
+    await this.load(['postalAddress', 'business']);
+
+    const business = this.related('business');
+    if (business && await business.isOk()) {
+      progress.push('business');
+    }
+
+    const postalAddress = this.related('postallAddress');
+    if (postalAddress && await postalAddress.isOk()) {
+      progress.push('postal-address');
+    }
+
+    if (this.get('tosAcceptedAt')) {
+      progress.push('tos');
+    }
+
+    if (await this.hasIdentityDocument()) {
+      progress.push('identity-document');
+    }
+
+    return progress;
   },
 
   sendMessage(notification) {

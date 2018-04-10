@@ -5,6 +5,7 @@ function up(knex) {
     table.string('name');
     table.string('mime');
     table.string('uri');
+    table.enum('purpose', ['identity_document']);
 
     table
       .uuid('owner_id')

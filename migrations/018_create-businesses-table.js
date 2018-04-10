@@ -6,6 +6,12 @@ function up(knex) {
     table.enum('type', ['company', 'individual']);
 
     table
+      .uuid('owner_id')
+      .references('users.id')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT');
+
+    table
       .uuid('postal_address_id')
       .references('postal_addresses.id')
       .onUpdate('CASCADE')

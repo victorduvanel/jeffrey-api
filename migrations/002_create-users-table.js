@@ -17,6 +17,8 @@ function up(knex) {
         .references('postal_addresses.id')
         .onUpdate('CASCADE')
         .onDelete('RESTRICT');
+      table.string('tos_accepted_ip');
+      table.dateTime('tos_accepted_at');
       table.dateTime('created_at');
       table.dateTime('updated_at');
     });

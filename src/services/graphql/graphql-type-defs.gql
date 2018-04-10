@@ -1,7 +1,7 @@
 # the schema allows the following query:
 type Query {
   currentUser: User
-  onBoardingProgression: [String]
+  onboardingProgress: [String]
   locality(
     lat: String!
     lng: String!

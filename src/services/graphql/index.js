@@ -50,8 +50,12 @@ const locality = {
       return null;
     },
 
-    onBoardingProgression: async () => {
-      return ['hello', 'world'];
+    onboardingProgress: async (_, __, { user }) => {
+      if (!user) {
+        return [];
+      }
+
+      return user.onboardingProgress();
     },
 
   },
