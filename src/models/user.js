@@ -1,4 +1,5 @@
 import Promise                      from 'bluebird';
+import moment                       from 'moment';
 import request                      from 'request-promise';
 import nativeBcrypt                 from 'bcryptjs';
 import bookshelf                    from '../services/bookshelf';
@@ -11,6 +12,7 @@ import { sendEmail }                from '../services/mailgun';
 import LoginToken                   from './login-token';
 import config                       from '../config';
 import UserDocument                 from './user-document';
+import PostalAddress                from './postal-address';
 
 import './postal-address';
 import './business';
@@ -50,6 +52,48 @@ const User = Base.extend({
 
   businessAddress() {
     return this.hasOne('PostalAddress');
+  },
+
+  async getPostalAddress() {
+    if (this.get('postalAddressId')) {
+      await this.load(['postalAddress']);
+      return this.related('postalAddress');
+    } else {
+      const postalAddress = await PostalAddress.create();
+      this.set('postalAddressId', postalAddress.get('id'));
+      await this.save();
+      return postalAddress;
+    }
+  },
+
+  async setDetails(params) {
+    const details = [
+      'firstName',
+      'lastName',
+      'dateOfBirth',
+      'gender'
+    ];
+
+    let detail, value;
+    for (detail of details) {
+      if (params.hasOwnProperty(detail)) {
+        value = params[detail];
+        if (value === null) {
+          this.set(detail, null);
+        } else if (typeof value === 'string') {
+          value = value.trim();
+          if (value.length) {
+            this.set(detail, value);
+          } else {
+            this.set(detail, null);
+          }
+        }
+      }
+    }
+
+    if (this.hasChanged()) {
+      await this.save();
+    }
   },
 
   async hasIdentityDocument() {
@@ -154,7 +198,7 @@ const User = Base.extend({
     }));
   },
 
-  sendLoginEmail: async function(i18n) {
+  async sendLoginEmail(i18n) {
     const emailAddress = this.get('email');
     const loginToken = await LoginToken.create({ user: this });
 
@@ -245,6 +289,10 @@ const User = Base.extend({
     });
   },
 
+  find: function(id) {
+    return this.forge({ id }).fetch();
+  },
+
   create: async function(props) {
     const id = uuid.v4();
 
@@ -261,34 +309,122 @@ const User = Base.extend({
 
   graphqlDef: function() {
     return `
+      enum Gender {
+        male
+        female
+      }
+      input PersonalDetails {
+        firstName: String
+        lastName: String
+        dateOfBirth: String
+        gender: Gender
+        city: String
+        country: String
+        line1: String
+        line2: String
+        postalCode: String
+        state: String
+      }
       type User {
         id: ID!
-        firstName: String!
-        lastName: String!
+        firstName: String
+        lastName: String
+        dateOfBirth: String
         email: String
+        gender: Gender
         phone: String
         profilePicture: String
         phoneNumber: String
+        postalAddress: PostalAddress
       }
     `;
   },
 
   resolver: {
+    User: {
+      postalAddress: async({ id }) => {
+        const user = await User.find(id);
+        if (!user || !user.get('postalAddressId')) {
+          return null;
+        }
+
+        await user.load(['postalAddress']);
+        const postalAddress = user.related('postalAddress');
+        if (!postalAddress) {
+          return null;
+        }
+
+        return {
+          id: postalAddress.id,
+          city: postalAddress.get('city'),
+          country: postalAddress.get('country'),
+          line1: postalAddress.get('line1'),
+          line2: postalAddress.get('line2'),
+          postalCode: postalAddress.get('postalCode'),
+          state: postalAddress.get('state'),
+        };
+      }
+    },
     Query: {
       currentUser: (_, __, { user }) => {
         if (user) {
+          let dateOfBirth = null;
+          if (user.get('dateOfBirth')) {
+            dateOfBirth = moment(user.get('dateOfBirth')).format('MM-DD-YYYY');
+          }
           return {
             id: user.id,
             firstName: user.get('firstName'),
             lastName: user.get('lastName'),
             email: user.get('email'),
-            // phoneNumber: user.get('phoneNumber'),
+            gender: user.get('gender'),
+            dateOfBirth,
+            phoneNumber: user.get('phoneNumber'),
             profilePicture: user.get('profilePicture')
           };
         }
         return null;
       },
     },
+
+    Mutation: {
+      personalDetails: async (_, params, { u }) => {
+        const user = await User.find('3c656ce5-1e21-4332-a268-d7599f2f0e40');
+
+        let {
+          firstName,
+          lastName,
+          dateOfBirth,
+          gender,
+          city,
+          country,
+          line1,
+          line2,
+          postalCode,
+          state
+        } = params;
+
+        await user.setDetails({
+          firstName,
+          lastName,
+          dateOfBirth,
+          gender,
+        });
+
+        const postalAddress = await user.getPostalAddress();
+
+        await postalAddress.update({
+          city,
+          country,
+          line1,
+          line2,
+          postalCode,
+          state
+        });
+
+        return true;
+      }
+    }
   }
 });
 

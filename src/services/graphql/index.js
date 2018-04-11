@@ -4,7 +4,6 @@ import { graphqlExpress }       from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import { execute, subscribe }   from 'graphql';
 import { SubscriptionServer }   from 'subscriptions-transport-ws';
-import typeDefs                 from './graphql-type-defs.gql';
 import geocode                  from '../google/geocode';
 import oauth2                   from '../../middlewares/oauth2';
 import Service                  from '../../models/service';
@@ -15,6 +14,39 @@ import Conversation             from '../../models/conversation';
 import AccessToken              from '../../models/access-token';
 import Country                  from '../../models/country';
 import User                     from '../../models/user';
+import PostalAddress            from '../../models/postal-address';
+
+const typeDefs = `
+type Query {
+  currentUser: User
+  onboardingProgress: [String]
+  locality(
+    lat: String!
+    lng: String!
+  ): Locality
+  providers(
+    offset: Int!
+    limit: Int!
+  ): [User]
+  services: [Service]
+  serviceCategories: [Service]
+  conversation(
+    conversationId: String!
+  ): Conversation
+}
+type Locality {
+  name: String!
+  country: Country!
+}
+type Subscription {
+  newMessage(conversationId: String!): Message
+}
+type Mutation {
+  newMessage(conversationId: String!, message: String!): Message
+  updatePassword(password: String!): Boolean
+  personalDetails(details: PersonalDetails): Boolean
+}
+`;
 
 const base = {
   Query: {},
@@ -52,7 +84,7 @@ const locality = {
 
     onboardingProgress: async (_, __, { user }) => {
       if (!user) {
-        return [];
+        return null;
       }
 
       return user.onboardingProgress();
@@ -86,7 +118,8 @@ const resolvers = _.merge(
   ServiceCategory.resolver,
   Provider.resolver,
   Conversation.resolver,
-  User.resolver
+  PostalAddress.resolver,
+  User.resolver,
 );
 
 const types = [
@@ -94,6 +127,7 @@ const types = [
   Service.graphqlDef(),
   ServiceCategory.graphqlDef(),
   Provider.graphqlDef(),
+  PostalAddress.graphqlDef(),
   User.graphqlDef(),
   Message.graphqlDef(),
   Conversation.graphqlDef(),
