@@ -137,6 +137,9 @@ const types = [
 const schema = makeExecutableSchema({
   typeDefs: types,
   resolvers,
+  logger: {
+    log: err => console.error(err)
+  }
 });
 
 export const subscriptionServer = (websocketServer) => SubscriptionServer.create(
