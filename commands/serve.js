@@ -1,7 +1,1 @@
-import { listen } from '../src/server';
-
-const serve = () => {
-  return listen();
-};
-
-export default serve;
+export { listen as default } from '../src/server';

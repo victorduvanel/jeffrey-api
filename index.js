@@ -3,7 +3,7 @@ import 'loggg';
 import commander      from 'commander';
 import chalk          from 'chalk';
 import pkg            from './package';
-import commands       from './commands';
+import * as commands  from './commands';
 
 let pending = null;
 
