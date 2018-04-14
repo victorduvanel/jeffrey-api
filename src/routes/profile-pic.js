@@ -88,7 +88,7 @@ const uploadImage = (bucket, image, path) => {
   return new Promise((resolve, reject) => {
     const canvas = new Canvas(image.width, image.height);
     const ctx = canvas.getContext('2d');
-    ctx.drawImage(image, 0, 0)
+    ctx.drawImage(image, 0, 0);
 
     const imageStream = canvas.jpegStream({ progressive: true });
 

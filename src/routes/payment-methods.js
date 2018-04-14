@@ -66,14 +66,14 @@ export const post = [
 
 
       //const file = await stripe.fileUploads.create(
-        //{
-          //purpose: 'identity_document',
-          //file: {
-            //data: fs.readFileSync('/Users/tukula/Downloads/passport-medium.jpg'),
-            //name: 'passport-medium.jpg'
-          //}
-        //},
-        //{stripe_account: 'acct_1CA7HnHACbPneI06' }
+      //{
+      //purpose: 'identity_document',
+      //file: {
+      //data: fs.readFileSync('/Users/tukula/Downloads/passport-medium.jpg'),
+      //name: 'passport-medium.jpg'
+      //}
+      //},
+      //{stripe_account: 'acct_1CA7HnHACbPneI06' }
       //);
       //console.log(file);
 
@@ -115,7 +115,7 @@ export const post = [
             year: '1992'
           },
           //verification: {
-            //document: 'file_1CA7VPHACbPneI06ynGKK0WX', // file.id
+          //document: 'file_1CA7VPHACbPneI06ynGKK0WX', // file.id
           //}
         },
         tos_acceptance: {

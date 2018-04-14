@@ -11,7 +11,7 @@ const fs = Promise.promisifyAll(nativeFs);
 const viewsDirectory = './src/views';
 
 export const render = async (templateName, { locale }, context) => {
-  const tmpl = await fs.readFileAsync(path.join(viewsDirectory, `${templateName}.mjml`))
+  const tmpl = await fs.readFileAsync(path.join(viewsDirectory, `${templateName}.mjml`));
   const t = handlebars.compile(tmpl.toString());
 
   const intlData = {
