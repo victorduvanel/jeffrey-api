@@ -370,7 +370,7 @@ const User = Base.extend({
         if (user) {
           let dateOfBirth = null;
           if (user.get('dateOfBirth')) {
-            dateOfBirth = moment(user.get('dateOfBirth')).format('MM-DD-YYYY');
+            dateOfBirth = moment(user.get('dateOfBirth')).format('YYYY-MM-DD');
           }
           return {
             id: user.id,

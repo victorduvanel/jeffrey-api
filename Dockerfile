@@ -1,4 +1,4 @@
-FROM node:9.5.0
+FROM node:9.11.1
 MAINTAINER William Riancho <william@reptilians.io>
 
 WORKDIR /app

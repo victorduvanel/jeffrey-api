@@ -1,5 +1,3 @@
-import serve         from './serve';
-import seed          from './seed';
-import migrate       from './migrate';
-
-export default { serve, seed, migrate };
+export { default as serve }   from './serve';
+export { default as seed  }   from './seed';
+export { default as migrate } from './migrate';
