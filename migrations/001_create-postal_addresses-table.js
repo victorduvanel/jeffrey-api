@@ -4,8 +4,8 @@ function up(knex) {
       table.uuid('id').primary();
       table.string('city');
       table.string('country');
-      table.string('line1');
-      table.string('line2');
+      table.string('line_1');
+      table.string('line_2');
       table.string('postal_code');
       table.string('state');
       table.dateTime('created_at');

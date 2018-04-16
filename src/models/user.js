@@ -388,9 +388,7 @@ const User = Base.extend({
     },
 
     Mutation: {
-      personalDetails: async (_, params, { u }) => {
-        const user = await User.find('3c656ce5-1e21-4332-a268-d7599f2f0e40');
-
+      personalDetails: async (_, { details }, { user }) => {
         let {
           firstName,
           lastName,
@@ -402,7 +400,7 @@ const User = Base.extend({
           line2,
           postalCode,
           state
-        } = params;
+        } = details;
 
         await user.setDetails({
           firstName,
