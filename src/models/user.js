@@ -13,6 +13,7 @@ import LoginToken                   from './login-token';
 import config                       from '../config';
 import UserDocument                 from './user-document';
 import PostalAddress                from './postal-address';
+import Business                     from './business';
 
 import './postal-address';
 import './business';
@@ -64,6 +65,27 @@ const User = Base.extend({
       await this.save();
       return postalAddress;
     }
+  },
+
+  async getBusiness() {
+    let business = await Business
+      .forge({
+        ownerId: this.id
+      })
+      .fetch();
+
+    if (business) {
+      return business;
+    }
+
+    const postalAddress = await this.getPostalAddress();
+
+    business = await Business.create({
+      owner: this,
+      postalAddress
+    });
+
+    return business;
   },
 
   async setDetails(params) {
@@ -154,24 +176,21 @@ const User = Base.extend({
       this.get('lastName') &&
       this.get('dateOfBirth')
     ) {
-      progress.push('personal-details');
+      const postalAddress = await this.getPostalAddress();
+      if (postalAddress && await postalAddress.isOk()) {
+        progress.push('personal-details');
+      }
     }
 
     if (this.get('phoneNumber')) {
       progress.push('phone-number');
     }
 
-    await this.load(['postalAddress', 'business']);
-
-    const business = this.related('business');
+    const business = await this.getBusiness();
     if (business && await business.isOk()) {
       progress.push('business');
     }
 
-    const postalAddress = this.related('postallAddress');
-    if (postalAddress && await postalAddress.isOk()) {
-      progress.push('postal-address');
-    }
 
     if (this.get('tosAcceptedAt')) {
       progress.push('tos');
@@ -344,15 +363,7 @@ const User = Base.extend({
     User: {
       postalAddress: async({ id }) => {
         const user = await User.find(id);
-        if (!user || !user.get('postalAddressId')) {
-          return null;
-        }
-
-        await user.load(['postalAddress']);
-        const postalAddress = user.related('postalAddress');
-        if (!postalAddress) {
-          return null;
-        }
+        const postalAddress = await user.getPostalAddress();
 
         return {
           id: postalAddress.id,
@@ -367,23 +378,24 @@ const User = Base.extend({
     },
     Query: {
       currentUser: (_, __, { user }) => {
-        if (user) {
-          let dateOfBirth = null;
-          if (user.get('dateOfBirth')) {
-            dateOfBirth = moment(user.get('dateOfBirth')).format('YYYY-MM-DD');
-          }
-          return {
-            id: user.id,
-            firstName: user.get('firstName'),
-            lastName: user.get('lastName'),
-            email: user.get('email'),
-            gender: user.get('gender'),
-            dateOfBirth,
-            phoneNumber: user.get('phoneNumber'),
-            profilePicture: user.get('profilePicture')
-          };
+        if (!user) {
+          return null;
         }
-        return null;
+
+        let dateOfBirth = null;
+        if (user.get('dateOfBirth')) {
+          dateOfBirth = moment(user.get('dateOfBirth')).format('YYYY-MM-DD');
+        }
+        return {
+          id: user.id,
+          firstName: user.get('firstName'),
+          lastName: user.get('lastName'),
+          email: user.get('email'),
+          gender: user.get('gender'),
+          dateOfBirth,
+          phoneNumber: user.get('phoneNumber'),
+          profilePicture: user.get('profilePicture')
+        };
       },
     },
 

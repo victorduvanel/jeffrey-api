@@ -5,6 +5,16 @@ import Base      from './base';
 const PostalAddress = Base.extend({
   tableName: 'postal_addresses',
 
+  async isOk() {
+    return !!(
+      this.get('city')
+      && this.get('country')
+      && this.get('line1')
+      && this.get('postalCode')
+      && this.get('state')
+    );
+  },
+
   async update(params) {
     const { country } = params;
     if (typeof country === 'string') {

@@ -15,10 +15,12 @@ import AccessToken              from '../../models/access-token';
 import Country                  from '../../models/country';
 import User                     from '../../models/user';
 import PostalAddress            from '../../models/postal-address';
+import Business                 from '../../models/business';
 
 const typeDefs = `
 type Query {
   currentUser: User
+  businessDetails: Business
   onboardingProgress: [String]
   locality(
     lat: String!
@@ -45,6 +47,7 @@ type Mutation {
   newMessage(conversationId: String!, message: String!): Message
   updatePassword(password: String!): Boolean
   personalDetails(details: PersonalDetails): Boolean
+  businessDetails(details: BusinessDetails): Boolean
 }
 `;
 
@@ -120,6 +123,7 @@ const resolvers = _.merge(
   Conversation.resolver,
   PostalAddress.resolver,
   User.resolver,
+  Business.resolver,
 );
 
 const types = [
@@ -131,6 +135,7 @@ const types = [
   User.graphqlDef(),
   Message.graphqlDef(),
   Conversation.graphqlDef(),
+  Business.graphqlDef(),
   typeDefs
 ].join();
 
