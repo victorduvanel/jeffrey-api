@@ -102,6 +102,9 @@ post('/profile-pic', routes.profilePic.post);
 post('/user-documents', routes.userDocuments.post);
 post('/user-device', routes.userDevice.post);
 
+post('/phone-number', routes.phoneNumber.post);
+post('/phone-number/verify', routes.phoneNumber.verify.post);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {

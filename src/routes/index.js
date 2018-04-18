@@ -17,6 +17,7 @@ import * as userDocuments   from './user-documents';
 import * as graphiql        from './graphiql';
 import * as userDevice      from './user-device';
 import * as ping            from './ping';
+import * as phoneNumber     from './phone-number';
 
 export default {
   oauth, me, activate, signup,
@@ -25,5 +26,5 @@ export default {
   fixtureMessages, apple, appLink,
   appRedirect, contactDetails,
   profilePic, graphiql, userDocuments,
-  userDevice, ping
+  userDevice, ping, phoneNumber
 };
