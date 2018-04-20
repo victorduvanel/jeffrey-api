@@ -27,7 +27,7 @@ const UserDocument = Base.extend({
     return this.belongsTo('User');
   }
 }, {
-  create: async function({ name, user, buffer, region = 'EU' }) {
+  create: async function({ purpose, user, buffer, region = 'EU' }) {
     let mime = null;
 
     const fileType = fileTypeLib(buffer);
@@ -43,7 +43,7 @@ const UserDocument = Base.extend({
 
     await uploadDocument({ bucket, buffer, path, mime });
 
-    return this.forge({ id, name, uri, mime, ownerId: user.get('id') })
+    return this.forge({ id, purpose, uri, mime, ownerId: user.get('id') })
       .save(null, { method: 'insert' });
   },
 

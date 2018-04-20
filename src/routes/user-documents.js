@@ -17,7 +17,7 @@ const retreiveDocument = (req) => {
   return new Promise((resolve, reject) => {
     const busboy = new Busboy({ headers: req.headers });
 
-    let doc, name;
+    let doc, purpose;
 
     busboy.on('file', (fieldname, file) => {
       if (fieldname !== 'document') {
@@ -27,14 +27,14 @@ const retreiveDocument = (req) => {
     });
 
     busboy.on('field', (fieldName, value) => {
-      if (fieldName !== 'name' && typeof value !== 'string') {
+      if (fieldName !== 'purpose' && typeof value !== 'string') {
         return;
       }
-      name = value;
+      purpose = value;
     });
 
     busboy.on('finish', () => {
-      if (!doc || !name) {
+      if (!doc || !purpose) {
         reject(new Error('Field not found'));
         return;
       }
@@ -42,7 +42,7 @@ const retreiveDocument = (req) => {
       doc.then((docBuffer) => {
         resolve({
           doc: docBuffer,
-          name
+          purpose
         });
       }, reject);
     });
@@ -56,9 +56,9 @@ export const post = [
   oauth2,
   async (req, res) => {
     const { user } = req;
-    const { doc, name } = await retreiveDocument(req);
+    const { doc, purpose } = await retreiveDocument(req);
 
-    await UserDocument.create({ user, name, buffer: doc });
+    await UserDocument.create({ user, purpose, buffer: doc });
 
     res.send({
       success: true,

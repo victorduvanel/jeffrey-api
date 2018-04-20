@@ -1,11 +1,22 @@
-import Promise   from 'bluebird';
+import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
 import Base      from './base';
 import User      from './user';
 
 const Provider = Base.extend({
   tableName: 'providers',
+
+  user() {
+    return this.belongsTo('User');
+  }
 }, {
+  create: async function(user) {
+    const id = uuid.v4();
+
+    return this.forge({ id, userId: user.get('id') })
+      .save(null, { method: 'insert' });
+  },
+
   graphqlDef: function() {
     return '';
   },

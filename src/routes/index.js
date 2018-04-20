@@ -18,13 +18,17 @@ import * as graphiql        from './graphiql';
 import * as userDevice      from './user-device';
 import * as ping            from './ping';
 import * as phoneNumber     from './phone-number';
+import * as tos             from './tos';
+import * as bankAccounts    from './bank-accounts';
+import * as providers       from './providers';
 
 export default {
   oauth, me, activate, signup,
   paymentMethods, messages, invoices,
-  resetPassword, ms,
+  resetPassword, ms, tos,
   fixtureMessages, apple, appLink,
   appRedirect, contactDetails,
   profilePic, graphiql, userDocuments,
-  userDevice, ping, phoneNumber
+  userDevice, ping, phoneNumber,
+  bankAccounts, providers
 };

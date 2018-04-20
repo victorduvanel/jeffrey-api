@@ -105,6 +105,10 @@ post('/user-device', routes.userDevice.post);
 post('/phone-number', routes.phoneNumber.post);
 post('/phone-number/verify', routes.phoneNumber.verify.post);
 
+post('/tos', routes.tos.post);
+post('/bank-accounts', routes.bankAccounts.post);
+post('/providers', routes.providers.post);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {

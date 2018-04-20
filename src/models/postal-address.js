@@ -11,7 +11,7 @@ const PostalAddress = Base.extend({
       && this.get('country')
       && this.get('line1')
       && this.get('postalCode')
-      && this.get('state')
+      // && this.get('state')
     );
   },
 

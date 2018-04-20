@@ -14,6 +14,8 @@ import config                       from '../config';
 import UserDocument                 from './user-document';
 import PostalAddress                from './postal-address';
 import Business                     from './business';
+import TOSAcceptance                from './tos-acceptance';
+import StripeAccount                from './stripe-account';
 
 import './postal-address';
 import './business';
@@ -39,6 +41,19 @@ const User = Base.extend({
     return this.hasMany('StripeCard');
   },
 
+  async stripeAccount(create = true) {
+    const stripeAccount = await StripeAccount
+      .forge({
+        userId: this.get('id')
+      })
+      .fetch();
+
+    if (!stripeAccount && create) {
+      return StripeAccount.create(this);
+    }
+    return stripeAccount;
+  },
+
   createAccessToken({ singleUse = false }) {
     return AccessToken.create({ user: this, singleUse });
   },
@@ -51,8 +66,16 @@ const User = Base.extend({
     return this.belongsTo('PostalAddress');
   },
 
-  businessAddress() {
-    return this.hasOne('PostalAddress');
+  tosAcceptance() {
+    return TOSAcceptance.forge({
+      userId: this.get('id')
+    })
+      .orderBy('created_at', 'DESC')
+      .fetch();
+  },
+
+  idProof() {
+    return UserDocument.findIdentifyDocuments(this);
   },
 
   async getPostalAddress() {
@@ -119,8 +142,8 @@ const User = Base.extend({
   },
 
   async hasIdentityDocument() {
-    const documents = await UserDocument.findIdentifyDocuments(this);
-    return documents && documents.length > 0;
+    const idDocument = await UserDocument.findIdentifyDocuments(this);
+    return !!idDocument;
   },
 
   async updatePassword(newPassword) {
@@ -166,8 +189,8 @@ const User = Base.extend({
   async onboardingProgress() {
     const progress = [];
 
-    if (this.get('profilePicture')) {
-      progress.push('profile-picture');
+    if (this.get('profilePicture') && this.get('bio')) {
+      progress.push('provider-profile');
     }
 
     if (
@@ -191,9 +214,13 @@ const User = Base.extend({
       progress.push('business');
     }
 
-
-    if (this.get('tosAcceptedAt')) {
+    if (await this.tosAcceptance()) {
       progress.push('tos');
+    }
+
+    const stripeAccount = await this.stripeAccount(false);
+    if (stripeAccount && stripeAccount.get('hasExternalAccount')) {
+      progress.push('bank-details');
     }
 
     if (await this.hasIdentityDocument()) {

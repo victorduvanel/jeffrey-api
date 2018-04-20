@@ -2,6 +2,7 @@ function up(knex) {
   return knex.schema
     .createTable('users', (table) => {
       table.uuid('id').primary();
+      table.string('country');
       table.string('email').unique();
       table.string('google_id').unique();
       table.string('facebook_id').unique();
@@ -12,13 +13,12 @@ function up(knex) {
       table.date('date_of_birth');
       table.string('profile_picture');
       table.string('phone_number');
+      table.text('bio');
       table
         .uuid('postal_address_id')
         .references('postal_addresses.id')
         .onUpdate('CASCADE')
         .onDelete('RESTRICT');
-      table.string('tos_accepted_ip');
-      table.dateTime('tos_accepted_at');
       table.dateTime('created_at');
       table.dateTime('updated_at');
     });

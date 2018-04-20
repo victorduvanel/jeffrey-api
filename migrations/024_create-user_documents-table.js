@@ -2,7 +2,6 @@ function up(knex) {
   return knex.schema.createTable('user_documents', (table) => {
     table.uuid('id').primary();
 
-    table.string('name');
     table.string('mime');
     table.string('uri');
     table.enum('purpose', ['identity_document']);
