@@ -6,6 +6,7 @@ function up(knex) {
       table.string('email').unique();
       table.string('google_id').unique();
       table.string('facebook_id').unique();
+      table.string('stripe_customer_id').unique();
       table.string('password');
       table.enum('gender', ['male', 'female']);
       table.string('first_name');

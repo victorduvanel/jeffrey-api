@@ -21,6 +21,7 @@ import * as phoneNumber     from './phone-number';
 import * as tos             from './tos';
 import * as bankAccounts    from './bank-accounts';
 import * as providers       from './providers';
+import * as stripe          from './stripe';
 
 export default {
   oauth, me, activate, signup,
@@ -30,5 +31,6 @@ export default {
   appRedirect, contactDetails,
   profilePic, graphiql, userDocuments,
   userDevice, ping, phoneNumber,
-  bankAccounts, providers
+  bankAccounts, providers,
+  stripe
 };

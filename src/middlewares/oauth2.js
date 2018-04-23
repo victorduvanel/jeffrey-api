@@ -43,7 +43,7 @@ const oauth2 = async (req) => {
   return user;
 };
 
-export default (req, res, next) => {
+export default async (req, res, next) => {
   oauth2(req)
     .then((user) => {
       req.user = user;

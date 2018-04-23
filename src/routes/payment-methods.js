@@ -1,10 +1,9 @@
-import moment     from 'moment';
-import bodyParser from 'body-parser';
-import oauth2     from '../middlewares/oauth2';
-import StripeCard from '../models/stripe-card';
-import User       from '../models/user';
-
-import stripe         from '../services/stripe';
+import moment      from 'moment';
+import bodyParser  from 'body-parser';
+import oauth2      from '../middlewares/oauth2';
+import stripe      from '../services/stripe';
+import User        from '../models/user';
+import StripeCard  from '../models/stripe-card';
 
 export const get = [
   oauth2,
@@ -33,25 +32,29 @@ export const get = [
   }
 ];
 
-export const post__ = [
+export const post = [
   oauth2,
-  bodyParser.urlencoded({ extended: false }),
+  bodyParser.json(),
 
   async (req, res) => {
-    const stripeToken = req.body.stripe_token;
+    const { user, body } = req;
 
-    const user = await req.user.load('stripeCustomer');
-    let stripeCustomer = user.related('stripeCustomer');
+    const cardHolderName = body['card-holder-name'];
+    const cardNumber = body['card-number'];
+    const cardExpiryMonth = body['card-expiry-month'];
+    const cardExpiryYear = body['card-expiry-year'];
+    const cvv = body.cvv;
 
-    if (stripeCustomer.length) {
-      stripeCustomer = stripeCustomer.at(0);
-      await stripeCustomer.addCard(stripeToken);
-    } else {
-      stripeCustomer = await StripeCard.create({
-        user,
-        token: stripeToken
-      });
-    }
+    await StripeCard.create({
+      user,
+      card: {
+        number: cardNumber,
+        expMonth: cardExpiryMonth,
+        expYear: cardExpiryYear,
+        cvc: cvv,
+        holderName: cardHolderName
+      }
+    });
 
     res.send({
       success: true
@@ -59,7 +62,7 @@ export const post__ = [
   }
 ];
 
-export const post = [
+export const post__ = [
   bodyParser.json(),
 
   async (req, res) => {

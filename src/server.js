@@ -109,6 +109,8 @@ post('/tos', routes.tos.post);
 post('/bank-accounts', routes.bankAccounts.post);
 post('/providers', routes.providers.post);
 
+post('/stripe/webhook', routes.stripe.webhook.post);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {

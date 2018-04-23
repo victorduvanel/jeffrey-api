@@ -3,6 +3,7 @@ import moment                       from 'moment';
 import request                      from 'request-promise';
 import nativeBcrypt                 from 'bcryptjs';
 import bookshelf                    from '../services/bookshelf';
+import stripe                       from '../services/stripe';
 import uuid                         from 'uuid';
 import Base                         from './base';
 import AccessToken                  from './access-token';
@@ -16,6 +17,7 @@ import PostalAddress                from './postal-address';
 import Business                     from './business';
 import TOSAcceptance                from './tos-acceptance';
 import StripeAccount                from './stripe-account';
+import StripeCard                   from './stripe-card';
 
 import './postal-address';
 import './business';
@@ -159,6 +161,22 @@ const User = Base.extend({
     const hash = await bcrypt.hashAsync(newPassword, saltRounds);
     this.set('password', hash);
     await this.save();
+  },
+
+  async stripeCustomer() {
+    if (this.get('stripeCustomerId')) {
+      return this.get('stripeCustomerId');
+    }
+
+    const customer = await stripe.customers.create({
+      metadata: {
+        user_id: this.get('id')
+      }
+    });
+
+    this.set('stripeCustomerId', customer.id);
+    await this.save();
+    return customer.id;
   },
 
   async paymentMethodStatus() {

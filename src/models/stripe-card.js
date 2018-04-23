@@ -32,20 +32,23 @@ const StripeCard = Base.extend({
     await this.save();
   }
 }, {
-  create: async function({ token, user }) {
-    const customer = await stripe.customers.create({
-      source: token
+  create: async function({ user, card: { number, expMonth, expYear, cvc, holderName }}) {
+    const stripeCustomer = await user.stripeCustomer();
+
+    const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
+      source: {
+        object: 'card',
+        number,
+        exp_month: expMonth,
+        exp_year: expYear,
+        cvc,
+        name: holderName
+      }
     });
-
-    const paymentInfo = customer.sources.data[0];
-
-    if (paymentInfo.country !== 'FR') {
-      throw UnsupportedPaymentType;
-    }
 
     return this
       .forge({
-        id         : customer.id,
+        id         : paymentInfo.id,
         userId     : user.get('id'),
         type       : paymentInfo.brand,
         lastFour   : paymentInfo.last4,
