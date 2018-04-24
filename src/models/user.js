@@ -2,9 +2,10 @@ import Promise                      from 'bluebird';
 import moment                       from 'moment';
 import request                      from 'request-promise';
 import nativeBcrypt                 from 'bcryptjs';
+import uuid                         from 'uuid';
+import buckets                      from '../services/google/storage';
 import bookshelf                    from '../services/bookshelf';
 import stripe                       from '../services/stripe';
-import uuid                         from 'uuid';
 import Base                         from './base';
 import AccessToken                  from './access-token';
 import googleService                from '../services/google';
@@ -56,6 +57,93 @@ const User = Base.extend({
     return stripeAccount;
   },
 
+  async syncStripeAccount() {
+    const dateOfBirth = this.get('dateOfBirth');
+
+    await this.load(['business', 'postalAddress']);
+
+    const postalAddress = this.related('postalAddress');
+    const business = this.related('business');
+    let businessAddress = null;
+
+    if (business) {
+      await business.load(['postalAddress']);
+      businessAddress = business.related('postalAddress');
+    }
+
+    const tosAcceptance = await this.tosAcceptance();
+
+    const idDocument = await UserDocument.findIdentifyDocuments(this);
+    const filename = idDocument.get('uri').split('/').splice(4).join('/');
+
+    const region = 'EU';
+    const bucket = buckets[region];
+
+    const fileContent = await bucket
+      .file(filename)
+      .download();
+
+    const stripeAccount = await this.stripeAccount();
+
+    const idProof = await stripe.fileUploads.create({
+      purpose: 'identity_document',
+      file: {
+        data: fileContent[0],
+        type: idDocument.get('mime')
+      }
+    }, {
+      stripe_account: stripeAccount.get('id')
+    });
+
+    const accountAttributes = {
+      business_name: business && business.get('name'),
+      legal_entity: {
+        first_name: this.get('firstName'),
+        last_name: this.get('lastName'),
+
+        dob: (dateOfBirth && {
+          day: moment(dateOfBirth).format('DD'),
+          month: moment(dateOfBirth).format('MM'),
+          year: moment(dateOfBirth).format('YYYY'),
+        }),
+
+
+        personal_address: (postalAddress && {
+          city: postalAddress.get('city'),
+          country: postalAddress.get('country'),
+          line1: postalAddress.get('line1'),
+          line2: postalAddress.get('line2'),
+          postal_code: postalAddress.get('postalCode'),
+          state: postalAddress.get('state')
+        }),
+
+        type: business && business.get('type'),
+        business_tax_id: business && business.get('taxId'),
+
+        address: businessAddress && {
+          city: businessAddress.get('city'),
+          country: businessAddress.get('country'),
+          line1: businessAddress.get('line1'),
+          line2: businessAddress.get('line2'),
+          postal_code: businessAddress.get('postalCode'),
+          state: businessAddress.get('state')
+        },
+
+        verification: {
+          document: idProof.id
+        }
+      },
+
+      tos_acceptance: tosAcceptance && {
+        ip: tosAcceptance.get('ip'),
+        user_agent: tosAcceptance.get('userAgent'),
+        date: parseInt(moment(tosAcceptance.get('createdAt')).format('X'), 10)
+      }
+    };
+
+    await stripe.accounts.update(stripeAccount.get('id'), accountAttributes);
+  },
+
   createAccessToken({ singleUse = false }) {
     return AccessToken.create({ user: this, singleUse });
   },
@@ -74,10 +162,6 @@ const User = Base.extend({
     })
       .orderBy('created_at', 'DESC')
       .fetch();
-  },
-
-  idProof() {
-    return UserDocument.findIdentifyDocuments(this);
   },
 
   async getPostalAddress() {
@@ -207,7 +291,7 @@ const User = Base.extend({
   async onboardingProgress() {
     const progress = [];
 
-    if (this.get('profilePicture') && this.get('bio')) {
+    if (this.get('profilePicture') /* && this.get('bio') */) {
       progress.push('provider-profile');
     }
 

@@ -1,8 +1,13 @@
 function up(knex) {
   return knex.schema.createTable('service_categories', (table) => {
     table.uuid('id').primary();
+    table.string('slug').unique();
 
-    table.string('name');
+    table
+      .uuid('parent_id')
+      .references('service_categories.id')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT');
 
     table.dateTime('created_at');
     table.dateTime('updated_at');

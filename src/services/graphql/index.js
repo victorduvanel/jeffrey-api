@@ -31,7 +31,8 @@ type Query {
     limit: Int!
   ): [User]
   services: [Service]
-  serviceCategories: [Service]
+  serviceCategories: [ServiceCategory]
+  serviceCategory(categoryId: String!): ServiceCategory
   conversation(
     conversationId: String!
   ): Conversation

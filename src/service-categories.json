@@ -1,0 +1,240 @@
+{
+    "services": [
+        {
+            "slug": "cleanning",
+            "name": {
+                "en-GB": "Cleanning",
+                "en-US": "Cleanning",
+                "fr-FR": "Nettoyages",
+                "fr-CH": "Nettoyages",
+                "ko-KR": "",
+                "ja-JP": ""
+            },
+            "services": [
+                {
+                    "slug": "house-cleanning",
+                    "name": {
+                        "en-GB": "House cleanning",
+                        "en-US": "House cleanning",
+                        "fr-FR": "Nettoyage maison / appartement",
+                        "fr-CH": "Nettoyage maison / appartement",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "2b92aa5c-4fb4-4a70-9392-6e50530f78e6"
+                },
+                {
+                    "slug": "cellar-garage-cleanning",
+                    "name": {
+                        "en-GB": "Cellar and garage cleanning",
+                        "en-US": "Cellar and garage cleanning",
+                        "fr-FR": "Nettoyage cave ou garage",
+                        "fr-CH": "Nettoyage cave ou garage",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "f6923889-1547-4fdb-8055-db0e5d33e9be"
+                },
+                {
+                    "slug": "car-washing",
+                    "name": {
+                        "en-GB": "Car washing",
+                        "en-US": "Car washing",
+                        "fr-FR": "Nettoyage voiture",
+                        "fr-CH": "Nettoyage voiture",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "services": [
+                        {
+                            "slug": "jeffrey-car-washing",
+                            "name": {
+                                "en-GB": "Hire a Jeffrey",
+                                "en-US": "Hire a Jeffrey",
+                                "fr-FR": "Faire appel à un Jeffrey",
+                                "fr-CH": "Faire appel à un Jeffrey",
+                                "ko-KR": "",
+                                "ja-JP": ""
+                            },
+                            "id": "4c7fe354-11fd-4036-9974-06a1d74ab74f"
+                        },
+                        {
+                            "slug": "cleancar-car-washing",
+                            "name": {
+                                "en-GB": "CleanCar",
+                                "en-US": "CleanCas",
+                                "fr-FR": "Faire appel à CleanCar",
+                                "fr-CH": "Faire appel à CleanCar",
+                                "ko-KR": "",
+                                "ja-JP": ""
+                            },
+                            "id": "00e45aec-b77c-4be3-a8dd-5c7c07733419"
+                        }
+                    ],
+                    "id": "d1ae614e-4ba1-451e-bf19-7c54849b1730"
+                }
+            ],
+            "id": "bc0d9db0-89e5-4538-9b9b-1c9e67628ffe"
+        },
+        {
+            "slug": "handiwork-and-moving",
+            "name": {
+                "en-GB": "Handiwork and moving",
+                "en-US": "Handiwork and moving",
+                "fr-FR": "Bricolages & déménagement",
+                "fr-CH": "Bricolages & déménagement",
+                "ko-KR": "",
+                "ja-JP": ""
+            },
+            "services": [
+                {
+                    "slug": "furniture-construction",
+                    "name": {
+                        "en-GB": "Furniture construction",
+                        "en-US": "Furniture construction",
+                        "fr-FR": "Construire un meuble",
+                        "fr-CH": "Construire un meuble",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "8a35fd53-b0c9-4481-a799-41a702f73a4f"
+                },
+                {
+                    "slug": "moving",
+                    "name": {
+                        "en-GB": "Moving",
+                        "en-US": "Moving",
+                        "fr-FR": "Déménagement",
+                        "fr-CH": "Déménagement",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "3887399d-79ca-44d6-90c4-10307c468ba1"
+                },
+                {
+                    "slug": "painting",
+                    "name": {
+                        "en-GB": "Painting",
+                        "en-US": "Painting",
+                        "fr-FR": "Peinture",
+                        "fr-CH": "Peinture",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "9adae628-0ef7-456e-970f-b3d69c8b17c3"
+                }
+            ],
+            "id": "71e6f20a-0889-48fa-b72b-e2a0923ba3cb"
+        },
+        {
+            "slug": "modern-majordome",
+            "name": {
+                "en-GB": "Modern majordome",
+                "en-US": "Modern majordome",
+                "fr-FR": "Majordome morderne",
+                "fr-CH": "Majordome morderne",
+                "ko-KR": "",
+                "ja-JP": ""
+            },
+            "services": [
+                {
+                    "slug": "amateur-cook",
+                    "name": {
+                        "en-GB": "Amateur cook",
+                        "en-US": "Amateur cook",
+                        "fr-FR": "Majordome morderne",
+                        "fr-CH": "Majordome morderne",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "555d8eb4-d6d1-421c-a7f4-ee49b332f41e"
+                },
+                {
+                    "slug": "disabled-person-assistance",
+                    "name": {
+                        "en-GB": "Disabled person assistance",
+                        "en-US": "Disabled person assistance",
+                        "fr-FR": "Assistance personne à mobilité réduite",
+                        "fr-CH": "Assistance personne à mobilité réduite",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "a9f885c8-c2e5-4c86-8475-2a149836c4a8"
+                },
+                {
+                    "slug": "housekeeping",
+                    "name": {
+                        "en-GB": "Housekeeping",
+                        "en-US": "Housekeeping",
+                        "fr-FR": "Gardiennage maison",
+                        "fr-CH": "Gardiennage maison",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "071c5285-2266-45c7-bb8c-902df7631fb1"
+                },
+                {
+                    "slug": "house-tidy-up",
+                    "name": {
+                        "en-GB": "House tidy up",
+                        "en-US": "House tidy up",
+                        "fr-FR": "Rangement maison",
+                        "fr-CH": "Rangement maison",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "86048909-155d-4f88-80c3-7345cfc188a3"
+                },
+                {
+                    "slug": "carless-driver",
+                    "name": {
+                        "en-GB": "Carless driver",
+                        "en-US": "Carless driver",
+                        "fr-FR": "Chauffeur sans voiture",
+                        "fr-CH": "Chauffeur sans voiture",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "dc337ba8-8a2a-4ece-8cb7-b3ea5bde2d66"
+                },
+                {
+                    "slug": "guest-service",
+                    "name": {
+                        "en-GB": "Guest service",
+                        "en-US": "Guest service",
+                        "fr-FR": "Service invité",
+                        "fr-CH": "Service invité",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "7d87c290-c4aa-44c4-a80d-6ca0ebd82f39"
+                },
+                {
+                    "slug": "personal-assistant",
+                    "name": {
+                        "en-GB": "Personal assistant",
+                        "en-US": "Personal assistant",
+                        "fr-FR": "Assistant personel",
+                        "fr-CH": "Assistant personel",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "7949f6ae-9d5f-4858-9f15-be85a3942c7c"
+                },
+                {
+                    "slug": "administrative-assistant",
+                    "name": {
+                        "en-GB": "Administrative assistant",
+                        "en-US": "Administrative assistant",
+                        "fr-FR": "Assistant administratif",
+                        "fr-CH": "Assistant administratif",
+                        "ko-KR": "",
+                        "ja-JP": ""
+                    },
+                    "id": "5e533c44-5758-4e16-9c94-ed6c3d2b34b2"
+                }
+            ],
+            "id": "e9e4d161-04ad-4f52-8039-8fb734985182"
+        }
+    ]
+}

@@ -29,6 +29,12 @@ commander
     pending = commands.serve();
   });
 
+commander
+  .command('sync-service-categories')
+  .action(() => {
+    pending = commands.syncServiceCategories();
+  });
+
 commander.parse(process.argv);
 
 if (pending === null) {

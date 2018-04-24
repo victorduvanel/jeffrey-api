@@ -21,7 +21,10 @@ export const post = [
     const onboarindgCompleted = !!ONBOARDING_STEPS.find(step => onboardingProgress.includes(step));
 
     if (onboarindgCompleted) {
-      await Provider.create(user);
+      // await Provider.create(user);
+
+      await user.syncStripeAccount();
+
       res.send({ success: true });
       return;
     }
