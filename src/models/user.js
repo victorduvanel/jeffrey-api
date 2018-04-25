@@ -18,7 +18,8 @@ import PostalAddress                from './postal-address';
 import Business                     from './business';
 import TOSAcceptance                from './tos-acceptance';
 import StripeAccount                from './stripe-account';
-import StripeCard                   from './stripe-card';
+import ServiceCategory              from './service-category';
+import ProviderPrice                from './provider-price';
 
 import './postal-address';
 import './business';
@@ -526,9 +527,42 @@ const User = Base.extend({
           profilePicture: user.get('profilePicture')
         };
       },
+
+      providers: async (_, __, { user }, { variableValues: { limit, offset } }) => {
+        const users = await User.query({ limit, offset }).fetchAll();
+
+        return users.map(user => ({
+          id: user.id,
+          firstName: user.get('firstName'),
+          lastName: user.get('lastName'),
+          email: user.get('email'),
+          profilePicture: user.get('profilePicture')
+        }));
+      }
+
     },
 
     Mutation: {
+      setHourlyRate: async (_, { serviceCategoryId, hourlyRate }, { user }) => {
+        if (!user) {
+          return false;
+        }
+
+        const serviceCategory = await ServiceCategory.find(serviceCategoryId);
+        if (!serviceCategory) {
+          return false;
+        }
+
+        await ProviderPrice
+          .create({
+            user,
+            serviceCategory,
+            price: hourlyRate
+          });
+
+        return true;
+      },
+
       personalDetails: async (_, { details }, { user }) => {
         let {
           firstName,

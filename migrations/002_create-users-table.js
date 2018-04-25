@@ -15,6 +15,8 @@ function up(knex) {
       table.string('profile_picture');
       table.string('phone_number');
       table.text('bio');
+      table.boolean('is_provider');
+      table.boolean('is_available');
       table
         .uuid('postal_address_id')
         .references('postal_addresses.id')

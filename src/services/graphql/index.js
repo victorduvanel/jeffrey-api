@@ -8,7 +8,6 @@ import geocode                  from '../google/geocode';
 import oauth2                   from '../../middlewares/oauth2';
 import Service                  from '../../models/service';
 import ServiceCategory          from '../../models/service-category';
-import Provider                 from '../../models/provider';
 import Message                  from '../../models/message';
 import Conversation             from '../../models/conversation';
 import AccessToken              from '../../models/access-token';
@@ -49,6 +48,15 @@ type Mutation {
   updatePassword(password: String!): Boolean
   personalDetails(details: PersonalDetails): Boolean
   businessDetails(details: BusinessDetails): Boolean
+  setHourlyRate(serviceCategoryId: ID!, hourlyRate: Int!): Boolean
+}
+enum Currency {
+  GBP
+  EUR
+  USD
+  KRW
+  JPY
+  CHF
 }
 `;
 
@@ -120,7 +128,6 @@ const resolvers = _.merge(
   Message.resolver,
   Service.resolver,
   ServiceCategory.resolver,
-  Provider.resolver,
   Conversation.resolver,
   PostalAddress.resolver,
   User.resolver,
@@ -131,7 +138,6 @@ const types = [
   Country.graphqlDef(),
   Service.graphqlDef(),
   ServiceCategory.graphqlDef(),
-  Provider.graphqlDef(),
   PostalAddress.graphqlDef(),
   User.graphqlDef(),
   Message.graphqlDef(),

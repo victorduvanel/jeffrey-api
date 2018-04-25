@@ -1,5 +1,4 @@
 import oauth2     from '../middlewares/oauth2';
-import Provider   from '../models/provider';
 
 const ONBOARDING_STEPS = [
   'provider-profile',
@@ -21,9 +20,10 @@ export const post = [
     const onboarindgCompleted = !!ONBOARDING_STEPS.find(step => onboardingProgress.includes(step));
 
     if (onboarindgCompleted) {
-      // await Provider.create(user);
-
       await user.syncStripeAccount();
+      user.set('isProvider', true);
+      user.set('isAvailable', true);
+      await user.save();
 
       res.send({ success: true });
       return;

@@ -33,7 +33,7 @@ export const post = [
         throw Unauthorized;
       }
 
-      // await loginToken.destroy();
+      await loginToken.destroy();
 
       const accessToken = await user.createAccessToken({});
       res.send({
