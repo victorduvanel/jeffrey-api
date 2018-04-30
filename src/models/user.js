@@ -476,6 +476,8 @@ const User = Base.extend({
       }
       type User {
         id: ID!
+        isProvider: Boolean
+        isAvailable: Boolean
         firstName: String
         lastName: String
         dateOfBirth: String
@@ -518,6 +520,8 @@ const User = Base.extend({
         }
         return {
           id: user.id,
+          isProvider: user.get('isProvider'),
+          isAvailable: user.get('isAvailable'),
           firstName: user.get('firstName'),
           lastName: user.get('lastName'),
           email: user.get('email'),
@@ -528,7 +532,7 @@ const User = Base.extend({
         };
       },
 
-      providers: async (_, __, { user }, { variableValues: { limit, offset } }) => {
+      providers: async (_, __, ___, { variableValues: { limit, offset } }) => {
         const users = await User.query({ limit, offset }).fetchAll();
 
         return users.map(user => ({
@@ -543,6 +547,15 @@ const User = Base.extend({
     },
 
     Mutation: {
+      providerDisponibility: async (_, { disponibility }, { user }) => {
+        if (!user) {
+          return false;
+        }
+        user.set('isAvailable', disponibility);
+        await user.save();
+        return user.get('isAvailable');
+      },
+
       setHourlyRate: async (_, { serviceCategoryId, hourlyRate }, { user }) => {
         if (!user) {
           return false;

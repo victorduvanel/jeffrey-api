@@ -16,11 +16,11 @@ const ServiceCategory = Base.extend({
     return this.forge({ id }).fetch();
   },
 
-  create: async function({ id, parentId, slug }) {
+  create: async function({ id, parentId, slug, ordinalPosition }) {
     await bookshelf.knex.raw(
       `INSERT INTO service_categories
-        (id, slug, parent_id, created_at, updated_at)
-        VALUES (:id, :slug, :parentId, NOW(), NOW())
+        (id, slug, parent_id, ordinal_position, created_at, updated_at)
+        VALUES (:id, :slug, :parentId, :ordinalPosition NOW(), NOW())
         ON CONFLICT (id) DO UPDATE
         SET
           slug = EXCLUDED.slug,
@@ -30,7 +30,8 @@ const ServiceCategory = Base.extend({
       {
         id,
         slug,
-        parentId
+        parentId,
+        ordinalPosition
       }
     );
 
@@ -53,6 +54,7 @@ const ServiceCategory = Base.extend({
         const categories = await ServiceCategory
           .query((qb) => {
             qb.where('parent_id', '=', id);
+            qb.orderBy('ordinal_position');
           })
           .fetchAll();
 
@@ -73,7 +75,11 @@ const ServiceCategory = Base.extend({
       },
 
       serviceCategories:  async function() {
-        const categories = await ServiceCategory.fetchAll();
+        const categories = await ServiceCategory
+          .query((qb) => {
+            qb.orderBy('ordinal_position');
+          })
+          .fetchAll();
         const rootCategories = categories.filter(category => category.get('parentId') === null);
 
         const categoryMapper = (category) => {

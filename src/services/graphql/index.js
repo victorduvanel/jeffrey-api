@@ -46,6 +46,7 @@ type Subscription {
 type Mutation {
   newMessage(conversationId: String!, message: String!): Message
   updatePassword(password: String!): Boolean
+  providerDisponibility(disponibility: Boolean!): Boolean
   personalDetails(details: PersonalDetails): Boolean
   businessDetails(details: BusinessDetails): Boolean
   setHourlyRate(serviceCategoryId: ID!, hourlyRate: Int!): Boolean

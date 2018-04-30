@@ -2,6 +2,7 @@ function up(knex) {
   return knex.schema.createTable('service_categories', (table) => {
     table.uuid('id').primary();
     table.string('slug').unique();
+    table.integer('ordinal_position');
 
     table
       .uuid('parent_id')
