@@ -49,6 +49,18 @@ const PostalAddress = Base.extend({
     if (this.hasChanged()) {
       await this.save();
     }
+  },
+
+  async serialize() {
+    return {
+      id: this.get('id'),
+      city: this.get('city'),
+      country: this.get('country'),
+      line1: this.get('line1'),
+      line2: this.get('line2'),
+      postalCode: this.get('postalCode'),
+      state: this.get('state'),
+    };
   }
 }, {
   create: function(props = {}) {

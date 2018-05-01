@@ -1,4 +1,3 @@
-import Promise   from 'bluebird';
 import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
 import Base      from './base';
@@ -11,7 +10,7 @@ const Review = Base.extend({
   },
 
   author() {
-    return this.belongsTo('User');
+    return this.belongsTo('User', 'author_id');
   }
 }, {
   create: async function({ provider, author }) {
@@ -27,9 +26,33 @@ const Review = Base.extend({
 
   find: function(id) {
     return this.forge({ id })
-      .fetch({
-        withRelated: ['user']
-      });
+      .fetch();
+  },
+
+  graphqlDef() {
+    return `
+      type Review {
+        id: ID!
+        message: String
+        rank: Int
+        author: User
+      }
+    `;
+  },
+
+  resolver: {
+    Review: {
+      author: async({ id }) => {
+        const review = await Review.find(id);
+        if (!review) {
+          return null;
+        }
+
+        await review.load(['author']);
+        const author = review.related('author');
+        return author.serialize();
+      }
+    }
   }
 });
 

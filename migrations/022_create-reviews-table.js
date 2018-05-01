@@ -19,7 +19,7 @@ function up(knex) {
 }
 
 function down(knex) {
-  return knex.schema.dropTable('phone_number_verifications');
+  return knex.schema.dropTable('reviews');
 }
 
 module.exports = { up, down };

@@ -15,6 +15,7 @@ import Country                  from '../../models/country';
 import User                     from '../../models/user';
 import PostalAddress            from '../../models/postal-address';
 import Business                 from '../../models/business';
+import Review                   from '../../models/review';
 
 const typeDefs = `
 type Query {
@@ -29,6 +30,7 @@ type Query {
     offset: Int!
     limit: Int!
   ): [User]
+  provider(providerId: ID!): User
   services: [Service]
   serviceCategories: [ServiceCategory]
   serviceCategory(categoryId: String!): ServiceCategory
@@ -62,7 +64,8 @@ enum Currency {
 `;
 
 const base = {
-  Query: {},
+  Query: {
+  },
   Mutation: {
     updatePassword: async (_, { password }, { user }) => {
       if (!user) {
@@ -133,6 +136,7 @@ const resolvers = _.merge(
   PostalAddress.resolver,
   User.resolver,
   Business.resolver,
+  Review.resolver
 );
 
 const types = [
@@ -144,6 +148,7 @@ const types = [
   Message.graphqlDef(),
   Conversation.graphqlDef(),
   Business.graphqlDef(),
+  Review.graphqlDef(),
   typeDefs
 ].join();
 

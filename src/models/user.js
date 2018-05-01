@@ -37,6 +37,14 @@ const User = Base.extend({
     return this.hasMany('UserDevice', 'owner_id');
   },
 
+  reviews() {
+    return this.hasMany('Review', 'provider_id');
+  },
+
+  givenReviews() {
+    return this.hasMany('Review', 'author_id');
+  },
+
   conversations() {
     return this.hasMany('Conversation');
   },
@@ -163,6 +171,14 @@ const User = Base.extend({
     })
       .orderBy('created_at', 'DESC')
       .fetch();
+  },
+
+  async rank() {
+    const res = await bookshelf
+      .knex('reviews')
+      .avg('rank as rank')
+      .where('provider_id', '=', this.get('id'));
+    return res[0].rank;
   },
 
   async getPostalAddress() {
@@ -364,6 +380,28 @@ const User = Base.extend({
     });
   },
 
+  async serialize() {
+    let dateOfBirth = null;
+    if (this.get('dateOfBirth')) {
+      dateOfBirth = moment(this.get('dateOfBirth')).format('YYYY-MM-DD');
+    }
+
+    return {
+      id: this.get('id'),
+      bio: this.get('bio'),
+      isProvider: this.get('isProvider'),
+      isAvailable: this.get('isAvailable'),
+      firstName: this.get('firstName'),
+      lastName: this.get('lastName'),
+      email: this.get('email'),
+      gender: this.get('gender'),
+      dateOfBirth,
+      phoneNumber: this.get('phoneNumber'),
+      profilePicture: this.get('profilePicture'),
+      rank: await this.rank()
+    };
+  },
+
   toJSON() {
     let attrs = Base.prototype.toJSON.apply(this, arguments);
     delete attrs.password;
@@ -456,7 +494,7 @@ const User = Base.extend({
       });
   },
 
-  graphqlDef: function() {
+  graphqlDef() {
     return `
       enum Gender {
         male
@@ -487,63 +525,67 @@ const User = Base.extend({
         profilePicture: String
         phoneNumber: String
         postalAddress: PostalAddress
+        reviews: [Review]
+        rank: Float
+        bio: String
       }
     `;
   },
 
   resolver: {
     User: {
-      postalAddress: async({ id }) => {
+      reviews: async({ id }) => {
         const user = await User.find(id);
-        const postalAddress = await user.getPostalAddress();
-
-        return {
-          id: postalAddress.id,
-          city: postalAddress.get('city'),
-          country: postalAddress.get('country'),
-          line1: postalAddress.get('line1'),
-          line2: postalAddress.get('line2'),
-          postalCode: postalAddress.get('postalCode'),
-          state: postalAddress.get('state'),
-        };
-      }
-    },
-    Query: {
-      currentUser: (_, __, { user }) => {
         if (!user) {
           return null;
         }
 
-        let dateOfBirth = null;
-        if (user.get('dateOfBirth')) {
-          dateOfBirth = moment(user.get('dateOfBirth')).format('YYYY-MM-DD');
+        await user.load(['reviews']);
+        const reviews = user.related('reviews');
+
+        return reviews.toArray().map(review => ({
+          id: review.get('id'),
+          message: review.get('message'),
+          rank: review.get('rank')
+        }));
+      },
+
+      postalAddress: async({ id }) => {
+        const user = await User.find(id);
+        const postalAddress = await user.getPostalAddress();
+
+        if (!postalAddress) {
+          return null;
         }
-        return {
-          id: user.id,
-          isProvider: user.get('isProvider'),
-          isAvailable: user.get('isAvailable'),
-          firstName: user.get('firstName'),
-          lastName: user.get('lastName'),
-          email: user.get('email'),
-          gender: user.get('gender'),
-          dateOfBirth,
-          phoneNumber: user.get('phoneNumber'),
-          profilePicture: user.get('profilePicture')
-        };
+        return postalAddress.serialize();
+      }
+    },
+    Query: {
+      async currentUser(_, __, { user }) {
+        if (!user) {
+          return null;
+        }
+        return user.serialize();
+      },
+
+      provider: async (_, __, ___, { variableValues: { providerId } }) => {
+        const user = await User.find(providerId);
+        if (!user) {
+          return null;
+        }
+        return user.serialize();
       },
 
       providers: async (_, __, ___, { variableValues: { limit, offset } }) => {
-        const users = await User.query({ limit, offset }).fetchAll();
+        const users = await User
+          .query({ limit, offset })
+          .query((qb) => {
+            qb.where('is_provider', '=', true);
+          })
+          .fetchAll();
 
-        return users.map(user => ({
-          id: user.id,
-          firstName: user.get('firstName'),
-          lastName: user.get('lastName'),
-          email: user.get('email'),
-          profilePicture: user.get('profilePicture')
-        }));
+        return Promise.map(users.toArray(), async user => user.serialize());
       }
-
     },
 
     Mutation: {
