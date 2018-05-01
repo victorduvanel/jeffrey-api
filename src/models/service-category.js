@@ -16,11 +16,11 @@ const ServiceCategory = Base.extend({
     return this.forge({ id }).fetch();
   },
 
-  create: async function({ id, parentId, slug, ordinalPosition }) {
+  create: async function({ id, parentId, slug, ordinalPosition = null }) {
     await bookshelf.knex.raw(
       `INSERT INTO service_categories
         (id, slug, parent_id, ordinal_position, created_at, updated_at)
-        VALUES (:id, :slug, :parentId, :ordinalPosition NOW(), NOW())
+        VALUES (:id, :slug, :parentId, :ordinalPosition, NOW(), NOW())
         ON CONFLICT (id) DO UPDATE
         SET
           slug = EXCLUDED.slug,
