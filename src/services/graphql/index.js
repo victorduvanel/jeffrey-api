@@ -52,6 +52,8 @@ type Mutation {
   personalDetails(details: PersonalDetails): Boolean
   businessDetails(details: BusinessDetails): Boolean
   setHourlyRate(serviceCategoryId: ID!, hourlyRate: Int!): Boolean
+  providerBio(bio: String!): Boolean
+  bankAccount(details: BankAccountDetails): Boolean
 }
 enum Currency {
   GBP

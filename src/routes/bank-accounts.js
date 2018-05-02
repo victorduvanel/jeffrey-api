@@ -26,6 +26,6 @@ export const post = [
     stripeAccount.set('hasExternalAccount', true);
     await stripeAccount.save();
 
-    res.send({ success: false });
+    res.send({ success: true });
   }
 ];
