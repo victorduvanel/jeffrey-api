@@ -10,6 +10,14 @@ const ServiceCategory = Base.extend({
         parentId: this.get('id')
       })
       .fetchAll();
+  },
+
+  serialize() {
+    return {
+      id: this.get('id'),
+      color: this.get('color'),
+      slug: this.get('slug')
+    };
   }
 }, {
   find: function(id) {
@@ -43,6 +51,7 @@ const ServiceCategory = Base.extend({
       type ServiceCategory {
         id: ID!
         slug: String!
+        color: String
         subCategories: [ServiceCategory]
       }
     `;
@@ -58,20 +67,14 @@ const ServiceCategory = Base.extend({
           })
           .fetchAll();
 
-        return categories.toArray().map(category => ({
-          id: category.get('id'),
-          slug: category.get('slug')
-        }));
+        return categories.toArray().map(category => category.serialize());
       }
     },
     Query: {
       serviceCategory: async (_, { categoryId: id }) => {
         const category = await ServiceCategory.find(id);
 
-        return {
-          id: category.get('id'),
-          slug: category.get('slug')
-        };
+        return category.serialize();
       },
 
       serviceCategories:  async function() {
@@ -83,11 +86,12 @@ const ServiceCategory = Base.extend({
         const rootCategories = categories.filter(category => category.get('parentId') === null);
 
         const categoryMapper = (category) => {
-          return {
-            id: category.get('id'),
-            slug: category.get('slug'),
-            subCategories: categories.filter(subCat => subCat.get('parentId') === category.get('id')).map(categoryMapper)
-          };
+          const attr = category.serialize();
+
+          attr.subCategories = categories
+            .filter(subCat => subCat.get('parentId') === category.get('id'))
+            .map(categoryMapper);
+          return attr;
         };
 
         return rootCategories.map(categoryMapper);

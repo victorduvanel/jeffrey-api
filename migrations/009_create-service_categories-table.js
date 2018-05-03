@@ -3,6 +3,7 @@ function up(knex) {
     table.uuid('id').primary();
     table.string('slug').unique();
     table.integer('ordinal_position');
+    table.string('color');
 
     table
       .uuid('parent_id')
