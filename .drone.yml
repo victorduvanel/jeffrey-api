@@ -2,5 +2,5 @@ pipeline:
   build:
     image: docker
     commands:
-      - docker build -t eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA::8}
-      - docker push eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA::8}
+      - docker build -t eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA}
+      - docker push eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA}
