@@ -1,8 +1,7 @@
 pipeline:
-  api:
+  build:
     image: node:9.11.1
     commands:
       - npm install
       - npm run build
-      - npm run lint
 
