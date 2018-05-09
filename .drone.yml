@@ -1,9 +1,10 @@
 pipeline:
   build:
-    image: node:latest
-    commands:
-      - npm install
-      - npm run build
+    image: golang:1.8
+    commands: sh .drone.sh
+    secrets: [ ssh_key ]
+    when:
+      event: [ push, tag ]
   publish:
     coverage:
       when:
