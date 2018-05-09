@@ -2,8 +2,8 @@ pipeline:
   build:
     image: docker
     commands:
-      - docker build -t eu.gcr.io/jeffrey-197808/api:{{truncate DRONE_COMMIT_SHA 8}} .
+      - docker build -t eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA} .
       - docker login -u _json_key -p "$(cat $GOOGLE_APPLICATION_CREDENTIALS)" https://gcr.io
-      - docker push eu.gcr.io/jeffrey-197808/api:{{truncate DRONE_COMMIT_SHA 8}}
+      - docker push eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
