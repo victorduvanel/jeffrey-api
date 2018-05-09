@@ -1,7 +1,8 @@
 pipeline:
   build:
-    image: node:latest
+    image: node:10.0.0
     commands:
+      - npm install -g npm@6.0.0
       - npm install
       - npm run build
       - npm run lint
