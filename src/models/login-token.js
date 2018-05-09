@@ -1,4 +1,3 @@
-import Promise   from 'bluebird';
 import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
 import Base      from './base';

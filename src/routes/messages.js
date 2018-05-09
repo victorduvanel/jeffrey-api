@@ -1,9 +1,5 @@
 import bodyParser       from 'body-parser';
-import uuid             from 'uuid';
-import config           from '../config';
 import oauth2           from '../middlewares/oauth2';
-import Message          from '../models/message';
-import twilio           from '../services/twilio';
 
 export const post = [
   oauth2,

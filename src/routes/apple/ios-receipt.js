@@ -10,10 +10,7 @@ export const post = [
     const user = req.user;
     const { receipt } = req.body;
 
-    console.log(receipt);
-    console.log(user.get('id'));
-
-    const receipts = await AppleIosReceipt.create({ receipt, user });
+    await AppleIosReceipt.create({ receipt, user });
 
     res.send({ success: true });
   }

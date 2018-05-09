@@ -4,7 +4,6 @@ import * as signup          from './signup';
 import * as activate        from './activate';
 import * as paymentMethods  from './payment-methods';
 import * as messages        from './messages';
-import * as invoices        from './invoices';
 import * as resetPassword   from './reset-password';
 import * as ms              from './ms';
 import * as fixtureMessages from './fixture-messages';
@@ -25,7 +24,7 @@ import * as stripe          from './stripe';
 
 export default {
   oauth, me, activate, signup,
-  paymentMethods, messages, invoices,
+  paymentMethods, messages,
   resetPassword, ms, tos,
   fixtureMessages, apple, appLink,
   appRedirect, contactDetails,

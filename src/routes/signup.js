@@ -1,5 +1,4 @@
 import bodyParser  from 'body-parser';
-import request     from 'request-promise';
 import * as errors from '../errors';
 import recaptcha   from '../services/recaptcha';
 

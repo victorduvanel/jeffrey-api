@@ -1,8 +1,6 @@
-import moment      from 'moment';
 import bodyParser  from 'body-parser';
 import oauth2      from '../middlewares/oauth2';
 import stripe      from '../services/stripe';
-import User        from '../models/user';
 import StripeCard  from '../models/stripe-card';
 
 export const get = [

@@ -1,4 +1,3 @@
-import Promise         from 'bluebird';
 import Base            from './base';
 import bookshelf       from '../services/bookshelf';
 import knex            from '../services/knex';
@@ -7,7 +6,6 @@ import errors          from '../errors';
 import uuid            from 'uuid';
 import * as mjml       from '../services/mjml';
 import { sendEmail }   from '../services/mailgun';
-import config          from '../config';
 
 const PendingUser = Base.extend({
   tableName: 'pending_users',

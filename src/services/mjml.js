@@ -4,7 +4,6 @@ import nativeFs   from 'fs';
 import path       from 'path';
 import locales    from '../resources/locales';
 import handlebars from './handlebars';
-import config     from '../config';
 
 const fs = Promise.promisifyAll(nativeFs);
 
