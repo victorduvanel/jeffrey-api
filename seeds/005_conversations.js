@@ -5,8 +5,8 @@ exports.seed = function(knex) {
     VALUES (:id, NOW(), NOW())
     ON CONFLICT DO NOTHING
   `, {
-      id: CONVERSATION_ID
-    })
+    id: CONVERSATION_ID
+  })
     .then(() => {
 
       return knex.raw(`
@@ -16,9 +16,9 @@ exports.seed = function(knex) {
         VALUES (:userId, :conversationId)
         ON CONFLICT DO NOTHING
       `, {
-          userId: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-          conversationId: CONVERSATION_ID
-        });
+        userId: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
+        conversationId: CONVERSATION_ID
+      });
 
     });
 };
