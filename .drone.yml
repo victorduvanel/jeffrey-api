@@ -4,8 +4,3 @@ pipeline:
     commands:
       - npm install
       - npm run build
-  publish:
-    coverage:
-      when:
-        branch: master
-
