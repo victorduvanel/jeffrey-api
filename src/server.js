@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime';
+import 'babel-polyfill';
 
 import './services/google/datastore';
 
@@ -65,7 +65,6 @@ get('/', async (req, res) => {
   //   body: 'Salut!!!!'
   // });
 
-  // res.send({ hello: 'world' });
 
   // pubsub.publish('AWESOME_TOPIC', {
   //   newMessage: {
@@ -76,14 +75,7 @@ get('/', async (req, res) => {
   //   }
   // });
 
-  const conversations = await Conversation.findOrCreate([
-    '00000000-1e21-4332-a268-d7599f2f0e40',
-    '11111111-d941-48ee-b1d9-e4030a80afcd'
-  ]);
-
-  console.log(conversations);
-
-  res.send('ok');
+  res.send({ hello: 'world' });
 });
 // post('/webhook', routes.webhook.post);
 

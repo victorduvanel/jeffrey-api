@@ -1,7 +1,9 @@
+import Promise      from 'bluebird';
 import uuid         from 'uuid';
 import { NotFound } from '../errors';
 import bookshelf    from '../services/bookshelf';
 import Base         from './base';
+import User         from './user';
 import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from '../services/graphql/pubsub';
 
 const Conversation = Base.extend({
@@ -35,48 +37,59 @@ const Conversation = Base.extend({
     });
   }
 }, {
-  findOrCreate: async function(participants) {
+  create: async function(participants) {
     const { knex } = bookshelf;
+    const id = uuid.v4();
 
+    await knex.transaction(async (t) => {
+      await knex('conversations').insert({ id });
+      await Promise.map(participants, async (participant) => (
+        knex('conversation_participants').transacting(t).insert({
+          conversation_id: id,
+          user_id: participant.get('id')
+        })
+      ));
+    });
+
+    return this.find(id);
+  },
+
+  findOrCreate: async function(participants) {
     /**
      * We basically need to find the conversation that matches exactly the
      * those participants
      */
 
-    const conversations = await knex
-      .select('conversations.id', 'conversation_participants.user_id')
-      .from('conversations')
-      .leftJoin('conversation_participants', 'conversations.id', 'conversation_participants.conversation_id')
-      .whereIn(
-        'conversation_participants.user_id',
-        [
-          '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-          '3a82bd8d-d941-48ee-b1d9-e4030a80afcd'
-        ]
-      );
+    const participantIds = participants.map(participant => `'${participant.get('id')}'`).join();
 
-    const conversationsParticipantsMap = {};
-    const { length } = conversations;
+    const conversations = await bookshelf.knex.raw(`
+      select
+      conversations.id
 
-    for (let i = 0; i < length; ++i) {
-      const conversation = conversations[i];
-      if (!conversationsParticipantsMap[conversation.id]) {
-        conversationsParticipantsMap[conversation.id] = [ conversation.user_id ];
-      } else {
+      from conversations
 
-      }
+      where (
+        select count(*)
+        from
+        conversation_participants
+        where conversation_participants.conversation_id = conversations.id
+      ) = (
+        select count(*)
+        from
+        conversation_participants
+        where conversation_participants.user_id in (
+          ${participantIds}
+        )
+        and conversation_participants.conversation_id = conversations.id
+      )
+      group by conversations.id
+    `);
+
+    if (conversations.rowCount) {
+      return this.find(conversations.rows[0].id);
     }
 
-
-    return conversations;
-
-    const id = uuid.v4();
-
-    return this.forge({
-      id,
-      userId: user.get('id'),
-    })
-      .save(null, { method: 'insert' });
+    return Conversation.create(participants);
   },
 
   find: function(id) {
@@ -97,15 +110,12 @@ const Conversation = Base.extend({
     Query: {
       conversation: async (_, { userId }, { user } /*, params */) => {
 
-        console.log(
-          'conversation',
-          userId,
-          user.get('id')
-        );
+        const participant = await User.find(userId);
 
-        return null;
-
-        const conversation = await Conversation.find(conversationId);
+        const conversation = await Conversation.findOrCreate([
+          user,
+          participant
+        ]);
 
         if (!conversation) {
           throw NotFound;

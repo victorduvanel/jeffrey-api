@@ -90,8 +90,7 @@ const Message = Base.extend({
             return null;
           }
 
-          // return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
-          return pubsub.asyncIterator('AWESOME_TOPIC');
+          return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
         }
       }
     },

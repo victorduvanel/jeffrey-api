@@ -165,8 +165,10 @@ export const subscriptionServer = (websocketServer) => SubscriptionServer.create
     schema,
     execute,
     subscribe,
-    onConnect: async ({ token }, /* socket */) => {
-      console.log('onConnect!!!');
+    onConnect: async ({ token }, socket) => {
+      if (!token) {
+        socket.close();
+      }
       try {
         if (token) {
           const accessToken = await AccessToken.find(token);
