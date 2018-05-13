@@ -86,7 +86,12 @@ const Message = Base.extend({
     Subscription: {
       newMessage: {
         subscribe: (_, __ /* { conversationId } */, { user }) => {
-          return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
+          if (!user) {
+            return null;
+          }
+
+          // return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
+          return pubsub.asyncIterator('AWESOME_TOPIC');
         }
       }
     },

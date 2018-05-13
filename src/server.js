@@ -11,6 +11,7 @@ import config                          from './config';
 import routes                          from './routes';
 
 import graphql, { subscriptionServer } from './services/graphql';
+import pubsub                          from './services/graphql/pubsub';
 
 import logger                          from './middlewares/logger';
 import corsPolicy                      from './middlewares/cors-policy';
@@ -19,6 +20,7 @@ import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 
 import User                            from './models/user';
+import Conversation                    from './models/conversation';
 
 // import datastore from './services/google/datastore';
 // const query = datastore.createQuery('locations')
@@ -55,15 +57,33 @@ get('/graphiql', routes.graphiql.get);
 
 // ROUTES
 get('/', async (req, res) => {
-  const user = await User
-    .forge({ email: 'wr.wllm@gmail.com' })
-    .fetch();
+  // const user = await User
+  //   .forge({ email: 'wr.wllm@gmail.com' })
+  //   .fetch();
 
-  await user.pushNotification({
-    body: 'Salut!!!!'
-  });
+  // await user.pushNotification({
+  //   body: 'Salut!!!!'
+  // });
 
-  res.send({ hello: 'world' });
+  // res.send({ hello: 'world' });
+
+  // pubsub.publish('AWESOME_TOPIC', {
+  //   newMessage: {
+  //     id: '01b5d767-08e9-4406-83b3-bc52ec7731bf',
+  //     message: 'Kugkbhkl',
+  //     time: new Date(),
+  //     fromId: '3c656ce5-1e21-4332-a268-d7599f2f0e40'
+  //   }
+  // });
+
+  const conversations = await Conversation.findOrCreate([
+    '00000000-1e21-4332-a268-d7599f2f0e40',
+    '11111111-d941-48ee-b1d9-e4030a80afcd'
+  ]);
+
+  console.log(conversations);
+
+  res.send('ok');
 });
 // post('/webhook', routes.webhook.post);
 

@@ -34,9 +34,7 @@ type Query {
   services: [Service]
   serviceCategories: [ServiceCategory]
   serviceCategory(categoryId: String!): ServiceCategory
-  conversation(
-    conversationId: String!
-  ): Conversation
+  conversation(userId: ID!): Conversation
 }
 type Locality {
   name: String!
@@ -168,6 +166,7 @@ export const subscriptionServer = (websocketServer) => SubscriptionServer.create
     execute,
     subscribe,
     onConnect: async ({ token }, /* socket */) => {
+      console.log('onConnect!!!');
       try {
         if (token) {
           const accessToken = await AccessToken.find(token);
