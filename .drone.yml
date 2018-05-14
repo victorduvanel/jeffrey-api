@@ -1,8 +1,10 @@
 pipeline:
   build:
-    image: node:10.0.0
+    image: docker
+    environment:
     commands:
-      - npm install -g npm@6.0.0
-      - npm install
-      - npm run build
-      - npm run lint
+      - docker build -t eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA:0:8} .
+      - docker login -u _json_key -p "$(cat $GOOGLE_APPLICATION_CREDENTIALS)" https://gcr.io
+      # - docker push eu.gcr.io/jeffrey-197808/api:${DRONE_COMMIT_SHA:0:8}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

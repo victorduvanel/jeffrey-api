@@ -5,13 +5,13 @@ function up(knex) {
         .uuid('user_id')
         .references('users.id')
         .onUpdate('CASCADE')
-        .onDelete('RESTRICT');
+        .onDelete('CASCADE');
 
       table
         .uuid('conversation_id')
         .references('conversations.id')
         .onUpdate('CASCADE')
-        .onDelete('RESTRICT');
+        .onDelete('CASCADE');
 
       table.unique(['user_id', 'conversation_id']);
     });

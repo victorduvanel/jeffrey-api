@@ -34,9 +34,7 @@ type Query {
   services: [Service]
   serviceCategories: [ServiceCategory]
   serviceCategory(categoryId: String!): ServiceCategory
-  conversation(
-    conversationId: String!
-  ): Conversation
+  conversation(userId: ID!): Conversation
 }
 type Locality {
   name: String!
@@ -167,7 +165,10 @@ export const subscriptionServer = (websocketServer) => SubscriptionServer.create
     schema,
     execute,
     subscribe,
-    onConnect: async ({ token }, /* socket */) => {
+    onConnect: async ({ token }, socket) => {
+      if (!token) {
+        socket.close();
+      }
       try {
         if (token) {
           const accessToken = await AccessToken.find(token);
