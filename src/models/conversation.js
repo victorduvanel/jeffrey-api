@@ -63,11 +63,8 @@ const Conversation = Base.extend({
     const participantIds = participants.map(participant => `'${participant.get('id')}'`).join();
 
     const conversations = await bookshelf.knex.raw(`
-      select
-      conversations.id
-
+      select conversations.id
       from conversations
-
       where (
         select count(*)
         from

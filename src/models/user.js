@@ -388,6 +388,7 @@ const User = Base.extend({
 
     return {
       id: this.get('id'),
+      color: 'turquoise',
       bio: this.get('bio'),
       isProvider: this.get('isProvider'),
       isAvailable: this.get('isAvailable'),
@@ -519,6 +520,7 @@ const User = Base.extend({
         firstName: String
         lastName: String
         dateOfBirth: String
+        color: String
         email: String
         gender: Gender
         phone: String
