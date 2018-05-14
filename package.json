@@ -6,7 +6,6 @@
   "scripts": {
     "test": "export NODE_ENV=test && mocha --require babel-core/register",
     "migrate": "babel-node index.js migrate",
-    "sync-service-categories": "babel-node index.js sync-service-categories",
     "seed": "babel-node index.js seed",
     "start": "babel-node index.js",
     "watch": "nodemon -e \"gql js\" --exec \"npm start\"",

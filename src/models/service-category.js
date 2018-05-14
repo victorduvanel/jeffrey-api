@@ -1,5 +1,5 @@
-import bookshelf           from '../services/bookshelf';
-import Base                from './base';
+import bookshelf from '../services/bookshelf';
+import Base      from './base';
 
 const ServiceCategory = Base.extend({
   tableName: 'service_categories',

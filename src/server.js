@@ -11,7 +11,6 @@ import config                          from './config';
 import routes                          from './routes';
 
 import graphql, { subscriptionServer } from './services/graphql';
-import pubsub                          from './services/graphql/pubsub';
 
 import logger                          from './middlewares/logger';
 import corsPolicy                      from './middlewares/cors-policy';
@@ -19,24 +18,8 @@ import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 
-import User                            from './models/user';
-import Conversation                    from './models/conversation';
-
-// import datastore from './services/google/datastore';
-// const query = datastore.createQuery('locations')
-//   .filter('user_id', '=', '3c656ce5-1e21-4332-a268-d7599f2f0e40')
-//   .order('created_at', { descending: true });
-//
-// datastore
-//   .runQuery(query)
-//   .then(results => {
-//     console.log(results[0].map(res => res.location));
-//   })
-//   .catch(err => {
-//     console.error('ERROR:', err);
-//   });
-
 export const httpServer = http.createServer();
+
 const app = express();
 
 app.disable('x-powered-by');
@@ -45,8 +28,6 @@ if (config.PRODUCTION) {
 }
 
 app.use(logger, corsPolicy, router, notFound, errorHandler);
-
-//notificationService(httpServer);
 
 httpServer.on('request', app);
 
@@ -57,32 +38,12 @@ get('/graphiql', routes.graphiql.get);
 
 // ROUTES
 get('/', async (req, res) => {
-  // const user = await User
-  //   .forge({ email: 'wr.wllm@gmail.com' })
-  //   .fetch();
-
-  // await user.pushNotification({
-  //   body: 'Salut!!!!'
-  // });
-
-
-  // pubsub.publish('AWESOME_TOPIC', {
-  //   newMessage: {
-  //     id: '01b5d767-08e9-4406-83b3-bc52ec7731bf',
-  //     message: 'Kugkbhkl',
-  //     time: new Date(),
-  //     fromId: '3c656ce5-1e21-4332-a268-d7599f2f0e40'
-  //   }
-  // });
-
   res.send({ hello: 'world' });
 });
-// post('/webhook', routes.webhook.post);
 
 post('/ping', routes.ping.post);
 
 post('/signup', routes.signup.post);
-post('/activate/:code', routes.activate.post);
 
 get('/me', routes.me.get);
 post('/me', routes.me.post);

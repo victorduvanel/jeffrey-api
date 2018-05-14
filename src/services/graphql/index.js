@@ -13,6 +13,7 @@ import Conversation             from '../../models/conversation';
 import AccessToken              from '../../models/access-token';
 import Country                  from '../../models/country';
 import User                     from '../../models/user';
+import PendingUser              from '../../models/pending-user';
 import PostalAddress            from '../../models/postal-address';
 import Business                 from '../../models/business';
 import Review                   from '../../models/review';
@@ -45,6 +46,7 @@ type Subscription {
 }
 type Mutation {
   newMessage(conversationId: String!, message: String!): Message
+  activate(activationCode: String!, firstName: String!, lastName: String!): Boolean
   updatePassword(password: String!): Boolean
   providerDisponibility(disponibility: Boolean!): Boolean
   personalDetails(details: PersonalDetails): Boolean
@@ -135,6 +137,7 @@ const resolvers = _.merge(
   Conversation.resolver,
   PostalAddress.resolver,
   User.resolver,
+  PendingUser.resolver,
   Business.resolver,
   Review.resolver
 );
