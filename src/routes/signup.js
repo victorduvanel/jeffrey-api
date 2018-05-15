@@ -12,7 +12,7 @@ export const post = [
   localized,
   async (req, res) => {
     const { body } = req;
-    const { email, captcha } = body;
+    const { email, captcha, uri_prefix: uriPrefix } = body;
     const googleAuthToken = body['google-auth-token'];
     const facebookAuthToken = body['facebook-auth-token'];
 
@@ -64,7 +64,7 @@ export const post = [
 
     if (user) {
       // throw errors.BadRequest.detail('email already used');
-      await user.sendLoginEmail(req.i18n);
+      await user.sendLoginEmail(req.i18n, uriPrefix);
 
       res.send({
         success: true,

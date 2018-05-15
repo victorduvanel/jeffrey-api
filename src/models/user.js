@@ -363,13 +363,15 @@ const User = Base.extend({
     }));
   },
 
-  async sendLoginEmail(i18n) {
+  async sendLoginEmail(i18n, uriPrefix) {
     const emailAddress = this.get('email');
     const loginToken = await LoginToken.create({ user: this });
 
+    const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
+
     const message = await mjml.render('email/login', i18n, {
       user: this.serialize(),
-      loginLink: `${config.webappProtocol}://${config.webappHost}/app-link/login/${loginToken.get('id')}`,
+      loginLink: `${prefix}login/${loginToken.get('id')}`,
     });
 
     return sendEmail({
