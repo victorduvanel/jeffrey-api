@@ -46,7 +46,7 @@ type Subscription {
 }
 type Mutation {
   newMessage(conversationId: String!, message: String!): Message
-  activate(activationCode: String!, firstName: String!, lastName: String!): Boolean
+  activate(activationCode: String!, firstName: String!, lastName: String!): String
   updatePassword(password: String!): Boolean
   providerDisponibility(disponibility: Boolean!): Boolean
   personalDetails(details: PersonalDetails): Boolean
