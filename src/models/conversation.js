@@ -32,7 +32,7 @@ const Conversation = Base.extend({
       });
 
       user.sendMessage({
-        body: 'New message',
+        body: 'New message'
       });
     });
   }
@@ -40,13 +40,26 @@ const Conversation = Base.extend({
   create: async function(participants) {
     const { knex } = bookshelf;
     const id = uuid.v4();
+    const participantIds = [];
+
+    participants.forEach((participant) => {
+      const id = participant.get('id');
+      if (participantIds.indexOf(id) === -1) {
+        participantIds.push(id);
+      }
+    });
 
     await knex.transaction(async (t) => {
-      await knex('conversations').insert({ id });
-      await Promise.map(participants, async (participant) => (
+      await knex('conversations')
+        .insert({
+          id,
+          created_at: knex.raw('NOW()'),
+          updated_at: knex.raw('NOW()'),
+        });
+      await Promise.map(participantIds, async (participantId) => (
         knex('conversation_participants').transacting(t).insert({
           conversation_id: id,
-          user_id: participant.get('id')
+          user_id: participantId
         })
       ));
     });
@@ -55,13 +68,19 @@ const Conversation = Base.extend({
   },
 
   findOrCreate: async function(participants) {
+    const participantIds = [];
+
+    participants.forEach((participant) => {
+      const id = `'${participant.get('id')}'`;
+      if (participantIds.indexOf(id) === -1) {
+        participantIds.push(id);
+      }
+    });
+
     /**
      * We basically need to find the conversation that matches exactly the
      * those participants
      */
-
-    const participantIds = participants.map(participant => `'${participant.get('id')}'`).join();
-
     const conversations = await bookshelf.knex.raw(`
       select conversations.id
       from conversations

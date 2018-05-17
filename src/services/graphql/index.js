@@ -17,6 +17,7 @@ import PendingUser              from '../../models/pending-user';
 import PostalAddress            from '../../models/postal-address';
 import Business                 from '../../models/business';
 import Review                   from '../../models/review';
+import Mission                  from '../../models/mission';
 
 const typeDefs = `
 type Query {
@@ -31,6 +32,14 @@ type Query {
     offset: Int!
     limit: Int!
   ): [User]
+  providers2(
+    serviceCategoryId: ID!
+    lat: Float!
+    lng: Float!
+    offset: Int!
+    limit: Int!
+  ): [User]
+  history: [User]
   provider(providerId: ID!): User
   services: [Service]
   serviceCategories: [ServiceCategory]
@@ -45,6 +54,7 @@ type Subscription {
   newMessage(conversationId: String!): Message
 }
 type Mutation {
+  newMission(startDate: String!, price: Int!, clientId: ID!, serviceCategoryId: ID!): Boolean
   newMessage(conversationId: String!, message: String!): Message
   activate(activationCode: String!, firstName: String!, lastName: String!): String
   updatePassword(password: String!): Boolean
@@ -67,6 +77,15 @@ enum Currency {
 
 const base = {
   Query: {
+    history: async (_, __, { user }) => {
+      if (!user) {
+        return null;
+      }
+
+      const providers = await Mission.providerHistory(user);
+
+      return providers.toArray().map(user => user.serialize());
+    },
   },
   Mutation: {
     updatePassword: async (_, { password }, { user }) => {
@@ -139,7 +158,8 @@ const resolvers = _.merge(
   User.resolver,
   PendingUser.resolver,
   Business.resolver,
-  Review.resolver
+  Review.resolver,
+  Mission.resolver
 );
 
 const types = [
@@ -152,6 +172,7 @@ const types = [
   Conversation.graphqlDef(),
   Business.graphqlDef(),
   Review.graphqlDef(),
+  Mission.graphqlDef(),
   typeDefs
 ].join();
 
