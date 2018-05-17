@@ -1,5 +1,6 @@
 import uuid                     from 'uuid';
 import Base                     from './base';
+import config                   from '../config';
 import bookshelf                from '../services/bookshelf';
 import knex                     from '../services/knex';
 import * as libEmail            from '../lib/email';
@@ -17,7 +18,7 @@ const PendingUser = Base.extend({
       .del();
   }
 }, {
-  createFromEmail: async function(i18n, emailAddress) {
+  createFromEmail: async function(i18n, emailAddress, uriPrefix) {
     const id = uuid.v4();
 
     emailAddress = libEmail.sanitize(emailAddress);
@@ -32,8 +33,10 @@ const PendingUser = Base.extend({
     })
       .save(null, { method: 'insert' });
 
+    const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
+
     const message = await mjml.render('email/register', i18n, {
-      activationLink: `http://192.168.1.5:3000/app-link/activate?code=${id}`,
+      activationLink: `${prefix}activate/${id}`,
     });
 
     return sendEmail({
@@ -86,9 +89,7 @@ const PendingUser = Base.extend({
         const token = await user.createAccessToken({});
         await pendingUser.cleanup();
 
-        return {
-          token: token.get('token')
-        };
+        return token.get('token');
       }
     }
   }

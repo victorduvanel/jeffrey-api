@@ -497,6 +497,36 @@ const User = Base.extend({
       });
   },
 
+  findProviders: async function({
+    serviceCategoryId,
+    lat,
+    lng,
+    offset,
+    limit
+  }) {
+    if (typeof lat !== 'number' || typeof lng !== 'number') {
+      throw new Error('invalid location parameter');
+    }
+
+    const AREA_RADIUS = 6.21371; // 10km in miles
+
+    const providers = await User
+      .query((qb) => {
+        qb.join('provider_prices', 'provider_prices.user_id', 'users.id');
+        qb.where('users.is_provider', '=', true);
+        qb.where('users.is_available', '=', true);
+        qb.where('provider_prices.service_category_id', '=', serviceCategoryId);
+        qb.whereRaw(`users.location <@> point(${lat}, ${lng}) <= ${AREA_RADIUS}`);
+        qb.whereNotNull('provider_prices.price');
+        qb.orderByRaw(`users.location <@> point(${lat}, ${lng}) asc`);
+        qb.limit(limit);
+        qb.offset(offset);
+      })
+      .fetchAll();
+
+    return providers;
+   },
+
   graphqlDef() {
     return `
       enum Gender {
@@ -599,6 +629,25 @@ const User = Base.extend({
           .fetchAll();
 
         return Promise.map(users.toArray(), async user => user.serialize());
+      },
+
+      providers2: async (_, __, ___, { variableValues }) => {
+        const {
+          serviceCategoryId,
+          lat,
+          lng,
+          offset,
+          limit
+        } = variableValues;
+
+        const providers = await User.findProviders({
+          serviceCategoryId,
+          lat,
+          lng,
+          offset,
+          limit
+        });
+        return providers.toArray().map(user => user.serialize());
       }
     },
 

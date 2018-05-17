@@ -63,7 +63,6 @@ export const post = [
     const user = await User.forge({ email }).fetch();
 
     if (user) {
-      // throw errors.BadRequest.detail('email already used');
       await user.sendLoginEmail(req.i18n, uriPrefix);
 
       res.send({
@@ -74,7 +73,7 @@ export const post = [
       return;
     }
 
-    await PendingUser.createFromEmail(req.i18n, email);
+    await PendingUser.createFromEmail(req.i18n, email, uriPrefix);
 
     res.send({
       success: true,
