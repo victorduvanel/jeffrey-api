@@ -106,7 +106,7 @@ const Mission = Base.extend({
           return false;
         }
 
-        const mission = await Mission.create({
+        await Mission.create({
           startDate,
           price,
           currency: 'EUR',
@@ -115,11 +115,19 @@ const Mission = Base.extend({
           serviceCategory
         });
 
-        console.log(mission);
         return true;
       }
     },
     Query: {
+      history: async (_, __, { user }) => {
+        if (!user) {
+          return null;
+        }
+
+        const providers = await Mission.providerHistory(user);
+
+        return providers.toArray().map(user => user.serialize());
+      },
     }
   }
 });

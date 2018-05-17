@@ -525,7 +525,7 @@ const User = Base.extend({
       .fetchAll();
 
     return providers;
-   },
+  },
 
   graphqlDef() {
     return `
@@ -652,13 +652,20 @@ const User = Base.extend({
     },
 
     Mutation: {
+      updatePassword: async (_, { password }, { user }) => {
+        if (!user) {
+          return false;
+        }
+        await user.updatePassword(password);
+        return true;
+      },
+
       bankAccount: async (_, { details }, { user }) => {
         if (!user) {
           return false;
         }
 
         const stripeAccount = await user.stripeAccount();
-
         await stripe.accounts.update(stripeAccount.get('id'), {
           external_account: {
             account_holder_name: details.holderName,

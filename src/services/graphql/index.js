@@ -76,28 +76,8 @@ enum Currency {
 `;
 
 const base = {
-  Query: {
-    history: async (_, __, { user }) => {
-      if (!user) {
-        return null;
-      }
-
-      const providers = await Mission.providerHistory(user);
-
-      return providers.toArray().map(user => user.serialize());
-    },
-  },
-  Mutation: {
-    updatePassword: async (_, { password }, { user }) => {
-      if (!user) {
-        return false;
-      }
-
-      await user.updatePassword(password);
-
-      return true;
-    }
-  },
+  Query: {},
+  Mutation: {},
   Subscription: {}
 };
 
