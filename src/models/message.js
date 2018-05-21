@@ -89,7 +89,6 @@ const Message = Base.extend({
           if (!user) {
             return null;
           }
-
           return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
         }
       }

@@ -21,15 +21,19 @@ const Conversation = Base.extend({
     await this.load(['participants']);
     const participants = this.related('participants');
 
-    participants.map(user => {
-      pubsub.publish(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`, {
-        newMessage: {
-          id: message.get('id'),
-          message: message.get('body'),
-          time: message.get('createdAt'),
-          fromId: message.get('fromId')
+
+    participants.forEach(user => {
+      pubsub.publish(
+        `${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`,
+        {
+          newMessage: {
+            id: message.get('id'),
+            message: message.get('body'),
+            time: message.get('createdAt'),
+            fromId: message.get('fromId')
+          }
         }
-      });
+      );
 
       user.sendMessage({
         body: 'New message'

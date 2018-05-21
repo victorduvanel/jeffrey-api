@@ -52,7 +52,7 @@ const Mission = Base.extend({
     return mission;
   },
 
-  providerHistory: async function(client) {
+  clientHistory: async function(client) {
     const userIds = await bookshelf.knex
       .select('provider_id')
       .from('missions')
@@ -64,6 +64,23 @@ const Mission = Base.extend({
         qb.whereIn(
           'id',
           userIds.map(user => user.provider_id)
+        );
+      })
+      .fetchAll();
+  },
+
+  providerHistory: async function(provider) {
+    const userIds = await bookshelf.knex
+      .select('client_id')
+      .from('missions')
+      .where('provider_id', '=', provider.get('id'))
+      .groupBy('client_id');
+
+    return User
+      .query((qb) => {
+        qb.whereIn(
+          'id',
+          userIds.map(user => user.client_id)
         );
       })
       .fetchAll();
@@ -119,13 +136,21 @@ const Mission = Base.extend({
       }
     },
     Query: {
-      history: async (_, __, { user }) => {
+      clientHistory: async (_, __, { user }) => {
+        if (!user) {
+          return null;
+        }
+
+        const providers = await Mission.clientHistory(user);
+        return providers.toArray().map(user => user.serialize());
+      },
+
+      providerHistory: async (_, __, { user }) => {
         if (!user) {
           return null;
         }
 
         const providers = await Mission.providerHistory(user);
-
         return providers.toArray().map(user => user.serialize());
       },
     }

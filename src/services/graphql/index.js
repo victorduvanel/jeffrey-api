@@ -40,7 +40,8 @@ type Query {
     offset: Int!
     limit: Int!
   ): [User]
-  history: [User]
+  clientHistory: [User]
+  providerHistory: [User]
   provider(providerId: ID!): User
   services: [Service]
   serviceCategories: [ServiceCategory]
@@ -174,7 +175,9 @@ export const subscriptionServer = (websocketServer) => SubscriptionServer.create
     onConnect: async ({ token }, socket) => {
       if (!token) {
         socket.close();
+        return;
       }
+
       try {
         if (token) {
           const accessToken = await AccessToken.find(token);
