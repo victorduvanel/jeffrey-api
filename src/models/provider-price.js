@@ -1,6 +1,6 @@
-import uuid                         from 'uuid';
-import bookshelf                    from '../services/bookshelf';
-import Base                         from './base';
+import uuid      from 'uuid';
+import bookshelf from '../services/bookshelf';
+import Base      from './base';
 
 const ProviderPrice = Base.extend({
   tableName: 'provider_prices',
@@ -11,6 +11,15 @@ const ProviderPrice = Base.extend({
 
   serviceCategory() {
     return this.belongsTo('ServiceCategory');
+  },
+
+  serialize() {
+    return {
+      id: this.get('id'),
+      price: this.get('price'),
+      serviceCategoryId: this.get('serviceCategoryId'),
+      currency: 'EUR'
+    };
   }
 }, {
   create: async function({ user, price, serviceCategory }) {
@@ -24,6 +33,17 @@ const ProviderPrice = Base.extend({
     })
       .save(null, { method: 'insert' });
   },
+
+  graphqlDef() {
+    return `
+      type ProviderPrice {
+        id: ID!
+        price: Int!
+        currency: Currency!
+        serviceCategoryId: ID!
+      }
+    `;
+  }
 });
 
 export default bookshelf.model('ProviderPrice', ProviderPrice);

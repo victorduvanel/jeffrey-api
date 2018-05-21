@@ -18,6 +18,7 @@ import PostalAddress            from '../../models/postal-address';
 import Business                 from '../../models/business';
 import Review                   from '../../models/review';
 import Mission                  from '../../models/mission';
+import ProviderPrice            from '../../models/provider-price';
 
 const typeDefs = `
 type Query {
@@ -153,6 +154,7 @@ const types = [
   Business.graphqlDef(),
   Review.graphqlDef(),
   Mission.graphqlDef(),
+  ProviderPrice.graphqlDef(),
   typeDefs
 ].join();
 

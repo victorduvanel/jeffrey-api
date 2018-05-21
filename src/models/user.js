@@ -37,6 +37,10 @@ const User = Base.extend({
     return this.hasMany('UserDevice', 'owner_id');
   },
 
+  providerPrices() {
+    return this.hasMany('ProviderPrice');
+  },
+
   reviews() {
     return this.hasMany('Review', 'provider_id');
   },
@@ -562,8 +566,8 @@ const User = Base.extend({
         reviews: [Review]
         rank: Float
         bio: String
+        prices: [ProviderPrice]
       }
-
       enum BankAccountType {
         company
         individual
@@ -602,6 +606,18 @@ const User = Base.extend({
           return null;
         }
         return postalAddress.serialize();
+      },
+
+      prices: async({ id }) => {
+        const user = await User.find(id);
+        if (!user) {
+          return null;
+        }
+
+        await user.load(['providerPrices']);
+        const prices = user.related('providerPrices');
+
+        return prices.toArray().map(price => price.serialize());
       }
     },
     Query: {
