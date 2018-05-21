@@ -631,15 +631,13 @@ const User = Base.extend({
         return Promise.map(users.toArray(), async user => user.serialize());
       },
 
-      providers2: async (_, __, ___, { variableValues }) => {
-        const {
-          serviceCategoryId,
-          lat,
-          lng,
-          offset,
-          limit
-        } = variableValues;
-
+      providers2: async (_, {
+        serviceCategoryId,
+        lat,
+        lng,
+        offset,
+        limit
+      }) => {
         const providers = await User.findProviders({
           serviceCategoryId,
           lat,
