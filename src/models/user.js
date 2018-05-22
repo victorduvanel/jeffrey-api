@@ -520,9 +520,9 @@ const User = Base.extend({
         qb.where('users.is_provider', '=', true);
         qb.where('users.is_available', '=', true);
         qb.where('provider_prices.service_category_id', '=', serviceCategoryId);
-        qb.whereRaw(`users.location <@> point(${lat}, ${lng}) <= ${AREA_RADIUS}`);
+        qb.whereRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) <= ${AREA_RADIUS}`);
         qb.whereNotNull('provider_prices.price');
-        qb.orderByRaw(`users.location <@> point(${lat}, ${lng}) asc`);
+        qb.orderByRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) asc`);
         qb.limit(limit);
         qb.offset(offset);
       })

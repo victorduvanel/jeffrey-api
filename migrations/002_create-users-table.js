@@ -17,7 +17,8 @@ function up(knex) {
       table.text('bio');
       table.boolean('is_provider');
       table.boolean('is_available');
-      table.specificType('location', 'POINT');
+      table.float('lat');
+      table.float('lng');
       table
         .uuid('postal_address_id')
         .references('postal_addresses.id')
