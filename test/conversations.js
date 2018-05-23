@@ -46,7 +46,6 @@ describe('Conversations', () => {
       )
     );
 
-
     const conversationABsec = await Conversation.findOrCreate([
       userA,
       userB
@@ -54,9 +53,9 @@ describe('Conversations', () => {
 
     assert(conversationAB.get('id') === conversationABsec.get('id'));
 
-    // await conversationAB.destroy();
-    // await conversationBC.destroy();
-    // await conversationAC.destroy();
-    // await userA.destroy();
+    await conversationAB.destroy();
+    await conversationBC.destroy();
+    await conversationAC.destroy();
+    await userA.destroy();
   });
 });

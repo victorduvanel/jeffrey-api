@@ -2,7 +2,7 @@ import _                        from 'lodash';
 import bodyParser               from 'body-parser';
 import { graphqlExpress }       from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
-import { execute, subscribe }   from 'graphql';
+import { execute, subscribe, GraphQLScalarType, formatError } from 'graphql';
 import { SubscriptionServer }   from 'subscriptions-transport-ws';
 import geocode                  from '../google/geocode';
 import oauth2                   from '../../middlewares/oauth2';
@@ -21,6 +21,8 @@ import Mission                  from '../../models/mission';
 import ProviderPrice            from '../../models/provider-price';
 
 const typeDefs = `
+scalar Date
+
 type Query {
   currentUser: User
   businessDetails: Business
@@ -80,7 +82,29 @@ enum Currency {
 const base = {
   Query: {},
   Mutation: {},
-  Subscription: {}
+  Subscription: {},
+
+  Date: new GraphQLScalarType({
+    name: 'Date',
+    description: 'Date custom scalar type',
+    parseValue(value) {
+      return new Date(value);
+    },
+    serialize(value) {
+      /*
+       * The value can be already serialized when it when through redis already (subscription)
+       */
+      if (value.hasOwnProperty('toISOString')) {
+        // throw new Error('Date object expected');
+        return value.toISOString();
+      }
+      return value;
+    },
+    parseLiteral(/* ast */) {
+      console.log('parseLiteral');
+      return null;
+    },
+  })
 };
 
 const locality = {
@@ -208,6 +232,15 @@ export default [
     return next();
   },
   (req, res, next) => {
-    graphqlExpress({ schema, context: { user: req.user } })(req, res, next);
+    graphqlExpress({
+      schema,
+      context: {
+        user: req.user
+      },
+      formatError: (err) => {
+        console.error(err);
+        return formatError(err);
+      }
+    })(req, res, next);
   }
 ];
