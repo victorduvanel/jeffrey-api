@@ -1,4 +1,3 @@
-import moment          from 'moment';
 import uuid            from 'uuid';
 import bookshelf       from '../services/bookshelf';
 import Base            from './base';
@@ -21,12 +20,21 @@ const Mission = Base.extend({
   },
 
   serialize() {
-    const startDate = moment(this.get('startDate')).format('YYYY-MM-DD HH:mm:ss');
+    const startDate = this.get('startDate').toISOString();
+    let endDate;
+    if (this.get('endDate')) {
+      endDate = this.get('endDate').toISOString();
+    }
+
     return {
       id: this.get('id'),
       price: this.get('price'),
       currency: this.get('priceCurrency'),
-      startDate
+      status: this.get('status'),
+      startDate,
+      endDate,
+      accepted: !!this.get('accepted'),
+      createdAt: this.get('createdAt')
     };
   }
 }, {
@@ -88,13 +96,22 @@ const Mission = Base.extend({
 
   graphqlDef: function() {
     return `
+      enum MissionStatus {
+        accepted
+        refused
+        canceled
+        pending
+      }
       type Mission {
         id: ID!
+        status: MissionStatus!
         client: User!
         provider: User!
         price: Int!
         currency: Currency!
         startDate: String!
+        endDate: String
+        createdAt: Date!
       }
     `;
   },
@@ -104,7 +121,12 @@ const Mission = Base.extend({
       client: async({ id }) => {
         const mission = await Mission.find(id);
         await mission.load(['client']);
-        return mission.related('client');
+        return mission.related('client').serialize();
+      },
+      provider: async({ id }) => {
+        const mission = await Mission.find(id);
+        await mission.load(['provider']);
+        return mission.related('provider').serialize();
       }
     },
     Mutation: {
@@ -127,6 +149,7 @@ const Mission = Base.extend({
           startDate,
           price,
           currency: 'EUR',
+          status: 'pending',
           provider: user,
           client,
           serviceCategory

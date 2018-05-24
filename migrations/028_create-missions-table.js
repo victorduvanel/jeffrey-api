@@ -33,7 +33,12 @@ function up(knex) {
     table.dateTime('start_date');
     table.dateTime('end_date');
 
-    table.boolean('accepted');
+    table.enum('status', [
+      'accepted',
+      'refused',
+      'canceled',
+      'pending'
+    ]);
 
     table.dateTime('created_at');
     table.dateTime('updated_at');

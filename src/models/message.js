@@ -13,6 +13,15 @@ const Message = Base.extend({
 
   from() {
     return this.belongsTo('User', 'from_id');
+  },
+
+  serialize() {
+    return {
+      id: this.get('id'),
+      message: this.get('body'),
+      fromId: this.get('fromId'),
+      createdAt: this.get('createdAt')
+    };
   }
 }, {
   create: async function({ from, body, conversation }) {
@@ -45,7 +54,7 @@ const Message = Base.extend({
         id: String!
         message: String!
         from: User!
-        time: String!
+        createdAt: Date!
       }
     `;
   },
@@ -67,17 +76,16 @@ const Message = Base.extend({
       newMessage: async (_, { conversationId, message: body }, { user }) => {
         try {
           const conversation = await Conversation.find(conversationId);
+          if (!conversation) {
+            throw new Error('conversation not found');
+          }
+
           await conversation.load(['participants']);
 
           const message = await Message.create({ from: user, body, conversation });
           conversation.notifyParticipants(message);
 
-          return {
-            id: message.get('id'),
-            message: message.get('body'),
-            from: message.get('fromId'),
-            time: message.get('createdAt')
-          };
+          return message.serialize();
         } catch (err) {
           console.error(err);
         }
