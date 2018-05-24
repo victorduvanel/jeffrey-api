@@ -53,7 +53,8 @@ const Mission = Base.extend({
         priceCurrency: currency,
         providerId: provider.get('id'),
         clientId: client.get('id'),
-        serviceCategoryId: serviceCategory.get('id')
+        serviceCategoryId: serviceCategory.get('id'),
+        status: 'pending'
       })
       .save(null, { method: 'insert' });
 
@@ -109,8 +110,8 @@ const Mission = Base.extend({
         provider: User!
         price: Int!
         currency: Currency!
-        startDate: String!
-        endDate: String
+        startDate: Date!
+        endDate: Date
         createdAt: Date!
       }
     `;
