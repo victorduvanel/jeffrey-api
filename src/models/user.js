@@ -661,7 +661,10 @@ const User = Base.extend({
           offset,
           limit
         });
-        return providers.toArray().map(user => user.serialize());
+
+        return providers.toArray().map(user => {
+          return user.serialize();
+        });
       }
     },
 
