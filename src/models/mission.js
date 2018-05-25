@@ -1,8 +1,7 @@
-import uuid            from 'uuid';
-import bookshelf       from '../services/bookshelf';
-import Base            from './base';
-import User            from './user';
-import ServiceCategory from './service-category';
+import uuid      from 'uuid';
+import bookshelf from '../services/bookshelf';
+import Base      from './base';
+import User      from './user';
 
 const Mission = Base.extend({
   tableName: 'missions',
@@ -34,7 +33,8 @@ const Mission = Base.extend({
       startDate,
       endDate,
       accepted: !!this.get('accepted'),
-      createdAt: this.get('createdAt')
+      createdAt: this.get('createdAt'),
+      serviceCategory: this.get('serviceCategoryId')
     };
   }
 }, {
@@ -61,7 +61,8 @@ const Mission = Base.extend({
     return mission;
   },
 
-  clientHistory: async function(client) {
+  clientHistory2: async function(client) {
+    //console.log('client: ', client);
     const userIds = await bookshelf.knex
       .select('provider_id')
       .from('missions')
@@ -76,6 +77,18 @@ const Mission = Base.extend({
         );
       })
       .fetchAll();
+  },
+
+  clientHistory: async ({user, providerId}) => {
+    const missions = await Mission
+      .query((qb) => {
+        qb.where('client_id', '=', user.get('id'));
+        qb.where('provider_id', '=', providerId);
+        qb.where('status', '=', 'accepted');
+        qb.whereNotNull('end_date');
+      })
+      .fetchAll();
+    return missions;
   },
 
   providerHistory: async function(provider) {

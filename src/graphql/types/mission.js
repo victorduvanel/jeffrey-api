@@ -18,6 +18,7 @@ type Mission {
   startDate: Date!
   endDate: Date
   createdAt: Date!
+  serviceCategory: String
 }
 `;
 
