@@ -85,6 +85,7 @@ const Mission = Base.extend({
       .query((qb) => {
         qb.where('client_id', '=', user.get('id'))
         qb.where('provider_id', '=', providerId)
+        qb.where('status', '=', 'accepted')
         qb.whereRaw('end_date <= ?', [new Date()]);
       })
       .fetchAll();
