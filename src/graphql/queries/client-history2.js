@@ -4,13 +4,13 @@ import Mission              from '../../models/mission';
 import auth                 from '../middlewares/auth';
 import { registerQuery }    from '../registry';
 
-const def = 'providerHistory: [User]';
+const def = 'clientHistory2: [User]';
 
-const providerHistory = async (_, __, { user }) => {
-  const clients = await Mission.providerHistory(user);
-  return Promise.all(clients.toArray().map(user => user.serialize()));
+const clientHistory2 = async (_, __, { user }) => {
+  const providers = await Mission.clientHistory2(user);
+  return Promise.all(providers.toArray().map(user => user.serialize()));
 };
 
 registerQuery(def, {
-  providerHistory: combineResolvers(auth, providerHistory)
+  clientHistory: combineResolvers(auth, clientHistory2)
 });

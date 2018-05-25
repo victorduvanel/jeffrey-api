@@ -62,7 +62,6 @@ const Mission = Base.extend({
   },
 
   clientHistory2: async function(client) {
-    //console.log('client: ', client);
     const userIds = await bookshelf.knex
       .select('provider_id')
       .from('missions')

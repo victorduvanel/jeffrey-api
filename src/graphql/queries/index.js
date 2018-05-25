@@ -4,6 +4,7 @@ import './providers';
 import './providers2';
 import './onboarding-progress';
 import './client-history';
+import './client-history2';
 import './provider-history';
 import './service-categories';
 import './service-category';
