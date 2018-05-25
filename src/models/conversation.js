@@ -4,7 +4,6 @@ import { NotFound } from '../errors';
 import bookshelf    from '../services/bookshelf';
 import Base         from './base';
 import User         from './user';
-import Mission      from './mission';
 import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from '../services/graphql/pubsub';
 
 const Conversation = Base.extend({
@@ -20,8 +19,12 @@ const Conversation = Base.extend({
 
   async notifyParticipants(message) {
     await this.load(['participants']);
+    await message.load(['from']);
+
     const participants = this.related('participants');
+    const from = message.related('from');
     const payload = message.serialize();
+    const firstName = from.get('firstName');
 
     participants.forEach(user => {
       pubsub.publish(
@@ -32,7 +35,7 @@ const Conversation = Base.extend({
       );
 
       user.sendMessage({
-        body: 'New message'
+        body: firstName ? `${firstName} sent you a message` : 'New message'
       });
     });
   }
@@ -110,99 +113,6 @@ const Conversation = Base.extend({
 
   find: function(id) {
     return this.forge({ id }).fetch();
-  },
-
-  graphqlDef: function() {
-    return `
-      type Conversation {
-        id: String!
-        participants: [User]!
-        messages: [Message]!
-        missions: [Mission]
-      }
-    `;
-  },
-
-  resolver: {
-    Query: {
-      conversation: async (_, { userId }, { user } /*, params */) => {
-        if (!user) {
-          throw new Error('this resource requires authentication');
-        }
-
-        const participant = await User.find(userId);
-        if (!participant) {
-          throw new Error('participant not found');
-        }
-
-        if (user.get('id') === participant.get('id')) {
-          throw new Error('Invalid participant id');
-        }
-
-        const conversation = await Conversation.findOrCreate([
-          user,
-          participant
-        ]);
-
-        if (!conversation) {
-          throw NotFound;
-        }
-
-        await conversation.load(['participants']);
-
-        const participants = conversation.related('participants');
-        if (participants.map(user => user.id).includes(user.get('id'))) {
-          return {
-            id: conversation.get('id')
-          };
-        }
-
-        return null;
-      }
-    },
-
-    Conversation: {
-      participants: async({ id }) => {
-        const conversation = await Conversation.find(id);
-        if (!conversation) {
-          throw new Error('conversation not found');
-        }
-        await conversation.load(['participants']);
-        const participants = conversation.related('participants').toArray();
-        return await Promise.all(participants.map(p => p.serialize()));
-      },
-
-      messages: async({ id }) => {
-        const conversation = await Conversation.find(id);
-
-        await conversation.load([{
-          messages: query => query.orderBy('created_at', 'desc')
-        }]);
-
-        return conversation.related('messages').invokeMap('serialize');
-      },
-
-      missions: async ({ id }) => {
-        const conversation = await Conversation.find(id);
-        if (!conversation) {
-          return null;
-        }
-
-        await conversation.load(['participants']);
-
-        const participantIds = conversation.related('participants')
-          .map(participant => participant.get('id'));
-
-        const missions = await Mission
-          .query((qb) => {
-            qb.whereIn('provider_id', participantIds);
-            qb.whereIn('client_id', participantIds);
-          })
-          .fetchAll();
-
-        return missions.map(mission => mission.serialize());
-      }
-    }
   }
 });
 

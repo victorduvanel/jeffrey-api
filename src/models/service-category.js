@@ -44,59 +44,6 @@ const ServiceCategory = Base.extend({
     );
 
     return this.find(id);
-  },
-
-  graphqlDef: function() {
-    return `
-      type ServiceCategory {
-        id: ID!
-        slug: String!
-        color: String
-        subCategories: [ServiceCategory]
-      }
-    `;
-  },
-
-  resolver: {
-    ServiceCategory: {
-      subCategories: async ({ id }) => {
-        const categories = await ServiceCategory
-          .query((qb) => {
-            qb.where('parent_id', '=', id);
-            qb.orderBy('ordinal_position');
-          })
-          .fetchAll();
-
-        return categories.toArray().map(category => category.serialize());
-      }
-    },
-    Query: {
-      serviceCategory: async (_, { categoryId: id }) => {
-        const category = await ServiceCategory.find(id);
-
-        return category.serialize();
-      },
-
-      serviceCategories:  async function() {
-        const categories = await ServiceCategory
-          .query((qb) => {
-            qb.orderBy('ordinal_position');
-          })
-          .fetchAll();
-        const rootCategories = categories.filter(category => category.get('parentId') === null);
-
-        const categoryMapper = (category) => {
-          const attr = category.serialize();
-
-          attr.subCategories = categories
-            .filter(subCat => subCat.get('parentId') === category.get('id'))
-            .map(categoryMapper);
-          return attr;
-        };
-
-        return rootCategories.map(categoryMapper);
-      }
-    }
   }
 });
 

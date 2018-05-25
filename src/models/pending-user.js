@@ -1,13 +1,12 @@
-import uuid                     from 'uuid';
-import Base                     from './base';
-import config                   from '../config';
-import bookshelf                from '../services/bookshelf';
-import knex                     from '../services/knex';
-import * as libEmail            from '../lib/email';
-import errors                   from '../errors';
-import * as mjml                from '../services/mjml';
-import { sendEmail }            from '../services/mailgun';
-import User, { DuplicatedUser } from './user';
+import uuid          from 'uuid';
+import Base          from './base';
+import config        from '../config';
+import bookshelf     from '../services/bookshelf';
+import knex          from '../services/knex';
+import * as libEmail from '../lib/email';
+import errors        from '../errors';
+import * as mjml     from '../services/mjml';
+import { sendEmail } from '../services/mailgun';
 
 const PendingUser = Base.extend({
   tableName: 'pending_users',
@@ -50,48 +49,6 @@ const PendingUser = Base.extend({
   find: async function(id) {
     return this.forge({ id })
       .fetch();
-  },
-
-  resolver: {
-    Mutation: {
-      activate: async (_, { activationCode: code, firstName, lastName }) => {
-        if (typeof code !== 'string' || !code.length) {
-          throw errors.MissingParameter.detail('code is required');
-        }
-
-        const pendingUser = await PendingUser.find(code);
-        if (!pendingUser) {
-          throw errors.InvalidParameterType.detail('Invalid code');
-        }
-
-        let user;
-        const email = pendingUser.get('email');
-
-        try {
-          user = await User.create({
-            firstName,
-            lastName,
-            email
-          });
-        } catch (err) {
-          if (err === DuplicatedUser) {
-            await pendingUser.cleanup();
-
-            throw errors.BadRequest.detail('Duplicated user');
-          }
-          throw err;
-        }
-
-        if (!user) {
-          throw errors.BadRequest;
-        }
-
-        const token = await user.createAccessToken({});
-        await pendingUser.cleanup();
-
-        return token.get('token');
-      }
-    }
   }
 });
 

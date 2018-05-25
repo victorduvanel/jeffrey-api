@@ -32,17 +32,6 @@ const ProviderPrice = Base.extend({
       price
     })
       .save(null, { method: 'insert' });
-  },
-
-  graphqlDef() {
-    return `
-      type ProviderPrice {
-        id: ID!
-        price: Int!
-        currency: Currency!
-        serviceCategoryId: ID!
-      }
-    `;
   }
 });
 

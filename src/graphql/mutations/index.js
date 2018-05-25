@@ -1,0 +1,12 @@
+import './user-device';
+import './new-message';
+import './business-details';
+import './update-password';
+import './bank-account';
+import './new-mission';
+import './activate';
+import './provider-disponibility';
+import './personal-details';
+import './set-hourly-rate';
+import './provider-bio';
+import './activate';

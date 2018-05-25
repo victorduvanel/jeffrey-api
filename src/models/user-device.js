@@ -2,6 +2,7 @@ import uuid        from 'uuid';
 import apn         from 'apn';
 import bookshelf   from '../services/bookshelf';
 import apnProvider from '../services/apn';
+import expo        from '../services/expo';
 import Base        from './base';
 
 const UserDevice = Base.extend({
@@ -11,11 +12,20 @@ const UserDevice = Base.extend({
     return this.belongsTo('User');
   },
 
-  pushNotification(args) {
+  pushNotification({ body }) {
     const deviceToken = this.get('token');
-    const notification = new apn.Notification(args);
 
-    return apnProvider.send(notification, deviceToken);
+    // const notification = new apn.Notification(args);
+    // return apnProvider.send(notification, deviceToken);
+
+    expo.sendPushNotificationAsync({
+      to: deviceToken,
+      sound: 'default',
+      body,
+      data: {
+        withSome: 'data'
+      },
+    });
   }
 }, {
   create: async function({ user, token, type }) {

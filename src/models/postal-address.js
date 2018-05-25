@@ -68,20 +68,6 @@ const PostalAddress = Base.extend({
 
     return this.forge({ id, ...props })
       .save(null, { method: 'insert' });
-  },
-
-  graphqlDef: function() {
-    return `
-      type PostalAddress {
-        id: ID!
-        city: String
-        country: String
-        line1: String
-        line2: String
-        postalCode: String
-        state: String
-      }
-    `;
   }
 });
 

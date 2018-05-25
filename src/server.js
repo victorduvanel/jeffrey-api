@@ -1,5 +1,4 @@
 import 'babel-polyfill';
-
 import './services/google/datastore';
 
 import chalk                           from 'chalk';
@@ -10,13 +9,19 @@ import Promise                         from 'bluebird';
 import config                          from './config';
 import routes                          from './routes';
 
-import graphql, { subscriptionServer } from './services/graphql';
+import { subscriptionServer }          from './services/graphql';
 
 import logger                          from './middlewares/logger';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
+import graphqlRoute                    from './routes/graphql';
+
+import './graphql/types';
+import './graphql/mutations';
+import './graphql/subscriptions';
+import './graphql/queries';
 
 export const httpServer = http.createServer();
 
@@ -33,13 +38,13 @@ httpServer.on('request', app);
 
 subscriptionServer(httpServer);
 
-router.use('/graphql', ...graphql);
-get('/graphiql', routes.graphiql.get);
-
 // ROUTES
 get('/', async (req, res) => {
   res.send({ hello: 'world' });
 });
+
+router.use('/graphql', ...(graphqlRoute()));
+get('/graphiql', routes.graphiql.get);
 
 post('/ping', routes.ping.post);
 

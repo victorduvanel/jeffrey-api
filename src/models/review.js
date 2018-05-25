@@ -27,32 +27,6 @@ const Review = Base.extend({
   find: function(id) {
     return this.forge({ id })
       .fetch();
-  },
-
-  graphqlDef() {
-    return `
-      type Review {
-        id: ID!
-        message: String
-        rank: Int
-        author: User
-      }
-    `;
-  },
-
-  resolver: {
-    Review: {
-      author: async({ id }) => {
-        const review = await Review.find(id);
-        if (!review) {
-          return null;
-        }
-
-        await review.load(['author']);
-        const author = review.related('author');
-        return author.serialize();
-      }
-    }
   }
 });
 
