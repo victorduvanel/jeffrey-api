@@ -18,7 +18,7 @@ type Mission {
   startDate: Date!
   endDate: Date
   createdAt: Date!
-  serviceCategory: String
+  serviceCategory: [ServiceCategory]
 }
 `;
 
@@ -33,6 +33,11 @@ const resolver = {
       const mission = await Mission.find(id);
       await mission.load(['provider']);
       return mission.related('provider').serialize();
+    },
+    serviceCategory: async({ id }) => {
+      const mission = await Mission.find(id);
+      await mission.load(['serviceCategory']);
+      return mission.related('serviceCategory').serialize();
     }
   }
 };
