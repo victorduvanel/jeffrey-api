@@ -34,7 +34,8 @@ const Mission = Base.extend({
       startDate,
       endDate,
       accepted: !!this.get('accepted'),
-      createdAt: this.get('createdAt')
+      createdAt: this.get('createdAt'),
+      serviceCategory: this.get('serviceCategoryId')
     };
   }
 }, {
@@ -60,7 +61,8 @@ const Mission = Base.extend({
     return mission;
   },
 
-  clientHistory: async function(client) {
+  clientHistory2: async function(client) {
+    //console.log('client: ', client);
     const userIds = await bookshelf.knex
       .select('provider_id')
       .from('missions')
@@ -75,6 +77,20 @@ const Mission = Base.extend({
         );
       })
       .fetchAll();
+  },
+
+  clientHistory: async ({user, providerId, serviceCategoryId}) => {
+
+    const missions = await Mission
+      .query((qb) => {
+        qb.where('client_id', '=', user.get('id'))
+        qb.where('provider_id', '=', providerId)
+        qb.whereRaw('end_date <= ?', [new Date()]);
+      })
+      .fetchAll();
+
+      return missions;
+
   },
 
   providerHistory: async function(provider) {
@@ -112,6 +128,7 @@ const Mission = Base.extend({
         startDate: String!
         endDate: String
         createdAt: Date!
+        serviceCategory: String
       }
     `;
   },
@@ -159,7 +176,15 @@ const Mission = Base.extend({
       }
     },
     Query: {
-      clientHistory: async (_, __, { user }) => {
+      clientHistory: async (_, { providerId, serviceCategoryId }, { user }) => {
+        if (!user) {
+          return null;
+        }
+
+        const missions = await Mission.clientHistory({user, providerId, serviceCategoryId});
+        return missions.toArray().map(mission => mission.serialize());
+      },
+      clientHistory2: async (_, __, { user }) => {
         if (!user) {
           return null;
         }
@@ -167,7 +192,6 @@ const Mission = Base.extend({
         const providers = await Mission.clientHistory(user);
         return providers.toArray().map(user => user.serialize());
       },
-
       providerHistory: async (_, __, { user }) => {
         if (!user) {
           return null;

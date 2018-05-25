@@ -42,7 +42,11 @@ type Query {
     offset: Int!
     limit: Int!
   ): [User]
-  clientHistory: [User]
+  clientHistory(
+    providerId: ID!,
+    serviceCategoryId: ID!
+  ): [Mission]
+  clientHistory2: [User]
   providerHistory: [User]
   provider(providerId: ID!): User
   services: [Service]
