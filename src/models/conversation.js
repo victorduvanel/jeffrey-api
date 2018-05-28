@@ -1,10 +1,8 @@
-import Promise      from 'bluebird';
-import uuid         from 'uuid';
-import { NotFound } from '../errors';
-import bookshelf    from '../services/bookshelf';
-import Base         from './base';
-import User         from './user';
-import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from '../services/graphql/pubsub';
+import Promise   from 'bluebird';
+import uuid      from 'uuid';
+import bookshelf from '../services/bookshelf';
+import Base      from './base';
+import pubsub, { conversationNewMessageActivityTopic } from '../services/graphql/pubsub';
 
 const Conversation = Base.extend({
   tableName: 'conversations',
@@ -28,7 +26,7 @@ const Conversation = Base.extend({
 
     participants.forEach(user => {
       pubsub.publish(
-        `${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`,
+        conversationNewMessageActivityTopic(this.get('id'), user.get('id')),
         {
           newMessage: payload
         }

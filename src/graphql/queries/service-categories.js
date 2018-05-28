@@ -4,6 +4,7 @@ import { registerQuery } from '../registry';
 const def = 'serviceCategories: [ServiceCategory]';
 
 const serviceCategories = async () => {
+  console.log('serviceCategories');
   const categories = await ServiceCategory
     .query((qb) => {
       qb.orderBy('ordinal_position');

@@ -10,3 +10,4 @@ import './personal-details';
 import './set-hourly-rate';
 import './provider-bio';
 import './activate';
+import './mission-status';

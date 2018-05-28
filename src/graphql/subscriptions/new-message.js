@@ -1,13 +1,13 @@
 import { combineResolvers }     from 'graphql-resolvers';
 import auth                     from '../middlewares/auth';
 import { registerSubscription } from '../registry';
-import pubsub, { CONVERSATION_ACTIVITY_TOPIC } from '../../services/graphql/pubsub';
+import pubsub, { conversationNewMessageActivityTopic } from '../../services/graphql/pubsub';
 
 const def = 'newMessage(conversationId: String!): Message';
 
 const newMessage = {
-  subscribe: combineResolvers(auth, (_, __ /* { conversationId } */, { user }) => {
-    return pubsub.asyncIterator(`${CONVERSATION_ACTIVITY_TOPIC}.${user.get('id')}`);
+  subscribe: combineResolvers(auth, (_, { conversationId }, { user }) => {
+    return pubsub.asyncIterator(conversationNewMessageActivityTopic(conversationId, user.get('id')));
   })
 };
 

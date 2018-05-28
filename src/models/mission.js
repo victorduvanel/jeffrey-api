@@ -1,7 +1,9 @@
-import uuid      from 'uuid';
-import bookshelf from '../services/bookshelf';
-import Base      from './base';
-import User      from './user';
+import uuid         from 'uuid';
+import bookshelf    from '../services/bookshelf';
+import Base         from './base';
+import User         from './user';
+import Conversation from './conversation';
+import pubsub, { conversationNewMissionActivityTopic } from '../services/graphql/pubsub';
 
 const Mission = Base.extend({
   tableName: 'missions',
@@ -19,19 +21,13 @@ const Mission = Base.extend({
   },
 
   serialize() {
-    const startDate = this.get('startDate').toISOString();
-    let endDate;
-    if (this.get('endDate')) {
-      endDate = this.get('endDate').toISOString();
-    }
-
     return {
       id: this.get('id'),
       price: this.get('price'),
       currency: this.get('priceCurrency'),
       status: this.get('status'),
-      startDate,
-      endDate,
+      startDate: this.get('startDate'),
+      endDate: this.get('endDate'),
       accepted: !!this.get('accepted'),
       createdAt: this.get('createdAt'),
       serviceCategory: this.get('serviceCategoryId')
@@ -57,6 +53,30 @@ const Mission = Base.extend({
         status: 'pending'
       })
       .save(null, { method: 'insert' });
+
+    const payload = mission.serialize();
+    console.log(payload);
+
+    const conversation = await Conversation.findOrCreate([provider, client]);
+
+    const firstName = provider.get('firstName');
+    client.sendMessage({
+      body: firstName ? `${firstName} sent you a new quote` : 'New quote'
+    });
+
+    pubsub.publish(
+      conversationNewMissionActivityTopic(conversation.get('id'), client.get('id')),
+      {
+        newMission: payload
+      }
+    );
+
+    pubsub.publish(
+      conversationNewMissionActivityTopic(conversation.get('id'), provider.get('id')),
+      {
+        newMission: payload
+      }
+    );
 
     return mission;
   },
