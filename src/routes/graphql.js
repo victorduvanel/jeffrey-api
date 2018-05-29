@@ -26,6 +26,7 @@ export default () => {
         },
         debug: true,
         formatError: (err) => {
+          console.error(err);
           if (err instanceof GraphQLError) {
             // err.originalError = null;
             return err;
