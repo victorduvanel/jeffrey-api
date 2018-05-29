@@ -4,7 +4,7 @@ const categories = {
   services: [
     {
       slug: 'professional-services',
-      color: 'rgba(148,130,211,1)',
+      color: 'purple',
       ordinalPosition: 6,
       name: {
         'en-GB': 'Professional Services',
@@ -19,7 +19,7 @@ const categories = {
     },
     {
       slug: 'animals',
-      color: 'rgba(255,178,136,1)',
+      color: 'orange',
       ordinalPosition: 5,
       name: {
         'en-GB': 'Animals',
@@ -32,7 +32,7 @@ const categories = {
       services: [
         {
           slug: 'grooming',
-          color: 'rgba(255,178,136,1)',
+          color: 'orange',
           name: {
             'en-GB': 'Grooming',
             'en-US': 'Grooming',
@@ -45,7 +45,7 @@ const categories = {
         },
         {
           slug: 'caretaking',
-          color: 'rgba(255,178,136,1)',
+          color: 'orange',
           name: {
             'en-GB': 'Caretaking',
             'en-US': 'Caretaking',
@@ -58,7 +58,7 @@ const categories = {
         },
         {
           slug: 'feed',
-          color: 'rgba(255,178,136,1)',
+          color: 'orange',
           name: {
             'en-GB': 'Feed',
             'en-US': 'Feed',
@@ -71,7 +71,7 @@ const categories = {
         },
         {
           slug: 'walk',
-          color: 'rgba(255,178,136,1)',
+          color: 'orange',
           name: {
             'en-GB': 'Walk',
             'en-US': 'Walk',
@@ -87,7 +87,7 @@ const categories = {
     },
     {
       slug: 'gardening',
-      color: 'rgba(166,203,136,1)',
+      color: 'green',
       ordinalPosition: 4,
       name: {
         'en-GB': 'gardening',
@@ -100,7 +100,7 @@ const categories = {
       services: [
         {
           slug: 'spray',
-          color: 'rgba(166,203,136,1)',
+          color: 'green',
           name: {
             'en-GB': 'spray',
             'en-US': 'spray',
@@ -113,7 +113,7 @@ const categories = {
         },
         {
           slug: 'rake',
-          color: 'rgba(166,203,136,1)',
+          color: 'green',
           name: {
             'en-GB': 'Rake',
             'en-US': 'Rake',
@@ -126,7 +126,7 @@ const categories = {
         },
         {
           slug: 'plant',
-          color: 'rgba(166,203,136,1)',
+          color: 'green',
           name: {
             'en-GB': 'Plant',
             'en-US': 'Plant',
@@ -139,7 +139,7 @@ const categories = {
         },
         {
           slug: 'mow',
-          color: 'rgba(166,203,136,1)',
+          color: 'green',
           name: {
             'en-GB': 'Mow',
             'en-US': 'Mow',
@@ -155,7 +155,7 @@ const categories = {
     },
     {
       slug: 'purchase-and-delivery',
-      color: 'rgba(127,191,198,1)',
+      color: 'turquois',
       ordinalPosition: 2,
       name: {
         'en-GB': 'Purchase & Delivery',
@@ -168,7 +168,7 @@ const categories = {
       services: [
         {
           slug: 'heavy-packages',
-          color: 'rgba(127,191,198,1)',
+          color: 'turquois',
           name: {
             'en-GB': 'Heavy Packages',
             'en-US': 'Heavy Packages',
@@ -181,7 +181,7 @@ const categories = {
         },
         {
           slug: 'light-packages',
-          color: 'rgba(127,191,198,1)',
+          color: 'turquois',
           name: {
             'en-GB': 'Light Packages',
             'en-US': 'Light Packages',
@@ -194,7 +194,7 @@ const categories = {
         },
         {
           slug: 'groceries',
-          color: 'rgba(127,191,198,1)',
+          color: 'turquois',
           name: {
             'en-GB': 'Groceries',
             'en-US': 'Groceries',
@@ -207,7 +207,7 @@ const categories = {
         },
         {
           slug: 'groceries-pick-up-and-delivery',
-          color: 'rgba(127,191,198,1)',
+          color: 'turquois',
           name: {
             'en-GB': 'Pick up and deliver my groceries',
             'en-US': 'Pick up and deliver my groceries',
@@ -220,7 +220,7 @@ const categories = {
         },
         {
           slug: 'food',
-          color: 'rgba(127,191,198,1)',
+          color: 'turquois',
           name: {
             'en-GB': 'Food',
             'en-US': 'Food',
@@ -236,7 +236,7 @@ const categories = {
     },
     {
       slug: 'cleanning',
-      color: 'rgba(139,178,226,1)',
+      color: 'blue',
       ordinalPosition: 3,
       name: {
         'en-GB': 'Cleanning',
@@ -249,7 +249,7 @@ const categories = {
       services: [
         {
           slug: 'house-cleanning',
-          color: 'rgba(139,178,226,1)',
+          color: 'blue',
           name: {
             'en-GB': 'House cleanning',
             'en-US': 'House cleanning',
@@ -262,7 +262,7 @@ const categories = {
         },
         {
           slug: 'cellar-garage-cleanning',
-          color: 'rgba(139,178,226,1)',
+          color: 'blue',
           name: {
             'en-GB': 'Cellar and garage cleanning',
             'en-US': 'Cellar and garage cleanning',
@@ -275,7 +275,7 @@ const categories = {
         },
         {
           slug: 'car-washing',
-          color: 'rgba(139,178,226,1)',
+          color: 'blue',
           name: {
             'en-GB': 'Car washing',
             'en-US': 'Car washing',
@@ -287,7 +287,7 @@ const categories = {
           services: [
             {
               slug: 'jeffrey-car-washing',
-              color: 'rgba(139,178,226,1)',
+              color: 'blue',
               name: {
                 'en-GB': 'Hire a Jeffrey',
                 'en-US': 'Hire a Jeffrey',
@@ -300,7 +300,7 @@ const categories = {
             },
             {
               slug: 'cleancar-car-washing',
-              color: 'rgba(139,178,226,1)',
+              color: 'blue',
               name: {
                 'en-GB': 'CleanCar',
                 'en-US': 'CleanCas',
@@ -319,7 +319,7 @@ const categories = {
     },
     {
       slug: 'handiwork-and-moving',
-      color: 'rgba(255,216,142,1)',
+      color: 'yellow',
       ordinalPosition: 1,
       name: {
         'en-GB': 'Handiwork and moving',
@@ -332,7 +332,7 @@ const categories = {
       services: [
         {
           slug: 'furniture-construction',
-          color: 'rgba(255,216,142,1)',
+          color: 'yellow',
           name: {
             'en-GB': 'Furniture construction',
             'en-US': 'Furniture construction',
@@ -345,7 +345,7 @@ const categories = {
         },
         {
           slug: 'moving',
-          color: 'rgba(255,216,142,1)',
+          color: 'yellow',
           name: {
             'en-GB': 'Moving',
             'en-US': 'Moving',
@@ -358,7 +358,7 @@ const categories = {
         },
         {
           slug: 'painting',
-          color: 'rgba(255,216,142,1)',
+          color: 'yellow',
           name: {
             'en-GB': 'Painting',
             'en-US': 'Painting',
@@ -375,7 +375,7 @@ const categories = {
     {
       slug: 'modern-majordome',
       ordinalPosition: 0,
-      color: 'rgba(232,139,159,1)',
+      color: 'red',
       name: {
         'en-GB': 'Modern majordome',
         'en-US': 'Modern majordome',
@@ -387,7 +387,7 @@ const categories = {
       services: [
         {
           slug: 'amateur-cook',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Amateur cook',
             'en-US': 'Amateur cook',
@@ -400,7 +400,7 @@ const categories = {
         },
         {
           slug: 'disabled-person-assistance',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Disabled person assistance',
             'en-US': 'Disabled person assistance',
@@ -413,7 +413,7 @@ const categories = {
         },
         {
           slug: 'housekeeping',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Housekeeping',
             'en-US': 'Housekeeping',
@@ -426,7 +426,7 @@ const categories = {
         },
         {
           slug: 'house-tidy-up',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'House tidy up',
             'en-US': 'House tidy up',
@@ -439,7 +439,7 @@ const categories = {
         },
         {
           slug: 'carless-driver',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Carless driver',
             'en-US': 'Carless driver',
@@ -452,7 +452,7 @@ const categories = {
         },
         {
           slug: 'guest-service',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Guest service',
             'en-US': 'Guest service',
@@ -465,7 +465,7 @@ const categories = {
         },
         {
           slug: 'personal-assistant',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Personal assistant',
             'en-US': 'Personal assistant',
@@ -478,7 +478,7 @@ const categories = {
         },
         {
           slug: 'administrative-assistant',
-          color: 'rgba(232,139,159,1)',
+          color: 'red',
           name: {
             'en-GB': 'Administrative assistant',
             'en-US': 'Administrative assistant',
