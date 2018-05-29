@@ -2,7 +2,7 @@ import { combineResolvers } from 'graphql-resolvers';
 import { registerMutation } from '../registry';
 import auth                 from '../middlewares/auth';
 
-const def = 'personalDetails(details: PersonalDetails): Boolean';
+const def = 'personalDetails(details: PersonalDetails): [String]';
 
 const personalDetails = async (_, { details }, { user }) => {
   let {
@@ -36,7 +36,7 @@ const personalDetails = async (_, { details }, { user }) => {
     state
   });
 
-  return true;
+  return user.onboardingProgress();
 };
 
 registerMutation(def, {
