@@ -12,5 +12,5 @@ const clientHistory2 = async (_, __, { user }) => {
 };
 
 registerQuery(def, {
-  clientHistory: combineResolvers(auth, clientHistory2)
+  clientHistory2: combineResolvers(auth, clientHistory2)
 });

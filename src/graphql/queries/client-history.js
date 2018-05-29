@@ -5,13 +5,12 @@ import { registerQuery }    from '../registry';
 
 const def = `
 clientHistory(
-  providerId: ID!,
-  serviceCategoryId: ID!
+  providerId: ID!
 ): [Mission]
 `;
 
-const clientHistory = async (_, { providerId, serviceCategoryId }, { user }) => {
-  const missions = await Mission.clientHistory({user, providerId, serviceCategoryId});
+const clientHistory = async (_, { providerId }, { user }) => {
+  const missions = await Mission.clientHistory({user, providerId });
   return missions.toArray().map(mission => mission.serialize());
 };
 

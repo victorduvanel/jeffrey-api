@@ -30,7 +30,6 @@ const Mission = Base.extend({
       endDate: this.get('endDate'),
       accepted: !!this.get('accepted'),
       createdAt: this.get('createdAt'),
-      serviceCategory: this.get('serviceCategoryId')
     };
   }
 }, {
@@ -107,6 +106,7 @@ const Mission = Base.extend({
         qb.whereNotNull('end_date');
       })
       .fetchAll();
+
     return missions;
   },
 

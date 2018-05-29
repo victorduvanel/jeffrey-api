@@ -5,9 +5,9 @@ export default () => {
   const schema = makeExecutableSchema({
     typeDefs: typeDefs(),
     resolvers,
-    // logger: {
-    //   log: err => console.error(err)
-    // }
+    logger: {
+      log: err => console.error(err)
+  }
   });
 
   return schema;
