@@ -11,3 +11,6 @@ import './set-hourly-rate';
 import './provider-bio';
 import './activate';
 import './mission-status';
+import './phone-number';
+import './verify-phone-number';
+import './tos';

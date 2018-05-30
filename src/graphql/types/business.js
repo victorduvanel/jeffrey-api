@@ -3,7 +3,7 @@ import Business         from '../../models/business';
 
 const def = `
   enum BusinessType {
-    personal
+    company
     individual
   }
   input BusinessDetails {

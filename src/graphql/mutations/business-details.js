@@ -3,7 +3,7 @@ import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 import PostalAddress        from '../../models/postal-address';
 
-const def = 'businessDetails(details: BusinessDetails): Boolean';
+const def = 'businessDetails(details: BusinessDetails): [String]';
 
 const businessDetails = async (_, { details }, { user }) => {
   const business = await user.getBusiness();
@@ -60,12 +60,7 @@ const businessDetails = async (_, { details }, { user }) => {
     await business.save();
   }
 
-  return true;
+  return user.onboardingProgress();
 };
 
-registerMutation(def, {
-  businessDetails: combineResolvers(
-    auth,
-    businessDetails
-  )
-});
+registerMutation(def, { businessDetails: combineResolvers(auth, businessDetails) });

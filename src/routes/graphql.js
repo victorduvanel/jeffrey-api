@@ -22,6 +22,7 @@ export default () => {
       graphqlExpress({
         schema,
         context: {
+          req,
           user: req.user
         },
         debug: true,
