@@ -155,7 +155,7 @@ const categories = {
     },
     {
       slug: 'purchase-and-delivery',
-      color: 'turquois',
+      color: 'turquoise',
       ordinalPosition: 2,
       name: {
         'en-GB': 'Purchase & Delivery',
@@ -168,7 +168,7 @@ const categories = {
       services: [
         {
           slug: 'heavy-packages',
-          color: 'turquois',
+          color: 'turquoise',
           name: {
             'en-GB': 'Heavy Packages',
             'en-US': 'Heavy Packages',
@@ -181,7 +181,7 @@ const categories = {
         },
         {
           slug: 'light-packages',
-          color: 'turquois',
+          color: 'turquoise',
           name: {
             'en-GB': 'Light Packages',
             'en-US': 'Light Packages',
@@ -194,7 +194,7 @@ const categories = {
         },
         {
           slug: 'groceries',
-          color: 'turquois',
+          color: 'turquoise',
           name: {
             'en-GB': 'Groceries',
             'en-US': 'Groceries',
@@ -207,7 +207,7 @@ const categories = {
         },
         {
           slug: 'groceries-pick-up-and-delivery',
-          color: 'turquois',
+          color: 'turquoise',
           name: {
             'en-GB': 'Pick up and deliver my groceries',
             'en-US': 'Pick up and deliver my groceries',
@@ -220,7 +220,7 @@ const categories = {
         },
         {
           slug: 'food',
-          color: 'turquois',
+          color: 'turquoise',
           name: {
             'en-GB': 'Food',
             'en-US': 'Food',
