@@ -45,6 +45,7 @@ input BankAccountDetails {
   type: BankAccountType
   iban: String
   holderName: String
+  country: String
 }
 `;
 
