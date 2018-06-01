@@ -7,7 +7,7 @@ export default () => {
     resolvers,
     logger: {
       log: err => console.error(err)
-  }
+    }
   });
 
   return schema;

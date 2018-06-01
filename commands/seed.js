@@ -1,7 +1,16 @@
-import chalk from 'chalk';
-import knex  from '../src/services/knex';
+import Knex   from 'knex';
+import chalk  from 'chalk';
+import config from '../src/config';
 
-export default () => {
+export default ({ dev }) => {
+  if (dev) {
+    config.db.seeds = {
+      directory: './seeds/dev'
+    };
+  }
+
+  const knex = Knex(config.db);
+
   /* eslint-disable no-console */
   return knex.seed.run()
     .spread((log) => {
