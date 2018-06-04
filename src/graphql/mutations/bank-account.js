@@ -3,7 +3,7 @@ import stripe               from '../../services/stripe';
 import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 
-const def = 'bankAccount(details: BankAccountDetails): Boolean';
+const def = 'bankAccount(details: BankAccountDetails): [String]';
 
 const bankAccount = async (_, { details }, { user }) => {
   if (!user) {
@@ -17,14 +17,15 @@ const bankAccount = async (_, { details }, { user }) => {
       account_holder_type: details.type,
       object: 'bank_account',
       account_number: details.iban,
-      country: user.get('country'),
+      country: details.country,
       currency: 'EUR'
     }
   });
 
   stripeAccount.set('hasExternalAccount', true);
   await stripeAccount.save();
-  return true;
+
+  return user.onboardingProgress();
 };
 
 registerMutation(def, {

@@ -12,7 +12,7 @@ const StripeAccount = Base.extend({
   create: async function(user) {
     const account = await stripe.accounts.create({
       type: 'custom',
-      country: user.get('country'),
+      // country: user.get('country'),
       metadata: {
         user_id: user.get('id')
       }
