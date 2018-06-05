@@ -10,10 +10,13 @@ clientHistory(
 `;
 
 const clientHistory = async (_, { providerId }, { user }) => {
+  if (!user)
+    return [];
+    
   const missions = await Mission.clientHistory({user, providerId });
   return missions.toArray().map(mission => mission.serialize());
 };
 
 registerQuery(def, {
-  clientHistory: combineResolvers(auth, clientHistory)
+  clientHistory
 });

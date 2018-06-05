@@ -13,5 +13,5 @@ const provider = async (_, __, ___, { variableValues: { providerId } }) => {
 };
 
 registerQuery(def, {
-  provider: combineResolvers(auth, provider)
+  provider
 });
