@@ -12,6 +12,7 @@ function up(knex) {
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
     table.integer('price');
+    table.string('currency');
     table.dateTime('created_at');
     table.dateTime('updated_at');
   });

@@ -7,27 +7,32 @@ exports.seed = async function(knex, Promise) {
     prices: [{
       user_id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
       service_category_id: '555d8eb4-d6d1-421c-a7f4-ee49b332f41e',
-      price: '10'
+      price: '1000',
+      currency: 'EUR'
     },
     {
       user_id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
       service_category_id: '7949f6ae-9d5f-4858-9f15-be85a3942c7c',
-      price: '11'
+      price: '1100',
+      currency: 'EUR'
     },
     {
       user_id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
       service_category_id: '00e45aec-b77c-4be3-a8dd-5c7c07733419',
-      price: '12'
+      price: '1200',
+      currency: 'EUR'
     },
     {
       user_id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
       service_category_id: '3d2a65c1-a2b7-4957-adfa-6128e704ae87',
-      price: '13'
+      price: '1300',
+      currency: 'EUR'
     },
     {
       user_id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
       service_category_id: '86048909-155d-4f88-80c3-7345cfc188a3',
-      price: '14'
+      price: '1400',
+      currency: 'EUR'
     },
     ]
   }
@@ -35,15 +40,16 @@ exports.seed = async function(knex, Promise) {
     id: uuid.v4(),
     user_id: pp.user_id,
     service_category_id: pp.service_category_id,
-    price: pp.price
+    price: pp.price,
+    currency: pp.currency
   }));
 
   return Promise.map(provider_prices, pp => knex.raw(`
       INSERT INTO "provider_prices" (
-        "id", "user_id", "service_category_id", "price", "created_at",
+        "id", "user_id", "service_category_id", "price", "currency", "created_at",
         "updated_at"
       ) VALUES (
-        :id, :user_id, :service_category_id, :price, NOW(), NOW()
+        :id, :user_id, :service_category_id, :price, :currency, NOW(), NOW()
       )
       ON CONFLICT DO NOTHING
     `, pp));
