@@ -25,13 +25,13 @@ exports.seed = async (knex, Promise) => {
       `
         INSERT INTO "missions" (
           "id", "price", "price_currency", "provider_id", "client_id",
-          "service_category_id", "start_date", "status",
+          "service_category_id", "start_date", "end_date", "status",
           "created_at", "updated_at"
         ) VALUES (
           :id, :price, :priceCurrency,
           :providerId, :clientId,
           :serviceCategoryId,
-          NOW(), :status,
+          NOW(), NOW(), :status,
           NOW(), NOW()
         )
         ON CONFLICT DO NOTHING
