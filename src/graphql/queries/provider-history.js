@@ -5,7 +5,7 @@ import { registerQuery }    from '../registry';
 const def = 'providerHistory: [User]';
 
 const providerHistory = async (_, __, { user }) => {
-  if(!user){
+  if (!user) {
     return [];
   }
 
@@ -13,6 +13,4 @@ const providerHistory = async (_, __, { user }) => {
   return Promise.all(clients.toArray().map(user => user.serialize()));
 };
 
-registerQuery(def, {
-  providerHistory
-});
+registerQuery(def, { providerHistory });

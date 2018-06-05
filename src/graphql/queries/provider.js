@@ -1,5 +1,5 @@
-import { registerQuery }    from '../registry';
-import User                 from '../../models/user';
+import { registerQuery } from '../registry';
+import User              from '../../models/user';
 
 const def = 'provider(providerId: ID!): User';
 const provider = async (_, __, ___, { variableValues: { providerId } }) => {
@@ -10,6 +10,4 @@ const provider = async (_, __, ___, { variableValues: { providerId } }) => {
   return user.serialize();
 };
 
-registerQuery(def, {
-  provider
-});
+registerQuery(def, { provider });
