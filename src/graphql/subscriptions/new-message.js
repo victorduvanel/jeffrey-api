@@ -6,8 +6,8 @@ import pubsub, { conversationNewMessageActivityTopic } from '../../services/grap
 const def = 'newMessage(conversationId: String!): Message';
 
 const newMessage = {
-  subscribe: combineResolvers(auth, (_, { conversationId }, { user }) => {
-    return pubsub.asyncIterator(conversationNewMessageActivityTopic(conversationId, user.get('id')));
+  subscribe: combineResolvers(auth, (_, __, { user }) => {
+    return pubsub.asyncIterator(conversationNewMessageActivityTopic(user.id));
   })
 };
 
