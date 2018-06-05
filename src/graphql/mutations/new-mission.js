@@ -19,7 +19,7 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, 
   }
 
   await Mission.create({
-    startDate,
+    startDate: new Date(startDate),
     price,
     currency: 'EUR',
     status: 'pending',

@@ -310,7 +310,7 @@ const User = Base.extend({
   async onboardingProgress() {
     const progress = [];
 
-    if (this.get('profilePicture') /* && this.get('bio') */) {
+    if (this.get('profilePicture') && this.get('bio')) {
       progress.push('provider-profile');
     }
 

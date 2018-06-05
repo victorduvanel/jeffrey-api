@@ -1,7 +1,7 @@
 import uuid        from 'uuid';
-import apn         from 'apn';
+// import apn         from 'apn';
 import bookshelf   from '../services/bookshelf';
-import apnProvider from '../services/apn';
+// import apnProvider from '../services/apn';
 import expo        from '../services/expo';
 import Base        from './base';
 

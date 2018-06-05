@@ -19,8 +19,9 @@ commander
 
 commander
   .command('seed')
-  .action(() => {
-    pending = commands.seed();
+  .option('--dev', 'Run dev seeds')
+  .action((cmd) => {
+    pending = commands.seed({ dev: cmd.dev });
   });
 
 commander
