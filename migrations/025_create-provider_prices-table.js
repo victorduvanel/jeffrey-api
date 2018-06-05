@@ -12,7 +12,14 @@ function up(knex) {
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
     table.integer('price');
-    table.string('currency');
+    table.enum('currency', [
+      'GBP',
+      'EUR',
+      'USD',
+      'KRW',
+      'JPY',
+      'CHF'
+      ]);
     table.dateTime('created_at');
     table.dateTime('updated_at');
   });
