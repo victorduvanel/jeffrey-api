@@ -8,13 +8,13 @@ const pubsub = new RedisPubSub({
 });
 
 const CONVERSATION_NEW_MISSION_ACTIVITY_TOPIC = 'CONVERSATION_NEW_MISSION_ACTIVITY_TOPIC';
-export const conversationNewMissionActivityTopic = (conversationId, userId) => {
-  return `${CONVERSATION_NEW_MISSION_ACTIVITY_TOPIC}.${conversationId}.${userId}`;
+export const conversationNewMissionActivityTopic = (userId) => {
+  return `${CONVERSATION_NEW_MISSION_ACTIVITY_TOPIC}.${userId}`;
 };
 
 const CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC = 'CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC';
-export const conversationNewMessageActivityTopic = (conversationId, userId) => {
-  return `${CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC}.${conversationId}.${userId}`;
+export const conversationNewMessageActivityTopic = (userId) => {
+  return `${CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC}.${userId}`;
 };
 
 export default pubsub;

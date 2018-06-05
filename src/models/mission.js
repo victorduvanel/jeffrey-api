@@ -2,7 +2,6 @@ import uuid         from 'uuid';
 import bookshelf    from '../services/bookshelf';
 import Base         from './base';
 import User         from './user';
-import Conversation from './conversation';
 import pubsub, { conversationNewMissionActivityTopic } from '../services/graphql/pubsub';
 
 const Mission = Base.extend({
@@ -54,28 +53,25 @@ const Mission = Base.extend({
       .save(null, { method: 'insert' });
 
     const payload = mission.serialize();
-    console.log(payload);
-
-    const conversation = await Conversation.findOrCreate([provider, client]);
 
     const firstName = provider.get('firstName');
     client.sendMessage({
       body: firstName ? `${firstName} sent you a new quote` : 'New quote'
     });
-
     pubsub.publish(
-      conversationNewMissionActivityTopic(conversation.get('id'), client.get('id')),
+      conversationNewMissionActivityTopic(client.get('id')),
       {
         newMission: payload
       }
     );
 
     pubsub.publish(
-      conversationNewMissionActivityTopic(conversation.get('id'), provider.get('id')),
+      conversationNewMissionActivityTopic(provider.get('id')),
       {
         newMission: payload
       }
     );
+
 
     return mission;
   },

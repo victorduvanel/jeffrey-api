@@ -1,7 +1,5 @@
-import { combineResolvers } from 'graphql-resolvers';
-import auth                 from '../middlewares/auth';
-import { registerQuery }    from '../registry';
-import User                 from '../../models/user';
+import { registerQuery } from '../registry';
+import User              from '../../models/user';
 
 const def = 'provider(providerId: ID!): User';
 const provider = async (_, __, ___, { variableValues: { providerId } }) => {
@@ -12,6 +10,4 @@ const provider = async (_, __, ___, { variableValues: { providerId } }) => {
   return user.serialize();
 };
 
-registerQuery(def, {
-  provider: combineResolvers(auth, provider)
-});
+registerQuery(def, { provider });

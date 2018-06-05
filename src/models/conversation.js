@@ -26,7 +26,7 @@ const Conversation = Base.extend({
 
     participants.forEach(user => {
       pubsub.publish(
-        conversationNewMessageActivityTopic(this.get('id'), user.get('id')),
+        conversationNewMessageActivityTopic(user.get('id')),
         {
           newMessage: payload
         }
