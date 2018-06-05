@@ -1,5 +1,3 @@
-import { combineResolvers } from 'graphql-resolvers';
-import auth                 from '../middlewares/auth';
 import { registerQuery }    from '../registry';
 import User                 from '../../models/user';
 

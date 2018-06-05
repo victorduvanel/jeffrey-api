@@ -19,7 +19,7 @@ function up(knex) {
       'KRW',
       'JPY',
       'CHF'
-      ]);
+    ]);
     table.dateTime('created_at');
     table.dateTime('updated_at');
   });

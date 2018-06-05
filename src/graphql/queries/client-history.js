@@ -1,6 +1,4 @@
-import { combineResolvers } from 'graphql-resolvers';
 import Mission              from '../../models/mission';
-import auth                 from '../middlewares/auth';
 import { registerQuery }    from '../registry';
 
 const def = `
@@ -12,7 +10,7 @@ clientHistory(
 const clientHistory = async (_, { providerId }, { user }) => {
   if (!user)
     return [];
-    
+
   const missions = await Mission.clientHistory({user, providerId });
   return missions.toArray().map(mission => mission.serialize());
 };
