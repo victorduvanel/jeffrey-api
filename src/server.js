@@ -17,11 +17,15 @@ import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
+import User                            from './models/user';
+import Conversation                    from './models/conversation';
 
 import './graphql/types';
 import './graphql/mutations';
 import './graphql/subscriptions';
 import './graphql/queries';
+
+import { newMessage } from './graphql/mutations/new-message';
 
 export const httpServer = http.createServer();
 
@@ -40,6 +44,24 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
+  const user = await User.find('3c656ce5-1e21-4332-a268-d7599f2f0e40');
+  const user2 = await User.find('aaaaaaaa-1e21-4332-a268-d7599f2f0e40');
+
+  const conversation = await Conversation.findOrCreate([
+    user, user2
+  ]);
+
+  await newMessage(
+    null,
+    {
+      conversationId: conversation.get('id'),
+      message: 'Bonjour'
+    },
+    {
+      user
+    }
+  );
+
   res.send({ hello: 'world' });
 });
 
