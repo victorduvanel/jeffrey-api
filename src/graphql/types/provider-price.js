@@ -5,7 +5,6 @@ type ProviderPrice {
   id: ID!
   price: Int!
   currency: Currency!
-  serviceCategoryId: ID!
 }
 `;
 

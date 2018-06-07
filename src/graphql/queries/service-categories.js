@@ -12,9 +12,12 @@ const serviceCategories = async (_, __, { user }) => {
     .fetchAll();
 
   const categoryIds = categories.map(category => category.get('id'));
-  const currentUserPrices = {};
 
   if (user && user.get('isProvider')) {
+    if (!user.providerPrices) {
+      user.providerPrices = {};
+    }
+
     const prices = await ProviderPrice
       .query((qb) => {
         qb.where('user_id', user.get('id'));
@@ -23,32 +26,17 @@ const serviceCategories = async (_, __, { user }) => {
       .fetchAll();
 
     prices.forEach((price) => {
-      currentUserPrices[price.get('serviceCategoryId')] = {
-        price: price.get('price'),
+      user.providerPrices[price.get('serviceCategoryId')] = {
+        amount: price.get('price'),
         currency: price.get('currency')
       };
     });
   }
 
+  categories.forEach(category => category._subcategories = categories.filter(subCat => subCat.get('parentId') === category.get('id')));
+
   const rootCategories = categories.filter(category => category.get('parentId') === null);
-
-  const categoryMapper = (category) => {
-    const attr = category.serialize();
-    attr.subCategories = categories
-      .filter(subCat => subCat.get('parentId') === category.get('id'))
-      .map(categoryMapper);
-
-    if (currentUserPrices[attr.id]) {
-      attr.providerPrice = currentUserPrices[attr.id].price;
-      attr.providerPriceCurrency = currentUserPrices[attr.id].currency;
-    } else {
-      attr.providerPrice = null;
-      attr.providerPriceCurrency = null;
-    }
-    return attr;
-  };
-
-  return rootCategories.map(categoryMapper);
+  return rootCategories;
 };
 
 registerQuery(def, { serviceCategories });

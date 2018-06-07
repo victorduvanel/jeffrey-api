@@ -1,23 +1,79 @@
-import bookshelf from '../services/bookshelf';
-import Base      from './base';
+import ProviderPrice from './provider-price';
+import bookshelf     from '../services/bookshelf';
+import Base          from './base';
 
 const ServiceCategory = Base.extend({
   tableName: 'service_categories',
 
+  rootCategory() {
+    return this.belongsTo('ServiceCategory', 'root_id');
+  },
+
   subCategories() {
     return ServiceCategory
-      .forge({
-        parentId: this.get('id')
+      .where({
+        parent_id: this.get('id')
       })
       .fetchAll();
   },
 
-  serialize() {
-    return {
-      id: this.get('id'),
-      color: this.get('color'),
-      slug: this.get('slug')
-    };
+  async avgPrice({ currency }) {
+    const res = await bookshelf.knex
+      .avg('price')
+      .from('provider_prices')
+      .where('service_category_id', this.id)
+      .where('currency', currency);
+
+    if (res.length && res[0].avg) {
+      return {
+        amount: parseInt(res[0].avg, 10),
+        currency
+      };
+    }
+
+    return null;
+  },
+
+  color() {
+    return this.get('color');
+  },
+
+  slug() {
+    return this.get('slug');
+  },
+
+  async root() {
+    if (!this.get('rootId')) {
+      return null;
+    }
+    await this.load(['rootCategory']);
+    return this.related('rootCategory');
+  },
+
+  async providerPrice(_, { user }) {
+    if (user) {
+      if (user.providerPrices) {
+        if (user.providerPrices[this.id]) {
+          return user.providerPrices[this.id];
+        } else {
+          return null;
+        }
+      }
+
+      const price = await ProviderPrice
+        .query((qb) => {
+          qb.where('user_id', user.id);
+          qb.where('service_category_id', this.id);
+        })
+        .fetch();
+      if (price) {
+        return {
+          amount: price.get('price'),
+          currency: price.get('currency')
+        };
+      }
+    }
+    return null;
   }
 }, {
   find: function(id) {

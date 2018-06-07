@@ -1,9 +1,9 @@
 import bodyParser         from 'body-parser';
 import { graphqlExpress } from 'apollo-server-express';
-import { formatError }    from 'graphql';
+import { formatError, GraphQLError  } from 'graphql';
+import User               from '../models/user';
 import oauth2             from '../middlewares/oauth2';
 import getSchema          from '../graphql/schema';
-import { GraphQLError }   from 'graphql';
 import { InternalError }  from '../graphql/errors';
 
 export default () => {
@@ -18,7 +18,9 @@ export default () => {
       }
       return next();
     },
-    (req, res, next) => {
+    async (req, res, next) => {
+      req.user = await User.find('3c656ce5-1e21-4332-a268-d7599f2f0e40');
+
       graphqlExpress({
         schema,
         context: {

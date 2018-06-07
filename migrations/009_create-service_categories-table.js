@@ -6,6 +6,12 @@ function up(knex) {
     table.string('color');
 
     table
+      .uuid('root_id')
+      .references('service_categories.id')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT');
+
+    table
       .uuid('parent_id')
       .references('service_categories.id')
       .onUpdate('CASCADE')
