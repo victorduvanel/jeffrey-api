@@ -2,7 +2,10 @@ import uuid         from 'uuid';
 import bookshelf    from '../services/bookshelf';
 import Base         from './base';
 import User         from './user';
-import pubsub, { conversationNewMissionActivityTopic } from '../services/graphql/pubsub';
+import pubsub, {
+  conversationNewMissionActivityTopic,
+  conversationMissionStatusChangedActivityTopic
+} from '../services/graphql/pubsub';
 
 const Mission = Base.extend({
   tableName: 'missions',
@@ -30,6 +33,27 @@ const Mission = Base.extend({
       accepted: !!this.get('accepted'),
       createdAt: this.get('createdAt'),
     };
+  },
+
+  notifyRecipients({ status, mission }) {
+    let recipientUserId;
+    switch (status) {
+      case 'accepted':
+      case 'refused':
+        recipientUserId = mission.get('providerId');
+        break;
+      case 'canceled':
+        recipientUserId = mission.get('clientId');
+        break;
+    }
+
+    // send notification
+    pubsub.publish(
+      conversationMissionStatusChangedActivityTopic(recipientUserId),
+      {
+        missionStatus: mission.serialize()
+      }
+    );
   }
 }, {
   find: function(id) {

@@ -19,6 +19,8 @@ import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
 import User                            from './models/user';
 import Conversation                    from './models/conversation';
+import Mission                         from './models/mission';
+import ServiceCategory                 from './models/service-category';
 
 import './graphql/types';
 import './graphql/mutations';
@@ -26,6 +28,7 @@ import './graphql/subscriptions';
 import './graphql/queries';
 
 import { newMessage } from './graphql/mutations/new-message';
+import { missionStatus } from './graphql/mutations/mission-status';
 
 export const httpServer = http.createServer();
 
@@ -44,25 +47,66 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
-  const user = await User.find('3c656ce5-1e21-4332-a268-d7599f2f0e40');
-  const user2 = await User.find('aaaaaaaa-1e21-4332-a268-d7599f2f0e40');
 
-  const conversation = await Conversation.findOrCreate([
-    user, user2
-  ]);
+  const froms = [
+    '3c656ce5-1e21-4332-a268-d7599f2f0e40',
+    'd01028fc-53c5-4bf3-ad0b-0f9fa677c90b',
+    'e96b8bbb-dea6-4495-a31a-870c67509502'
+  ];
+
+  const user = await User.find(froms[Math.floor(Math.random() * froms.length)]);
+  const user2 = await User.find('854de9f6-22f5-4b6f-b093-9692b50f273b');
+  const conversation = await Conversation.findOrCreate([ user, user2 ]);
 
   await newMessage(
     null,
-    {
-      conversationId: conversation.get('id'),
-      message: 'Bonjour'
-    },
-    {
-      user
-    }
+    { conversationId: conversation.get('id'), message: 'Bonjour' },
+    { user }
   );
 
-  res.send({ hello: 'world' });
+  res.send({
+    from: user
+  });
+});
+
+get('/mission', async (req, res) => {
+  const user = await User.find('854de9f6-22f5-4b6f-b093-9692b50f273b');
+  const user2 = await User.find('d01028fc-53c5-4bf3-ad0b-0f9fa677c90b');
+
+  const serviceCategory = await ServiceCategory.find('8c47eff2-0313-47ef-898e-2dee01fb98bd');
+  if (!ServiceCategory) {
+    return false;
+  }
+
+  const mission = await Mission.create({
+    startDate: new Date(Date.now()),
+    price: 12,
+    currency: 'EUR',
+    status: 'pending',
+    provider: user,
+    client: user2,
+    serviceCategory
+  });
+  
+  // const answers = ['accepted', 'refused', 'canceled'];
+  
+  const mutationUser = user2;
+  const answer = 'refused';
+  
+  setTimeout(() => {
+    missionStatus(
+      null,
+      {
+        id: mission.get('id'),
+        status: answer
+      },
+      { user: mutationUser }
+    );
+
+    res.send({
+      from: user
+    });
+  }, 2000);
 });
 
 router.use('/graphql', ...(graphqlRoute()));
