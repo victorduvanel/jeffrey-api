@@ -4,6 +4,8 @@ import './business-details';
 import './update-password';
 import './bank-account';
 import './new-mission';
+import './start-mission';
+import './end-mission';
 import './activate';
 import './provider-disponibility';
 import './personal-details';

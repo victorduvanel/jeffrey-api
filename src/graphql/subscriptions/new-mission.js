@@ -3,7 +3,7 @@ import auth                                    from '../middlewares/auth';
 import { registerSubscription }                from '../registry';
 import pubsub, { conversationNewMissionActivityTopic } from '../../services/graphql/pubsub';
 
-const def = 'newMission(conversationId: String!): Mission';
+const def = 'newMission: Mission';
 
 const newMission = {
   subscribe: combineResolvers(auth, (_, __, { user }) => {

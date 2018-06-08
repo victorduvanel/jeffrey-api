@@ -2,7 +2,12 @@ import uuid         from 'uuid';
 import bookshelf    from '../services/bookshelf';
 import Base         from './base';
 import User         from './user';
-import pubsub, { conversationNewMissionActivityTopic } from '../services/graphql/pubsub';
+import pubsub, {
+  conversationNewMissionActivityTopic,
+  conversationMissionStatusChangedActivityTopic,
+  conversationStartedMissionActivityTopic,
+  conversationEndedMissionActivityTopic
+} from '../services/graphql/pubsub';
 
 const Mission = Base.extend({
   tableName: 'missions',
@@ -26,10 +31,70 @@ const Mission = Base.extend({
       currency: this.get('priceCurrency'),
       status: this.get('status'),
       startDate: this.get('startDate'),
+      startedDate: this.get('startedDate'),
       endDate: this.get('endDate'),
+      endedDate: this.get('endedDate'),
       accepted: !!this.get('accepted'),
       createdAt: this.get('createdAt'),
     };
+  },
+
+  start: async function() {
+    this.set('startedDate', new Date(Date.now()));
+
+    this.save();
+
+    // Send notification
+    [this.get('providerId'), this.get('clientId')].forEach((user) => {
+      pubsub.publish(
+        conversationStartedMissionActivityTopic(user),
+        { startedMission: this.serialize() }
+      );
+    });
+  },
+
+  end: async function() {
+    this.set('endedDate', new Date(Date.now()));
+
+    this.save();
+
+    // Send notification
+    [this.get('providerId'), this.get('clientId')].forEach((user) => {
+      pubsub.publish(
+        conversationEndedMissionActivityTopic(user),
+        { endedMission: this.serialize() }
+      );
+    });
+  },
+
+  setStatus(status) {
+    let recipientUserId;
+
+    switch (status) {
+      case 'accepted':
+      case 'refused':
+        recipientUserId = this.get('providerId');
+        break;
+      case 'canceled':
+        recipientUserId = this.get('clientId');
+        break;
+      case 'pending':
+        recipientUserId = null;
+        break;
+      default:
+        throw new Error('Invalid status');
+    }
+
+    this.set('status', status);
+    this.save();
+
+    // Send notification
+    if (recipientUserId) {
+      pubsub.publish(
+        conversationMissionStatusChangedActivityTopic(recipientUserId),
+        { missionStatus: this.serialize()}
+      );
+    }
   }
 }, {
   find: function(id) {
@@ -53,11 +118,12 @@ const Mission = Base.extend({
       .save(null, { method: 'insert' });
 
     const payload = mission.serialize();
-
     const firstName = provider.get('firstName');
+
     client.sendMessage({
       body: firstName ? `${firstName} sent you a new quote` : 'New quote'
     });
+
     pubsub.publish(
       conversationNewMissionActivityTopic(client.get('id')),
       {

@@ -17,11 +17,20 @@ import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
+import User                            from './models/user';
+import Conversation                    from './models/conversation';
+import Mission                         from './models/mission';
+import ServiceCategory                 from './models/service-category';
 
 import './graphql/types';
 import './graphql/mutations';
 import './graphql/subscriptions';
 import './graphql/queries';
+
+import { newMessage } from './graphql/mutations/new-message';
+import { startMission } from './graphql/mutations/start-mission';
+import { endMission } from './graphql/mutations/end-mission';
+import { missionStatus } from './graphql/mutations/mission-status';
 
 export const httpServer = http.createServer();
 
@@ -40,8 +49,80 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
-  res.send({ hello: 'world' });
+
+  // const froms = [
+  //   '3c656ce5-1e21-4332-a268-d7599f2f0e40',
+  //   'd01028fc-53c5-4bf3-ad0b-0f9fa677c90b',
+  //   'e96b8bbb-dea6-4495-a31a-870c67509502'
+  // ];
+
+  // const user = await User.find(froms[Math.floor(Math.random() * froms.length)]);
+  // const user2 = await User.find('854de9f6-22f5-4b6f-b093-9692b50f273b');
+  // const conversation = await Conversation.findOrCreate([ user, user2 ]);
+
+  // await newMessage(
+  //   null,
+  //   { conversationId: conversation.get('id'), message: 'Bonjour' },
+  //   { user }
+  // );
+
+  res.send({
+  });
 });
+
+// get('/mission', async (req, res) => {
+//   const me = await User.find('8d8fe6fe-e925-45b4-9ba9-3db0ae8864d3');
+//   const randomUser = await User.find('403433d4-1725-40fc-8cb5-02071de613ec');
+
+//   const serviceCategory = await ServiceCategory.find('8c47eff2-0313-47ef-898e-2dee01fb98bd');
+//   if (!ServiceCategory) {
+//     return false;
+//   }
+
+//   console.log('======= > createMission');
+//   const mission = await Mission.create({
+//     startDate: new Date(Date.now()),
+//     price: 12,
+//     currency: 'EUR',
+//     status: 'pending',
+//     provider: randomUser,
+//     client: me,
+//     serviceCategory
+//   });
+
+//   // const answers = ['accepted', 'refused', 'canceled'];
+
+//   setTimeout(() => {
+//     console.log('======= > missionStatus');
+//     missionStatus(
+//       null,
+//       { id: mission.get('id'), status: 'accepted' },
+//       { user: me }
+//     );
+//   }, 2000);
+
+//   setTimeout(() => {
+//     console.log('======= > startMission');
+//     startMission(
+//       null,
+//       { id: mission.get('id') },
+//       { user: randomUser }
+//     );
+//   }, 4000);
+
+//   setTimeout(() => {
+//     console.log('======= > endMission');
+//     endMission(
+//       null,
+//       { id: mission.get('id') },
+//       { user: randomUser }
+//     );
+
+//     res.send({
+//       coucou: 'test end'
+//     });
+//   }, 6000);
+// });
 
 router.use('/graphql', ...(graphqlRoute()));
 get('/graphiql', routes.graphiql.get);

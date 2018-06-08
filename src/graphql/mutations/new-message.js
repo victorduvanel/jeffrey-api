@@ -6,7 +6,7 @@ import Message              from '../../models/message';
 
 export const def = 'newMessage(conversationId: String!, message: String!): Message';
 
-const newMessage = async (_, { conversationId, message: body }, { user }) => {
+export const newMessage = async (_, { conversationId, message: body }, { user }) => {
   try {
     const conversation = await Conversation.find(conversationId);
     if (!conversation) {

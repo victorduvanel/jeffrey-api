@@ -5,8 +5,9 @@ import Mission              from '../../models/mission';
 
 const def = 'missionStatus(id: ID!, status: MissionStatus!): Mission';
 
-const missionStatus = async (_, { id, status }, { user }) => {
+export const missionStatus = async (_, { id, status }, { user }) => {
   const mission = await Mission.find(id);
+
   if (!mission) {
     throw new Error('mission not found');
   }
@@ -18,19 +19,16 @@ const missionStatus = async (_, { id, status }, { user }) => {
         throw new Error('Unauthorized');
       }
       break;
-
     case 'canceled':
       if (mission.get('providerId') !== user.get('id')) {
         throw new Error('Unauthorized');
       }
       break;
-
     default:
       throw new Error('invalid status');
   }
 
-  mission.set('status', status);
-  await mission.save();
+  mission.setStatus(status);
 
   return mission.serialize();
 };

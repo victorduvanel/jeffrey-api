@@ -32,10 +32,7 @@ const resolver = {
       const message = await Message.find(id);
       await message.load(['from']);
       const from = message.related('from');
-      return {
-        id: from.get('id'),
-        profilePicture: from.get('profilePicture')
-      };
+      return from.serialize();
     }
   }
 };
