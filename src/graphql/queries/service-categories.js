@@ -14,8 +14,8 @@ const serviceCategories = async (_, __, { user }) => {
   const categoryIds = categories.map(category => category.get('id'));
 
   if (user && user.get('isProvider')) {
-    if (!user.providerPrices) {
-      user.providerPrices = {};
+    if (!user.providerPricesCache) {
+      user.providerPricesCache = {};
     }
 
     const prices = await ProviderPrice
@@ -26,7 +26,7 @@ const serviceCategories = async (_, __, { user }) => {
       .fetchAll();
 
     prices.forEach((price) => {
-      user.providerPrices[price.get('serviceCategoryId')] = {
+      user.providerPricesCache[price.get('serviceCategoryId')] = {
         amount: price.get('price'),
         currency: price.get('currency')
       };

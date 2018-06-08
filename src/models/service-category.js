@@ -52,9 +52,9 @@ const ServiceCategory = Base.extend({
 
   async providerPrice(_, { user }) {
     if (user) {
-      if (user.providerPrices) {
-        if (user.providerPrices[this.id]) {
-          return user.providerPrices[this.id];
+      if (user.providerPricesCache) {
+        if (user.providerPricesCache[this.id]) {
+          return user.providerPricesCache[this.id];
         } else {
           return null;
         }
