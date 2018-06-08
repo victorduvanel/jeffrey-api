@@ -16,7 +16,9 @@ type Mission {
   price: Int!
   currency: Currency!
   startDate: Date!
+  startedDate: Date
   endDate: Date
+  endedDate: Date
   createdAt: Date!
   serviceCategory: ServiceCategory
 }

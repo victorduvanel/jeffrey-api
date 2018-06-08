@@ -17,6 +17,16 @@ export const conversationMissionStatusChangedActivityTopic = (userId) => {
   return `${CONVERSATION_MISSION_STATUS_CHANGED_ACTIVITY_TOPIC}.${userId}`;
 };
 
+const CONVERSATION_STARTED_MISSION_ACTIVITY_TOPIC = 'CONVERSATION_STARTED_MISSION_ACTIVITY_TOPIC';
+export const conversationStartedMissionActivityTopic = (userId) => {
+  return `${CONVERSATION_STARTED_MISSION_ACTIVITY_TOPIC}.${userId}`;
+};
+
+const CONVERSATION_ENDED_MISSION_ACTIVITY_TOPIC = 'CONVERSATION_ENDED_MISSION_ACTIVITY_TOPIC';
+export const conversationEndedMissionActivityTopic = (userId) => {
+  return `${CONVERSATION_ENDED_MISSION_ACTIVITY_TOPIC}.${userId}`;
+};
+
 const CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC = 'CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC';
 export const conversationNewMessageActivityTopic = (userId) => {
   return `${CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC}.${userId}`;

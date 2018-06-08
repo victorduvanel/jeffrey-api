@@ -19,7 +19,6 @@ export const missionStatus = async (_, { id, status }, { user }) => {
         throw new Error('Unauthorized');
       }
       break;
-
     case 'canceled':
       if (mission.get('providerId') !== user.get('id')) {
         throw new Error('Unauthorized');
@@ -29,13 +28,7 @@ export const missionStatus = async (_, { id, status }, { user }) => {
       throw new Error('invalid status');
   }
 
-  mission.set('status', status);
-  await mission.save();
-
-  mission.notifyRecipients({
-    mission,
-    status
-  });
+  mission.setStatus(status);
 
   return mission.serialize();
 };

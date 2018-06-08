@@ -32,6 +32,8 @@ function up(knex) {
 
     table.dateTime('start_date');
     table.dateTime('end_date');
+    table.dateTime('started_date');
+    table.dateTime('ended_date');
 
     table.enum('status', [
       'accepted',
