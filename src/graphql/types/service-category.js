@@ -1,5 +1,4 @@
 import { registerType } from '../registry';
-import ServiceCategory  from '../../models/service-category';
 
 const def = `
 type ServiceCategory {
@@ -7,22 +6,10 @@ type ServiceCategory {
   slug: String!
   color: String
   subCategories: [ServiceCategory]
+  root: ServiceCategory
+  avgPrice(currency: Currency!): Price
+  providerPrice: Price
 }
 `;
 
-const resolver = {
-  ServiceCategory: {
-    subCategories: async ({ id }) => {
-      const categories = await ServiceCategory
-        .query((qb) => {
-          qb.where('parent_id', '=', id);
-          qb.orderBy('ordinal_position');
-        })
-        .fetchAll();
-
-      return categories.toArray().map(category => category.serialize());
-    }
-  }
-};
-
-registerType(def, resolver);
+registerType(def);

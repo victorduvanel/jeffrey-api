@@ -22,16 +22,42 @@ const ProviderPrice = Base.extend({
     };
   }
 }, {
-  create: async function({ user, price, serviceCategory }) {
+  find: function(id) {
+    return this.forge({ id }).fetch();
+  },
+
+  create: async function({ user, price, currency, serviceCategory }) {
     const id = uuid.v4();
 
-    return this.forge({
-      id,
-      userId: user.get('id'),
-      serviceCategoryId: serviceCategory.get('id'),
-      price
-    })
-      .save(null, { method: 'insert' });
+    const res = await bookshelf.knex.raw(
+      `INSERT INTO provider_prices
+         (id, user_id, service_category_id, price, currency, created_at, updated_at)
+       VALUES (
+         :id,
+         :userId,
+         :serviceCategoryId,
+         :price,
+         :currency,
+         NOW(),
+         NOW()
+       )
+       ON CONFLICT (user_id, service_category_id) DO UPDATE
+       SET
+         price = EXCLUDED.price,
+         currency = EXCLUDED.currency,
+         updated_at = NOW()
+       RETURNING id
+      `,
+      {
+        id,
+        userId: user.id,
+        serviceCategoryId: serviceCategory.id,
+        price,
+        currency
+      }
+    );
+
+    return this.find(res.rows[0].id);
   }
 });
 

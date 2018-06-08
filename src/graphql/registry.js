@@ -7,7 +7,9 @@ export const resolvers = {
 export const types = [];
 export const registerType = (def, resolver) => {
   types.push(def);
-  Object.assign(resolvers, resolver);
+  if (resolver) {
+    Object.assign(resolvers, resolver);
+  }
 };
 
 const queries = [];
