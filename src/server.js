@@ -17,20 +17,11 @@ import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
-import User                            from './models/user';
-import Conversation                    from './models/conversation';
-import Mission                         from './models/mission';
-import ServiceCategory                 from './models/service-category';
 
 import './graphql/types';
 import './graphql/mutations';
 import './graphql/subscriptions';
 import './graphql/queries';
-
-import { newMessage } from './graphql/mutations/new-message';
-import { startMission } from './graphql/mutations/start-mission';
-import { endMission } from './graphql/mutations/end-mission';
-import { missionStatus } from './graphql/mutations/mission-status';
 
 export const httpServer = http.createServer();
 
