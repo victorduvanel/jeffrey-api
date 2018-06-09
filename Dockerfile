@@ -3,7 +3,7 @@ MAINTAINER William Riancho <william@reptilians.io>
 
 WORKDIR /app
 ADD package.json package-lock.json ./
-RUN npm install -g npm@6.0.0
+RUN npm install -g npm@6.1.0
 RUN npm install
 
 ADD . .
