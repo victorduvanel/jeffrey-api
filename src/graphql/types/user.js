@@ -1,5 +1,6 @@
 import { registerType } from '../registry';
 import User             from '../../models/user';
+import ProviderPrice    from '../../models/provider-price';
 
 const def = `
 enum Gender {
@@ -36,6 +37,7 @@ type User {
   rank: Float
   bio: String
   prices: [ProviderPrice]
+  price(serviceCategoryId: ID): Price
 }
 enum BankAccountType {
   company
@@ -87,6 +89,19 @@ const resolver = {
       const prices = user.related('providerPrices');
 
       return prices.toArray().map(price => price.serialize());
+    },
+
+    price: async(user, { serviceCategoryId }) => {
+      if (!serviceCategoryId) {
+        return null;
+      }
+
+      return ProviderPrice
+        .where({
+          user_id: user.id,
+          service_category_id: serviceCategoryId
+        })
+        .fetch();
     }
   }
 };

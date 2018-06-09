@@ -20,6 +20,14 @@ const ProviderPrice = Base.extend({
       serviceCategoryId: this.get('serviceCategoryId'),
       currency: 'EUR'
     };
+  },
+
+  amount() {
+    return this.get('price');
+  },
+
+  currency() {
+    return this.get('currency');
   }
 }, {
   find: function(id) {
