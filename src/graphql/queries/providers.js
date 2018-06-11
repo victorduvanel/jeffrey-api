@@ -1,27 +1,31 @@
-import Promise              from 'bluebird';
-import { combineResolvers } from 'graphql-resolvers';
-import auth                 from '../middlewares/auth';
-import { registerQuery }    from '../registry';
-import User                 from '../../models/user';
+import { registerQuery } from '../registry';
+import User              from '../../models/user';
 
 const def = `
 providers(
+  serviceCategoryId: ID!
+  lat: Float!
+  lng: Float!
   offset: Int!
   limit: Int!
 ): [User]
 `;
 
-const providers = async (_, __, ___, { variableValues: { limit, offset } }) => {
-  const users = await User
-    .query({ limit, offset })
-    .query((qb) => {
-      qb.where('is_provider', '=', true);
-    })
-    .fetchAll();
-
-  return Promise.map(users.toArray(), async user => user.serialize());
+const providers = async (_, {
+  serviceCategoryId,
+  lat,
+  lng,
+  offset,
+  limit
+}) => {
+  const providers = await User.findProviders({
+    serviceCategoryId,
+    lat,
+    lng,
+    offset,
+    limit
+  });
+  return providers.toArray().map(user => user.serialize());
 };
 
-registerQuery(def, {
-  providers: combineResolvers(auth, providers)
-});
+registerQuery(def, { providers });
