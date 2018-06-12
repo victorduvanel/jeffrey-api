@@ -3,6 +3,7 @@ function up(knex) {
     table.uuid('id').primary();
 
     table.string('code');
+    table.integer('phone_code');
     table.string('region');
     table.string('name');
 
