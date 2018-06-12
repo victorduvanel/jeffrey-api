@@ -17,3 +17,4 @@ import './phone-number';
 import './verify-phone-number';
 import './tos';
 import './create-provider';
+import './current-location';
