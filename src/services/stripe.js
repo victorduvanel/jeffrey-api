@@ -1,4 +1,7 @@
 import stripe from 'stripe';
-import config  from '../config';
+import config from '../config';
 
-export default stripe(config.stripe.secretKey);
+const s = stripe(config.stripe.secretKey);
+s.setApiVersion('2018-05-21');
+
+export default s;

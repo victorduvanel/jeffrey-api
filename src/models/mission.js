@@ -93,7 +93,7 @@ const Mission = Base.extend({
     });
   },
 
-  setStatus(status) {
+  async setStatus(status) {
     let recipientUserId;
 
     switch (status) {
@@ -112,7 +112,7 @@ const Mission = Base.extend({
     }
 
     this.set('status', status);
-    this.save();
+    await this.save();
 
     // Send notification
     if (recipientUserId) {

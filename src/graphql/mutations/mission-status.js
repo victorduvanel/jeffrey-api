@@ -28,7 +28,7 @@ export const missionStatus = async (_, { id, status }, { user }) => {
       throw new Error('invalid status');
   }
 
-  mission.setStatus(status);
+  await mission.setStatus(status);
 
   return mission.serialize();
 };

@@ -38,16 +38,7 @@ type User {
   bio: String
   prices: [ProviderPrice]
   price(serviceCategoryId: ID): Price
-}
-enum BankAccountType {
-  company
-  individual
-}
-input BankAccountDetails {
-  type: BankAccountType
-  iban: String
-  holderName: String
-  country: String
+  paymentMethodStatus: String
 }
 `;
 
