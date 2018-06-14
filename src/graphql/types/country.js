@@ -4,7 +4,8 @@ const def = `
   type Country {
     id: String!
     name: String!
-    phoneCode: Int!
+    phoneCode: String!
+    flag: String!
     code: String!
   }
 `;

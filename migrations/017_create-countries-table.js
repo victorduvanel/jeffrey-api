@@ -2,10 +2,14 @@ function up(knex) {
   return knex.schema.createTable('countries', (table) => {
     table.uuid('id').primary();
 
-    table.string('code');
-    table.integer('phone_code');
-    table.string('region');
     table.string('name');
+    table.string('code');
+    table.string('phone_code');
+    table.string('region');
+    table.string('flag');
+    table.string('currency_code');
+    table.boolean('is_enabled');
+    table.boolean('alpha_support');
 
     table.dateTime('created_at');
     table.dateTime('updated_at');

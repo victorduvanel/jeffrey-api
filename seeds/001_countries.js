@@ -1,64 +1,39 @@
-exports.seed = function(knex, Promise) {
-  const countries = [
-    {
-      id: '15ADFA6B-AFB3-47D0-9710-714E940B06AC',
-      name: 'United States',
-      code: 'US',
-      phone_code: 1,
-      region: 'US'
-    },
-    {
-      id: '6555D2DE-4600-45EA-A47D-1120CBB9811E',
-      name: 'France',
-      code: 'FR',
-      phone_code: 33,
-      region: 'EU'
-    },
-    {
-      id: 'FEBEB123-09B6-401D-96EB-863182A83934',
-      name: 'Japan',
-      code: 'JP',
-      phone_code: 81,
-      region: 'ASIA'
-    },
-    {
-      id: '05DA5186-00DB-4263-B973-769A386AC219',
-      name: 'South Korea',
-      code: 'KR',
-      phone_code: 82,
-      region: 'ASIA'
-    },
-    {
-      id: '3D401EE9-D011-4D2A-83E6-33DD2EDDC478',
-      name: 'Switzerland',
-      code: 'CH',
-      phone_code: 41,
-      region: 'EU'
-    },
-    {
-      id: 'D61613C7-71A1-4C8B-B7E9-9331B93A4161',
-      name: 'United Kingdom',
-      code: 'GB',
-      phone_code: 44,
-      region: 'EU'
-    },
-    {
-      id: 'E66F4C6E-E0A7-4823-A1BE-2CAF8A5D7952',
-      name: 'Spain',
-      code: 'ES',
-      phone_code: 34,
-      region: 'EU'
-    },
-  ];
+import uuid from 'uuid';
+import countries from './json/countries.json';
 
-  return Promise.map(countries, country => knex.raw(`
-    INSERT INTO "countries" (
-      "id", "name", "code", "phone_code", "region",
-      "created_at", "updated_at"
-    ) VALUES (
-      :id, :name, :code, :phone_code, :region,
-      NOW(), NOW()
-    )
-    ON CONFLICT DO NOTHING
-  `, country));
+exports.seed = function(knex, Promise) {
+  return Promise.map(countries, (country) => {
+    country.id = uuid.v4();
+    console.log(country);
+    return knex.raw(`
+      INSERT INTO countries (
+        id, name, code, phone_code, region, is_enabled, alpha_support, flag, currency_code,
+        created_at, updated_at
+      ) VALUES (
+        :id, :name, :code, :phone_code, :region, :is_enabled, :alpha_support, :flag, :currency_code,
+        NOW(), NOW()
+      )
+      ON CONFLICT DO NOTHING
+    `, country);
+  });
 };
+
+// INSERT INTO 'countries' (
+//   'id', 'name', 'code', 'phone_code', 'region',
+//   'created_at', 'updated_at'
+// ) VALUES (
+//   :id, :name, :code, :phone_code, :region,
+//   NOW(), NOW()
+// )
+// ON CONFLICT DO NOTHING
+
+
+
+// INSERT INTO 'countries' (
+//   'id', 'name', 'code', 'phone_code', 'region', 'is_enable', 'alpha_support', 'flag', 'currency_code',
+//   'created_at', 'updated_at'
+// ) VALUES (
+//   '6fc93a86-ce91-4a59-a9da-19451fbc2519', 'Antigua and Barbuda', 'AG', ':phone_code', ':region', true, true, ':flag', 'EUR',
+//   NOW(), NOW()
+// )
+// ON CONFLICT DO NOTHING

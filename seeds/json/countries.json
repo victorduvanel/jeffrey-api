@@ -1,0 +1,2502 @@
+[
+  {
+    "name": "Taiwan",
+    "code": "TW",
+    "phone_code": 886,
+    "currency_code": "",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddfc"
+  },
+  {
+    "name": "Afghanistan",
+    "code": "AF",
+    "phone_code": 93,
+    "currency_code": "AFN",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddeb"
+  },
+  {
+    "name": "Albania",
+    "code": "AL",
+    "phone_code": 355,
+    "currency_code": "ALL",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf1"
+  },
+  {
+    "name": "Algeria",
+    "code": "DZ",
+    "phone_code": 213,
+    "currency_code": "DZD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde9\ud83c\uddff"
+  },
+  {
+    "name": "American Samoa",
+    "code": "AS",
+    "phone_code": "1-684",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf8"
+  },
+  {
+    "name": "Andorra",
+    "code": "AD",
+    "phone_code": 376,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\udde9"
+  },
+  {
+    "name": "Angola",
+    "code": "AO",
+    "phone_code": 244,
+    "currency_code": "AOA",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf4"
+  },
+  {
+    "name": "Anguilla",
+    "code": "AI",
+    "phone_code": "1-264",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddee"
+  },
+  {
+    "name": "Antarctica",
+    "code": "AQ",
+    "phone_code": 672,
+    "currency_code": "",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf6"
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "code": "AG",
+    "phone_code": "1-268",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddec"
+  },
+  {
+    "name": "Argentina",
+    "code": "AR",
+    "phone_code": 54,
+    "currency_code": "ARS",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf7"
+  },
+  {
+    "name": "Armenia",
+    "code": "AM",
+    "phone_code": 374,
+    "currency_code": "AMD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf2"
+  },
+  {
+    "name": "Aruba",
+    "code": "AW",
+    "phone_code": 297,
+    "currency_code": "AWG",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddfc"
+  },
+  {
+    "name": "Australia",
+    "code": "AU",
+    "phone_code": 61,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddfa"
+  },
+  {
+    "name": "Austria",
+    "code": "AT",
+    "phone_code": 43,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddf9"
+  },
+  {
+    "name": "Azerbaijan",
+    "code": "AZ",
+    "phone_code": 994,
+    "currency_code": "AZN",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddff"
+  },
+  {
+    "name": "Bahamas",
+    "code": "BS",
+    "phone_code": "1-242",
+    "currency_code": "BSD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf8"
+  },
+  {
+    "name": "Bahrain",
+    "code": "BH",
+    "phone_code": 973,
+    "currency_code": "BHD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\udded"
+  },
+  {
+    "name": "Bangladesh",
+    "code": "BD",
+    "phone_code": 880,
+    "currency_code": "BDT",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\udde9"
+  },
+  {
+    "name": "Barbados",
+    "code": "BB",
+    "phone_code": "1-246",
+    "currency_code": "BBD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\udde7"
+  },
+  {
+    "name": "Belarus",
+    "code": "BY",
+    "phone_code": 375,
+    "currency_code": "BYN",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddfe"
+  },
+  {
+    "name": "Belgium",
+    "code": "BE",
+    "phone_code": 32,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddea"
+  },
+  {
+    "name": "Belize",
+    "code": "BZ",
+    "phone_code": 501,
+    "currency_code": "BZD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddff"
+  },
+  {
+    "name": "Benin",
+    "code": "BJ",
+    "phone_code": 229,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddef"
+  },
+  {
+    "name": "Bermuda",
+    "code": "BM",
+    "phone_code": "1-441",
+    "currency_code": "BMD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf2"
+  },
+  {
+    "name": "Bhutan",
+    "code": "BT",
+    "phone_code": 975,
+    "currency_code": "INR,BTN",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf9"
+  },
+  {
+    "name": "Bolivia (Plurinational State of)",
+    "code": "BO",
+    "phone_code": 591,
+    "currency_code": "BOB",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf4"
+  },
+  {
+    "name": "Bonaire, Sint Eustatius and Saba",
+    "code": "BQ",
+    "phone_code": 599,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf6"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "code": "BA",
+    "phone_code": 387,
+    "currency_code": "BAM",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\udde6"
+  },
+  {
+    "name": "Botswana",
+    "code": "BW",
+    "phone_code": 267,
+    "currency_code": "BWP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddfc"
+  },
+  {
+    "name": "Bouvet Island",
+    "code": "BV",
+    "phone_code": 47,
+    "currency_code": "NOK",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddfb"
+  },
+  {
+    "name": "Brazil",
+    "code": "BR",
+    "phone_code": 55,
+    "currency_code": "BRL",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf7"
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "code": "IO",
+    "phone_code": 246,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf4"
+  },
+  {
+    "name": "British Virgin Islands",
+    "code": "VG",
+    "phone_code": "1-284",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\uddec"
+  },
+  {
+    "name": "Brunei Darussalam",
+    "code": "BN",
+    "phone_code": 673,
+    "currency_code": "BND",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf3"
+  },
+  {
+    "name": "Bulgaria",
+    "code": "BG",
+    "phone_code": 359,
+    "currency_code": "BGN",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddec"
+  },
+  {
+    "name": "Burkina Faso",
+    "code": "BF",
+    "phone_code": 226,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddeb"
+  },
+  {
+    "name": "Burundi",
+    "code": "BI",
+    "phone_code": 257,
+    "currency_code": "BIF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddee"
+  },
+  {
+    "name": "Cabo Verde",
+    "code": "CV",
+    "phone_code": 238,
+    "currency_code": "CVE",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddfb"
+  },
+  {
+    "name": "Cambodia",
+    "code": "KH",
+    "phone_code": 855,
+    "currency_code": "KHR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\udded"
+  },
+  {
+    "name": "Cameroon",
+    "code": "CM",
+    "phone_code": 237,
+    "currency_code": "XAF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddf2"
+  },
+  {
+    "name": "Canada",
+    "code": "CA",
+    "phone_code": 1,
+    "currency_code": "CAD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\udde6"
+  },
+  {
+    "name": "Cayman Islands",
+    "code": "KY",
+    "phone_code": "1-345",
+    "currency_code": "KYD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddfe"
+  },
+  {
+    "name": "Central African Republic",
+    "code": "CF",
+    "phone_code": 236,
+    "currency_code": "XAF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddeb"
+  },
+  {
+    "name": "Chad",
+    "code": "TD",
+    "phone_code": 235,
+    "currency_code": "XAF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\udde9"
+  },
+  {
+    "name": "Chile",
+    "code": "CL",
+    "phone_code": 56,
+    "currency_code": "CLP",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddf1"
+  },
+  {
+    "name": "China",
+    "code": "CN",
+    "phone_code": 86,
+    "currency_code": "CNY",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddf3"
+  },
+  {
+    "name": "China, Hong Kong Special Administrative Region",
+    "code": "HK",
+    "phone_code": 852,
+    "currency_code": "HKD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udded\ud83c\uddf0"
+  },
+  {
+    "name": "China, Macao Special Administrative Region",
+    "code": "MO",
+    "phone_code": 853,
+    "currency_code": "MOP",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf4"
+  },
+  {
+    "name": "Christmas Island",
+    "code": "CX",
+    "phone_code": 61,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddfd"
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "code": "CC",
+    "phone_code": 61,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\udde8"
+  },
+  {
+    "name": "Colombia",
+    "code": "CO",
+    "phone_code": 57,
+    "currency_code": "COP",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddf4"
+  },
+  {
+    "name": "Comoros",
+    "code": "KM",
+    "phone_code": 269,
+    "currency_code": "KMF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddf2"
+  },
+  {
+    "name": "Congo",
+    "code": "CG",
+    "phone_code": 242,
+    "currency_code": "XAF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddec"
+  },
+  {
+    "name": "Cook Islands",
+    "code": "CK",
+    "phone_code": 682,
+    "currency_code": "NZD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddf0"
+  },
+  {
+    "name": "Costa Rica",
+    "code": "CR",
+    "phone_code": 506,
+    "currency_code": "CRC",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddf7"
+  },
+  {
+    "name": "Croatia",
+    "code": "HR",
+    "phone_code": 385,
+    "currency_code": "HRK",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udded\ud83c\uddf7"
+  },
+  {
+    "name": "Cuba",
+    "code": "CU",
+    "phone_code": 53,
+    "currency_code": "CUP,CUC",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddfa"
+  },
+  {
+    "name": "Curaçao",
+    "code": "CW",
+    "phone_code": 599,
+    "currency_code": "ANG",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddfc"
+  },
+  {
+    "name": "Cyprus",
+    "code": "CY",
+    "phone_code": 357,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddfe"
+  },
+  {
+    "name": "Czechia",
+    "code": "CZ",
+    "phone_code": 420,
+    "currency_code": "CZK",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddff"
+  },
+  {
+    "name": "Côte d'Ivoire",
+    "code": "CI",
+    "phone_code": 225,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\uddee"
+  },
+  {
+    "name": "Democratic People's Republic of Korea",
+    "code": "KP",
+    "phone_code": 850,
+    "currency_code": "KPW",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddf5"
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "code": "CD",
+    "phone_code": 243,
+    "currency_code": "CDF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\udde9"
+  },
+  {
+    "name": "Denmark",
+    "code": "DK",
+    "phone_code": 45,
+    "currency_code": "DKK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde9\ud83c\uddf0"
+  },
+  {
+    "name": "Djibouti",
+    "code": "DJ",
+    "phone_code": 253,
+    "currency_code": "DJF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde9\ud83c\uddef"
+  },
+  {
+    "name": "Dominica",
+    "code": "DM",
+    "phone_code": "1-767",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde9\ud83c\uddf2"
+  },
+  {
+    "name": "Dominican Republic",
+    "code": "DO",
+    "phone_code": "1-809,1-829,1-849",
+    "currency_code": "DOP",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde9\ud83c\uddf4"
+  },
+  {
+    "name": "Ecuador",
+    "code": "EC",
+    "phone_code": 593,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\udde8"
+  },
+  {
+    "name": "Egypt",
+    "code": "EG",
+    "phone_code": 20,
+    "currency_code": "EGP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\uddec"
+  },
+  {
+    "name": "El Salvador",
+    "code": "SV",
+    "phone_code": 503,
+    "currency_code": "SVC,USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddfb"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "code": "GQ",
+    "phone_code": 240,
+    "currency_code": "XAF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf6"
+  },
+  {
+    "name": "Eritrea",
+    "code": "ER",
+    "phone_code": 291,
+    "currency_code": "ERN",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\uddf7"
+  },
+  {
+    "name": "Estonia",
+    "code": "EE",
+    "phone_code": 372,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\uddea"
+  },
+  {
+    "name": "Ethiopia",
+    "code": "ET",
+    "phone_code": 251,
+    "currency_code": "ETB",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\uddf9"
+  },
+  {
+    "name": "Falkland Islands (Malvinas)",
+    "code": "FK",
+    "phone_code": 500,
+    "currency_code": "",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddeb\ud83c\uddf0"
+  },
+  {
+    "name": "Faroe Islands",
+    "code": "FO",
+    "phone_code": 298,
+    "currency_code": "DKK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddeb\ud83c\uddf4"
+  },
+  {
+    "name": "Fiji",
+    "code": "FJ",
+    "phone_code": 679,
+    "currency_code": "FJD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddeb\ud83c\uddef"
+  },
+  {
+    "name": "Finland",
+    "code": "FI",
+    "phone_code": 358,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddeb\ud83c\uddee"
+  },
+  {
+    "name": "France",
+    "code": "FR",
+    "phone_code": 33,
+    "currency_code": "EUR",
+    "is_enabled": true,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddeb\ud83c\uddf7"
+  },
+  {
+    "name": "French Guiana",
+    "code": "GF",
+    "phone_code": 594,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddeb"
+  },
+  {
+    "name": "French Polynesia",
+    "code": "PF",
+    "phone_code": 689,
+    "currency_code": "XPF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddeb"
+  },
+  {
+    "name": "French Southern Territories",
+    "code": "TF",
+    "phone_code": 262,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddeb"
+  },
+  {
+    "name": "Gabon",
+    "code": "GA",
+    "phone_code": 241,
+    "currency_code": "XAF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\udde6"
+  },
+  {
+    "name": "Gambia",
+    "code": "GM",
+    "phone_code": 220,
+    "currency_code": "GMD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf2"
+  },
+  {
+    "name": "Georgia",
+    "code": "GE",
+    "phone_code": 995,
+    "currency_code": "GEL",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddea"
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "phone_code": 49,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde9\ud83c\uddea"
+  },
+  {
+    "name": "Ghana",
+    "code": "GH",
+    "phone_code": 233,
+    "currency_code": "GHS",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\udded"
+  },
+  {
+    "name": "Gibraltar",
+    "code": "GI",
+    "phone_code": 350,
+    "currency_code": "GIP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddee"
+  },
+  {
+    "name": "Greece",
+    "code": "GR",
+    "phone_code": 30,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf7"
+  },
+  {
+    "name": "Greenland",
+    "code": "GL",
+    "phone_code": 299,
+    "currency_code": "DKK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf1"
+  },
+  {
+    "name": "Grenada",
+    "code": "GD",
+    "phone_code": "1-473",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\udde9"
+  },
+  {
+    "name": "Guadeloupe",
+    "code": "GP",
+    "phone_code": 590,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf5"
+  },
+  {
+    "name": "Guam",
+    "code": "GU",
+    "phone_code": "1-671",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddfa"
+  },
+  {
+    "name": "Guatemala",
+    "code": "GT",
+    "phone_code": 502,
+    "currency_code": "GTQ",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf9"
+  },
+  {
+    "name": "Guernsey",
+    "code": "GG",
+    "phone_code": 44,
+    "currency_code": "GBP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddec"
+  },
+  {
+    "name": "Guinea",
+    "code": "GN",
+    "phone_code": 224,
+    "currency_code": "GNF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf3"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "code": "GW",
+    "phone_code": 245,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddfc"
+  },
+  {
+    "name": "Guyana",
+    "code": "GY",
+    "phone_code": 592,
+    "currency_code": "GYD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddfe"
+  },
+  {
+    "name": "Haiti",
+    "code": "HT",
+    "phone_code": 509,
+    "currency_code": "HTG,USD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udded\ud83c\uddf9"
+  },
+  {
+    "name": "Heard Island and McDonald Islands",
+    "code": "HM",
+    "phone_code": 672,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udded\ud83c\uddf2"
+  },
+  {
+    "name": "Holy See",
+    "code": "VA",
+    "phone_code": "39-06",
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\udde6"
+  },
+  {
+    "name": "Honduras",
+    "code": "HN",
+    "phone_code": 504,
+    "currency_code": "HNL",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udded\ud83c\uddf3"
+  },
+  {
+    "name": "Hungary",
+    "code": "HU",
+    "phone_code": 36,
+    "currency_code": "HUF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udded\ud83c\uddfa"
+  },
+  {
+    "name": "Iceland",
+    "code": "IS",
+    "phone_code": 354,
+    "currency_code": "ISK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf8"
+  },
+  {
+    "name": "India",
+    "code": "IN",
+    "phone_code": 91,
+    "currency_code": "INR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf3"
+  },
+  {
+    "name": "Indonesia",
+    "code": "ID",
+    "phone_code": 62,
+    "currency_code": "IDR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\udde9"
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "code": "IR",
+    "phone_code": 98,
+    "currency_code": "IRR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf7"
+  },
+  {
+    "name": "Iraq",
+    "code": "IQ",
+    "phone_code": 964,
+    "currency_code": "IQD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf6"
+  },
+  {
+    "name": "Ireland",
+    "code": "IE",
+    "phone_code": 353,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddea"
+  },
+  {
+    "name": "Isle of Man",
+    "code": "IM",
+    "phone_code": 44,
+    "currency_code": "GBP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf2"
+  },
+  {
+    "name": "Israel",
+    "code": "IL",
+    "phone_code": 972,
+    "currency_code": "ILS",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf1"
+  },
+  {
+    "name": "Italy",
+    "code": "IT",
+    "phone_code": 39,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddee\ud83c\uddf9"
+  },
+  {
+    "name": "Jamaica",
+    "code": "JM",
+    "phone_code": "1-876",
+    "currency_code": "JMD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddef\ud83c\uddf2"
+  },
+  {
+    "name": "Japan",
+    "code": "JP",
+    "phone_code": 81,
+    "currency_code": "JPY",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddef\ud83c\uddf5"
+  },
+  {
+    "name": "Jersey",
+    "code": "JE",
+    "phone_code": 44,
+    "currency_code": "GBP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddef\ud83c\uddea"
+  },
+  {
+    "name": "Jordan",
+    "code": "JO",
+    "phone_code": 962,
+    "currency_code": "JOD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddef\ud83c\uddf4"
+  },
+  {
+    "name": "Kazakhstan",
+    "code": "KZ",
+    "phone_code": 7,
+    "currency_code": "KZT",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddff"
+  },
+  {
+    "name": "Kenya",
+    "code": "KE",
+    "phone_code": 254,
+    "currency_code": "KES",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddea"
+  },
+  {
+    "name": "Kiribati",
+    "code": "KI",
+    "phone_code": 686,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddee"
+  },
+  {
+    "name": "Kuwait",
+    "code": "KW",
+    "phone_code": 965,
+    "currency_code": "KWD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddfc"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "code": "KG",
+    "phone_code": 996,
+    "currency_code": "KGS",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddec"
+  },
+  {
+    "name": "Lao People's Democratic Republic",
+    "code": "LA",
+    "phone_code": 856,
+    "currency_code": "LAK",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\udde6"
+  },
+  {
+    "name": "Latvia",
+    "code": "LV",
+    "phone_code": 371,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddfb"
+  },
+  {
+    "name": "Lebanon",
+    "code": "LB",
+    "phone_code": 961,
+    "currency_code": "LBP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\udde7"
+  },
+  {
+    "name": "Lesotho",
+    "code": "LS",
+    "phone_code": 266,
+    "currency_code": "LSL,ZAR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddf8"
+  },
+  {
+    "name": "Liberia",
+    "code": "LR",
+    "phone_code": 231,
+    "currency_code": "LRD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddf7"
+  },
+  {
+    "name": "Libya",
+    "code": "LY",
+    "phone_code": 218,
+    "currency_code": "LYD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddfe"
+  },
+  {
+    "name": "Liechtenstein",
+    "code": "LI",
+    "phone_code": 423,
+    "currency_code": "CHF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddee"
+  },
+  {
+    "name": "Lithuania",
+    "code": "LT",
+    "phone_code": 370,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddf9"
+  },
+  {
+    "name": "Luxembourg",
+    "code": "LU",
+    "phone_code": 352,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddfa"
+  },
+  {
+    "name": "Madagascar",
+    "code": "MG",
+    "phone_code": 261,
+    "currency_code": "MGA",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddec"
+  },
+  {
+    "name": "Malawi",
+    "code": "MW",
+    "phone_code": 265,
+    "currency_code": "MWK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddfc"
+  },
+  {
+    "name": "Malaysia",
+    "code": "MY",
+    "phone_code": 60,
+    "currency_code": "MYR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddfe"
+  },
+  {
+    "name": "Maldives",
+    "code": "MV",
+    "phone_code": 960,
+    "currency_code": "MVR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddfb"
+  },
+  {
+    "name": "Mali",
+    "code": "ML",
+    "phone_code": 223,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf1"
+  },
+  {
+    "name": "Malta",
+    "code": "MT",
+    "phone_code": 356,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf9"
+  },
+  {
+    "name": "Marshall Islands",
+    "code": "MH",
+    "phone_code": 692,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\udded"
+  },
+  {
+    "name": "Martinique",
+    "code": "MQ",
+    "phone_code": 596,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf6"
+  },
+  {
+    "name": "Mauritania",
+    "code": "MR",
+    "phone_code": 222,
+    "currency_code": "MRO",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf7"
+  },
+  {
+    "name": "Mauritius",
+    "code": "MU",
+    "phone_code": 230,
+    "currency_code": "MUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddfa"
+  },
+  {
+    "name": "Mayotte",
+    "code": "YT",
+    "phone_code": 262,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfe\ud83c\uddf9"
+  },
+  {
+    "name": "Mexico",
+    "code": "MX",
+    "phone_code": 52,
+    "currency_code": "MXN",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddfd"
+  },
+  {
+    "name": "Micronesia (Federated States of)",
+    "code": "FM",
+    "phone_code": 691,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddeb\ud83c\uddf2"
+  },
+  {
+    "name": "Monaco",
+    "code": "MC",
+    "phone_code": 377,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\udde8"
+  },
+  {
+    "name": "Mongolia",
+    "code": "MN",
+    "phone_code": 976,
+    "currency_code": "MNT",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf3"
+  },
+  {
+    "name": "Montenegro",
+    "code": "ME",
+    "phone_code": 382,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddea"
+  },
+  {
+    "name": "Montserrat",
+    "code": "MS",
+    "phone_code": "1-664",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf8"
+  },
+  {
+    "name": "Morocco",
+    "code": "MA",
+    "phone_code": 212,
+    "currency_code": "MAD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\udde6"
+  },
+  {
+    "name": "Mozambique",
+    "code": "MZ",
+    "phone_code": 258,
+    "currency_code": "MZN",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddff"
+  },
+  {
+    "name": "Myanmar",
+    "code": "MM",
+    "phone_code": 95,
+    "currency_code": "MMK",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf2"
+  },
+  {
+    "name": "Namibia",
+    "code": "NA",
+    "phone_code": 264,
+    "currency_code": "NAD,ZAR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\udde6"
+  },
+  {
+    "name": "Nauru",
+    "code": "NR",
+    "phone_code": 674,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddf7"
+  },
+  {
+    "name": "Nepal",
+    "code": "NP",
+    "phone_code": 977,
+    "currency_code": "NPR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddf5"
+  },
+  {
+    "name": "Netherlands",
+    "code": "NL",
+    "phone_code": 31,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddf1"
+  },
+  {
+    "name": "New Caledonia",
+    "code": "NC",
+    "phone_code": 687,
+    "currency_code": "XPF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\udde8"
+  },
+  {
+    "name": "New Zealand",
+    "code": "NZ",
+    "phone_code": 64,
+    "currency_code": "NZD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddff"
+  },
+  {
+    "name": "Nicaragua",
+    "code": "NI",
+    "phone_code": 505,
+    "currency_code": "NIO",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddee"
+  },
+  {
+    "name": "Niger",
+    "code": "NE",
+    "phone_code": 227,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddea"
+  },
+  {
+    "name": "Nigeria",
+    "code": "NG",
+    "phone_code": 234,
+    "currency_code": "NGN",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddec"
+  },
+  {
+    "name": "Niue",
+    "code": "NU",
+    "phone_code": 683,
+    "currency_code": "NZD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddfa"
+  },
+  {
+    "name": "Norfolk Island",
+    "code": "NF",
+    "phone_code": 672,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddeb"
+  },
+  {
+    "name": "Northern Mariana Islands",
+    "code": "MP",
+    "phone_code": "1-670",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf5"
+  },
+  {
+    "name": "Norway",
+    "code": "NO",
+    "phone_code": 47,
+    "currency_code": "NOK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf3\ud83c\uddf4"
+  },
+  {
+    "name": "Oman",
+    "code": "OM",
+    "phone_code": 968,
+    "currency_code": "OMR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf4\ud83c\uddf2"
+  },
+  {
+    "name": "Pakistan",
+    "code": "PK",
+    "phone_code": 92,
+    "currency_code": "PKR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf0"
+  },
+  {
+    "name": "Palau",
+    "code": "PW",
+    "phone_code": 680,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddfc"
+  },
+  {
+    "name": "Panama",
+    "code": "PA",
+    "phone_code": 507,
+    "currency_code": "PAB,USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\udde6"
+  },
+  {
+    "name": "Papua New Guinea",
+    "code": "PG",
+    "phone_code": 675,
+    "currency_code": "PGK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddec"
+  },
+  {
+    "name": "Paraguay",
+    "code": "PY",
+    "phone_code": 595,
+    "currency_code": "PYG",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddfe"
+  },
+  {
+    "name": "Peru",
+    "code": "PE",
+    "phone_code": 51,
+    "currency_code": "PEN",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddea"
+  },
+  {
+    "name": "Philippines",
+    "code": "PH",
+    "phone_code": 63,
+    "currency_code": "PHP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\udded"
+  },
+  {
+    "name": "Pitcairn",
+    "code": "PN",
+    "phone_code": 870,
+    "currency_code": "NZD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf3"
+  },
+  {
+    "name": "Poland",
+    "code": "PL",
+    "phone_code": 48,
+    "currency_code": "PLN",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf1"
+  },
+  {
+    "name": "Portugal",
+    "code": "PT",
+    "phone_code": 351,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf9"
+  },
+  {
+    "name": "Puerto Rico",
+    "code": "PR",
+    "phone_code": 1,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf7"
+  },
+  {
+    "name": "Qatar",
+    "code": "QA",
+    "phone_code": 974,
+    "currency_code": "QAR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf6\ud83c\udde6"
+  },
+  {
+    "name": "Republic of Korea",
+    "code": "KR",
+    "phone_code": 82,
+    "currency_code": "KRW",
+    "is_enabled": true,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddf7"
+  },
+  {
+    "name": "Republic of Moldova",
+    "code": "MD",
+    "phone_code": 373,
+    "currency_code": "MDL",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\udde9"
+  },
+  {
+    "name": "Romania",
+    "code": "RO",
+    "phone_code": 40,
+    "currency_code": "RON",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf7\ud83c\uddf4"
+  },
+  {
+    "name": "Russian Federation",
+    "code": "RU",
+    "phone_code": 7,
+    "currency_code": "RUB",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf7\ud83c\uddfa"
+  },
+  {
+    "name": "Rwanda",
+    "code": "RW",
+    "phone_code": 250,
+    "currency_code": "RWF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf7\ud83c\uddfc"
+  },
+  {
+    "name": "Réunion",
+    "code": "RE",
+    "phone_code": 262,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf7\ud83c\uddea"
+  },
+  {
+    "name": "Saint Barthélemy",
+    "code": "BL",
+    "phone_code": 590,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde7\ud83c\uddf1"
+  },
+  {
+    "name": "Saint Helena",
+    "code": "SH",
+    "phone_code": 290,
+    "currency_code": "SHP",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\udded"
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "code": "KN",
+    "phone_code": "1-869",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf0\ud83c\uddf3"
+  },
+  {
+    "name": "Saint Lucia",
+    "code": "LC",
+    "phone_code": "1-758",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\udde8"
+  },
+  {
+    "name": "Saint Martin (French Part)",
+    "code": "MF",
+    "phone_code": 590,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddeb"
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "code": "PM",
+    "phone_code": 508,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf2"
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "code": "VC",
+    "phone_code": "1-784",
+    "currency_code": "XCD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\udde8"
+  },
+  {
+    "name": "Samoa",
+    "code": "WS",
+    "phone_code": 685,
+    "currency_code": "WST",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfc\ud83c\uddf8"
+  },
+  {
+    "name": "San Marino",
+    "code": "SM",
+    "phone_code": 378,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf2"
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "code": "ST",
+    "phone_code": 239,
+    "currency_code": "STD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf9"
+  },
+  {
+    "name": "Sark",
+    "code": "",
+    "phone_code": "",
+    "currency_code": "",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": ""
+  },
+  {
+    "name": "Saudi Arabia",
+    "code": "SA",
+    "phone_code": 966,
+    "currency_code": "SAR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\udde6"
+  },
+  {
+    "name": "Senegal",
+    "code": "SN",
+    "phone_code": 221,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf3"
+  },
+  {
+    "name": "Serbia",
+    "code": "RS",
+    "phone_code": 381,
+    "currency_code": "RSD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf7\ud83c\uddf8"
+  },
+  {
+    "name": "Seychelles",
+    "code": "SC",
+    "phone_code": 248,
+    "currency_code": "SCR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\udde8"
+  },
+  {
+    "name": "Sierra Leone",
+    "code": "SL",
+    "phone_code": 232,
+    "currency_code": "SLL",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf1"
+  },
+  {
+    "name": "Singapore",
+    "code": "SG",
+    "phone_code": 65,
+    "currency_code": "SGD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddec"
+  },
+  {
+    "name": "Sint Maarten (Dutch part)",
+    "code": "SX",
+    "phone_code": "1-721",
+    "currency_code": "ANG",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddfd"
+  },
+  {
+    "name": "Slovakia",
+    "code": "SK",
+    "phone_code": 421,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf0"
+  },
+  {
+    "name": "Slovenia",
+    "code": "SI",
+    "phone_code": 386,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddee"
+  },
+  {
+    "name": "Solomon Islands",
+    "code": "SB",
+    "phone_code": 677,
+    "currency_code": "SBD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\udde7"
+  },
+  {
+    "name": "Somalia",
+    "code": "SO",
+    "phone_code": 252,
+    "currency_code": "SOS",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf4"
+  },
+  {
+    "name": "South Africa",
+    "code": "ZA",
+    "phone_code": 27,
+    "currency_code": "ZAR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddff\ud83c\udde6"
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "code": "GS",
+    "phone_code": 500,
+    "currency_code": "",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\uddf8"
+  },
+  {
+    "name": "South Sudan",
+    "code": "SS",
+    "phone_code": 211,
+    "currency_code": "SSP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf8"
+  },
+  {
+    "name": "Spain",
+    "code": "ES",
+    "phone_code": 34,
+    "currency_code": "EUR",
+    "is_enabled": true,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\uddf8"
+  },
+  {
+    "name": "Sri Lanka",
+    "code": "LK",
+    "phone_code": 94,
+    "currency_code": "LKR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf1\ud83c\uddf0"
+  },
+  {
+    "name": "State of Palestine",
+    "code": "PS",
+    "phone_code": 970,
+    "currency_code": "",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf5\ud83c\uddf8"
+  },
+  {
+    "name": "Sudan",
+    "code": "SD",
+    "phone_code": 249,
+    "currency_code": "SDG",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\udde9"
+  },
+  {
+    "name": "Suriname",
+    "code": "SR",
+    "phone_code": 597,
+    "currency_code": "SRD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddf7"
+  },
+  {
+    "name": "Svalbard and Jan Mayen Islands",
+    "code": "SJ",
+    "phone_code": 47,
+    "currency_code": "NOK",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddef"
+  },
+  {
+    "name": "Swaziland",
+    "code": "SZ",
+    "phone_code": 268,
+    "currency_code": "SZL",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddff"
+  },
+  {
+    "name": "Sweden",
+    "code": "SE",
+    "phone_code": 46,
+    "currency_code": "SEK",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddea"
+  },
+  {
+    "name": "Switzerland",
+    "code": "CH",
+    "phone_code": 41,
+    "currency_code": "CHF",
+    "is_enabled": true,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde8\ud83c\udded"
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "code": "SY",
+    "phone_code": 963,
+    "currency_code": "SYP",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf8\ud83c\uddfe"
+  },
+  {
+    "name": "Tajikistan",
+    "code": "TJ",
+    "phone_code": 992,
+    "currency_code": "TJS",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddef"
+  },
+  {
+    "name": "Thailand",
+    "code": "TH",
+    "phone_code": 66,
+    "currency_code": "THB",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\udded"
+  },
+  {
+    "name": "The former Yugoslav Republic of Macedonia",
+    "code": "MK",
+    "phone_code": 389,
+    "currency_code": "MKD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf2\ud83c\uddf0"
+  },
+  {
+    "name": "Timor-Leste",
+    "code": "TL",
+    "phone_code": 670,
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf1"
+  },
+  {
+    "name": "Togo",
+    "code": "TG",
+    "phone_code": 228,
+    "currency_code": "XOF",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddec"
+  },
+  {
+    "name": "Tokelau",
+    "code": "TK",
+    "phone_code": 690,
+    "currency_code": "NZD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf0"
+  },
+  {
+    "name": "Tonga",
+    "code": "TO",
+    "phone_code": 676,
+    "currency_code": "TOP",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf4"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "code": "TT",
+    "phone_code": "1-868",
+    "currency_code": "TTD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf9"
+  },
+  {
+    "name": "Tunisia",
+    "code": "TN",
+    "phone_code": 216,
+    "currency_code": "TND",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf3"
+  },
+  {
+    "name": "Turkey",
+    "code": "TR",
+    "phone_code": 90,
+    "currency_code": "TRY",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf7"
+  },
+  {
+    "name": "Turkmenistan",
+    "code": "TM",
+    "phone_code": 993,
+    "currency_code": "TMT",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddf2"
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "code": "TC",
+    "phone_code": "1-649",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\udde8"
+  },
+  {
+    "name": "Tuvalu",
+    "code": "TV",
+    "phone_code": 688,
+    "currency_code": "AUD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddfb"
+  },
+  {
+    "name": "Uganda",
+    "code": "UG",
+    "phone_code": 256,
+    "currency_code": "UGX",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfa\ud83c\uddec"
+  },
+  {
+    "name": "Ukraine",
+    "code": "UA",
+    "phone_code": 380,
+    "currency_code": "UAH",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfa\ud83c\udde6"
+  },
+  {
+    "name": "United Arab Emirates",
+    "code": "AE",
+    "phone_code": 971,
+    "currency_code": "AED",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddea"
+  },
+  {
+    "name": "United Kingdom of Great Britain and Northern Ireland",
+    "code": "GB",
+    "phone_code": 44,
+    "currency_code": "GBP",
+    "is_enabled": true,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddec\ud83c\udde7"
+  },
+  {
+    "name": "United Republic of Tanzania",
+    "code": "TZ",
+    "phone_code": 255,
+    "currency_code": "TZS",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddf9\ud83c\uddff"
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "code": "UM",
+    "phone_code": "",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfa\ud83c\uddf2"
+  },
+  {
+    "name": "United States Virgin Islands",
+    "code": "VI",
+    "phone_code": "1-340",
+    "currency_code": "USD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\uddee"
+  },
+  {
+    "name": "United States of America",
+    "code": "US",
+    "phone_code": 1,
+    "currency_code": "USD",
+    "is_enabled": true,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfa\ud83c\uddf8"
+  },
+  {
+    "name": "Uruguay",
+    "code": "UY",
+    "phone_code": 598,
+    "currency_code": "UYU",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfa\ud83c\uddfe"
+  },
+  {
+    "name": "Uzbekistan",
+    "code": "UZ",
+    "phone_code": 998,
+    "currency_code": "UZS",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfa\ud83c\uddff"
+  },
+  {
+    "name": "Vanuatu",
+    "code": "VU",
+    "phone_code": 678,
+    "currency_code": "VUV",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\uddfa"
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "code": "VE",
+    "phone_code": 58,
+    "currency_code": "VEF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\uddea"
+  },
+  {
+    "name": "Viet Nam",
+    "code": "VN",
+    "phone_code": 84,
+    "currency_code": "VND",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfb\ud83c\uddf3"
+  },
+  {
+    "name": "Wallis and Futuna Islands",
+    "code": "WF",
+    "phone_code": 681,
+    "currency_code": "XPF",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddfc\ud83c\uddeb"
+  },
+  {
+    "name": "Western Sahara",
+    "code": "EH",
+    "phone_code": 212,
+    "currency_code": "MAD",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\uddea\ud83c\udded"
+  },
+  {
+    "name": "Yemen",
+    "code": "YE",
+    "phone_code": 967,
+    "currency_code": "YER",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddfe\ud83c\uddea"
+  },
+  {
+    "name": "Zambia",
+    "code": "ZM",
+    "phone_code": 260,
+    "currency_code": "ZMW",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddff\ud83c\uddf2"
+  },
+  {
+    "name": "Zimbabwe",
+    "code": "ZW",
+    "phone_code": 263,
+    "currency_code": "ZWL",
+    "is_enabled": false,
+    "alpha_support": true,
+    "region": "",
+    "flag": "\ud83c\uddff\ud83c\uddfc"
+  },
+  {
+    "name": "Åland Islands",
+    "code": "AX",
+    "phone_code": 358,
+    "currency_code": "EUR",
+    "is_enabled": false,
+    "alpha_support": false,
+    "region": "",
+    "flag": "\ud83c\udde6\ud83c\uddfd"
+  }
+]
