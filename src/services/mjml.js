@@ -2,14 +2,14 @@ import Promise    from 'bluebird';
 import mjml2html  from 'mjml';
 import nativeFs   from 'fs';
 import path       from 'path';
-import locales    from '../resources/locales';
+import locales    from '../locales';
 import handlebars from './handlebars';
 
 const fs = Promise.promisifyAll(nativeFs);
 
 const viewsDirectory = './src/views';
 
-export const render = async (templateName, { locale }, context) => {
+export const render = async (templateName, locale, context) => {
   const tmpl = await fs.readFileAsync(path.join(viewsDirectory, `${templateName}.mjml`));
   const t = handlebars.compile(tmpl.toString());
 
@@ -19,9 +19,7 @@ export const render = async (templateName, { locale }, context) => {
   };
 
   const tt = t(context, {
-    data: {
-      intl: intlData
-    }
+    data: { intl: intlData }
   });
 
   const res = mjml2html(tt);

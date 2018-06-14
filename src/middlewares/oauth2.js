@@ -40,14 +40,16 @@ const oauth2 = async (req) => {
 
   const user = accessToken.related('user');
 
-  return user;
+  return { accessToken, user };
 };
 
 export default async (req, res, next) => {
-  oauth2(req)
-    .then((user) => {
-      req.user = user;
-      next();
-    })
-    .catch(next);
+  try {
+    const{ accessToken, user } = await oauth2(req);
+    req.user = user;
+    req.accessToken = accessToken;
+    next();
+  } catch (err) {
+    next(err);
+  }
 };

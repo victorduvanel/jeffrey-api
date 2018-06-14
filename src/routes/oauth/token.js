@@ -35,6 +35,8 @@ export const post = [
 
       await loginToken.destroy();
 
+      await user.saveMeta(req.body);
+
       const accessToken = await user.createAccessToken({});
       res.send({
         access_token: accessToken.get('token'),
@@ -50,6 +52,7 @@ export const post = [
 
     try {
       const user = await User.authenticate({ email: username, password });
+      await user.saveMeta(req.body);
 
       const accessToken = await user.createAccessToken({});
 

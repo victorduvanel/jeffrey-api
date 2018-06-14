@@ -20,13 +20,15 @@ export const post = [
 
     let user;
     const email = pendingUser.get('email');
+    const locale = pendingUser.get('locale');
     const { firstName, lastName } = req.body;
 
     try {
       user = await User.create({
         firstName,
         lastName,
-        email
+        email,
+        locale
       });
     } catch (err) {
       if (err === DuplicatedUser) {

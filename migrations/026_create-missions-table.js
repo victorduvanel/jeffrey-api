@@ -35,6 +35,8 @@ function up(knex) {
     table.dateTime('started_date');
     table.dateTime('ended_date');
 
+    table.boolean('users_notified');
+
     table.enum('status', [
       'accepted',
       'refused',

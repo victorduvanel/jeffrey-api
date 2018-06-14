@@ -8,6 +8,7 @@ function up(knex) {
       table.string('facebook_id').unique();
       table.string('stripe_customer_id').unique();
       table.string('password');
+      table.string('locale');
       table.enum('gender', ['male', 'female']);
       table.string('first_name');
       table.string('last_name');

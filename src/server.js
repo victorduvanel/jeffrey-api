@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import 'babel-polyfill';
 import './services/google/datastore';
 
@@ -23,6 +24,13 @@ import './graphql/mutations';
 import './graphql/subscriptions';
 import './graphql/queries';
 
+import locales from './locales';
+import { loadLocale } from './lib/i18n';
+
+_.forEach(locales, (messages, locale) => {
+  loadLocale(locale, messages);
+});
+
 export const httpServer = http.createServer();
 
 const app = express();
@@ -40,80 +48,12 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
-
-  // const froms = [
-  //   '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-  //   'd01028fc-53c5-4bf3-ad0b-0f9fa677c90b',
-  //   'e96b8bbb-dea6-4495-a31a-870c67509502'
-  // ];
-
-  // const user = await User.find(froms[Math.floor(Math.random() * froms.length)]);
-  // const user2 = await User.find('854de9f6-22f5-4b6f-b093-9692b50f273b');
-  // const conversation = await Conversation.findOrCreate([ user, user2 ]);
-
-  // await newMessage(
-  //   null,
-  //   { conversationId: conversation.get('id'), message: 'Bonjour' },
-  //   { user }
-  // );
-
   res.send({
+    hello: 'world'
   });
 });
 
-// get('/mission', async (req, res) => {
-//   const me = await User.find('8d8fe6fe-e925-45b4-9ba9-3db0ae8864d3');
-//   const randomUser = await User.find('403433d4-1725-40fc-8cb5-02071de613ec');
-
-//   const serviceCategory = await ServiceCategory.find('8c47eff2-0313-47ef-898e-2dee01fb98bd');
-//   if (!ServiceCategory) {
-//     return false;
-//   }
-
-//   console.log('======= > createMission');
-//   const mission = await Mission.create({
-//     startDate: new Date(Date.now()),
-//     price: 12,
-//     currency: 'EUR',
-//     status: 'pending',
-//     provider: randomUser,
-//     client: me,
-//     serviceCategory
-//   });
-
-//   // const answers = ['accepted', 'refused', 'canceled'];
-
-//   setTimeout(() => {
-//     console.log('======= > missionStatus');
-//     missionStatus(
-//       null,
-//       { id: mission.get('id'), status: 'accepted' },
-//       { user: me }
-//     );
-//   }, 2000);
-
-//   setTimeout(() => {
-//     console.log('======= > startMission');
-//     startMission(
-//       null,
-//       { id: mission.get('id') },
-//       { user: randomUser }
-//     );
-//   }, 4000);
-
-//   setTimeout(() => {
-//     console.log('======= > endMission');
-//     endMission(
-//       null,
-//       { id: mission.get('id') },
-//       { user: randomUser }
-//     );
-
-//     res.send({
-//       coucou: 'test end'
-//     });
-//   }, 6000);
-// });
+post('/cron', routes.cron.post);
 
 router.use('/graphql', ...(graphqlRoute()));
 get('/graphiql', routes.graphiql.get);
@@ -124,6 +64,8 @@ post('/signup', routes.signup.post);
 
 get('/me', routes.me.get);
 post('/me', routes.me.post);
+
+post('/logout', routes.logout.post);
 
 post('/oauth/token', routes.oauth.token.post);
 post('/oauth/revoke', routes.oauth.revoke.post);

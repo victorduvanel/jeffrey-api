@@ -1,5 +1,5 @@
-import oauth2     from '../middlewares/oauth2';
 import bodyParser from 'body-parser';
+import oauth2     from '../middlewares/oauth2';
 
 const jsonSerialize = async (user) => {
   const paymentMethodStatus = await user.paymentMethodStatus();

@@ -11,7 +11,7 @@
       <mj-column>
         <mj-text align="left">
           <h1>Connectez vous à Jeffrey</h1>
-          <h1>Salut, bienvenue chez Jeffrey !</h1>
+          <h1>{{formatMessage (intlGet "i18n.hello")}}, bienvenue chez Jeffrey !</h1>
           <p>Nous sommes heureux de vous compter parmi nous.<br>
           Pour authentifier votre email et finaliser votre inscription, cliquez sur le lien suivant :</p>
         </mj-text>
