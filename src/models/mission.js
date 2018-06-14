@@ -1,7 +1,10 @@
-import uuid         from 'uuid';
-import bookshelf    from '../services/bookshelf';
-import Base         from './base';
-import User         from './user';
+import Promise       from 'bluebird';
+import uuid          from 'uuid';
+import bookshelf     from '../services/bookshelf';
+import Base          from './base';
+import User          from './user';
+import i18n          from '../lib/i18n';
+import { getLocale } from '../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
   conversationMissionStatusChangedActivityTopic,
@@ -39,10 +42,33 @@ const Mission = Base.extend({
     };
   },
 
-  start: async function() {
-    this.set('startedDate', new Date(Date.now()));
+  send5minNotif: async function() {
+    await this.load(['provider', 'client']);
 
-    this.save();
+    const provider = this.related('provider');
+    const client = this.related('client');
+
+    const providerLocale = getLocale(provider.get('locale'));
+    await provider.pushNotification({
+      body: i18n[providerLocale].formatMessage({
+        id: 'notifications.nextMissionFiveMinutesProviderAlert',
+        defaultMessage: 'Your next mission starts in 5 minutes'
+      })
+    });
+
+    const clientLocale = getLocale(client.get('locale'));
+    await client.pushNotification({
+      body: i18n[clientLocale].formatMessage({
+        id: 'notifications.nextMissionFiveMinutesClientAlert',
+        defaultMessage: 'Your Jeffrey will start in 5 minutes'
+      })
+    });
+  },
+
+  start: async function() {
+    this.set('startedDate', bookshelf.knex.raw('NOW()'));
+    this.set('status', 'started');
+    await this.save();
 
     // Send notification
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
@@ -54,9 +80,9 @@ const Mission = Base.extend({
   },
 
   end: async function() {
-    this.set('endedDate', new Date(Date.now()));
+    this.set('endedDate', bookshelf.knex.raw('NOW()'));
 
-    this.save();
+    await this.save();
 
     // Send notification
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
@@ -187,6 +213,27 @@ const Mission = Base.extend({
         );
       })
       .fetchAll();
+  },
+
+  startMissions: async function() {
+    const res = await bookshelf.knex
+      .raw(`
+        update missions
+        set
+          users_notified = true
+        where
+          id in (
+            select id from missions where users_notified = false limit 10
+          )
+        and
+          start_date - NOW() <= interval '5 minutes'
+        returning id
+      `);
+
+    return Promise.map(res.rows, async ({ id }) => {
+      const mission = await Mission.find(id);
+      return mission.send5minNotif();
+    });
   }
 });
 

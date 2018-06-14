@@ -11,6 +11,8 @@ function up(knex) {
       .onUpdate('CASCADE')
       .onDelete('CASCADE');
 
+    table.string('locale');
+
     table.unique(['token', 'type']);
 
     table.dateTime('created_at');

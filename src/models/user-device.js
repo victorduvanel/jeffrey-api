@@ -28,20 +28,25 @@ const UserDevice = Base.extend({
     });
   }
 }, {
-  create: async function({ user, token, type }) {
+  create: async function({ user, token, type, locale }) {
     const id = uuid.v4();
 
     await bookshelf.knex.raw(
       `INSERT INTO user_devices
-        (id, token, owner_id, type, created_at, updated_at)
-        VALUES (:id, :token, :ownerId, :type, NOW(), NOW())
-        ON CONFLICT DO NOTHING
+         (id, token, owner_id, type, locale, created_at, updated_at)
+       VALUES (:id, :token, :ownerId, :type, :locale, NOW(), NOW())
+       ON CONFLICT (token, type) DO UPDATE
+       SET
+         owner_id = EXCLUDED.owner_id,
+         locale = EXCLUDED.locale,
+         updated_at = NOW()
       `,
       {
         id,
         token,
         ownerId: user.get('id'),
-        type
+        type,
+        locale
       }
     );
 
@@ -53,6 +58,19 @@ const UserDevice = Base.extend({
       .fetch({
         withRelated: ['owner']
       });
+  },
+
+  revoke: function(user, token, type) {
+    return bookshelf.knex.raw(
+      `DELETE FROM user_devices
+       WHERE token = :token AND type = :type AND owner_id = :ownerId
+      `,
+      {
+        token,
+        type,
+        ownerId: user.id
+      }
+    );
   }
 });
 

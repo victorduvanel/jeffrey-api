@@ -1,9 +1,9 @@
-import Promise    from 'bluebird';
-import handlebars from 'handlebars';
+import Promise        from 'bluebird';
+import handlebars     from 'handlebars';
 import handlebarsIntl from 'handlebars-intl';
-import path       from 'path';
-import config     from '../config';
-import nativeFs   from 'fs';
+import path           from 'path';
+import config         from '../config';
+import nativeFs       from 'fs';
 
 const fs = Promise.promisifyAll(nativeFs);
 

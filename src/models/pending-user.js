@@ -7,6 +7,8 @@ import * as libEmail from '../lib/email';
 import errors        from '../errors';
 import * as mjml     from '../services/mjml';
 import { sendEmail } from '../services/mailgun';
+import { getLocale } from '../locales';
+import i18n          from '../lib/i18n';
 
 const PendingUser = Base.extend({
   tableName: 'pending_users',
@@ -17,8 +19,9 @@ const PendingUser = Base.extend({
       .del();
   }
 }, {
-  createFromEmail: async function(i18n, emailAddress, uriPrefix) {
+  createFromEmail: async function(rawLocale, emailAddress, uriPrefix) {
     const id = uuid.v4();
+    const locale = getLocale(rawLocale);
 
     emailAddress = libEmail.sanitize(emailAddress);
 
@@ -28,20 +31,27 @@ const PendingUser = Base.extend({
 
     await this.forge({
       id,
+      locale: rawLocale,
       email: emailAddress
     })
       .save(null, { method: 'insert' });
 
     const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
 
-    const message = await mjml.render('email/register', i18n, {
+    const message = await mjml.render('email/register', locale, {
       activationLink: `${prefix}activate/${id}`,
     });
 
     return sendEmail({
-      from: '"Jeffrey" <noreply@jeffrey-services.com>',
+      from: i18n[locale].formatMessage({
+        id: 'emails.confirmEmail.from',
+        defaultMessage: '"Jeffrey" <noreply@jeffrey-services.com>'
+      }),
       to: emailAddress,
-      subject: 'Jeffrey - Confirmez votre adresse mail',
+      subject: i18n[locale].formatMessage({
+        id: 'emails.confirmEmail.subject',
+        defaultMessage: 'Jeffrey - Confirm your email address',
+      }),
       message
     });
   },

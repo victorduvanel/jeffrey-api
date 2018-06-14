@@ -16,6 +16,7 @@ import config                       from '../config';
 import UserDocument                 from './user-document';
 import PostalAddress                from './postal-address';
 import Business                     from './business';
+import UserDevice                   from './user-device';
 import TOSAcceptance                from './tos-acceptance';
 import StripeAccount                from './stripe-account';
 
@@ -246,6 +247,31 @@ const User = Base.extend({
     }
   },
 
+  async saveMeta(props) {
+    const deviceToken = props['device-token'];
+    const deviceType = props['device-type'];
+    const deviceLocale = props['device-locale'];
+
+    if (deviceToken && deviceType && deviceLocale) {
+      await this.associateDevice(deviceToken, deviceType, deviceLocale);
+    }
+
+    const { lat, lng } = props;
+
+    if (typeof lat === 'string' && typeof lng === 'string') {
+      this.set('lat', lat);
+      this.set('lng', lng);
+    }
+
+    if (typeof deviceLocale === 'string') {
+      this.set('locale', deviceLocale);
+    }
+
+    if (this.hasChanged()) {
+      await this.save();
+    }
+  },
+
   async hasIdentityDocument() {
     const idDocument = await UserDocument.findIdentifyDocuments(this);
     return !!idDocument;
@@ -353,6 +379,10 @@ const User = Base.extend({
 
   sendMessage(notification) {
     return this.pushNotification(notification);
+  },
+
+  associateDevice(token, type, locale) {
+    return UserDevice.create({ user: this, token, type, locale });
   },
 
   async pushNotification(notification) {

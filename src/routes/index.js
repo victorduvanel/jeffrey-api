@@ -21,6 +21,8 @@ import * as tos             from './tos';
 import * as bankAccounts    from './bank-accounts';
 import * as providers       from './providers';
 import * as stripe          from './stripe';
+import * as logout          from './logout';
+import * as cron            from './cron';
 
 export default {
   oauth, me, activate, signup,
@@ -31,5 +33,5 @@ export default {
   profilePic, graphiql, userDocuments,
   userDevice, ping, phoneNumber,
   bankAccounts, providers,
-  stripe
+  stripe, logout, cron
 };

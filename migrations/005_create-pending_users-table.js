@@ -3,6 +3,7 @@ function up(knex) {
     .createTable('pending_users', (table) => {
       table.uuid('id').primary();
       table.string('email');
+      table.string('locale');
       table.dateTime('created_at');
       table.dateTime('updated_at');
     });
