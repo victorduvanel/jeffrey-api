@@ -19,8 +19,6 @@ const getAllCountries = async () => {
   const countries = await Country
     .fetchAll();
 
-  console.log(countries.toArray());
-
   return countries
     .toArray()
     .map(country => country.serialize());
