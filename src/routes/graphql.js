@@ -10,7 +10,7 @@ export default () => {
 
   return [
     bodyParser.json(),
-    (req, res, next) => {
+    async (req, res, next) => {
       let authorization = req.get('authorization');
       if (authorization) {
         return oauth2(req, res, next);
@@ -26,11 +26,12 @@ export default () => {
         },
         debug: true,
         formatError: (err) => {
-          console.error(err);
           if (err instanceof GraphQLError) {
-            // err.originalError = null;
-            return err;
+            if (!err.originalError || err.originalError instanceof GraphQLError) {
+              return err;
+            }
           }
+
           return formatError(InternalError(err));
         }
       })(req, res, next);

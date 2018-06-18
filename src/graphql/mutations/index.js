@@ -18,3 +18,4 @@ import './verify-phone-number';
 import './tos';
 import './create-provider';
 import './current-location';
+import './payment-method';

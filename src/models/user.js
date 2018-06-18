@@ -433,7 +433,8 @@ const User = Base.extend({
       dateOfBirth,
       phoneNumber: this.get('phoneNumber'),
       profilePicture: this.get('profilePicture'),
-      rank: await this.rank()
+      rank: await this.rank(),
+      paymentMethodStatus: await this.paymentMethodStatus()
     };
   },
 

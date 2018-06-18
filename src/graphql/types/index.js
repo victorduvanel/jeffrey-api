@@ -11,3 +11,5 @@ import './review';
 import './mission';
 import './price';
 import './provider-price';
+import './bank-account';
+import './payment-method';

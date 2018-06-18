@@ -1,4 +1,5 @@
 import { combineResolvers } from 'graphql-resolvers';
+import { GraphQLError }     from 'graphql';
 import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 import Mission              from '../../models/mission';
@@ -9,28 +10,12 @@ export const missionStatus = async (_, { id, status }, { user }) => {
   const mission = await Mission.find(id);
 
   if (!mission) {
-    throw new Error('mission not found');
+    throw new GraphQLError('Mission not found');
   }
 
-  switch (status) {
-    case 'accepted':
-    case 'refused':
-      if (mission.get('clientId') !== user.get('id')) {
-        throw new Error('Unauthorized');
-      }
-      break;
-    case 'canceled':
-      if (mission.get('providerId') !== user.get('id')) {
-        throw new Error('Unauthorized');
-      }
-      break;
-    default:
-      throw new Error('invalid status');
-  }
+  await mission.setStatus(status, user);
 
-  mission.setStatus(status);
-
-  return mission.serialize();
+  return mission;
 };
 
 registerMutation(def, {
