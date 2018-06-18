@@ -3,6 +3,7 @@ function up(knex) {
     table.string('id').primary();
 
     table.integer('price');
+    table.integer('total_cost');
     table.enum('price_currency', [
       'GBP',
       'EUR',
@@ -34,6 +35,9 @@ function up(knex) {
     table.dateTime('end_date');
     table.dateTime('started_date');
     table.dateTime('ended_date');
+
+    table.dateTime('pay_tentative_at');
+    table.dateTime('paid_at');
 
     table.boolean('users_notified');
 

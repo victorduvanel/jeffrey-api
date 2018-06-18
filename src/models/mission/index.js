@@ -133,12 +133,6 @@ const Mission = Base.extend({
     });
   },
 
-
-
-
-
-
-
   async setStatus(newStatus, user) {
     const isProvider = this.get('providerId') === user.get('id');
     const isClient = this.get('clientId') === user.get('id');
@@ -156,6 +150,19 @@ const Mission = Base.extend({
     status[newStatus].trigger(currentStatus, isProvider ? 'provider' : 'client');
     this.set('status', newStatus);
     await this.save();
+
+    if (newStatus === TERMINATED) {
+      await bookshelf.knex
+        .raw(`
+          update missions
+          set
+            pay_tentative_at = NOW() + interval '24 hours'
+          where
+            id = :id
+        `, {
+          id: this.id
+        });
+    }
 
     // Send notification
     // if (recipientUserId) {
@@ -276,6 +283,11 @@ const Mission = Base.extend({
       const mission = await Mission.find(id);
       return mission.send5minNotif();
     });
+  },
+
+  computeMissionTotalCost(startDate, endDate, pricePerHour) {
+    const length = Math.ceil(endDate.getTime() / 1000) - Math.ceil(startDate.getTime() / 1000);
+    return Math.floor((length / 60 / 60) * pricePerHour);
   }
 });
 

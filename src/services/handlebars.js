@@ -1,4 +1,5 @@
 import Promise        from 'bluebird';
+import moment         from 'moment';
 import handlebars     from 'handlebars';
 import handlebarsIntl from 'handlebars-intl';
 import path           from 'path';
@@ -10,6 +11,10 @@ const fs = Promise.promisifyAll(nativeFs);
 const viewsDirectory = './src/views';
 
 handlebarsIntl.registerWith(handlebars);
+
+handlebars.registerHelper('duration', (duration) => {
+  return moment.utc(moment.duration(duration).as('milliseconds')).format('HH[h] mm[m] ss[s]');
+});
 
 handlebars.registerHelper('link', function(path) {
   path  = handlebars.Utils.escapeExpression(path);
