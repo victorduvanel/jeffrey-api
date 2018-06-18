@@ -1,19 +1,75 @@
-import Promise       from 'bluebird';
-import uuid          from 'uuid';
-import bookshelf     from '../services/bookshelf';
-import Base          from './base';
-import User          from './user';
-import i18n          from '../lib/i18n';
-import { getLocale } from '../locales';
+import Promise          from 'bluebird';
+import uuid             from 'uuid';
+import bookshelf        from '../../services/bookshelf';
+import Base             from '../base';
+import User             from '../user';
+import i18n             from '../../lib/i18n';
+import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
   conversationMissionStatusChangedActivityTopic,
   conversationStartedMissionActivityTopic,
   conversationEndedMissionActivityTopic
-} from '../services/graphql/pubsub';
+} from '../../services/graphql/pubsub';
+
+import { Unauthorized } from '../../graphql/errors';
+
+import status, { InvalidNewStatus } from './status';
+
+/* status enum */
+export const PENDING    = 'pending';
+export const CANCELED   = 'canceled';
+export const ACCEPTED   = 'accepted';
+export const REFUSED    = 'refused';
+export const STARTED    = 'started';
+export const ABORTED    = 'aborted';
+export const CONFIRMED  = 'confirmed';
+export const TERMINATED = 'terminated';
+
 
 const Mission = Base.extend({
   tableName: 'missions',
+
+
+  /* graphql props */
+
+  price() {
+    return this.get('price');
+  },
+
+  currency() {
+    return this.get('priceCurrency');
+  },
+
+  status() {
+    return this.get('status');
+  },
+
+  startDate() {
+    return this.get('startDate');
+  },
+
+  startedDate() {
+    return this.get('startedDate');
+  },
+
+  endDate() {
+    return this.get('endDate');
+  },
+
+  endedDate() {
+    return this.get('endedDate');
+  },
+
+  accepted() {
+    return !!this.get('accepted');
+  },
+
+  createdAt() {
+    return this.get('createdAt');
+  },
+
+  /* !graphql props */
 
   client() {
     return this.belongsTo('User', 'client_id');
@@ -27,22 +83,7 @@ const Mission = Base.extend({
     return this.belongsTo('ServiceCategory');
   },
 
-  serialize() {
-    return {
-      id: this.get('id'),
-      price: this.get('price'),
-      currency: this.get('priceCurrency'),
-      status: this.get('status'),
-      startDate: this.get('startDate'),
-      startedDate: this.get('startedDate'),
-      endDate: this.get('endDate'),
-      endedDate: this.get('endedDate'),
-      accepted: !!this.get('accepted'),
-      createdAt: this.get('createdAt'),
-    };
-  },
-
-  send5minNotif: async function() {
+  async send5minNotif() {
     await this.load(['provider', 'client']);
 
     const provider = this.related('provider');
@@ -74,7 +115,7 @@ const Mission = Base.extend({
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationStartedMissionActivityTopic(user),
-        { startedMission: this.serialize() }
+        { startedMission: this }
       );
     });
   },
@@ -88,39 +129,42 @@ const Mission = Base.extend({
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationEndedMissionActivityTopic(user),
-        { endedMission: this.serialize() }
+        { endedMission: this }
       );
     });
   },
 
-  async setStatus(status) {
-    let recipientUserId;
 
-    switch (status) {
-      case 'accepted':
-      case 'refused':
-        recipientUserId = this.get('providerId');
-        break;
-      case 'canceled':
-        recipientUserId = this.get('clientId');
-        break;
-      case 'pending':
-        recipientUserId = null;
-        break;
-      default:
-        throw new Error('Invalid status');
+
+
+
+
+
+  async setStatus(newStatus, user) {
+    const isProvider = this.get('providerId') === user.get('id');
+    const isClient = this.get('clientId') === user.get('id');
+
+    if (!isProvider && !isClient) {
+      throw Unauthorized();
     }
 
-    this.set('status', status);
+    if (!status.hasOwnProperty(newStatus)) {
+      throw InvalidNewStatus();
+    }
+
+    const currentStatus = this.get('status');
+
+    status[newStatus].trigger(currentStatus, isProvider ? 'provider' : 'client');
+    this.set('status', newStatus);
     await this.save();
 
     // Send notification
-    if (recipientUserId) {
-      pubsub.publish(
-        conversationMissionStatusChangedActivityTopic(recipientUserId),
-        { missionStatus: this.serialize()}
-      );
-    }
+    // if (recipientUserId) {
+    //   pubsub.publish(
+    //     conversationMissionStatusChangedActivityTopic(recipientUserId),
+    //     { missionStatus: this }
+    //   );
+    // }
   }
 }, {
   find: function(id) {
@@ -143,7 +187,6 @@ const Mission = Base.extend({
       })
       .save(null, { method: 'insert' });
 
-    const payload = mission.serialize();
     const firstName = provider.get('firstName');
 
     client.sendMessage({
@@ -153,14 +196,14 @@ const Mission = Base.extend({
     pubsub.publish(
       conversationNewMissionActivityTopic(client.get('id')),
       {
-        newMission: payload
+        newMission: mission
       }
     );
 
     pubsub.publish(
       conversationNewMissionActivityTopic(provider.get('id')),
       {
-        newMission: payload
+        newMission: mission
       }
     );
 

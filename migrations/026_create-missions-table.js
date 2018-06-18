@@ -38,10 +38,14 @@ function up(knex) {
     table.boolean('users_notified');
 
     table.enum('status', [
+      'pending',
+      'canceled',
       'accepted',
       'refused',
-      'canceled',
-      'pending'
+      'started',
+      'aborted',
+      'confirmed',
+      'terminated'
     ]);
 
     table.dateTime('created_at');

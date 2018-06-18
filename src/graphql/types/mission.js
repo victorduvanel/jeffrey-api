@@ -1,12 +1,15 @@
 import { registerType } from '../registry';
-import Mission          from '../../models/mission';
 
 const def = `
 enum MissionStatus {
+  pending
+  canceled
   accepted
   refused
-  canceled
-  pending
+  started
+  aborted
+  confirmed
+  terminated
 }
 type Mission {
   id: ID!
@@ -26,18 +29,15 @@ type Mission {
 
 const resolver = {
   Mission: {
-    client: async({ id }) => {
-      const mission = await Mission.find(id);
+    client: async(mission) => {
       await mission.load(['client']);
       return mission.related('client').serialize();
     },
-    provider: async({ id }) => {
-      const mission = await Mission.find(id);
+    provider: async(mission) => {
       await mission.load(['provider']);
       return mission.related('provider').serialize();
     },
-    serviceCategory: async({ id }) => {
-      const mission = await Mission.find(id);
+    serviceCategory: async(mission) => {
       await mission.load(['serviceCategory']);
       return mission.related('serviceCategory').serialize();
     }
