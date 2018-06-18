@@ -1,6 +1,5 @@
 import bodyParser  from 'body-parser';
 import oauth2      from '../middlewares/oauth2';
-import stripe      from '../services/stripe';
 import StripeCard  from '../models/stripe-card';
 
 export const get = [

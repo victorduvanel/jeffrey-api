@@ -7,7 +7,6 @@ import i18n             from '../../lib/i18n';
 import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
-  conversationMissionStatusChangedActivityTopic,
   conversationStartedMissionActivityTopic,
   conversationEndedMissionActivityTopic
 } from '../../services/graphql/pubsub';
