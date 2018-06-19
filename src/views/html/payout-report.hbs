@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Payout report</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/eu-jffr/static/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <h4>{{ currency }}</h4>
+
+          <table class="table table-striped table-bordered">
+             <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th>Total cost</th>
+                <th>Provider gain</th>
+                <th>Payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each missions}}
+                <tr>
+                  <th scope="row">
+                    {{ id }}
+                  </th>
+                  <td>
+                    {{#if currency}}
+                      {{formatNumber
+                        totalCost
+                        style="currency"
+                        currency=currency
+                      }}
+                    {{/if}}
+                  </td>
+                  <td>
+                    {{#if currency}}
+                      {{formatNumber
+                        providerGain
+                        style="currency"
+                        currency=currency
+                      }}
+                    {{/if}}
+                  </td>
+                  <td>
+                    {{#if paymentSucceeded}}
+                      <span class="text-success">
+                        Success
+                      </span>
+                    {{else}}
+                      <span class="text-danger">
+                        Failed: {{error}}
+                      </span>
+                    {{/if}}
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

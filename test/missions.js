@@ -1,10 +1,6 @@
 import 'babel-polyfill';
 import uuid            from 'uuid';
-import _               from 'lodash';
-import chai            from 'chai';
 import assert          from 'assert';
-import chaiHTTP        from 'chai-http';
-import knex            from '../src/services/knex';
 import User            from '../src/models/user';
 import ServiceCategory from '../src/models/service-category';
 import Mission, {
@@ -99,6 +95,18 @@ describe('Mission', () => {
     );
   });
 
+  it('refused mission cannot be started', async () => {
+    await mission.setStatus(REFUSED, clientA);
+
+    assert.rejects(
+      mission.setStatus(STARTED, providerA),
+      {
+        name: 'GraphQLError',
+        message: 'Invalid new status'
+      }
+    );
+  });
+
   it('aborted mission cannot be terminated', async () => {
     await mission.setStatus(ACCEPTED, clientA);
     await mission.setStatus(STARTED, providerA);
@@ -125,5 +133,19 @@ describe('Mission', () => {
     await mission.setStatus(STARTED, providerA);
     await mission.setStatus(CONFIRMED, clientA);
     await mission.setStatus(TERMINATED, clientA);
+  });
+
+  it('mission cost', async () => {
+    const startDate = new Date(0);
+    const endDate = new Date(1800 * 1000); // 30 min
+
+    assert(Mission.computeMissionTotalCost(startDate, endDate, 313) === 157);
+  });
+
+  it('mission cost service fees', async () => {
+    const startDate = new Date(0);
+    const endDate = new Date(1800 * 1000); // 30 min
+
+    assert(Mission.computeProviderGain(startDate, endDate, 313) === 141);
   });
 });

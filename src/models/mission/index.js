@@ -1,8 +1,11 @@
 import Promise          from 'bluebird';
 import uuid             from 'uuid';
+import assert           from 'assert';
 import bookshelf        from '../../services/bookshelf';
+import knex             from '../../services/knex';
 import Base             from '../base';
 import User             from '../user';
+import stripe           from '../../services/stripe';
 import i18n             from '../../lib/i18n';
 import { getLocale }    from '../../locales';
 import pubsub, {
@@ -14,6 +17,8 @@ import pubsub, {
 import { Unauthorized } from '../../graphql/errors';
 
 import status, { InvalidNewStatus } from './status';
+
+export const SERVICE_FEE = 0.1;
 
 /* status enum */
 export const PENDING    = 'pending';
@@ -171,6 +176,79 @@ const Mission = Base.extend({
     //     { missionStatus: this }
     //   );
     // }
+  },
+
+  totalCost() {
+    return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
+  },
+
+  providerGain() {
+    return Mission.computeProviderGain(this.get('startedDate'), this.get('endedDate'), this.get('price'));
+  },
+
+  async charge() {
+    assert(this.get('paidAt') === null, 'Mission already paid');
+    assert(this.get('status') === TERMINATED, 'Invalid mission status');
+    assert(!!this.get('startedDate'), 'Mission started date not set');
+    assert(!!this.get('endedDate'), 'Mission ended date not set');
+    assert(!!this.get('price'), 'Mission price not set');
+    assert(!!this.get('priceCurrency'), 'Mission price currency not set');
+
+    const totalCost = this.totalCost();
+
+    assert(totalCost > 100, 'Total cost must be greater than 100');
+
+    switch (this.get('priceCurrency')) {
+      case 'EUR':
+      case 'GBP':
+      case 'USD':
+      case 'KRW':
+      case 'CHF':
+        assert(totalCost < 40000, 'Payment amount limited to 400');
+        break;
+      case 'JPY':
+        assert(totalCost < 5000000, 'Payment amount limited to ¥50000');
+        break;
+      default:
+        assert(false, `Payment hard coded limit not set for the currency ${this.get('priceCurrency')}`);
+    }
+
+    await this.load(['provider', 'client']);
+
+    const provider = this.related('provider');
+    const client = this.related('client');
+
+    assert(!!provider, 'Mission’s provider not set');
+    assert(!!client, 'Mission’s client not set');
+    assert(!!client.get('stripeCustomerId'), 'Client’s stripe customer id not set');
+
+    await client.load('stripeCard');
+    const stripeCards = client.related('stripeCard');
+    assert(stripeCards.length > 0, 'Client’s payment method not set');
+
+    assert(provider.get('isProvider'), 'Mission’s provider is not a provider');
+
+    const stripeAccount = await provider.stripeAccount(false);
+    assert(!!stripeAccount, 'Provider stripe account not set');
+    assert(!!stripeAccount.get('hasExternalAccount'), 'Provider external account not set');
+
+    const r = await stripe.charges.create({
+      amount: totalCost,
+      currency: this.get('priceCurrency'),
+      customer: client.get('stripeCustomerId'),
+      destination: {
+        amount: this.providerGain(),
+        account: stripeAccount.get('id')
+      }
+    });
+
+    if (r.status === 'succeeded') {
+      this.set('paidAt', knex.raw('NOW()'));
+      await this.save();
+      return totalCost;
+    } else {
+      throw new Error(`Invalid stripe payment status: ${r.status}`);
+    }
   }
 }, {
   find: function(id) {
@@ -212,8 +290,6 @@ const Mission = Base.extend({
         newMission: mission
       }
     );
-
-
     return mission;
   },
 
@@ -240,7 +316,6 @@ const Mission = Base.extend({
         qb.where('client_id', '=', user.get('id'));
         qb.where('provider_id', '=', providerId);
         qb.where('status', '=', 'accepted');
-        qb.whereNotNull('end_date');
       })
       .fetchAll();
 
@@ -287,7 +362,13 @@ const Mission = Base.extend({
 
   computeMissionTotalCost(startDate, endDate, pricePerHour) {
     const length = Math.ceil(endDate.getTime() / 1000) - Math.ceil(startDate.getTime() / 1000);
-    return Math.floor((length / 60 / 60) * pricePerHour);
+    return Math.ceil((length / 60 / 60) * pricePerHour);
+  },
+
+  computeProviderGain(startDate, endDate, pricePerHour) {
+    const totalCost = Mission.computeMissionTotalCost(startDate, endDate, pricePerHour);
+    const serviceFee = Math.ceil(totalCost * SERVICE_FEE);
+    return totalCost - serviceFee;
   }
 });
 

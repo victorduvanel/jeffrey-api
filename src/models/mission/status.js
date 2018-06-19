@@ -76,4 +76,3 @@ Object.assign(states, {
 });
 
 export default states;
-

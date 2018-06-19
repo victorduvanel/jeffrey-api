@@ -20,7 +20,6 @@ type Mission {
   currency: Currency!
   startDate: Date!
   startedDate: Date
-  endDate: Date
   endedDate: Date
   createdAt: Date!
   serviceCategory: ServiceCategory

@@ -1,154 +1,189 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Payout report</title>
+    <title>Payout forecast</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://localhost:8000/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost:8000/style.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/eu-jffr/static/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
-      <h1>Payout Report: {{formatDate globalStats.now day="numeric" month="long" year="numeric"}}</h1>
+      <div class="row">
+        <div class="col-sm">
+          <h1>Payout forecast: {{formatDate globalStats.now day="numeric" month="long" year="numeric"}}</h1>
+        </div>
+      </div>
 
-      <h3>Global Stats</h3>
+      <div class="row">
+        <div class="col-sm">
+          <h3>Global Stats</h3>
 
-      <table class="table table-striped">
-        <tr>
-          <th>Average number of missions per customer</th>
-          <td>
-            {{ globalStats.client_avg }}
-          </td>
-        </tr>
+          <table class="table table-striped table-bordered">
+            <tr>
+              <th>Average number of missions per customer</th>
+              <td>
+                {{ globalStats.client_avg }}
+              </td>
+            </tr>
 
-        <tr>
-          <th>Max number of missions per customer</th>
-          <td>
-            {{ globalStats.client_max }}
-          </td>
-        </tr>
+            <tr>
+              <th>Max number of missions per customer</th>
+              <td>
+                {{ globalStats.client_max }}
+              </td>
+            </tr>
 
-        <tr>
-          <th>Average number of missions per provider</th>
-          <td>
-            {{ globalStats.provider_avg }}
-          </td>
-        </tr>
-        <tr>
-          <th>Max number of missions per provider</th>
-          <td>
-            {{ globalStats.provider_max }}
-          </td>
-        </tr>
-      </table>
+            <tr>
+              <th>Average number of missions per provider</th>
+              <td>
+                {{ globalStats.provider_avg }}
+              </td>
+            </tr>
+            <tr>
+              <th>Max number of missions per provider</th>
+              <td>
+                {{ globalStats.provider_max }}
+              </td>
+            </tr>
+          </table>
+        </div>
 
+        <div class="col-sm">
+          <h3>Worldwide</h3>
+          <table class="table table-striped table-bordered">
+            <tr>
+              <th>Sales total</th>
+              <td>
+                {{formatNumber
+                  worldwideStats.total
+                  style="currency"
+                  currency=worldwideStats.currency
+                }}
+              </td>
+            </tr>
 
-      {{#each currencyStats}}
-        <h3>{{ price_currency }}</h3>
+            <tr>
+              <th>Gross income</th>
+              <td>
+                {{formatNumber
+                  worldwideStats.grossIncome
+                  style="currency"
+                  currency=worldwideStats.currency
+                }}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
 
-        <table class="table table-striped">
-          <tr>
-            <th>Sales Total</th>
-            <td>
-              {{formatNumber
-                sum
-                style="currency"
-                currency=price_currency
-              }}
-            </td>
-          </tr>
+      <div class="row">
+        {{#each currencyStats}}
+          <div class="col-sm">
+            <h3>{{ currency }}</h3>
 
-          <tr>
-            <th>Gross income</th>
-            <td>
-              {{formatNumber
-                gross_income
-                style="currency"
-                currency=price_currency
-              }}
-            </td>
-          </tr>
+            <table class="table table-striped table-bordered">
+              <tr>
+                <th>Sales Total</th>
+                <td>
+                  {{formatNumber
+                    total
+                    style="currency"
+                    currency=currency
+                  }}
+                </td>
+              </tr>
 
-          <tr>
-            <th>Min</th>
-            <td>
-              {{formatNumber
-                min
-                style="currency"
-                currency=price_currency
-              }}
-            </td>
-          </tr>
-          <tr>
-            <th>Max</th>
-            <td>
-              {{formatNumber
-                max
-                style="currency"
-                currency=price_currency
-              }}
-            </td>
-          </tr>
-          <tr>
-            <th>AVG</th>
-            <td>
-              {{formatNumber
-                avg
-                style="currency"
-                currency=price_currency
-              }}
-            </td>
-          </tr>
-        </table>
-      {{/each}}
+              <tr>
+                <th>Gross income</th>
+                <td>
+                  {{formatNumber
+                    grossIncome
+                    style="currency"
+                    currency=currency
+                  }}
+                </td>
+              </tr>
+
+              <tr>
+                <th>Min</th>
+                <td>
+                  {{formatNumber
+                    min
+                    style="currency"
+                    currency=currency
+                  }}
+                </td>
+              </tr>
+              <tr>
+                <th>Max</th>
+                <td>
+                  {{formatNumber
+                    max
+                    style="currency"
+                    currency=currency
+                  }}
+                </td>
+              </tr>
+            </table>
+          </div>
+        {{/each}}
+      </div>
 
 
       <h3>Details</h3>
 
-      <h4>Euro</h4>
+      {{#each missionsStats}}
+        {{#if rows}}
+          <div class="row">
+            <div class="col-sm">
+              <h4>{{ currency }}</h4>
 
-      <table class="table table-striped table-bordered">
-         <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Provider</th>
-            <th scope="col">Customer</th>
-            <th scope="col">Length</th>
-            <th scope="col">Cost (per hour)</th>
-            <th scope="col">Total cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each missionsStats}}
-            <tr>
-              <th scope="row">
-                {{ id }}
-              </th>
-              <td>{{ provider }}</td>
-              <td>{{ client }}</td>
-              <td>{{duration length}}</td>
-              <td>
-                {{formatNumber
-                  price
-                  style="currency"
-                  currency=price_currency
-                }}
-              </td>
-              <td>
-                {{formatNumber
-                  total_cost
-                  style="currency"
-                  currency=price_currency
-                }}
-              </td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
+              <table class="table table-striped table-bordered">
+                 <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Provider</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Length</th>
+                    <th scope="col">Cost (per hour)</th>
+                    <th scope="col">Total cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each rows}}
+                    <tr>
+                      <th scope="row">
+                        {{ id }}
+                      </th>
+                      <td>{{ provider }}</td>
+                      <td>{{ client }}</td>
+                      <td>{{duration length}}</td>
+                      <td>
+                        {{formatNumber
+                          price
+                          style="currency"
+                          currency=price_currency
+                        }}
+                      </td>
+                      <td>
+                        {{formatNumber
+                          totalCost
+                          style="currency"
+                          currency=price_currency
+                        }}
+                      </td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
     </div>
   </body>
 </html>

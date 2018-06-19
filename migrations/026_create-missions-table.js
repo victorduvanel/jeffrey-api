@@ -1,9 +1,8 @@
 function up(knex) {
   return knex.schema.createTable('missions', (table) => {
-    table.string('id').primary();
+    table.uuid('id').primary();
 
     table.integer('price');
-    table.integer('total_cost');
     table.enum('price_currency', [
       'GBP',
       'EUR',
@@ -32,7 +31,6 @@ function up(knex) {
       .onDelete('RESTRICT');
 
     table.dateTime('start_date');
-    table.dateTime('end_date');
     table.dateTime('started_date');
     table.dateTime('ended_date');
 

@@ -12,8 +12,6 @@ import routes                          from './routes';
 
 import { subscriptionServer }          from './services/graphql';
 
-// import stripe                          from './services/stripe';
-
 import logger                          from './middlewares/logger';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
@@ -51,22 +49,16 @@ httpServer.on('request', app);
 subscriptionServer(httpServer);
 
 // ROUTES
-get('/', async (req, res) => {
+get('/process-payout', async (req, res) => {
+  res.set('Content-Type', 'text/html');
+  const html = await charger.processPayout();
+  res.send(html);
+});
+
+get('/payout-alert', async (req, res) => {
   res.set('Content-Type', 'text/html');
   const html = await charger.sendPayoutAlert();
   res.send(html);
-
-  // const r = await stripe.charges.create({
-  //   amount: 1000,
-  //   currency: 'EUR',
-  //   customer: 'cus_D34Yieg9Ve6sfr',
-  //   destination: {
-  //     amount: 900,
-  //     account: 'acct_1CcxaOLGalG3PPLQ'
-  //   }
-  // });
-
-  // console.log(r);
 });
 
 post('/cron', routes.cron.post);

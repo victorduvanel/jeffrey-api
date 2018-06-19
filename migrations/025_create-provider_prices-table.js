@@ -1,6 +1,6 @@
 function up(knex) {
   return knex.schema.createTable('provider_prices', (table) => {
-    table.string('id').primary();
+    table.uuid('id').primary();
     table
       .uuid('user_id')
       .references('users.id')
