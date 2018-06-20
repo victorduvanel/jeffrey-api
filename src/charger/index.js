@@ -90,7 +90,7 @@ export const payoutAlert = async () => {
   const missionIds = await knex
     .select('id')
     .from('missions')
-    .whereRaw('pay_tentative_at < NOW() + interval \'24 hours\'')
+    .whereRaw('pay_tentative_at < NOW() + interval \'48 hours\'')
     .whereNull('paid_at')
     .then(missions => missions.map(mission => `'${mission.id}'`).join());
 

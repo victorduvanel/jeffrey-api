@@ -161,7 +161,7 @@ const Mission = Base.extend({
         .raw(`
           update missions
           set
-            pay_tentative_at = NOW() + interval '24 hours'
+            pay_tentative_at = NOW() + interval '48 hours'
           where
             id = :id
         `, {
