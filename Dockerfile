@@ -1,5 +1,11 @@
-FROM node:10.0.0
+FROM node:10.4.1
 MAINTAINER William Riancho <william@reptilians.io>
+
+RUN apt-get update
+RUN apt-get install -y xfonts-base xfonts-utils xfonts-75dpi
+RUN curl -OL https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.jessie_amd64.deb
+RUN dpkg -i wkhtmltox_0.12.5-1.jessie_amd64.deb
+RUN rm wkhtmltox_0.12.5-1.jessie_amd64.deb
 
 WORKDIR /app
 ADD package.json package-lock.json ./

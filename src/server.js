@@ -19,8 +19,6 @@ import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
 
-import * as charger from './charger';
-
 import './graphql/types';
 import './graphql/mutations';
 import './graphql/subscriptions';
@@ -49,17 +47,14 @@ httpServer.on('request', app);
 subscriptionServer(httpServer);
 
 // ROUTES
-get('/process-payout', async (req, res) => {
-  res.set('Content-Type', 'text/html');
-  const html = await charger.processPayout();
-  res.send(html);
+get('/', async (req, res) => {
+  res.send({
+    hello: 'world'
+  });
 });
 
-get('/payout-alert', async (req, res) => {
-  res.set('Content-Type', 'text/html');
-  const html = await charger.sendPayoutAlert();
-  res.send(html);
-});
+post('/process-payout', routes.processPayout.post);
+post('/payout-alert', routes.payoutAlert.post);
 
 post('/cron', routes.cron.post);
 

@@ -23,7 +23,7 @@ export const processPayout = async () => {
     .then(missions => missions.map(mission => mission.id));
 
   if (!missionIds.length) {
-    return 'nothing';
+    return null;
   }
 
   const missions = await Promise.map(missionIds, async (missionId) => {
@@ -86,7 +86,7 @@ export const processPayout = async () => {
   return html;
 };
 
-export const sendPayoutAlert = async () => {
+export const payoutAlert = async () => {
   const missionIds = await knex
     .select('id')
     .from('missions')
@@ -95,7 +95,7 @@ export const sendPayoutAlert = async () => {
     .then(missions => missions.map(mission => `'${mission.id}'`).join());
 
   if (!missionIds) {
-    return 'nothing';
+    return null;
   }
 
   const res = await bookshelf.knex

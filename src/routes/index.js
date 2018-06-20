@@ -23,6 +23,8 @@ import * as providers       from './providers';
 import * as stripe          from './stripe';
 import * as logout          from './logout';
 import * as cron            from './cron';
+import * as payoutAlert     from './payout-alert';
+import * as processPayout   from './process-payout';
 
 export default {
   oauth, me, activate, signup,
@@ -33,5 +35,6 @@ export default {
   profilePic, graphiql, userDocuments,
   userDevice, ping, phoneNumber,
   bankAccounts, providers,
-  stripe, logout, cron
+  stripe, logout, cron, payoutAlert,
+  processPayout
 };
