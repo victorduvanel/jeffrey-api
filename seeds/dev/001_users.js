@@ -27,41 +27,9 @@ exports.seed = async function(knex, Promise) {
     password: null
   }));
 
-  // users.push({
-  //   id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-  //   email: 'wr.wllm@gmail.com',
-  //   facebookId: '1590831811013736',
-  //   gender: 'male',
-  //   firstName: 'William',
-  //   lastName: 'Riancho',
-  //   lat: '41.3938',
-  //   lng: '2.19504',
-  //   isProvider: 'true',
-  //   isAvailable: 'true',
-  //   profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
-  //   phoneNumber: '+33651648566',
-  //   password: '$2a$10$is7MWK4ws1hwG9Aokkh4R.sg5PYo9qg27hyPipO0GUXBntcTozao2'
-  // });
-
   users.push({
-    id: 'aaaaaaaa-1e21-4332-a268-d7599f2f0e40',
-    email: 'matias@gmail.com',
-    facebookId: '1590831811013731',
-    gender: 'male',
-    firstName: 'Matias',
-    lastName: 'Kochman',
-    lat: '41.3938',
-    lng: '2.19504',
-    isProvider: 'true',
-    isAvailable: 'true',
-    profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
-    phoneNumber: '+34616903546',
-    password: '$2a$10$webc5Tpybw/tfjwcZ1trHO9.3Y2Oek/zjoYH3lMZnKdtejTmmD4Fu'
-  });
-
-  users.push({
-    id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-    email: 'emmanuel.gratuze@gmail.com',
+    id: '2b1a5696-11eb-4858-ad1a-6b23c4e478cd',
+    email: 'wr.wllm@gmail.com',
     facebookId: '1590831811013736',
     gender: 'male',
     firstName: 'William',
@@ -72,6 +40,22 @@ exports.seed = async function(knex, Promise) {
     isAvailable: 'true',
     profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
     phoneNumber: '+33651648566',
+    password: '$2a$10$is7MWK4ws1hwG9Aokkh4R.sg5PYo9qg27hyPipO0GUXBntcTozao2'
+  });
+
+  users.push({
+    id: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
+    email: 'emmanuel.gratuze@gmail.com',
+    facebookId: null,
+    gender: 'male',
+    firstName: 'Emmanuel',
+    lastName: 'Gratuze',
+    lat: '41.3938',
+    lng: '2.19504',
+    isProvider: 'true',
+    isAvailable: 'true',
+    profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
+    phoneNumber: null,
     password: '$2a$04$SHtbpSUdGyjGRJfxFF30heWuOPYLV9j3qx0wCxxBcipTuhrnJaoZS'
   });
 
