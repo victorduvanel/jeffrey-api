@@ -5,7 +5,7 @@ exports.seed = async (knex, Promise) => {
       price: 1000,
       priceCurrency: 'EUR',
       providerId: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-      clientId: 'aaaaaaaa-1e21-4332-a268-d7599f2f0e40',
+      clientId: '2b1a5696-11eb-4858-ad1a-6b23c4e478cd',
       serviceCategoryId: '555d8eb4-d6d1-421c-a7f4-ee49b332f41e',
       status: 'pending'
     },
@@ -14,7 +14,7 @@ exports.seed = async (knex, Promise) => {
       price: 1300,
       priceCurrency: 'EUR',
       providerId: '3c656ce5-1e21-4332-a268-d7599f2f0e40',
-      clientId: 'aaaaaaaa-1e21-4332-a268-d7599f2f0e40',
+      clientId: '2b1a5696-11eb-4858-ad1a-6b23c4e478cd',
       serviceCategoryId: 'c56022e7-596d-4fa6-a0dd-a3f1e8b102b7',
       status: 'pending'
     }
