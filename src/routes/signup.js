@@ -67,7 +67,7 @@ export const post = [
     if (user) {
       await user.saveMeta(body);
 
-      await user.sendLoginEmail(req.i18n, uriPrefix);
+      await user.sendLoginEmail(locale, uriPrefix);
 
       res.send({
         success: true,

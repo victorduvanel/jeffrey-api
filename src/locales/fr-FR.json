@@ -1,5 +1,7 @@
 {
   "hello": "Salut",
+  "emails.loginEmail.from": "\"Jeffrey\" <noreply@jeffrey-services.com>",
+  "emails.loginEmail.subject": "Jeffrey - Connexion",
   "emails.confirmEmail.from": "\"Jeffrey\" <noreply@jeffrey-services.com>",
   "emails.confirmEmail.subject": "Jeffrey - Confirmez votre adresse mail",
   "notifications.nextMissionFiveMinutesProviderAlert": "Votre prochaine mission démarre dans 5 minutes",

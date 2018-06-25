@@ -1,24 +1,26 @@
-import Promise                      from 'bluebird';
-import moment                       from 'moment';
-import request                      from 'request-promise';
-import nativeBcrypt                 from 'bcryptjs';
-import uuid                         from 'uuid';
-import buckets                      from '../services/google/storage';
-import bookshelf                    from '../services/bookshelf';
-import stripe                       from '../services/stripe';
-import Base                         from './base';
-import AccessToken                  from './access-token';
-import googleService                from '../services/google';
-import * as mjml                    from '../services/mjml';
-import { sendEmail }                from '../services/mailgun';
-import LoginToken                   from './login-token';
-import config                       from '../config';
-import UserDocument                 from './user-document';
-import PostalAddress                from './postal-address';
-import Business                     from './business';
-import UserDevice                   from './user-device';
-import TOSAcceptance                from './tos-acceptance';
-import StripeAccount                from './stripe-account';
+import Promise       from 'bluebird';
+import moment        from 'moment';
+import request       from 'request-promise';
+import nativeBcrypt  from 'bcryptjs';
+import uuid          from 'uuid';
+import buckets       from '../services/google/storage';
+import bookshelf     from '../services/bookshelf';
+import stripe        from '../services/stripe';
+import Base          from './base';
+import AccessToken   from './access-token';
+import googleService from '../services/google';
+import * as mjml     from '../services/mjml';
+import { sendEmail } from '../services/mailgun';
+import LoginToken    from './login-token';
+import config        from '../config';
+import UserDocument  from './user-document';
+import PostalAddress from './postal-address';
+import Business      from './business';
+import UserDevice    from './user-device';
+import TOSAcceptance from './tos-acceptance';
+import StripeAccount from './stripe-account';
+import { getLocale } from '../locales';
+import i18n          from '../lib/i18n';
 
 import './postal-address';
 import './business';
@@ -395,21 +397,28 @@ const User = Base.extend({
     }));
   },
 
-  async sendLoginEmail(i18n, uriPrefix) {
+  async sendLoginEmail(rawLocale, uriPrefix) {
+    const locale = getLocale(rawLocale);
     const emailAddress = this.get('email');
     const loginToken = await LoginToken.create({ user: this });
 
     const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
 
-    const message = await mjml.render('email/login', i18n, {
-      user: this.serialize(),
+    const message = await mjml.render('email/login', locale, {
+      user: await this.serialize(),
       loginLink: `${prefix}login/${loginToken.get('id')}`,
     });
 
     return sendEmail({
-      from: i18n('email_from'),
+      from: i18n[locale].formatMessage({
+        id: 'emails.loginEmail.from',
+        defaultMessage: '"Jeffrey" <noreply@jeffrey-services.com>'
+      }),
       to: emailAddress,
-      subject: i18n('email_login_subject'),
+      subject: i18n[locale].formatMessage({
+        id: 'emails.loginEmail.subject',
+        defaultMessage: 'Jeffrey - Sign in"',
+      }),
       message
     });
   },
