@@ -3,6 +3,7 @@ import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
 import twilio    from '../services/twilio';
 import Base      from './base';
+import config    from '../config';
 
 const PhoneNumberVerificationCode = Base.extend({
   tableName: 'phone_number_verification_codes',
@@ -47,11 +48,15 @@ const PhoneNumberVerificationCode = Base.extend({
     })
       .save(null, { method: 'insert' });
 
-    await twilio.messages.create({
-      body: `${verificationCode} is your verficiation code for Jeffrey`,
-      to: phoneNumber,
-      from: 'Jeffrey'
-    });
+    if (config.PRODUCTION) {
+      await twilio.messages.create({
+        body: `${verificationCode} is your verficiation code for Jeffrey`,
+        to: phoneNumber,
+        from: 'Jeffrey'
+      });
+    } else {
+      console.log(`${verificationCode} is your verficiation code for Jeffrey`);
+    }
 
     return code;
   },
