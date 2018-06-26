@@ -111,29 +111,33 @@ const Mission = Base.extend({
   },
 
   start: async function() {
-    this.set('startedDate', bookshelf.knex.raw('NOW()'));
+    this.set('startedDate', knex.raw('NOW()'));
     this.set('status', 'started');
-    await this.save();
+
+    const mission = await this.save();
+    await mission.refresh();
 
     // Send notification
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationStartedMissionActivityTopic(user),
-        { startedMission: this }
+        { startedMission: this.serialize() }
       );
     });
   },
 
   end: async function() {
     this.set('endedDate', bookshelf.knex.raw('NOW()'));
+    this.set('status', 'terminated');
 
-    await this.save();
+    const mission = await this.save();
+    await mission.refresh();
 
     // Send notification
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationEndedMissionActivityTopic(user),
-        { endedMission: this }
+        { endedMission: this.serialize() }
       );
     });
   },

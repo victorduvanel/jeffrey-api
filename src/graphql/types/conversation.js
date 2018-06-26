@@ -51,7 +51,7 @@ const resolver = {
         })
         .fetchAll();
 
-      return missions.map(mission => mission.serialize());
+      return missions;
     }
   }
 };

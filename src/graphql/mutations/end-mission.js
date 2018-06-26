@@ -12,8 +12,8 @@ export const endMission = async (_, { id }, { user }) => {
     throw new Error('Mission not found');
   }
 
-  if (mission.get('status') !== 'accepted') {
-    throw new Error('Mission is not accepted');
+  if (mission.get('status') !== 'started') {
+    throw new Error('Mission is not started');
   }
 
   if (mission.get('providerId') !== user.get('id')) {
