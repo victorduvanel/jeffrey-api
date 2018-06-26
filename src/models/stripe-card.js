@@ -1,8 +1,13 @@
-import bookshelf from '../services/bookshelf';
-import stripe    from '../services/stripe';
-import Base      from './base';
+import bookshelf    from '../services/bookshelf';
+import stripe       from '../services/stripe';
+import Base         from './base';
+import { AppError } from '../errors';
 
 export const UnsupportedPaymentType = new Error('Unsupported Payment Type');
+
+const InvalidExpiryYearError = () => {
+  return new AppError('invalid_expiry_year');
+};
 
 const StripeCard = Base.extend({
   tableName: 'stripe_cards',
@@ -35,28 +40,38 @@ const StripeCard = Base.extend({
   create: async function({ user, card: { number, expMonth, expYear, cvc, holderName }}) {
     const stripeCustomer = await user.stripeCustomer();
 
-    const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
-      source: {
-        object: 'card',
-        number,
-        exp_month: expMonth,
-        exp_year: expYear,
-        cvc,
-        name: holderName
-      }
-    });
+    try {
+      const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
+        source: {
+          object: 'card',
+          number,
+          exp_month: expMonth,
+          exp_year: expYear,
+          cvc,
+          name: holderName
+        }
+      });
 
-    return this
-      .forge({
-        id         : paymentInfo.id,
-        userId     : user.get('id'),
-        type       : paymentInfo.brand,
-        lastFour   : paymentInfo.last4,
-        holderName : paymentInfo.name,
-        expMonth   : paymentInfo.exp_month,
-        expYear    : paymentInfo.exp_year
-      })
-      .save(null, { method: 'insert' });
+      return this
+        .forge({
+          id         : paymentInfo.id,
+          userId     : user.get('id'),
+          type       : paymentInfo.brand,
+          lastFour   : paymentInfo.last4,
+          holderName : paymentInfo.name,
+          expMonth   : paymentInfo.exp_month,
+          expYear    : paymentInfo.exp_year
+        })
+        .save(null, { method: 'insert' });
+    } catch (err) {
+      if (err instanceof stripe.errors.StripeCardError) {
+        if (err.code === 'invalid_expiry_year') {
+          throw InvalidExpiryYearError();
+        }
+      }
+
+      throw err;
+    }
   }
 });
 
