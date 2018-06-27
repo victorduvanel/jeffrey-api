@@ -20,6 +20,11 @@ export default bookshelf.Model.extend({
     return rt;
   },
 
+  serialize() {
+    console.warn(`You should not use bookshelf::Model::serialize (${this.__proto__.tableName})`);
+    return bookshelf.Model.prototype.serialize.apply(this, arguments);
+  },
+
   toJSON(options) {
     let attrs = bookshelf.Model.prototype.toJSON.call(this, options);
 
