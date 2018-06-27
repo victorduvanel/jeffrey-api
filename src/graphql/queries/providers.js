@@ -11,21 +11,33 @@ providers(
 ): [User]
 `;
 
-const providers = async (_, {
-  serviceCategoryId,
-  lat,
-  lng,
-  offset,
-  limit
-}) => {
-  const providers = await User.findProviders({
+const providers = async (_,
+  {
+    serviceCategoryId,
+    lat,
+    lng,
+    offset,
+    limit
+  },
+  {
+    user
+  }
+) => {
+  let providers = await User.findProviders({
     serviceCategoryId,
     lat,
     lng,
     offset,
     limit
   });
-  return providers.toArray().map(user => user.serialize());
+
+  providers = providers.toArray();
+
+  if (user) {
+    providers = providers.filter(provider => provider.id !== user.id);
+  }
+
+  return providers.map(user => user.serialize());
 };
 
 registerQuery(def, { providers });
