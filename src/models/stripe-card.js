@@ -1,3 +1,4 @@
+import Promise      from 'bluebird';
 import bookshelf    from '../services/bookshelf';
 import stripe       from '../services/stripe';
 import Base         from './base';
@@ -11,6 +12,26 @@ const InvalidExpiryYearError = () => {
 
 const StripeCard = Base.extend({
   tableName: 'stripe_cards',
+
+  type() {
+    return this.get('type');
+  },
+
+  lastFour() {
+    return this.get('lastFour');
+  },
+
+  expMonth() {
+    return this.get('expMonth');
+  },
+
+  expYear() {
+    return this.get('expYear');
+  },
+
+  holderName() {
+    return this.get('holderName');
+  },
 
   user() {
     return this.belongsTo('User');
@@ -52,7 +73,10 @@ const StripeCard = Base.extend({
         }
       });
 
-      return this
+      await user.load(['stripeCard']);
+      const currentCards = user.related('stripeCard');
+
+      const newCard = await this
         .forge({
           id         : paymentInfo.id,
           userId     : user.get('id'),
@@ -63,6 +87,19 @@ const StripeCard = Base.extend({
           expYear    : paymentInfo.exp_year
         })
         .save(null, { method: 'insert' });
+
+      if (currentCards.length) {
+        await Promise.each(currentCards.toArray(), async (currentCard) => {
+          try {
+            await stripe.customers.deleteSource(stripeCustomer, currentCard.id);
+            return currentCard.destroy();
+          } catch (err) {
+            console.error(err);
+          }
+        });
+      }
+
+      return newCard;
     } catch (err) {
       if (err instanceof stripe.errors.StripeCardError) {
         if (err.code === 'invalid_expiry_year') {
