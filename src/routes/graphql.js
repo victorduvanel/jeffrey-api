@@ -1,9 +1,10 @@
-import bodyParser         from 'body-parser';
-import { graphqlExpress } from 'apollo-server-express';
+import bodyParser                    from 'body-parser';
+import { graphqlExpress }            from 'apollo-server-express';
 import { formatError, GraphQLError } from 'graphql';
-import oauth2             from '../middlewares/oauth2';
-import getSchema          from '../graphql/schema';
-import { InternalError }  from '../graphql/errors';
+import oauth2                        from '../middlewares/oauth2';
+import getSchema                     from '../graphql/schema';
+import { InternalError }             from '../graphql/errors';
+import { AppError }                  from '../errors';
 
 export default () => {
   const schema = getSchema();
@@ -26,8 +27,10 @@ export default () => {
         },
         debug: true,
         formatError: (err) => {
+          console.log('####', err.message);
+
           if (err instanceof GraphQLError) {
-            if (!err.originalError || err.originalError instanceof GraphQLError) {
+            if (!err.originalError || err.originalError instanceof AppError) {
               return err;
             }
           }

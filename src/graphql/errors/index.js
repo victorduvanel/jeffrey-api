@@ -5,7 +5,14 @@ export const Unauthorized = () => {
 };
 
 export const InternalError = (originalError) => {
-  const err = new GraphQLError('Internal Error');
-  err.originalError = originalError;
+  const err = new GraphQLError(
+    'Internal Error',
+    originalError.nodes,
+    originalError.source,
+    originalError.positions,
+    originalError.path,
+    originalError,
+    originalError.extensions
+  );
   return err;
 };

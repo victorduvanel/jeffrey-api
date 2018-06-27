@@ -10,3 +10,4 @@ import './service-categories';
 import './service-category';
 import './conversation';
 import './business-details';
+import './payment-methods';
