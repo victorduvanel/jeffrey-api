@@ -54,7 +54,7 @@ exports.seed = async function(knex, Promise) {
     lng: '2.19504',
     isProvider: 'true',
     isAvailable: 'true',
-    profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
+    profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/6203cdf5-16e1-42a3-96d8-098f6ce65133/original.jpg',
     phoneNumber: null,
     password: '$2a$04$SHtbpSUdGyjGRJfxFF30heWuOPYLV9j3qx0wCxxBcipTuhrnJaoZS'
   });
