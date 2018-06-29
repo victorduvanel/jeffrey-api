@@ -25,7 +25,7 @@ const resolver = {
         return null;
       }
 
-      return conversation.serialize();
+      return conversation;
     },
 
     from: async({ id }) => {

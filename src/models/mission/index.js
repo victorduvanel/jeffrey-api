@@ -11,7 +11,8 @@ import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
   conversationStartedMissionActivityTopic,
-  conversationEndedMissionActivityTopic
+  conversationEndedMissionActivityTopic,
+  conversationMissionStatusChangedActivityTopic
 } from '../../services/graphql/pubsub';
 
 import { Unauthorized } from '../../graphql/errors';
@@ -170,12 +171,10 @@ const Mission = Base.extend({
     }
 
     // Send notification
-    // if (recipientUserId) {
-    //   pubsub.publish(
-    //     conversationMissionStatusChangedActivityTopic(recipientUserId),
-    //     { missionStatus: this }
-    //   );
-    // }
+    pubsub.publish(
+      conversationMissionStatusChangedActivityTopic(user.get('id')),
+      { missionStatus: this }
+    );
   },
 
   totalCost() {
