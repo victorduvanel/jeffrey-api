@@ -12,7 +12,6 @@ import routes                          from './routes';
 
 import { subscriptionServer }          from './services/graphql';
 
-import User                            from './models/user';
 import logger                          from './middlewares/logger';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
@@ -49,10 +48,6 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
-  const user = await User.find('2b1a5696-11eb-4858-ad1a-6b23c4e478cd');
-  await user.pushNotification({
-    body: 'Bonjour'
-  });
   res.send({
     hello: 'world'
   });
