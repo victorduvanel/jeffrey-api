@@ -170,10 +170,18 @@ const Mission = Base.extend({
         });
     }
 
-    // Send notification
     pubsub.publish(
-      conversationMissionStatusChangedActivityTopic(user.get('id')),
-      { missionStatus: this.id }
+      conversationMissionStatusChangedActivityTopic(this.get('clientId')),
+      {
+        missionStatus: this.id
+      }
+    );
+
+    pubsub.publish(
+      conversationMissionStatusChangedActivityTopic(this.get('providerId')),
+      {
+        missionStatus: this.id
+      }
     );
   },
 

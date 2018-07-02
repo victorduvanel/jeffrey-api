@@ -1,7 +1,7 @@
-import { combineResolvers }                            from 'graphql-resolvers';
-import auth                                            from '../middlewares/auth';
-import Mission                                         from '../../models/mission';
-import { registerSubscription }                        from '../registry';
+import { combineResolvers }                                      from 'graphql-resolvers';
+import auth                                                      from '../middlewares/auth';
+import Mission                                                   from '../../models/mission';
+import { registerSubscription }                                  from '../registry';
 import pubsub, { conversationMissionStatusChangedActivityTopic } from '../../services/graphql/pubsub';
 
 const def = 'missionStatus: Mission';
