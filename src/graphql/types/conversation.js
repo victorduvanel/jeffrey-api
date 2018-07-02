@@ -30,7 +30,7 @@ const resolver = {
         messages: query => query.orderBy('created_at', 'desc')
       }]);
 
-      return conversation.related('messages').invokeMap('serialize');
+      return conversation.related('messages').toArray();
     },
 
     missions: async ({ id }) => {

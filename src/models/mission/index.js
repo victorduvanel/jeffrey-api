@@ -120,7 +120,7 @@ const Mission = Base.extend({
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationStartedMissionActivityTopic(user),
-        { startedMission: this }
+        { startedMission: this.id }
       );
     });
   },
@@ -134,7 +134,7 @@ const Mission = Base.extend({
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationEndedMissionActivityTopic(user),
-        { endedMission: this }
+        { endedMission: this.id }
       );
     });
   },
@@ -173,7 +173,7 @@ const Mission = Base.extend({
     // Send notification
     pubsub.publish(
       conversationMissionStatusChangedActivityTopic(user.get('id')),
-      { missionStatus: this }
+      { missionStatus: this.id }
     );
   },
 
@@ -279,14 +279,14 @@ const Mission = Base.extend({
     pubsub.publish(
       conversationNewMissionActivityTopic(client.get('id')),
       {
-        newMission: mission
+        newMission: mission.id
       }
     );
 
     pubsub.publish(
       conversationNewMissionActivityTopic(provider.get('id')),
       {
-        newMission: mission
+        newMission: mission.id
       }
     );
     return mission;
