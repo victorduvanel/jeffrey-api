@@ -16,7 +16,7 @@ export const newMessage = async (_, { conversationId, message: body }, { user })
     await conversation.load(['participants']);
 
     const message = await Message.create({ from: user, body, conversation });
-    conversation.notifyParticipants(message);
+    await conversation.notifyParticipants(message);
 
     return message.serialize();
   } catch (err) {
