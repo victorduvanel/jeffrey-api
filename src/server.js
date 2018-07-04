@@ -118,13 +118,16 @@ export const listen = () => {
 
       const listenCb = () => {
         const addr = httpServer.address();
+        let uri = '';
+
+        if (addr.family === 'IPv6') {
+          uri = `http://[${addr.address}]:${addr.port}`;
+        } else {
+          uri = `http://${addr.address}:${addr.port}`;
+        }
 
         /* eslint-disable no-console */
-        if (addr.family === 'IPv6') {
-          console.info(chalk.green(`Serving at http://[${addr.address}]:${addr.port}`));
-        } else {
-          console.info(chalk.green(`Serving at http://${addr.address}:${addr.port}`));
-        }
+        console.info(chalk.green(`[${process.pid}] Serving at ${uri}`));
         /* eslint-enable no-console */
 
         const wait = () => {
@@ -137,7 +140,11 @@ export const listen = () => {
       };
 
       if (config.PRODUCTION) {
-        engine.listen({ port, httpServer }, listenCb);
+        engine.listen({
+          port,
+          httpServer,
+          originUrl: `${config.webappProtocol}://${config.webappHost}`
+        }, listenCb);
       } else {
         httpServer.listen({ port }, listenCb);
       }
