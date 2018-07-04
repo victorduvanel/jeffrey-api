@@ -22,7 +22,7 @@ export const endMission = async (_, { id }, { user }) => {
 
   await mission.end();
 
-  return mission.serialize();
+  return mission;
 };
 
 registerMutation(def, {

@@ -13,13 +13,12 @@ const Message = Base.extend({
     return this.belongsTo('User', 'from_id');
   },
 
-  serialize() {
-    return {
-      id: this.get('id'),
-      message: this.get('body'),
-      fromId: this.get('fromId'),
-      createdAt: this.get('createdAt')
-    };
+  message() {
+    return this.get('body');
+  },
+
+  createdAt() {
+    return this.get('createdAt');
   }
 }, {
   create: async function({ from, body, conversation }) {

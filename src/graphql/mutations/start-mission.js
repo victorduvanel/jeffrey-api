@@ -26,7 +26,7 @@ export const startMission = async (_, { id }, { user }) => {
 
   await mission.start();
 
-  return mission.serialize();
+  return mission;
 };
 
 registerMutation(def, {

@@ -21,14 +21,13 @@ const Conversation = Base.extend({
 
     const participants = this.related('participants');
     const from = message.related('from');
-    const payload = message.serialize();
     const firstName = from.get('firstName');
 
     participants.forEach(user => {
       pubsub.publish(
         conversationNewMessageActivityTopic(user.get('id')),
         {
-          newMessage: payload
+          newMessage: message.get('id')
         }
       );
 

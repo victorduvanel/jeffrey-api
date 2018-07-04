@@ -12,7 +12,7 @@ const clientHistory = async (_, { providerId }, { user }) => {
     return [];
 
   const missions = await Mission.clientHistory({user, providerId });
-  return missions.toArray().map(mission => mission.serialize());
+  return missions.toArray();
 };
 
 registerQuery(def, {

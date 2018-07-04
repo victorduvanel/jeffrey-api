@@ -4,7 +4,6 @@ function up(knex) {
       table.string('id').primary();
       table
         .uuid('user_id')
-        .unique()
         .references('users.id')
         .onUpdate('CASCADE')
         .onDelete('RESTRICT');

@@ -3,6 +3,22 @@ import Base      from './base';
 
 const Country = Base.extend({
   tableName: 'countries',
+
+  name() {
+    return this.get('name');
+  },
+
+  phoneCode() {
+    return this.get('phoneCode');
+  },
+
+  flag() {
+    return this.get('flag');
+  },
+
+  code() {
+    return this.get('code');
+  }
 }, {
   findByCode: function(code) {
     return this.forge({ code }).fetch();

@@ -38,7 +38,7 @@ const resolver = {
     },
     serviceCategory: async(mission) => {
       await mission.load(['serviceCategory']);
-      return mission.related('serviceCategory').serialize();
+      return mission.related('serviceCategory');
     }
   }
 };

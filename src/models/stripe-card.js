@@ -1,11 +1,37 @@
-import bookshelf from '../services/bookshelf';
-import stripe    from '../services/stripe';
-import Base      from './base';
+import Promise      from 'bluebird';
+import bookshelf    from '../services/bookshelf';
+import stripe       from '../services/stripe';
+import Base         from './base';
+import { AppError } from '../errors';
 
 export const UnsupportedPaymentType = new Error('Unsupported Payment Type');
 
+const InvalidExpiryYearError = () => {
+  return new AppError('invalid_expiry_year');
+};
+
 const StripeCard = Base.extend({
   tableName: 'stripe_cards',
+
+  type() {
+    return this.get('type');
+  },
+
+  lastFour() {
+    return this.get('lastFour');
+  },
+
+  expMonth() {
+    return this.get('expMonth');
+  },
+
+  expYear() {
+    return this.get('expYear');
+  },
+
+  holderName() {
+    return this.get('holderName');
+  },
 
   user() {
     return this.belongsTo('User');
@@ -35,28 +61,54 @@ const StripeCard = Base.extend({
   create: async function({ user, card: { number, expMonth, expYear, cvc, holderName }}) {
     const stripeCustomer = await user.stripeCustomer();
 
-    const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
-      source: {
-        object: 'card',
-        number,
-        exp_month: expMonth,
-        exp_year: expYear,
-        cvc,
-        name: holderName
-      }
-    });
+    try {
+      const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
+        source: {
+          object: 'card',
+          number,
+          exp_month: expMonth,
+          exp_year: expYear,
+          cvc,
+          name: holderName
+        }
+      });
 
-    return this
-      .forge({
-        id         : paymentInfo.id,
-        userId     : user.get('id'),
-        type       : paymentInfo.brand,
-        lastFour   : paymentInfo.last4,
-        holderName : paymentInfo.name,
-        expMonth   : paymentInfo.exp_month,
-        expYear    : paymentInfo.exp_year
-      })
-      .save(null, { method: 'insert' });
+      await user.load(['stripeCard']);
+      const currentCards = user.related('stripeCard');
+
+      const newCard = await this
+        .forge({
+          id         : paymentInfo.id,
+          userId     : user.get('id'),
+          type       : paymentInfo.brand,
+          lastFour   : paymentInfo.last4,
+          holderName : paymentInfo.name,
+          expMonth   : paymentInfo.exp_month,
+          expYear    : paymentInfo.exp_year
+        })
+        .save(null, { method: 'insert' });
+
+      if (currentCards.length) {
+        await Promise.each(currentCards.toArray(), async (currentCard) => {
+          try {
+            await stripe.customers.deleteSource(stripeCustomer, currentCard.id);
+            return currentCard.destroy();
+          } catch (err) {
+            console.error(err);
+          }
+        });
+      }
+
+      return newCard;
+    } catch (err) {
+      if (err instanceof stripe.errors.StripeCardError) {
+        if (err.code === 'invalid_expiry_year') {
+          throw InvalidExpiryYearError();
+        }
+      }
+
+      throw err;
+    }
   }
 });
 

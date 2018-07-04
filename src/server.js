@@ -24,8 +24,8 @@ import './graphql/mutations';
 import './graphql/subscriptions';
 import './graphql/queries';
 
-import locales from './locales';
-import { loadLocale } from './lib/i18n';
+import locales                         from './locales';
+import { loadLocale }                  from './lib/i18n';
 
 _.forEach(locales, (messages, locale) => {
   loadLocale(locale, messages);

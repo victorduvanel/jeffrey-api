@@ -10,6 +10,12 @@ const errorCode = (function*() {
   }
 })();
 
+export class AppError extends Error {
+  constructor(message) {
+    super(message);
+  }
+}
+
 export class APIError extends Error {
   constructor({ category, status, title }) {
     super();

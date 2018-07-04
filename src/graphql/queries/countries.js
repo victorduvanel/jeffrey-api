@@ -9,9 +9,7 @@ const getActiveCountries = async () => {
     })
     .fetchAll();
 
-  return countries
-    .toArray()
-    .map(country => country.serialize());
+  return countries.toArray();
 };
 
 const allCountriesDefinition = 'allCountries: [Country]';

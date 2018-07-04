@@ -7,21 +7,17 @@ import Message              from '../../models/message';
 export const def = 'newMessage(conversationId: String!, message: String!): Message';
 
 export const newMessage = async (_, { conversationId, message: body }, { user }) => {
-  try {
-    const conversation = await Conversation.find(conversationId);
-    if (!conversation) {
-      throw new Error('conversation not found');
-    }
-
-    await conversation.load(['participants']);
-
-    const message = await Message.create({ from: user, body, conversation });
-    conversation.notifyParticipants(message);
-
-    return message.serialize();
-  } catch (err) {
-    console.error(err);
+  const conversation = await Conversation.find(conversationId);
+  if (!conversation) {
+    throw new Error('conversation not found');
   }
+
+  await conversation.load(['participants']);
+
+  const message = await Message.create({ from: user, body, conversation });
+  await conversation.notifyParticipants(message);
+
+  return message;
 };
 
 registerMutation(def, {

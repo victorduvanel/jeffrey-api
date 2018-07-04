@@ -3,7 +3,7 @@ function up(knex) {
     table.uuid('id').primary();
 
     table.string('token');
-    table.enu('type', ['ios']);
+    table.string('type');
 
     table
       .uuid('owner_id')

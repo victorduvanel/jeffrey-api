@@ -20,7 +20,7 @@ const resolver = {
       }
       await conversation.load(['participants']);
       const participants = conversation.related('participants').toArray();
-      return await Promise.all(participants.map(p => p.serialize()));
+      return await Promise.all(participants.map(participant => participant.serialize()));
     },
 
     messages: async({ id }) => {
@@ -30,7 +30,7 @@ const resolver = {
         messages: query => query.orderBy('created_at', 'desc')
       }]);
 
-      return conversation.related('messages').invokeMap('serialize');
+      return conversation.related('messages').toArray();
     },
 
     missions: async ({ id }) => {
@@ -51,7 +51,7 @@ const resolver = {
         })
         .fetchAll();
 
-      return missions;
+      return missions.toArray();
     }
   }
 };

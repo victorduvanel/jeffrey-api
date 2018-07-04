@@ -11,7 +11,8 @@ import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
   conversationStartedMissionActivityTopic,
-  conversationEndedMissionActivityTopic
+  conversationEndedMissionActivityTopic,
+  conversationMissionStatusChangedActivityTopic
 } from '../../services/graphql/pubsub';
 
 import { Unauthorized } from '../../graphql/errors';
@@ -121,7 +122,11 @@ const Mission = Base.extend({
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationStartedMissionActivityTopic(user),
+<<<<<<< HEAD
         { startedMission: this.serialize() }
+=======
+        { startedMission: this.id }
+>>>>>>> 939894b47c45730bc2eb9d8169fa46234aa5fef8
       );
     });
   },
@@ -137,7 +142,7 @@ const Mission = Base.extend({
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
       pubsub.publish(
         conversationEndedMissionActivityTopic(user),
-        { endedMission: this.serialize() }
+        { endedMission: this.id }
       );
     });
   },
@@ -173,13 +178,19 @@ const Mission = Base.extend({
         });
     }
 
-    // Send notification
-    // if (recipientUserId) {
-    //   pubsub.publish(
-    //     conversationMissionStatusChangedActivityTopic(recipientUserId),
-    //     { missionStatus: this }
-    //   );
-    // }
+    pubsub.publish(
+      conversationMissionStatusChangedActivityTopic(this.get('clientId')),
+      {
+        missionStatus: this.id
+      }
+    );
+
+    pubsub.publish(
+      conversationMissionStatusChangedActivityTopic(this.get('providerId')),
+      {
+        missionStatus: this.id
+      }
+    );
   },
 
   totalCost() {
@@ -284,14 +295,14 @@ const Mission = Base.extend({
     pubsub.publish(
       conversationNewMissionActivityTopic(client.get('id')),
       {
-        newMission: mission
+        newMission: mission.id
       }
     );
 
     pubsub.publish(
       conversationNewMissionActivityTopic(provider.get('id')),
       {
-        newMission: mission
+        newMission: mission.id
       }
     );
     return mission;
