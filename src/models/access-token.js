@@ -15,7 +15,7 @@ const AccessToken = Base.extend({
 }, {
   create: async function({ user, singleUse }) {
     const id = uuid.v4();
-    const token = (await randomBytes(127)).toString('hex');
+    const token = (await randomBytes(32)).toString('hex');
 
     return this.forge({
       id, token, userId: user.get('id'), singleUse
