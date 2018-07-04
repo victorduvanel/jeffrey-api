@@ -58,3 +58,4 @@ dist
 config.yml
 local/
 .expo
+key.json
