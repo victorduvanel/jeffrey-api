@@ -33,7 +33,8 @@ export default () => {
           req,
           user: req.user
         },
-        debug: true,
+        tracing: true,
+        cacheControl: true,
         formatError: (err) => {
           console.log('####', err.message, err.locations, err.path);
 
