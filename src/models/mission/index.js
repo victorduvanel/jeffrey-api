@@ -10,8 +10,6 @@ import i18n             from '../../lib/i18n';
 import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
-  conversationStartedMissionActivityTopic,
-  conversationEndedMissionActivityTopic,
   conversationMissionStatusChangedActivityTopic
 } from '../../services/graphql/pubsub';
 
@@ -113,38 +111,25 @@ const Mission = Base.extend({
 
   start: async function() {
     this.set('startedDate', knex.raw('NOW()'));
-    this.set('status', 'started');
 
-    const mission = await this.save();
-    await mission.refresh();
-
-    // Send notification
-    [this.get('providerId'), this.get('clientId')].forEach((user) => {
-      pubsub.publish(
-        conversationStartedMissionActivityTopic(user),
-<<<<<<< HEAD
-        { startedMission: this.serialize() }
-=======
-        { startedMission: this.id }
->>>>>>> 939894b47c45730bc2eb9d8169fa46234aa5fef8
-      );
-    });
+    await this.save();
   },
 
   end: async function() {
+    await bookshelf.knex
+      .raw(`
+        update missions
+        set
+          pay_tentative_at = NOW() + interval '48 hours'
+        where
+          id = :id
+      `, {
+        id: this.id
+      });
+
     this.set('endedDate', bookshelf.knex.raw('NOW()'));
-    this.set('status', 'terminated');
 
-    const mission = await this.save();
-    await mission.refresh();
-
-    // Send notification
-    [this.get('providerId'), this.get('clientId')].forEach((user) => {
-      pubsub.publish(
-        conversationEndedMissionActivityTopic(user),
-        { endedMission: this.id }
-      );
-    });
+    await this.save();
   },
 
   async setStatus(newStatus, user) {
@@ -166,17 +151,14 @@ const Mission = Base.extend({
     await this.save();
 
     if (newStatus === TERMINATED) {
-      await bookshelf.knex
-        .raw(`
-          update missions
-          set
-            pay_tentative_at = NOW() + interval '48 hours'
-          where
-            id = :id
-        `, {
-          id: this.id
-        });
+      await this.end();
     }
+
+    if (newStatus === STARTED) {
+      await this.start();
+    }
+
+    this.refresh();
 
     pubsub.publish(
       conversationMissionStatusChangedActivityTopic(this.get('clientId')),

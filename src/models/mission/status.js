@@ -60,7 +60,7 @@ const confirmed = new Status({
 });
 
 const terminated = new Status({
-  mustBe: confirmed,
+  mustBe: started,
   triggeredBy: [ client, provider ]
 });
 

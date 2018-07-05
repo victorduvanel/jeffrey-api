@@ -7,6 +7,8 @@ import http                            from 'http';
 import express                         from 'express';
 import Promise                         from 'bluebird';
 
+import { ApolloEngine }                from 'apollo-engine';
+
 import config                          from './config';
 import routes                          from './routes';
 
@@ -103,24 +105,29 @@ post('/providers', routes.providers.post);
 
 post('/stripe/webhook', routes.stripe.webhook.post);
 
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {
     _listenProm = new Promise((resolve) => {
-
       const port = process.env.PORT || 3000;
 
-      httpServer.listen({
-        port
-      }, () => {
+      const engine = new ApolloEngine({
+        apiKey: config.apolloEngine.apiKey
+      });
+
+      const listenCb = () => {
         const addr = httpServer.address();
+        let uri = '';
+
+        if (addr.family === 'IPv6') {
+          uri = `http://[${addr.address}]:${addr.port}`;
+        } else {
+          uri = `http://${addr.address}:${addr.port}`;
+        }
 
         /* eslint-disable no-console */
-        if (addr.family === 'IPv6') {
-          console.info(chalk.green(`Serving at http://[${addr.address}]:${addr.port}`));
-        } else {
-          console.info(chalk.green(`Serving at http://${addr.address}:${addr.port}`));
-        }
+        console.info(chalk.green(`[${process.pid}] Serving at ${uri}`));
         /* eslint-enable no-console */
 
         const wait = () => {
@@ -130,7 +137,17 @@ export const listen = () => {
         };
 
         resolve(Object.assign(addr, { wait }));
-      });
+      };
+
+      if (config.PRODUCTION) {
+        engine.listen({
+          port,
+          httpServer,
+          originUrl: `${config.webappProtocol}://${config.webappHost}`
+        }, listenCb);
+      } else {
+        httpServer.listen({ port }, listenCb);
+      }
     });
   }
 
