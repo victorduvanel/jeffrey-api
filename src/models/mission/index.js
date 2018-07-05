@@ -10,9 +10,9 @@ import i18n             from '../../lib/i18n';
 import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
-  conversationStartedMissionActivityTopic,
+  conversationMissionStatusChangedActivityTopic,
   conversationEndedMissionActivityTopic,
-  conversationMissionStatusChangedActivityTopic
+  conversationStartedMissionActivityTopic
 } from '../../services/graphql/pubsub';
 
 import { Unauthorized } from '../../graphql/errors';
@@ -112,9 +112,10 @@ const Mission = Base.extend({
   },
 
   start: async function() {
-    this.set('startedDate', bookshelf.knex.raw('NOW()'));
-    this.set('status', 'started');
+    this.set('startedDate', knex.raw('NOW()'));
+
     await this.save();
+    await this.refresh();
 
     // Send notification
     [this.get('providerId'), this.get('clientId')].forEach((user) => {
@@ -126,8 +127,18 @@ const Mission = Base.extend({
   },
 
   end: async function() {
-    this.set('endedDate', bookshelf.knex.raw('NOW()'));
+    await bookshelf.knex
+      .raw(`
+        update missions
+        set
+          pay_tentative_at = NOW() + interval '48 hours'
+        where
+          id = :id
+      `, {
+        id: this.id
+      });
 
+    this.set('endedDate', bookshelf.knex.raw('NOW()'));
     await this.save();
 
     // Send notification
@@ -137,6 +148,7 @@ const Mission = Base.extend({
         { endedMission: this.id }
       );
     });
+
   },
 
   async setStatus(newStatus, user) {
@@ -158,17 +170,14 @@ const Mission = Base.extend({
     await this.save();
 
     if (newStatus === TERMINATED) {
-      await bookshelf.knex
-        .raw(`
-          update missions
-          set
-            pay_tentative_at = NOW() + interval '48 hours'
-          where
-            id = :id
-        `, {
-          id: this.id
-        });
+      await this.end();
     }
+
+    if (newStatus === STARTED) {
+      await this.start();
+    }
+
+    this.refresh();
 
     pubsub.publish(
       conversationMissionStatusChangedActivityTopic(this.get('clientId')),
