@@ -10,7 +10,9 @@ import i18n             from '../../lib/i18n';
 import { getLocale }    from '../../locales';
 import pubsub, {
   conversationNewMissionActivityTopic,
-  conversationMissionStatusChangedActivityTopic
+  conversationMissionStatusChangedActivityTopic,
+  conversationEndedMissionActivityTopic,
+  conversationStartedMissionActivityTopic
 } from '../../services/graphql/pubsub';
 
 import { Unauthorized } from '../../graphql/errors';
@@ -113,6 +115,15 @@ const Mission = Base.extend({
     this.set('startedDate', knex.raw('NOW()'));
 
     await this.save();
+    await this.refresh();
+
+    // Send notification
+    [this.get('providerId'), this.get('clientId')].forEach((user) => {
+      pubsub.publish(
+        conversationStartedMissionActivityTopic(user),
+        { startedMission: this.id }
+      );
+    });
   },
 
   end: async function() {
@@ -128,8 +139,16 @@ const Mission = Base.extend({
       });
 
     this.set('endedDate', bookshelf.knex.raw('NOW()'));
-
     await this.save();
+
+    // Send notification
+    [this.get('providerId'), this.get('clientId')].forEach((user) => {
+      pubsub.publish(
+        conversationEndedMissionActivityTopic(user),
+        { endedMission: this.id }
+      );
+    });
+
   },
 
   async setStatus(newStatus, user) {
