@@ -21,7 +21,6 @@ Cliquez sur le lien suivant depuis l'appareil sur lequel vous shouaitez vous ide
           border-radius="2px"
           href="{{loginLink}}"
           inner-padding="15px 30px"
-          padding-top="20"
         >
           Connecter mon compte
         </mj-button>

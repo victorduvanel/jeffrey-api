@@ -21,7 +21,6 @@
           border-radius="2px"
           href="{{activationLink}}"
           inner-padding="15px 30px"
-          padding-top="20"
         >
           Confirmer mon compte
         </mj-button>
