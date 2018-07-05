@@ -7,7 +7,7 @@ const provider = async (_, __, ___, { variableValues: { providerId } }) => {
   if (!user) {
     return null;
   }
-  return user.serialize();
+  return user;
 };
 
 registerQuery(def, { provider });

@@ -5,7 +5,7 @@ const currentUser = (_, __, { user }) => {
   if (!user) {
     return null;
   }
-  return user.serialize();
+  return user;
 };
 
 registerQuery(def, { currentUser  });

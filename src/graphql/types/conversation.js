@@ -19,8 +19,7 @@ const resolver = {
         throw new Error('conversation not found');
       }
       await conversation.load(['participants']);
-      const participants = conversation.related('participants').toArray();
-      return await Promise.all(participants.map(participant => participant.serialize()));
+      return conversation.related('participants').toArray();
     },
 
     messages: async({ id }) => {

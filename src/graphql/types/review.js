@@ -20,7 +20,7 @@ const resolver = {
 
       await review.load(['author']);
       const author = review.related('author');
-      return author.serialize();
+      return author;
     }
   }
 };

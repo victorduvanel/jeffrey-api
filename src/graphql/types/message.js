@@ -32,7 +32,7 @@ const resolver = {
       const message = await Message.find(id);
       await message.load(['from']);
       const from = message.related('from');
-      return from.serialize();
+      return from;
     }
   }
 };

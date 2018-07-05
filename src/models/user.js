@@ -58,6 +58,92 @@ const User = Base.extend({
     return this.hasMany('StripeCard');
   },
 
+
+  /* GRAPHQL PROPS */
+
+  color() {
+    return 'turquoise';
+  },
+
+  bio() {
+    return this.get('bio');
+  },
+
+  isProvider() {
+    return this.get('isProvider');
+  },
+
+  isAvailable() {
+    return this.get('isAvailable');
+  },
+
+  firstName() {
+    return this.get('firstName');
+  },
+
+  lastName() {
+    return this.get('lastName');
+  },
+
+  email() {
+    return this.get('email');
+  },
+
+  gender() {
+    return this.get('gender');
+  },
+
+  dateOfBirth() {
+    if (this.get('dateOfBirth')) {
+      return moment(this.get('dateOfBirth')).format('YYYY-MM-DD');
+    }
+    return null;
+  },
+
+  phoneNumber() {
+    return this.get('phoneNumber');
+  },
+
+  profilePicture() {
+    return this.get('profilePicture');
+  },
+
+  async rank() {
+    const res = await bookshelf
+      .knex('reviews')
+      .avg('rank as rank')
+      .where('provider_id', '=', this.get('id'));
+    return res[0].rank;
+  },
+
+  async paymentMethodStatus() {
+    await this.load('stripeCard');
+
+    const cards = this.related('stripeCard');
+    console.log(cards.toArray());
+    if (!cards.length) {
+      return 'not_set';
+    }
+
+    const card = cards.at(0);
+    const expYear = card.get('expYear');
+    const expMonth = card.get('expMonth');
+
+    const now = new Date();
+    const expirationDate = new Date(expYear, expMonth - 1);
+
+    if (now >= expirationDate) {
+      return 'expired';
+    } else if ((now - expirationDate) / (1000 * 60 * 60 * 24) >= 30) {
+      // expires in 30 days or less
+      return 'expired_soon';
+    } else {
+      return 'ok';
+    }
+  },
+
+  /* !GRAPHQL PROPS */
+
   async stripeAccount(create = true) {
     const stripeAccount = await StripeAccount
       .forge({
@@ -176,14 +262,6 @@ const User = Base.extend({
     })
       .orderBy('created_at', 'DESC')
       .fetch();
-  },
-
-  async rank() {
-    const res = await bookshelf
-      .knex('reviews')
-      .avg('rank as rank')
-      .where('provider_id', '=', this.get('id'));
-    return res[0].rank;
   },
 
   async getPostalAddress() {
@@ -310,31 +388,6 @@ const User = Base.extend({
     return customer.id;
   },
 
-  async paymentMethodStatus() {
-    await this.load('stripeCard');
-
-    const customers = this.related('stripeCard');
-    if (!customers.length) {
-      return 'not_set';
-    }
-
-    const customer = customers.at(0);
-    const expYear = customer.get('expYear');
-    const expMonth = customer.get('expMonth');
-
-    const now = new Date();
-    const expirationDate = new Date(expYear, expMonth - 1);
-
-    if (now >= expirationDate) {
-      return 'expired';
-    } else if ((now - expirationDate) / (1000 * 60 * 60 * 24) >= 30) {
-      // expires in 30 days or less
-      return 'expired_soon';
-    } else {
-      return 'ok';
-    }
-  },
-
   async onboardingProgress() {
     const progress = [];
 
@@ -424,24 +477,21 @@ const User = Base.extend({
   },
 
   async serialize() {
-    let dateOfBirth = null;
-    if (this.get('dateOfBirth')) {
-      dateOfBirth = moment(this.get('dateOfBirth')).format('YYYY-MM-DD');
-    }
+    console.warn('Stop using User::serialize');
 
     return {
-      id: this.get('id'),
-      color: 'turquoise',
-      bio: this.get('bio'),
-      isProvider: this.get('isProvider'),
-      isAvailable: this.get('isAvailable'),
-      firstName: this.get('firstName'),
-      lastName: this.get('lastName'),
-      email: this.get('email'),
-      gender: this.get('gender'),
-      dateOfBirth,
-      phoneNumber: this.get('phoneNumber'),
-      profilePicture: this.get('profilePicture'),
+      id: this.id,
+      color: this.color(),
+      bio: this.bio(),
+      isProvider: this.isProvider(),
+      isAvailable: this.isAvailable(),
+      firstName: this.firstName(),
+      lastName: this.lastName(),
+      email: this.email(),
+      gender: this.gender(),
+      dateOfBirth: this.dateOfBirth(),
+      phoneNumber: this.phoneNumber(),
+      profilePicture: this.profilePicture(),
       rank: await this.rank(),
       paymentMethodStatus: await this.paymentMethodStatus()
     };

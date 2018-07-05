@@ -37,7 +37,7 @@ const providers = async (_,
     providers = providers.filter(provider => provider.id !== user.id);
   }
 
-  return providers.map(user => user.serialize());
+  return providers;
 };
 
 registerQuery(def, { providers });

@@ -1,4 +1,3 @@
-import Promise              from 'bluebird';
 import Mission              from '../../models/mission';
 import { registerQuery }    from '../registry';
 
@@ -10,7 +9,7 @@ const providerHistory = async (_, __, { user }) => {
   }
 
   const clients = await Mission.providerHistory(user);
-  return Promise.all(clients.toArray().map(user => user.serialize()));
+  return clients.toArray();
 };
 
 registerQuery(def, { providerHistory });

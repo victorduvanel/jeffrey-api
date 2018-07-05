@@ -30,11 +30,11 @@ const resolver = {
   Mission: {
     client: async(mission) => {
       await mission.load(['client']);
-      return mission.related('client').serialize();
+      return mission.related('client');
     },
     provider: async(mission) => {
       await mission.load(['provider']);
-      return mission.related('provider').serialize();
+      return mission.related('provider');
     },
     serviceCategory: async(mission) => {
       await mission.load(['serviceCategory']);
