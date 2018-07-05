@@ -11,7 +11,6 @@ const locales = {
 };
 
 export const getLocale = (locale) => {
-  console.log(locale)
   if (!locale) {
     return 'en';
   }
