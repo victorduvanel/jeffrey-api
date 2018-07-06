@@ -55,6 +55,8 @@ get('/', async (req, res) => {
   });
 });
 
+get('/info', routes.info.get);
+
 post('/process-payout', routes.processPayout.post);
 post('/payout-alert', routes.payoutAlert.post);
 
