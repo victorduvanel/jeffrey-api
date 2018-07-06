@@ -120,7 +120,6 @@ const User = Base.extend({
     await this.load('stripeCard');
 
     const cards = this.related('stripeCard');
-    console.log(cards.toArray());
     if (!cards.length) {
       return 'not_set';
     }
