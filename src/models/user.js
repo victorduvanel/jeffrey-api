@@ -25,9 +25,9 @@ import i18n          from '../lib/i18n';
 import './postal-address';
 import './business';
 
-export const InvalidCredentials = new Error('Invalid Credentials');
-export const DuplicatedUser = new Error('Duplicated User');
-export const PasswordComplexity = new Error('PasswordComplexity');
+export const InvalidCredentials = () => new Error('Invalid Credentials');
+export const DuplicatedUser = () => new Error('Duplicated User');
+export const PasswordComplexity = () => new Error('PasswordComplexity');
 
 const bcrypt = Promise.promisifyAll(nativeBcrypt);
 
@@ -363,7 +363,7 @@ const User = Base.extend({
     const ok = !checks.find(test => !test.test(newPassword));
 
     if (!ok) {
-      throw PasswordComplexity;
+      throw PasswordComplexity();
     }
 
     const hash = await bcrypt.hashAsync(newPassword, saltRounds);
@@ -513,7 +513,7 @@ const User = Base.extend({
       }
     }
 
-    throw InvalidCredentials;
+    throw InvalidCredentials();
   },
 
   facebookAuthenticate: async function(token) {
@@ -534,9 +534,15 @@ const User = Base.extend({
       throw new Error('user not verified');
     }
 
-    const user = await this.forge({
+    let user = await this.forge({
       facebookId: facebookUser.id
     }).fetch();
+
+    if (user) {
+      return user;
+    }
+
+    user = await this.forge({ email: facebookUser.email }).fetch();
 
     if (user) {
       return user;
@@ -581,7 +587,7 @@ const User = Base.extend({
       .save(null, { method: 'insert' })
       .catch((err) => {
         if (err.code === '23505') {
-          throw DuplicatedUser;
+          throw DuplicatedUser();
         }
 
         throw err;
