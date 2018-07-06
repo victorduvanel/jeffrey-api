@@ -3,6 +3,7 @@ import { graphqlExpress }            from 'apollo-server-express';
 import { formatError, GraphQLError } from 'graphql';
 import oauth2                        from '../middlewares/oauth2';
 import User                          from '../models/user';
+import raven                         from '../services/raven';
 import getSchema                     from '../graphql/schema';
 import { InternalError }             from '../graphql/errors';
 import { AppError }                  from '../errors';
@@ -36,6 +37,8 @@ export default () => {
         tracing: true,
         cacheControl: true,
         formatError: (err) => {
+          raven.captureException(err);
+
           console.log('####', err.message, err.locations, err.path);
 
           if (err instanceof GraphQLError) {
