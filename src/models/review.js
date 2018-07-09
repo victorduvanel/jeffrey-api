@@ -13,15 +13,16 @@ const Review = Base.extend({
     return this.belongsTo('User', 'author_id');
   }
 }, {
-  create: async function({ provider, author }) {
+  create: async function({ rank, message, missionId, authorId }) {
     const id = uuid.v4();
 
     return this.forge({
       id,
-      providerId: provider.get('id'),
-      authorId: author.get('id'),
-    })
-      .save(null, { method: 'insert' });
+      rank,
+      message,
+      missionId,
+      authorId
+    }).save(null, { method: 'insert' });
   },
 
   find: function(id) {

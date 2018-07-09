@@ -7,6 +7,7 @@ type Review {
   message: String
   rank: Int
   author: User
+  mission: Mission
 }
 `;
 
