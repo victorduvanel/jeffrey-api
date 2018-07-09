@@ -279,6 +279,7 @@ const Mission = Base.extend({
         id,
         startDate,
         price,
+        usersNotified: false,
         priceCurrency: currency,
         providerId: provider.get('id'),
         clientId: client.get('id'),
@@ -363,7 +364,17 @@ const Mission = Base.extend({
           users_notified = true
         where
           id in (
-            select id from missions where users_notified = false limit 10
+            select id
+              from missions
+            where
+              status = 'accepted'
+              and
+              (
+                users_notified = false
+                or
+                users_notified is null
+              )
+            limit 10
           )
         and
           start_date - NOW() <= interval '5 minutes'
