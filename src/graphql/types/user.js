@@ -44,22 +44,6 @@ type User {
 
 const resolver = {
   User: {
-    reviews: async({ id }) => {
-      const user = await User.find(id);
-      if (!user) {
-        return null;
-      }
-
-      await user.load(['reviews']);
-      const reviews = user.related('reviews');
-
-      return reviews.toArray().map(review => ({
-        id: review.get('id'),
-        message: review.get('message'),
-        rank: review.get('rank')
-      }));
-    },
-
     postalAddress: async({ id }) => {
       const user = await User.find(id);
       const postalAddress = await user.getPostalAddress();

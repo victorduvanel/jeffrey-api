@@ -16,6 +16,7 @@ import config        from '../config';
 import UserDocument  from './user-document';
 import PostalAddress from './postal-address';
 import Business      from './business';
+import Review        from './review';
 import UserDevice    from './user-device';
 import TOSAcceptance from './tos-acceptance';
 import StripeAccount from './stripe-account';
@@ -42,10 +43,6 @@ const User = Base.extend({
     return this.hasMany('ProviderPrice');
   },
 
-  reviews() {
-    return this.hasMany('Review', 'provider_id');
-  },
-
   givenReviews() {
     return this.hasMany('Review', 'author_id');
   },
@@ -60,6 +57,32 @@ const User = Base.extend({
 
 
   /* GRAPHQL PROPS */
+
+  async reviews() {
+    const userId = this.id;
+
+    const reviews = await Review
+      .query((qb) => {
+        qb.whereIn(
+          'mission_id',
+          bookshelf.knex.raw(`
+            (
+              select id
+              from missions
+              where
+                id in (
+                  select id
+                  from missions
+                  where provider_id = '${userId}' or client_id = '${userId}'
+                )
+            )
+          `)
+        );
+      })
+      .fetchAll();
+
+    return reviews;
+  },
 
   color() {
     return 'turquoise';
@@ -109,11 +132,30 @@ const User = Base.extend({
   },
 
   async rank() {
-    const res = await bookshelf
-      .knex('reviews')
-      .avg('rank as rank')
-      .where('provider_id', '=', this.get('id'));
-    return res[0].rank;
+    const userId = this.get('id');
+    const res = await bookshelf.knex
+      .raw(`
+        select round(
+          avg(rank),
+          2
+        ) as rank
+        from reviews
+        where
+          mission_id in (
+            select id
+            from missions
+            where
+              id in (
+                select id
+                from missions
+                where provider_id = '${userId}' or client_id = '${userId}'
+              )
+          )
+        and
+          not author_id = '${userId}'
+      `);
+
+    return res.rows[0].rank;
   },
 
   async paymentMethodStatus() {

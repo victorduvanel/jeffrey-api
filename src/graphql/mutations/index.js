@@ -17,3 +17,4 @@ import './tos';
 import './create-provider';
 import './current-location';
 import './payment-method';
+import './new-review';

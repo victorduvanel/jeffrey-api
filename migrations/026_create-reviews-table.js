@@ -4,8 +4,8 @@ function up(knex) {
     table.integer('rank');
     table.string('message');
     table
-      .uuid('provider_id')
-      .references('users.id')
+      .uuid('mission_id')
+      .references('missions.id')
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
     table

@@ -5,23 +5,33 @@ import Base      from './base';
 const Review = Base.extend({
   tableName: 'reviews',
 
-  provider() {
-    return this.belongsTo('User');
+  mission() {
+    return this.belongsTo('Mission');
   },
 
   author() {
     return this.belongsTo('User', 'author_id');
+  },
+
+  /* GRAPHQL PROPS */
+  message() {
+    return this.get('message');
+  },
+
+  rank() {
+    return this.get('rank');
   }
 }, {
-  create: async function({ provider, author }) {
+  create: async function({ rank, message, missionId, authorId }) {
     const id = uuid.v4();
 
     return this.forge({
       id,
-      providerId: provider.get('id'),
-      authorId: author.get('id'),
-    })
-      .save(null, { method: 'insert' });
+      rank,
+      message,
+      missionId,
+      authorId
+    }).save(null, { method: 'insert' });
   },
 
   find: function(id) {
