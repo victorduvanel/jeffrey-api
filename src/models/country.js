@@ -18,6 +18,10 @@ const Country = Base.extend({
 
   code() {
     return this.get('code');
+  },
+
+  currency() {
+    return this.get('currencyCode');
   }
 }, {
   findByCode: function(code) {

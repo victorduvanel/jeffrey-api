@@ -1,5 +1,5 @@
 import { registerType } from '../registry';
-import User             from '../../models/user';
+import Country          from '../../models/country';
 import ProviderPrice    from '../../models/provider-price';
 
 const def = `
@@ -39,13 +39,13 @@ type User {
   prices: [ProviderPrice]
   price(serviceCategoryId: ID): Price
   paymentMethodStatus: String
+  country: Country
 }
 `;
 
 const resolver = {
   User: {
-    postalAddress: async({ id }) => {
-      const user = await User.find(id);
+    postalAddress: async(user) => {
       const postalAddress = await user.getPostalAddress();
 
       if (!postalAddress) {
@@ -54,12 +54,7 @@ const resolver = {
       return postalAddress.serialize();
     },
 
-    prices: async({ id }) => {
-      const user = await User.find(id);
-      if (!user) {
-        return null;
-      }
-
+    prices: async(user) => {
       await user.load(['providerPrices']);
       const prices = user.related('providerPrices');
 
@@ -77,6 +72,19 @@ const resolver = {
           service_category_id: serviceCategoryId
         })
         .fetch();
+    },
+
+    country: async(user) => {
+      const postalAddress = await user.getPostalAddress();
+
+      if (postalAddress) {
+        const countryCode = postalAddress.get('country');
+        if (countryCode) {
+          return Country.findByCode(countryCode);
+        }
+      }
+
+      return null;
     }
   }
 };

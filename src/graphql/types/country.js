@@ -7,6 +7,7 @@ const def = `
     phoneCode: String!
     flag: String!
     code: String!
+    currency: Currency
   }
 `;
 
