@@ -5,12 +5,21 @@ import Base      from './base';
 const Review = Base.extend({
   tableName: 'reviews',
 
-  provider() {
-    return this.belongsTo('User');
+  mission() {
+    return this.belongsTo('Mission');
   },
 
   author() {
     return this.belongsTo('User', 'author_id');
+  },
+
+  /* GRAPHQL PROPS */
+  message() {
+    return this.get('message');
+  },
+
+  rank() {
+    return this.get('rank');
   }
 }, {
   create: async function({ rank, message, missionId, authorId }) {

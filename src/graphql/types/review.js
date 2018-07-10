@@ -1,5 +1,4 @@
 import { registerType } from '../registry';
-import Review           from '../../models/review';
 
 const def = `
 type Review {
@@ -13,15 +12,14 @@ type Review {
 
 const resolver = {
   Review: {
-    author: async({ id }) => {
-      const review = await Review.find(id);
-      if (!review) {
-        return null;
-      }
-
+    author: async(review) => {
       await review.load(['author']);
-      const author = review.related('author');
-      return author;
+      return review.related('author');
+    },
+
+    mission: async(review) => {
+      await review.load(['mission']);
+      return review.related('mission');
     }
   }
 };

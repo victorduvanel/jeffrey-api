@@ -16,6 +16,7 @@ import config        from '../config';
 import UserDocument  from './user-document';
 import PostalAddress from './postal-address';
 import Business      from './business';
+import Review        from './review';
 import UserDevice    from './user-device';
 import TOSAcceptance from './tos-acceptance';
 import StripeAccount from './stripe-account';
@@ -42,10 +43,6 @@ const User = Base.extend({
     return this.hasMany('ProviderPrice');
   },
 
-  reviews() {
-    return this.hasMany('Review', 'provider_id');
-  },
-
   givenReviews() {
     return this.hasMany('Review', 'author_id');
   },
@@ -60,6 +57,32 @@ const User = Base.extend({
 
 
   /* GRAPHQL PROPS */
+
+  async reviews() {
+    const userId = this.id;
+
+    const reviews = await Review
+      .query((qb) => {
+        qb.whereIn(
+          'mission_id',
+          bookshelf.knex.raw(`
+            (
+              select id
+              from missions
+              where
+                id in (
+                  select id
+                  from missions
+                  where provider_id = '${userId}' or client_id = '${userId}'
+                )
+            )
+          `)
+        );
+      })
+      .fetchAll();
+
+    return reviews;
+  },
 
   color() {
     return 'turquoise';
