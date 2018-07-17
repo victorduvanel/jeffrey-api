@@ -1,6 +1,7 @@
 import bodyParser                    from 'body-parser';
 import { graphqlExpress }            from 'apollo-server-express';
 import { formatError, GraphQLError } from 'graphql';
+import config                        from '../config';
 import oauth2                        from '../middlewares/oauth2';
 import User                          from '../models/user';
 import raven                         from '../services/raven';
@@ -34,18 +35,17 @@ export default () => {
           req,
           user: req.user
         },
-        tracing: true,
-        cacheControl: true,
+        // debug: false,
+        tracing: config.PRODUCTION,
+        cacheControl: config.PRODUCTION,
         formatError: (err) => {
-          raven.captureException(err);
-
-          console.log('####', err.message, err.locations, err.path);
-
           if (err instanceof GraphQLError) {
             if (!err.originalError || err.originalError instanceof AppError) {
               return err;
             }
           }
+
+          raven.captureException(err);
 
           return formatError(InternalError(err));
         }

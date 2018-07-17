@@ -1,15 +1,13 @@
-import User              from '../../models/user';
-import Conversation      from '../../models/conversation';
-import { NotFound }      from '../../errors';
-import { registerQuery } from '../registry';
+import { combineResolvers } from 'graphql-resolvers';
+import auth                 from '../middlewares/auth';
+import User                 from '../../models/user';
+import Conversation         from '../../models/conversation';
+import { NotFound }         from '../../errors';
+import { registerQuery }    from '../registry';
 
 const def = 'conversation(userId: ID!): Conversation';
 
 const conversation = async (_, { userId }, { user }) => {
-  if (!user) {
-    throw new Error('this resource requires authentication');
-  }
-
   const participant = await User.find(userId);
   if (!participant) {
     throw new Error('participant not found');
@@ -28,16 +26,9 @@ const conversation = async (_, { userId }, { user }) => {
     throw NotFound;
   }
 
-  await conversation.load(['participants']);
-
-  const participants = conversation.related('participants');
-  if (participants.map(user => user.id).includes(user.get('id'))) {
-    return {
-      id: conversation.get('id')
-    };
-  }
-
-  return null;
+  return conversation;
 };
 
-registerQuery(def, { conversation });
+registerQuery(def, {
+  conversation: combineResolvers(auth, conversation)
+});

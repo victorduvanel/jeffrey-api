@@ -5,6 +5,7 @@ import nativeBcrypt  from 'bcryptjs';
 import uuid          from 'uuid';
 import buckets       from '../services/google/storage';
 import bookshelf     from '../services/bookshelf';
+import knex          from '../services/knex';
 import stripe        from '../services/stripe';
 import Base          from './base';
 import AccessToken   from './access-token';
@@ -26,11 +27,25 @@ import i18n          from '../lib/i18n';
 import './postal-address';
 import './business';
 
-export const InvalidCredentials = () => new Error('Invalid Credentials');
-export const DuplicatedUser = () => new Error('Duplicated User');
-export const PasswordComplexity = () => new Error('PasswordComplexity');
+import { Unauthorized } from '../graphql/errors';
+import { AppError}      from '../errors';
+
+export const InvalidCredentials = () => new AppError('Invalid Credentials');
+export const DuplicatedUser = () => new AppError('Duplicated User');
+export const PasswordComplexity = () => new AppError('PasswordComplexity');
 
 const bcrypt = Promise.promisifyAll(nativeBcrypt);
+
+const currentUserOnly = (callback) => {
+  return (_, { user }) => {
+    if (!user || user.get('id') !== this.get('id')) {
+      throw Unauthorized();
+    }
+    /* eslint-disable no-undef */
+    return callback.apply(this, arguments);
+    /* eslint-enable no-undef */
+  };
+};
 
 const User = Base.extend({
   tableName: 'users',
@@ -47,14 +62,9 @@ const User = Base.extend({
     return this.hasMany('Review', 'author_id');
   },
 
-  conversations() {
-    return this.hasMany('Conversation');
-  },
-
   stripeCard() {
     return this.hasMany('StripeCard');
   },
-
 
   /* GRAPHQL PROPS */
 
@@ -65,18 +75,15 @@ const User = Base.extend({
       .query((qb) => {
         qb.whereIn(
           'mission_id',
-          bookshelf.knex.raw(`
-            (
-              select id
-              from missions
-              where
-                id in (
-                  select id
-                  from missions
-                  where provider_id = '${userId}' or client_id = '${userId}'
-                )
+          knex('missions')
+            .select('id')
+            .whereIn(
+              'id',
+              knex('missions')
+                .select('id')
+                .where('provider_id', userId)
+                .orWhere('client_id', userId)
             )
-          `)
         );
       })
       .fetchAll();
@@ -96,9 +103,9 @@ const User = Base.extend({
     return this.get('isProvider');
   },
 
-  isAvailable() {
+  isAvailable: currentUserOnly(() => {
     return this.get('isAvailable');
-  },
+  }),
 
   firstName() {
     return this.get('firstName');
@@ -108,24 +115,20 @@ const User = Base.extend({
     return this.get('lastName');
   },
 
-  email() {
+  email: currentUserOnly(() => {
     return this.get('email');
-  },
+  }),
 
-  gender() {
+  gender: currentUserOnly(() => {
     return this.get('gender');
-  },
+  }),
 
-  dateOfBirth() {
+  dateOfBirth: currentUserOnly(() => {
     if (this.get('dateOfBirth')) {
       return moment(this.get('dateOfBirth')).format('YYYY-MM-DD');
     }
     return null;
-  },
-
-  phoneNumber() {
-    return this.get('phoneNumber');
-  },
+  }),
 
   profilePicture() {
     return this.get('profilePicture');
@@ -133,7 +136,7 @@ const User = Base.extend({
 
   async rank() {
     const userId = this.get('id');
-    const res = await bookshelf.knex
+    const res = await knex
       .raw(`
         select round(
           avg(rank),
@@ -158,7 +161,7 @@ const User = Base.extend({
     return res.rows[0].rank;
   },
 
-  async paymentMethodStatus() {
+  paymentMethodStatus: currentUserOnly(async () => {
     await this.load('stripeCard');
 
     const cards = this.related('stripeCard');
@@ -181,7 +184,7 @@ const User = Base.extend({
     } else {
       return 'ok';
     }
-  },
+  }),
 
   /* !GRAPHQL PROPS */
 
