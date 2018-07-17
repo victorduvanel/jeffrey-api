@@ -1,7 +1,8 @@
 import { GraphQLError } from 'graphql';
+import { AppError}      from '../../errors';
 
 export const Unauthorized = () => {
-  return new GraphQLError('Authentication required');
+  return new AppError('Unauthorized');
 };
 
 export const InternalError = (originalError) => {
