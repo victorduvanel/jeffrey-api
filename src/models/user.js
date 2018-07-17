@@ -5,6 +5,7 @@ import nativeBcrypt  from 'bcryptjs';
 import uuid          from 'uuid';
 import buckets       from '../services/google/storage';
 import bookshelf     from '../services/bookshelf';
+import knex          from '../services/knex';
 import stripe        from '../services/stripe';
 import Base          from './base';
 import AccessToken   from './access-token';
@@ -47,14 +48,9 @@ const User = Base.extend({
     return this.hasMany('Review', 'author_id');
   },
 
-  conversations() {
-    return this.hasMany('Conversation');
-  },
-
   stripeCard() {
     return this.hasMany('StripeCard');
   },
-
 
   /* GRAPHQL PROPS */
 
@@ -65,18 +61,15 @@ const User = Base.extend({
       .query((qb) => {
         qb.whereIn(
           'mission_id',
-          bookshelf.knex.raw(`
-            (
-              select id
-              from missions
-              where
-                id in (
-                  select id
-                  from missions
-                  where provider_id = '${userId}' or client_id = '${userId}'
-                )
+          knex('missions')
+            .select('id')
+            .whereIn(
+              'id',
+              knex('missions')
+                .select('id')
+                .where('provider_id', userId)
+                .orWhere('client_id', userId)
             )
-          `)
         );
       })
       .fetchAll();
@@ -133,7 +126,7 @@ const User = Base.extend({
 
   async rank() {
     const userId = this.get('id');
-    const res = await bookshelf.knex
+    const res = await knex
       .raw(`
         select round(
           avg(rank),

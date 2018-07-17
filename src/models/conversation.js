@@ -1,6 +1,7 @@
 import Promise   from 'bluebird';
 import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
+import knex      from '../services/knex';
 import Base      from './base';
 import pubsub, { conversationNewMessageActivityTopic } from '../services/graphql/pubsub';
 
@@ -110,6 +111,19 @@ const Conversation = Base.extend({
 
   find: function(id) {
     return this.forge({ id }).fetch();
+  },
+
+  findUserConversations: function(user) {
+    return Conversation
+      .query((qb) => {
+        qb.whereIn(
+          'id',
+          knex('conversation_participants')
+            .select('conversation_id')
+            .where('user_id', user.get('id'))
+        );
+      })
+      .fetchAll();
   }
 });
 

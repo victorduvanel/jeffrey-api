@@ -13,6 +13,9 @@ function up(knex) {
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
 
+      table.dateTime('last_unseen_activity_at');
+      table.dateTime('last_activity_at');
+
       table.unique(['user_id', 'conversation_id']);
     });
 }

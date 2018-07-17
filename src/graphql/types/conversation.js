@@ -1,5 +1,4 @@
 import { registerType } from '../registry';
-import Conversation     from '../../models/conversation';
 import Mission          from '../../models/mission';
 
 const def = `
@@ -13,31 +12,21 @@ type Conversation {
 
 const resolver = {
   Conversation: {
-    participants: async({ id }) => {
-      const conversation = await Conversation.find(id);
-      if (!conversation) {
-        throw new Error('conversation not found');
-      }
+    participants: async(conversation, _, { user }) => {
       await conversation.load(['participants']);
-      return conversation.related('participants').toArray();
+      return conversation.related('participants').filter((participant) => {
+        return participant.get('id') !== user.id;
+      });
     },
 
-    messages: async({ id }) => {
-      const conversation = await Conversation.find(id);
-
+    messages: async(conversation) => {
       await conversation.load([{
         messages: query => query.orderBy('created_at', 'desc')
       }]);
-
       return conversation.related('messages').toArray();
     },
 
-    missions: async ({ id }) => {
-      const conversation = await Conversation.find(id);
-      if (!conversation) {
-        return null;
-      }
-
+    missions: async (conversation) => {
       await conversation.load(['participants']);
 
       const participantIds = conversation.related('participants')
