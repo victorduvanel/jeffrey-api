@@ -41,7 +41,7 @@ type User {
 }
 `;
 
-const currentUserOnly = (callback) => {
+const currentUserOnly = function(callback) {
   return (user, _, { user: currentUser }) => {
     if (!currentUser) {
       throw new Error('Unauthorized');
@@ -49,15 +49,13 @@ const currentUserOnly = (callback) => {
     if (user.get('id') !== currentUser.get('id')) {
       throw new Error('Unauthorized');
     }
-    /* eslint-disable no-undef */
     return callback.apply(this, arguments);
-    /* eslint-enable no-undef */
   };
 };
 
 const resolver = {
   User: {
-    postalAddress: currentUserOnly(async (user) => {
+    postalAddress: currentUserOnly(async function(user) {
       const postalAddress = await user.getPostalAddress();
 
       if (!postalAddress) {

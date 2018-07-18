@@ -36,14 +36,12 @@ export const PasswordComplexity = () => new AppError('PasswordComplexity');
 
 const bcrypt = Promise.promisifyAll(nativeBcrypt);
 
-const currentUserOnly = (callback) => {
-  return (_, { user }) => {
+const currentUserOnly = function(callback) {
+  return function(_, { user }) {
     if (!user || user.get('id') !== this.get('id')) {
       throw Unauthorized();
     }
-    /* eslint-disable no-undef */
     return callback.apply(this, arguments);
-    /* eslint-enable no-undef */
   };
 };
 
@@ -103,7 +101,7 @@ const User = Base.extend({
     return this.get('isProvider');
   },
 
-  isAvailable: currentUserOnly(() => {
+  isAvailable: currentUserOnly(function() {
     return this.get('isAvailable');
   }),
 
@@ -115,15 +113,15 @@ const User = Base.extend({
     return this.get('lastName');
   },
 
-  email: currentUserOnly(() => {
+  email: currentUserOnly(function() {
     return this.get('email');
   }),
 
-  gender: currentUserOnly(() => {
+  gender: currentUserOnly(function() {
     return this.get('gender');
   }),
 
-  dateOfBirth: currentUserOnly(() => {
+  dateOfBirth: currentUserOnly(function() {
     if (this.get('dateOfBirth')) {
       return moment(this.get('dateOfBirth')).format('YYYY-MM-DD');
     }
@@ -161,7 +159,7 @@ const User = Base.extend({
     return res.rows[0].rank;
   },
 
-  paymentMethodStatus: currentUserOnly(async () => {
+  paymentMethodStatus: currentUserOnly(async function() {
     await this.load('stripeCard');
 
     const cards = this.related('stripeCard');
