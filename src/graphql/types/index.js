@@ -13,3 +13,4 @@ import './price';
 import './provider-price';
 import './bank-account';
 import './payment-method';
+import './location';
