@@ -89,7 +89,7 @@ const resolver = {
 
     country: async (user) => {
       const postalAddress = await user.getPostalAddress();
-
+      
       if (postalAddress) {
         const countryCode = postalAddress.get('country');
         if (countryCode) {

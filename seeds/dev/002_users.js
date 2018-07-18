@@ -63,14 +63,14 @@ exports.seed = async function(knex, Promise) {
     INSERT INTO "users" (
       "id", "email", "facebook_id", "gender",
       "first_name", "last_name", "profile_picture",
-      "phone_number", "password", "lat", "lng",
+      "phone_number", "password", "lat", "lng", "postal_address_id",
       "is_provider", "is_available", "locale",
       "created_at", "updated_at"
     ) VALUES (
       :id, :email, :facebookId, :gender, :firstName,
       :lastName, :profilePicture, :phoneNumber,
-      :password, :lat, :lng, :isProvider, :isAvailable, 'en-US', NOW(), NOW()
+      :password, :lat, :lng, :postalAddress, :isProvider, :isAvailable, 'en-US', NOW(), NOW()
     )
     ON CONFLICT DO NOTHING
-  `, user));
+  `, { postalAddress: 'b36c1144-d6d3-4b67-ac0f-64a98c2e238a', ...user }));
 };
