@@ -4,6 +4,7 @@ import Mission          from '../../models/mission';
 const def = `
 type Conversation {
   id: String!
+  unseenActivity: Boolean
   participants: [User]!
   messages: [Message]!
   missions: [Mission]

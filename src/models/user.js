@@ -66,6 +66,15 @@ const User = Base.extend({
 
   /* GRAPHQL PROPS */
 
+  unseenActivity: currentUserOnly(async function() {
+    const res = await knex('conversation_participants')
+      .where('user_id', this.get('id'))
+      .whereNotNull('last_unseen_activity_at')
+      .limit(1);
+
+    return res.length > 0;
+  }),
+
   async reviews() {
     const userId = this.id;
 
@@ -89,8 +98,21 @@ const User = Base.extend({
     return reviews;
   },
 
-  color() {
-    return 'turquoise';
+  async color(_, { user }) {
+    if (user) {
+      const res = await knex.select('service_categories.color')
+        .from('missions')
+        .leftJoin('service_categories', 'missions.service_category_id', 'service_categories.id')
+        .where('client_id', user.get('id'))
+        .where('provider_id', this.get('id'))
+        .orderBy('missions.created_at', 'DESC')
+        .limit(1);
+
+      if (res.length) {
+        return res[0].color;
+      }
+    }
+    return null;
   },
 
   bio() {
