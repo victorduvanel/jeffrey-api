@@ -1,5 +1,6 @@
 import { registerType } from '../registry';
 import Country          from '../../models/country';
+import Mission          from '../../models/mission';
 import ProviderPrice    from '../../models/provider-price';
 
 const def = `
@@ -21,6 +22,7 @@ input PersonalDetails {
 }
 type User {
   id: ID!
+  unseenActivity: Boolean
   isProvider: Boolean
   isAvailable: Boolean
   firstName: String
@@ -32,6 +34,7 @@ type User {
   profilePicture: String
   postalAddress: PostalAddress
   reviews: [Review]
+  currentMission: Mission
   rank: Float
   bio: String
   prices: [ProviderPrice]
@@ -64,14 +67,14 @@ const resolver = {
       return postalAddress.serialize();
     }),
 
-    prices: async(user) => {
+    prices: async (user) => {
       await user.load(['providerPrices']);
       const prices = user.related('providerPrices');
 
       return prices.toArray().map(price => price.serialize());
     },
 
-    price: async(user, { serviceCategoryId }) => {
+    price: async (user, { serviceCategoryId }) => {
       if (!serviceCategoryId) {
         return null;
       }
@@ -84,7 +87,7 @@ const resolver = {
         .fetch();
     },
 
-    country: async(user) => {
+    country: async (user) => {
       const postalAddress = await user.getPostalAddress();
 
       if (postalAddress) {
@@ -95,6 +98,25 @@ const resolver = {
       }
 
       return null;
+    },
+
+    /**
+     * Retreive the current mission (has a provider) for the given client.
+     * The authenticated user is the client.
+     */
+    currentMission: async (provider, _, { user: client }) => {
+      const mission = await Mission
+        .query((qb) => {
+          qb.where('client_id', client.get('id'));
+          qb.where('provider_id', provider.get('id'));
+          qb.whereNotNull('started_date');
+          qb.whereNull('ended_date');
+          qb.orderBy('started_date', 'DESC');
+          qb.limit(1);
+        })
+        .fetch();
+
+      return mission;
     }
   }
 };
