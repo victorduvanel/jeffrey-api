@@ -10,7 +10,7 @@ const states = {};
 
 class Status {
   constructor({ mustBe, triggeredBy } = {}) {
-    this.mustBe = mustBe || [];
+    this.mustBe = !mustBe || Array.isArray(mustBe) ? mustBe : [mustBe];
     this.triggeredBy = triggeredBy || [];
   }
 
@@ -21,7 +21,7 @@ class Status {
       throw Unauthorized();
     }
 
-    if (this.mustBe !== currentStatus) {
+    if (this.mustBe && !this.mustBe.includes(currentStatus)) {
       throw InvalidNewStatus();
     }
   }
@@ -60,7 +60,7 @@ const confirmed = new Status({
 });
 
 const terminated = new Status({
-  mustBe: started,
+  mustBe: [started, confirmed],
   triggeredBy: [ client, provider ]
 });
 
