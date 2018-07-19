@@ -1,6 +1,5 @@
 import { GraphQLError } from 'graphql';
 import { Unauthorized } from '../../graphql/errors';
-import isArray          from 'isarray';
 
 const InvalidNewStatus = () => new GraphQLError('Invalid new status');
 
@@ -11,7 +10,7 @@ const states = {};
 
 class Status {
   constructor({ mustBe, triggeredBy } = {}) {
-    this.mustBe = !mustBe || isArray(mustBe) ? mustBe : [mustBe];
+    this.mustBe = !mustBe || Array.isArray(mustBe) ? mustBe : [mustBe];
     this.triggeredBy = triggeredBy || [];
   }
 
