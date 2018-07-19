@@ -16,6 +16,12 @@ const Conversation = Base.extend({
     return this.hasMany('Message');
   },
 
+  /* GRAPHQL PROPS */
+  unseenActivity(_, { user }) {
+    return this.lastUnseenActivities && !!this.lastUnseenActivities[user.get('id')];
+  },
+  /* !GRAPHQL PROPS */
+
   async notifyParticipants(message) {
     await this.load(['participants']);
     await message.load(['from']);
@@ -36,6 +42,15 @@ const Conversation = Base.extend({
         body: firstName ? `${firstName} sent you a message` : 'New message'
       });
     });
+  },
+
+  setLastUnseenActivityForUser(lastUnseenActivity, user) {
+    this.lastUnseenActivities = this.lastUnseenActivities || {};
+    this.lastUnseenActivities[user.get('id')] = lastUnseenActivity;
+  },
+
+  getLastUnseenActivityForUser(user) {
+    return this.lastUnseenActivities && this.lastUnseenActivities[user.get('id')];
   }
 }, {
   create: async function(participants) {
@@ -79,7 +94,7 @@ const Conversation = Base.extend({
     });
 
     /**
-     * We basically need to find the conversation that matches exactly the
+     * We basically need to find the conversation that matches exactly
      * those participants
      */
     const conversations = await bookshelf.knex.raw(`
@@ -113,17 +128,20 @@ const Conversation = Base.extend({
     return this.forge({ id }).fetch();
   },
 
-  findUserConversations: function(user) {
-    return Conversation
-      .query((qb) => {
-        qb.whereIn(
-          'id',
-          knex('conversation_participants')
-            .select('conversation_id')
-            .where('user_id', user.get('id'))
-        );
-      })
-      .fetchAll();
+  findUserConversations: async function(user) {
+    const res = await knex('conversation_participants')
+      .select('conversations.*', 'conversation_participants.last_unseen_activity_at')
+      .where('conversation_participants.user_id', user.get('id'))
+      .join('conversations', 'conversations.id', 'conversation_participants.conversation_id')
+      .orderBy('conversation_participants.last_activity_at', 'DESC');
+
+    return res.map(({ last_unseen_activity_at: lastUnseenActivityAt, ...attrs }) => {
+      const conversation = Conversation.forge(attrs);
+      if (lastUnseenActivityAt) {
+        conversation.setLastUnseenActivityForUser(lastUnseenActivityAt, user);
+      }
+      return conversation;
+    });
   }
 });
 
