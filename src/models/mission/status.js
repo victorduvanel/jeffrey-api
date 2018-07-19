@@ -1,5 +1,6 @@
 import { GraphQLError } from 'graphql';
 import { Unauthorized } from '../../graphql/errors';
+import isArray          from 'isarray';
 
 const InvalidNewStatus = () => new GraphQLError('Invalid new status');
 
@@ -10,7 +11,7 @@ const states = {};
 
 class Status {
   constructor({ mustBe, triggeredBy } = {}) {
-    this.mustBe = mustBe || [];
+    this.mustBe = !mustBe || isArray(mustBe) ? mustBe : [mustBe];
     this.triggeredBy = triggeredBy || [];
   }
 
@@ -21,7 +22,7 @@ class Status {
       throw Unauthorized();
     }
 
-    if (this.mustBe !== currentStatus) {
+    if (this.mustBe && !this.mustBe.includes(currentStatus)) {
       throw InvalidNewStatus();
     }
   }
@@ -60,7 +61,7 @@ const confirmed = new Status({
 });
 
 const terminated = new Status({
-  mustBe: confirmed,
+  mustBe: [started, confirmed],
   triggeredBy: [ client, provider ]
 });
 
