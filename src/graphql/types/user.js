@@ -45,7 +45,7 @@ type User {
 `;
 
 const currentUserOnly = function(callback) {
-  return (user, _, { user: currentUser }) => {
+  return function(user, _, { user: currentUser }) {
     if (!currentUser) {
       throw new Error('Unauthorized');
     }
@@ -58,7 +58,7 @@ const currentUserOnly = function(callback) {
 
 const resolver = {
   User: {
-    postalAddress: currentUserOnly(async function(user) {
+    postalAddress: currentUserOnly(async (user) => {
       const postalAddress = await user.getPostalAddress();
 
       if (!postalAddress) {
@@ -89,7 +89,7 @@ const resolver = {
 
     country: async (user) => {
       const postalAddress = await user.getPostalAddress();
-      
+
       if (postalAddress) {
         const countryCode = postalAddress.get('country');
         if (countryCode) {
