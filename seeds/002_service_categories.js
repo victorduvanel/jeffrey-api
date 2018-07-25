@@ -6,12 +6,13 @@ exports.seed = (knex) => {
     const insert = (props) => {
       return knex.raw(
         `INSERT INTO service_categories
-          (id, slug, parent_id, root_id, ordinal_position, color, created_at, updated_at)
-          VALUES (:id, :slug, :parentId, :rootId, :ordinalPosition, :color, NOW(), NOW())
+          (id, country_id, slug, parent_id, root_id, ordinal_position, color, created_at, updated_at)
+          VALUES (:id, :countryId, :slug, :parentId, :rootId, :ordinalPosition, :color, NOW(), NOW())
           ON CONFLICT (id) DO UPDATE
           SET
             slug = EXCLUDED.slug,
             parent_id = EXCLUDED.parent_id,
+            country_id = EXCLUDED.country_id,
             root_id = EXCLUDED.root_id,
             ordinal_position = EXCLUDED.ordinal_position,
             updated_at = NOW()
@@ -20,11 +21,12 @@ exports.seed = (knex) => {
       ).transacting(trx);
     };
 
-    const saveService = (services, rootId = null, parentId = null, proms = []) => {
+    const saveService = (services, countryId, rootId = null, parentId = null, proms = []) => {
       services.forEach(svc => {
         proms.push(insert({
           id: svc.id,
           slug: svc.slug,
+          countryId,
           color: svc.color,
           parentId,
           rootId,
@@ -32,12 +34,21 @@ exports.seed = (knex) => {
         }));
 
         if (svc.services) {
-          saveService(svc.services, rootId || svc.id, svc.id, proms);
+          saveService(svc.services, countryId, rootId || svc.id, svc.id, proms);
         }
       });
       return Promise.all(proms);
     };
 
-    return saveService(categories.services);
+    return Promise.map(Object.keys(categories.services), async (countryCode) => {
+      const countries = await knex('countries')
+        .where('code', countryCode);
+
+      if (countries) {
+        const country = countries[0];
+        return saveService(categories.services[countryCode], country.id);
+      }
+    });
+
   });
 };

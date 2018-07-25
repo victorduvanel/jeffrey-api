@@ -21,6 +21,7 @@ import Review        from './review';
 import UserDevice    from './user-device';
 import TOSAcceptance from './tos-acceptance';
 import StripeAccount from './stripe-account';
+import Country       from './country';
 import { getLocale } from '../locales';
 import i18n          from '../lib/i18n';
 
@@ -207,6 +208,18 @@ const User = Base.extend({
   }),
 
   /* !GRAPHQL PROPS */
+
+  async country() {
+    const postalAddress = await this.getPostalAddress();
+
+    if (postalAddress) {
+      const countryCode = postalAddress.get('country');
+      if (countryCode) {
+        return Country.findByCode(countryCode);
+      }
+    }
+    return null;
+  },
 
   async stripeAccount(create = true) {
     const stripeAccount = await StripeAccount

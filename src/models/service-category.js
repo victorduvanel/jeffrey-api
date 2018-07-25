@@ -10,6 +10,10 @@ const ServiceCategory = Base.extend({
   },
 
   subCategories() {
+    if (this._subcategories) {
+      return this._subcategories;
+    }
+
     return ServiceCategory
       .where({
         parent_id: this.get('id')
