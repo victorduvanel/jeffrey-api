@@ -26,7 +26,7 @@ const providerLocation = async (_, { missionId }, { user }) => {
   return {
     lat: provider.get('lat'),
     lng: provider.get('lng')
-  };;
+  };
 };
 
 registerQuery(def, {
