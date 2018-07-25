@@ -88,6 +88,7 @@ const User = Base.extend({
               'id',
               knex('missions')
                 .select('id')
+                .whereNot('author_id', userId)
                 .where('provider_id', userId)
                 .orWhere('client_id', userId)
             )
