@@ -310,29 +310,12 @@ const Mission = Base.extend({
     return mission;
   },
 
-  clientHistory2: async function(client) {
-    const userIds = await bookshelf.knex
-      .select('provider_id')
-      .from('missions')
-      .where('client_id', '=', client.get('id'))
-      .groupBy('provider_id');
-
-    return User
-      .query((qb) => {
-        qb.whereIn(
-          'id',
-          userIds.map(user => user.provider_id)
-        );
-      })
-      .fetchAll();
-  },
-
-  clientHistory: async ({user, providerId}) => {
+  clientHistory: async ({ user, providerId }) => {
     const missions = await Mission
       .query((qb) => {
         qb.where('client_id', '=', user.get('id'));
         qb.where('provider_id', '=', providerId);
-        qb.where('status', '=', 'accepted');
+        qb.where('status', '=', 'terminated');
       })
       .fetchAll();
 
