@@ -39,6 +39,10 @@ export default () => {
         tracing: config.PRODUCTION,
         cacheControl: config.PRODUCTION,
         formatError: (err) => {
+          if (!config.PRODUCTION) {
+            console.error(err);
+          }
+
           if (err instanceof GraphQLError) {
             if (!err.originalError || err.originalError instanceof AppError) {
               return err;
