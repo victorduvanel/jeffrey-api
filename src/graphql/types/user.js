@@ -35,6 +35,7 @@ type User {
   postalAddress: PostalAddress
   reviews: [Review]
   currentMission: Mission
+  serviceCategories: [ServiceCategory]
   rank: Float
   bio: String
   prices: [ProviderPrice]
@@ -117,6 +118,11 @@ const resolver = {
         .fetch();
 
       return mission;
+    },
+
+    serviceCategories: async (user, _, { parentId }) => {
+      const categories = await user.servicesCategories({ childrenOf: parentId });
+      return categories;
     }
   }
 };

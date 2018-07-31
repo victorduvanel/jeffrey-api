@@ -12,3 +12,4 @@ import './conversations';
 import './business-details';
 import './payment-methods';
 import './provider-location';
+import './user-service-categories';

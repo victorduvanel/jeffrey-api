@@ -1,10 +1,13 @@
-import ServiceCategory   from '../../models/service-category';
-import ProviderPrice     from '../../models/provider-price';
-import { registerQuery } from '../registry';
+import { combineResolvers } from 'graphql-resolvers';
+import auth                 from '../middlewares/auth';
+import ServiceCategory      from '../../models/service-category';
+import ProviderPrice        from '../../models/provider-price';
+import { registerQuery }    from '../registry';
 
 const def = 'serviceCategories: [ServiceCategory]';
 
 const serviceCategories = async (_, __, { user }) => {
+
   const categories = await ServiceCategory
     .query((qb) => {
       qb.orderBy('ordinal_position');
@@ -39,4 +42,6 @@ const serviceCategories = async (_, __, { user }) => {
   return rootCategories;
 };
 
-registerQuery(def, { serviceCategories });
+registerQuery(def, {
+  serviceCategories: combineResolvers(auth, serviceCategories)
+});

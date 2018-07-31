@@ -1,28 +1,29 @@
-import Promise       from 'bluebird';
-import moment        from 'moment';
-import request       from 'request-promise';
-import nativeBcrypt  from 'bcryptjs';
-import uuid          from 'uuid';
-import buckets       from '../services/google/storage';
-import bookshelf     from '../services/bookshelf';
-import knex          from '../services/knex';
-import stripe        from '../services/stripe';
-import Base          from './base';
-import AccessToken   from './access-token';
-import googleService from '../services/google';
-import * as mjml     from '../services/mjml';
-import { sendEmail } from '../services/mailgun';
-import LoginToken    from './login-token';
-import config        from '../config';
-import UserDocument  from './user-document';
-import PostalAddress from './postal-address';
-import Business      from './business';
-import Review        from './review';
-import UserDevice    from './user-device';
-import TOSAcceptance from './tos-acceptance';
-import StripeAccount from './stripe-account';
-import { getLocale } from '../locales';
-import i18n          from '../lib/i18n';
+import Promise          from 'bluebird';
+import moment           from 'moment';
+import request          from 'request-promise';
+import nativeBcrypt     from 'bcryptjs';
+import uuid             from 'uuid';
+import buckets          from '../services/google/storage';
+import bookshelf        from '../services/bookshelf';
+import knex             from '../services/knex';
+import stripe           from '../services/stripe';
+import Base             from './base';
+import AccessToken      from './access-token';
+import googleService    from '../services/google';
+import * as mjml        from '../services/mjml';
+import { sendEmail }    from '../services/mailgun';
+import LoginToken       from './login-token';
+import config           from '../config';
+import UserDocument     from './user-document';
+import ServiceCategory  from './service-category';
+import PostalAddress    from './postal-address';
+import Business         from './business';
+import Review           from './review';
+import UserDevice       from './user-device';
+import TOSAcceptance    from './tos-acceptance';
+import StripeAccount    from './stripe-account';
+import { getLocale }    from '../locales';
+import i18n             from '../lib/i18n';
 
 import './postal-address';
 import './business';
@@ -65,6 +66,49 @@ const User = Base.extend({
   },
 
   /* GRAPHQL PROPS */
+
+  /**
+    * serviceCategories
+    * @description Get user's categories for which a price have been defined
+    * @param options Parameters of fetching
+    * @param options.childrenOf Only fetch children categories of this one
+    */
+  async serviceCategories(options = { childrenOf: undefined }) {
+
+    // Get the categories with price + parents of this categories
+    const categoriesWithPrice = knex.raw(`
+      WITH RECURSIVE recursive (id, slug) as
+      (
+        SELECT id, slug, parent_id
+        FROM service_categories
+        WHERE id IN(
+          SELECT service_category_id AS id
+          FROM provider_prices
+          WHERE user_id = '${this.get('id')}'
+        )
+        UNION ALL
+        SELECT service_categories.id, service_categories.slug, service_categories.parent_id
+        FROM recursive, service_categories
+        WHERE service_categories.id = recursive.parent_id
+      )
+      SELECT DISTINCT id
+      FROM recursive
+    `);
+
+    const categories = await ServiceCategory
+      .query((query) => {
+        query.whereIn('id', categoriesWithPrice);
+
+        if (typeof options.childrenOf !== 'undefined') {
+          query = query.where('parent_id', options.childrenOf);
+        }
+      })
+      .fetchAll();
+
+    console.log(categories);
+
+    return categories;
+  },
 
   unseenActivity: currentUserOnly(async function() {
     const res = await knex('conversation_participants')

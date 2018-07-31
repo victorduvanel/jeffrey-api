@@ -9,7 +9,11 @@ const ServiceCategory = Base.extend({
     return this.belongsTo('ServiceCategory', 'root_id');
   },
 
-  subCategories() {
+  parentCategory() {
+    return this.belongsTo('ServiceCategory', 'parent_id');
+  },
+
+  async subCategories() {
     return ServiceCategory
       .where({
         parent_id: this.get('id')
@@ -40,6 +44,14 @@ const ServiceCategory = Base.extend({
 
   slug() {
     return this.get('slug');
+  },
+
+  async parent() {
+    if (!this.get('parentId')) {
+      return null;
+    }
+    await this.load(['parentCategory']);
+    return this.related('parentCategory');
   },
 
   async root() {
