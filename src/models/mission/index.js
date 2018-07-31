@@ -74,6 +74,13 @@ const Mission = Base.extend({
     return this.get('createdAt');
   },
 
+  totalCost() {
+    if (!this.get('startedDate') || !this.get('endedDate') || !this.get('price')) {
+      return null;
+    }
+    return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
+  },
+
   /* !graphql props */
 
   client() {
@@ -127,18 +134,8 @@ const Mission = Base.extend({
   },
 
   end: async function() {
-    await bookshelf.knex
-      .raw(`
-        update missions
-        set
-          pay_tentative_at = NOW() + interval '48 hours'
-        where
-          id = :id
-      `, {
-        id: this.id
-      });
-
     this.set('endedDate', bookshelf.knex.raw('NOW()'));
+    this.set('payTentativeAt', bookshelf.knex.raw('NOW() + interval \'48 hours\''));
     await this.save();
 
     // Send notification
@@ -148,7 +145,6 @@ const Mission = Base.extend({
         { endedMission: this.id }
       );
     });
-
   },
 
   async setStatus(newStatus, user) {
@@ -192,10 +188,6 @@ const Mission = Base.extend({
         missionStatus: this.id
       }
     );
-  },
-
-  totalCost() {
-    return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
   },
 
   providerGain() {

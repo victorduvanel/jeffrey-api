@@ -21,6 +21,7 @@ type Mission {
   startDate: Date!
   startedDate: Date
   endedDate: Date
+  totalCost: Int
   createdAt: Date!
   serviceCategory: ServiceCategory
 }
