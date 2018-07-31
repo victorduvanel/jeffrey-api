@@ -84,7 +84,7 @@ const User = Base.extend({
         WHERE id IN(
           SELECT service_category_id AS id
           FROM provider_prices
-          WHERE user_id = '${this.get('id')}'
+          WHERE user_id = :userId
         )
         UNION ALL
         SELECT service_categories.id, service_categories.slug, service_categories.parent_id
@@ -93,7 +93,9 @@ const User = Base.extend({
       )
       SELECT DISTINCT id
       FROM recursive
-    `);
+    `, {
+      userId: this.get('id')
+    });
 
     const categories = await ServiceCategory
       .query((query) => {
@@ -104,8 +106,6 @@ const User = Base.extend({
         }
       })
       .fetchAll();
-
-    console.log(categories);
 
     return categories;
   },
@@ -216,12 +216,14 @@ const User = Base.extend({
               id in (
                 select id
                 from missions
-                where provider_id = '${userId}' or client_id = '${userId}'
+                where provider_id = :userId or client_id = :userId
               )
           )
         and
-          not author_id = '${userId}'
-      `);
+          not author_id = userId
+      `, {
+        userId
+      });
 
     return res.rows[0].rank;
   },
