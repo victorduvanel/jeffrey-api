@@ -221,7 +221,7 @@ const User = Base.extend({
               )
           )
         and
-          not author_id = userId
+          not author_id = :userId
       `, {
         userId
       });
