@@ -1,7 +1,7 @@
 import { combineResolvers } from 'graphql-resolvers';
 import auth                 from '../middlewares/auth';
 import Mission              from '../../models/mission';
-import User              from '../../models/user';
+import User                 from '../../models/user';
 import { registerQuery }    from '../registry';
 
 const def = 'providerLocation(missionId: ID!): Location';

@@ -1,9 +1,9 @@
-import wkhtmltopdf         from 'wkhtmltopdf';
+import wkhtmltopdf     from 'wkhtmltopdf';
+import fs              from 'fs';
+import path            from 'path';
+import uuid            from 'uuid';
 import { payoutAlert } from '../charger';
-import { sendEmail }       from '../services/mailgun';
-import fs                  from 'fs';
-import path                from 'path';
-import uuid                from 'uuid';
+import { sendEmail }   from '../services/mailgun';
 
 export const post = [
   async (req, res) => {

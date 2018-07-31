@@ -7,6 +7,7 @@ type ServiceCategory {
   color: String
   subCategories: [ServiceCategory]
   root: ServiceCategory
+  parent: ServiceCategory
   avgPrice(currency: Currency!): Price
   providerPrice: Price
 }

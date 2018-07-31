@@ -9,6 +9,10 @@ const ServiceCategory = Base.extend({
     return this.belongsTo('ServiceCategory', 'root_id');
   },
 
+  parentCategory() {
+    return this.belongsTo('ServiceCategory', 'parent_id');
+  },
+
   subCategories() {
     if (this._subcategories) {
       return this._subcategories;
@@ -44,6 +48,14 @@ const ServiceCategory = Base.extend({
 
   slug() {
     return this.get('slug');
+  },
+
+  async parent() {
+    if (!this.get('parentId')) {
+      return null;
+    }
+    await this.load(['parentCategory']);
+    return this.related('parentCategory');
   },
 
   async root() {
