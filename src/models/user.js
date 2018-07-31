@@ -582,7 +582,11 @@ const User = Base.extend({
     const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
 
     const message = await mjml.render('email/login', locale, {
-      user: await this.serialize(),
+      user: {
+        firstName: this.get('firstName'),
+        lastName: this.get('lastName'),
+        gender: this.get('gender')
+      },
       loginLink: `${prefix}login/${loginToken.get('id')}`,
     });
 
@@ -598,27 +602,6 @@ const User = Base.extend({
       }),
       message
     });
-  },
-
-  async serialize() {
-    console.warn('Stop using User::serialize');
-
-    return {
-      id: this.id,
-      color: this.color(),
-      bio: this.bio(),
-      isProvider: this.isProvider(),
-      isAvailable: this.isAvailable(),
-      firstName: this.firstName(),
-      lastName: this.lastName(),
-      email: this.email(),
-      gender: this.gender(),
-      dateOfBirth: this.dateOfBirth(),
-      phoneNumber: this.phoneNumber(),
-      profilePicture: this.profilePicture(),
-      rank: await this.rank(),
-      paymentMethodStatus: await this.paymentMethodStatus()
-    };
   },
 
   toJSON() {
