@@ -13,7 +13,11 @@ const ServiceCategory = Base.extend({
     return this.belongsTo('ServiceCategory', 'parent_id');
   },
 
-  async subCategories() {
+  subCategories() {
+    if (this._subcategories) {
+      return this._subcategories;
+    }
+
     return ServiceCategory
       .where({
         parent_id: this.get('id')

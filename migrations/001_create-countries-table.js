@@ -3,7 +3,7 @@ function up(knex) {
     table.uuid('id').primary();
 
     table.string('name');
-    table.string('code');
+    table.string('code').unique();
     table.string('phone_code');
     table.string('region');
     table.string('flag');

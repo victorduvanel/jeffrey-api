@@ -1,17 +1,17 @@
-import { combineResolvers } from 'graphql-resolvers';
-import auth                 from '../middlewares/auth';
-import ServiceCategory      from '../../models/service-category';
-import ProviderPrice        from '../../models/provider-price';
-import { registerQuery }    from '../registry';
+import ServiceCategory   from '../../models/service-category';
+import ProviderPrice     from '../../models/provider-price';
+import { registerQuery } from '../registry';
 
-const def = 'serviceCategories(country: String!): [ServiceCategory]';
+const def = 'providerServiceCategories: [ServiceCategory]';
 
-const serviceCategories = async (_, { country }, { user }) => {
+const providerServiceCategories = async (_, __, { user }) => {
+  const country = await user.country();
+
   const categories = await ServiceCategory
     .query((qb) => {
       qb.orderBy('ordinal_position');
       qb.leftJoin('countries', 'countries.id', 'service_categories.country_id');
-      qb.where('countries.code', country);
+      qb.where('countries.code', country.get('code'));
     })
     .fetchAll();
 
@@ -43,6 +43,4 @@ const serviceCategories = async (_, { country }, { user }) => {
   return rootCategories;
 };
 
-registerQuery(def, {
-  serviceCategories: combineResolvers(auth, serviceCategories)
-});
+registerQuery(def, { providerServiceCategories });

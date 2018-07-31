@@ -6,6 +6,7 @@ import './onboarding-progress';
 import './client-history';
 import './provider-history';
 import './service-categories';
+import './provider-service-categories';
 import './service-category';
 import './conversation';
 import './conversations';

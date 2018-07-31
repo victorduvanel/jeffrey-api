@@ -1,7 +1,7 @@
 function up(knex) {
   return knex.schema.createTable('service_categories', (table) => {
     table.uuid('id').primary();
-    table.string('slug').unique();
+    table.string('slug');
     table.integer('ordinal_position');
     table.string('color');
 
@@ -14,6 +14,12 @@ function up(knex) {
     table
       .uuid('parent_id')
       .references('service_categories.id')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT');
+
+    table
+      .uuid('country_id')
+      .references('countries.id')
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
 

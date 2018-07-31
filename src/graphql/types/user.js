@@ -1,5 +1,4 @@
 import { registerType } from '../registry';
-import Country          from '../../models/country';
 import Mission          from '../../models/mission';
 import ProviderPrice    from '../../models/provider-price';
 
@@ -89,16 +88,7 @@ const resolver = {
     },
 
     country: async (user) => {
-      const postalAddress = await user.getPostalAddress();
-
-      if (postalAddress) {
-        const countryCode = postalAddress.get('country');
-        if (countryCode) {
-          return Country.findByCode(countryCode);
-        }
-      }
-
-      return null;
+      return user.country();
     },
 
     /**

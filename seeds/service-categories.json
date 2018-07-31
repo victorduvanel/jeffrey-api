@@ -1,561 +1,3358 @@
 {
-  "services": [
-    {
-      "id": "ba860883-f748-4eb7-ab2f-d1e2a21a1d18",
-      "slug": "professional-services",
-      "color": "purple",
-      "ordinalPosition": 6,
-      "name": {
-        "en-GB": "Professional Services",
-        "en-US": "Professional Services",
-        "fr-FR": "Services Professionels",
-        "fr-CH": "Services Professionels",
-        "ko-KR": "",
-        "ja-JP": ""
+  "services": {
+    "US": [
+      {
+        "id": "df4e7681-b202-4af7-97fb-72b707349473",
+        "slug": "professional-services",
+        "color": "purple",
+        "ordinalPosition": 6,
+        "name": {
+          "en-GB": "Professional Services",
+          "en-US": "Professional Services",
+          "fr-FR": "Services Professionels",
+          "fr-CH": "Services Professionels",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": []
       },
-      "services": []
-    },
-    {
-      "id": "50cc84de-71b2-4e32-a160-180821cc8eef",
-      "slug": "animals",
-      "color": "orange",
-      "ordinalPosition": 5,
-      "name": {
-        "en-GB": "Animals",
-        "en-US": "Animals",
-        "fr-FR": "Animaux",
-        "fr-CH": "Animaux",
-        "ko-KR": "",
-        "ja-JP": ""
-      },
-      "services": [
-        {
-          "id": "7cdf79ae-775c-4903-a749-9d642fb22730",
-          "slug": "grooming",
-          "color": "orange",
-          "name": {
-            "en-GB": "Grooming",
-            "en-US": "Grooming",
-            "fr-FR": "Toilettage",
-            "fr-CH": "Toilettage",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
+      {
+        "id": "502a2e6d-afb6-4edb-a8d8-9b395fc7984c",
+        "slug": "animals",
+        "color": "orange",
+        "ordinalPosition": 5,
+        "name": {
+          "en-GB": "Animals",
+          "en-US": "Animals",
+          "fr-FR": "Animaux",
+          "fr-CH": "Animaux",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "605daf0a-b2bb-44c1-84a4-bcdb6e6a45ff",
-          "slug": "caretaking",
-          "color": "orange",
-          "name": {
-            "en-GB": "Caretaking",
-            "en-US": "Caretaking",
-            "fr-FR": "Gardiennage",
-            "fr-CH": "Gardiennage",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "c56022e7-596d-4fa6-a0dd-a3f1e8b102b7",
-          "slug": "feed",
-          "color": "orange",
-          "name": {
-            "en-GB": "Feed",
-            "en-US": "Feed",
-            "fr-FR": "Nourrir",
-            "fr-CH": "Nourrir",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "2888b2e3-cbea-467c-bc21-fc286494cbba",
-          "slug": "walk",
-          "color": "orange",
-          "name": {
-            "en-GB": "Walk",
-            "en-US": "Walk",
-            "fr-FR": "Promenade",
-            "fr-CH": "Promenade",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        }
-      ]
-    },
-    {
-      "id": "8c47eff2-0313-47ef-898e-2dee01fb98bd",
-      "slug": "gardening",
-      "color": "green",
-      "ordinalPosition": 4,
-      "name": {
-        "en-GB": "gardening",
-        "en-US": "gardening",
-        "fr-FR": "Jardinage",
-        "fr-CH": "Jardinage",
-        "ko-KR": "",
-        "ja-JP": ""
-      },
-      "services": [
-        {
-          "id": "f1fd55cc-3f63-40c1-980e-0ec269186f9c",
-          "slug": "spray",
-          "color": "green",
-          "name": {
-            "en-GB": "spray",
-            "en-US": "spray",
-            "fr-FR": "Arrosage",
-            "fr-CH": "Arrosage",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "7f297fda-3dcb-432e-aff7-b86a03e161e3",
-          "slug": "rake",
-          "color": "green",
-          "name": {
-            "en-GB": "Rake",
-            "en-US": "Rake",
-            "fr-FR": "Ramasser végétaux",
-            "fr-CH": "Ramasser végétaux",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "c350dff1-0e65-406f-873c-701fd5ea2003",
-          "slug": "plant",
-          "color": "green",
-          "name": {
-            "en-GB": "Plant",
-            "en-US": "Plant",
-            "fr-FR": "Planter des plantes / fleurs",
-            "fr-CH": "Planter des plantes / fleurs",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "3d2a65c1-a2b7-4957-adfa-6128e704ae87",
-          "slug": "mow",
-          "color": "green",
-          "name": {
-            "en-GB": "Mow",
-            "en-US": "Mow",
-            "fr-FR": "Tondre la pelouse / Taille de haie",
-            "fr-CH": "Tondre la pelouse / Taille de haie",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        }
-      ]
-    },
-    {
-      "id": "4f1e8494-a5f7-4109-ae4c-d88efe827d1a",
-      "slug": "purchase-and-delivery",
-      "color": "turquoise",
-      "ordinalPosition": 2,
-      "name": {
-        "en-GB": "Purchase & Delivery",
-        "en-US": "Purchase & Delivery",
-        "fr-FR": "Achats & Livraisons",
-        "fr-CH": "Achats & Livraisons",
-        "ko-KR": "",
-        "ja-JP": ""
-      },
-      "services": [
-        {
-          "id": "15062b64-de68-454a-af06-23e1d7a00819",
-          "slug": "heavy-packages",
-          "color": "turquoise",
-          "name": {
-            "en-GB": "Heavy Packages",
-            "en-US": "Heavy Packages",
-            "fr-FR": "Colis volumineux",
-            "fr-CH": "Colis volumineux",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "9393d450-45ce-4fa6-ae84-44fc634bd80d",
-          "slug": "light-packages",
-          "color": "turquoise",
-          "name": {
-            "en-GB": "Light Packages",
-            "en-US": "Light Packages",
-            "fr-FR": "Colis légers",
-            "fr-CH": "Colis légers",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "841b5b35-07be-4f3c-98a3-83aff8520faf",
-          "slug": "groceries",
-          "color": "turquoise",
-          "name": {
-            "en-GB": "Groceries",
-            "en-US": "Groceries",
-            "fr-FR": "Faire mes courses",
-            "fr-CH": "Faire mes courses",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "c076ebe8-e262-40bf-9df4-d231be6274ca",
-          "slug": "groceries-pick-up-and-delivery",
-          "color": "turquoise",
-          "name": {
-            "en-GB": "Pick up and deliver my groceries",
-            "en-US": "Pick up and deliver my groceries",
-            "fr-FR": "Récupérer et livrer mes courses",
-            "fr-CH": "Récupérer et livrer mes courses",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "857bdfd2-7762-421c-a756-1adcad23c6f6",
-          "slug": "food",
-          "color": "turquoise",
-          "name": {
-            "en-GB": "Food",
-            "en-US": "Food",
-            "fr-FR": "Nourriture",
-            "fr-CH": "Nourriture",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        }
-      ]
-    },
-    {
-      "id": "bc0d9db0-89e5-4538-9b9b-1c9e67628ffe",
-      "slug": "cleaning",
-      "color": "blue",
-      "ordinalPosition": 3,
-      "name": {
-        "en-GB": "Cleaning",
-        "en-US": "Cleaning",
-        "fr-FR": "Nettoyages",
-        "fr-CH": "Nettoyages",
-        "ko-KR": "",
-        "ja-JP": ""
-      },
-      "services": [
-        {
-          "id": "2b92aa5c-4fb4-4a70-9392-6e50530f78e6",
-          "slug": "house-cleaning",
-          "color": "blue",
-          "name": {
-            "en-GB": "House cleaning",
-            "en-US": "House cleaning",
-            "fr-FR": "Nettoyage maison / appartement",
-            "fr-CH": "Nettoyage maison / appartement",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "f6923889-1547-4fdb-8055-db0e5d33e9be",
-          "slug": "cellar-garage-clenning",
-          "color": "blue",
-          "name": {
-            "en-GB": "Cellar and garage cleaning",
-            "en-US": "Cellar and garage cleaning",
-            "fr-FR": "Nettoyage cave ou garage",
-            "fr-CH": "Nettoyage cave ou garage",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        },
-        {
-          "id": "d1ae614e-4ba1-451e-bf19-7c54849b1730",
-          "slug": "car-washing",
-          "color": "blue",
-          "name": {
-            "en-GB": "Car washing",
-            "en-US": "Car washing",
-            "fr-FR": "Nettoyage voiture",
-            "fr-CH": "Nettoyage voiture",
-            "ko-KR": "",
-            "ja-JP": ""
-          },
-          "services": [
-            {
-              "id": "4c7fe354-11fd-4036-9974-06a1d74ab74f",
-              "slug": "jeffrey-car-washing",
-              "color": "blue",
-              "name": {
-                "en-GB": "Hire a Jeffrey",
-                "en-US": "Hire a Jeffrey",
-                "fr-FR": "Faire appel à un Jeffrey",
-                "fr-CH": "Faire appel à un Jeffrey",
-                "ko-KR": "",
-                "ja-JP": ""
-              }
-            },
-            {
-              "id": "00e45aec-b77c-4be3-a8dd-5c7c07733419",
-              "slug": "cleancar-car-washing",
-              "color": "blue",
-              "name": {
-                "en-GB": "CleanCar",
-                "en-US": "CleanCas",
-                "fr-FR": "Faire appel à CleanCar",
-                "fr-CH": "Faire appel à CleanCar",
-                "ko-KR": "",
-                "ja-JP": ""
-              }
+        "services": [
+          {
+            "id": "83c55363-ed79-413b-a23d-6d1c0bb7dcb0",
+            "slug": "grooming",
+            "color": "orange",
+            "name": {
+              "en-GB": "Grooming",
+              "en-US": "Grooming",
+              "fr-FR": "Toilettage",
+              "fr-CH": "Toilettage",
+              "ko-KR": "",
+              "ja-JP": ""
             }
-          ]
-        },
-        {
-          "id": "462734bd-8bc6-42c2-b860-98fb554e7f7c",
-          "slug": "iron-laundry",
-          "color": "blue",
-          "name": {
-            "en-GB": "Iron Laundry",
-            "en-US": "Car washing",
-            "fr-FR": "Repassage / lessives",
-            "fr-CH": "Repassage / lessives",
-            "ko-KR": "",
-            "ja-JP": ""
           },
-          "services": [
-            {
-              "id": "f81a5042-7b40-450f-9f32-3392cde66892",
-              "slug": "jeffrey-iron-laundry",
-              "color": "blue",
-              "name": {
-                "en-GB": "Hire a Jeffrey",
-                "en-US": "Hire a Jeffrey",
-                "fr-FR": "Faire appel à un Jeffrey",
-                "fr-CH": "Faire appel à un Jeffrey",
-                "ko-KR": "",
-                "ja-JP": ""
-              }
-            },
-            {
-              "id": "66bbc9b3-1a4c-4cde-a30b-c5f1b39cc71b",
-              "slug": "urban-washer-iron-laundry",
-              "color": "blue",
-              "name": {
-                "en-GB": "UrbanWasher",
-                "en-US": "UrbanWasher",
-                "fr-FR": "Faire appel à UrbanWasher",
-                "fr-CH": "Faire appel à UrbanWasher",
-                "ko-KR": "",
-                "ja-JP": ""
-              }
+          {
+            "id": "5d7474d2-457d-49c4-bb71-40189c2ec183",
+            "slug": "caretaking",
+            "color": "orange",
+            "name": {
+              "en-GB": "Caretaking",
+              "en-US": "Caretaking",
+              "fr-FR": "Gardiennage",
+              "fr-CH": "Gardiennage",
+              "ko-KR": "",
+              "ja-JP": ""
             }
-          ]
-        },
-        {
-          "id": "e612d958-1797-4240-a7f2-5d49a2079e42",
-          "slug": "windows-cleaning",
-          "color": "blue",
-          "name": {
-            "en-GB": "Windows cleaning",
-            "en-US": "Windows cleaning",
-            "fr-FR": "Nettoyage vitres",
-            "fr-CH": "Nettoyage vitres",
-            "ko-KR": "",
-            "ja-JP": ""
+          },
+          {
+            "id": "c6e1fab0-bd92-458d-84f5-e047b1b3ac65",
+            "slug": "feed",
+            "color": "orange",
+            "name": {
+              "en-GB": "Feed",
+              "en-US": "Feed",
+              "fr-FR": "Nourrir",
+              "fr-CH": "Nourrir",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "35e12ec2-d966-44db-8a90-d093efd11969",
+            "slug": "walk",
+            "color": "orange",
+            "name": {
+              "en-GB": "Walk",
+              "en-US": "Walk",
+              "fr-FR": "Promenade",
+              "fr-CH": "Promenade",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
-        },
-        {
-          "id": "f6f1b53a-994e-4147-858e-3ff0a4b5eb37",
-          "slug": "swimming-pool-cleaning",
-          "color": "blue",
-          "name": {
-            "en-GB": "Swimming pool cleaning",
-            "en-US": "Swimming pool cleaning",
-            "fr-FR": "Nettoyage piscine",
-            "fr-CH": "Nettoyage piscine",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        }
-      ]
-    },
-    {
-      "id": "71e6f20a-0889-48fa-b72b-e2a0923ba3cb",
-      "slug": "handiwork-and-moving",
-      "color": "yellow",
-      "ordinalPosition": 1,
-      "name": {
-        "en-GB": "Handiwork and moving",
-        "en-US": "Handiwork and moving",
-        "fr-FR": "Bricolages & déménagement",
-        "fr-CH": "Bricolages & déménagement",
-        "ko-KR": "",
-        "ja-JP": ""
+        ]
       },
-      "services": [
-        {
-          "id": "8a35fd53-b0c9-4481-a799-41a702f73a4f",
-          "slug": "furniture-construction",
-          "color": "yellow",
-          "name": {
-            "en-GB": "Furniture construction",
-            "en-US": "Furniture construction",
-            "fr-FR": "Construire un meuble",
-            "fr-CH": "Construire un meuble",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
+      {
+        "id": "bc923a7d-6a89-4eb7-802d-68f9398e1fcf",
+        "slug": "gardening",
+        "color": "green",
+        "ordinalPosition": 4,
+        "name": {
+          "en-GB": "gardening",
+          "en-US": "gardening",
+          "fr-FR": "Jardinage",
+          "fr-CH": "Jardinage",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "3887399d-79ca-44d6-90c4-10307c468ba1",
-          "slug": "moving",
-          "color": "yellow",
-          "name": {
-            "en-GB": "Moving",
-            "en-US": "Moving",
-            "fr-FR": "Déménagement",
-            "fr-CH": "Déménagement",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "cd91346b-a90f-4cae-8138-18393bd1af83",
+            "slug": "spray",
+            "color": "green",
+            "name": {
+              "en-GB": "spray",
+              "en-US": "spray",
+              "fr-FR": "Arrosage",
+              "fr-CH": "Arrosage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "63dab61b-3216-428e-ad00-c494ff64bd49",
+            "slug": "rake",
+            "color": "green",
+            "name": {
+              "en-GB": "Rake",
+              "en-US": "Rake",
+              "fr-FR": "Ramasser végétaux",
+              "fr-CH": "Ramasser végétaux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "29d638e5-6ac4-45ee-9184-2447135dc4f4",
+            "slug": "plant",
+            "color": "green",
+            "name": {
+              "en-GB": "Plant",
+              "en-US": "Plant",
+              "fr-FR": "Planter des plantes / fleurs",
+              "fr-CH": "Planter des plantes / fleurs",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "db0d59a1-7c29-472e-aaac-68e22fa1139e",
+            "slug": "mow",
+            "color": "green",
+            "name": {
+              "en-GB": "Mow",
+              "en-US": "Mow",
+              "fr-FR": "Tondre la pelouse / Taille de haie",
+              "fr-CH": "Tondre la pelouse / Taille de haie",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
-        },
-        {
-          "id": "9adae628-0ef7-456e-970f-b3d69c8b17c3",
-          "slug": "painting",
-          "color": "yellow",
-          "name": {
-            "en-GB": "Painting",
-            "en-US": "Painting",
-            "fr-FR": "Peinture",
-            "fr-CH": "Peinture",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
-        }
-      ]
-    },
-    {
-      "id": "e9e4d161-04ad-4f52-8039-8fb734985182",
-      "slug": "modern-majordome",
-      "color": "red",
-      "ordinalPosition": 0,
-      "name": {
-        "en-GB": "Modern majordome",
-        "en-US": "Modern majordome",
-        "fr-FR": "Majordome morderne",
-        "fr-CH": "Majordome morderne",
-        "ko-KR": "",
-        "ja-JP": ""
+        ]
       },
-      "services": [
-        {
-          "id": "555d8eb4-d6d1-421c-a7f4-ee49b332f41e",
-          "slug": "amateur-cook",
-          "color": "red",
-          "name": {
-            "en-GB": "Amateur cook",
-            "en-US": "Amateur cook",
-            "fr-FR": "Cusinier amateur",
-            "fr-CH": "Cusinier amateur",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
+      {
+        "id": "b7b12df5-17f1-451f-836c-9d3cc4c8e47f",
+        "slug": "purchase-and-delivery",
+        "color": "turquoise",
+        "ordinalPosition": 2,
+        "name": {
+          "en-GB": "Purchase & Delivery",
+          "en-US": "Purchase & Delivery",
+          "fr-FR": "Achats & Livraisons",
+          "fr-CH": "Achats & Livraisons",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "a9f885c8-c2e5-4c86-8475-2a149836c4a8",
-          "slug": "disabled-person-assistance",
-          "color": "red",
-          "name": {
-            "en-GB": "Disabled person assistance",
-            "en-US": "Disabled person assistance",
-            "fr-FR": "Assistance personne à mobilité réduite",
-            "fr-CH": "Assistance personne à mobilité réduite",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "8aae1843-84dd-4bdc-9537-afbb669ea6de",
+            "slug": "heavy-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Heavy Packages",
+              "en-US": "Heavy Packages",
+              "fr-FR": "Colis volumineux",
+              "fr-CH": "Colis volumineux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b3329892-aa44-4826-920f-51a6a972a310",
+            "slug": "light-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Light Packages",
+              "en-US": "Light Packages",
+              "fr-FR": "Colis légers",
+              "fr-CH": "Colis légers",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "ba15a520-fda1-4184-8f9a-4b12d0dcab8f",
+            "slug": "groceries",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Groceries",
+              "en-US": "Groceries",
+              "fr-FR": "Faire mes courses",
+              "fr-CH": "Faire mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "129337dc-7e9b-43af-a0ff-b8a7c1999ef4",
+            "slug": "groceries-pick-up-and-delivery",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Pick up and deliver my groceries",
+              "en-US": "Pick up and deliver my groceries",
+              "fr-FR": "Récupérer et livrer mes courses",
+              "fr-CH": "Récupérer et livrer mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "d9adccda-da2e-4884-a992-e5aec6e6e67c",
+            "slug": "food",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Food",
+              "en-US": "Food",
+              "fr-FR": "Nourriture",
+              "fr-CH": "Nourriture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
+        ]
+      },
+      {
+        "id": "a3f6e1c6-f80e-49e1-abc3-bccbb591523d",
+        "slug": "cleaning",
+        "color": "blue",
+        "ordinalPosition": 3,
+        "name": {
+          "en-GB": "Cleaning",
+          "en-US": "Cleaning",
+          "fr-FR": "Nettoyages",
+          "fr-CH": "Nettoyages",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "071c5285-2266-45c7-bb8c-902df7631fb1",
-          "slug": "housekeeping",
-          "color": "red",
-          "name": {
-            "en-GB": "Housekeeping",
-            "en-US": "Housekeeping",
-            "fr-FR": "Gardiennage maison",
-            "fr-CH": "Gardiennage maison",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "3fd468ef-635f-4a10-952f-a0ee5104e81a",
+            "slug": "house-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "House cleaning",
+              "en-US": "House cleaning",
+              "fr-FR": "Nettoyage maison / appartement",
+              "fr-CH": "Nettoyage maison / appartement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "a88633b3-ee87-4d5c-9b63-50075aa53d2e",
+            "slug": "cellar-garage-clenning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Cellar and garage cleaning",
+              "en-US": "Cellar and garage cleaning",
+              "fr-FR": "Nettoyage cave ou garage",
+              "fr-CH": "Nettoyage cave ou garage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "1e17b1e9-d259-4e89-9205-bd65bd060b84",
+            "slug": "car-washing",
+            "color": "blue",
+            "name": {
+              "en-GB": "Car washing",
+              "en-US": "Car washing",
+              "fr-FR": "Nettoyage voiture",
+              "fr-CH": "Nettoyage voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "3dc2a8ac-c035-419e-8a54-0c7d76ed7199",
+                "slug": "jeffrey-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "33297964-9aa9-49cf-a298-f02faab88bcf",
+                "slug": "cleancar-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "CleanCar",
+                  "en-US": "CleanCas",
+                  "fr-FR": "Faire appel à CleanCar",
+                  "fr-CH": "Faire appel à CleanCar",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "2ac290bb-a540-4490-9c35-cefd8871c38f",
+            "slug": "iron-laundry",
+            "color": "blue",
+            "name": {
+              "en-GB": "Iron Laundry",
+              "en-US": "Car washing",
+              "fr-FR": "Repassage / lessives",
+              "fr-CH": "Repassage / lessives",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "a61af044-072b-4d36-bd0f-727655349dbd",
+                "slug": "jeffrey-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "751b48ee-d4b8-4f62-bca1-afd109b10839",
+                "slug": "urban-washer-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "UrbanWasher",
+                  "en-US": "UrbanWasher",
+                  "fr-FR": "Faire appel à UrbanWasher",
+                  "fr-CH": "Faire appel à UrbanWasher",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "3e6cba0d-1b55-46a6-920b-6d5bed754efd",
+            "slug": "windows-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Windows cleaning",
+              "en-US": "Windows cleaning",
+              "fr-FR": "Nettoyage vitres",
+              "fr-CH": "Nettoyage vitres",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "ecfc7057-b9c3-4aac-94d6-2c13a65cc096",
+            "slug": "swimming-pool-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Swimming pool cleaning",
+              "en-US": "Swimming pool cleaning",
+              "fr-FR": "Nettoyage piscine",
+              "fr-CH": "Nettoyage piscine",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
+        ]
+      },
+      {
+        "id": "c19bfc88-09f3-40bd-8ce1-0cf90f05f524",
+        "slug": "handiwork-and-moving",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "name": {
+          "en-GB": "Handiwork and moving",
+          "en-US": "Handiwork and moving",
+          "fr-FR": "Bricolages & déménagement",
+          "fr-CH": "Bricolages & déménagement",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "86048909-155d-4f88-80c3-7345cfc188a3",
-          "slug": "house-tidy-up",
-          "color": "red",
-          "name": {
-            "en-GB": "House tidy up",
-            "en-US": "House tidy up",
-            "fr-FR": "Rangement maison",
-            "fr-CH": "Rangement maison",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "b4a819af-d324-4129-8716-54fa606aa330",
+            "slug": "furniture-construction",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Furniture construction",
+              "en-US": "Furniture construction",
+              "fr-FR": "Construire un meuble",
+              "fr-CH": "Construire un meuble",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "fc9babb0-fb06-42e9-91fb-a0d0edb2b9c4",
+            "slug": "moving",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Moving",
+              "en-US": "Moving",
+              "fr-FR": "Déménagement",
+              "fr-CH": "Déménagement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "1ffce519-79e8-4580-8939-2c9605496b57",
+            "slug": "painting",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Painting",
+              "en-US": "Painting",
+              "fr-FR": "Peinture",
+              "fr-CH": "Peinture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
+        ]
+      },
+      {
+        "id": "4cbb0e0a-7749-4cb9-a144-fd87f35c11bb",
+        "slug": "modern-majordome",
+        "color": "red",
+        "ordinalPosition": 0,
+        "name": {
+          "en-GB": "Modern majordome",
+          "en-US": "Modern majordome",
+          "fr-FR": "Majordome morderne",
+          "fr-CH": "Majordome morderne",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "dc337ba8-8a2a-4ece-8cb7-b3ea5bde2d66",
-          "slug": "carless-driver",
-          "color": "red",
-          "name": {
-            "en-GB": "Carless driver",
-            "en-US": "Carless driver",
-            "fr-FR": "Chauffeur sans voiture",
-            "fr-CH": "Chauffeur sans voiture",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "064f2c5c-ebc4-40b5-a5d1-f3af23fe6c9b",
+            "slug": "amateur-cook",
+            "color": "red",
+            "name": {
+              "en-GB": "Amateur cook",
+              "en-US": "Amateur cook",
+              "fr-FR": "Cusinier amateur",
+              "fr-CH": "Cusinier amateur",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5059c7a2-cc6f-48c4-bca3-94d103c00ea1",
+            "slug": "disabled-person-assistance",
+            "color": "red",
+            "name": {
+              "en-GB": "Disabled person assistance",
+              "en-US": "Disabled person assistance",
+              "fr-FR": "Assistance personne à mobilité réduite",
+              "fr-CH": "Assistance personne à mobilité réduite",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "f6b6fd7d-a527-4d62-b1c7-40cf67571863",
+            "slug": "housekeeping",
+            "color": "red",
+            "name": {
+              "en-GB": "Housekeeping",
+              "en-US": "Housekeeping",
+              "fr-FR": "Gardiennage maison",
+              "fr-CH": "Gardiennage maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "049fb17a-d117-4219-bfb1-12bdb68de824",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "name": {
+              "en-GB": "House tidy up",
+              "en-US": "House tidy up",
+              "fr-FR": "Rangement maison",
+              "fr-CH": "Rangement maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5921e9b1-4fdc-4f93-a6ed-cdec08abef41",
+            "slug": "carless-driver",
+            "color": "red",
+            "name": {
+              "en-GB": "Carless driver",
+              "en-US": "Carless driver",
+              "fr-FR": "Chauffeur sans voiture",
+              "fr-CH": "Chauffeur sans voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5fca8ef6-9d66-472d-8ff1-5afedf453f2f",
+            "slug": "guest-service",
+            "color": "red",
+            "name": {
+              "en-GB": "Guest service",
+              "en-US": "Guest service",
+              "fr-FR": "Service invité",
+              "fr-CH": "Service invité",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "c806b9e3-3116-4d62-a557-427f079d67a1",
+            "slug": "personal-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Personal assistant",
+              "en-US": "Personal assistant",
+              "fr-FR": "Assistant personel",
+              "fr-CH": "Assistant personel",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "ee28d261-83ba-4965-988a-6623e5fb2947",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Administrative assistant",
+              "en-US": "Administrative assistant",
+              "fr-FR": "Assistant administratif",
+              "fr-CH": "Assistant administratif",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
+        ]
+      }
+    ],
+    "FR": [
+      {
+        "id": "2f7821c5-29e2-4c07-9b21-0c33a6b8dfc4",
+        "slug": "professional-services",
+        "color": "purple",
+        "ordinalPosition": 6,
+        "name": {
+          "en-GB": "Professional Services",
+          "en-US": "Professional Services",
+          "fr-FR": "Services Professionels",
+          "fr-CH": "Services Professionels",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "7d87c290-c4aa-44c4-a80d-6ca0ebd82f39",
-          "slug": "guest-service",
-          "color": "red",
-          "name": {
-            "en-GB": "Guest service",
-            "en-US": "Guest service",
-            "fr-FR": "Service invité",
-            "fr-CH": "Service invité",
-            "ko-KR": "",
-            "ja-JP": ""
-          }
+        "services": []
+      },
+      {
+        "id": "6c025e68-12a7-4fa8-9772-15e462469248",
+        "slug": "animals",
+        "color": "orange",
+        "ordinalPosition": 5,
+        "name": {
+          "en-GB": "Animals",
+          "en-US": "Animals",
+          "fr-FR": "Animaux",
+          "fr-CH": "Animaux",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "7949f6ae-9d5f-4858-9f15-be85a3942c7c",
-          "slug": "personal-assistant",
-          "color": "red",
-          "name": {
-            "en-GB": "Personal assistant",
-            "en-US": "Personal assistant",
-            "fr-FR": "Assistant personel",
-            "fr-CH": "Assistant personel",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "72793d6c-0a64-4237-ae31-ab8a8ccaf06e",
+            "slug": "grooming",
+            "color": "orange",
+            "name": {
+              "en-GB": "Grooming",
+              "en-US": "Grooming",
+              "fr-FR": "Toilettage",
+              "fr-CH": "Toilettage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "bc102cf9-6fbd-41a5-b500-331798caf982",
+            "slug": "caretaking",
+            "color": "orange",
+            "name": {
+              "en-GB": "Caretaking",
+              "en-US": "Caretaking",
+              "fr-FR": "Gardiennage",
+              "fr-CH": "Gardiennage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "a94b4490-7515-4d58-8426-be304de939a5",
+            "slug": "feed",
+            "color": "orange",
+            "name": {
+              "en-GB": "Feed",
+              "en-US": "Feed",
+              "fr-FR": "Nourrir",
+              "fr-CH": "Nourrir",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "0fc624cb-1e1b-4dbd-97b6-204bab4a8403",
+            "slug": "walk",
+            "color": "orange",
+            "name": {
+              "en-GB": "Walk",
+              "en-US": "Walk",
+              "fr-FR": "Promenade",
+              "fr-CH": "Promenade",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
+        ]
+      },
+      {
+        "id": "ca47775f-e2e5-42e4-a557-279879484165",
+        "slug": "gardening",
+        "color": "green",
+        "ordinalPosition": 4,
+        "name": {
+          "en-GB": "gardening",
+          "en-US": "gardening",
+          "fr-FR": "Jardinage",
+          "fr-CH": "Jardinage",
+          "ko-KR": "",
+          "ja-JP": ""
         },
-        {
-          "id": "5e533c44-5758-4e16-9c94-ed6c3d2b34b2",
-          "slug": "administrative-assistant",
-          "color": "red",
-          "name": {
-            "en-GB": "Administrative assistant",
-            "en-US": "Administrative assistant",
-            "fr-FR": "Assistant administratif",
-            "fr-CH": "Assistant administratif",
-            "ko-KR": "",
-            "ja-JP": ""
+        "services": [
+          {
+            "id": "1402df0e-bcf2-462e-b0f0-ff29af3a15f6",
+            "slug": "spray",
+            "color": "green",
+            "name": {
+              "en-GB": "spray",
+              "en-US": "spray",
+              "fr-FR": "Arrosage",
+              "fr-CH": "Arrosage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "cc16883c-430e-448e-9836-69c70938f6e7",
+            "slug": "rake",
+            "color": "green",
+            "name": {
+              "en-GB": "Rake",
+              "en-US": "Rake",
+              "fr-FR": "Ramasser végétaux",
+              "fr-CH": "Ramasser végétaux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "babc560b-7213-4101-992f-610b0c043b58",
+            "slug": "plant",
+            "color": "green",
+            "name": {
+              "en-GB": "Plant",
+              "en-US": "Plant",
+              "fr-FR": "Planter des plantes / fleurs",
+              "fr-CH": "Planter des plantes / fleurs",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "8b51a932-9e92-4cb8-a611-ff5787130438",
+            "slug": "mow",
+            "color": "green",
+            "name": {
+              "en-GB": "Mow",
+              "en-US": "Mow",
+              "fr-FR": "Tondre la pelouse / Taille de haie",
+              "fr-CH": "Tondre la pelouse / Taille de haie",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      },
+      {
+        "id": "81a28771-b643-4c8f-bd2b-2274c4cb4f07",
+        "slug": "purchase-and-delivery",
+        "color": "turquoise",
+        "ordinalPosition": 2,
+        "name": {
+          "en-GB": "Purchase & Delivery",
+          "en-US": "Purchase & Delivery",
+          "fr-FR": "Achats & Livraisons",
+          "fr-CH": "Achats & Livraisons",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "bd6d5fc8-b9a5-4295-b4cb-48730f9f763d",
+            "slug": "heavy-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Heavy Packages",
+              "en-US": "Heavy Packages",
+              "fr-FR": "Colis volumineux",
+              "fr-CH": "Colis volumineux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6e64fd03-bf54-414f-8c19-3b5df5c844bf",
+            "slug": "light-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Light Packages",
+              "en-US": "Light Packages",
+              "fr-FR": "Colis légers",
+              "fr-CH": "Colis légers",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "f070ee2e-94f3-4d1f-bc69-7ef278f60a9c",
+            "slug": "groceries",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Groceries",
+              "en-US": "Groceries",
+              "fr-FR": "Faire mes courses",
+              "fr-CH": "Faire mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "47f4bc9a-0644-4d6c-bfb6-554c58a1254d",
+            "slug": "groceries-pick-up-and-delivery",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Pick up and deliver my groceries",
+              "en-US": "Pick up and deliver my groceries",
+              "fr-FR": "Récupérer et livrer mes courses",
+              "fr-CH": "Récupérer et livrer mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b2fb9bf0-bd3f-48fd-8c02-78390b3ba93a",
+            "slug": "food",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Food",
+              "en-US": "Food",
+              "fr-FR": "Nourriture",
+              "fr-CH": "Nourriture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "fbb9aa19-27b6-4b1a-b45e-0553f73f385a",
+        "slug": "cleaning",
+        "color": "blue",
+        "ordinalPosition": 3,
+        "name": {
+          "en-GB": "Cleaning",
+          "en-US": "Cleaning",
+          "fr-FR": "Nettoyages",
+          "fr-CH": "Nettoyages",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "5672dbe5-afd9-4b9d-b20c-2cb07e440735",
+            "slug": "house-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "House cleaning",
+              "en-US": "House cleaning",
+              "fr-FR": "Nettoyage maison / appartement",
+              "fr-CH": "Nettoyage maison / appartement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "85ee86c7-e411-4208-b560-d11f6c8ae714",
+            "slug": "cellar-garage-clenning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Cellar and garage cleaning",
+              "en-US": "Cellar and garage cleaning",
+              "fr-FR": "Nettoyage cave ou garage",
+              "fr-CH": "Nettoyage cave ou garage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6c3cbeea-c856-4c96-bb46-325698e81fc5",
+            "slug": "car-washing",
+            "color": "blue",
+            "name": {
+              "en-GB": "Car washing",
+              "en-US": "Car washing",
+              "fr-FR": "Nettoyage voiture",
+              "fr-CH": "Nettoyage voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "77be6505-6458-4b56-935a-4a1467f7abd5",
+                "slug": "jeffrey-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "224bd5b2-3c38-447c-b54d-2f4a92b4874c",
+                "slug": "cleancar-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "CleanCar",
+                  "en-US": "CleanCas",
+                  "fr-FR": "Faire appel à CleanCar",
+                  "fr-CH": "Faire appel à CleanCar",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "f9731bde-7152-4257-b974-1c48bb996d9f",
+            "slug": "iron-laundry",
+            "color": "blue",
+            "name": {
+              "en-GB": "Iron Laundry",
+              "en-US": "Car washing",
+              "fr-FR": "Repassage / lessives",
+              "fr-CH": "Repassage / lessives",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "aa9e61db-53dc-4987-a981-771d01c7a757",
+                "slug": "jeffrey-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "d09f7adf-6649-4280-a45f-95e266120737",
+                "slug": "urban-washer-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "UrbanWasher",
+                  "en-US": "UrbanWasher",
+                  "fr-FR": "Faire appel à UrbanWasher",
+                  "fr-CH": "Faire appel à UrbanWasher",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "7982f65a-e353-41b4-ba04-4fa7f2319fbb",
+            "slug": "windows-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Windows cleaning",
+              "en-US": "Windows cleaning",
+              "fr-FR": "Nettoyage vitres",
+              "fr-CH": "Nettoyage vitres",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "29c8fb49-8c92-436f-8791-ad3a4b123b5c",
+            "slug": "swimming-pool-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Swimming pool cleaning",
+              "en-US": "Swimming pool cleaning",
+              "fr-FR": "Nettoyage piscine",
+              "fr-CH": "Nettoyage piscine",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "5ae28670-d9db-41fd-9ecc-4c83120ac544",
+        "slug": "handiwork-and-moving",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "name": {
+          "en-GB": "Handiwork and moving",
+          "en-US": "Handiwork and moving",
+          "fr-FR": "Bricolages & déménagement",
+          "fr-CH": "Bricolages & déménagement",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "94ff761e-ef57-4f37-8758-e0476141c94b",
+            "slug": "furniture-construction",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Furniture construction",
+              "en-US": "Furniture construction",
+              "fr-FR": "Construire un meuble",
+              "fr-CH": "Construire un meuble",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b643406e-ae1c-4d5b-b72f-95926ce03b9f",
+            "slug": "moving",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Moving",
+              "en-US": "Moving",
+              "fr-FR": "Déménagement",
+              "fr-CH": "Déménagement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "2e59f568-9a51-4f06-8bea-e0ae2b0ac235",
+            "slug": "painting",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Painting",
+              "en-US": "Painting",
+              "fr-FR": "Peinture",
+              "fr-CH": "Peinture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "0516f947-9481-4ef9-a220-6980cb36e5d9",
+        "slug": "modern-majordome",
+        "color": "red",
+        "ordinalPosition": 0,
+        "name": {
+          "en-GB": "Modern majordome",
+          "en-US": "Modern majordome",
+          "fr-FR": "Majordome morderne",
+          "fr-CH": "Majordome morderne",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "297ba79f-4065-4a27-a6cd-3f59383af701",
+            "slug": "amateur-cook",
+            "color": "red",
+            "name": {
+              "en-GB": "Amateur cook",
+              "en-US": "Amateur cook",
+              "fr-FR": "Cusinier amateur",
+              "fr-CH": "Cusinier amateur",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b9b0475c-164e-45cb-90e0-66461940cf21",
+            "slug": "disabled-person-assistance",
+            "color": "red",
+            "name": {
+              "en-GB": "Disabled person assistance",
+              "en-US": "Disabled person assistance",
+              "fr-FR": "Assistance personne à mobilité réduite",
+              "fr-CH": "Assistance personne à mobilité réduite",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "ee4b2b35-0328-4fa3-aa3c-e74d88237d96",
+            "slug": "housekeeping",
+            "color": "red",
+            "name": {
+              "en-GB": "Housekeeping",
+              "en-US": "Housekeeping",
+              "fr-FR": "Gardiennage maison",
+              "fr-CH": "Gardiennage maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "8eca182d-7919-44c7-9bac-34335c8aafe9",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "name": {
+              "en-GB": "House tidy up",
+              "en-US": "House tidy up",
+              "fr-FR": "Rangement maison",
+              "fr-CH": "Rangement maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "0e9b7533-1f1a-4238-a5ea-646b0bfa443a",
+            "slug": "carless-driver",
+            "color": "red",
+            "name": {
+              "en-GB": "Carless driver",
+              "en-US": "Carless driver",
+              "fr-FR": "Chauffeur sans voiture",
+              "fr-CH": "Chauffeur sans voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "3f7f040a-ac23-4411-b304-92f7359d94e1",
+            "slug": "guest-service",
+            "color": "red",
+            "name": {
+              "en-GB": "Guest service",
+              "en-US": "Guest service",
+              "fr-FR": "Service invité",
+              "fr-CH": "Service invité",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "4657e48f-39c2-46f3-bf65-bd50e012784d",
+            "slug": "personal-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Personal assistant",
+              "en-US": "Personal assistant",
+              "fr-FR": "Assistant personel",
+              "fr-CH": "Assistant personel",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "293d98d8-1130-4b7f-b379-cb51b1310283",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Administrative assistant",
+              "en-US": "Administrative assistant",
+              "fr-FR": "Assistant administratif",
+              "fr-CH": "Assistant administratif",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      }
+    ],
+    "CH": [
+      {
+        "id": "d0e97972-99a3-4c16-a209-039b6c1e04e1",
+        "slug": "professional-services",
+        "color": "purple",
+        "ordinalPosition": 6,
+        "name": {
+          "en-GB": "Professional Services",
+          "en-US": "Professional Services",
+          "fr-FR": "Services Professionels",
+          "fr-CH": "Services Professionels",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": []
+      },
+      {
+        "id": "c3db84c0-d2ab-49b4-a50c-0d1a02527240",
+        "slug": "animals",
+        "color": "orange",
+        "ordinalPosition": 5,
+        "name": {
+          "en-GB": "Animals",
+          "en-US": "Animals",
+          "fr-FR": "Animaux",
+          "fr-CH": "Animaux",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "bb20e50a-de83-4204-8d6b-cfd98ba19e36",
+            "slug": "grooming",
+            "color": "orange",
+            "name": {
+              "en-GB": "Grooming",
+              "en-US": "Grooming",
+              "fr-FR": "Toilettage",
+              "fr-CH": "Toilettage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "07332daa-26cd-4130-9054-9df2c1e827a3",
+            "slug": "caretaking",
+            "color": "orange",
+            "name": {
+              "en-GB": "Caretaking",
+              "en-US": "Caretaking",
+              "fr-FR": "Gardiennage",
+              "fr-CH": "Gardiennage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5975da2e-d0e2-4519-a2ac-c8ce86df25c1",
+            "slug": "feed",
+            "color": "orange",
+            "name": {
+              "en-GB": "Feed",
+              "en-US": "Feed",
+              "fr-FR": "Nourrir",
+              "fr-CH": "Nourrir",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "963ca76c-6985-45df-ab5a-3ac9c676aad9",
+            "slug": "walk",
+            "color": "orange",
+            "name": {
+              "en-GB": "Walk",
+              "en-US": "Walk",
+              "fr-FR": "Promenade",
+              "fr-CH": "Promenade",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "7ad99a6b-459d-4482-8142-befbf3fd6613",
+        "slug": "gardening",
+        "color": "green",
+        "ordinalPosition": 4,
+        "name": {
+          "en-GB": "gardening",
+          "en-US": "gardening",
+          "fr-FR": "Jardinage",
+          "fr-CH": "Jardinage",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "3311ab6a-b259-4d39-99b7-86eca055c358",
+            "slug": "spray",
+            "color": "green",
+            "name": {
+              "en-GB": "spray",
+              "en-US": "spray",
+              "fr-FR": "Arrosage",
+              "fr-CH": "Arrosage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "1fa4fd3c-45bf-46e6-bece-7d337a03b909",
+            "slug": "rake",
+            "color": "green",
+            "name": {
+              "en-GB": "Rake",
+              "en-US": "Rake",
+              "fr-FR": "Ramasser végétaux",
+              "fr-CH": "Ramasser végétaux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9cb8f669-1984-4c1c-b884-a4f8ad930a78",
+            "slug": "plant",
+            "color": "green",
+            "name": {
+              "en-GB": "Plant",
+              "en-US": "Plant",
+              "fr-FR": "Planter des plantes / fleurs",
+              "fr-CH": "Planter des plantes / fleurs",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "a3128628-16f0-4346-930f-ef9ffdb58e4e",
+            "slug": "mow",
+            "color": "green",
+            "name": {
+              "en-GB": "Mow",
+              "en-US": "Mow",
+              "fr-FR": "Tondre la pelouse / Taille de haie",
+              "fr-CH": "Tondre la pelouse / Taille de haie",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "52bfdd9b-5953-472e-8169-b5622de17b9c",
+        "slug": "purchase-and-delivery",
+        "color": "turquoise",
+        "ordinalPosition": 2,
+        "name": {
+          "en-GB": "Purchase & Delivery",
+          "en-US": "Purchase & Delivery",
+          "fr-FR": "Achats & Livraisons",
+          "fr-CH": "Achats & Livraisons",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "60d4e129-feb9-49d4-a0ad-b62e4410e372",
+            "slug": "heavy-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Heavy Packages",
+              "en-US": "Heavy Packages",
+              "fr-FR": "Colis volumineux",
+              "fr-CH": "Colis volumineux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "4b719f3c-e9a2-4081-8d07-876b771c6d88",
+            "slug": "light-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Light Packages",
+              "en-US": "Light Packages",
+              "fr-FR": "Colis légers",
+              "fr-CH": "Colis légers",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5c1d9a9a-d91d-418f-bb15-fdb5a7ce1182",
+            "slug": "groceries",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Groceries",
+              "en-US": "Groceries",
+              "fr-FR": "Faire mes courses",
+              "fr-CH": "Faire mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "4d985a6a-9ef8-4f41-ac5f-7800b30be9e7",
+            "slug": "groceries-pick-up-and-delivery",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Pick up and deliver my groceries",
+              "en-US": "Pick up and deliver my groceries",
+              "fr-FR": "Récupérer et livrer mes courses",
+              "fr-CH": "Récupérer et livrer mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "1d2efd24-8a5b-4136-aa60-af196b8a4f18",
+            "slug": "food",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Food",
+              "en-US": "Food",
+              "fr-FR": "Nourriture",
+              "fr-CH": "Nourriture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "1e7fc19d-e27f-41ba-871e-d1ecbf46db5b",
+        "slug": "cleaning",
+        "color": "blue",
+        "ordinalPosition": 3,
+        "name": {
+          "en-GB": "Cleaning",
+          "en-US": "Cleaning",
+          "fr-FR": "Nettoyages",
+          "fr-CH": "Nettoyages",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "772dd383-de7c-4bdd-a30c-976225bd3111",
+            "slug": "house-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "House cleaning",
+              "en-US": "House cleaning",
+              "fr-FR": "Nettoyage maison / appartement",
+              "fr-CH": "Nettoyage maison / appartement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b27214c3-e0d4-49f1-97e2-d27811a06ba8",
+            "slug": "cellar-garage-clenning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Cellar and garage cleaning",
+              "en-US": "Cellar and garage cleaning",
+              "fr-FR": "Nettoyage cave ou garage",
+              "fr-CH": "Nettoyage cave ou garage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6d638f84-a713-486b-835c-f34facb9e50c",
+            "slug": "car-washing",
+            "color": "blue",
+            "name": {
+              "en-GB": "Car washing",
+              "en-US": "Car washing",
+              "fr-FR": "Nettoyage voiture",
+              "fr-CH": "Nettoyage voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "edfd8d7a-fe2a-4f81-ab02-75948d8e2680",
+                "slug": "jeffrey-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "ec0ff261-7d2b-46c9-b75b-027d0a60a9d9",
+                "slug": "cleancar-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "CleanCar",
+                  "en-US": "CleanCas",
+                  "fr-FR": "Faire appel à CleanCar",
+                  "fr-CH": "Faire appel à CleanCar",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "0b427937-67c4-4304-9bcf-2eb507e5a362",
+            "slug": "iron-laundry",
+            "color": "blue",
+            "name": {
+              "en-GB": "Iron Laundry",
+              "en-US": "Car washing",
+              "fr-FR": "Repassage / lessives",
+              "fr-CH": "Repassage / lessives",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "a15f6d55-96e9-4753-953d-0673a4eaa841",
+                "slug": "jeffrey-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "cc1a3a37-e6b8-4606-93c9-70cb89081667",
+                "slug": "urban-washer-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "UrbanWasher",
+                  "en-US": "UrbanWasher",
+                  "fr-FR": "Faire appel à UrbanWasher",
+                  "fr-CH": "Faire appel à UrbanWasher",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "777d0d6e-8014-416d-be91-0235e6c6d8fb",
+            "slug": "windows-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Windows cleaning",
+              "en-US": "Windows cleaning",
+              "fr-FR": "Nettoyage vitres",
+              "fr-CH": "Nettoyage vitres",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "4f499b5b-991e-4b8c-89b3-9660ffc3d1fc",
+            "slug": "swimming-pool-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Swimming pool cleaning",
+              "en-US": "Swimming pool cleaning",
+              "fr-FR": "Nettoyage piscine",
+              "fr-CH": "Nettoyage piscine",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "5d0b8207-831e-41a1-b4ee-c52517aeb9de",
+        "slug": "handiwork-and-moving",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "name": {
+          "en-GB": "Handiwork and moving",
+          "en-US": "Handiwork and moving",
+          "fr-FR": "Bricolages & déménagement",
+          "fr-CH": "Bricolages & déménagement",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "ff42971a-9890-47ca-9877-faf93249810e",
+            "slug": "furniture-construction",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Furniture construction",
+              "en-US": "Furniture construction",
+              "fr-FR": "Construire un meuble",
+              "fr-CH": "Construire un meuble",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "707f30e5-8695-4fb5-8532-5a9618413011",
+            "slug": "moving",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Moving",
+              "en-US": "Moving",
+              "fr-FR": "Déménagement",
+              "fr-CH": "Déménagement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "209babda-22b9-4e6c-a7d9-e9f369a2fa5b",
+            "slug": "painting",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Painting",
+              "en-US": "Painting",
+              "fr-FR": "Peinture",
+              "fr-CH": "Peinture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "de6dfc37-e3e3-4837-aff6-a711f8e0fa29",
+        "slug": "modern-majordome",
+        "color": "red",
+        "ordinalPosition": 0,
+        "name": {
+          "en-GB": "Modern majordome",
+          "en-US": "Modern majordome",
+          "fr-FR": "Majordome morderne",
+          "fr-CH": "Majordome morderne",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "54db63cf-7ebd-4825-84c9-5f801a220d3b",
+            "slug": "amateur-cook",
+            "color": "red",
+            "name": {
+              "en-GB": "Amateur cook",
+              "en-US": "Amateur cook",
+              "fr-FR": "Cusinier amateur",
+              "fr-CH": "Cusinier amateur",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "fe1f0b06-b5e0-4e56-8296-84dea946609c",
+            "slug": "disabled-person-assistance",
+            "color": "red",
+            "name": {
+              "en-GB": "Disabled person assistance",
+              "en-US": "Disabled person assistance",
+              "fr-FR": "Assistance personne à mobilité réduite",
+              "fr-CH": "Assistance personne à mobilité réduite",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "992c1a72-8615-4d0d-bc5b-55008b0080b9",
+            "slug": "housekeeping",
+            "color": "red",
+            "name": {
+              "en-GB": "Housekeeping",
+              "en-US": "Housekeeping",
+              "fr-FR": "Gardiennage maison",
+              "fr-CH": "Gardiennage maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "fde25250-0ea1-43d0-b8b2-d78003dad8d9",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "name": {
+              "en-GB": "House tidy up",
+              "en-US": "House tidy up",
+              "fr-FR": "Rangement maison",
+              "fr-CH": "Rangement maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "4615f48d-d8f9-4239-9c93-4b3cfc1bffc1",
+            "slug": "carless-driver",
+            "color": "red",
+            "name": {
+              "en-GB": "Carless driver",
+              "en-US": "Carless driver",
+              "fr-FR": "Chauffeur sans voiture",
+              "fr-CH": "Chauffeur sans voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "758f64a4-c928-4592-97d2-f456467bdc39",
+            "slug": "guest-service",
+            "color": "red",
+            "name": {
+              "en-GB": "Guest service",
+              "en-US": "Guest service",
+              "fr-FR": "Service invité",
+              "fr-CH": "Service invité",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "8757ae1f-7d54-419e-9686-c6e3dc8abcc7",
+            "slug": "personal-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Personal assistant",
+              "en-US": "Personal assistant",
+              "fr-FR": "Assistant personel",
+              "fr-CH": "Assistant personel",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "c2157066-2d06-4511-85a2-517765546d4c",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Administrative assistant",
+              "en-US": "Administrative assistant",
+              "fr-FR": "Assistant administratif",
+              "fr-CH": "Assistant administratif",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      }
+    ],
+    "GB": [
+      {
+        "id": "dbf0181e-0a5f-4481-88f1-563fed5d72d2",
+        "slug": "professional-services",
+        "color": "purple",
+        "ordinalPosition": 6,
+        "name": {
+          "en-GB": "Professional Services",
+          "en-US": "Professional Services",
+          "fr-FR": "Services Professionels",
+          "fr-CH": "Services Professionels",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": []
+      },
+      {
+        "id": "19b4f753-dd17-4d2b-b365-7840997a96f7",
+        "slug": "animals",
+        "color": "orange",
+        "ordinalPosition": 5,
+        "name": {
+          "en-GB": "Animals",
+          "en-US": "Animals",
+          "fr-FR": "Animaux",
+          "fr-CH": "Animaux",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "7f47d1da-0767-473d-b9f5-59ba21b098db",
+            "slug": "grooming",
+            "color": "orange",
+            "name": {
+              "en-GB": "Grooming",
+              "en-US": "Grooming",
+              "fr-FR": "Toilettage",
+              "fr-CH": "Toilettage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "3d01ea68-96ac-4756-ab85-f31ace57a6c7",
+            "slug": "caretaking",
+            "color": "orange",
+            "name": {
+              "en-GB": "Caretaking",
+              "en-US": "Caretaking",
+              "fr-FR": "Gardiennage",
+              "fr-CH": "Gardiennage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "c8789d95-5361-414d-86d5-c51118ffe1c2",
+            "slug": "feed",
+            "color": "orange",
+            "name": {
+              "en-GB": "Feed",
+              "en-US": "Feed",
+              "fr-FR": "Nourrir",
+              "fr-CH": "Nourrir",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b6f136a0-9216-4fd3-9fa0-56e7499a81c4",
+            "slug": "walk",
+            "color": "orange",
+            "name": {
+              "en-GB": "Walk",
+              "en-US": "Walk",
+              "fr-FR": "Promenade",
+              "fr-CH": "Promenade",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "fc1b391e-6420-4294-9e5a-d158cf6a4797",
+        "slug": "gardening",
+        "color": "green",
+        "ordinalPosition": 4,
+        "name": {
+          "en-GB": "gardening",
+          "en-US": "gardening",
+          "fr-FR": "Jardinage",
+          "fr-CH": "Jardinage",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "2e17559c-db73-4269-bbc2-63ffe78eee83",
+            "slug": "spray",
+            "color": "green",
+            "name": {
+              "en-GB": "spray",
+              "en-US": "spray",
+              "fr-FR": "Arrosage",
+              "fr-CH": "Arrosage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "d2b4cd74-ae9d-4195-b168-dc03c9f9370e",
+            "slug": "rake",
+            "color": "green",
+            "name": {
+              "en-GB": "Rake",
+              "en-US": "Rake",
+              "fr-FR": "Ramasser végétaux",
+              "fr-CH": "Ramasser végétaux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5ab8faf1-5af7-4062-9e73-b6f0e76d0c78",
+            "slug": "plant",
+            "color": "green",
+            "name": {
+              "en-GB": "Plant",
+              "en-US": "Plant",
+              "fr-FR": "Planter des plantes / fleurs",
+              "fr-CH": "Planter des plantes / fleurs",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "579c456c-b2b0-4f6c-9b0e-a198c1bf6e57",
+            "slug": "mow",
+            "color": "green",
+            "name": {
+              "en-GB": "Mow",
+              "en-US": "Mow",
+              "fr-FR": "Tondre la pelouse / Taille de haie",
+              "fr-CH": "Tondre la pelouse / Taille de haie",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "f73a5080-bbc4-4934-b51f-da9619c3bfb1",
+        "slug": "purchase-and-delivery",
+        "color": "turquoise",
+        "ordinalPosition": 2,
+        "name": {
+          "en-GB": "Purchase & Delivery",
+          "en-US": "Purchase & Delivery",
+          "fr-FR": "Achats & Livraisons",
+          "fr-CH": "Achats & Livraisons",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "fdf00d5a-3e0e-4a5a-a90d-b79983175664",
+            "slug": "heavy-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Heavy Packages",
+              "en-US": "Heavy Packages",
+              "fr-FR": "Colis volumineux",
+              "fr-CH": "Colis volumineux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "3d9bdab4-be25-4d60-a8d4-07902c3cd995",
+            "slug": "light-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Light Packages",
+              "en-US": "Light Packages",
+              "fr-FR": "Colis légers",
+              "fr-CH": "Colis légers",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "cc617635-f058-4923-8a96-f9ce94a82f3b",
+            "slug": "groceries",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Groceries",
+              "en-US": "Groceries",
+              "fr-FR": "Faire mes courses",
+              "fr-CH": "Faire mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "1c651ec2-8068-4051-bf39-c29dc347fd2c",
+            "slug": "groceries-pick-up-and-delivery",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Pick up and deliver my groceries",
+              "en-US": "Pick up and deliver my groceries",
+              "fr-FR": "Récupérer et livrer mes courses",
+              "fr-CH": "Récupérer et livrer mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "7e3288d1-15f0-4ae5-8a8e-9f7dc080bb41",
+            "slug": "food",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Food",
+              "en-US": "Food",
+              "fr-FR": "Nourriture",
+              "fr-CH": "Nourriture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "d094870e-26e3-4455-8c44-0e6071947b58",
+        "slug": "cleaning",
+        "color": "blue",
+        "ordinalPosition": 3,
+        "name": {
+          "en-GB": "Cleaning",
+          "en-US": "Cleaning",
+          "fr-FR": "Nettoyages",
+          "fr-CH": "Nettoyages",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "bfbfc49d-2a6c-4a1d-9621-454fe3b15fd4",
+            "slug": "house-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "House cleaning",
+              "en-US": "House cleaning",
+              "fr-FR": "Nettoyage maison / appartement",
+              "fr-CH": "Nettoyage maison / appartement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "50348cd9-7db5-4e9e-a3fe-4e970178d51d",
+            "slug": "cellar-garage-clenning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Cellar and garage cleaning",
+              "en-US": "Cellar and garage cleaning",
+              "fr-FR": "Nettoyage cave ou garage",
+              "fr-CH": "Nettoyage cave ou garage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "791107ed-8526-4a20-91bd-0395df4a7fc0",
+            "slug": "car-washing",
+            "color": "blue",
+            "name": {
+              "en-GB": "Car washing",
+              "en-US": "Car washing",
+              "fr-FR": "Nettoyage voiture",
+              "fr-CH": "Nettoyage voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "473ccf85-558b-4604-820e-5c666d66f5db",
+                "slug": "jeffrey-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "e917ee92-a78d-45c1-bbac-994d70273ff9",
+                "slug": "cleancar-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "CleanCar",
+                  "en-US": "CleanCas",
+                  "fr-FR": "Faire appel à CleanCar",
+                  "fr-CH": "Faire appel à CleanCar",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "7bd99248-48f5-4980-9852-5924209fc1b9",
+            "slug": "iron-laundry",
+            "color": "blue",
+            "name": {
+              "en-GB": "Iron Laundry",
+              "en-US": "Car washing",
+              "fr-FR": "Repassage / lessives",
+              "fr-CH": "Repassage / lessives",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "f365b86d-b01e-4425-bbb4-4b3b2c6c7d42",
+                "slug": "jeffrey-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "1c5407af-1cd6-44e7-88f8-d9e53b6a0a35",
+                "slug": "urban-washer-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "UrbanWasher",
+                  "en-US": "UrbanWasher",
+                  "fr-FR": "Faire appel à UrbanWasher",
+                  "fr-CH": "Faire appel à UrbanWasher",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "5e6cb42f-79ce-4fe1-8994-f2bc92b23729",
+            "slug": "windows-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Windows cleaning",
+              "en-US": "Windows cleaning",
+              "fr-FR": "Nettoyage vitres",
+              "fr-CH": "Nettoyage vitres",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6982ca36-d858-48c6-a541-d928c490a1dd",
+            "slug": "swimming-pool-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Swimming pool cleaning",
+              "en-US": "Swimming pool cleaning",
+              "fr-FR": "Nettoyage piscine",
+              "fr-CH": "Nettoyage piscine",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "614279c1-8608-487b-80ff-06ed28ddb350",
+        "slug": "handiwork-and-moving",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "name": {
+          "en-GB": "Handiwork and moving",
+          "en-US": "Handiwork and moving",
+          "fr-FR": "Bricolages & déménagement",
+          "fr-CH": "Bricolages & déménagement",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "368543dd-4840-42a7-81c1-b5aec20c20db",
+            "slug": "furniture-construction",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Furniture construction",
+              "en-US": "Furniture construction",
+              "fr-FR": "Construire un meuble",
+              "fr-CH": "Construire un meuble",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6b3e73e8-826b-40ba-85ba-6d3fe961c4c5",
+            "slug": "moving",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Moving",
+              "en-US": "Moving",
+              "fr-FR": "Déménagement",
+              "fr-CH": "Déménagement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "132ef70f-2b9c-422d-8dd5-f6f3996f8ac0",
+            "slug": "painting",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Painting",
+              "en-US": "Painting",
+              "fr-FR": "Peinture",
+              "fr-CH": "Peinture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "90c739bd-30c4-4798-9dc4-31e3b7a7ec42",
+        "slug": "modern-majordome",
+        "color": "red",
+        "ordinalPosition": 0,
+        "name": {
+          "en-GB": "Modern majordome",
+          "en-US": "Modern majordome",
+          "fr-FR": "Majordome morderne",
+          "fr-CH": "Majordome morderne",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "8c1b99c7-6404-4bf2-afcd-426b70b07cd4",
+            "slug": "amateur-cook",
+            "color": "red",
+            "name": {
+              "en-GB": "Amateur cook",
+              "en-US": "Amateur cook",
+              "fr-FR": "Cusinier amateur",
+              "fr-CH": "Cusinier amateur",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "058e16a6-3016-4b41-8495-ee3948b20b98",
+            "slug": "disabled-person-assistance",
+            "color": "red",
+            "name": {
+              "en-GB": "Disabled person assistance",
+              "en-US": "Disabled person assistance",
+              "fr-FR": "Assistance personne à mobilité réduite",
+              "fr-CH": "Assistance personne à mobilité réduite",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "fc599789-0f3c-4158-b4a0-0466d2667c30",
+            "slug": "housekeeping",
+            "color": "red",
+            "name": {
+              "en-GB": "Housekeeping",
+              "en-US": "Housekeeping",
+              "fr-FR": "Gardiennage maison",
+              "fr-CH": "Gardiennage maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "2ab5a8c8-cd1e-4f5f-9f40-c48abea985d2",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "name": {
+              "en-GB": "House tidy up",
+              "en-US": "House tidy up",
+              "fr-FR": "Rangement maison",
+              "fr-CH": "Rangement maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "808abe62-21bf-4c81-8453-ec988e08cc16",
+            "slug": "carless-driver",
+            "color": "red",
+            "name": {
+              "en-GB": "Carless driver",
+              "en-US": "Carless driver",
+              "fr-FR": "Chauffeur sans voiture",
+              "fr-CH": "Chauffeur sans voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "0d7cd15f-cb5b-4665-ac3f-0451ec0da267",
+            "slug": "guest-service",
+            "color": "red",
+            "name": {
+              "en-GB": "Guest service",
+              "en-US": "Guest service",
+              "fr-FR": "Service invité",
+              "fr-CH": "Service invité",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "e7491699-5246-4033-88a1-23047d98588c",
+            "slug": "personal-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Personal assistant",
+              "en-US": "Personal assistant",
+              "fr-FR": "Assistant personel",
+              "fr-CH": "Assistant personel",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "820b7798-f3b1-4334-8d28-fdc7b5494c11",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Administrative assistant",
+              "en-US": "Administrative assistant",
+              "fr-FR": "Assistant administratif",
+              "fr-CH": "Assistant administratif",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      }
+    ],
+    "KR": [
+      {
+        "id": "7e7154be-ca96-4de7-97e3-03db31ee7ab5",
+        "slug": "professional-services",
+        "color": "purple",
+        "ordinalPosition": 6,
+        "name": {
+          "en-GB": "Professional Services",
+          "en-US": "Professional Services",
+          "fr-FR": "Services Professionels",
+          "fr-CH": "Services Professionels",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": []
+      },
+      {
+        "id": "3a94fff5-fe9f-4d78-9454-5677b7c9e638",
+        "slug": "animals",
+        "color": "orange",
+        "ordinalPosition": 5,
+        "name": {
+          "en-GB": "Animals",
+          "en-US": "Animals",
+          "fr-FR": "Animaux",
+          "fr-CH": "Animaux",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "75d74cb2-6676-4ef0-a55d-b87b4a7a18cf",
+            "slug": "grooming",
+            "color": "orange",
+            "name": {
+              "en-GB": "Grooming",
+              "en-US": "Grooming",
+              "fr-FR": "Toilettage",
+              "fr-CH": "Toilettage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9b352be1-0084-4cf0-9c59-dc8ffdcc483f",
+            "slug": "caretaking",
+            "color": "orange",
+            "name": {
+              "en-GB": "Caretaking",
+              "en-US": "Caretaking",
+              "fr-FR": "Gardiennage",
+              "fr-CH": "Gardiennage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9b5aacf2-d717-4693-be39-59e7a4c723ac",
+            "slug": "feed",
+            "color": "orange",
+            "name": {
+              "en-GB": "Feed",
+              "en-US": "Feed",
+              "fr-FR": "Nourrir",
+              "fr-CH": "Nourrir",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "13c80520-e248-4c30-aa0b-e0077b85ffc9",
+            "slug": "walk",
+            "color": "orange",
+            "name": {
+              "en-GB": "Walk",
+              "en-US": "Walk",
+              "fr-FR": "Promenade",
+              "fr-CH": "Promenade",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "40ab0d9d-31cd-408a-a10a-de6aef2163f8",
+        "slug": "gardening",
+        "color": "green",
+        "ordinalPosition": 4,
+        "name": {
+          "en-GB": "gardening",
+          "en-US": "gardening",
+          "fr-FR": "Jardinage",
+          "fr-CH": "Jardinage",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "0c055178-adcd-4aaa-bbd8-7cd2336387cc",
+            "slug": "spray",
+            "color": "green",
+            "name": {
+              "en-GB": "spray",
+              "en-US": "spray",
+              "fr-FR": "Arrosage",
+              "fr-CH": "Arrosage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "bc773ae2-52bf-48ed-8dd0-fb812b47c21c",
+            "slug": "rake",
+            "color": "green",
+            "name": {
+              "en-GB": "Rake",
+              "en-US": "Rake",
+              "fr-FR": "Ramasser végétaux",
+              "fr-CH": "Ramasser végétaux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5f5705be-b0cd-4c6f-b57c-52f074ae1af3",
+            "slug": "plant",
+            "color": "green",
+            "name": {
+              "en-GB": "Plant",
+              "en-US": "Plant",
+              "fr-FR": "Planter des plantes / fleurs",
+              "fr-CH": "Planter des plantes / fleurs",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "55844be2-dd29-4fcc-8720-ccb642cfc346",
+            "slug": "mow",
+            "color": "green",
+            "name": {
+              "en-GB": "Mow",
+              "en-US": "Mow",
+              "fr-FR": "Tondre la pelouse / Taille de haie",
+              "fr-CH": "Tondre la pelouse / Taille de haie",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "7c45f01d-16e7-44e1-a43c-e7d6285f41f4",
+        "slug": "purchase-and-delivery",
+        "color": "turquoise",
+        "ordinalPosition": 2,
+        "name": {
+          "en-GB": "Purchase & Delivery",
+          "en-US": "Purchase & Delivery",
+          "fr-FR": "Achats & Livraisons",
+          "fr-CH": "Achats & Livraisons",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "b1d1a042-0327-4d81-8cbe-f1011c681289",
+            "slug": "heavy-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Heavy Packages",
+              "en-US": "Heavy Packages",
+              "fr-FR": "Colis volumineux",
+              "fr-CH": "Colis volumineux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "08c8411a-890e-4d85-9ed1-dc383a2c1218",
+            "slug": "light-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Light Packages",
+              "en-US": "Light Packages",
+              "fr-FR": "Colis légers",
+              "fr-CH": "Colis légers",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "0a4deb8f-3fa1-4ec4-b488-5b8e1ab4b887",
+            "slug": "groceries",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Groceries",
+              "en-US": "Groceries",
+              "fr-FR": "Faire mes courses",
+              "fr-CH": "Faire mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "82dbf44a-de4e-4aa4-9f58-7d244194bbad",
+            "slug": "groceries-pick-up-and-delivery",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Pick up and deliver my groceries",
+              "en-US": "Pick up and deliver my groceries",
+              "fr-FR": "Récupérer et livrer mes courses",
+              "fr-CH": "Récupérer et livrer mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5abae305-67f6-48fd-b2f5-9bf7b09f1a3d",
+            "slug": "food",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Food",
+              "en-US": "Food",
+              "fr-FR": "Nourriture",
+              "fr-CH": "Nourriture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "92017614-bd89-4c36-afc8-2d3e0fb7094c",
+        "slug": "cleaning",
+        "color": "blue",
+        "ordinalPosition": 3,
+        "name": {
+          "en-GB": "Cleaning",
+          "en-US": "Cleaning",
+          "fr-FR": "Nettoyages",
+          "fr-CH": "Nettoyages",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "66a9d2d5-b8be-41ca-8399-980487e50a99",
+            "slug": "house-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "House cleaning",
+              "en-US": "House cleaning",
+              "fr-FR": "Nettoyage maison / appartement",
+              "fr-CH": "Nettoyage maison / appartement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9c977ada-918c-4385-a410-fcf27914c628",
+            "slug": "cellar-garage-clenning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Cellar and garage cleaning",
+              "en-US": "Cellar and garage cleaning",
+              "fr-FR": "Nettoyage cave ou garage",
+              "fr-CH": "Nettoyage cave ou garage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "8f4f1a9b-df5c-43cd-aa1c-31790a24dbff",
+            "slug": "car-washing",
+            "color": "blue",
+            "name": {
+              "en-GB": "Car washing",
+              "en-US": "Car washing",
+              "fr-FR": "Nettoyage voiture",
+              "fr-CH": "Nettoyage voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "ae31fe58-f6d6-4960-a2bf-d1d20c269e8c",
+                "slug": "jeffrey-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "3fe645fe-ade4-4351-a7a2-c4ab82607fb0",
+                "slug": "cleancar-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "CleanCar",
+                  "en-US": "CleanCas",
+                  "fr-FR": "Faire appel à CleanCar",
+                  "fr-CH": "Faire appel à CleanCar",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "766858ef-e92f-44d1-8836-dee8536f9249",
+            "slug": "iron-laundry",
+            "color": "blue",
+            "name": {
+              "en-GB": "Iron Laundry",
+              "en-US": "Car washing",
+              "fr-FR": "Repassage / lessives",
+              "fr-CH": "Repassage / lessives",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "3a193133-a7d6-472a-a699-7d1eacd41436",
+                "slug": "jeffrey-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "dcbb8109-d504-463d-898e-9615cca43f24",
+                "slug": "urban-washer-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "UrbanWasher",
+                  "en-US": "UrbanWasher",
+                  "fr-FR": "Faire appel à UrbanWasher",
+                  "fr-CH": "Faire appel à UrbanWasher",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "de55b2e2-77b5-4577-81fe-fbae324b3810",
+            "slug": "windows-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Windows cleaning",
+              "en-US": "Windows cleaning",
+              "fr-FR": "Nettoyage vitres",
+              "fr-CH": "Nettoyage vitres",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6198cf66-0641-4d60-9cae-e968a49802af",
+            "slug": "swimming-pool-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Swimming pool cleaning",
+              "en-US": "Swimming pool cleaning",
+              "fr-FR": "Nettoyage piscine",
+              "fr-CH": "Nettoyage piscine",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "205534d3-cc79-42db-9136-88efd228cdf2",
+        "slug": "handiwork-and-moving",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "name": {
+          "en-GB": "Handiwork and moving",
+          "en-US": "Handiwork and moving",
+          "fr-FR": "Bricolages & déménagement",
+          "fr-CH": "Bricolages & déménagement",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "218dc0ce-6de7-46ed-9e30-2e0f7d1ca4c5",
+            "slug": "furniture-construction",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Furniture construction",
+              "en-US": "Furniture construction",
+              "fr-FR": "Construire un meuble",
+              "fr-CH": "Construire un meuble",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "2b1befc0-6934-482e-a38c-b469852c73bb",
+            "slug": "moving",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Moving",
+              "en-US": "Moving",
+              "fr-FR": "Déménagement",
+              "fr-CH": "Déménagement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "ddef15b9-d2ff-4993-affc-db45c07153c2",
+            "slug": "painting",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Painting",
+              "en-US": "Painting",
+              "fr-FR": "Peinture",
+              "fr-CH": "Peinture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "d90f0615-f8c9-4769-8c5f-c513a71f3da9",
+        "slug": "modern-majordome",
+        "color": "red",
+        "ordinalPosition": 0,
+        "name": {
+          "en-GB": "Modern majordome",
+          "en-US": "Modern majordome",
+          "fr-FR": "Majordome morderne",
+          "fr-CH": "Majordome morderne",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "8de978b7-b836-4987-a423-d6d62e3f6e96",
+            "slug": "amateur-cook",
+            "color": "red",
+            "name": {
+              "en-GB": "Amateur cook",
+              "en-US": "Amateur cook",
+              "fr-FR": "Cusinier amateur",
+              "fr-CH": "Cusinier amateur",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9cd7bb71-67b1-4b9c-912d-307dc5b0361b",
+            "slug": "disabled-person-assistance",
+            "color": "red",
+            "name": {
+              "en-GB": "Disabled person assistance",
+              "en-US": "Disabled person assistance",
+              "fr-FR": "Assistance personne à mobilité réduite",
+              "fr-CH": "Assistance personne à mobilité réduite",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "a1d9cf48-36e1-404a-a32c-42a07f61d052",
+            "slug": "housekeeping",
+            "color": "red",
+            "name": {
+              "en-GB": "Housekeeping",
+              "en-US": "Housekeeping",
+              "fr-FR": "Gardiennage maison",
+              "fr-CH": "Gardiennage maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5aed76da-d6bc-4903-8b55-7ec9ed859162",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "name": {
+              "en-GB": "House tidy up",
+              "en-US": "House tidy up",
+              "fr-FR": "Rangement maison",
+              "fr-CH": "Rangement maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "bc82c62d-38b5-42fd-a4c6-bc1a81300190",
+            "slug": "carless-driver",
+            "color": "red",
+            "name": {
+              "en-GB": "Carless driver",
+              "en-US": "Carless driver",
+              "fr-FR": "Chauffeur sans voiture",
+              "fr-CH": "Chauffeur sans voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "38b46efd-4d09-4650-8942-58445896dbfa",
+            "slug": "guest-service",
+            "color": "red",
+            "name": {
+              "en-GB": "Guest service",
+              "en-US": "Guest service",
+              "fr-FR": "Service invité",
+              "fr-CH": "Service invité",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "81dc7711-37e7-4630-888f-3b0987647978",
+            "slug": "personal-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Personal assistant",
+              "en-US": "Personal assistant",
+              "fr-FR": "Assistant personel",
+              "fr-CH": "Assistant personel",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5c6a5fc8-eaa1-49f5-b20f-7a5061cd1058",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Administrative assistant",
+              "en-US": "Administrative assistant",
+              "fr-FR": "Assistant administratif",
+              "fr-CH": "Assistant administratif",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      }
+    ],
+    "ES": [
+      {
+        "id": "df103cf9-c944-4f34-b81b-714997de2016",
+        "slug": "professional-services",
+        "color": "purple",
+        "ordinalPosition": 6,
+        "name": {
+          "en-GB": "Professional Services",
+          "en-US": "Professional Services",
+          "fr-FR": "Services Professionels",
+          "fr-CH": "Services Professionels",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": []
+      },
+      {
+        "id": "8eea51fd-2a1c-4840-9c1d-0ae4640cdee2",
+        "slug": "animals",
+        "color": "orange",
+        "ordinalPosition": 5,
+        "name": {
+          "en-GB": "Animals",
+          "en-US": "Animals",
+          "fr-FR": "Animaux",
+          "fr-CH": "Animaux",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "8a6d0d70-96bf-4509-bc28-40fee9842078",
+            "slug": "grooming",
+            "color": "orange",
+            "name": {
+              "en-GB": "Grooming",
+              "en-US": "Grooming",
+              "fr-FR": "Toilettage",
+              "fr-CH": "Toilettage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5b13e098-8bc6-4570-a263-b5120dbd1d84",
+            "slug": "caretaking",
+            "color": "orange",
+            "name": {
+              "en-GB": "Caretaking",
+              "en-US": "Caretaking",
+              "fr-FR": "Gardiennage",
+              "fr-CH": "Gardiennage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "6f0a0e28-346e-49aa-be48-c6bc2b8418fa",
+            "slug": "feed",
+            "color": "orange",
+            "name": {
+              "en-GB": "Feed",
+              "en-US": "Feed",
+              "fr-FR": "Nourrir",
+              "fr-CH": "Nourrir",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "79b384b6-01d6-4fef-b236-8afbfc86b43c",
+            "slug": "walk",
+            "color": "orange",
+            "name": {
+              "en-GB": "Walk",
+              "en-US": "Walk",
+              "fr-FR": "Promenade",
+              "fr-CH": "Promenade",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "64595394-6e8f-48fd-b2be-e404ecbd858d",
+        "slug": "gardening",
+        "color": "green",
+        "ordinalPosition": 4,
+        "name": {
+          "en-GB": "gardening",
+          "en-US": "gardening",
+          "fr-FR": "Jardinage",
+          "fr-CH": "Jardinage",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "6f81682e-395e-49bb-9ad4-725cadc8bbc1",
+            "slug": "spray",
+            "color": "green",
+            "name": {
+              "en-GB": "spray",
+              "en-US": "spray",
+              "fr-FR": "Arrosage",
+              "fr-CH": "Arrosage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "d7d8fb88-c787-4856-9cba-c1d7bb8b8ef1",
+            "slug": "rake",
+            "color": "green",
+            "name": {
+              "en-GB": "Rake",
+              "en-US": "Rake",
+              "fr-FR": "Ramasser végétaux",
+              "fr-CH": "Ramasser végétaux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "8ade3c1e-7b45-4df6-acd2-62537ac3928c",
+            "slug": "plant",
+            "color": "green",
+            "name": {
+              "en-GB": "Plant",
+              "en-US": "Plant",
+              "fr-FR": "Planter des plantes / fleurs",
+              "fr-CH": "Planter des plantes / fleurs",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "0ad25e57-5e80-4ad4-b8d1-4f6111e0e329",
+            "slug": "mow",
+            "color": "green",
+            "name": {
+              "en-GB": "Mow",
+              "en-US": "Mow",
+              "fr-FR": "Tondre la pelouse / Taille de haie",
+              "fr-CH": "Tondre la pelouse / Taille de haie",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "d7a68a43-80f9-4636-93a3-fb50a0dbb46b",
+        "slug": "purchase-and-delivery",
+        "color": "turquoise",
+        "ordinalPosition": 2,
+        "name": {
+          "en-GB": "Purchase & Delivery",
+          "en-US": "Purchase & Delivery",
+          "fr-FR": "Achats & Livraisons",
+          "fr-CH": "Achats & Livraisons",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "329e4065-2df7-40b4-baca-81de70c19c89",
+            "slug": "heavy-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Heavy Packages",
+              "en-US": "Heavy Packages",
+              "fr-FR": "Colis volumineux",
+              "fr-CH": "Colis volumineux",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "5ecb9f58-aead-450b-a904-6ff3b09ae710",
+            "slug": "light-packages",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Light Packages",
+              "en-US": "Light Packages",
+              "fr-FR": "Colis légers",
+              "fr-CH": "Colis légers",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "4d9d8dff-a054-410a-a3a8-3df3ae315598",
+            "slug": "groceries",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Groceries",
+              "en-US": "Groceries",
+              "fr-FR": "Faire mes courses",
+              "fr-CH": "Faire mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "c38ba0b9-55dc-46e7-9533-d468c1a4080c",
+            "slug": "groceries-pick-up-and-delivery",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Pick up and deliver my groceries",
+              "en-US": "Pick up and deliver my groceries",
+              "fr-FR": "Récupérer et livrer mes courses",
+              "fr-CH": "Récupérer et livrer mes courses",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "01e30a5d-d076-4888-b2de-b86a1947cf8c",
+            "slug": "food",
+            "color": "turquoise",
+            "name": {
+              "en-GB": "Food",
+              "en-US": "Food",
+              "fr-FR": "Nourriture",
+              "fr-CH": "Nourriture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "1788fc05-0d5f-4ec1-af32-24e1bd90b6f7",
+        "slug": "cleaning",
+        "color": "blue",
+        "ordinalPosition": 3,
+        "name": {
+          "en-GB": "Cleaning",
+          "en-US": "Cleaning",
+          "fr-FR": "Nettoyages",
+          "fr-CH": "Nettoyages",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "41c0c2da-dcde-4de4-8998-2adc261e07bb",
+            "slug": "house-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "House cleaning",
+              "en-US": "House cleaning",
+              "fr-FR": "Nettoyage maison / appartement",
+              "fr-CH": "Nettoyage maison / appartement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "bd9e7a6f-7208-445c-a388-40418ae446c0",
+            "slug": "cellar-garage-clenning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Cellar and garage cleaning",
+              "en-US": "Cellar and garage cleaning",
+              "fr-FR": "Nettoyage cave ou garage",
+              "fr-CH": "Nettoyage cave ou garage",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9d3b37e1-1885-45d5-80e6-5d633956f4f8",
+            "slug": "car-washing",
+            "color": "blue",
+            "name": {
+              "en-GB": "Car washing",
+              "en-US": "Car washing",
+              "fr-FR": "Nettoyage voiture",
+              "fr-CH": "Nettoyage voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "c6db0180-23b6-4907-b965-a586f00ff564",
+                "slug": "jeffrey-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "2687e174-33c8-4147-af8a-3c231e7806b8",
+                "slug": "cleancar-car-washing",
+                "color": "blue",
+                "name": {
+                  "en-GB": "CleanCar",
+                  "en-US": "CleanCas",
+                  "fr-FR": "Faire appel à CleanCar",
+                  "fr-CH": "Faire appel à CleanCar",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "ec40721a-1dea-429b-a9b3-71058c67ddd1",
+            "slug": "iron-laundry",
+            "color": "blue",
+            "name": {
+              "en-GB": "Iron Laundry",
+              "en-US": "Car washing",
+              "fr-FR": "Repassage / lessives",
+              "fr-CH": "Repassage / lessives",
+              "ko-KR": "",
+              "ja-JP": ""
+            },
+            "services": [
+              {
+                "id": "8e02f4f1-62d4-4f46-93fe-047326e38d86",
+                "slug": "jeffrey-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "Hire a Jeffrey",
+                  "en-US": "Hire a Jeffrey",
+                  "fr-FR": "Faire appel à un Jeffrey",
+                  "fr-CH": "Faire appel à un Jeffrey",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              },
+              {
+                "id": "0ecbfb01-47c1-40ea-b27f-ac3209549f2e",
+                "slug": "urban-washer-iron-laundry",
+                "color": "blue",
+                "name": {
+                  "en-GB": "UrbanWasher",
+                  "en-US": "UrbanWasher",
+                  "fr-FR": "Faire appel à UrbanWasher",
+                  "fr-CH": "Faire appel à UrbanWasher",
+                  "ko-KR": "",
+                  "ja-JP": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "d17958aa-9d78-4304-a123-e516a89731ae",
+            "slug": "windows-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Windows cleaning",
+              "en-US": "Windows cleaning",
+              "fr-FR": "Nettoyage vitres",
+              "fr-CH": "Nettoyage vitres",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "9b9051f5-9da4-45b2-a857-3ae5abc545c6",
+            "slug": "swimming-pool-cleaning",
+            "color": "blue",
+            "name": {
+              "en-GB": "Swimming pool cleaning",
+              "en-US": "Swimming pool cleaning",
+              "fr-FR": "Nettoyage piscine",
+              "fr-CH": "Nettoyage piscine",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "90bccb20-8912-4815-bbde-6372ccccec7a",
+        "slug": "handiwork-and-moving",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "name": {
+          "en-GB": "Handiwork and moving",
+          "en-US": "Handiwork and moving",
+          "fr-FR": "Bricolages & déménagement",
+          "fr-CH": "Bricolages & déménagement",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "f38d4b43-325b-415c-9a81-c3b0c2d1b49e",
+            "slug": "furniture-construction",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Furniture construction",
+              "en-US": "Furniture construction",
+              "fr-FR": "Construire un meuble",
+              "fr-CH": "Construire un meuble",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "cabfda87-9e87-44db-afaf-e1aaebe4f6a8",
+            "slug": "moving",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Moving",
+              "en-US": "Moving",
+              "fr-FR": "Déménagement",
+              "fr-CH": "Déménagement",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "f7abdc18-14de-4203-9571-0d5a6db2ea54",
+            "slug": "painting",
+            "color": "yellow",
+            "name": {
+              "en-GB": "Painting",
+              "en-US": "Painting",
+              "fr-FR": "Peinture",
+              "fr-CH": "Peinture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      },
+      {
+        "id": "3895213d-c408-4ea8-869a-9a42d0e568c2",
+        "slug": "modern-majordome",
+        "color": "red",
+        "ordinalPosition": 0,
+        "name": {
+          "en-GB": "Modern majordome",
+          "en-US": "Modern majordome",
+          "fr-FR": "Majordome morderne",
+          "fr-CH": "Majordome morderne",
+          "ko-KR": "",
+          "ja-JP": ""
+        },
+        "services": [
+          {
+            "id": "f721bdb4-8144-44a0-ae12-381f58686e81",
+            "slug": "amateur-cook",
+            "color": "red",
+            "name": {
+              "en-GB": "Amateur cook",
+              "en-US": "Amateur cook",
+              "fr-FR": "Cusinier amateur",
+              "fr-CH": "Cusinier amateur",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "421907a1-a769-4a01-b03c-dcb66d8bf583",
+            "slug": "disabled-person-assistance",
+            "color": "red",
+            "name": {
+              "en-GB": "Disabled person assistance",
+              "en-US": "Disabled person assistance",
+              "fr-FR": "Assistance personne à mobilité réduite",
+              "fr-CH": "Assistance personne à mobilité réduite",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "21963076-7fce-4ed0-9482-2b73c7d05e77",
+            "slug": "housekeeping",
+            "color": "red",
+            "name": {
+              "en-GB": "Housekeeping",
+              "en-US": "Housekeeping",
+              "fr-FR": "Gardiennage maison",
+              "fr-CH": "Gardiennage maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "db317680-fc26-4db0-b69e-a61cea9159c3",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "name": {
+              "en-GB": "House tidy up",
+              "en-US": "House tidy up",
+              "fr-FR": "Rangement maison",
+              "fr-CH": "Rangement maison",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "90513025-7556-4972-a567-36ca8b6d619f",
+            "slug": "carless-driver",
+            "color": "red",
+            "name": {
+              "en-GB": "Carless driver",
+              "en-US": "Carless driver",
+              "fr-FR": "Chauffeur sans voiture",
+              "fr-CH": "Chauffeur sans voiture",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "88211405-3cc7-4637-b050-aa8968b25fae",
+            "slug": "guest-service",
+            "color": "red",
+            "name": {
+              "en-GB": "Guest service",
+              "en-US": "Guest service",
+              "fr-FR": "Service invité",
+              "fr-CH": "Service invité",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "f7a31558-82bd-4c17-94e0-4d8b643b6d36",
+            "slug": "personal-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Personal assistant",
+              "en-US": "Personal assistant",
+              "fr-FR": "Assistant personel",
+              "fr-CH": "Assistant personel",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          },
+          {
+            "id": "b0f39357-14b5-4ccf-a0ef-3f5455670f83",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "name": {
+              "en-GB": "Administrative assistant",
+              "en-US": "Administrative assistant",
+              "fr-FR": "Assistant administratif",
+              "fr-CH": "Assistant administratif",
+              "ko-KR": "",
+              "ja-JP": ""
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

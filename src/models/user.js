@@ -24,6 +24,7 @@ import TOSAcceptance    from './tos-acceptance';
 import StripeAccount    from './stripe-account';
 import { getLocale }    from '../locales';
 import i18n             from '../lib/i18n';
+import Country          from './country';
 
 import './postal-address';
 import './business';
@@ -254,6 +255,18 @@ const User = Base.extend({
   }),
 
   /* !GRAPHQL PROPS */
+
+  async country() {
+    const postalAddress = await this.getPostalAddress();
+
+    if (postalAddress) {
+      const countryCode = postalAddress.get('country');
+      if (countryCode) {
+        return Country.findByCode(countryCode);
+      }
+    }
+    return null;
+  },
 
   async stripeAccount(create = true) {
     const stripeAccount = await StripeAccount
