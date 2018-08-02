@@ -51,6 +51,7 @@ what
 nbproject
 Thumbs.db
 .env
+desktop.ini
 
 .elasticbeanstalk/
 dist
