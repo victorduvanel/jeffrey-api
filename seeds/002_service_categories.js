@@ -34,7 +34,6 @@ exports.seed = (knex) => {
       )
         .transacting(trx)
         .catch((err) => {
-          console.log('HERE', serviceId, attributesId);
           onError(err);
         });
     };
@@ -65,7 +64,7 @@ exports.seed = (knex) => {
           id: svc.id,
           slug: svc.slug,
           countryId,
-          color: svc.color,
+          color: svc.color || null,
           parentId,
           rootId,
           ordinalPosition: svc.ordinalPosition !== undefined ? svc.ordinalPosition : null
@@ -80,7 +79,7 @@ exports.seed = (knex) => {
             proms.push(insertAttrs({
               id: attrs.id,
               name: attrs.name,
-              icon: attrs.icon,
+              icon: attrs.icon || null,
               lang,
               serviceCategoryId: svc.id
             }));

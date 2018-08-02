@@ -1,31 +1,222 @@
 {
   "services": {
+    "AE": [
+      {
+        "id": "4d4f0b2e-7993-4fb0-a64d-51eead2fe83c",
+        "slug": "driver",
+        "ordinalPosition": 0,
+        "defaultAttibutesId": "ba828cea-12b6-4edd-9b40-11cbfbb95e16",
+        "attributes": {
+          "en": {
+            "id": "ba828cea-12b6-4edd-9b40-11cbfbb95e16",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/driver.png",
+            "name": "Driver"
+          },
+          "ar": {
+            "id": "c4d59541-2bf1-4e4a-ae6e-7c21b2171397",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/driver.png",
+            "name": "سائق"
+          }
+        },
+        "services": []
+      },
+      {
+        "id": "d2c8cca2-cca5-48f7-883f-21ac27d9b2bf",
+        "slug": "beauty",
+        "ordinalPosition": 1,
+        "defaultAttibutesId": "39926687-17ea-4871-ab21-66d4c16ba36a",
+        "attributes": {
+          "en": {
+            "id": "39926687-17ea-4871-ab21-66d4c16ba36a",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/beauty.png",
+            "name": "Salon Beauty at Home"
+          },
+          "ar": {
+            "id": "24de5d63-5400-42b5-b288-4c04a1c4322b",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/beauty.png",
+            "name": "صالون تجميل في المنزل"
+          }
+        },
+        "services": [
+          {
+            "id": "b9ea52ce-5bbe-4e19-9850-2cb32e8eb28e",
+            "slug": "manucure",
+            "defaultAttibutesId": "630c6f3b-9cf3-4bda-b0e8-9071ccf11fb0",
+            "attributes": {
+              "en": {
+                "id": "630c6f3b-9cf3-4bda-b0e8-9071ccf11fb0",
+                "name": "Manucure"
+              },
+              "ar": {
+                "id": "c3f914cc-8765-4979-8aa5-e4701dd57193",
+                "name": "مانيكير"
+              }
+            }
+          },
+          {
+            "id": "8eea39e5-5693-4a48-a07c-afe0e6108af9",
+            "slug": "french-pedicure",
+            "defaultAttibutesId": "81f4469f-2025-48b7-bf01-17cd4c857164",
+            "attributes": {
+              "en": {
+                "id": "81f4469f-2025-48b7-bf01-17cd4c857164",
+                "name": "French pedicure"
+              },
+              "ar": {
+                "id": "94906081-b7d2-474f-bb74-ef955463b0f8",
+                "name": "باديكير فرنسي"
+              }
+            }
+          },
+          {
+            "id": "f5288cf8-d295-4059-be85-3cb8dd1a26d3",
+            "slug": "haircut",
+            "defaultAttibutesId": "299a5ceb-6932-4243-99a6-20d252999cda",
+            "attributes": {
+              "en": {
+                "id": "299a5ceb-6932-4243-99a6-20d252999cda",
+                "name": "Haircut & brush up"
+              },
+              "ar": {
+                "id": "7655189c-0843-4451-8a41-bbfa4c1f0e5d",
+                "name": "قص الشعر وفرشاة"
+              }
+            }
+          },
+          {
+            "id": "d6d954fd-87f6-4118-9467-f05c9ba84d54",
+            "slug": "party-make-up",
+            "defaultAttibutesId": "067b22fe-62af-479d-b3d7-9557e6d036e5",
+            "attributes": {
+              "en": {
+                "id": "067b22fe-62af-479d-b3d7-9557e6d036e5",
+                "name": "Party make-up"
+              },
+              "ar": {
+                "id": "5cffff46-da09-406f-9d3b-2bff8b8bcb64",
+                "name": "مكياج الطرف"
+              }
+            }
+          },
+          {
+            "id": "a1d02f81-77b0-4db7-8a55-c4ba84247f13",
+            "slug": "waxing",
+            "defaultAttibutesId": "8e8e4e10-200b-47d7-a0a4-928bf0446086",
+            "attributes": {
+              "en": {
+                "id": "8e8e4e10-200b-47d7-a0a4-928bf0446086",
+                "name": "Waxing"
+              },
+              "ar": {
+                "id": "b96c8e80-fafd-40d4-ae94-51da0c67c3d5",
+                "name": "الصبح"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "8d66dc75-05c4-42e3-9c77-9028c580654e",
+        "slug": "handyman",
+        "ordinalPosition": 2,
+        "defaultAttibutesId": "18f25ffb-1ebe-4c48-a461-541f4ebca1d1",
+        "attributes": {
+          "en": {
+            "id": "18f25ffb-1ebe-4c48-a461-541f4ebca1d1",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/handyman.png",
+            "name": "Handyman"
+          },
+          "ar": {
+            "id": "f68c09fd-07a1-43e8-a30e-eb5a9461ffd3",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/handyman.png",
+            "name": "بارع في كل الصنع"
+          }
+        },
+        "services": []
+      },
+      {
+        "id": "784894bf-ad96-4783-9426-dbbdf1b31ea1",
+        "slug": "cleaning",
+        "ordinalPosition": 3,
+        "defaultAttibutesId": "06e5406d-740f-4b45-9b15-5efdfe34b2b2",
+        "attributes": {
+          "en": {
+            "id": "06e5406d-740f-4b45-9b15-5efdfe34b2b2",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/cleaning.png",
+            "name": "Cleaning"
+          },
+          "ar": {
+            "id": "f0178a10-0235-481b-ba45-f7ac7a21bcfa",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/cleaning.png",
+            "name": "تنظيف"
+          }
+        },
+        "services": []
+      },
+      {
+        "id": "f0c2c8d7-8cf9-4a3a-9434-fd3b5cbd8835",
+        "slug": "delivery",
+        "ordinalPosition": 4,
+        "defaultAttibutesId": "fb63b965-3bec-45d2-a8d8-7c291b66ad78",
+        "attributes": {
+          "en": {
+            "id": "fb63b965-3bec-45d2-a8d8-7c291b66ad78",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/delivery.png",
+            "name": "Delivery"
+          },
+          "ar": {
+            "id": "98923ff6-c9d7-4461-9b8c-6a00169b64d9",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/delivery.png",
+            "name": "توصيل"
+          }
+        },
+        "services": []
+      },
+      {
+        "id": "64f7cd9a-f784-49b6-874c-04ee5c8d1284",
+        "slug": "other",
+        "ordinalPosition": 5,
+        "defaultAttibutesId": "b2fb78ac-fbcf-493f-af7b-915611e86bfd",
+        "attributes": {
+          "en": {
+            "id": "b2fb78ac-fbcf-493f-af7b-915611e86bfd",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/other.png",
+            "name": "Other"
+          },
+          "ar": {
+            "id": "65ffbd95-490a-48d4-be3b-3921fda060bb",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/other.png",
+            "name": "آخر"
+          }
+        },
+        "services": []
+      }
+    ],
     "US": [
       {
         "id": "df4e7681-b202-4af7-97fb-72b707349473",
-        "slug": "professional-services",
-        "color": "purple",
+        "slug": "cleaning",
         "ordinalPosition": 6,
         "defaultAttibutesId": "1979702d-0f31-4545-b3ff-39fe826e242b",
         "attributes": {
           "en": {
             "id": "1979702d-0f31-4545-b3ff-39fe826e242b",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
             "name": "Professional Services"
           },
           "fr": {
             "id": "17fe3701-270f-493c-a3ce-3b946785b948",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
             "name": "Services Professionels"
           },
           "ko": {
             "id": "44b5ff1f-ec74-416d-bdba-549c7d566f8d",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
             "name": ""
           },
           "ja": {
             "id": "81d06235-b290-4119-bb8f-3d9e0736a34e",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
             "name": ""
           }
         },
