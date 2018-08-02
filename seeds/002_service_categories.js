@@ -1,9 +1,45 @@
 import Promise    from 'bluebird';
 import categories from './service-categories';
 
+const onError = (err) => {
+  console.error(err);
+  process.exit(1);
+};
+
 exports.seed = (knex) => {
   return knex.transaction((trx) => {
-    const insert = (props) => {
+    const insertAttrs = (props) => {
+      return knex.raw(
+        `INSERT INTO service_category_attributes
+          (id, lang, name, icon, service_category_id, created_at, updated_at)
+          VALUES (:id, :lang, :name, :icon, :serviceCategoryId, NOW(), NOW())
+          ON CONFLICT DO NOTHING
+        `,
+        props
+      )
+        .transacting(trx)
+        .catch(onError);
+    };
+
+    const updateDefaultAttributes = (serviceId, attributesId) => {
+      return knex.raw(
+        `UPDATE service_categories
+          set default_attibutes_id = :attributesId, updated_at = NOW()
+          where id = :serviceId
+        `,
+        {
+          serviceId,
+          attributesId
+        }
+      )
+        .transacting(trx)
+        .catch((err) => {
+          console.log('HERE', serviceId, attributesId);
+          onError(err);
+        });
+    };
+
+    const insertService = (props) => {
       return knex.raw(
         `INSERT INTO service_categories
           (id, country_id, slug, parent_id, root_id, ordinal_position, color, created_at, updated_at)
@@ -18,12 +54,14 @@ exports.seed = (knex) => {
             updated_at = NOW()
         `,
         props
-      ).transacting(trx);
+      )
+        .transacting(trx)
+        .catch(onError);
     };
 
     const saveService = (services, countryId, rootId = null, parentId = null, proms = []) => {
       services.forEach(svc => {
-        proms.push(insert({
+        proms.push(insertService({
           id: svc.id,
           slug: svc.slug,
           countryId,
@@ -32,6 +70,26 @@ exports.seed = (knex) => {
           rootId,
           ordinalPosition: svc.ordinalPosition !== undefined ? svc.ordinalPosition : null
         }));
+
+        if (svc.attributes) {
+          const langs = Object.keys(svc.attributes);
+
+          langs.forEach(lang => {
+            const attrs = svc.attributes[lang];
+
+            proms.push(insertAttrs({
+              id: attrs.id,
+              name: attrs.name,
+              icon: attrs.icon,
+              lang,
+              serviceCategoryId: svc.id
+            }));
+          });
+
+          if (svc.defaultAttibutesId) {
+            proms.push(updateDefaultAttributes(svc.id, svc.defaultAttibutesId));
+          }
+        }
 
         if (svc.services) {
           saveService(svc.services, countryId, rootId || svc.id, svc.id, proms);

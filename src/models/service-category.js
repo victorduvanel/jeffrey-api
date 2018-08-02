@@ -90,6 +90,44 @@ const ServiceCategory = Base.extend({
       }
     }
     return null;
+  },
+
+  async attrs(lang) {
+    if (lang) {
+      const res = await bookshelf.knex('service_category_attributes')
+        .where({
+          service_category_id: this.get('id'),
+          lang
+        });
+      if (res.length) {
+        return {
+          name: res[0].name,
+          icon: res[0].icon
+        };
+      }
+    }
+
+    const res = await bookshelf.knex('service_categories')
+      .select(
+        'service_category_attributes.name',
+        'service_category_attributes.icon'
+      )
+      .leftJoin('service_category_attributes', 'service_categories.default_attibutes_id', 'service_category_attributes.id')
+      .where({
+        'service_categories.id': '01e30a5d-d076-4888-b2de-b86a1947cf8c'
+      });
+
+    if (res.length) {
+      return {
+        name: res[0].name,
+        icon: res[0].icon
+      };
+    }
+
+    return {
+      name: null,
+      icon: null
+    };
   }
 }, {
   find: function(id) {
