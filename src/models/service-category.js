@@ -114,7 +114,7 @@ const ServiceCategory = Base.extend({
       )
       .leftJoin('service_category_attributes', 'service_categories.default_attibutes_id', 'service_category_attributes.id')
       .where({
-        'service_categories.id': '01e30a5d-d076-4888-b2de-b86a1947cf8c'
+        'service_categories.id': this.get('id')
       });
 
     if (res.length) {
