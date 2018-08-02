@@ -3,7 +3,7 @@ import { registerType } from '../registry';
 const def = `
 type ServiceAttributes {
   name: String
-  icon: String!
+  icon: String
 }
 type ServiceCategory {
   id: ID!
