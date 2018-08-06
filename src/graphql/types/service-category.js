@@ -20,7 +20,13 @@ type ServiceCategory {
 
 const resolver = {
   ServiceCategory: {
-    attrs: async (serviceCategory, { lang }) => {
+    attrs: async (serviceCategory, { lang }, { req }) => {
+      if (!lang) {
+        const acceptLanguage = req.headers['accept-language'];
+        if (acceptLanguage) {
+          return serviceCategory.attrs(acceptLanguage.split('-').shift());
+        }
+      }
       return serviceCategory.attrs(lang);
     }
   }
