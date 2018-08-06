@@ -14,7 +14,7 @@ function up(knex) {
       table.string('last_name');
       table.date('date_of_birth');
       table.string('profile_picture');
-      table.string('phone_number');
+      table.string('phone_number').unique();
       table.text('bio');
       table.boolean('is_provider');
       table.boolean('is_available');

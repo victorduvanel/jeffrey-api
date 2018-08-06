@@ -1,5 +1,6 @@
 import _         from 'lodash';
 import uuid      from 'uuid';
+// import i18n      from '../../lib/i18n';
 import bookshelf from '../services/bookshelf';
 import twilio    from '../services/twilio';
 import Base      from './base';
@@ -14,7 +15,7 @@ const PhoneNumberVerificationCode = Base.extend({
 }, {
   verify: async function({ user, phoneNumber, verificationCode }) {
     const code = await this.forge({
-      userId: user.get('id'),
+      userId: user ? user.get('id') : null,
       verificationCode,
       phoneNumber
     })
@@ -24,8 +25,11 @@ const PhoneNumberVerificationCode = Base.extend({
       return false;
     }
 
-    user.set('phoneNumber', phoneNumber);
-    await user.save();
+    if (user) {
+      user.set('phoneNumber', phoneNumber);
+      await user.save();
+    }
+
     await code.destroy();
 
     return true;
@@ -41,7 +45,7 @@ const PhoneNumberVerificationCode = Base.extend({
 
     const code = await this.forge({
       id,
-      userId: user.get('id'),
+      userId: user ? user.get('id') : null,
       verificationCode,
       phoneNumber,
       ip
@@ -49,6 +53,12 @@ const PhoneNumberVerificationCode = Base.extend({
       .save(null, { method: 'insert' });
 
     if (config.PRODUCTION) {
+
+      // i18n[clientLocale].formatMessage({
+      //   id: 'notifications.nextMissionFiveMinutesClientAlert',
+      //   defaultMessage: 'Your Jeffrey will start in 5 minutes'
+      // })
+
       await twilio.messages.create({
         body: `${verificationCode} is your verficiation code for Jeffrey`,
         to: phoneNumber,

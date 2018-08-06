@@ -16,6 +16,11 @@
             "id": "c4d59541-2bf1-4e4a-ae6e-7c21b2171397",
             "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/driver.png",
             "name": "سائق"
+          },
+          "fr": {
+            "id": "09e2c8ac-e5a7-4c00-bbcd-c67211170bd5",
+            "icon": "https://storage.googleapis.com/asia-south1-jffr/static/images/driver.png",
+            "name": "Livraison"
           }
         },
         "services": []
