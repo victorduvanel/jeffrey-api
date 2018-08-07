@@ -9,7 +9,7 @@ import getSchema                     from '../graphql/schema';
 import { InternalError }             from '../graphql/errors';
 import { AppError }                  from '../errors';
 
-// const FAKE_USER = '2b1a5696-11eb-4858-ad1a-6b23c4e478cd';
+//const FAKE_USER = '904e2ad9-d91b-4222-bcd8-4c98e62072b5';
 const FAKE_USER = null;
 
 export default () => {

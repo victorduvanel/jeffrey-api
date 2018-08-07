@@ -19,3 +19,4 @@ import './current-location';
 import './payment-method';
 import './new-review';
 import './conversation-seen';
+import './new-mission-request';

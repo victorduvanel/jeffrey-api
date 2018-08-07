@@ -691,6 +691,8 @@ const User = Base.extend({
   create: async function(props) {
     const id = uuid.v4();
 
+    props.isProvider = props.isProvider || false;
+
     return this.forge({ id, ...props })
       .save(null, { method: 'insert' })
       .catch((err) => {
