@@ -331,8 +331,10 @@ const Mission = Base.extend({
     const missions = await Mission
       .query((qb) => {
         qb.where('client_id', '=', user.get('id'));
-        qb.where('provider_id', '=', providerId);
-        qb.where('status', '=', 'terminated');
+        if (providerId) {
+          qb.where('provider_id', '=', providerId);
+        }
+        // qb.where('status', '=', 'terminated');
       })
       .fetchAll();
 
