@@ -37,9 +37,11 @@ const PendingUser = Base.extend({
       .save(null, { method: 'insert' });
 
     const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
+    const activationLink = `${prefix}activate/${id}`;
+    const appRedirectLink = `${config.webappProtocol}://${config.webappHost}/app-link?link=${encodeURIComponent(activationLink)}`;
 
     const message = await mjml.render('email/register', locale, {
-      activationLink: `${prefix}activate/${id}`,
+      activationLink: appRedirectLink
     });
 
     return sendEmail({

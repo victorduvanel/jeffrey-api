@@ -580,6 +580,8 @@ const User = Base.extend({
     const loginToken = await LoginToken.create({ user: this });
 
     const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
+    const loginLink = `${prefix}login/${loginToken.get('id')}`;
+    const appRedirectLink = `${config.webappProtocol}://${config.webappHost}/app-link?link=${encodeURIComponent(loginLink)}`;
 
     const message = await mjml.render('email/login', locale, {
       user: {
@@ -587,7 +589,7 @@ const User = Base.extend({
         lastName: this.get('lastName'),
         gender: this.get('gender')
       },
-      loginLink: `${prefix}login/${loginToken.get('id')}`,
+      loginLink: appRedirectLink
     });
 
     return sendEmail({
