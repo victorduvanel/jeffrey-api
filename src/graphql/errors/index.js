@@ -5,6 +5,10 @@ export const Unauthorized = () => {
   return new AppError('Unauthorized');
 };
 
+export const NotFound = () => {
+  return new AppError('Not Found');
+};
+
 export const InternalError = (originalError) => {
   const err = new GraphQLError(
     'Internal Error',

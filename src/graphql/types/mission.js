@@ -22,8 +22,10 @@ input MissionDetails {
 type Mission {
   id: ID!
   status: MissionStatus!
-  client: User!
-  provider: User!
+  client: User
+  provider: User
+  paymentMethod: String
+  location: String
   price: Int!
   currency: Currency!
   startDate: Date!

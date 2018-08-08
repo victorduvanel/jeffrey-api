@@ -81,6 +81,14 @@ const Mission = Base.extend({
     return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
   },
 
+  paymentMethod() {
+    return this.get('paymentMethod');
+  },
+
+  location() {
+    return this.get('location');
+  },
+
   /* !graphql props */
 
   client() {
