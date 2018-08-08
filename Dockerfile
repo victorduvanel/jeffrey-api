@@ -1,4 +1,4 @@
-FROM node:10.6.0
+FROM node:10.8.0
 MAINTAINER William Riancho <william@reptilians.io>
 
 RUN apt-get update
@@ -10,7 +10,7 @@ RUN rm wkhtmltox_0.12.5-1.jessie_amd64.deb
 
 WORKDIR /app
 ADD package.json package-lock.json ./
-RUN npm install -g npm@6.2.0
+RUN npm install -g npm@6.3.0
 RUN npm install
 
 ADD . .
