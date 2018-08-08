@@ -368,7 +368,7 @@ const User = Base.extend({
     await stripe.accounts.update(stripeAccount.get('id'), accountAttributes);
   },
 
-  createAccessToken({ singleUse = false }) {
+  createAccessToken({ singleUse = false } = {}) {
     return AccessToken.create({ user: this, singleUse });
   },
 
@@ -580,6 +580,8 @@ const User = Base.extend({
     const loginToken = await LoginToken.create({ user: this });
 
     const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
+    const loginLink = `${prefix}login/${loginToken.get('id')}`;
+    const appRedirectLink = `${config.webappProtocol}://${config.webappHost}/app-link?link=${encodeURIComponent(loginLink)}`;
 
     const message = await mjml.render('email/login', locale, {
       user: {
@@ -587,7 +589,7 @@ const User = Base.extend({
         lastName: this.get('lastName'),
         gender: this.get('gender')
       },
-      loginLink: `${prefix}login/${loginToken.get('id')}`,
+      loginLink: appRedirectLink
     });
 
     return sendEmail({
@@ -691,6 +693,8 @@ const User = Base.extend({
   create: async function(props) {
     const id = uuid.v4();
 
+    props.isProvider = props.isProvider || false;
+
     return this.forge({ id, ...props })
       .save(null, { method: 'insert' })
       .catch((err) => {
@@ -730,6 +734,18 @@ const User = Base.extend({
       .fetchAll();
 
     return providers;
+  },
+
+  findOrCreateFromPhoneNumber: async function(phoneNumber) {
+    const user = await User.where({
+      phone_number: phoneNumber
+    }).fetch();
+
+    if (user) {
+      return user;
+    }
+
+    return User.create({ phoneNumber });
   }
 });
 

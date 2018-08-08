@@ -12,6 +12,20 @@ function up(knex) {
       'CHF'
     ]);
 
+    table.text('description');
+
+    table.enum('payment_method', [
+      'credit-card-at-delivery',
+      'credit-card-in-app',
+      'cash-at-delivery',
+      'paypal'
+    ]);
+
+    table.float('lat');
+    table.float('lng');
+
+    table.string('location');
+
     table
       .uuid('provider_id')
       .references('users.id')

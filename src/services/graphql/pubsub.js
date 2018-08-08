@@ -32,4 +32,9 @@ export const conversationNewMessageActivityTopic = (userId) => {
   return `${CONVERSATION_NEW_MESSAGE_ACTIVITY_TOPIC}.${userId}`;
 };
 
+const NEW_MISSION_REQUEST_TOPIC = 'NEW_MISSION_REQUEST_TOPIC';
+export const newMissionRequestTopic = (userId) => {
+  return `${NEW_MISSION_REQUEST_TOPIC }.${userId}`;
+};
+
 export default pubsub;

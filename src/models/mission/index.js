@@ -257,13 +257,30 @@ const Mission = Base.extend({
     } else {
       throw new Error(`Invalid stripe payment status: ${r.status}`);
     }
+  },
+
+  async findProvider() {
+    const providers = await User.where({ is_provider: true }).fetchAll();
+    console.log(providers);
   }
 }, {
   find: function(id) {
     return this.forge({ id }).fetch();
   },
 
-  create: async function({ startDate, price, currency, provider, client, serviceCategory }) {
+  create: async function({
+    startDate,
+    price = null,
+    currency = null,
+    provider = null,
+    client,
+    serviceCategory,
+    description = null,
+    paymentMethod = null,
+    lat = null,
+    lng = null,
+    location = null
+  }) {
     const id = uuid.v4();
 
     const mission = await Mission
@@ -273,32 +290,40 @@ const Mission = Base.extend({
         price,
         usersNotified: false,
         priceCurrency: currency,
-        providerId: provider.get('id'),
+        providerId: provider ? provider.get('id') : null,
         clientId: client.get('id'),
         serviceCategoryId: serviceCategory.get('id'),
-        status: 'pending'
+        status: 'pending',
+        description,
+        paymentMethod,
+        lat,
+        lng,
+        location
       })
       .save(null, { method: 'insert' });
 
-    const firstName = provider.get('firstName');
+    if (provider) {
+      const firstName = provider.get('firstName');
 
-    client.sendMessage({
-      body: firstName ? `${firstName} sent you a new quote` : 'New quote'
-    });
+      client.sendMessage({
+        body: firstName ? `${firstName} sent you a new quote` : 'New quote'
+      });
 
-    pubsub.publish(
-      conversationNewMissionActivityTopic(client.get('id')),
-      {
-        newMission: mission.id
-      }
-    );
+      pubsub.publish(
+        conversationNewMissionActivityTopic(client.get('id')),
+        {
+          newMission: mission.id
+        }
+      );
 
-    pubsub.publish(
-      conversationNewMissionActivityTopic(provider.get('id')),
-      {
-        newMission: mission.id
-      }
-    );
+      pubsub.publish(
+        conversationNewMissionActivityTopic(provider.get('id')),
+        {
+          newMission: mission.id
+        }
+      );
+    }
+
     return mission;
   },
 
@@ -306,8 +331,10 @@ const Mission = Base.extend({
     const missions = await Mission
       .query((qb) => {
         qb.where('client_id', '=', user.get('id'));
-        qb.where('provider_id', '=', providerId);
-        qb.where('status', '=', 'terminated');
+        if (providerId) {
+          qb.where('provider_id', '=', providerId);
+        }
+        // qb.where('status', '=', 'terminated');
       })
       .fetchAll();
 

@@ -1,15 +1,12 @@
-import oauth2     from '../middlewares/oauth2';
-import bodyParser from 'body-parser';
+import bodyParser                  from 'body-parser';
 import PhoneNumberVerificationCode from '../models/phone-number-verification-code';
+import User                        from '../models/user';
 
 export const post = [
-  oauth2,
   bodyParser.json(),
   async (req, res) => {
-    const { user } = req;
     const phoneNumber = req.body['phone-number'];
     await PhoneNumberVerificationCode.create({
-      user,
       phoneNumber,
       ip: req.ip
     });
@@ -19,19 +16,27 @@ export const post = [
 
 export const verify = {
   post: [
-    oauth2,
     bodyParser.json(),
     async (req, res) => {
-      const { user } = req;
       const phoneNumber = req.body['phone-number'];
       const verificationCode = req.body.code;
 
-      const success = await PhoneNumberVerificationCode.verify({
-        user,
+      if (await PhoneNumberVerificationCode.verify({
         phoneNumber,
         verificationCode
+      })) {
+        const user = await User.findOrCreateFromPhoneNumber(phoneNumber);
+        const accessToken = await user.createAccessToken();
+        res.send({
+          access_token: accessToken.get('token'),
+          token_type: 'Bearer'
+        });
+        return;
+      }
+
+      res.send({
+        success: false
       });
-      res.send({ success });
     }
   ]
 };

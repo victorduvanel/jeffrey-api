@@ -21,6 +21,8 @@ import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
 
+// import pubsub                          from './services/graphql/pubsub';
+
 import './graphql/types';
 import './graphql/mutations';
 import './graphql/subscriptions';
@@ -50,6 +52,13 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
+  // pubsub.publish(
+  //   'toto',
+  //   {
+  //     missionRequest: 'a567b720-459e-498b-b6c9-46b4822a5aef'
+  //   }
+  // );
+
   res.send({
     hello: 'world'
   });
@@ -92,7 +101,7 @@ get('/reset-password/:token', routes.resetPassword.get);
 get('/ms', routes.ms.get);
 get('/fixture/messages', routes.fixtureMessages.get);
 post('/apple/ios-receipt', routes.apple.iosReceipt.post);
-get('/app-link/*', routes.appLink.get);
+get('/app-link', routes.appLink.get);
 get('/app-redirect/:action', routes.appRedirect.get);
 post('/profile-pic', routes.profilePic.post);
 post('/user-documents', routes.userDocuments.post);

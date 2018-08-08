@@ -11,6 +11,14 @@ enum MissionStatus {
   confirmed
   terminated
 }
+input MissionDetails {
+  categoryId: ID!
+  description: String
+  lat: Float!
+  lng: Float!
+  location: String!
+  paymentMethod: String!
+}
 type Mission {
   id: ID!
   status: MissionStatus!
