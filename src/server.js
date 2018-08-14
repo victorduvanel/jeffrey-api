@@ -21,8 +21,6 @@ import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
 
-// import pubsub                          from './services/graphql/pubsub';
-
 import './graphql/types';
 import './graphql/mutations';
 import './graphql/subscriptions';
@@ -52,13 +50,6 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
-  // pubsub.publish(
-  //   'toto',
-  //   {
-  //     missionRequest: 'a567b720-459e-498b-b6c9-46b4822a5aef'
-  //   }
-  // );
-
   res.send({
     hello: 'world'
   });

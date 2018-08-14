@@ -5,14 +5,10 @@ import { GraphQLError }     from 'graphql';
 import Mission              from '../../models/mission';
 import Review               from '../../models/review';
 
-const def = 'newReview(rank: String!, message: String!, authorId: ID!, missionId: ID!): Boolean';
+const def = 'newReview(rank: String!, message: String!, missionId: ID!): Boolean';
 
-const newReview = async (_, { rank, message, authorId, missionId }, { user }) => {
+const newReview = async (_, { rank, message, missionId }, { user }) => {
   const mission = await Mission.find(missionId);
-
-  if (user.get('id') !== authorId) {
-    throw new GraphQLError('The connected user must be the author of the comment');
-  }
 
   if (!mission) {
     throw new GraphQLError('Mission not found');
@@ -22,7 +18,7 @@ const newReview = async (_, { rank, message, authorId, missionId }, { user }) =>
     Review.create({
       rank,
       message,
-      authorId,
+      authorId: user.get('id'),
       missionId
     });
     return true;

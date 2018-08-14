@@ -20,3 +20,5 @@ import './payment-method';
 import './new-review';
 import './conversation-seen';
 import './new-mission-request';
+import './accept-mission';
+import './mission-paid';

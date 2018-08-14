@@ -1,6 +1,5 @@
 import './date';
 import './message';
-import './currency';
 import './business';
 import './user';
 import './country';

@@ -3,14 +3,7 @@ function up(knex) {
     table.uuid('id').primary();
 
     table.integer('price');
-    table.enum('price_currency', [
-      'GBP',
-      'EUR',
-      'USD',
-      'KRW',
-      'JPY',
-      'CHF'
-    ]);
+    table.string('price_currency');
 
     table.text('description');
 
