@@ -12,7 +12,7 @@ type ServiceCategory {
   subCategories: [ServiceCategory]
   root: ServiceCategory
   parent: ServiceCategory
-  avgPrice(currency: Currency!): Price
+  avgPrice(currency: String!): Price
   providerPrice: Price
   attrs(lang: String): ServiceAttributes
 }
@@ -20,12 +20,9 @@ type ServiceCategory {
 
 const resolver = {
   ServiceCategory: {
-    attrs: async (serviceCategory, { lang }, { req }) => {
-      if (!lang) {
-        const acceptLanguage = req.headers['accept-language'];
-        if (acceptLanguage) {
-          return serviceCategory.attrs(acceptLanguage.split('-').shift());
-        }
+    attrs: async (serviceCategory, { lang }, { locale }) => {
+      if (!lang && locale) {
+        return serviceCategory.attrs(locale.split('-').shift());
       }
       return serviceCategory.attrs(lang);
     }

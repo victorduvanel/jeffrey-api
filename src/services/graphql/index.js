@@ -10,7 +10,7 @@ export const subscriptionServer = (websocketServer) => {
     schema,
     execute,
     subscribe,
-    onConnect: async ({ token }, socket) => {
+    onConnect: async ({ token, locale }, socket) => {
       if (!token) {
         socket.close();
         return;
@@ -21,7 +21,12 @@ export const subscriptionServer = (websocketServer) => {
           const accessToken = await AccessToken.find(token);
           if (accessToken) {
             const user = accessToken.related('user');
-            return { user };
+            const req = socket.upgradeReq;
+            return {
+              req,
+              user,
+              locale
+            };
           }
         }
       } catch (err) {

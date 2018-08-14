@@ -23,6 +23,8 @@ const newMissionRequest = async (_, { details }, { user }) => {
 
   const mission = await Mission.create({
     startDate: new Date(),
+    currency: 'AED',
+    price: 1000,
     client: user,
     serviceCategory,
     description,

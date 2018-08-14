@@ -5,7 +5,7 @@ import ServiceCategory      from '../../models/service-category';
 import { registerMutation } from '../registry';
 import auth                 from '../middlewares/auth';
 
-const def = 'setHourlyRate(serviceCategoryId: ID!, price: Int!, currency: Currency!): Boolean';
+const def = 'setHourlyRate(serviceCategoryId: ID!, price: Int!, currency: String!): Boolean';
 
 const setHourlyRate = async (_, { serviceCategoryId, price, currency }, { user }) => {
   const serviceCategory = await ServiceCategory.find(serviceCategoryId);

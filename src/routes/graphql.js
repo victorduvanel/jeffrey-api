@@ -29,11 +29,14 @@ export default () => {
       return next();
     },
     async (req, res, next) => {
+      const acceptLanguage = req.headers['accept-language'];
+
       graphqlExpress({
         schema,
         context: {
           req,
-          user: req.user
+          user: req.user,
+          locale: acceptLanguage
         },
         // debug: false,
         tracing: config.PRODUCTION,

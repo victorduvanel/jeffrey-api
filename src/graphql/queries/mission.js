@@ -9,7 +9,7 @@ const def = 'mission(missionId: ID!): Mission';
 const mission = async (_, { missionId }, { user }) => {
   const mission = await Mission.find(missionId);
 
-  if (!mission || user.get('id') !== mission.get('clientId')) {
+  if (!mission || !(user.get('id') === mission.get('clientId') || user.get('id') === mission.get('providerId'))) {
     throw Unauthorized();
   }
 

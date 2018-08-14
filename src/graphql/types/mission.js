@@ -24,10 +24,11 @@ type Mission {
   status: MissionStatus!
   client: User
   provider: User
+  description: String
   paymentMethod: String
   location: String
   price: Int!
-  currency: Currency!
+  currency: String!
   startDate: Date!
   startedDate: Date
   endedDate: Date

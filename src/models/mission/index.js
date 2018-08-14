@@ -12,7 +12,9 @@ import pubsub, {
   conversationNewMissionActivityTopic,
   conversationMissionStatusChangedActivityTopic,
   conversationEndedMissionActivityTopic,
-  conversationStartedMissionActivityTopic
+  conversationStartedMissionActivityTopic,
+  newMissionRequestTopic,
+  missionShouldStartActivityTopic
 } from '../../services/graphql/pubsub';
 
 import { Unauthorized } from '../../graphql/errors';
@@ -89,6 +91,10 @@ const Mission = Base.extend({
     return this.get('location');
   },
 
+  description() {
+    return this.get('description');
+  },
+
   /* !graphql props */
 
   client() {
@@ -110,15 +116,20 @@ const Mission = Base.extend({
     const client = this.related('client');
 
     const providerLocale = getLocale(provider.get('locale'));
-    await provider.pushNotification({
+    provider.pushNotification({
       body: i18n[providerLocale].formatMessage({
         id: 'notifications.nextMissionFiveMinutesProviderAlert',
         defaultMessage: 'Your next mission starts in 5 minutes'
       })
     });
 
+    pubsub.publish(
+      missionShouldStartActivityTopic(provider.get('id')),
+      { missionShouldStart: this.id }
+    );
+
     const clientLocale = getLocale(client.get('locale'));
-    await client.pushNotification({
+    client.pushNotification({
       body: i18n[clientLocale].formatMessage({
         id: 'notifications.nextMissionFiveMinutesClientAlert',
         defaultMessage: 'Your Jeffrey will start in 5 minutes'
@@ -153,6 +164,33 @@ const Mission = Base.extend({
         { endedMission: this.id }
       );
     });
+  },
+
+  async setProvider(provider) {
+    const res = await knex('missions')
+      .update({
+        status: 'accepted',
+        provider_id: provider.get('id'),
+        updated_at: knex.raw('NOW()')
+      })
+      .where('id', this.get('id'))
+      .whereNull('provider_id');
+
+    await this.refresh();
+
+    if (res === 1) {
+      pubsub.publish(
+        conversationMissionStatusChangedActivityTopic(this.get('clientId')),
+        {
+          missionStatus: this.id
+        }
+      );
+
+      await this.send5minNotif();
+      return true;
+    }
+
+    return false;
   },
 
   async setStatus(newStatus, user) {
@@ -222,6 +260,9 @@ const Mission = Base.extend({
       case 'CHF':
         assert(totalCost < 40000, 'Payment amount limited to 400');
         break;
+      case 'AED':
+        assert(totalCost < 150000, 'Payment amount limited to 1500');
+        break;
       case 'JPY':
         assert(totalCost < 5000000, 'Payment amount limited to ¥50000');
         break;
@@ -269,7 +310,15 @@ const Mission = Base.extend({
 
   async findProvider() {
     const providers = await User.where({ is_provider: true }).fetchAll();
-    console.log(providers);
+
+    providers.forEach((provider) => {
+      pubsub.publish(
+        newMissionRequestTopic(provider.get('id')),
+        {
+          missionRequest: this.get('id')
+        }
+      );
+    });
   }
 }, {
   find: function(id) {

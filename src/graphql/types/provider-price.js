@@ -4,7 +4,7 @@ const def = `
 type ProviderPrice {
   id: ID!
   price: Int!
-  currency: Currency!
+  currency: String!
 }
 `;
 
