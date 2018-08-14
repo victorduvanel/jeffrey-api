@@ -35,6 +35,7 @@ DROP TABLE
   provider_prices,
   users,
   service_categories,
+  service_category_attributes,
   missions
 CASCADE
 EOF
