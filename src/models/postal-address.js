@@ -16,13 +16,6 @@ const PostalAddress = Base.extend({
   },
 
   async update(params) {
-    const { country } = params;
-    if (typeof country === 'string') {
-      if (!['US', 'FR', 'JP', 'KR', 'US', 'CH'].includes(country)) {
-        throw new Error('Invalid country');
-      }
-    }
-
     const props = [
       'city',
       'country',
