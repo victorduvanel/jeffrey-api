@@ -3,18 +3,24 @@ import moment           from 'moment';
 import request          from 'request-promise';
 import nativeBcrypt     from 'bcryptjs';
 import uuid             from 'uuid';
+
 import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
 import knex             from '../services/knex';
 import stripe           from '../services/stripe';
 import braintree        from '../services/braintree';
-import Base             from './base';
-import AccessToken      from './access-token';
 import googleService    from '../services/google';
 import * as mjml        from '../services/mjml';
 import { sendEmail }    from '../services/mailgun';
-import LoginToken       from './login-token';
+
+import { getLocale }    from '../locales';
+import i18n             from '../lib/i18n';
+
 import config           from '../config';
+
+import Base             from './base';
+import AccessToken      from './access-token';
+import LoginToken       from './login-token';
 import UserDocument     from './user-document';
 import ServiceCategory  from './service-category';
 import PostalAddress    from './postal-address';
@@ -23,8 +29,6 @@ import Review           from './review';
 import UserDevice       from './user-device';
 import TOSAcceptance    from './tos-acceptance';
 import StripeAccount    from './stripe-account';
-import { getLocale }    from '../locales';
-import i18n             from '../lib/i18n';
 import Country          from './country';
 
 import './postal-address';
