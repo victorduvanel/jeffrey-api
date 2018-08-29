@@ -1,4 +1,5 @@
 import bodyParser  from 'body-parser';
+import braintree   from '../services/braintree';
 import oauth2      from '../middlewares/oauth2';
 import StripeCard  from '../models/stripe-card';
 
@@ -36,22 +37,48 @@ export const post = [
   async (req, res) => {
     const { user, body } = req;
 
-    const cardHolderName = body['card-holder-name'];
-    const cardNumber = body['card-number'];
-    const cardExpiryMonth = body['card-expiry-month'];
-    const cardExpiryYear = body['card-expiry-year'];
-    const cvv = body.cvv;
+    if (body.type === 'PayPalAccount') {
+      await user.braintreeCustomer();
 
-    await StripeCard.create({
-      user,
-      card: {
-        number: cardNumber,
-        expMonth: cardExpiryMonth,
-        expYear: cardExpiryYear,
-        cvc: cvv,
-        holderName: cardHolderName
+      const result = await braintree.paymentMethod.create({
+        customerId: user.get('id'),
+        paymentMethodNonce: body.nonce
+      });
+
+      // ########### TO CHARGE ###########
+      //
+      // gateway.transaction.sale({
+      //   amount: '10.00',
+      //   customerId: 'customer_123',
+      // })
+      //   .then(...);
+
+      if (result.success) {
+        console.log(result.paymentMethod.email);
+      } else {
+        res.send({
+          success: false
+        });
+        return;
       }
-    });
+    } else {
+      const cardHolderName = body['card-holder-name'];
+      const cardNumber = body['card-number'];
+      const cardExpiryMonth = body['card-expiry-month'];
+      const cardExpiryYear = body['card-expiry-year'];
+      const cvv = body.cvv;
+
+      await StripeCard.create({
+        user,
+        card: {
+          number: cardNumber,
+          expMonth: cardExpiryMonth,
+          expYear: cardExpiryYear,
+          cvc: cvv,
+          holderName: cardHolderName
+        }
+      });
+    }
 
     res.send({
       success: true

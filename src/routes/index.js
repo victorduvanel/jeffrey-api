@@ -26,6 +26,7 @@ import * as cron            from './cron';
 import * as payoutAlert     from './payout-alert';
 import * as processPayout   from './process-payout';
 import * as info            from './info';
+import * as pay             from './pay';
 
 export default {
   oauth, me, activate, signup,
@@ -37,5 +38,5 @@ export default {
   userDevice, ping, phoneNumber,
   bankAccounts, providers,
   stripe, logout, cron, payoutAlert,
-  processPayout, info
+  processPayout, info, pay
 };

@@ -107,6 +107,7 @@ post('/providers', routes.providers.post);
 
 post('/stripe/webhook', routes.stripe.webhook.post);
 
+get('/pay', routes.pay.get);
 
 let _listenProm = null;
 export const listen = () => {

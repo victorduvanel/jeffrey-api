@@ -7,6 +7,7 @@ import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
 import knex             from '../services/knex';
 import stripe           from '../services/stripe';
+import braintree        from '../services/braintree';
 import Base             from './base';
 import AccessToken      from './access-token';
 import googleService    from '../services/google';
@@ -266,6 +267,20 @@ const User = Base.extend({
       }
     }
     return null;
+  },
+
+  async braintreeCustomer() {
+    try {
+      return await braintree.customer.find(this.get('id'));
+    } catch (err) {
+      if (err.type === 'notFoundError') {
+        const res = await braintree.customer.create({
+          id: this.get('id')
+        });
+        return res.customer;
+      }
+      throw err;
+    }
   },
 
   async stripeAccount(create = true) {

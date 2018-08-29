@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Pay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <div id="paypal-button"></div>
+
+    {{!-- Load PayPal's checkout.js Library. --}}
+    <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+
+    {{!-- Load the client component. --}}
+    <script src="https://js.braintreegateway.com/web/3.36.0/js/client.min.js"></script>
+
+    {{!-- Load the PayPal Checkout component. --}}
+    <script src="https://js.braintreegateway.com/web/3.36.0/js/paypal-checkout.min.js"></script>
+
+    <script>
+function main() {
+  braintree.client.create({
+    authorization: '{{ clientAuthorization }}'
+  })
+    .then(function (clientInstance) {
+      return braintree.paypalCheckout.create({
+        client: clientInstance
+      });
+    })
+    .then(function (paypalCheckoutInstance) {
+      return paypal.Button.render({
+        env: '{{ env }}',
+        locale: '{{ locale }}',
+
+        {{!-- color = gold, blue, silver, black --}}
+        {{!-- shape = rect, pill --}}
+        {{!-- size = small, medium, large, responsive --}}
+        style: {
+          size: 'responsive',
+          color: 'silver',
+          shape: 'rect'
+        },
+        payment: function () {
+          return paypalCheckoutInstance.createPayment({
+            flow: 'vault',
+            billingAgreementDescription: '{{ agreementDescription }}',
+            enableShippingAddress: false,
+            shippingAddressEditable: false
+          });
+        },
+        onAuthorize: function (data, actions) {
+          return paypalCheckoutInstance.tokenizePayment(data)
+            .then(function (payload) {
+              window.postMessage(JSON.stringify(payload), '*');
+            });
+        },
+
+        {{!--
+          onCancel: function (data) {
+            console.log('checkout.js payment cancelled', JSON.stringify(data, 0, 2));
+          },
+
+          onError: function (err) {
+            console.error('checkout.js error', err);
+          }
+        --}}
+      }, '#paypal-button');
+    });
+    {{!--
+      .catch(function (err) {
+        console.error(err);
+        // Handle component creation error
+      });
+    --}}
+}
+main();
+    </script>
+  </body>
+</html>

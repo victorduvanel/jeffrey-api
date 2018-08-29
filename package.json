@@ -31,6 +31,7 @@
     "bluebird": "3.5.1",
     "body-parser": "1.18.3",
     "bookshelf": "0.13.3",
+    "braintree": "^2.12.0",
     "busboy": "0.2.14",
     "canvas": "1.6.11",
     "cassandra-driver": "3.5.0",
