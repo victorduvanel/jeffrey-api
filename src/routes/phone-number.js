@@ -8,7 +8,8 @@ export const post = [
     const phoneNumber = req.body['phone-number'];
     await PhoneNumberVerificationCode.create({
       phoneNumber,
-      ip: req.ip
+      ip: req.ip,
+      intl: req.intl
     });
     res.send({ success: true });
   }

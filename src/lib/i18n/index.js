@@ -19,7 +19,8 @@ export const loadLocale = (locale, messages) => {
       if (formattedMessages[id]) {
         return formattedMessages[id].format(values);
       }
-      return defaultMessage;
+      console.warn(`translation is mission for key '${id}' for locale '${locale}'`);
+      return (new IntlMessageFormat(defaultMessage, locale)).format(values);
     },
     formatNumber: (value, props) => {
       return new Intl.NumberFormat(locale, props).format(value);

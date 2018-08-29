@@ -5,5 +5,6 @@
   "emails.confirmEmail.from": "\"Jeffrey\" <noreply@jeffrey.app>",
   "emails.confirmEmail.subject": "Jeffrey - Confirm your email address",
   "notifications.nextMissionFiveMinutesProviderAlert": "Your next mission starts in 5 minutes",
-  "notifications.nextMissionFiveMinutesClientAlert": "Your Jeffrey will start in 5 minutes"
+  "notifications.nextMissionFiveMinutesClientAlert": "Your Jeffrey will start in 5 minutes",
+  "phoneNumberVerification.smsMessage": "{verificationCode} is your verficiation code for {serviceName}"
 }

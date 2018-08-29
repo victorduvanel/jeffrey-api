@@ -1,6 +1,5 @@
 import _         from 'lodash';
 import uuid      from 'uuid';
-// import i18n      from '../../lib/i18n';
 import bookshelf from '../services/bookshelf';
 import twilio    from '../services/twilio';
 import Base      from './base';
@@ -35,7 +34,7 @@ const PhoneNumberVerificationCode = Base.extend({
     return true;
   },
 
-  create: async function({ user, phoneNumber, ip }) {
+  create: async function({ user, phoneNumber, ip, intl }) {
     const id = uuid.v4();
     let verificationCode = '';
 
@@ -52,20 +51,23 @@ const PhoneNumberVerificationCode = Base.extend({
     })
       .save(null, { method: 'insert' });
 
+    const message = intl.formatMessage({
+      id: 'phoneNumberVerification.smsMessage',
+      defaultMessage: '{verificationCode} is your verficiation code for {serviceName}',
+      values: {
+        verificationCode,
+        serviceName: config.app.name
+      }
+    });
+
     if (config.PRODUCTION) {
-
-      // i18n[clientLocale].formatMessage({
-      //   id: 'notifications.nextMissionFiveMinutesClientAlert',
-      //   defaultMessage: 'Your Jeffrey will start in 5 minutes'
-      // })
-
       await twilio.messages.create({
-        body: `${verificationCode} is your verficiation code for Jeffrey`,
+        body: message,
         to: phoneNumber,
-        from: 'Jeffrey'
+        from: config.app.name
       });
     } else {
-      console.log(`${verificationCode} is your verficiation code for Jeffrey`);
+      console.log(message);
     }
 
     return code;

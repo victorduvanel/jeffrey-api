@@ -8,7 +8,8 @@ const phoneNumber = async (_, { phoneNumber }, { req, user }) => {
   await PhoneNumberVerificationCode.create({
     user,
     phoneNumber,
-    ip: req.ip
+    ip: req.ip,
+    intl: req.intl
   });
   return true;
 };

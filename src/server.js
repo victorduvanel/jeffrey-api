@@ -15,6 +15,7 @@ import routes                          from './routes';
 import { subscriptionServer }          from './services/graphql';
 
 import logger                          from './middlewares/logger';
+import i18n                            from './middlewares/i18n';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
@@ -42,7 +43,14 @@ if (config.PRODUCTION) {
   app.enable('trust proxy');
 }
 
-app.use(logger, corsPolicy, router, notFound, errorHandler);
+app.use(
+  logger,
+  corsPolicy,
+  i18n,
+  router,
+  notFound,
+  errorHandler
+);
 
 httpServer.on('request', app);
 
