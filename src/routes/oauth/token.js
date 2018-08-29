@@ -1,8 +1,9 @@
 import basicAuth  from 'basic-auth';
 import bodyParser from 'body-parser';
-import User, { InvalidCredentials } from '../../models/user';
+import User       from '../../models/user';
 import LoginToken from '../../models/login-token';
-import { Unauthorized, BadRequest, InvalidUserCredentials } from '../../errors';
+import { AppError, Unauthorized, BadRequest, InvalidUserCredentials } from '../../errors';
+
 
 export const post = [
   bodyParser.urlencoded({ extended: false }),
@@ -61,7 +62,7 @@ export const post = [
         token_type: 'Bearer'
       });
     } catch (err) {
-      if (err === InvalidCredentials) {
+      if (err instanceof AppError && err.message === 'Invalid Credentials') {
         throw InvalidUserCredentials;
       } else {
         throw err;
