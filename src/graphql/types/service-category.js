@@ -12,7 +12,7 @@ type ServiceCategory {
   subCategories: [ServiceCategory]
   root: ServiceCategory
   parent: ServiceCategory
-  avgPrice(currency: String!): Price
+  avgPrice: Price
   providerPrice: Price
   attrs(lang: String): ServiceAttributes
 }
