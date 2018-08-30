@@ -648,7 +648,7 @@ const User = Base.extend({
   facebookAuthenticate: async function(token) {
     const response = await request({
       method: 'GET',
-      uri: 'https://graph.facebook.com/v2.12/me?fields=id,first_name,last_name,email,verified',
+      uri: 'https://graph.facebook.com/v3.1/me?fields=id,first_name,last_name,email',
       auth: {
         bearer: token
       },
@@ -659,22 +659,35 @@ const User = Base.extend({
 
     const facebookUser = JSON.parse(response);
 
-    if (!facebookUser.verified) {
-      throw new Error('user not verified');
-    }
-
     let user = await this.forge({
       facebookId: facebookUser.id
     }).fetch();
 
     if (user) {
+      if (facebookUser.email && !user.get('email')) {
+        user.set('email', facebookUser.email);
+      }
+
+      if (facebookUser.first_name && !user.get('firstName')) {
+        user.set('firstName', facebookUser.first_name);
+      }
+
+      if (facebookUser.last_name && !user.get('lastName')) {
+        user.set('lastName', facebookUser.last_name);
+      }
+
+      if (user.hasChanged()) {
+        await user.save();
+      }
       return user;
     }
 
-    user = await this.forge({ email: facebookUser.email }).fetch();
+    if (facebookUser.email) {
+      user = await this.forge({ email: facebookUser.email }).fetch();
 
-    if (user) {
-      return user;
+      if (user) {
+        return user;
+      }
     }
 
     return this.create({
