@@ -41,6 +41,7 @@ type User {
   price(serviceCategoryId: ID): Price
   paymentMethodStatus: String
   country: Country
+  phoneNumber: String
 }
 `;
 
