@@ -68,6 +68,10 @@ const resolver = {
       return postalAddress.serialize();
     }),
 
+    phoneNumber: currentUserOnly(async (user) => {
+      return await user.get('phoneNumber');
+    }),
+
     prices: async (user) => {
       await user.load(['providerPrices']);
       const prices = user.related('providerPrices');
