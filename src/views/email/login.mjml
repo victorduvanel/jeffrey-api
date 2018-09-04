@@ -13,7 +13,7 @@
           <h1>Connectez vous à Jeffrey</h1>
 {{formatMessage (intlGet "i18n.hello")}} {{user.firstName}}
 Vous pouvez utiliser ce lien pour vous connecter votre compte Jeffrey.
-Cliquez sur le lien suivant depuis l'appareil sur lequel vous shouaitez vous identifer:
+Cliquez sur le lien suivant depuis l'appareil sur lequel vous souhaitez vous identifer:
         </mj-text>
 
         <mj-button
