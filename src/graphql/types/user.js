@@ -41,6 +41,7 @@ type User {
   price(serviceCategoryId: ID): Price
   paymentMethodStatus: String
   country: Country
+  phoneNumber: String
 }
 `;
 
@@ -66,6 +67,8 @@ const resolver = {
       }
       return postalAddress.serialize();
     }),
+
+    phoneNumber: currentUserOnly(user => user.get('phoneNumber')),
 
     prices: async (user) => {
       await user.load(['providerPrices']);
