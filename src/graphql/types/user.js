@@ -68,9 +68,7 @@ const resolver = {
       return postalAddress.serialize();
     }),
 
-    phoneNumber: currentUserOnly(async (user) => {
-      return await user.get('phoneNumber');
-    }),
+    phoneNumber: currentUserOnly(user => user.get('phoneNumber')),
 
     prices: async (user) => {
       await user.load(['providerPrices']);
