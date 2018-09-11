@@ -3,6 +3,7 @@ import moment           from 'moment';
 import request          from 'request-promise';
 import nativeBcrypt     from 'bcryptjs';
 import uuid             from 'uuid';
+import _                from 'lodash';
 
 import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
@@ -114,6 +115,16 @@ const User = Base.extend({
       .fetchAll();
 
     return categories;
+  },
+
+  async identifyDocuments() {
+    const documents = UserDocument
+      .where({
+        owner_id: this.get('id'),
+        purpose: 'identity_document'
+      })
+      .fetchAll();
+    return documents;
   },
 
   unseenActivity: currentUserOnly(async function() {
@@ -316,7 +327,9 @@ const User = Base.extend({
 
     const tosAcceptance = await this.tosAcceptance();
 
-    const idDocument = await UserDocument.findIdentifyDocuments(this);
+    let documents = await this.identifyDocuments();
+    documents = _.orderBy(documents.toArray(), document => new Date(document.get('createdAt')), 'desc');
+    const idDocument = documents[documents.length - 1];
     const filename = idDocument.get('uri').split('/').splice(4).join('/');
 
     const region = 'EU';
@@ -349,7 +362,6 @@ const User = Base.extend({
           month: moment(dateOfBirth).format('MM'),
           year: moment(dateOfBirth).format('YYYY'),
         }),
-
 
         personal_address: (postalAddress && {
           city: postalAddress.get('city'),

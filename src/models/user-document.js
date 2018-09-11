@@ -25,6 +25,26 @@ const UserDocument = Base.extend({
 
   owner() {
     return this.belongsTo('User');
+  },
+
+  uri() {
+    return this.get('uri');
+  },
+
+  mime() {
+    return this.get('mime');
+  },
+
+  purpose() {
+    return this.get('purpose');
+  },
+
+  createdAt() {
+    return this.get('createdAt');
+  },
+
+  updatedAt() {
+    return this.get('updatedAt');
   }
 }, {
   create: async function({ purpose, user, buffer, region = 'EU' }) {
@@ -52,7 +72,7 @@ const UserDocument = Base.extend({
       owner_id: owner.get('id'),
       purpose: 'identity_document'
     })
-      .fetch();
+      .fetchAll();
   }
 });
 

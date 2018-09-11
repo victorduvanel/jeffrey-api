@@ -42,6 +42,7 @@ type User {
   paymentMethodStatus: String
   country: Country
   phoneNumber: String
+  identityDocuments: [UserDocument]
 }
 `;
 
@@ -69,6 +70,11 @@ const resolver = {
     }),
 
     phoneNumber: currentUserOnly(user => user.get('phoneNumber')),
+
+    identityDocuments: async (user) => {
+      const documents = await user.identifyDocuments();
+      return documents.models;
+    },
 
     prices: async (user) => {
       await user.load(['providerPrices']);
@@ -114,7 +120,7 @@ const resolver = {
     },
 
     serviceCategories: async (user, _, { parentId }) => {
-      const categories = await user.servicesCategories({ childrenOf: parentId });
+      const categories = await user.serviceCategories({ childrenOf: parentId });
       return categories;
     }
   }
