@@ -71,10 +71,10 @@ const resolver = {
 
     phoneNumber: currentUserOnly(user => user.get('phoneNumber')),
 
-    identityDocuments: async (user) => {
+    identityDocuments: currentUserOnly(async (user) => {
       const documents = await user.identifyDocuments();
       return documents.models;
-    },
+    }),
 
     prices: async (user) => {
       await user.load(['providerPrices']);
