@@ -1,44 +1,61 @@
 <mjml>
   <mj-head>
     <mj-attributes>
-      <mj-text align="center" color="#555" />
+      <mj-text align="center" padding="20px" color="#555" />
+      <mj-image alt="" padding="0px"></mj-image>
     </mj-attributes>
   </mj-head>
 
-  <mj-body background-color="#eee">
+  <mj-body background-color="#C4C9CA">
     <mj-include path="./header.mjml" />
-    <mj-section background-color="#fff">
+    <mj-section background-color="#fff" padding="10px 10px 10px 10px">
       <mj-column>
-        <mj-text align="left">
-          <h1>Connectez vous à Jeffrey</h1>
+        <mj-text align="center">
+          <h1>CONNEXION PAR ADRESSE MAIL</h1>
           <h1>{{formatMessage (intlGet "i18n.hello")}}, bienvenue chez Jeffrey !</h1>
-          <p>Nous sommes heureux de vous compter parmi nous.<br>
-          Pour authentifier votre email et finaliser votre inscription, cliquez sur le lien suivant :</p>
+          <h3>Nous sommes heureux de vous compter parmi nous.<br> Pour authentifier votre email et finaliser votre inscription, cliquez sur le lien suivant :</h3>
         </mj-text>
 
-        <mj-button
-          color="#FFFFFF"
-          border-radius="2px"
-          href="{{activationLink}}"
-          inner-padding="15px 30px"
-        >
+        <mj-button background-color="#FFFFFF" color="black" border-radius="25px" border="2px solid black" href="{{activationLink}}" inner-padding="15px 30px">
           Confirmer mon compte
         </mj-button>
-
-        <mj-text align="left">
-        Ce lien n'est utilisable qu'une seule fois.
-        <br>
-        Si vous rencontrez le moindre problème pour confirmer votre adresse email, nous serons heureux de vous aider.<br>
-        <br>
-        Vous pouvez contacter notre support à l'adresse <a href="mailto:support@jeffrey-services.com">support@jeffrey-services.com</a>.
-        <br><br>
-        A très bientôt,
-        <br>
-        <b>Jeffrey</b>
-        </mj-text>
+        <mj-text align="center">
+      </br>
+      </br>Ce lien n'est utilisable qu'une seule fois.
+      </br>
+    </mj-text>
       </mj-column>
-
     </mj-section>
+
+    
+    <mj-text align="center">
+    </br>Si vous rencontrez le moindre problème pour confirmer votre adresse email, nous serons heureux de vous aider.<br>
+    </mj-text>
+
+    <mj-text align="center">
+      </br>Vous pouvez contacter notre support à l'adresse <a href="mailto:support@jeffrey.app">support@jeffrey.app</br></a>
+      <br><br>
+    </mj-text>
+
+        <mj-divider border-width="1px" border-style="dashed" border-color="lightgrey" />
+
+    <mj-section>
+      <mj-group>
+        <mj-column
+          <mj-image alt="jeffrey facebook" href="http://www.facebook.com/" width="40px" src="https://static.cdn.responsys.net/i2/responsysimages/uggs/contentlibrary/promotional/2017/06-june/20170615_u_royale-b/images/share-facebook.gif"></mj-image>
+        </mj-column>
+        <mj-column>
+          <mj-image alt="jeffrey instagram" href="http://www.instagram.com/" width="40px" src="https://static.cdn.responsys.net/i2/responsysimages/uggs/contentlibrary/promotional/2017/06-june/20170615_u_royale-b/images/share-instagram.gif"></mj-image>
+        </mj-column>
+        <mj-column>
+          <mj-image alt="jeffrey twitter" href="http://www.twitter.com/" width="40px" src="https://static.cdn.responsys.net/i2/responsysimages/uggs/contentlibrary/promotional/2017/06-june/20170615_u_royale-b/images/share-twitter.gif"></mj-image>
+        </mj-column>
+    </mj-section>
+
+    <mj-text align="center">
+      <a href="https://jeffrey.app"> https://jeffrey.app </a>
+    </mj-text>
+
     <mj-include path="./footer.mjml" />
 
   </mj-body>
