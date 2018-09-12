@@ -1,5 +1,5 @@
 import { GraphQLError } from 'graphql';
-import { AppError}      from '../../errors';
+import { AppError }     from '../../errors';
 
 export const Unauthorized = () => {
   return new AppError('Unauthorized');
