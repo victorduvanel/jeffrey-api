@@ -24,7 +24,7 @@ const UserDocument = Base.extend({
   tableName: 'user_documents',
 
   owner() {
-    return this.belongsTo('User');
+    return this.belongsTo('User', 'owner_id');
   },
 
   uri() {

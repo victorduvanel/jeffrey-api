@@ -16,7 +16,7 @@ const resolver = {
   UserDocument: {
     owner: async(document) => {
       await document.load(['owner']);
-      return document.related('author');
+      return document.related('owner');
     }
   }
 };
