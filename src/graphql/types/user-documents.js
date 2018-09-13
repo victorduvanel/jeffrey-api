@@ -3,8 +3,6 @@ import { registerType } from '../registry';
 const def = `
 type UserDocument {
   id: ID!
-  uri: String
-  mime: String
   purpose: String
   owner: User
   createdAt: Date
