@@ -6,6 +6,7 @@ export const up = async (knex) => {
 
     table.string('name');
     table.string('icon');
+    table.string('symbol');
 
     table
       .uuid('service_category_id')
