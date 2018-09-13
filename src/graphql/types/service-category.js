@@ -4,6 +4,7 @@ const def = `
 type ServiceAttributes {
   name: String
   icon: String
+  symbol: String
 }
 type ServiceCategory {
   id: ID!
