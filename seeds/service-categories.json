@@ -1391,21 +1391,25 @@
           "en": {
             "id": "89145bd9-ed49-4eaa-9104-a4ec134298f1",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
             "name": "Professional Services"
           },
           "fr": {
             "id": "f7a78632-24bd-4bcf-a2d5-dd5ee7f85d81",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
             "name": "Services Professionels"
           },
           "ko": {
             "id": "5771402d-12e1-41b9-8679-aab253725c5d",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "ff4f1a80-b4a4-4678-bec3-ab0c1f5bff78",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
             "name": ""
           }
         },
@@ -1421,21 +1425,25 @@
           "en": {
             "id": "e856eca0-71e2-4fbd-8cc6-1a84dbb8284a",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
             "name": "Animals"
           },
           "fr": {
             "id": "cbb99cd8-d942-4dcf-8275-4d3c3d02e152",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
             "name": "Animaux"
           },
           "ko": {
             "id": "94b9969b-3fe8-46d3-a33c-cdfd5adebc7f",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "512c3928-28b1-4ae3-bc74-9e5b2acee2bb",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
             "name": ""
           }
         },
@@ -1564,21 +1572,25 @@
           "en": {
             "id": "e4c7f5f6-9723-446a-85c0-07571530ad42",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
             "name": "gardening"
           },
           "fr": {
             "id": "5faea6cf-83da-4c76-99bd-1323ae138322",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
             "name": "Jardinage"
           },
           "ko": {
             "id": "28d3dfd2-4e02-4cde-8f17-3f2076d61e16",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "9ce9bf01-95a9-4a3d-a82d-71f9c54f10ef",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
             "name": ""
           }
         },
@@ -1707,21 +1719,25 @@
           "en": {
             "id": "e73b42e1-d9f2-4275-9fd5-87b34c3f7f3d",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
             "name": "Purchase & Delivery"
           },
           "fr": {
             "id": "164c2477-e741-4236-b26a-db328c9ba403",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
             "name": "Achats & Livraisons"
           },
           "ko": {
             "id": "c7cdbba5-c20c-450f-94ba-fd6341ed659d",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "5a218751-8002-41c9-9acb-d04fd4216248",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
             "name": ""
           }
         },
@@ -1878,21 +1894,25 @@
           "en": {
             "id": "8869f2c8-63b1-469b-8582-48cde92d2bd6",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
             "name": "Cleaning"
           },
           "fr": {
             "id": "99549ab4-0e96-4cef-818d-5804537a6930",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
             "name": "Nettoyages"
           },
           "ko": {
             "id": "33a4a06e-8fe6-47cf-90b1-08b169f5f091",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "fe13ce34-ba66-42e0-b1e9-1931ee4d859a",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
             "name": ""
           }
         },
@@ -2193,21 +2213,25 @@
           "en": {
             "id": "eea4b425-bbe2-484e-9f99-3c39e1c16652",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
             "name": "Handiwork and moving"
           },
           "fr": {
             "id": "b26ef6ff-e9c6-433f-a73e-84759b916a5d",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
             "name": "Bricolages & déménagement"
           },
           "ko": {
             "id": "db99fb89-fc2a-4fc0-922c-2e8e920ce8ac",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "8adeb9cd-7be2-4cb7-8703-c45dd9541b78",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
             "name": ""
           }
         },
@@ -2308,21 +2332,25 @@
           "en": {
             "id": "0fcd88bc-4ac5-4738-bdb4-68e67b004194",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
             "name": "Modern majordome"
           },
           "fr": {
             "id": "909976b7-e011-469d-a421-72f64701b5dc",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
             "name": "Majordome morderne"
           },
           "ko": {
             "id": "2fa65eb2-0320-4304-a53f-bd51a2f53cf1",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
             "name": ""
           },
           "ja": {
             "id": "d7ae3f08-a873-4113-bf61-8379e2ecdd54",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
             "name": ""
           }
         },
