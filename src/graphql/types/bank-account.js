@@ -11,6 +11,12 @@ input BankAccountDetails {
   holderName: String
   country: String
 }
+type BankAccount {
+  type: BankAccountType
+  last4: String
+  holderName: String
+  country: String
+}
 `;
 
 registerType(def);

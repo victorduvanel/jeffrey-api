@@ -298,6 +298,28 @@ const User = Base.extend({
     }
   },
 
+  async bankAccounts() {
+    const stripeAccount = await this.stripeAccount(false);
+    if (!stripeAccount) {
+      return null;
+    }
+
+    const account = await new Promise((resolve, reject) => {
+      stripe.accounts.retrieve(
+        stripeAccount.get('id'),
+        (err, account) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(account);
+          }
+        }
+      );
+    });
+
+    return account.external_accounts.data;
+  },
+
   async stripeAccount(create = true) {
     const stripeAccount = await StripeAccount
       .forge({

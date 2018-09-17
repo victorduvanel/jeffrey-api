@@ -1,6 +1,7 @@
 import { registerType } from '../registry';
 import Mission          from '../../models/mission';
 import ProviderPrice    from '../../models/provider-price';
+import stripe           from '../../services/stripe';
 
 const def = `
 enum Gender {
@@ -43,6 +44,7 @@ type User {
   country: Country
   phoneNumber: String
   identityDocuments: [UserDocument]
+  bankAccounts: BankAccount
 }
 `;
 
@@ -60,6 +62,17 @@ const currentUserOnly = function(callback) {
 
 const resolver = {
   User: {
+
+    bankAccounts: currentUserOnly(async (user) => {
+      const accounts = await user.bankAccounts();
+      return {
+        holder: accounts[0].account_holder_name,
+        type: accounts[0].account_holder_type,
+        last4: accounts[0].last4,
+        country: accounts[0].country,
+      };
+    }),
+
     postalAddress: currentUserOnly(async (user) => {
       const postalAddress = await user.getPostalAddress();
 
