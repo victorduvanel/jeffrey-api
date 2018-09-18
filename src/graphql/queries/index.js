@@ -15,3 +15,4 @@ import './payment-methods';
 import './provider-location';
 import './user-service-categories';
 import './mission';
+import './missions';
