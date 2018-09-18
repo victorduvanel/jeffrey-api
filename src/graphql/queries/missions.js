@@ -9,6 +9,10 @@ const def = 'missions(as: String!, status: String!): [Mission]';
 const missions = async (_, { as, status }, { user }) => {
   const missions = await Mission
     .query((qb) => {
+
+      qb.orderBy('start_date', 'DESC');
+      qb.orderBy('created_at', 'DESC');
+
       switch (as) {
         case 'provider':
           qb.where({
