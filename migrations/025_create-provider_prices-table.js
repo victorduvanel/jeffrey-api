@@ -20,9 +20,9 @@ function up(knex) {
       'JPY',
       'CHF'
     ]);
+    table.boolean('is_enabled');
     table.dateTime('created_at');
     table.dateTime('updated_at');
-
     table.unique(['user_id', 'service_category_id']);
   });
 }

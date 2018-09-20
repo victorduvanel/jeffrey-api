@@ -5,6 +5,7 @@ type ProviderPrice {
   id: ID!
   price: Int!
   currency: String!
+  isEnabled: Boolean!
 }
 `;
 

@@ -86,7 +86,8 @@ const ServiceCategory = Base.extend({
       if (price) {
         return {
           amount: price.get('price'),
-          currency: price.get('currency')
+          currency: price.get('currency'),
+          isEnabled: price.get('isEnabled')
         };
       }
     }

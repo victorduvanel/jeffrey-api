@@ -4,6 +4,7 @@ const def = `
   type Price {
     amount: Int!
     currency: String!
+    isEnabled: Boolean
   }
 `;
 
