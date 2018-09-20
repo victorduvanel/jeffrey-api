@@ -40,7 +40,7 @@ const providerServiceCategories = async (_, { parentId = null }, { user }) => {
 
   categories.forEach(category => {
     return category._subcategories = categories.filter(subCat => {
-      subCat.get('parentId') === category.get('id');
+      return subCat.get('parentId') === category.get('id');
     });
   });
 
