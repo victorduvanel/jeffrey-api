@@ -44,8 +44,7 @@ const providerServiceCategories = async (_, { parentId = null }, { user }) => {
     });
   });
 
-  const rootCategories = categories.filter(category => category.get('parentId') === parentId);
-  return rootCategories;
+  return categories.filter(category => category.get('parentId') === parentId);
 };
 
 registerQuery(def, { providerServiceCategories });
