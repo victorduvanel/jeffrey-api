@@ -1,6 +1,10 @@
 import { GraphQLError } from 'graphql';
 import { AppError }     from '../../errors';
 
+export const BadRequest = () => {
+  return new AppError('Bad Request');
+};
+
 export const Unauthorized = () => {
   return new AppError('Unauthorized');
 };

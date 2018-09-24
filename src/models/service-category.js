@@ -104,7 +104,8 @@ const ServiceCategory = Base.extend({
       if (res.length) {
         return {
           name: res[0].name,
-          icon: res[0].icon
+          icon: res[0].icon,
+          symbol: res[0].symbol
         };
       }
     }
