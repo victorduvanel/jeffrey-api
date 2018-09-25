@@ -23,14 +23,6 @@ const uploadDocument = ({ bucket, mime, buffer, path }) => {
 const UserDocument = Base.extend({
   tableName: 'user_documents',
 
-  uri() {
-    return this.get('uri');
-  },
-
-  mime() {
-    return this.get('mime');
-  },
-
   purpose() {
     return this.get('purpose');
   },
