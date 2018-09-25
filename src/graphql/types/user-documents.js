@@ -10,13 +10,4 @@ type UserDocument {
 }
 `;
 
-const resolver = {
-  UserDocument: {
-    owner: async(document) => {
-      await document.load(['owner']);
-      return document.related('owner');
-    }
-  }
-};
-
-registerType(def, resolver);
+registerType(def, {});
