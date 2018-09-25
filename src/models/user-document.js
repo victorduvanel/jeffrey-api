@@ -23,10 +23,6 @@ const uploadDocument = ({ bucket, mime, buffer, path }) => {
 const UserDocument = Base.extend({
   tableName: 'user_documents',
 
-  owner() {
-    return this.belongsTo('User', 'owner_id');
-  },
-
   uri() {
     return this.get('uri');
   },
