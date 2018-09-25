@@ -793,6 +793,7 @@ const User = Base.extend({
         qb.where('provider_prices.service_category_id', '=', serviceCategoryId);
         // qb.whereRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) <= ${AREA_RADIUS}`);
         qb.whereNotNull('provider_prices.price');
+        qb.where('provider_prices.is_enabled', '=', true);
         qb.orderByRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) asc`);
         qb.limit(limit);
         qb.offset(offset);
