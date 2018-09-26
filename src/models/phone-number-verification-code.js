@@ -1,9 +1,10 @@
 import _         from 'lodash';
 import uuid      from 'uuid';
 import bookshelf from '../services/bookshelf';
-import twilio    from '../services/twilio';
-import Base      from './base';
-import config    from '../config';
+import twilio       from '../services/twilio';
+import Base         from './base';
+import config       from '../config';
+import { AppError } from '../errors';
 
 const PhoneNumberVerificationCode = Base.extend({
   tableName: 'phone_number_verification_codes',
@@ -21,7 +22,7 @@ const PhoneNumberVerificationCode = Base.extend({
       .fetch();
 
     if (!code) {
-      return false;
+      throw AppError('Wrong code');
     }
 
     if (user) {

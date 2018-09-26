@@ -1,6 +1,7 @@
 import { registerType } from '../registry';
 import Mission          from '../../models/mission';
 import ProviderPrice    from '../../models/provider-price';
+import stripe           from '../../services/stripe';
 
 const def = `
 enum Gender {
@@ -42,6 +43,8 @@ type User {
   paymentMethodStatus: String
   country: Country
   phoneNumber: String
+  identityDocuments: [UserDocument]
+  bankAccounts: BankAccount
 }
 `;
 
@@ -59,6 +62,17 @@ const currentUserOnly = function(callback) {
 
 const resolver = {
   User: {
+
+    bankAccounts: currentUserOnly(async (user) => {
+      const accounts = await user.bankAccounts();
+      return {
+        holder: accounts[0].account_holder_name,
+        type: accounts[0].account_holder_type,
+        last4: accounts[0].last4,
+        country: accounts[0].country,
+      };
+    }),
+
     postalAddress: currentUserOnly(async (user) => {
       const postalAddress = await user.getPostalAddress();
 
@@ -69,6 +83,11 @@ const resolver = {
     }),
 
     phoneNumber: currentUserOnly(user => user.get('phoneNumber')),
+
+    identityDocuments: currentUserOnly(async (user) => {
+      const documents = await user.identifyDocuments();
+      return documents.models;
+    }),
 
     prices: async (user) => {
       await user.load(['providerPrices']);
@@ -114,7 +133,7 @@ const resolver = {
     },
 
     serviceCategories: async (user, _, { parentId }) => {
-      const categories = await user.servicesCategories({ childrenOf: parentId });
+      const categories = await user.serviceCategories({ childrenOf: parentId });
       return categories;
     }
   }

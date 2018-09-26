@@ -30,14 +30,15 @@ const serviceCategories = async (_, { country }, { user }) => {
     prices.forEach((price) => {
       user.providerPricesCache[price.get('serviceCategoryId')] = {
         amount: price.get('price'),
-        currency: price.get('currency')
+        currency: price.get('currency'),
+        isEnabled: price.get('isEnabled')
       };
     });
   }
 
   categories.forEach(category => category._subcategories = categories.filter(subCat => subCat.get('parentId') === category.get('id')));
-
   const rootCategories = categories.filter(category => category.get('parentId') === null);
+
   return rootCategories;
 };
 

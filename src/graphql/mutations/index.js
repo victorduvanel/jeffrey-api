@@ -7,7 +7,7 @@ import './new-mission';
 import './activate';
 import './provider-disponibility';
 import './personal-details';
-import './set-hourly-rate';
+import './define-service-price';
 import './provider-bio';
 import './activate';
 import './mission-status';

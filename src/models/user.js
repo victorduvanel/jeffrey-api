@@ -3,6 +3,7 @@ import moment           from 'moment';
 import request          from 'request-promise';
 import nativeBcrypt     from 'bcryptjs';
 import uuid             from 'uuid';
+import _                from 'lodash';
 
 import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
@@ -114,6 +115,16 @@ const User = Base.extend({
       .fetchAll();
 
     return categories;
+  },
+
+  async identifyDocuments() {
+    const documents = UserDocument
+      .where({
+        owner_id: this.get('id'),
+        purpose: 'identity_document'
+      })
+      .fetchAll();
+    return documents;
   },
 
   unseenActivity: currentUserOnly(async function() {
@@ -287,6 +298,28 @@ const User = Base.extend({
     }
   },
 
+  async bankAccounts() {
+    const stripeAccount = await this.stripeAccount(false);
+    if (!stripeAccount) {
+      return null;
+    }
+
+    const account = await new Promise((resolve, reject) => {
+      stripe.accounts.retrieve(
+        stripeAccount.get('id'),
+        (err, account) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(account);
+          }
+        }
+      );
+    });
+
+    return account.external_accounts.data;
+  },
+
   async stripeAccount(create = true) {
     const stripeAccount = await StripeAccount
       .forge({
@@ -316,7 +349,14 @@ const User = Base.extend({
 
     const tosAcceptance = await this.tosAcceptance();
 
-    const idDocument = await UserDocument.findIdentifyDocuments(this);
+    let documents = await this.identifyDocuments();
+    documents = _.orderBy(documents.toArray(), document => new Date(document.get('createdAt')), 'desc');
+
+    if (!documents.length) {
+      throw new Error('Identity document not provided');
+    }
+
+    const idDocument = documents[documents.length - 1];
     const filename = idDocument.get('uri').split('/').splice(4).join('/');
 
     const region = 'EU';
@@ -339,7 +379,6 @@ const User = Base.extend({
     });
 
     const accountAttributes = {
-      business_name: business && business.get('name'),
       legal_entity: {
         first_name: this.get('firstName'),
         last_name: this.get('lastName'),
@@ -349,7 +388,6 @@ const User = Base.extend({
           month: moment(dateOfBirth).format('MM'),
           year: moment(dateOfBirth).format('YYYY'),
         }),
-
 
         personal_address: (postalAddress && {
           city: postalAddress.get('city'),
@@ -383,6 +421,10 @@ const User = Base.extend({
         date: parseInt(moment(tosAcceptance.get('createdAt')).format('X'), 10)
       }
     };
+
+    if (business && business.get('name')) {
+      accountAttributes.business_name = business.get('name');
+    }
 
     await stripe.accounts.update(stripeAccount.get('id'), accountAttributes);
   },
@@ -497,7 +539,7 @@ const User = Base.extend({
 
   async hasIdentityDocument() {
     const idDocument = await UserDocument.findIdentifyDocuments(this);
-    return !!idDocument;
+    return idDocument.length > 0;
   },
 
   async updatePassword(newPassword) {
@@ -759,6 +801,7 @@ const User = Base.extend({
         qb.where('provider_prices.service_category_id', '=', serviceCategoryId);
         // qb.whereRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) <= ${AREA_RADIUS}`);
         qb.whereNotNull('provider_prices.price');
+        qb.where('provider_prices.is_enabled', '=', true);
         qb.orderByRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) asc`);
         qb.limit(limit);
         qb.offset(offset);

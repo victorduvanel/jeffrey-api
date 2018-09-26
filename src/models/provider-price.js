@@ -13,11 +13,16 @@ const ProviderPrice = Base.extend({
     return this.belongsTo('ServiceCategory');
   },
 
+  isEnabled() {
+    return this.get('isEnabled');
+  },
+
   serialize() {
     return {
       id: this.get('id'),
       price: this.get('price'),
       serviceCategoryId: this.get('serviceCategoryId'),
+      isEnabled: this.get('isEnabled'),
       currency: 'EUR'
     };
   },
@@ -34,17 +39,18 @@ const ProviderPrice = Base.extend({
     return this.forge({ id }).fetch();
   },
 
-  create: async function({ user, price, currency, serviceCategory }) {
+  create: async function({ user, price, currency, serviceCategory, isEnabled }) {
     const id = uuid.v4();
 
     const res = await bookshelf.knex.raw(
       `INSERT INTO provider_prices
-         (id, user_id, service_category_id, price, currency, created_at, updated_at)
+         (id, user_id, service_category_id, price, is_enabled, currency, created_at, updated_at)
        VALUES (
          :id,
          :userId,
          :serviceCategoryId,
          :price,
+         :isEnabled,
          :currency,
          NOW(),
          NOW()
@@ -61,6 +67,7 @@ const ProviderPrice = Base.extend({
         userId: user.id,
         serviceCategoryId: serviceCategory.id,
         price,
+        isEnabled,
         currency
       }
     );

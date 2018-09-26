@@ -23,8 +23,16 @@ const uploadDocument = ({ bucket, mime, buffer, path }) => {
 const UserDocument = Base.extend({
   tableName: 'user_documents',
 
-  owner() {
-    return this.belongsTo('User');
+  purpose() {
+    return this.get('purpose');
+  },
+
+  createdAt() {
+    return this.get('createdAt');
+  },
+
+  updatedAt() {
+    return this.get('updatedAt');
   }
 }, {
   create: async function({ purpose, user, buffer, region = 'EU' }) {
@@ -52,7 +60,7 @@ const UserDocument = Base.extend({
       owner_id: owner.get('id'),
       purpose: 'identity_document'
     })
-      .fetch();
+      .fetchAll();
   }
 });
 

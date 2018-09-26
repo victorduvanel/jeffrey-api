@@ -1,11 +1,12 @@
 import { registerType } from '../registry';
 
 const def = `
-  type Price {
-    amount: Int!
-    currency: String!
-    isEnabled: Boolean
-  }
+type UserDocument {
+  id: ID!
+  purpose: String
+  createdAt: Date
+  updatedAt: Date
+}
 `;
 
 registerType(def, {});

@@ -2,9 +2,9 @@ import ServiceCategory   from '../../models/service-category';
 import ProviderPrice     from '../../models/provider-price';
 import { registerQuery } from '../registry';
 
-const def = 'providerServiceCategories: [ServiceCategory]';
+const def = 'providerServiceCategories(parentId: String): [ServiceCategory]';
 
-const providerServiceCategories = async (_, __, { user }) => {
+const providerServiceCategories = async (_, { parentId = null }, { user }) => {
   const country = await user.country();
 
   const categories = await ServiceCategory
@@ -32,15 +32,19 @@ const providerServiceCategories = async (_, __, { user }) => {
     prices.forEach((price) => {
       user.providerPricesCache[price.get('serviceCategoryId')] = {
         amount: price.get('price'),
-        currency: price.get('currency')
+        currency: price.get('currency'),
+        isEnabled: price.get('isEnabled')
       };
     });
   }
 
-  categories.forEach(category => category._subcategories = categories.filter(subCat => subCat.get('parentId') === category.get('id')));
+  categories.forEach(category => {
+    return category._subcategories = categories.filter(subCat => {
+      return subCat.get('parentId') === category.get('id');
+    });
+  });
 
-  const rootCategories = categories.filter(category => category.get('parentId') === null);
-  return rootCategories;
+  return categories.filter(category => category.get('parentId') === parentId);
 };
 
 registerQuery(def, { providerServiceCategories });
