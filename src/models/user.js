@@ -351,6 +351,11 @@ const User = Base.extend({
 
     let documents = await this.identifyDocuments();
     documents = _.orderBy(documents.toArray(), document => new Date(document.get('createdAt')), 'desc');
+
+    if (!documents.length) {
+      throw new Error('Identity document not provided');
+    }
+
     const idDocument = documents[documents.length - 1];
     const filename = idDocument.get('uri').split('/').splice(4).join('/');
 
@@ -374,7 +379,6 @@ const User = Base.extend({
     });
 
     const accountAttributes = {
-      business_name: business && business.get('name'),
       legal_entity: {
         first_name: this.get('firstName'),
         last_name: this.get('lastName'),
@@ -417,6 +421,10 @@ const User = Base.extend({
         date: parseInt(moment(tosAcceptance.get('createdAt')).format('X'), 10)
       }
     };
+
+    if (business && business.get('name')) {
+      accountAttributes.business_name = business.get('name');
+    }
 
     await stripe.accounts.update(stripeAccount.get('id'), accountAttributes);
   },
@@ -531,7 +539,7 @@ const User = Base.extend({
 
   async hasIdentityDocument() {
     const idDocument = await UserDocument.findIdentifyDocuments(this);
-    return !!idDocument;
+    return idDocument.length > 0;
   },
 
   async updatePassword(newPassword) {
