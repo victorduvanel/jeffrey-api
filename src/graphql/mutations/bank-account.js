@@ -10,6 +10,11 @@ const bankAccount = async (_, { details }, { user }) => {
     return false;
   }
 
+  const country = await user.country();
+  if (!country) {
+    throw new Error('Country not supported');
+  }
+
   const stripeAccount = await user.stripeAccount();
   await stripe.accounts.update(stripeAccount.get('id'), {
     external_account: {
@@ -17,8 +22,8 @@ const bankAccount = async (_, { details }, { user }) => {
       account_holder_type: details.type,
       object: 'bank_account',
       account_number: details.iban,
-      country: details.country,
-      currency: 'EUR'
+      country: country.code(),
+      currency: country.currency()
     }
   });
 
