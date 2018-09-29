@@ -23,7 +23,7 @@ const ProviderPrice = Base.extend({
       price: this.get('price'),
       serviceCategoryId: this.get('serviceCategoryId'),
       isEnabled: this.get('isEnabled'),
-      currency: 'EUR'
+      currency: this.get('currency')
     };
   },
 

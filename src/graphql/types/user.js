@@ -1,7 +1,6 @@
 import { registerType } from '../registry';
 import Mission          from '../../models/mission';
 import ProviderPrice    from '../../models/provider-price';
-import stripe           from '../../services/stripe';
 
 const def = `
 enum Gender {
@@ -65,6 +64,11 @@ const resolver = {
 
     bankAccounts: currentUserOnly(async (user) => {
       const accounts = await user.bankAccounts();
+
+      if (!accounts) {
+        return null;
+      }
+
       return {
         holder: accounts[0].account_holder_name,
         type: accounts[0].account_holder_type,
