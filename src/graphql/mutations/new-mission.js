@@ -18,15 +18,15 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, 
     return false;
   }
 
-  const currency = await user.getCurrency();
-  if (!currency) {
-    throw new Error('Cannot retreive currency');
+  const country = await user.country();
+  if (!country) {
+    throw new Error('Country not supported');
   }
 
   await Mission.create({
     startDate: new Date(startDate),
     price,
-    currency,
+    currency: country.currency(),
     provider: user,
     client,
     serviceCategory
