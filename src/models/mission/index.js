@@ -37,6 +37,9 @@ export const TERMINATED = 'terminated';
 const Mission = Base.extend({
   tableName: 'missions',
 
+  reviews() {
+    return this.hasMany('Review');
+  },
 
   /* graphql props */
 

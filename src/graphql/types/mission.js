@@ -35,6 +35,7 @@ type Mission {
   totalCost: Int
   createdAt: Date!
   serviceCategory: ServiceCategory
+  reviews: [Review]
 }
 `;
 
@@ -51,6 +52,10 @@ const resolver = {
     serviceCategory: async(mission) => {
       await mission.load(['serviceCategory']);
       return mission.related('serviceCategory');
+    },
+    reviews: async(mission) => {
+      await mission.load(['reviews']);
+      return mission.related('reviews');
     }
   }
 };
