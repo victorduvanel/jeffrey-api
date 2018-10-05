@@ -259,6 +259,7 @@ const Mission = Base.extend({
       case 'EUR':
       case 'GBP':
       case 'USD':
+      case 'CAD':
       case 'KRW':
       case 'CHF':
         assert(totalCost < 40000, 'Payment amount limited to 400');

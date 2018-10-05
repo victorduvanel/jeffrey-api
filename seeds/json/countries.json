@@ -414,7 +414,7 @@
     "code": "CA",
     "phone_code": 1,
     "currency_code": "CAD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
     "region": "",
     "flag": "\ud83c\udde8\ud83c\udde6"
