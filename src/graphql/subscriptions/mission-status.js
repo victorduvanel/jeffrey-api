@@ -8,7 +8,7 @@ const def = 'missionStatus: Mission';
 
 const missionStatus = {
   resolve: (payload /*, args, context, info */) => {
-    return Mission.find(payload.missionStatus);
+    return Mission.find(payload.missionId);
   },
   subscribe: combineResolvers(auth, (_, __, { user }) => {
     return pubsub.asyncIterator(conversationMissionStatusChangedActivityTopic(user.id));

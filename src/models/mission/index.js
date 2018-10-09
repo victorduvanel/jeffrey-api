@@ -185,7 +185,7 @@ const Mission = Base.extend({
       pubsub.publish(
         conversationMissionStatusChangedActivityTopic(this.get('clientId')),
         {
-          missionStatus: this.id
+          missionId: this.id
         }
       );
 
@@ -227,14 +227,14 @@ const Mission = Base.extend({
     pubsub.publish(
       conversationMissionStatusChangedActivityTopic(this.get('clientId')),
       {
-        missionStatus: this.id
+        missionId: this.id
       }
     );
 
     pubsub.publish(
       conversationMissionStatusChangedActivityTopic(this.get('providerId')),
       {
-        missionStatus: this.id
+        missionId: this.id
       }
     );
   },

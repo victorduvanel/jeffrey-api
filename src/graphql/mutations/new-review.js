@@ -28,7 +28,7 @@ const newReview = async (_, { rank, message, missionId }, { user }) => {
     // Notify to this user that the mission changed
     pubsub.publish(
       conversationMissionStatusChangedActivityTopic(user.get('id')),
-      { missionStatus: missionId }
+      { missionId }
     );
 
     return true;

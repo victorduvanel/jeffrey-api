@@ -5,9 +5,17 @@ import User                 from '../../models/user';
 import ServiceCategory      from '../../models/service-category';
 import Mission              from '../../models/mission';
 
-const def = 'newMission(startDate: String!, price: Int!, clientId: ID!, serviceCategoryId: ID!): Boolean';
+const def = `
+  newMission(
+    startDate: String!,
+    price: Int!,
+    clientId: ID!,
+    serviceCategoryId: ID!,
+    currentLocation: LocationInput!
+  ): Boolean`;
 
-const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, { user }) => {
+const newMission = async (_, { startDate, clientId, price, serviceCategoryId, currentLocation }, { user }) => {
+
   const client = await User.find(clientId);
   if (!client) {
     return false;
@@ -29,7 +37,10 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, 
     currency: country.currency(),
     provider: user,
     client,
-    serviceCategory
+    serviceCategory,
+    lat: currentLocation.lat,
+    lng: currentLocation.lng,
+    location: currentLocation.description
   });
 
   return true;
