@@ -4,9 +4,16 @@ import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 import Mission              from '../../models/mission';
 
-const def = 'missionStatus(id: ID!, status: MissionStatus!): Mission';
+const def = `
+  missionStatus(
+    id: ID!,
+    status: MissionStatus!,
+    lat: Float
+    lng: Float
+    location: String
+  ): Mission`;
 
-export const missionStatus = async (_, { id, status }, { user }) => {
+export const missionStatus = async (_, { id, status, lat, lng, location }, { user }) => {
   const mission = await Mission.find(id);
 
   if (!mission) {
@@ -14,6 +21,16 @@ export const missionStatus = async (_, { id, status }, { user }) => {
   }
 
   await mission.setStatus(status, user);
+
+  if (status === 'accepted') {
+    console.log(lat, lng);
+    mission.set({
+      lat,
+      lng,
+      location
+    });
+    mission.save();
+  }
 
   return mission;
 };

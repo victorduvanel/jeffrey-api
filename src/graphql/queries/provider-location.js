@@ -23,16 +23,9 @@ const providerLocation = async (_, { missionId }, { user }) => {
 
   const provider = await User.find(mission.get('providerId'));
 
-  const lat = provider.get('lat');
-  const lng = provider.get('lng');
-
-  mission.set('lat', lat);
-  mission.set('lng', lng);
-  await mission.save();
-
   return {
-    lat,
-    lng
+    lat: provider.get('lat'),
+    lng: provider.get('lng')
   };
 };
 

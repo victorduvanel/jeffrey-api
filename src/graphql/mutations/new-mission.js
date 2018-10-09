@@ -10,11 +10,10 @@ const def = `
     startDate: String!,
     price: Int!,
     clientId: ID!,
-    serviceCategoryId: ID!,
-    currentLocation: LocationInput!
+    serviceCategoryId: ID!
   ): Boolean`;
 
-const newMission = async (_, { startDate, clientId, price, serviceCategoryId, currentLocation }, { user }) => {
+const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, { user }) => {
 
   const client = await User.find(clientId);
   if (!client) {
@@ -37,10 +36,7 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId, cu
     currency: country.currency(),
     provider: user,
     client,
-    serviceCategory,
-    lat: currentLocation.lat,
-    lng: currentLocation.lng,
-    location: currentLocation.description
+    serviceCategory
   });
 
   return true;

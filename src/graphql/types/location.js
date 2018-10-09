@@ -5,11 +5,6 @@ const def = `
     lat: Float!
     lng: Float!
   }
-  input LocationInput {
-    lat: Float!
-    lng: Float!
-    description: String!
-  }
 `;
 
 registerType(def, {});
