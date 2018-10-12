@@ -23,7 +23,6 @@ export const missionStatus = async (_, { id, status, lat, lng, location }, { use
   await mission.setStatus(status, user);
 
   if (status === 'accepted') {
-    console.log(lat, lng);
     mission.set({
       lat,
       lng,
