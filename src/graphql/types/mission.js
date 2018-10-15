@@ -26,7 +26,6 @@ type Mission {
   provider: User
   description: String
   paymentMethod: String
-  location: String
   price: Int!
   currency: String!
   startDate: Date!
@@ -34,6 +33,9 @@ type Mission {
   endedDate: Date
   totalCost: Int
   createdAt: Date!
+  lat: Float
+  lng: Float
+  location: String
   serviceCategory: ServiceCategory
   reviews: [Review]
 }

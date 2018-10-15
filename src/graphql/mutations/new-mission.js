@@ -5,9 +5,16 @@ import User                 from '../../models/user';
 import ServiceCategory      from '../../models/service-category';
 import Mission              from '../../models/mission';
 
-const def = 'newMission(startDate: String!, price: Int!, clientId: ID!, serviceCategoryId: ID!): Boolean';
+const def = `
+  newMission(
+    startDate: String!,
+    price: Int!,
+    clientId: ID!,
+    serviceCategoryId: ID!
+  ): Boolean`;
 
 const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, { user }) => {
+
   const client = await User.find(clientId);
   if (!client) {
     return false;
