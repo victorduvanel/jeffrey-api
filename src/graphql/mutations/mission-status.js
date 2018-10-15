@@ -28,7 +28,7 @@ export const missionStatus = async (_, { id, status, lat, lng, location }, { use
       lng,
       location
     });
-    mission.save();
+    await mission.save();
   }
 
   return mission;
