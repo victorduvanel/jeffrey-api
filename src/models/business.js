@@ -15,7 +15,7 @@ const Business = Base.extend({
   },
 
   async isOk() {
-    if (!this.get('taxId') || !this.get('type')) {
+    if (this.get('type') !== 'individual' || (this.get('type') === 'company' && !this.get('taxId'))) {
       return false;
     }
 
