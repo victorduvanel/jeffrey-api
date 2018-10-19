@@ -13,8 +13,8 @@ const providerLocation = async (_, { missionId }, { user }) => {
     throw new Error('Mission not found');
   }
 
-  if (mission.get('status') !== 'started') {
-    throw new Error('Mission should be started');
+  if (mission.get('status') !== 'started' && mission.get('status') !== 'confirmed') {
+    throw new Error('Mission should be started or confirmed');
   }
 
   if (user.get('id') !== mission.get('clientId')) {

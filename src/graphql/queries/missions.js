@@ -9,7 +9,6 @@ const def = 'missions(as: String!, status: String!): [Mission]';
 const missions = async (_, { as, status }, { user }) => {
   const missions = await Mission
     .query((qb) => {
-
       qb.orderBy('start_date', 'DESC');
       qb.orderBy('created_at', 'DESC');
 
@@ -31,18 +30,19 @@ const missions = async (_, { as, status }, { user }) => {
 
       switch (status) {
         case 'ongoing':
-          qb.whereNull('ended_date');
-          qb.whereRaw('start_date < NOW()');
-          qb.whereNot('status', 'refused');
+          qb.whereIn('status', ['started', 'confirmed']);
+          break;
+
+        case 'proposed':
+          qb.whereIn('status', ['pending']);
           break;
 
         case 'future':
-          qb.whereRaw('start_date > NOW()');
-          qb.whereNot('status', 'refused');
+          qb.whereIn('status', ['accepted']);
           break;
 
         case 'past':
-          qb.whereNotNull('ended_date');
+          qb.whereIn('status', ['terminated', 'aborted']);
           break;
 
         default:
