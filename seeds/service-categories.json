@@ -806,64 +806,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "3dc2a8ac-c035-419e-8a54-0c7d76ed7199",
-                "slug": "jeffrey-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "e7b98108-e9b2-4cbe-b0e2-4bb9d7dffd65",
-                "attributes": {
-                  "en": {
-                    "id": "e7b98108-e9b2-4cbe-b0e2-4bb9d7dffd65",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "db12c322-4387-48b5-bded-3cc9b430b6e5",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "b1053aa6-2bd2-4a79-8f21-e5c091feffb4",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "c1cb7a67-fa86-44ef-9d50-023b283a9ecc",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "33297964-9aa9-49cf-a298-f02faab88bcf",
-                "slug": "cleancar-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "bb4ffdf9-f981-486d-bce5-4b8e3a038852",
-                "attributes": {
-                  "en": {
-                    "id": "bb4ffdf9-f981-486d-bce5-4b8e3a038852",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "CleanCas"
-                  },
-                  "fr": {
-                    "id": "51818244-6284-44b8-b317-f5e46e7d10f6",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à CleanCar"
-                  },
-                  "ko": {
-                    "id": "2905dcb0-45f0-4500-b943-7466bee09e5b",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "f5e2cb8d-0e2d-41e8-86f3-921528110143",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "2ac290bb-a540-4490-9c35-cefd8871c38f",
@@ -874,7 +817,7 @@
               "en": {
                 "id": "3957cfd2-78fc-41ed-bf86-1c9d7e614cd6",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Car washing"
+                "name": "Iron and Laundry"
               },
               "fr": {
                 "id": "4be53bae-9d22-43ff-91e4-9e49f6a13817",
@@ -892,64 +835,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "a61af044-072b-4d36-bd0f-727655349dbd",
-                "slug": "jeffrey-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "5e22a19a-8cad-49d5-9f88-ef4ccfe19131",
-                "attributes": {
-                  "en": {
-                    "id": "5e22a19a-8cad-49d5-9f88-ef4ccfe19131",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "aceaaee9-57cd-41f5-b262-700fea44d938",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "caaf1a82-2ce0-449a-9ec3-44bbf50c75bf",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "bba9d547-1101-4b90-8320-06bbb49c3419",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "751b48ee-d4b8-4f62-bca1-afd109b10839",
-                "slug": "urban-washer-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "a0462652-bf48-4c73-a10a-607f9bebe767",
-                "attributes": {
-                  "en": {
-                    "id": "a0462652-bf48-4c73-a10a-607f9bebe767",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "UrbanWasher"
-                  },
-                  "fr": {
-                    "id": "e89080c9-d2e2-406e-a8c3-dc06e3d03438",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à UrbanWasher"
-                  },
-                  "ko": {
-                    "id": "f5433be5-aa33-4627-b540-f144c509bcbb",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "245d58e4-d17e-40de-b655-e63cba3341dd",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "3e6cba0d-1b55-46a6-920b-6d5bed754efd",
@@ -2000,64 +1886,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "77be6505-6458-4b56-935a-4a1467f7abd5",
-                "slug": "jeffrey-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "5dcb6480-dce8-430a-9ef9-ea2cf93875aa",
-                "attributes": {
-                  "en": {
-                    "id": "a557b65d-505b-4863-87ed-377002ef7088",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "5dcb6480-dce8-430a-9ef9-ea2cf93875aa",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "c6700350-0ca1-4607-a99c-bdf0b6ea3122",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "116f9664-3c84-4926-9e93-964250e04934",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "224bd5b2-3c38-447c-b54d-2f4a92b4874c",
-                "slug": "cleancar-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "94c03f16-0c81-4348-a907-2b6e6161382c",
-                "attributes": {
-                  "en": {
-                    "id": "2c33edb9-1270-4c4f-bd0d-3216369f7c92",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "CleanCas"
-                  },
-                  "fr": {
-                    "id": "94c03f16-0c81-4348-a907-2b6e6161382c",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à CleanCar"
-                  },
-                  "ko": {
-                    "id": "6554d394-a44a-48a6-86aa-7e21dc58effa",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "01bd0c4d-9de1-4c8b-a0f6-ab49224aa856",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "f9731bde-7152-4257-b974-1c48bb996d9f",
@@ -2068,7 +1897,7 @@
               "en": {
                 "id": "dcac4986-4df5-4e82-8167-ebbf5b9ce5f4",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Car washing"
+                "name": "Iron and Laundry"
               },
               "fr": {
                 "id": "59c2e7cc-b5f8-456b-ac2d-82cf42820c8b",
@@ -2086,64 +1915,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "aa9e61db-53dc-4987-a981-771d01c7a757",
-                "slug": "jeffrey-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "e1b9519c-d936-4bc6-bea6-e182b46d9f5a",
-                "attributes": {
-                  "en": {
-                    "id": "a0096b91-65ca-4fa5-bbf8-4539315e46ce",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "e1b9519c-d936-4bc6-bea6-e182b46d9f5a",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "348c3b6a-090a-41f6-9f3f-362aad3bc6f7",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "893856a9-de5e-446d-a222-ae60c8fc755d",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "d09f7adf-6649-4280-a45f-95e266120737",
-                "slug": "urban-washer-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "3d3eebbb-8062-4ee4-8ab2-9a9fd8d5c4d8",
-                "attributes": {
-                  "en": {
-                    "id": "abb99cfc-6921-41a2-84bd-742df9fd3bdb",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "UrbanWasher"
-                  },
-                  "fr": {
-                    "id": "3d3eebbb-8062-4ee4-8ab2-9a9fd8d5c4d8",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à UrbanWasher"
-                  },
-                  "ko": {
-                    "id": "6ce441b9-79ee-4ef0-8fc1-bf0a47f10f95",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "c8de3f0c-21e4-4a44-b1cf-24b06f53c886",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "7982f65a-e353-41b4-ba04-4fa7f2319fbb",
@@ -3182,64 +2954,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "edfd8d7a-fe2a-4f81-ab02-75948d8e2680",
-                "slug": "jeffrey-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "815761b4-9f3e-46fe-9636-35d2408f99f5",
-                "attributes": {
-                  "en": {
-                    "id": "adead7d9-6426-45d6-ac1b-6c021f6a9985",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "815761b4-9f3e-46fe-9636-35d2408f99f5",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "a0c2b5cd-159e-4878-a86c-8716c9aa702d",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "5cc5c873-698e-4f36-b588-16ca43c937a8",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "ec0ff261-7d2b-46c9-b75b-027d0a60a9d9",
-                "slug": "cleancar-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "e206d07d-0263-4929-84e8-f6bbfb9b3507",
-                "attributes": {
-                  "en": {
-                    "id": "4d350415-0070-48ff-929b-2ea7ca351ca1",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "CleanCas"
-                  },
-                  "fr": {
-                    "id": "e206d07d-0263-4929-84e8-f6bbfb9b3507",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à CleanCar"
-                  },
-                  "ko": {
-                    "id": "3b839757-5e3a-442e-8db6-162731c973b4",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "c90a27ad-4ceb-4e7b-8d8c-ad978dc093a5",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "0b427937-67c4-4304-9bcf-2eb507e5a362",
@@ -3250,7 +2965,7 @@
               "en": {
                 "id": "4ac35036-5613-423c-be6a-be4899c0b2bd",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Car washing"
+                "name": "Iron and Laundry"
               },
               "fr": {
                 "id": "b8ab3553-b651-4d59-9112-bffd8de6a9e1",
@@ -3268,64 +2983,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "a15f6d55-96e9-4753-953d-0673a4eaa841",
-                "slug": "jeffrey-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "bd60d2e6-529a-4e95-9ad9-244e482fa606",
-                "attributes": {
-                  "en": {
-                    "id": "372a8058-d619-472e-b51a-a84dc187bc87",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "bd60d2e6-529a-4e95-9ad9-244e482fa606",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "dcb862f9-a369-4fd4-bac5-2211239f3680",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "97d1f83f-fef4-4d4f-ba84-94724c1c2f92",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "cc1a3a37-e6b8-4606-93c9-70cb89081667",
-                "slug": "urban-washer-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "3ad308be-7001-4c23-982e-9e7992692dcb",
-                "attributes": {
-                  "en": {
-                    "id": "3bfd10e3-e834-403f-a71f-ac2a00d6415c",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "UrbanWasher"
-                  },
-                  "fr": {
-                    "id": "3ad308be-7001-4c23-982e-9e7992692dcb",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à UrbanWasher"
-                  },
-                  "ko": {
-                    "id": "63264c42-23e9-49b7-a909-94c4d9ca04de",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "0056e231-cba2-48de-9197-aa86f510cfaa",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "777d0d6e-8014-416d-be91-0235e6c6d8fb",
@@ -4356,64 +4014,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "473ccf85-558b-4604-820e-5c666d66f5db",
-                "slug": "jeffrey-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "cf680802-73b4-40c5-8901-50d3e751e8de",
-                "attributes": {
-                  "en": {
-                    "id": "cf680802-73b4-40c5-8901-50d3e751e8de",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "8def6fcc-de0d-4f52-a7ca-29e4a0210215",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "eac5ca4c-2d0c-4ac4-a19e-83cbccb9c010",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "d1ffc1f8-0c56-448a-976f-0c729d94d182",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "e917ee92-a78d-45c1-bbac-994d70273ff9",
-                "slug": "cleancar-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "f65e8fdd-29da-4177-b0b0-b195b4e980f6",
-                "attributes": {
-                  "en": {
-                    "id": "f65e8fdd-29da-4177-b0b0-b195b4e980f6",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "CleanCas"
-                  },
-                  "fr": {
-                    "id": "563a20b8-2b76-483b-8ca7-ba7ee2377833",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à CleanCar"
-                  },
-                  "ko": {
-                    "id": "b93e9ade-4f13-40c4-acc1-aa3cdfb706f8",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "59ec30d0-32e3-4de8-b333-a3cc4abbed71",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "7bd99248-48f5-4980-9852-5924209fc1b9",
@@ -4424,7 +4025,7 @@
               "en": {
                 "id": "94df8577-6756-46f6-a3ee-c1d12a3febe0",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Car washing"
+                "name": "Iron and Laundry"
               },
               "fr": {
                 "id": "bb8cb3b9-2524-44e9-bf6e-afda5783514c",
@@ -4442,64 +4043,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "f365b86d-b01e-4425-bbb4-4b3b2c6c7d42",
-                "slug": "jeffrey-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "92efd474-4d11-40e1-b3c1-982dbdf23efe",
-                "attributes": {
-                  "en": {
-                    "id": "92efd474-4d11-40e1-b3c1-982dbdf23efe",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "070ab072-ccc2-4994-b53d-660a43f6cc33",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "77f2fef3-77e0-4a0d-a35b-9f966eb2c1bd",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "05e429d4-b3dd-48f0-8bc1-ba85f3fe5599",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "1c5407af-1cd6-44e7-88f8-d9e53b6a0a35",
-                "slug": "urban-washer-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "48a1f22a-3760-4338-ac8d-a8486504e298",
-                "attributes": {
-                  "en": {
-                    "id": "48a1f22a-3760-4338-ac8d-a8486504e298",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "UrbanWasher"
-                  },
-                  "fr": {
-                    "id": "effa4c84-e038-4bcd-a4a3-c0ff7279c490",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à UrbanWasher"
-                  },
-                  "ko": {
-                    "id": "dfba6d73-f4fa-4c92-9119-782d925f3b2a",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "153dcbe1-9381-4cca-a272-0dc0d387d1ed",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "5e6cb42f-79ce-4fe1-8994-f2bc92b23729",
@@ -5530,64 +5074,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "ae31fe58-f6d6-4960-a2bf-d1d20c269e8c",
-                "slug": "jeffrey-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "4e0a03d1-213f-4e8e-aa2f-09b53fe60132",
-                "attributes": {
-                  "en": {
-                    "id": "301e6a31-2069-47a5-bfcd-edd56512d1b8",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "fe4fd4a2-571b-448d-893b-880d4e848328",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "4e0a03d1-213f-4e8e-aa2f-09b53fe60132",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "42421776-f982-4baa-9c35-7e0d0845effc",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "3fe645fe-ade4-4351-a7a2-c4ab82607fb0",
-                "slug": "cleancar-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "e239fe6e-b2d0-4504-a1c6-e57afaf51baf",
-                "attributes": {
-                  "en": {
-                    "id": "f18c7d87-a21f-406a-9ec3-a3ec67ac6934",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "CleanCas"
-                  },
-                  "fr": {
-                    "id": "feeac796-a804-4c08-af0c-524ba4b8d088",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à CleanCar"
-                  },
-                  "ko": {
-                    "id": "e239fe6e-b2d0-4504-a1c6-e57afaf51baf",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "346caac9-98ed-40f2-823d-1aa8aabbe63f",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "766858ef-e92f-44d1-8836-dee8536f9249",
@@ -5598,7 +5085,7 @@
               "en": {
                 "id": "1aab6a4c-49b9-4f9f-9429-90efeeb0f7f5",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Car washing"
+                "name": "Iron and Laundry"
               },
               "fr": {
                 "id": "67a49bfc-94e4-44d3-9cf4-fd663ba23b1e",
@@ -5616,64 +5103,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "3a193133-a7d6-472a-a699-7d1eacd41436",
-                "slug": "jeffrey-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "9abc559a-c31e-4df0-868c-ce6bf5fe6b6d",
-                "attributes": {
-                  "en": {
-                    "id": "06550444-1103-47c4-9b03-99846b261ab8",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "5337060e-67c1-4df1-ba18-3b91497a7d80",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "9abc559a-c31e-4df0-868c-ce6bf5fe6b6d",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "17c6f973-1237-4f4b-96f0-b208ed3e8de7",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "dcbb8109-d504-463d-898e-9615cca43f24",
-                "slug": "urban-washer-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "fafbc044-dc42-4d69-a418-37f6f98e1494",
-                "attributes": {
-                  "en": {
-                    "id": "cc7dbc60-3cba-49bd-9936-8795932e2e00",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "UrbanWasher"
-                  },
-                  "fr": {
-                    "id": "e1a490d8-fabf-45fd-a5b6-0cdbff117891",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à UrbanWasher"
-                  },
-                  "ko": {
-                    "id": "fafbc044-dc42-4d69-a418-37f6f98e1494",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "d2bc5e9b-93be-431c-a413-cb088b002c23",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "de55b2e2-77b5-4577-81fe-fbae324b3810",
@@ -6704,64 +6134,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "c6db0180-23b6-4907-b965-a586f00ff564",
-                "slug": "jeffrey-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "2d6dad5a-1974-479b-9f80-a229e3b51d10",
-                "attributes": {
-                  "en": {
-                    "id": "2d6dad5a-1974-479b-9f80-a229e3b51d10",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "61c65ecb-867a-4513-a2dd-77d85ea0a177",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "6676df8f-4a2e-4c6f-bccd-a71e3903d119",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "5115456d-b1b8-4bef-987f-4b92594466e7",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "2687e174-33c8-4147-af8a-3c231e7806b8",
-                "slug": "cleancar-car-washing",
-                "color": "blue",
-                "defaultAttibutesId": "771f851b-456f-4039-8cb4-31f1ab5a4ac4",
-                "attributes": {
-                  "en": {
-                    "id": "771f851b-456f-4039-8cb4-31f1ab5a4ac4",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "CleanCas"
-                  },
-                  "fr": {
-                    "id": "7a1202bd-f8ca-4117-abc4-a1daa467205d",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à CleanCar"
-                  },
-                  "ko": {
-                    "id": "55e2b7f4-fa7b-4d98-9a12-c60276cb6cef",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "1dc2c5c4-4614-49f1-bab0-7f85e41f174d",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "ec40721a-1dea-429b-a9b3-71058c67ddd1",
@@ -6772,7 +6145,7 @@
               "en": {
                 "id": "fe2f12b7-6178-4ce6-a5e7-b6be62a65e92",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Car washing"
+                "name": "Iron and Laundry"
               },
               "fr": {
                 "id": "3cdcefcc-df7b-4db1-a480-49ef09a7e355",
@@ -6790,64 +6163,7 @@
                 "name": ""
               }
             },
-            "services": [
-              {
-                "id": "8e02f4f1-62d4-4f46-93fe-047326e38d86",
-                "slug": "jeffrey-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "f5982f6b-a66d-4a2b-bad0-d92f29e6323b",
-                "attributes": {
-                  "en": {
-                    "id": "f5982f6b-a66d-4a2b-bad0-d92f29e6323b",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Hire a Jeffrey"
-                  },
-                  "fr": {
-                    "id": "3f26ce9e-7267-47db-ba4e-1e3cfec5d378",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à un Jeffrey"
-                  },
-                  "ko": {
-                    "id": "54b50791-d41a-4a72-a06a-f11d77070d78",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "771d3383-f220-416f-9401-915d039c5641",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              },
-              {
-                "id": "0ecbfb01-47c1-40ea-b27f-ac3209549f2e",
-                "slug": "urban-washer-iron-laundry",
-                "color": "blue",
-                "defaultAttibutesId": "e1877568-0cc2-4466-915d-bb23e7aa9062",
-                "attributes": {
-                  "en": {
-                    "id": "e1877568-0cc2-4466-915d-bb23e7aa9062",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "UrbanWasher"
-                  },
-                  "fr": {
-                    "id": "ba32ceeb-d2ed-470c-a46f-11e187af7e51",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": "Faire appel à UrbanWasher"
-                  },
-                  "ko": {
-                    "id": "5530cf8d-6412-4c5a-bd44-2c62f406e007",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  },
-                  "ja": {
-                    "id": "301170c1-4917-4191-beb8-4ae46eb07d47",
-                    "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                    "name": ""
-                  }
-                }
-              }
-            ]
+            "services": []
           },
           {
             "id": "d17958aa-9d78-4304-a123-e516a89731ae",
