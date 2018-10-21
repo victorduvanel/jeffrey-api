@@ -17,7 +17,7 @@ exports.seed = async (knex, Promise) => {
       {
         id: uuid.v4(),
         userId: user.id,
-        serviceCategoryId: '297ba79f-4065-4a27-a6cd-3f59383af701',
+        serviceCategoryId: 'e7475032-c56b-4ade-a5ee-4e0bd7a4adde',
         price: 1400,
         currency: 'EUR',
         isEnabled: true

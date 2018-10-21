@@ -1268,1086 +1268,478 @@
     ],
     "FR": [
       {
-        "id": "2f7821c5-29e2-4c07-9b21-0c33a6b8dfc4",
-        "slug": "professional-services",
-        "color": "purple",
-        "ordinalPosition": 6,
-        "defaultAttibutesId": "f7a78632-24bd-4bcf-a2d5-dd5ee7f85d81",
+        "id": "0f3be6c8-c229-4d54-9120-c994dc4cfc30",
+        "slug": "drive",
+        "color": "yellow",
+        "ordinalPosition": 1,
+        "defaultAttibutesId": "7787d2d1-712b-499d-8404-1f1f1b148ed3",
         "attributes": {
-          "en": {
-            "id": "89145bd9-ed49-4eaa-9104-a4ec134298f1",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
-            "name": "Professional Services"
-          },
           "fr": {
-            "id": "f7a78632-24bd-4bcf-a2d5-dd5ee7f85d81",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
-            "name": "Services Professionels"
-          },
-          "ko": {
-            "id": "5771402d-12e1-41b9-8679-aab253725c5d",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "ff4f1a80-b4a4-4678-bec3-ab0c1f5bff78",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/professional-services%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/professional-services-symbol.png",
-            "name": ""
-          }
-        },
-        "services": []
-      },
-      {
-        "id": "6c025e68-12a7-4fa8-9772-15e462469248",
-        "slug": "animals",
-        "color": "orange",
-        "ordinalPosition": 5,
-        "defaultAttibutesId": "cbb99cd8-d942-4dcf-8275-4d3c3d02e152",
-        "attributes": {
-          "en": {
-            "id": "e856eca0-71e2-4fbd-8cc6-1a84dbb8284a",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
-            "name": "Animals"
-          },
-          "fr": {
-            "id": "cbb99cd8-d942-4dcf-8275-4d3c3d02e152",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
-            "name": "Animaux"
-          },
-          "ko": {
-            "id": "94b9969b-3fe8-46d3-a33c-cdfd5adebc7f",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "512c3928-28b1-4ae3-bc74-9e5b2acee2bb",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/animals-symbol.png",
-            "name": ""
+            "id": "7787d2d1-712b-499d-8404-1f1f1b148ed3",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/drive.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+            "name": "Drive"
           }
         },
         "services": [
           {
-            "id": "72793d6c-0a64-4237-ae31-ab8a8ccaf06e",
-            "slug": "grooming",
-            "color": "orange",
-            "defaultAttibutesId": "a24ba935-43a6-4829-80ad-7df10b1fa1c2",
+            "id": "e7475032-c56b-4ade-a5ee-4e0bd7a4adde",
+            "slug": "drive-berline",
+            "color": "yellow",
+            "defaultAttibutesId": "f420881b-86f6-48e5-84f8-f86ebcaca459",
             "attributes": {
-              "en": {
-                "id": "5dedc5fa-0399-493f-99f7-7de65c8fc048",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Grooming"
-              },
               "fr": {
-                "id": "a24ba935-43a6-4829-80ad-7df10b1fa1c2",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Toilettage"
-              },
-              "ko": {
-                "id": "4156eb01-30e1-42ee-a9b4-0b7378caf30e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "3ffd47fc-322c-42e3-b455-12dc227bbf39",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
+                "id": "f420881b-86f6-48e5-84f8-f86ebcaca459",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/drive.png",
+                "name": "Berline"
               }
             }
           },
           {
-            "id": "bc102cf9-6fbd-41a5-b500-331798caf982",
-            "slug": "caretaking",
-            "color": "orange",
-            "defaultAttibutesId": "bacf1dfa-00ba-4ca4-b04f-80acc65e6e88",
+            "id": "8d600210-61fc-4a7b-8b28-a23b190b19b9",
+            "slug": "drive-limousing",
+            "color": "yellow",
+            "defaultAttibutesId": "593f926c-4359-4b70-9629-c12ba67b75bb",
             "attributes": {
-              "en": {
-                "id": "ef4ec5e1-941b-491e-a309-9bc3e8788d36",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Caretaking"
-              },
               "fr": {
-                "id": "bacf1dfa-00ba-4ca4-b04f-80acc65e6e88",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Gardiennage"
-              },
-              "ko": {
-                "id": "ccdd55b8-3f72-4c29-a336-3d320f9648c0",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "557f308a-5652-4cd2-b705-7b3d1d9b01e0",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
+                "id": "593f926c-4359-4b70-9629-c12ba67b75bb",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/drive.png",
+                "name": "Limousine"
               }
             }
           },
           {
-            "id": "a94b4490-7515-4d58-8426-be304de939a5",
-            "slug": "feed",
-            "color": "orange",
-            "defaultAttibutesId": "208ae534-c115-475c-8ff7-9c42b9b20a03",
+            "id": "302f1614-afb6-43f3-a53a-39559f518cd5",
+            "slug": "drive-van",
+            "color": "yellow",
+            "defaultAttibutesId": "7c0915cd-4603-4336-a9bb-4c174ae6808a",
             "attributes": {
-              "en": {
-                "id": "90a40321-fec4-4c46-9762-d6bb6486a728",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Feed"
-              },
               "fr": {
-                "id": "208ae534-c115-475c-8ff7-9c42b9b20a03",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Nourrir"
-              },
-              "ko": {
-                "id": "6add1916-e866-45c5-a363-414f718989e8",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "aecb312c-2f76-4270-b340-a9f06f4f2f63",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
+                "id": "7c0915cd-4603-4336-a9bb-4c174ae6808a",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/drive.png",
+                "name": "Van"
               }
             }
           },
           {
-            "id": "0fc624cb-1e1b-4dbd-97b6-204bab4a8403",
-            "slug": "walk",
-            "color": "orange",
-            "defaultAttibutesId": "c3fac507-2749-4314-856d-a1328ec6db43",
+            "id": "438dda10-9c47-423b-b915-1d7fc022de2b",
+            "slug": "drive-moto",
+            "color": "yellow",
+            "defaultAttibutesId": "d0a0df76-ece8-4636-9020-daab15ddd7f6",
             "attributes": {
-              "en": {
-                "id": "98fc94a0-6900-434f-bfb4-ab06d9c854eb",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Walk"
-              },
               "fr": {
-                "id": "c3fac507-2749-4314-856d-a1328ec6db43",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": "Promenade"
-              },
-              "ko": {
-                "id": "07961d08-205e-4833-90f8-9c56dfc7de05",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "1c1c8d4b-06c5-4f65-ba96-65f459cfeb7f",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/animals%403x.png",
-                "name": ""
+                "id": "d0a0df76-ece8-4636-9020-daab15ddd7f6",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/drive.png",
+                "name": "Transport moto"
               }
             }
           }
         ]
       },
       {
-        "id": "ca47775f-e2e5-42e4-a557-279879484165",
-        "slug": "gardening",
-        "color": "green",
-        "ordinalPosition": 4,
-        "defaultAttibutesId": "5faea6cf-83da-4c76-99bd-1323ae138322",
-        "attributes": {
-          "en": {
-            "id": "e4c7f5f6-9723-446a-85c0-07571530ad42",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
-            "name": "gardening"
-          },
-          "fr": {
-            "id": "5faea6cf-83da-4c76-99bd-1323ae138322",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
-            "name": "Jardinage"
-          },
-          "ko": {
-            "id": "28d3dfd2-4e02-4cde-8f17-3f2076d61e16",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "9ce9bf01-95a9-4a3d-a82d-71f9c54f10ef",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/gardening-symbol.png",
-            "name": ""
-          }
-        },
-        "services": [
-          {
-            "id": "1402df0e-bcf2-462e-b0f0-ff29af3a15f6",
-            "slug": "spray",
-            "color": "green",
-            "defaultAttibutesId": "556e75f8-9276-4a9c-80d1-53c967d280f5",
-            "attributes": {
-              "en": {
-                "id": "e3d52bb0-db23-4686-937c-9cda8f6dc0d9",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "spray"
-              },
-              "fr": {
-                "id": "556e75f8-9276-4a9c-80d1-53c967d280f5",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Arrosage"
-              },
-              "ko": {
-                "id": "80a80b1e-b15d-46e0-8706-a2e7dc4200d0",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "9c023427-26fa-4eaa-bed8-566592483e26",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              }
-            }
-          },
-          {
-            "id": "cc16883c-430e-448e-9836-69c70938f6e7",
-            "slug": "rake",
-            "color": "green",
-            "defaultAttibutesId": "46aebca4-df5a-47b7-97ac-b91fe2b9657e",
-            "attributes": {
-              "en": {
-                "id": "d37974ce-d6e7-4a09-a523-adcaa96a1d2a",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Rake"
-              },
-              "fr": {
-                "id": "46aebca4-df5a-47b7-97ac-b91fe2b9657e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Ramasser végétaux"
-              },
-              "ko": {
-                "id": "f343bbce-2314-48e7-84b8-6bbcda611dfe",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "a5b4d970-7180-4e98-8e2b-523501c1d171",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              }
-            }
-          },
-          {
-            "id": "babc560b-7213-4101-992f-610b0c043b58",
-            "slug": "plant",
-            "color": "green",
-            "defaultAttibutesId": "1092a694-bfce-4ec4-82e6-3112b8a41c42",
-            "attributes": {
-              "en": {
-                "id": "c8651cbf-4ed9-4f96-89b9-e15324731bd8",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Plant"
-              },
-              "fr": {
-                "id": "1092a694-bfce-4ec4-82e6-3112b8a41c42",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Planter des plantes / fleurs"
-              },
-              "ko": {
-                "id": "07d1b024-5f80-486c-b8e1-fe531020faee",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "f9dc7fa5-6f18-430d-a543-a4ea71b8fbfe",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              }
-            }
-          },
-          {
-            "id": "8b51a932-9e92-4cb8-a611-ff5787130438",
-            "slug": "mow",
-            "color": "green",
-            "defaultAttibutesId": "cfb0fe5e-a2af-4e7e-8f44-d8065d2bfd8d",
-            "attributes": {
-              "en": {
-                "id": "0604e841-3054-4cf9-99c8-0032055e8ffe",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Mow"
-              },
-              "fr": {
-                "id": "cfb0fe5e-a2af-4e7e-8f44-d8065d2bfd8d",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": "Tondre la pelouse / Taille de haie"
-              },
-              "ko": {
-                "id": "55f72d0b-a623-46a0-89e0-13e2e51561ef",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "9178055d-6136-4a03-a8dc-3b1f6fead865",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/gardening%403x.png",
-                "name": ""
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "81a28771-b643-4c8f-bd2b-2274c4cb4f07",
-        "slug": "purchase-and-delivery",
-        "color": "turquoise",
+        "id": "af07fc50-76e5-4da4-bb9a-8b714dc2b4f2",
+        "slug": "modern-majordome",
+        "color": "red",
         "ordinalPosition": 2,
-        "defaultAttibutesId": "164c2477-e741-4236-b26a-db328c9ba403",
+        "defaultAttibutesId": "72635922-d5dc-4a19-9dfd-be569943a447",
         "attributes": {
-          "en": {
-            "id": "e73b42e1-d9f2-4275-9fd5-87b34c3f7f3d",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
-            "name": "Purchase & Delivery"
-          },
           "fr": {
-            "id": "164c2477-e741-4236-b26a-db328c9ba403",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
-            "name": "Achats & Livraisons"
-          },
-          "ko": {
-            "id": "c7cdbba5-c20c-450f-94ba-fd6341ed659d",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "5a218751-8002-41c9-9acb-d04fd4216248",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery-symbol.png",
-            "name": ""
+            "id": "72635922-d5dc-4a19-9dfd-be569943a447",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
+            "name": "Majordome Moderne"
           }
         },
         "services": [
           {
-            "id": "bd6d5fc8-b9a5-4295-b4cb-48730f9f763d",
-            "slug": "heavy-packages",
-            "color": "turquoise",
-            "defaultAttibutesId": "f81627e3-6d2b-4fa3-9c16-90e2386a0d75",
+            "id": "3647f5a8-2b9d-437b-90b9-25fd25815aa7",
+            "slug": "carless-driver",
+            "color": "red",
+            "defaultAttibutesId": "46d6194b-f5b4-4adc-91c1-2b1f17f80dca",
             "attributes": {
-              "en": {
-                "id": "97bf2342-76eb-4c18-84b7-c0707a50ce2a",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Heavy Packages"
-              },
               "fr": {
-                "id": "f81627e3-6d2b-4fa3-9c16-90e2386a0d75",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Colis volumineux"
-              },
-              "ko": {
-                "id": "9008bd97-4e32-4e5b-86ca-50086e58399b",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "3a160edc-08fb-43a8-b036-93ebd6f52bee",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
+                "id": "46d6194b-f5b4-4adc-91c1-2b1f17f80dca",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Chauffeur sans voiture"
               }
             }
           },
           {
-            "id": "6e64fd03-bf54-414f-8c19-3b5df5c844bf",
-            "slug": "light-packages",
-            "color": "turquoise",
-            "defaultAttibutesId": "37450927-bf62-46c1-a453-7aee928f2aa4",
+            "id": "d64fcb65-5ed3-47c0-9df7-9540426d9d6b",
+            "slug": "administrative-assistant",
+            "color": "red",
+            "defaultAttibutesId": "6f036205-2b02-4dfc-ba25-6d8a13f45c6d",
             "attributes": {
-              "en": {
-                "id": "2f241b2a-6c33-4298-84b9-bc3797544c50",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Light Packages"
-              },
               "fr": {
-                "id": "37450927-bf62-46c1-a453-7aee928f2aa4",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Colis légers"
-              },
-              "ko": {
-                "id": "bb55610a-5c2a-4808-8329-6be49b7ebaa0",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "c4955b66-74fe-46c8-860e-703e82f8f976",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
+                "id": "6f036205-2b02-4dfc-ba25-6d8a13f45c6d",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Assistant administratif"
               }
             }
           },
           {
-            "id": "f070ee2e-94f3-4d1f-bc69-7ef278f60a9c",
-            "slug": "groceries",
-            "color": "turquoise",
-            "defaultAttibutesId": "294cc849-9032-4bdc-8380-9a61877b32b6",
+            "id": "b4742e52-6816-4b99-870f-beb07cacd98a",
+            "slug": "house-tidy-up",
+            "color": "red",
+            "defaultAttibutesId": "c8eee58c-6039-4283-b49e-c017132efc69",
             "attributes": {
-              "en": {
-                "id": "124c6e47-22e0-47a7-b980-5dae56fb5971",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Groceries"
-              },
               "fr": {
-                "id": "294cc849-9032-4bdc-8380-9a61877b32b6",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Faire mes courses"
-              },
-              "ko": {
-                "id": "15dc5ca4-4ce1-4225-ada4-8bc61baa27ef",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "a84c03ee-ea52-4d09-89b3-be48f72bb2c5",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
+                "id": "c8eee58c-6039-4283-b49e-c017132efc69",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Rangement maison"
               }
             }
           },
           {
-            "id": "47f4bc9a-0644-4d6c-bfb6-554c58a1254d",
-            "slug": "groceries-pick-up-and-delivery",
-            "color": "turquoise",
-            "defaultAttibutesId": "7cd02516-6958-4bdd-894b-f2a5d4998390",
+            "id": "1a832f27-f829-4cbc-8854-0c791ee1c1b0",
+            "slug": "purchase-and-delivery",
+            "color": "red",
+            "defaultAttibutesId": "adebb3a4-8717-4447-85d9-2759df113a87",
             "attributes": {
-              "en": {
-                "id": "f68adec2-99d6-4b69-b17b-3210be596b55",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Pick up and deliver my groceries"
-              },
               "fr": {
-                "id": "7cd02516-6958-4bdd-894b-f2a5d4998390",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Récupérer et livrer mes courses"
-              },
-              "ko": {
-                "id": "b9024c24-c6d1-4b29-8aef-0a73834841aa",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "7e38b374-3e7d-45ac-ba2e-7afe3b5ca788",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
+                "id": "adebb3a4-8717-4447-85d9-2759df113a87",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Achats & Livraisons"
               }
             }
           },
           {
-            "id": "b2fb9bf0-bd3f-48fd-8c02-78390b3ba93a",
-            "slug": "food",
-            "color": "turquoise",
-            "defaultAttibutesId": "b42f216e-83f1-4234-af5d-483569e6b864",
+            "id": "a311b4f9-7b68-4d11-a0f4-550e99271486",
+            "slug": "city-guide",
+            "color": "red",
+            "defaultAttibutesId": "04e79f8d-cc06-4f54-87f1-aff968584b55",
             "attributes": {
-              "en": {
-                "id": "0f9bc7dc-a14d-4335-b3f7-97e53a1aa30c",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Food"
-              },
               "fr": {
-                "id": "b42f216e-83f1-4234-af5d-483569e6b864",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": "Nourriture"
+                "id": "04e79f8d-cc06-4f54-87f1-aff968584b55",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Guide touristique"
               },
-              "ko": {
-                "id": "e5a89fe4-2eaa-424b-9c63-758aaf403a46",
+              "en": {
+                "id": "189b94e5-a91f-49d3-a613-bf45103cabd8",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "City guide"
+              }
+            }
+          },
+          {
+            "id": "09895ba0-89e3-4ce2-8fff-1ab12989ee63",
+            "slug": "pet-sitting",
+            "color": "red",
+            "defaultAttibutesId": "8165c7d7-ca8a-4a56-b11d-5faba937c813",
+            "attributes": {
+              "fr": {
+                "id": "8165c7d7-ca8a-4a56-b11d-5faba937c813",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "5370a05a-8bb8-4320-88d3-247f599cb9b2",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                "name": ""
+                "name": "Pet sitting"
               }
             }
           }
         ]
       },
       {
-        "id": "fbb9aa19-27b6-4b1a-b45e-0553f73f385a",
+        "id": "18cccaa9-affd-40d1-a545-c55625ccecb6",
         "slug": "cleaning",
         "color": "blue",
         "ordinalPosition": 3,
-        "defaultAttibutesId": "99549ab4-0e96-4cef-818d-5804537a6930",
+        "defaultAttibutesId": "babf80da-b25a-4767-ad53-835edae5db1d",
         "attributes": {
           "en": {
-            "id": "8869f2c8-63b1-469b-8582-48cde92d2bd6",
+            "id": "f18ce0a0-4340-434f-840d-c7b18b70fc86",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
             "name": "Cleaning"
           },
           "fr": {
-            "id": "99549ab4-0e96-4cef-818d-5804537a6930",
+            "id": "babf80da-b25a-4767-ad53-835edae5db1d",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
-            "name": "Nettoyages"
-          },
-          "ko": {
-            "id": "33a4a06e-8fe6-47cf-90b1-08b169f5f091",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "fe13ce34-ba66-42e0-b1e9-1931ee4d859a",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/cleaning-symbol.png",
-            "name": ""
+            "name": "Nettoyage"
           }
         },
         "services": [
           {
-            "id": "5672dbe5-afd9-4b9d-b20c-2cb07e440735",
+            "id": "45a5b449-00b0-4577-a983-8032b9bdf428",
             "slug": "house-cleaning",
             "color": "blue",
-            "defaultAttibutesId": "068dcf12-a719-4e12-960d-ff002779adb1",
+            "defaultAttibutesId": "7803113c-f129-47a0-a66b-fe379750058c",
             "attributes": {
               "en": {
-                "id": "184ab900-0449-42ff-a82a-94c1af641cdc",
+                "id": "63550129-03ca-49cb-96e7-e25f46e2e229",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
                 "name": "House cleaning"
               },
               "fr": {
-                "id": "068dcf12-a719-4e12-960d-ff002779adb1",
+                "id": "7803113c-f129-47a0-a66b-fe379750058c",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
                 "name": "Nettoyage maison / appartement"
-              },
-              "ko": {
-                "id": "6832e1ba-9cf3-4eef-a41d-b5aadc003e6a",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "a414b8df-17e9-4c81-b420-3be7668a59d7",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
               }
             }
           },
           {
-            "id": "85ee86c7-e411-4208-b560-d11f6c8ae714",
-            "slug": "cellar-garage-clenning",
-            "color": "blue",
-            "defaultAttibutesId": "09ccb89f-ea17-4aa0-8549-a62000ee6b9f",
-            "attributes": {
-              "en": {
-                "id": "0a4313cd-f5e5-45b5-995b-65baa7def55c",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Cellar and garage cleaning"
-              },
-              "fr": {
-                "id": "09ccb89f-ea17-4aa0-8549-a62000ee6b9f",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Nettoyage cave ou garage"
-              },
-              "ko": {
-                "id": "e4e3e52f-ba37-417b-a2e7-a991324f7407",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "e54ba5ce-964a-40dc-8111-a56297f654a1",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              }
-            }
-          },
-          {
-            "id": "6c3cbeea-c856-4c96-bb46-325698e81fc5",
+            "id": "91eb6d08-13da-401f-8bb9-fca8057c070d",
             "slug": "car-washing",
             "color": "blue",
-            "defaultAttibutesId": "3692dd16-eb0b-47a4-92d8-981a56a614de",
+            "defaultAttibutesId": "83f18317-c48d-44e4-a910-b873c399b0d8",
             "attributes": {
               "en": {
-                "id": "3ebe9036-c8b3-4fff-bf2b-73622b6f1885",
+                "id": "a1d3f256-66cb-4329-a304-a57da5c777fd",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
                 "name": "Car washing"
               },
               "fr": {
-                "id": "3692dd16-eb0b-47a4-92d8-981a56a614de",
+                "id": "83f18317-c48d-44e4-a910-b873c399b0d8",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
                 "name": "Nettoyage voiture"
-              },
-              "ko": {
-                "id": "65463614-4712-4385-85ed-244a31fd9d28",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "43a0943c-ecc3-4731-841c-f1dc0c923385",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              }
-            },
-            "services": []
-          },
-          {
-            "id": "f9731bde-7152-4257-b974-1c48bb996d9f",
-            "slug": "iron-laundry",
-            "color": "blue",
-            "defaultAttibutesId": "59c2e7cc-b5f8-456b-ac2d-82cf42820c8b",
-            "attributes": {
-              "en": {
-                "id": "dcac4986-4df5-4e82-8167-ebbf5b9ce5f4",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Iron and Laundry"
-              },
-              "fr": {
-                "id": "59c2e7cc-b5f8-456b-ac2d-82cf42820c8b",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Repassage / lessives"
-              },
-              "ko": {
-                "id": "64df7fc5-bf13-4e26-a6a9-8af46540d218",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "7c2d7bd3-486b-43f3-bafe-4054f468223b",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              }
-            },
-            "services": []
-          },
-          {
-            "id": "7982f65a-e353-41b4-ba04-4fa7f2319fbb",
-            "slug": "windows-cleaning",
-            "color": "blue",
-            "defaultAttibutesId": "40913fde-bba4-48f4-bed6-eb3eaf04c04f",
-            "attributes": {
-              "en": {
-                "id": "2ee2eee7-408b-4e9d-b74b-6499c79e1e5e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Windows cleaning"
-              },
-              "fr": {
-                "id": "40913fde-bba4-48f4-bed6-eb3eaf04c04f",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": "Nettoyage vitres"
-              },
-              "ko": {
-                "id": "e437c097-e21e-43c8-83a6-c4bce003f00f",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "17dd3452-a46f-4db6-b5b3-cb6e902147ea",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
               }
             }
           },
           {
-            "id": "29c8fb49-8c92-436f-8791-ad3a4b123b5c",
+            "id": "b2dd2e2a-d5ca-44c5-a686-58bc37074ad9",
             "slug": "swimming-pool-cleaning",
             "color": "blue",
-            "defaultAttibutesId": "b1373c29-67ad-4bfa-9a38-e04951af5a08",
+            "defaultAttibutesId": "c462297a-0216-49d5-a956-244e47158d39",
             "attributes": {
               "en": {
-                "id": "ff981d26-7fdd-46c3-8550-bd91de6a615b",
+                "id": "78b23e89-c824-4c40-a93b-1c58239f31af",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
                 "name": "Swimming pool cleaning"
               },
               "fr": {
-                "id": "b1373c29-67ad-4bfa-9a38-e04951af5a08",
+                "id": "c462297a-0216-49d5-a956-244e47158d39",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
                 "name": "Nettoyage piscine"
-              },
-              "ko": {
-                "id": "4847625f-1228-4ca8-8782-edb77398d39c",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "28373f09-30a8-4966-b4f4-69f62fa548e7",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/cleaning%403x.png",
-                "name": ""
               }
             }
           }
         ]
       },
       {
-        "id": "5ae28670-d9db-41fd-9ecc-4c83120ac544",
-        "slug": "handiwork-and-moving",
-        "color": "yellow",
-        "ordinalPosition": 1,
-        "defaultAttibutesId": "b26ef6ff-e9c6-433f-a73e-84759b916a5d",
+        "id": "64057c4e-5097-473a-ac0e-7033cc267865",
+        "slug": "technology",
+        "color": "purple",
+        "ordinalPosition": 4,
+        "defaultAttibutesId": "507f696d-b205-463c-b13f-9e3949934718",
         "attributes": {
           "en": {
-            "id": "eea4b425-bbe2-484e-9f99-3c39e1c16652",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
-            "name": "Handiwork and moving"
+            "id": "e142cce8-e93d-4196-8838-3dacc54f3612",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
+            "name": "Technology"
           },
           "fr": {
-            "id": "b26ef6ff-e9c6-433f-a73e-84759b916a5d",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
-            "name": "Bricolages & déménagement"
-          },
-          "ko": {
-            "id": "db99fb89-fc2a-4fc0-922c-2e8e920ce8ac",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "8adeb9cd-7be2-4cb7-8703-c45dd9541b78",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving-symbol.png",
-            "name": ""
+            "id": "507f696d-b205-463c-b13f-9e3949934718",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
+            "name": "Technologie"
           }
         },
         "services": [
           {
-            "id": "94ff761e-ef57-4f37-8758-e0476141c94b",
-            "slug": "furniture-construction",
-            "color": "yellow",
-            "defaultAttibutesId": "95ba6b1d-bef1-428d-9447-e8cfbf7328d8",
+            "id": "a72f4a87-149c-476e-892d-5d1902f276d3",
+            "slug": "home-appliance",
+            "color": "purple",
+            "defaultAttibutesId": "9ea3fba7-cb3a-48a7-8f05-75447b561c04",
             "attributes": {
               "en": {
-                "id": "b3dbd543-6801-4721-b53e-748bdc3229d0",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": "Furniture construction"
+                "id": "781f5ac5-b53e-472e-a828-25a45c5add6a",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+                "name": "Home appliance"
               },
               "fr": {
-                "id": "95ba6b1d-bef1-428d-9447-e8cfbf7328d8",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": "Construire un meuble"
-              },
-              "ko": {
-                "id": "c6c7a96d-a70e-450b-b2f7-5cf6dcc85c6e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "ed5d600f-d287-48a5-a82f-73b74bf60987",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": ""
+                "id": "9ea3fba7-cb3a-48a7-8f05-75447b561c04",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+                "name": "Électroménager"
               }
             }
           },
           {
-            "id": "b643406e-ae1c-4d5b-b72f-95926ce03b9f",
-            "slug": "moving",
-            "color": "yellow",
-            "defaultAttibutesId": "daa0bd83-e49f-40ac-9c55-8da1173280d1",
+            "id": "0295f5d1-38a0-49e7-8b27-83e471da1497",
+            "slug": "electronics",
+            "color": "purple",
+            "defaultAttibutesId": "eacf9d27-9a73-43cd-83a7-86d930631305",
             "attributes": {
               "en": {
-                "id": "ac5f4e0e-5b56-4d10-b006-55a57326889e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": "Moving"
+                "id": "d0b94a6c-6177-4adf-8dc3-16757b315007",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+                "name": "Electronics"
               },
               "fr": {
-                "id": "daa0bd83-e49f-40ac-9c55-8da1173280d1",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": "Déménagement"
-              },
-              "ko": {
-                "id": "fd41a05d-9f3c-48f7-b55d-32b00533d60c",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "8d0dea8b-9fa5-437b-a01c-164f3e3ae69e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": ""
+                "id": "eacf9d27-9a73-43cd-83a7-86d930631305",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+                "name": "Électronique"
               }
             }
           },
           {
-            "id": "2e59f568-9a51-4f06-8bea-e0ae2b0ac235",
-            "slug": "painting",
-            "color": "yellow",
-            "defaultAttibutesId": "78068b64-3bd1-4589-b4c4-ea92e93cea9c",
+            "id": "4a42ba4b-413b-49e9-b4c2-a1df324cb2bd",
+            "slug": "computers",
+            "color": "purple",
+            "defaultAttibutesId": "38dbb2d0-308e-4250-8f35-f1271d74e01e",
             "attributes": {
               "en": {
-                "id": "f600f6b8-5a39-4ec7-8e71-fbb5adfe719d",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": "Painting"
+                "id": "6dd71064-2496-48ca-99b6-0ac6af03ec6b",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+                "name": "Computers"
               },
               "fr": {
-                "id": "78068b64-3bd1-4589-b4c4-ea92e93cea9c",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": "Peinture"
-              },
-              "ko": {
-                "id": "e3f93f79-2d73-4e77-97fc-ea1d53a79a39",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "2a891b78-2183-4995-a439-c27b46d397d7",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/handiwork-and-moving%403x.png",
-                "name": ""
+                "id": "38dbb2d0-308e-4250-8f35-f1271d74e01e",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/technology.png",
+                "name": "Informatique"
               }
             }
           }
         ]
       },
+
       {
-        "id": "0516f947-9481-4ef9-a220-6980cb36e5d9",
-        "slug": "modern-majordome",
+        "id": "9e035518-6d30-4674-9e6b-f0f2826da093",
+        "slug": "beauty",
         "color": "red",
-        "ordinalPosition": 0,
-        "defaultAttibutesId": "909976b7-e011-469d-a421-72f64701b5dc",
+        "ordinalPosition": 6,
+        "defaultAttibutesId": "e06a5921-2a1d-4a8b-9a01-29425c3351ab",
         "attributes": {
           "en": {
-            "id": "0fcd88bc-4ac5-4738-bdb4-68e67b004194",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
-            "name": "Modern majordome"
+            "id": "95a9254b-6ddf-4b44-b02b-9f46c71630c6",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
+            "name": "Beauty"
           },
           "fr": {
-            "id": "909976b7-e011-469d-a421-72f64701b5dc",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
-            "name": "Majordome morderne"
-          },
-          "ko": {
-            "id": "2fa65eb2-0320-4304-a53f-bd51a2f53cf1",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
-            "name": ""
-          },
-          "ja": {
-            "id": "d7ae3f08-a873-4113-bf61-8379e2ecdd54",
-            "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome-symbol.png",
-            "name": ""
+            "id": "e06a5921-2a1d-4a8b-9a01-29425c3351ab",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
+            "name": "Beauté"
           }
         },
         "services": [
           {
-            "id": "297ba79f-4065-4a27-a6cd-3f59383af701",
-            "slug": "amateur-cook",
+            "id": "20e17603-8223-4f6d-b6b7-826ed64adbf2",
+            "slug": "manucure",
             "color": "red",
-            "defaultAttibutesId": "c741af67-846c-4e53-883e-77cbab4c39d3",
+            "defaultAttibutesId": "f19ee0ca-138b-4ba5-92a1-e67db3e53c27",
             "attributes": {
-              "en": {
-                "id": "79d0e1b5-9dd1-4fcc-8643-225cebb6c344",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Amateur cook"
-              },
               "fr": {
-                "id": "c741af67-846c-4e53-883e-77cbab4c39d3",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Cusinier amateur"
-              },
-              "ko": {
-                "id": "1e19ab74-f2c1-4577-80c3-fbf3d88ab52c",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "71f01b86-a2c6-47ed-8740-c427fabf8754",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "f19ee0ca-138b-4ba5-92a1-e67db3e53c27",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+                "name": "Manucure"
               }
             }
           },
           {
-            "id": "b9b0475c-164e-45cb-90e0-66461940cf21",
-            "slug": "disabled-person-assistance",
+            "id": "3b0034b7-72a6-4d76-99c1-a380b5d2960f",
+            "slug": "pedicure",
             "color": "red",
-            "defaultAttibutesId": "fcf22701-52bc-492a-a5b9-08413135a540",
+            "defaultAttibutesId": "786a5538-292a-4e50-befe-0afea6451f09",
             "attributes": {
-              "en": {
-                "id": "7f2da0b0-66d7-43f5-8e47-3ac61a612eb0",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Disabled person assistance"
-              },
               "fr": {
-                "id": "fcf22701-52bc-492a-a5b9-08413135a540",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Assistance personne à mobilité réduite"
-              },
-              "ko": {
-                "id": "c2e00b42-36d8-44eb-ae12-5fccd8cbbde8",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "63f0ff82-0f4b-4ad8-8034-412791ddc742",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "786a5538-292a-4e50-befe-0afea6451f09",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+                "name": "Pédicure"
               }
             }
           },
           {
-            "id": "ee4b2b35-0328-4fa3-aa3c-e74d88237d96",
-            "slug": "housekeeping",
+            "id": "d6878b0b-a267-49f8-bf08-56db26bd9f37",
+            "slug": "hairstyle",
             "color": "red",
-            "defaultAttibutesId": "0f04411e-cfdd-4d77-986e-b2936aecf783",
+            "defaultAttibutesId": "03d58801-4957-4460-8183-b720c747c55a",
             "attributes": {
-              "en": {
-                "id": "dc9c94c1-1e60-4e8f-a382-c7e9f2e55544",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Housekeeping"
-              },
               "fr": {
-                "id": "0f04411e-cfdd-4d77-986e-b2936aecf783",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Gardiennage maison"
-              },
-              "ko": {
-                "id": "560985e1-3f46-4b6c-bd26-d9141ae1a21b",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "eb83ebcb-d610-462c-a470-717379f5054e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "03d58801-4957-4460-8183-b720c747c55a",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+                "name": "Coiffure"
               }
             }
           },
           {
-            "id": "8eca182d-7919-44c7-9bac-34335c8aafe9",
-            "slug": "house-tidy-up",
+            "id": "1bd877ba-6b4a-4592-91cc-7649a296e8ed",
+            "slug": "epilation",
             "color": "red",
-            "defaultAttibutesId": "894c10d4-8ddd-4f15-91b5-b395eb801d0e",
+            "defaultAttibutesId": "95d1d428-0720-46aa-b2f5-01e07ec7dc3e",
             "attributes": {
-              "en": {
-                "id": "9925c85e-d2f3-4591-884f-76d9a99707f7",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "House tidy up"
-              },
               "fr": {
-                "id": "894c10d4-8ddd-4f15-91b5-b395eb801d0e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Rangement maison"
-              },
-              "ko": {
-                "id": "c9a9845c-ef92-4fbf-9442-b486f6dab97f",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "75511951-ef92-4429-8b23-460418d42e26",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "95d1d428-0720-46aa-b2f5-01e07ec7dc3e",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+                "name": "Épilation"
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        "id": "320f8392-b5cd-490e-afd8-7de45fd2b8e0",
+        "slug": "coach-and-wellness",
+        "color": "red",
+        "ordinalPosition": 7,
+        "defaultAttibutesId": "66e95584-19dd-42a7-8d59-96378485df9f",
+        "attributes": {
+          "en": {
+            "id": "594cc788-8eab-46ab-823d-a051061048c1",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
+            "name": "Coach and Wellness"
+          },
+          "fr": {
+            "id": "66e95584-19dd-42a7-8d59-96378485df9f",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
+            "name": "Sport et bien-être"
+          }
+        },
+        "services": [
+          {
+            "id": "e02b6bc9-0fdf-4091-9f4c-ef2f7d69813a",
+            "slug": "sport",
+            "color": "red",
+            "defaultAttibutesId": "4b2516b8-cabe-4826-8182-01cefc8a95e7",
+            "attributes": {
+              "fr": {
+                "id": "4b2516b8-cabe-4826-8182-01cefc8a95e7",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+                "name": "Sport"
               }
             }
           },
           {
-            "id": "0e9b7533-1f1a-4238-a5ea-646b0bfa443a",
-            "slug": "carless-driver",
+            "id": "f17b075c-2fe7-4b9a-9098-cf03a9c91675",
+            "slug": "yoga",
             "color": "red",
-            "defaultAttibutesId": "2359b28c-8e35-4b79-bf7e-559608be0178",
+            "defaultAttibutesId": "e4ef27b1-be12-40d3-83af-a4f77eaa209c",
             "attributes": {
-              "en": {
-                "id": "394bc36c-7de6-421f-a6bb-b899a845d524",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Carless driver"
-              },
               "fr": {
-                "id": "2359b28c-8e35-4b79-bf7e-559608be0178",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Chauffeur sans voiture"
-              },
-              "ko": {
-                "id": "d04ac814-0fe1-4fe3-9346-5df54b8fdb96",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "98294e05-fc67-4f27-b134-49a98ffe31ee",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "e4ef27b1-be12-40d3-83af-a4f77eaa209c",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+                "name": "Yoga"
               }
             }
           },
           {
-            "id": "3f7f040a-ac23-4411-b304-92f7359d94e1",
-            "slug": "guest-service",
+            "id": "2ba57f76-e256-4889-8d6e-5ef06b7957d8",
+            "slug": "perosnal-trainer",
             "color": "red",
-            "defaultAttibutesId": "6d0eaef6-bdb3-4f0b-9f63-610c08179404",
+            "defaultAttibutesId": "adc8a40c-e4dd-4207-a1ac-e0a5ff4f25b6",
             "attributes": {
               "en": {
-                "id": "74523a79-4c1b-4631-967c-2d226a17d0dc",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Guest service"
+                "id": "2039ea72-9db0-4660-aa6a-7f60de555f39",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+                "name": "Personal trainer"
               },
               "fr": {
-                "id": "6d0eaef6-bdb3-4f0b-9f63-610c08179404",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Service invité"
-              },
-              "ko": {
-                "id": "05ce7202-1567-465b-8d08-5b92e8a8f2a3",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "78810360-6248-4b02-b45c-1a6a079f9bc2",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "adc8a40c-e4dd-4207-a1ac-e0a5ff4f25b6",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+                "name": "Coach personnel"
               }
             }
           },
           {
-            "id": "4657e48f-39c2-46f3-bf65-bd50e012784d",
-            "slug": "personal-assistant",
+            "id": "c4a8ee89-70e1-4712-a99d-a89d42abc8c0",
+            "slug": "massage",
             "color": "red",
-            "defaultAttibutesId": "aedda556-94b6-4e7e-b344-e12ba22847cd",
+            "defaultAttibutesId": "d9c2235f-ac03-4cd6-af2d-9149d7f1b1a7",
             "attributes": {
-              "en": {
-                "id": "e2bdc181-f6f2-4e37-99a0-cac44b26aabd",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Personal assistant"
-              },
               "fr": {
-                "id": "aedda556-94b6-4e7e-b344-e12ba22847cd",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Assistant personel"
-              },
-              "ko": {
-                "id": "c8bedb1e-5234-4603-ba07-9d62e972ad36",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "4d0ac564-6a34-49fb-83f7-c10bf16709ba",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              }
-            }
-          },
-          {
-            "id": "293d98d8-1130-4b7f-b379-cb51b1310283",
-            "slug": "administrative-assistant",
-            "color": "red",
-            "defaultAttibutesId": "fd15d17b-9d9e-4555-8be6-ddc43357cc47",
-            "attributes": {
-              "en": {
-                "id": "b1a5bfc5-6d11-4083-b527-48ef935ca980",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Administrative assistant"
-              },
-              "fr": {
-                "id": "fd15d17b-9d9e-4555-8be6-ddc43357cc47",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": "Assistant administratif"
-              },
-              "ko": {
-                "id": "693d38a8-d10f-4788-88a5-c259967a8312",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
-              },
-              "ja": {
-                "id": "377e2f93-6a03-465f-afcd-00396062d235",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
-                "name": ""
+                "id": "d9c2235f-ac03-4cd6-af2d-9149d7f1b1a7",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/wellness.png",
+                "name": "Massage"
               }
             }
           }
