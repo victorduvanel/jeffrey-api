@@ -32,6 +32,7 @@ import TOSAcceptance    from './tos-acceptance';
 import StripeAccount    from './stripe-account';
 import Country          from './country';
 
+import './adyen-card';
 import './postal-address';
 import './business';
 
@@ -66,6 +67,10 @@ const User = Base.extend({
 
   givenReviews() {
     return this.hasMany('Review', 'author_id');
+  },
+
+  adyenCard() {
+    return this.hasMany('AdyenCard');
   },
 
   stripeCard() {
@@ -246,9 +251,9 @@ const User = Base.extend({
   },
 
   paymentMethodStatus: currentUserOnly(async function() {
-    await this.load('stripeCard');
+    await this.load('adyenCard');
 
-    const cards = this.related('stripeCard');
+    const cards = this.related('adyenCard');
     if (!cards.length) {
       return 'not_set';
     }
