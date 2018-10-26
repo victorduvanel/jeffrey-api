@@ -10,9 +10,15 @@ const StripeAccount = Base.extend({
   }
 }, {
   create: async function(user) {
+    const country = await user.country();
+
+    if (!country) {
+      throw new Error('user country not set');
+    }
+
     const account = await stripe.accounts.create({
       type: 'custom',
-      country: 'FR', // user.get('country'),
+      country: country.get('code'),
       metadata: {
         user_id: user.get('id')
       }
