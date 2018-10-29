@@ -2,7 +2,7 @@ import Promise          from 'bluebird';
 import moment           from 'moment';
 import request          from 'request-promise';
 import nativeBcrypt     from 'bcryptjs';
-import uuid             from 'uuid';
+import uuid             from 'uuid/v4';
 import _                from 'lodash';
 
 import buckets          from '../services/google/storage';
@@ -273,6 +273,20 @@ const User = Base.extend({
     } else {
       return 'ok';
     }
+  }),
+
+  livechatToken: currentUserOnly(async function() {
+    let livechatToken = this.get('livechatToken');
+
+    if (!livechatToken) {
+      const token = uuid().split('-').join('');
+      const rid = uuid().split('-').join('');
+
+      livechatToken = `${token}-${rid}`;
+      this.set('livechatToken', livechatToken);
+      await this.save();
+    }
+    return livechatToken;
   }),
 
   /* !GRAPHQL PROPS */
@@ -770,7 +784,7 @@ const User = Base.extend({
   },
 
   create: async function(props) {
-    const id = uuid.v4();
+    const id = uuid();
 
     props.isProvider = props.isProvider || false;
 

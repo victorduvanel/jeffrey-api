@@ -44,6 +44,7 @@ type User {
   phoneNumber: String
   identityDocuments: [UserDocument]
   bankAccounts: BankAccount
+  livechatToken: String
 }
 `;
 

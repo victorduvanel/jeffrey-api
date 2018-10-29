@@ -25,6 +25,7 @@ function up(knex) {
         .references('postal_addresses.id')
         .onUpdate('CASCADE')
         .onDelete('RESTRICT');
+      table.string('livechat_token').unique();
       table.dateTime('created_at');
       table.dateTime('updated_at');
     });
