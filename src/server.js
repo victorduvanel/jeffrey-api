@@ -99,7 +99,10 @@ get('/reset-password/:token', routes.resetPassword.get);
 
 get('/ms', routes.ms.get);
 get('/fixture/messages', routes.fixtureMessages.get);
+
 post('/apple/ios-receipt', routes.apple.iosReceipt.post);
+post('/apple/subscription-status', routes.apple.subscriptionStatus.post);
+
 get('/app-link', routes.appLink.get);
 get('/app-redirect/:action', routes.appRedirect.get);
 post('/profile-pic', routes.profilePic.post);

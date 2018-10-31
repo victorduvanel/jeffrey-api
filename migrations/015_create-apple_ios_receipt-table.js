@@ -3,7 +3,10 @@ function up(knex) {
     .createTable('apple_ios_receipts', (table) => {
       table.uuid('id').primary();
       table.string('transaction_id').unique();
+      table.uuid('receipt_file_id');
       table.integer('quantity');
+      table.dateTime('purchase_date');
+      table.dateTime('expires_date');
 
       table
         .uuid('product_id')

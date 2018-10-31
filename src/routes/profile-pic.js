@@ -4,7 +4,7 @@ import Busboy                from 'busboy';
 import Buckets               from '../services/google/storage';
 import oauth2                from '../middlewares/oauth2';
 import { applyExifRotation } from '../lib/exif';
-import Canvas, { Image } from 'canvas';
+import Canvas, { Image }     from 'canvas';
 
 const createCanvasImage = (buffer) => {
   return new Promise((resolve, reject) => {
