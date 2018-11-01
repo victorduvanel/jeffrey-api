@@ -35,6 +35,7 @@ import Country          from './country';
 import './adyen-card';
 import './postal-address';
 import './business';
+import AppleIosReceipts from './apple-ios-receipt';
 
 import { Unauthorized } from '../graphql/errors';
 import { AppError}      from '../errors';
@@ -69,6 +70,10 @@ const User = Base.extend({
     return this.hasMany('Review', 'author_id');
   },
 
+  AppleIosReceipts() {
+    return this.hasMany('AppleIosReceipt');
+  },
+
   adyenCard() {
     return this.hasMany('AdyenCard');
   },
@@ -78,6 +83,24 @@ const User = Base.extend({
   },
 
   /* GRAPHQL PROPS */
+
+  async getSubscriptionStatus() {
+    const receipt = await AppleIosReceipts
+      .query((qb) => {
+        qb.where('user_id', this.get('id'));
+        qb.whereRaw('NOW() BETWEEN purchase_date and expires_date');
+      })
+      .fetch();
+
+    if (receipt) {
+      return 'ok';
+    }
+    return 'ko';
+  },
+
+  subscriptionStatus: currentUserOnly(function() {
+    return this.getSubscriptionStatus();
+  }),
 
   /**
     * serviceCategories

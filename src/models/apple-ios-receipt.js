@@ -137,7 +137,7 @@ const AppleIosReceipt = Base.extend({
           user = requestUser;
         } else {
           const originalReceipt = await AppleIosReceipt.where({
-            transactionId: originalTransactionId
+            transaction_id: originalTransactionId
           })
             .fetch({
               withRelated: ['user']

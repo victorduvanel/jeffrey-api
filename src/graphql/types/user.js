@@ -40,6 +40,7 @@ type User {
   prices: [ProviderPrice]
   price(serviceCategoryId: ID): Price
   paymentMethodStatus: String
+  subscriptionStatus: String
   country: Country
   phoneNumber: String
   identityDocuments: [UserDocument]
