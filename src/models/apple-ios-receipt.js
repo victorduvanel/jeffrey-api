@@ -97,7 +97,8 @@ const AppleIosReceipt = Base.extend({
     let checkURL;
 
     if (config.PRODUCTION) {
-      checkURL = 'https://buy.itunes.apple.com/verifyReceipt';
+      // checkURL = 'https://buy.itunes.apple.com/verifyReceipt';
+      checkURL = 'https://sandbox.itunes.apple.com/verifyReceipt';
     } else {
       checkURL = 'https://sandbox.itunes.apple.com/verifyReceipt';
     }
