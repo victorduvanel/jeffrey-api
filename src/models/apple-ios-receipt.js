@@ -163,6 +163,7 @@ const AppleIosReceipt = Base.extend({
         });
       });
     } else {
+      console.log(JSON.stringify(result));
       throw new Error('Invalid response from the app store');
     }
   },
