@@ -1,19 +1,26 @@
 import uuid from 'uuid';
 import countries from './json/countries.json';
+import config from '../src/config';
 
 exports.seed = (knex, Promise) => {
   return Promise.map(countries, (country) => {
     return knex.raw(`
       INSERT INTO countries (
-        id, name, code, phone_code, region, is_enabled, alpha_support, flag, currency_code,
-        created_at, updated_at
+        id, name, code, phone_code, region,
+        is_enabled, sms_from, flag,
+        currency_code, created_at, updated_at
       ) VALUES (
-        :id, :name, :code, :phone_code, :region, :is_enabled, :alpha_support, :flag, :currency_code,
-        NOW(), NOW()
+        :id, :name, :code, :phone_code, :region,
+        :is_enabled, :sms_from, :flag,
+        :currency_code, NOW(), NOW()
       )
-      ON CONFLICT DO NOTHING
+      ON CONFLICT (code) DO UPDATE
+      SET
+        sms_from = EXCLUDED.sms_from,
+        updated_at = NOW()
     `, {
       id: uuid.v4(),
+      sms_from: country.alpha_support ? config.app.name : (country.sms_from || null),
       ...country
     });
   });
