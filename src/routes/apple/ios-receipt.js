@@ -12,6 +12,9 @@ export const post = [
 
     await AppleIosReceipt.create({ receipt, user });
 
-    res.send({ success: true });
+    res.send({
+      success: true,
+      subscriptionStatus: await user.getSubscriptionStatus()
+    });
   }
 ];

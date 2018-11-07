@@ -8,12 +8,18 @@ const onError = (err) => {
 
 exports.seed = (knex) => {
   return knex.transaction((trx) => {
-    const insertAttrs = (props) => {
+    const insertAttrs = async (props) => {
       return knex.raw(
         `INSERT INTO service_category_attributes
           (id, lang, name, icon, symbol, service_category_id, created_at, updated_at)
           VALUES (:id, :lang, :name, :icon, :symbol, :serviceCategoryId, NOW(), NOW())
-          ON CONFLICT DO NOTHING
+          ON CONFLICT (id) DO UPDATE
+          SET
+            lang = EXCLUDED.lang,
+            name = EXCLUDED.name,
+            icon = EXCLUDED.icon,
+            symbol = EXCLUDED.symbol,
+            updated_at = NOW()
         `,
         props
       )
@@ -46,6 +52,7 @@ exports.seed = (knex) => {
           ON CONFLICT (id) DO UPDATE
           SET
             slug = EXCLUDED.slug,
+            color = EXCLUDED.color,
             parent_id = EXCLUDED.parent_id,
             country_id = EXCLUDED.country_id,
             root_id = EXCLUDED.root_id,

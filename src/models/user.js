@@ -2,7 +2,7 @@ import Promise          from 'bluebird';
 import moment           from 'moment';
 import request          from 'request-promise';
 import nativeBcrypt     from 'bcryptjs';
-import uuid             from 'uuid';
+import uuid             from 'uuid/v4';
 import _                from 'lodash';
 
 import buckets          from '../services/google/storage';
@@ -32,8 +32,10 @@ import TOSAcceptance    from './tos-acceptance';
 import StripeAccount    from './stripe-account';
 import Country          from './country';
 
+import './adyen-card';
 import './postal-address';
 import './business';
+import AppleIosReceipts from './apple-ios-receipt';
 
 import { Unauthorized } from '../graphql/errors';
 import { AppError}      from '../errors';
@@ -68,11 +70,37 @@ const User = Base.extend({
     return this.hasMany('Review', 'author_id');
   },
 
+  AppleIosReceipts() {
+    return this.hasMany('AppleIosReceipt');
+  },
+
+  adyenCard() {
+    return this.hasMany('AdyenCard');
+  },
+
   stripeCard() {
     return this.hasMany('StripeCard');
   },
 
   /* GRAPHQL PROPS */
+
+  async getSubscriptionStatus() {
+    const receipt = await AppleIosReceipts
+      .query((qb) => {
+        qb.where('user_id', this.get('id'));
+        qb.whereRaw('NOW() BETWEEN purchase_date and expires_date');
+      })
+      .fetch();
+
+    if (receipt) {
+      return 'ok';
+    }
+    return 'ko';
+  },
+
+  subscriptionStatus: currentUserOnly(function() {
+    return this.getSubscriptionStatus();
+  }),
 
   /**
     * serviceCategories
@@ -246,9 +274,9 @@ const User = Base.extend({
   },
 
   paymentMethodStatus: currentUserOnly(async function() {
-    await this.load('stripeCard');
+    await this.load('adyenCard');
 
-    const cards = this.related('stripeCard');
+    const cards = this.related('adyenCard');
     if (!cards.length) {
       return 'not_set';
     }
@@ -268,6 +296,20 @@ const User = Base.extend({
     } else {
       return 'ok';
     }
+  }),
+
+  livechatToken: currentUserOnly(async function() {
+    let livechatToken = this.get('livechatToken');
+
+    if (!livechatToken) {
+      const token = uuid().split('-').join('');
+      const rid = uuid().split('-').join('');
+
+      livechatToken = `${token}-${rid}`;
+      this.set('livechatToken', livechatToken);
+      await this.save();
+    }
+    return livechatToken;
   }),
 
   /* !GRAPHQL PROPS */
@@ -765,7 +807,7 @@ const User = Base.extend({
   },
 
   create: async function(props) {
-    const id = uuid.v4();
+    const id = uuid();
 
     props.isProvider = props.isProvider || false;
 

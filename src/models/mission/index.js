@@ -21,7 +21,7 @@ import { Unauthorized } from '../../graphql/errors';
 
 import status, { InvalidNewStatus } from './status';
 
-export const SERVICE_FEE = 0.1;
+export const SERVICE_FEE = 0.2;
 
 /* status enum */
 export const PENDING    = 'pending';

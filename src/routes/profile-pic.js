@@ -4,7 +4,7 @@ import Busboy                from 'busboy';
 import Buckets               from '../services/google/storage';
 import oauth2                from '../middlewares/oauth2';
 import { applyExifRotation } from '../lib/exif';
-import Canvas, { Image } from 'canvas';
+import Canvas, { Image }     from 'canvas';
 
 const createCanvasImage = (buffer) => {
   return new Promise((resolve, reject) => {
@@ -80,7 +80,14 @@ const retreiveImage = async (req) => {
   const imageBuffer = await retreiveImageFromRequest(req);
   const canvasImage = await createCanvasImage(imageBuffer);
 
-  return applyExifRotation(imageBuffer, canvasImage);
+  try {
+    return await applyExifRotation(imageBuffer, canvasImage);
+  } catch (err) {
+    if (err.message === 'No Exif segment found in the given image.') {
+      return canvasImage;
+    }
+    throw err;
+  }
 };
 
 

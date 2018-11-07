@@ -1,10 +1,12 @@
-import _         from 'lodash';
-import uuid      from 'uuid';
-import bookshelf from '../services/bookshelf';
-import twilio       from '../services/twilio';
-import Base         from './base';
-import config       from '../config';
-import { AppError } from '../errors';
+import _                    from 'lodash';
+import uuid                 from 'uuid';
+import { parsePhoneNumber } from 'libphonenumber-js';
+import bookshelf            from '../services/bookshelf';
+import twilio               from '../services/twilio';
+import Country              from './country';
+import Base                 from './base';
+import config               from '../config';
+import { AppError }         from '../errors';
 
 const PhoneNumberVerificationCode = Base.extend({
   tableName: 'phone_number_verification_codes',
@@ -62,10 +64,23 @@ const PhoneNumberVerificationCode = Base.extend({
     });
 
     if (config.PRODUCTION) {
+      const parsedPhoneNumber = parsePhoneNumber(phoneNumber);
+
+      const country = await Country.findByCode(parsedPhoneNumber.country);
+      const from = country.get('smsFrom');
+
+      if (!from) {
+        throw new Error('Phone number not supported');
+      }
+
+      if (!parsedPhoneNumber.isValid()) {
+        throw new Error('Invalid phone number');
+      }
+
       await twilio.messages.create({
         body: message,
         to: phoneNumber,
-        from: config.app.name
+        from
       });
     } else {
       console.log(message);

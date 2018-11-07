@@ -1,13 +1,9 @@
 import enUS from './en-US.json';
 import frFR from './fr-FR.json';
-import jaJP from './ja-JP.json';
-import koKR from './ko-KR.json';
 
 const locales = {
   en: enUS,
-  fr: frFR,
-  ja: jaJP,
-  ko: koKR
+  fr: frFR
 };
 
 export const getLocale = (locale) => {
