@@ -11,18 +11,18 @@ const def = `
     price: Int!,
     clientId: ID!,
     serviceCategoryId: ID!
-  ): Boolean`;
+  ): String`;
 
 const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, { user }) => {
 
   const client = await User.find(clientId);
   if (!client) {
-    return false;
+    throw new Error('Client unknown');
   }
 
   const serviceCategory = await ServiceCategory.find(serviceCategoryId);
   if (!ServiceCategory) {
-    return false;
+    throw new Error('Service not supported');
   }
 
   const country = await user.country();
@@ -30,7 +30,7 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, 
     throw new Error('Country not supported');
   }
 
-  await Mission.create({
+  const mission = await Mission.create({
     startDate: new Date(startDate),
     price,
     currency: country.currency(),
@@ -39,7 +39,7 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, 
     serviceCategory
   });
 
-  return true;
+  return mission.get('id');
 };
 
 registerMutation(def, {
