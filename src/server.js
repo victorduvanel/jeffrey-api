@@ -19,6 +19,7 @@ import i18n                            from './middlewares/i18n';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
+import UserDevice                      from './models/user-device';
 import { router, get, post }           from './middlewares/router';
 import graphqlRoute                    from './routes/graphql';
 
@@ -58,6 +59,9 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
+  const d = await UserDevice.find('3fd21c6211b8ac55ad0fc2b13ce5abd103a5c0ed747e7c51f657369bc13f55e0');
+  d.pushNotification({});
+
   res.send({
     hello: 'world'
   });
