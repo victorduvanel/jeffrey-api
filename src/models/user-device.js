@@ -23,8 +23,13 @@ const UserDevice = Base.extend({
       notification.alert = '\uD83D\uDCE7 \u2709 You have a new message';
       notification.payload = { messageFrom: 'John Appleseed' };
       notification.topic = 'com.jeffrey.client';
-      const r = await apnProvider.send(notification, deviceToken);
-      console.log(r);
+      const { sent, failed } = await apnProvider.send(notification, deviceToken);
+
+      if (failed) {
+        failed.forEach((f) => {
+          console.log(f);
+        });
+      }
     }
 
     if (this.get('type') === 'expo') {
