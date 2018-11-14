@@ -1,37 +1,29 @@
 import { combineResolvers } from 'graphql-resolvers';
-import AdyenCard            from '../../models/adyen-card';
-// import StripeCard           from '../../models/stripe-card';
+import StripeCard           from '../../models/stripe-card';
 import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 
-const def = 'paymentMethod(details: String!): Boolean';
+const def = 'paymentMethod(details: PaymentMethodDetails!): Boolean';
 
-const paymentMethod = async (_, { details }, { req, user }) => {
-  await AdyenCard.create({
+const paymentMethod = async (_, { details }, { user }) => {
+  const {
+    cardHolderName,
+    cardNumber,
+    cardExpiryMonth,
+    cardExpiryYear,
+    cvv
+  } = details;
+
+  await StripeCard.create({
     user,
-    cardDetails: details,
-    req
+    card: {
+      number: cardNumber,
+      expMonth: cardExpiryMonth,
+      expYear: cardExpiryYear,
+      cvc: cvv,
+      holderName: cardHolderName
+    }
   });
-
-
-  // const {
-  //   cardHolderName,
-  //   cardNumber,
-  //   cardExpiryMonth,
-  //   cardExpiryYear,
-  //   cvv
-  // } = details;
-
-  // await StripeCard.create({
-  //   user,
-  //   card: {
-  //     number: cardNumber,
-  //     expMonth: cardExpiryMonth,
-  //     expYear: cardExpiryYear,
-  //     cvc: cvv,
-  //     holderName: cardHolderName
-  //   }
-  // });
 
   return true;
 };

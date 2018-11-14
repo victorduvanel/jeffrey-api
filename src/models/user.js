@@ -274,9 +274,9 @@ const User = Base.extend({
   },
 
   paymentMethodStatus: currentUserOnly(async function() {
-    await this.load('adyenCard');
+    await this.load('stripeCard');
 
-    const cards = this.related('adyenCard');
+    const cards = this.related('stripeCard');
     if (!cards.length) {
       return 'not_set';
     }
