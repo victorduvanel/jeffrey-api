@@ -1,8 +1,9 @@
 import uuid        from 'uuid';
-// import apn         from 'apn';
+import apn         from 'apn';
 import bookshelf   from '../services/bookshelf';
-// import apnProvider from '../services/apn';
+import apnProvider from '../services/apn';
 import expo        from '../services/expo';
+import firebase    from '../services/firebase';
 import Base        from './base';
 
 const UserDevice = Base.extend({
@@ -12,20 +13,42 @@ const UserDevice = Base.extend({
     return this.belongsTo('User');
   },
 
-  pushNotification({ body }) {
+  async pushNotification({ body }) {
     const deviceToken = this.get('token');
 
-    // const notification = new apn.Notification(args);
-    // return apnProvider.send(notification, deviceToken);
+    if (this.get('type') === 'apn') {
+      const notification = new apn.Notification();
+      // notification.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
+      // notification.badge = 3;
+      // notification.sound = "ping.aiff";
+      notification.alert = body; // '\uD83D\uDCE7 \u2709 You have a new message';
+      // notification.payload = { messageFrom: 'John Appleseed' };
+      notification.topic = 'com.jeffrey.client';
+      await apnProvider.send(notification, deviceToken);
+    }
 
-    expo.sendPushNotificationAsync({
-      to: deviceToken,
-      sound: 'default',
-      body,
-      data: {
-        withSome: 'data'
-      },
-    });
+    if (this.get('type') === 'fcm') {
+      const message = {
+        notification: {
+          // title: 'Super title',
+          body
+        },
+        token: deviceToken
+      };
+
+      await firebase.messaging().send(message);
+    }
+
+    if (this.get('type') === 'expo') {
+      expo.sendPushNotificationAsync({
+        to: deviceToken,
+        sound: 'default',
+        body,
+        data: {
+          withSome: 'data'
+        },
+      });
+    }
   }
 }, {
   create: async function({ user, token, type, locale }) {

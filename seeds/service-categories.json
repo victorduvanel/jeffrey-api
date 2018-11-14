@@ -1353,6 +1353,24 @@
         },
         "services": [
           {
+            "id": "8dad5270-33b5-48f5-9bc1-f83cdd43484b",
+            "slug": "amateur-cook",
+            "color": "red",
+            "defaultAttibutesId": "e0af1204-c315-40ab-b37b-59a73ff3e829",
+            "attributes": {
+              "en": {
+                "id": "547a4920-c632-4141-9024-76d00a766ca6",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Amateur cook"
+              },
+              "fr": {
+                "id": "e0af1204-c315-40ab-b37b-59a73ff3e829",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/modern-majordome%403x.png",
+                "name": "Cusinier amateur"
+              }
+            }
+          },
+          {
             "id": "3647f5a8-2b9d-437b-90b9-25fd25815aa7",
             "slug": "carless-driver",
             "color": "red",
@@ -1611,6 +1629,19 @@
           }
         },
         "services": [
+          {
+            "id": "54348335-c717-40f4-9bc7-ae7ad1ca95f1",
+            "slug": "makeup",
+            "color": "red",
+            "defaultAttibutesId": "201115aa-13c0-4ae6-9704-30e961649873",
+            "attributes": {
+              "fr": {
+                "id": "201115aa-13c0-4ae6-9704-30e961649873",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/beauty.png",
+                "name": "Maquillage"
+              }
+            }
+          },
           {
             "id": "20e17603-8223-4f6d-b6b7-826ed64adbf2",
             "slug": "manucure",
