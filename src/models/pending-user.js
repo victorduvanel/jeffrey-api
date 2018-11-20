@@ -5,8 +5,7 @@ import bookshelf     from '../services/bookshelf';
 import knex          from '../services/knex';
 import * as libEmail from '../lib/email';
 import errors        from '../errors';
-import * as mjml     from '../services/mjml';
-import { sendEmail } from '../services/mailgun';
+import { sendEmail } from '../services/mailjet';
 import { getLocale } from '../locales';
 import i18n          from '../lib/i18n';
 
@@ -40,21 +39,38 @@ const PendingUser = Base.extend({
     const activationLink = `${prefix}activate/${id}`;
     const appRedirectLink = `${config.webappProtocol}://${config.webappHost}/app-link?link=${encodeURIComponent(activationLink)}`;
 
-    const message = await mjml.render('email/register', locale, {
-      activationLink: appRedirectLink
+    let templateId = i18n[locale].formatMessage({
+      id: 'emails.confirmEmail.id',
+      defaultMessage: '600647'
     });
 
+    templateId = parseInt(templateId, 10);
+
     return sendEmail({
-      from: i18n[locale].formatMessage({
-        id: 'emails.confirmEmail.from',
-        defaultMessage: '"Jeffrey" <noreply@jeffrey-services.com>'
-      }),
-      to: emailAddress,
-      subject: i18n[locale].formatMessage({
-        id: 'emails.confirmEmail.subject',
-        defaultMessage: 'Jeffrey - Confirm your email address',
-      }),
-      message
+      Messages: [{
+        TemplateID: templateId,
+        TemplateLanguage: true,
+        From: {
+          Email: i18n[locale].formatMessage({
+            id: 'emails.confirmEmail.fromEmail',
+            defaultMessage: 'no-reply@jeffrey.app'
+          }),
+          Name: i18n[locale].formatMessage({
+            id: 'emails.confirmEmail.fromName',
+            defaultMessage: 'Jeffrey'
+          })
+        },
+        To: [{
+          Email: emailAddress
+        }],
+        Subject: i18n[locale].formatMessage({
+          id: 'emails.confirmEmail.subject',
+          defaultMessage: 'Jeffrey - Confirm your email address',
+        }),
+        Variables: {
+          activationLink: appRedirectLink
+        }
+      }]
     });
   },
 

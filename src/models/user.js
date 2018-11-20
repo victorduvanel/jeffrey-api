@@ -11,8 +11,7 @@ import knex             from '../services/knex';
 import stripe           from '../services/stripe';
 import braintree        from '../services/braintree';
 import googleService    from '../services/google';
-import * as mjml        from '../services/mjml';
-import { sendEmail }    from '../services/mailgun';
+import { sendEmail }    from '../services/mailjet';
 
 import { getLocale }    from '../locales';
 import i18n             from '../lib/i18n';
@@ -686,26 +685,43 @@ const User = Base.extend({
     const loginLink = `${prefix}login/${loginToken.get('id')}`;
     const appRedirectLink = `${config.webappProtocol}://${config.webappHost}/app-link?link=${encodeURIComponent(loginLink)}`;
 
-    const message = await mjml.render('email/login', locale, {
-      user: {
-        firstName: this.get('firstName'),
-        lastName: this.get('lastName'),
-        gender: this.get('gender')
-      },
-      loginLink: appRedirectLink
+    let templateId = i18n[locale].formatMessage({
+      id: 'emails.loginEmail.id',
+      defaultMessage: '601157'
     });
 
+    templateId = parseInt(templateId, 10);
+
     return sendEmail({
-      from: i18n[locale].formatMessage({
-        id: 'emails.loginEmail.from',
-        defaultMessage: '"Jeffrey" <noreply@jeffrey-services.com>'
-      }),
-      to: emailAddress,
-      subject: i18n[locale].formatMessage({
-        id: 'emails.loginEmail.subject',
-        defaultMessage: 'Jeffrey - Sign in"',
-      }),
-      message
+      Messages: [{
+        TemplateID: templateId,
+        TemplateLanguage: true,
+        From: {
+          Email: i18n[locale].formatMessage({
+            id: 'emails.loginEmail.fromEmail',
+            defaultMessage: 'no-reply@jeffrey.app'
+          }),
+          Name: i18n[locale].formatMessage({
+            id: 'emails.loginEmail.fromName',
+            defaultMessage: 'Jeffrey'
+          })
+        },
+        To: [{
+          Email: emailAddress
+        }],
+        Subject: i18n[locale].formatMessage({
+          id: 'emails.loginEmail.subject',
+          defaultMessage: 'Jeffrey - Sign in',
+        }),
+        Variables: {
+          user: {
+            firstName: this.get('firstName'),
+            lastName: this.get('lastName'),
+            gender: this.get('gender')
+          },
+          loginLink: appRedirectLink
+        }
+      }]
     });
   },
 
