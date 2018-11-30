@@ -7,7 +7,10 @@ function up(knex) {
       .onUpdate('CASCADE')
       .onDelete('RESTRICT')
       .unique();
+
     table.boolean('has_external_account');
+
+    table.string('environment');
 
     table.dateTime('created_at');
     table.dateTime('updated_at');

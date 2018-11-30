@@ -24,6 +24,7 @@ exports.seed = async function(knex, Promise) {
     lng: '2',
     isProvider: 'false',
     isAvailable: 'false',
+    isTester: true,
     password: null
   }));
 
@@ -36,8 +37,9 @@ exports.seed = async function(knex, Promise) {
     lastName: 'Riancho',
     lat: '41.3938',
     lng: '2.19504',
-    isProvider: 'true',
-    isAvailable: 'true',
+    isProvider: true,
+    isAvailable: true,
+    isTester: true,
     profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/409d5c83-ccdb-47f0-956e-02de7e471c0c/original.jpg',
     phoneNumber: '+33651648566',
     password: '$2a$10$is7MWK4ws1hwG9Aokkh4R.sg5PYo9qg27hyPipO0GUXBntcTozao2'
@@ -52,8 +54,9 @@ exports.seed = async function(knex, Promise) {
     lastName: 'Gratuze',
     lat: '41.3938',
     lng: '2.19504',
-    isProvider: 'true',
-    isAvailable: 'true',
+    isProvider: true,
+    isAvailable: true,
+    isTester: true,
     profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/6203cdf5-16e1-42a3-96d8-098f6ce65133/original.jpg',
     phoneNumber: null,
     password: '$2a$04$SHtbpSUdGyjGRJfxFF30heWuOPYLV9j3qx0wCxxBcipTuhrnJaoZS'
@@ -64,12 +67,14 @@ exports.seed = async function(knex, Promise) {
       "id", "email", "facebook_id", "gender",
       "first_name", "last_name", "profile_picture",
       "phone_number", "password", "lat", "lng", "postal_address_id",
-      "is_provider", "is_available", "locale",
-      "created_at", "updated_at"
+      "is_provider", "is_available", "is_tester",
+      "locale", "created_at", "updated_at"
     ) VALUES (
       :id, :email, :facebookId, :gender, :firstName,
       :lastName, :profilePicture, :phoneNumber,
-      :password, :lat, :lng, :postalAddress, :isProvider, :isAvailable, 'en-US', NOW(), NOW()
+      :password, :lat, :lng, :postalAddress,
+      :isProvider, :isAvailable, :isTester,
+      'en-US', NOW(), NOW()
     )
     ON CONFLICT DO NOTHING
   `, { postalAddress: 'b36c1144-d6d3-4b67-ac0f-64a98c2e238a', ...user }));

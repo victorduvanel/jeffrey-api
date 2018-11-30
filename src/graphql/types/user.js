@@ -24,6 +24,7 @@ type User {
   unseenActivity: Boolean
   isProvider: Boolean
   isAvailable: Boolean
+  isTester: Boolean
   firstName: String
   lastName: String
   dateOfBirth: String

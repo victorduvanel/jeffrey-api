@@ -1,5 +1,5 @@
 import { combineResolvers } from 'graphql-resolvers';
-import stripe               from '../../services/stripe';
+import stripeSvc            from '../../services/stripe';
 import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 
@@ -13,6 +13,13 @@ const bankAccount = async (_, { details }, { user }) => {
   const country = await user.country();
   if (!country) {
     throw new Error('Country not supported');
+  }
+
+  let stripe;
+  if (user.get('isTester')) {
+    stripe = stripeSvc.test;
+  } else {
+    stripe = stripeSvc.production;
   }
 
   const stripeAccount = await user.stripeAccount();

@@ -8,7 +8,7 @@ import _                from 'lodash';
 import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
 import knex             from '../services/knex';
-import stripe           from '../services/stripe';
+import stripeSvc        from '../services/stripe';
 import braintree        from '../services/braintree';
 import googleService    from '../services/google';
 import { sendEmail }    from '../services/mailjet';
@@ -341,8 +341,16 @@ const User = Base.extend({
 
   async bankAccounts() {
     const stripeAccount = await this.stripeAccount(false);
+
     if (!stripeAccount) {
       return null;
+    }
+
+    let stripe;
+    if (this.get('isTester')) {
+      stripe = stripeSvc.test;
+    } else {
+      stripe = stripeSvc.production;
     }
 
     const account = await new Promise((resolve, reject) => {
@@ -375,6 +383,13 @@ const User = Base.extend({
   },
 
   async syncStripeAccount() {
+    let stripe;
+    if (this.get('isTester')) {
+      stripe = stripeSvc.test;
+    } else {
+      stripe = stripeSvc.production;
+    }
+
     const dateOfBirth = this.get('dateOfBirth');
 
     await this.load(['business', 'postalAddress']);
@@ -603,6 +618,13 @@ const User = Base.extend({
       return this.get('stripeCustomerId');
     }
 
+    let stripe;
+    if (this.get('isTester')) {
+      stripe = stripeSvc.test;
+    } else {
+      stripe = stripeSvc.production;
+    }
+
     const customer = await stripe.customers.create({
       metadata: {
         user_id: this.get('id')
@@ -827,7 +849,11 @@ const User = Base.extend({
 
     props.isProvider = props.isProvider || false;
 
-    return this.forge({ id, ...props })
+    return this.forge({
+      id,
+      isTester: !config.PRODUCTION,
+      ...props
+    })
       .save(null, { method: 'insert' })
       .catch((err) => {
         if (err.code === '23505') {
