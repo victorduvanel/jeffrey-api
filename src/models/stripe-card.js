@@ -67,7 +67,7 @@ const StripeCard = Base.extend({
     await this.save();
   }
 }, {
-  create: async function({ user, card: { number, expMonth, expYear, cvc, holderName }}) {
+  create: async function({ user, token }) {
     const stripeCustomer = await user.stripeCustomer();
 
     let stripe;
@@ -79,14 +79,7 @@ const StripeCard = Base.extend({
 
     try {
       const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
-        source: {
-          object: 'card',
-          number,
-          exp_month: expMonth,
-          exp_year: expYear,
-          cvc,
-          name: holderName
-        }
+        source: token
       });
 
       await user.load(['stripeCard']);
@@ -98,7 +91,6 @@ const StripeCard = Base.extend({
           userId     : user.get('id'),
           type       : paymentInfo.brand,
           lastFour   : paymentInfo.last4,
-          holderName : paymentInfo.name,
           expMonth   : paymentInfo.exp_month,
           expYear    : paymentInfo.exp_year,
           environment: user.get('isTester') ? 'test' : 'production'

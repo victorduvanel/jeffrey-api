@@ -243,6 +243,10 @@ const User = Base.extend({
     return this.get('profilePicture');
   },
 
+  isTester() {
+    return this.get('isTester');
+  },
+
   async rank() {
     const userId = this.get('id');
     const res = await knex

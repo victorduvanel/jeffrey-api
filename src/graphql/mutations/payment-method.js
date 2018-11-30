@@ -3,26 +3,12 @@ import StripeCard           from '../../models/stripe-card';
 import auth                 from '../middlewares/auth';
 import { registerMutation } from '../registry';
 
-const def = 'paymentMethod(details: PaymentMethodDetails!): Boolean';
+const def = 'paymentMethod(token: String!): Boolean';
 
-const paymentMethod = async (_, { details }, { user }) => {
-  const {
-    cardHolderName,
-    cardNumber,
-    cardExpiryMonth,
-    cardExpiryYear,
-    cvv
-  } = details;
-
+const paymentMethod = async (_, { token }, { user }) => {
   await StripeCard.create({
     user,
-    card: {
-      number: cardNumber,
-      expMonth: cardExpiryMonth,
-      expYear: cardExpiryYear,
-      cvc: cvv,
-      holderName: cardHolderName
-    }
+    token
   });
 
   return true;
