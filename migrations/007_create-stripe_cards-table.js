@@ -8,6 +8,7 @@ function up(knex) {
         .onUpdate('CASCADE')
         .onDelete('RESTRICT');
 
+      table.string('environment');
       table.string('type');
       table.string('last_four');
       table.string('exp_month');

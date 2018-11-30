@@ -1,6 +1,6 @@
 import Promise      from 'bluebird';
 import bookshelf    from '../services/bookshelf';
-import stripe       from '../services/stripe';
+import stripeSvc    from '../services/stripe';
 import Base         from './base';
 import { AppError } from '../errors';
 
@@ -39,6 +39,15 @@ const StripeCard = Base.extend({
 
   async addCard(token) {
     const id = this.get('id');
+    const env = this.get('environment');
+
+    let stripe;
+    if (env === 'production') {
+      stripe = stripeSvc.production;
+    } else {
+      stripe = stripeSvc.test;
+    }
+
     const source = await stripe.customers.createSource(id, {
       source: token
     });
@@ -60,6 +69,13 @@ const StripeCard = Base.extend({
 }, {
   create: async function({ user, card: { number, expMonth, expYear, cvc, holderName }}) {
     const stripeCustomer = await user.stripeCustomer();
+
+    let stripe;
+    if (user.get('isTester')) {
+      stripe = stripeSvc.test;
+    } else {
+      stripe = stripeSvc.production;
+    }
 
     try {
       const paymentInfo = await stripe.customers.createSource(stripeCustomer, {
@@ -84,7 +100,8 @@ const StripeCard = Base.extend({
           lastFour   : paymentInfo.last4,
           holderName : paymentInfo.name,
           expMonth   : paymentInfo.exp_month,
-          expYear    : paymentInfo.exp_year
+          expYear    : paymentInfo.exp_year,
+          environment: user.get('isTester') ? 'test' : 'production'
         })
         .save(null, { method: 'insert' });
 

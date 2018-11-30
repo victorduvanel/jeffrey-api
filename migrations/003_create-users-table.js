@@ -18,6 +18,7 @@ function up(knex) {
       table.text('bio');
       table.boolean('is_provider');
       table.boolean('is_available');
+      table.boolean('is_tester');
       table.float('lat');
       table.float('lng');
       table

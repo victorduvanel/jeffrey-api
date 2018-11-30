@@ -1,4 +1,4 @@
-import stripe    from '../services/stripe';
+import stripeSvc from '../services/stripe';
 import bookshelf from '../services/bookshelf';
 import Base      from './base';
 
@@ -16,6 +16,13 @@ const StripeAccount = Base.extend({
       throw new Error('user country not set');
     }
 
+    let stripe;
+    if (user.get('isTester')) {
+      stripe = stripeSvc.test;
+    } else {
+      stripe = stripeSvc.production;
+    }
+
     const account = await stripe.accounts.create({
       type: 'custom',
       country: country.get('code'),
@@ -26,7 +33,8 @@ const StripeAccount = Base.extend({
 
     return this.forge({
       id: account.id,
-      userId: user.get('id')
+      userId: user.get('id'),
+      environment: user.get('isTester') ? 'test' : 'production'
     })
       .save(null, { method: 'insert' });
   }
