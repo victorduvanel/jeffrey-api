@@ -2,4 +2,4 @@
 
 VERSION="$(head -1 VERSION)"
 
-docker push "eu.gcr.io/jeffrey-197808/api:$VERSION"
+docker push "registry.gitlab.com/jeffrey-services/api:$VERSION"
