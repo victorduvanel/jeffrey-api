@@ -2,4 +2,4 @@
 
 VERSION="$(head -1 VERSION)"
 
-docker build . -t "eu.gcr.io/jeffrey-197808/api:$VERSION"
+docker build . -t "registry.gitlab.com/jeffrey-services/api:$VERSION"
