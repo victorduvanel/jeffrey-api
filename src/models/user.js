@@ -12,6 +12,7 @@ import stripeSvc        from '../services/stripe';
 import braintree        from '../services/braintree';
 import googleService    from '../services/google';
 import { sendEmail }    from '../services/mailjet';
+import { getToken as getChatToken } from '../services/chat';
 
 import { getLocale }    from '../locales';
 import i18n             from '../lib/i18n';
@@ -749,6 +750,21 @@ const User = Base.extend({
         }
       }]
     });
+  },
+
+  async chatToken() {
+    return getChatToken(this);
+  },
+
+  async getTokens() {
+    const chatToken = await getChatToken(this);
+    const accessToken = await this.createAccessToken({});
+
+    return {
+      access_token: accessToken.get('token'),
+      token_type: 'Bearer',
+      chat_token: chatToken
+    };
   },
 
   toJSON() {

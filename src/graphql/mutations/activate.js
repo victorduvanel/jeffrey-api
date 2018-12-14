@@ -37,10 +37,9 @@ const activate = async (_, { activationCode: code, firstName, lastName }) => {
     throw errors.BadRequest;
   }
 
-  const token = await user.createAccessToken({});
-  await pendingUser.cleanup();
+  const tokens = await user.getTokens();
 
-  return token.get('token');
+  return JSON.stringify(tokens);
 };
 
 registerMutation(def, { activate });

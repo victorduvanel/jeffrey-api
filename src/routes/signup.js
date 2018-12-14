@@ -25,12 +25,7 @@ export const post = [
       const user = await User.googleAuthenticate(googleAuthToken);
       await user.saveMeta(body);
 
-      const accessToken = await user.createAccessToken({});
-
-      res.send({
-        access_token: accessToken.get('token'),
-        token_type: 'Bearer'
-      });
+      res.send(await user.getTokens());
       return;
     }
 
@@ -38,12 +33,7 @@ export const post = [
       const user = await User.facebookAuthenticate(facebookAuthToken);
       await user.saveMeta(body);
 
-      const accessToken = await user.createAccessToken({});
-
-      res.send({
-        access_token: accessToken.get('token'),
-        token_type: 'Bearer'
-      });
+      res.send(await user.getTokens());
       return;
     }
 

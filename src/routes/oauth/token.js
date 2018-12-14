@@ -4,7 +4,6 @@ import User       from '../../models/user';
 import LoginToken from '../../models/login-token';
 import { AppError, Unauthorized, BadRequest, InvalidUserCredentials } from '../../errors';
 
-
 export const post = [
   bodyParser.urlencoded({ extended: false }),
 
@@ -38,12 +37,7 @@ export const post = [
 
       await user.saveMeta(req.body);
 
-      const accessToken = await user.createAccessToken({});
-      res.send({
-        access_token: accessToken.get('token'),
-        token_type: 'Bearer'
-      });
-
+      res.send(await user.getTokens());
       return;
     }
 
@@ -55,12 +49,8 @@ export const post = [
       const user = await User.authenticate({ email: username, password });
       await user.saveMeta(req.body);
 
-      const accessToken = await user.createAccessToken({});
-
-      res.send({
-        access_token: accessToken.get('token'),
-        token_type: 'Bearer'
-      });
+      res.send(await user.getTokens());
+      return;
     } catch (err) {
       if (err instanceof AppError && err.message === 'Invalid Credentials') {
         throw InvalidUserCredentials;
