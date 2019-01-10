@@ -82,6 +82,8 @@ post('/me', routes.me.post);
 
 post('/logout', routes.logout.post);
 
+post('/login', routes.login.post);
+
 post('/oauth/token', routes.oauth.token.post);
 post('/oauth/revoke', routes.oauth.revoke.post);
 post('/oauth/single-use-token', routes.oauth.singleUseToken.post);
