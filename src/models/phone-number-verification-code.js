@@ -1,6 +1,7 @@
 import _                    from 'lodash';
 import uuid                 from 'uuid';
 import { parsePhoneNumber } from 'libphonenumber-js';
+import { spawn }            from 'child_process';
 import bookshelf            from '../services/bookshelf';
 import twilio               from '../services/twilio';
 import Country              from './country';
@@ -84,6 +85,8 @@ const PhoneNumberVerificationCode = Base.extend({
       });
     } else {
       console.log(message);
+
+      spawn('osascript', ['-e', `display notification "${message}" with title "New Message"`]);
     }
 
     return code;

@@ -1,6 +1,7 @@
 import bodyParser                  from 'body-parser';
 import PhoneNumberVerificationCode from '../models/phone-number-verification-code';
 import User                        from '../models/user';
+import { Unauthorized }            from '../errors';
 
 export const post = [
   bodyParser.json(),
@@ -27,17 +28,11 @@ export const verify = {
         verificationCode
       })) {
         const user = await User.findOrCreateFromPhoneNumber(phoneNumber);
-        const accessToken = await user.createAccessToken();
-        res.send({
-          access_token: accessToken.get('token'),
-          token_type: 'Bearer'
-        });
+        res.send(await user.getTokens());
         return;
       }
 
-      res.send({
-        success: false
-      });
+      throw Unauthorized;
     }
   ]
 };
