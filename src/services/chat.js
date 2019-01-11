@@ -11,7 +11,7 @@ export const getToken = async (user) => {
       attributes: {
         firstName: user.get('firstName'),
         lastName: user.get('lastName'),
-        profilePicutre: user.get('profilePicture')
+        profilePicture: user.get('profilePicture')
       }
     }
   });
