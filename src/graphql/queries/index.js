@@ -1,5 +1,5 @@
 import './current-user';
-import './provider';
+import './user';
 import './providers';
 import './countries';
 import './onboarding-progress';

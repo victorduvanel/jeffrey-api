@@ -37,6 +37,7 @@ type User {
   currentMission: Mission
   serviceCategories: [ServiceCategory]
   rank: Float
+  totalReview: Int
   bio: String
   prices: [ProviderPrice]
   price(serviceCategoryId: ID): Price

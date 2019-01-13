@@ -248,6 +248,32 @@ const User = Base.extend({
     return this.get('isTester');
   },
 
+  async totalReview() {
+    const userId = this.get('id');
+    const res = await knex
+      .raw(`
+        select count(*) as total_review
+        from reviews
+        where
+          mission_id in (
+            select id
+            from missions
+            where
+              id in (
+                select id
+                from missions
+                where provider_id = :userId or client_id = :userId
+              )
+          )
+        and
+          not author_id = :userId
+      `, {
+        userId
+      });
+
+    return parseInt(res.rows[0].total_review, 10);
+  },
+
   async rank() {
     const userId = this.get('id');
     const res = await knex
