@@ -22,3 +22,4 @@ import './conversation-seen';
 import './new-mission-request';
 import './accept-mission';
 import './mission-paid';
+import './user-signup';
