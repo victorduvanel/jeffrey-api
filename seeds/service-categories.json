@@ -16,7 +16,7 @@
           "fr": {
             "id": "b3f0c990-6bfe-4a56-a5d5-0144ccfae054",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-            "name": "Enfants & Activités"
+            "name": "Enfants"
           }
         },
         "services": [
@@ -54,7 +54,7 @@
                   "fr": {
                     "id": "2e576e2b-433f-402c-bc8c-e168c01dbd8c",
                     "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                    "name": "De 0 à 3 ans"
+                    "name": "0 à 3 ans"
                   }
                 }
               },
@@ -73,7 +73,7 @@
                   "fr": {
                     "id": "2e576e2b-433f-402c-bc8c-e168c01dbd8c",
                     "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                    "name": "De 3 à 7 ans"
+                    "name": "3 à 7 ans"
                   }
                 }
               },
@@ -92,7 +92,7 @@
                   "fr": {
                     "id": "6e0d9759-2907-4e70-bc2a-3196119e9f70",
                     "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                    "name": "De 7 à 14 ans"
+                    "name": "7 à 14 ans"
                   }
                 }
               }
@@ -113,7 +113,7 @@
               "fr": {
                 "id": "cf89efd8-4e05-40f8-a9ed-2f4cbf07025d",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                "name": "Aide aux devoirs"
+                "name": "Aide à la maison"
               }
             }
           },
@@ -132,7 +132,7 @@
               "fr": {
                 "id": "5113b95d-07a4-407f-b481-30fa3b548010",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                "name": "Aide pédagogique"
+                "name": "Accompagnement scolaire"
               }
             },
             "services": [
@@ -195,7 +195,7 @@
             "id": "24c6bf34-1320-4f5a-8c6e-783f7ba922d1",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
             "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-            "name": "Jardins & Extérieurs"
+            "name": "Travaux"
           }
         },
         "services": [
@@ -216,7 +216,7 @@
                 "id": "fba410b1-bb42-4f8b-b37b-587f343cc425",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Bricolage"
+                "name": "Réparation maison"
               }
             }
           },
@@ -237,7 +237,7 @@
                 "id": "1bfdffc7-49a7-4d4a-9fde-ee134413a3d1",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Soin des animaux"
+                "name": "Promenade d’animaux"
               }
             }
           },
@@ -279,7 +279,156 @@
                 "id": "9a1688a5-bcf0-4fff-bcb0-e3a283677291",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Jardinage"
+                "name": "Jardinage en tout genre"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "24cb804c-772b-43d4-bb40-9c95f64274a6",
+        "slug": "home-and-office",
+        "color": "red",
+        "ordinalPosition": 2,
+        "defaultAttibutesId": "078f4ad6-a1dd-48b1-844c-dde0d234e4d7",
+        "attributes": {
+          "en": {
+            "id": "078f4ad6-a1dd-48b1-844c-dde0d234e4d7",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+            "name": "Home & Office"
+          },
+          "fr": {
+            "id": "a2763180-7312-4a97-a9ac-fbaa3b4db8a8",
+            "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+            "name": "Majorodme"
+          }
+        },
+        "services": [
+          {
+            "id": "0aafbf63-f1cf-4cf2-9d04-9a8d9b8194a9",
+            "slug": "housekeeping",
+            "color": "red",
+            "ordinalPosition": 0,
+            "defaultAttibutesId": "ac3303d0-502f-4390-8b5a-53c2767488ba",
+            "attributes": {
+              "en": {
+                "id": "ac3303d0-502f-4390-8b5a-53c2767488ba",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Housekeeping"
+              },
+              "fr": {
+                "id": "7c598fbf-324c-4a38-a439-f12f7992acdf",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Gardiennage de maison"
+              }
+            }
+          },
+          {
+            "id": "6b2b3351-60f4-43bf-bd7d-cb8a704fd9aa",
+            "slug": "cleaning",
+            "color": "red",
+            "ordinalPosition": 1,
+            "defaultAttibutesId": "931cca81-4afb-429c-9f7f-dc51a5afbd97",
+            "attributes": {
+              "en": {
+                "id": "931cca81-4afb-429c-9f7f-dc51a5afbd97",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Cleaning"
+              },
+              "fr": {
+                "id": "fca0cbdf-ccb9-41ce-9260-dd68156690c1",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Nettoyage"
+              }
+            }
+          },
+          {
+            "id": "f13224d4-3021-4b28-bac7-78d950f00529",
+            "slug": "administrative-help",
+            "color": "red",
+            "ordinalPosition": 2,
+            "defaultAttibutesId": "28c18dc9-dfab-4da9-ac31-6d4734d10486",
+            "attributes": {
+              "en": {
+                "id": "28c18dc9-dfab-4da9-ac31-6d4734d10486",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Administrative Help"
+              },
+              "fr": {
+                "id": "106f56e7-9097-4d50-b8f8-be6d64819f28",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Aide administrative"
+              }
+            }
+          },
+          {
+            "id": "40f07533-fa5f-4de9-8587-a483c2150e52",
+            "slug": "senior-care",
+            "color": "red",
+            "ordinalPosition": 3,
+            "defaultAttibutesId": "e8153330-52cc-4024-ac05-c6a2ff6afeb2",
+            "attributes": {
+              "en": {
+                "id": "e8153330-52cc-4024-ac05-c6a2ff6afeb2",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Senior Care"
+              },
+              "fr": {
+                "id": "e1116225-fb0b-4d2e-954c-271eebe55bc8",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Accompagnement personne âgée"
+              }
+            }
+          },
+          {
+            "id": "baaf0bbe-0250-475e-8e24-6dbfa93a2ec2",
+            "slug": "pet-sitting",
+            "color": "red",
+            "ordinalPosition": 4,
+            "defaultAttibutesId": "8f942305-b876-49d5-ba00-b975f832e343",
+            "attributes": {
+              "en": {
+                "id": "8f942305-b876-49d5-ba00-b975f832e343",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Pet sitting"
+              },
+              "fr": {
+                "id": "b084bf21-a922-4fad-a824-9817dd4cfa5f",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Garde d’animaux"
+              }
+            }
+          },
+          {
+            "id": "c8f80a6c-e2ca-4225-9fd3-8e8e646e1dce",
+            "slug": "cooking",
+            "color": "red",
+            "ordinalPosition": 5,
+            "defaultAttibutesId": "bf69e2e7-1d76-4c0c-abfa-5210dfdcc973",
+            "attributes": {
+              "en": {
+                "id": "bf69e2e7-1d76-4c0c-abfa-5210dfdcc973",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Cooking"
+              },
+              "fr": {
+                "id": "52c85ee7-f07b-4ba9-8f22-3b6e95c1fa01",
+                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
+                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
+                "name": "Cuisinier(ère) amateur(e)"
               }
             }
           }
@@ -289,7 +438,7 @@
         "id": "49bbac47-c135-4846-966d-07a2e3affc27",
         "slug": "shopping-and-delivery",
         "color": "red",
-        "ordinalPosition": 2,
+        "ordinalPosition": 3,
         "defaultAttibutesId": "1ac6d9e6-883f-4915-834f-96b4b8eea711",
         "attributes": {
           "en": {
@@ -302,7 +451,7 @@
             "id": "2f650b92-42a7-4c40-89be-98d814dca842",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
             "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-            "name": "Courses & Livraisons"
+            "name": "Livraison"
           }
         },
         "services": [
@@ -323,28 +472,7 @@
                 "id": "14754cbb-c626-4ffd-913d-5f7130df330e",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Livraison d’objet lourd"
-              }
-            }
-          },
-          {
-            "id": "35f7f436-daa0-4093-91c0-da744dcf45e5",
-            "slug": "heavy-delivery",
-            "color": "red",
-            "ordinalPosition": 0,
-            "defaultAttibutesId": "3430c390-09c9-41f8-a57e-6d3233b4965f",
-            "attributes": {
-              "en": {
-                "id": "3430c390-09c9-41f8-a57e-6d3233b4965f",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Heavy Delivery"
-              },
-              "fr": {
-                "id": "14754cbb-c626-4ffd-913d-5f7130df330e",
-                "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
-                "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Livraison d’objet lourd"
+                "name": "Livraison de colis lourd"
               }
             }
           },
@@ -365,7 +493,7 @@
                 "id": "4c036670-76cc-4a05-bda6-3f554b72407a",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Livraison d’objet légé"
+                "name": "Livraison de colis léger"
               }
             }
           },
@@ -386,7 +514,7 @@
                 "id": "e8d3c216-d2a0-47d9-b189-9a95bcb236b5",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Livraison de nourriture"
+                "name": "Livraison de nourriture (restaurant de votre choix)"
               }
             }
           },
@@ -407,7 +535,7 @@
                 "id": "e36654a4-ea40-4c99-bf11-752dd0d1afa8",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Livraison rapide"
+                "name": "Livraison hyper rapide"
               }
             }
           },
@@ -428,7 +556,7 @@
                 "id": "a2b85d2c-5743-4b7b-812c-c589435a2df2",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Shopping"
+                "name": "Faire votre shopping"
               }
             }
           }
@@ -438,7 +566,7 @@
         "id": "290b1de7-2d13-4412-b347-09b1b47f3dd6",
         "slug": "sport",
         "color": "yellow",
-        "ordinalPosition": 3,
+        "ordinalPosition": 4,
         "defaultAttibutesId": "bd49746f-9232-4e39-b958-b00a632f8ed0",
         "attributes": {
           "en": {
@@ -456,20 +584,20 @@
         },
         "services": [
           {
-            "id": "a8c7c490-75c3-4071-9e0d-8bcae7443a4a",
+            "id": "27d330d9-af69-4738-afef-57533f279467",
             "slug": "personal-trainer",
             "color": "yellow",
             "ordinalPosition": 0,
-            "defaultAttibutesId": "c018dd40-762d-4929-83c8-5b8bf7fc8fb2",
+            "defaultAttibutesId": "7a3fe88e-c7a2-4fc0-a4d3-7dad5c7ad627",
             "attributes": {
               "en": {
-                "id": "c018dd40-762d-4929-83c8-5b8bf7fc8fb2",
+                "id": "7a3fe88e-c7a2-4fc0-a4d3-7dad5c7ad627",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
                 "name": "Personal Trainer"
               },
               "fr": {
-                "id": "834ffe95-7785-4cd7-a5e3-b1c37a68443d",
+                "id": "efde8e0d-eda1-4359-95e3-3e822503fd7d",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
                 "name": "Entraineur personnel"
@@ -493,7 +621,7 @@
                 "id": "834ffe95-7785-4cd7-a5e3-b1c37a68443d",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Coach de Hockey"
+                "name": "Entraineur personnel pour le Hockey"
               }
             }
           },
@@ -514,7 +642,7 @@
                 "id": "459247eb-f4f3-4f1c-bf1e-a568c55fdb62",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-                "name": "Coach de Tennis"
+                "name": "Entraineur de Tennis"
               }
             }
           }
@@ -524,7 +652,7 @@
         "id": "eea010fe-24d0-416b-9244-816de1c3a509",
         "slug": "wellness",
         "color": "purple",
-        "ordinalPosition": 4,
+        "ordinalPosition": 5,
         "defaultAttibutesId": "44fdfcfb-bf74-4b76-b142-e2f3b51a43ff",
         "attributes": {
           "en": {
@@ -537,7 +665,7 @@
             "id": "bbbf38fd-7faa-4ba3-8118-2d88d243967d",
             "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
             "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
-            "name": "Bien être"
+            "name": "Bien-être"
           }
         },
         "services": [
@@ -576,7 +704,7 @@
                 "name": "Pedicure"
               },
               "fr": {
-                "id": "ff9f6120-7c4d-4b0c-bb81-141ed53cd61c",
+                "id": "5204aba6-0f5d-4133-a32a-1d91ad214269",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
                 "name": "Pédicure"
@@ -609,16 +737,16 @@
             "slug": "massage",
             "color": "purple",
             "ordinalPosition": 3,
-            "defaultAttibutesId": "05dfd877-b4aa-4f36-8a3f-d53875423680",
+            "defaultAttibutesId": "d4f76281-c39e-4827-9ff1-b34feae032ce",
             "attributes": {
               "en": {
-                "id": "05dfd877-b4aa-4f36-8a3f-d53875423680",
+                "id": "d4f76281-c39e-4827-9ff1-b34feae032ce",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
                 "name": "Massage"
               },
               "fr": {
-                "id": "e57b6b7a-a56a-479b-a6ef-3524679c0900",
+                "id": "bfc0fc06-6784-4eee-9159-b94e1bdf33a7",
                 "icon": "https://storage.googleapis.com/eu-jffr/static/images/v2/drive.png",
                 "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
                 "name": "Massage"
