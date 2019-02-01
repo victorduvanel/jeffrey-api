@@ -2,15 +2,21 @@ import uuid from 'uuid/v4';
 
 exports.seed = async (knex, Promise) => {
   const users = await knex('users').select('id');
+  const categories = await knex('service_categories').select('id');
+  const providerPrices = [];
 
-  const providerPrices = users.map((user) => ({
-    id: uuid(),
-    userId: user.id,
-    serviceCategoryId: '53cda24f-80e4-4b06-ad55-6827b6a94752',
-    price: 1400,
-    currency: 'EUR',
-    isEnabled: true
-  }));
+  users.forEach((user) => {
+    categories.forEach((category) => {
+      providerPrices.push({
+        id: uuid(),
+        userId: user.id,
+        serviceCategoryId: category.id,
+        price: 1400,
+        currency: 'EUR',
+        isEnabled: true
+      });
+    });
+  });
 
   return Promise.map(providerPrices, providerPrice => {
     return knex.raw(
