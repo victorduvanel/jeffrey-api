@@ -34,7 +34,6 @@
     "braintree": "^2.12.0",
     "busboy": "0.2.14",
     "canvas": "1.6.11",
-    "cassandra-driver": "3.5.0",
     "chalk": "2.4.1",
     "exif": "0.6.0",
     "expo-server-sdk": "2.4.0",
