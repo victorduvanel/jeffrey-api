@@ -16,8 +16,6 @@ const retreiveCardDetails = async (shopperReference) => {
     }
   });
 
-  console.log(res);
-
   const details = res.details[0].RecurringDetail;
 
   return {

@@ -1,10 +1,11 @@
-import Promise               from 'bluebird';
-import uuid                  from 'uuid';
-import Busboy                from 'busboy';
-import Buckets               from '../services/google/storage';
-import oauth2                from '../middlewares/oauth2';
-import { applyExifRotation } from '../lib/exif';
-import Canvas, { Image }     from 'canvas';
+import Promise                 from 'bluebird';
+import uuid                    from 'uuid';
+import Busboy                  from 'busboy';
+import { createCanvas, Image } from 'canvas';
+import Buckets                 from '../services/google/storage';
+import { S3 }                  from '../services/aws';
+import oauth2                  from '../middlewares/oauth2';
+import { applyExifRotation }   from '../lib/exif';
 
 const createCanvasImage = (buffer) => {
   return new Promise((resolve, reject) => {
@@ -46,7 +47,7 @@ const retreiveImageFromRequest = (req) => {
 };
 
 const resizeImage = async (image, { width: dWidth, height: dHeight }) => {
-  const canvas = new Canvas(dWidth, dHeight);
+  const canvas = createCanvas(dWidth, dHeight);
   const ctx = canvas.getContext('2d');
 
   const dx = 0;
@@ -91,31 +92,27 @@ const retreiveImage = async (req) => {
 };
 
 
-const uploadImage = (bucket, image, path) => {
+const uploadImage = (image, path) => {
   return new Promise((resolve, reject) => {
-    const canvas = new Canvas(image.width, image.height);
+    const canvas = createCanvas(image.width, image.height);
     const ctx = canvas.getContext('2d');
     ctx.drawImage(image, 0, 0);
 
     const imageStream = canvas.jpegStream({ progressive: true });
 
-    const file = bucket.file(path);
-    const fileStream = file.createWriteStream({
-      metadata: {
-        contentType: 'image/jpeg'
+    S3.upload({
+      Key: path,
+      Body: imageStream,
+      ACL: 'public-read'
+    }, (err) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+        return;
       }
-    });
 
-    fileStream.on('error', reject);
-    fileStream.on('finish', async () => {
-      await file.makePublic();
       resolve();
     });
-
-    imageStream.on('end', async () => {
-      fileStream.end();
-    });
-    imageStream.on('data', chunk => fileStream.write(chunk));
   });
 };
 
@@ -127,16 +124,13 @@ export const post = [
     const smallImage = await resizeImage(image, { width: 50, height: 50 });
     const mediumImage = await resizeImage(image, { width: 250, height: 250 });
 
-    const region = req.query.region || 'EU';
-    const bucket = Buckets[region] || Buckets.EU;
-
     const dest = uuid.v4();
 
-    await uploadImage(bucket, image, `profile-pictures/${dest}/original.jpg`);
-    await uploadImage(bucket, smallImage, `profile-pictures/${dest}/small.jpg`);
-    await uploadImage(bucket, mediumImage, `profile-pictures/${dest}/medium.jpg`);
+    await uploadImage(image, `profile-pictures/${dest}/original.jpg`);
+    await uploadImage(smallImage, `profile-pictures/${dest}/small.jpg`);
+    await uploadImage(mediumImage, `profile-pictures/${dest}/medium.jpg`);
 
-    const profilePicture = `https://storage.googleapis.com/${bucket.name}/profile-pictures/${dest}/medium.jpg`;
+    const profilePicture = `https://jffr.ams3.cdn.digitaloceanspaces.com/profile-pictures/${dest}/medium.jpg`;
 
     user.set('profilePicture', profilePicture);
     await user.save();

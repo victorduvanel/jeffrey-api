@@ -1,6 +1,6 @@
-import Promise           from 'bluebird';
-import { ExifImage }     from 'exif';
-import Canvas, { Image } from 'canvas';
+import Promise                 from 'bluebird';
+import { ExifImage }           from 'exif';
+import { createCanvas, Image } from 'canvas';
 
 const createCanvasImage = (src) => {
   return new Promise((resolve, reject) => {
@@ -102,7 +102,7 @@ export const applyExifRotation = async (imageBuffer, image) => {
     scaleX, scaleY
   } = transfo;
 
-  const canvas = new Canvas(canvasWidth, canvasHeight);
+  const canvas = createCanvas(canvasWidth, canvasHeight);
   const ctx = canvas.getContext('2d');
   ctx.rotate(rotation);
   ctx.scale(scaleX, scaleY);
