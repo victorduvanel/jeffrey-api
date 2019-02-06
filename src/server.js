@@ -63,6 +63,8 @@ get('/', async (req, res) => {
   });
 });
 
+post('/notify/message', routes.notify.message.post);
+
 get('/info', routes.info.get);
 
 post('/process-payout', routes.processPayout.post);

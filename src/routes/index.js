@@ -28,6 +28,7 @@ import * as processPayout   from './process-payout';
 import * as info            from './info';
 import * as pay             from './pay';
 import * as login           from './login';
+import * as notify          from './notify';
 
 export default {
   oauth, me, activate, signup,
@@ -40,5 +41,5 @@ export default {
   bankAccounts, providers,
   stripe, logout, cron, payoutAlert,
   processPayout, info, pay,
-  login
+  login, notify
 };

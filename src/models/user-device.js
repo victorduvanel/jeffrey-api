@@ -13,41 +13,54 @@ const UserDevice = Base.extend({
     return this.belongsTo('User');
   },
 
-  async pushNotification({ body }) {
+  async pushNotification(notif /* { body, sound } */) {
     const deviceToken = this.get('token');
+    const type = this.get('type');
 
-    if (this.get('type') === 'apn') {
-      const notification = new apn.Notification();
-      // notification.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
-      // notification.badge = 3;
-      // notification.sound = "ping.aiff";
-      notification.alert = body; // '\uD83D\uDCE7 \u2709 You have a new message';
-      // notification.payload = { messageFrom: 'John Appleseed' };
-      notification.topic = 'com.jeffrey.client';
-      await apnProvider.send(notification, deviceToken);
-    }
+    switch (type) {
+      case 'apn': {
+        const notification = new apn.Notification();
 
-    if (this.get('type') === 'fcm') {
-      const message = {
-        notification: {
-          // title: 'Super title',
-          body
-        },
-        token: deviceToken
-      };
+        // notification.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
+        // notification.badge = 3;
 
-      await firebase.messaging().send(message);
-    }
+        notification.title = notif.title;
+        notification.sound = notif.sound;
+        notification.body = notif.body;
+        notification.threadId = notif.threadId;
+        notification.payload = notif.payload;
 
-    if (this.get('type') === 'expo') {
-      expo.sendPushNotificationAsync({
-        to: deviceToken,
-        sound: 'default',
-        body,
-        data: {
-          withSome: 'data'
-        },
-      });
+        // notification.payload = { messageFrom: 'John Appleseed' };
+
+        notification.topic = 'com.jeffrey.client';
+
+        console.log('notification', notification);
+
+        await apnProvider.send(notification, deviceToken);
+      } break;
+
+      case 'fcm': {
+        const message = {
+          notification: {
+            // title: 'Super title',
+            body: notif.body
+          },
+          token: deviceToken
+        };
+
+        await firebase.messaging().send(message);
+      } break;
+
+      case 'expo':
+        expo.sendPushNotificationAsync({
+          to: deviceToken,
+          sound: 'default',
+          body: notif.body,
+          data: {
+            withSome: 'data'
+          },
+        });
+        break;
     }
   }
 }, {
