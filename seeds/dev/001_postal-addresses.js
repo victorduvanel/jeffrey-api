@@ -4,7 +4,7 @@ exports.seed = async function(knex, Promise) {
   const addresses = [{
     id: 'b36c1144-d6d3-4b67-ac0f-64a98c2e238a',
     city: 'Paris',
-    country: 'FR',
+    country: 'CA',
     line_1: '32 rue richer',
     line_2: '',
     postal_code: '75009',

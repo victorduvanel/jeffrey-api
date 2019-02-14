@@ -51,11 +51,13 @@
                   "en": {
                     "id": "4663c0e5-7e38-4c71-8065-48be411a7964",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
+                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "0 to 3 years old"
                   },
                   "fr": {
                     "id": "2e576e2b-433f-402c-bc8c-e168c01dbd8c",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
+                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "0 à 3 ans"
                   }
                 }
@@ -70,11 +72,13 @@
                   "en": {
                     "id": "22082db9-5b9d-446f-addf-a880e5538a5f",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
+                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "3 to 7 years old"
                   },
                   "fr": {
                     "id": "0f96f6aa-0720-4cb7-b6db-d59742009f01",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
+                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "3 à 7 ans"
                   }
                 }
@@ -89,11 +93,13 @@
                   "en": {
                     "id": "de17dd46-4e8b-4a96-931c-ee1c094ad5b9",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
+                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "7 to 14 years old"
                   },
                   "fr": {
                     "id": "6e0d9759-2907-4e70-bc2a-3196119e9f70",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
+                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "7 à 14 ans"
                   }
                 }
