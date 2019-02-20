@@ -12,7 +12,7 @@ const createMissionMessage = async (mission, provider, client) => {
   const serviceCategory = mission.related('serviceCategory');
   const serviceCategoryAttributes = await serviceCategory.attrs();
 
-  await request({
+  const res = await request({
     uri: `${config.chat.host}/messages`,
     method: 'POST',
     json: true,
@@ -37,6 +37,11 @@ const createMissionMessage = async (mission, provider, client) => {
       }
     }
   });
+
+  const { messageId } = res;
+
+  mission.set('messageId', messageId);
+  await mission.save();
 }
 
 const def = `

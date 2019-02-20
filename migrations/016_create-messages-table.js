@@ -15,6 +15,9 @@ function up(knex) {
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
 
+    table
+      .uuid('message_id');
+
     table.dateTime('created_at');
     table.dateTime('updated_at');
   });
