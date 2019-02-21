@@ -13,6 +13,7 @@ function up(knex) {
       .onDelete('RESTRICT');
     table.integer('price');
     table.enum('currency', [
+      'CAD',
       'GBP',
       'EUR',
       'USD',
