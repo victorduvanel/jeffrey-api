@@ -47,12 +47,13 @@ exports.seed = (knex) => {
     const insertService = (props) => {
       return knex.raw(
         `INSERT INTO service_categories
-          (id, country_id, slug, parent_id, root_id, ordinal_position, color, created_at, updated_at)
-          VALUES (:id, :countryId, :slug, :parentId, :rootId, :ordinalPosition, :color, NOW(), NOW())
+          (id, country_id, slug, parent_id, root_id, ordinal_position, color, icon, created_at, updated_at)
+          VALUES (:id, :countryId, :slug, :parentId, :rootId, :ordinalPosition, :color, :icon, NOW(), NOW())
           ON CONFLICT (id) DO UPDATE
           SET
             slug = EXCLUDED.slug,
             color = EXCLUDED.color,
+            icon = EXCLUDED.icon,
             parent_id = EXCLUDED.parent_id,
             country_id = EXCLUDED.country_id,
             root_id = EXCLUDED.root_id,
@@ -72,6 +73,7 @@ exports.seed = (knex) => {
           slug: svc.slug,
           countryId,
           color: svc.color || null,
+          icon: svc.icon || null,
           parentId,
           rootId,
           ordinalPosition: svc.ordinalPosition !== undefined ? svc.ordinalPosition : null

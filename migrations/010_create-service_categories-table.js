@@ -4,7 +4,7 @@ function up(knex) {
     table.string('slug');
     table.integer('ordinal_position');
     table.string('color');
-
+    table.string('icon');
     table
       .uuid('root_id')
       .references('service_categories.id')

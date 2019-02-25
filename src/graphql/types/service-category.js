@@ -9,7 +9,8 @@ type ServiceAttributes {
 type ServiceCategory {
   id: ID!
   slug: String!
-  color: String
+  color: String!
+  icon: String
   subCategories: [ServiceCategory]
   root: ServiceCategory
   parent: ServiceCategory

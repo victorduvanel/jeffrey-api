@@ -24,19 +24,18 @@
             "id": "167be885-c79f-43da-9018-403eb44b631c",
             "slug": "babysitting",
             "color": "blue",
+            "icon": "babysitting",
             "ordinalPosition": 0,
             "defaultAttibutesId": "9de36364-b7df-4d16-8da9-4e365a1c61db",
             "attributes": {
               "en": {
                 "id": "9de36364-b7df-4d16-8da9-4e365a1c61db",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                 "name": "Babysitting"
               },
               "fr": {
                 "id": "8f8c5637-3724-4801-a519-a6089d4699f7",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                 "name": "Garde d’enfants"
               }
             },
@@ -45,19 +44,18 @@
                 "id": "53cda24f-80e4-4b06-ad55-6827b6a94752",
                 "slug": "babysitting-0-3",
                 "color": "blue",
+                "icon": "babysitting",
                 "ordinalPosition": 0,
                 "defaultAttibutesId": "4663c0e5-7e38-4c71-8065-48be411a7964",
                 "attributes": {
                   "en": {
                     "id": "4663c0e5-7e38-4c71-8065-48be411a7964",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "0 to 3 years old"
                   },
                   "fr": {
                     "id": "2e576e2b-433f-402c-bc8c-e168c01dbd8c",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "0 à 3 ans"
                   }
                 }
@@ -66,19 +64,18 @@
                 "id": "d40f6e98-cfa4-4737-bc44-ed7e85cd759c",
                 "slug": "babysitting-3-7",
                 "color": "blue",
+                "icon": "babysitting",
                 "ordinalPosition": 1,
                 "defaultAttibutesId": "22082db9-5b9d-446f-addf-a880e5538a5f",
                 "attributes": {
                   "en": {
                     "id": "22082db9-5b9d-446f-addf-a880e5538a5f",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "3 to 7 years old"
                   },
                   "fr": {
                     "id": "0f96f6aa-0720-4cb7-b6db-d59742009f01",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "3 à 7 ans"
                   }
                 }
@@ -87,19 +84,18 @@
                 "id": "8f057df3-51dc-489f-a9bc-e394aed5c95d",
                 "slug": "babysitting-7-14",
                 "color": "blue",
+                "icon": "babysitting",
                 "ordinalPosition": 2,
                 "defaultAttibutesId": "de17dd46-4e8b-4a96-931c-ee1c094ad5b9",
                 "attributes": {
                   "en": {
                     "id": "de17dd46-4e8b-4a96-931c-ee1c094ad5b9",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "7 to 14 years old"
                   },
                   "fr": {
                     "id": "6e0d9759-2907-4e70-bc2a-3196119e9f70",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/babysitting.png",
                     "name": "7 à 14 ans"
                   }
                 }
@@ -110,19 +106,18 @@
             "id": "c1afdcd3-bfcd-4370-94c0-8e672a1725be",
             "slug": "homework-support",
             "color": "blue",
+            "icon": "house-keeper",
             "ordinalPosition": 1,
             "defaultAttibutesId": "37fd11e4-30eb-4e32-8e5b-3d1a16f9b4aa",
             "attributes": {
               "en": {
                 "id": "37fd11e4-30eb-4e32-8e5b-3d1a16f9b4aa",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/homework-support.png",
                 "name": "Homework support"
               },
               "fr": {
                 "id": "cf89efd8-4e05-40f8-a9ed-2f4cbf07025d",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/homework-support.png",
                 "name": "Aide à la maison"
               }
             }
@@ -131,19 +126,18 @@
             "id": "81528cb7-41d4-427d-9129-17d1b678c5b2",
             "slug": "learning-support",
             "color": "blue",
+            "icon": "school",
             "ordinalPosition": 2,
             "defaultAttibutesId": "99376385-47c2-43b0-995d-2d92188ac745",
             "attributes": {
               "en": {
                 "id": "99376385-47c2-43b0-995d-2d92188ac745",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/learning-support.png",
                 "name": "Learning support"
               },
               "fr": {
                 "id": "5113b95d-07a4-407f-b481-30fa3b548010",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/learning-support.png",
                 "name": "Accompagnement scolaire"
               }
             },
@@ -152,19 +146,18 @@
                 "id": "9c09382f-716d-422e-81f9-993bbfc52054",
                 "slug": "learning-support-7-12",
                 "color": "blue",
+                "icon": "school",
                 "ordinalPosition": 0,
                 "defaultAttibutesId": "f6c48917-edc6-4a50-b158-0ee85c132699",
                 "attributes": {
                   "en": {
                     "id": "f6c48917-edc6-4a50-b158-0ee85c132699",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/learning-support.png",
                     "name": "7 to 12 years old"
                   },
                   "fr": {
                     "id": "5f9aba81-f6d8-44f7-a55b-793ec286ad04",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/learning-support.png",
                     "name": "7 à 12 ans"
                   }
                 }
@@ -173,19 +166,18 @@
                 "id": "747de6bf-ccb1-49b1-9921-e49a7fb1716b",
                 "slug": "learning-support-12-18",
                 "color": "blue",
+                "icon": "school",
                 "ordinalPosition": 1,
                 "defaultAttibutesId": "2bdc081a-c145-4cd9-9a9f-a1493db8fecf",
                 "attributes": {
                   "en": {
                     "id": "2bdc081a-c145-4cd9-9a9f-a1493db8fecf",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/learning-support.png",
                     "name": "12 to 18 years old"
                   },
                   "fr": {
                     "id": "8b0950ef-9c90-40ad-94ba-234a393b1531",
                     "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
-                    "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/learning-support.png",
                     "name": "12 à 18 ans"
                   }
                 }
@@ -198,6 +190,7 @@
         "id": "2f208e4f-11f6-4d5c-b35d-1eae5597aff8",
         "slug": "outdoor",
         "color": "green",
+        "icon": "repair",
         "ordinalPosition": 1,
         "defaultAttibutesId": "d9cc9c0f-22be-44f1-b56f-a5fea524949b",
         "attributes": {
@@ -217,19 +210,18 @@
             "id": "a2a73287-d0b8-4d62-98c3-d136db7c35c7",
             "slug": "house-repair",
             "color": "green",
+            "icon": "repair",
             "ordinalPosition": 0,
             "defaultAttibutesId": "82b96acc-fa27-4fef-9899-c07938bed986",
             "attributes": {
               "en": {
                 "id": "82b96acc-fa27-4fef-9899-c07938bed986",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/house-repair.png",
                 "name": "House repair"
               },
               "fr": {
                 "id": "fba410b1-bb42-4f8b-b37b-587f343cc425",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/house-repair.png",
                 "name": "Réparation maison"
               }
             }
@@ -238,19 +230,18 @@
             "id": "8777adf2-3c48-45ee-8380-679354a059f2",
             "slug": "pet-care",
             "color": "green",
+            "icon": "repair",
             "ordinalPosition": 1,
             "defaultAttibutesId": "e024ff02-8eb4-4850-8cc9-9d676f70deea",
             "attributes": {
               "en": {
                 "id": "e024ff02-8eb4-4850-8cc9-9d676f70deea",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/pet-care.png",
                 "name": "Pet care"
               },
               "fr": {
                 "id": "1bfdffc7-49a7-4d4a-9fde-ee134413a3d1",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/pet-care.png",
                 "name": "Promenade d’animaux"
               }
             }
@@ -265,13 +256,11 @@
               "en": {
                 "id": "86f1889b-431d-487a-8017-623c8068dab4",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/car-wash.png",
                 "name": "Car Wash"
               },
               "fr": {
                 "id": "5d49d75e-77bd-4629-bba0-a7a21487f8f9",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/car-wash.png",
                 "name": "Nettoyage de voiture"
               }
             }
@@ -286,13 +275,11 @@
               "en": {
                 "id": "d80d102b-5950-44a9-b0f0-ccc51cadcc13",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/gardening.png",
                 "name": "Garden Maintenance"
               },
               "fr": {
                 "id": "9a1688a5-bcf0-4fff-bcb0-e3a283677291",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/gardening.png",
                 "name": "Jardinage en tout genre"
               }
             }
@@ -328,13 +315,11 @@
               "en": {
                 "id": "ac3303d0-502f-4390-8b5a-53c2767488ba",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/housekeeping.png",
                 "name": "Housekeeping"
               },
               "fr": {
                 "id": "7c598fbf-324c-4a38-a439-f12f7992acdf",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/housekeeping.png",
                 "name": "Gardiennage de maison"
               }
             }
@@ -349,13 +334,11 @@
               "en": {
                 "id": "931cca81-4afb-429c-9f7f-dc51a5afbd97",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/cleaning.png",
                 "name": "Cleaning"
               },
               "fr": {
                 "id": "fca0cbdf-ccb9-41ce-9260-dd68156690c1",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/cleaning.png",
                 "name": "Nettoyage"
               }
             }
@@ -370,13 +353,11 @@
               "en": {
                 "id": "28c18dc9-dfab-4da9-ac31-6d4734d10486",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/administrative-help.png",
                 "name": "Administrative Help"
               },
               "fr": {
                 "id": "106f56e7-9097-4d50-b8f8-be6d64819f28",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/administrative-help.png",
                 "name": "Aide administrative"
               }
             }
@@ -391,13 +372,11 @@
               "en": {
                 "id": "e8153330-52cc-4024-ac05-c6a2ff6afeb2",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/senior-care.png",
                 "name": "Senior Care"
               },
               "fr": {
                 "id": "e1116225-fb0b-4d2e-954c-271eebe55bc8",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/senior-care.png",
                 "name": "Accompagnement personne âgée"
               }
             }
@@ -412,13 +391,11 @@
               "en": {
                 "id": "8f942305-b876-49d5-ba00-b975f832e343",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/pet-sitting.png",
                 "name": "Pet sitting"
               },
               "fr": {
                 "id": "b084bf21-a922-4fad-a824-9817dd4cfa5f",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/pet-sitting.png",
                 "name": "Garde d’animaux"
               }
             }
@@ -433,13 +410,11 @@
               "en": {
                 "id": "bf69e2e7-1d76-4c0c-abfa-5210dfdcc973",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/cooking.png",
                 "name": "Cooking"
               },
               "fr": {
                 "id": "52c85ee7-f07b-4ba9-8f22-3b6e95c1fa01",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/cooking.png",
                 "name": "Cuisinier(ère) amateur(e)"
               }
             }
@@ -610,13 +585,11 @@
               "en": {
                 "id": "c018dd40-762d-4929-83c8-5b8bf7fc8fb2",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/hockey-coach.png",
                 "name": "Personal Hockey Coach"
               },
               "fr": {
                 "id": "834ffe95-7785-4cd7-a5e3-b1c37a68443d",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/hockey-coach.png",
                 "name": "Entraineur personnel pour le Hockey"
               }
             }
@@ -631,13 +604,11 @@
               "en": {
                 "id": "06926476-ef34-41f3-a854-0bedb9c9b8fc",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/tennis-coach.png",
                 "name": "Personal Tennis Coach"
               },
               "fr": {
                 "id": "459247eb-f4f3-4f1c-bf1e-a568c55fdb62",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/tennis-coach.png",
                 "name": "Entraineur de Tennis"
               }
             }
@@ -673,13 +644,11 @@
               "en": {
                 "id": "fda34ff2-ad44-4a2d-bdb8-5cb0ea9ccf2e",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/yoga.png",
                 "name": "Yoga"
               },
               "fr": {
                 "id": "f488404f-f411-4975-8a79-62f51ae93f3e",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/yoga.png",
                 "name": "Yoga"
               }
             }
@@ -694,13 +663,11 @@
               "en": {
                 "id": "85346630-8a65-48f2-b911-5ebc834972d3",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/pedicure.png",
                 "name": "Pedicure"
               },
               "fr": {
                 "id": "5204aba6-0f5d-4133-a32a-1d91ad214269",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/pedicure.png",
                 "name": "Pédicure"
               }
             }
@@ -715,13 +682,11 @@
               "en": {
                 "id": "05dfd877-b4aa-4f36-8a3f-d53875423680",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/manicure.png",
                 "name": "Manicure"
               },
               "fr": {
                 "id": "ff9f6120-7c4d-4b0c-bb81-141ed53cd61c",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/manicure.png",
                 "name": "Manucure"
               }
             }
@@ -736,13 +701,11 @@
               "en": {
                 "id": "d4f76281-c39e-4827-9ff1-b34feae032ce",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/massage.png",
                 "name": "Massage"
               },
               "fr": {
                 "id": "bfc0fc06-6784-4eee-9159-b94e1bdf33a7",
                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
-                "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/symbols/massage.png",
                 "name": "Massage"
               }
             }
@@ -761,13 +724,11 @@
           "fr": {
             "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
             "name": "Drive"
           },
           "es": {
             "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
             "name": "Drive"
           }
         },
@@ -856,13 +817,11 @@
           "fr": {
             "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-            "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
             "name": "Majordome"
           },
           "es": {
             "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-            "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
             "name": "Majordome"
           }
         },
@@ -1110,19 +1069,16 @@
           "en": {
             "id": "b9c6056d-49a2-4e18-bb89-cf3f9ac9ca47",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
             "name": "Technology"
           },
           "fr": {
             "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
             "name": "Technologie"
           },
           "es": {
             "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
             "name": "Technologie"
           }
         },
@@ -1208,19 +1164,16 @@
           "en": {
             "id": "87261bc3-ce77-4f4b-b8f1-ee4ca0b0b144",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
             "name": "Beauty"
           },
           "fr": {
             "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
             "name": "Beauté"
           },
           "es": {
             "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
             "name": "Beauté"
           }
         },
@@ -1327,19 +1280,16 @@
           "en": {
             "id": "d6687c19-9e4c-4041-a09d-835d4104feca",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
             "name": "Wellness"
           },
           "fr": {
             "id": "baf70f55-1857-4273-9345-07481d0356d6",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
             "name": "Bien-être"
           },
           "es": {
             "id": "baf70f55-1857-4273-9345-07481d0356d6",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
             "name": "Bien-être"
           }
         },
@@ -2495,13 +2445,11 @@
           "fr": {
             "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
             "name": "Drive"
           },
           "es": {
             "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/drive-symbol.png",
             "name": "Drive"
           }
         },
@@ -2590,13 +2538,11 @@
           "fr": {
             "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-            "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
             "name": "Majordome"
           },
           "es": {
             "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-            "symbol": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
             "name": "Majordome"
           }
         },
@@ -2844,19 +2790,16 @@
           "en": {
             "id": "b9c6056d-49a2-4e18-bb89-cf3f9ac9ca47",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
             "name": "Technology"
           },
           "fr": {
             "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
             "name": "Technologie"
           },
           "es": {
             "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/technology-symbol.png",
             "name": "Technologie"
           }
         },
@@ -2942,19 +2885,16 @@
           "en": {
             "id": "87261bc3-ce77-4f4b-b8f1-ee4ca0b0b144",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
             "name": "Beauty"
           },
           "fr": {
             "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
             "name": "Beauté"
           },
           "es": {
             "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/beauty-symbol.png",
             "name": "Beauté"
           }
         },
@@ -3061,19 +3001,16 @@
           "en": {
             "id": "d6687c19-9e4c-4041-a09d-835d4104feca",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
             "name": "Wellness"
           },
           "fr": {
             "id": "baf70f55-1857-4273-9345-07481d0356d6",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
             "name": "Bien-être"
           },
           "es": {
             "id": "baf70f55-1857-4273-9345-07481d0356d6",
             "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-            "symbol": "https://storage.googleapis.com/eu-jffr/static/images/wellness-symbol.png",
             "name": "Bien-être"
           }
         },

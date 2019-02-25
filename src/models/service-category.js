@@ -47,6 +47,10 @@ const ServiceCategory = Base.extend({
     return this.get('color');
   },
 
+  icon() {
+    return this.get('icon');
+  },
+
   slug() {
     return this.get('slug');
   },
