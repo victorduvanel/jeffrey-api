@@ -11,6 +11,7 @@ DROP TABLE
   knex_migrations,
   knex_migrations_lock,
   access_tokens,
+  adyen_cards,
   pending_users,
   stripe_cards,
   product_prices,

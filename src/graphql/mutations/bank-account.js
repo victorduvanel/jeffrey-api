@@ -28,7 +28,9 @@ const bankAccount = async (_, { details }, { user }) => {
       account_holder_name: details.holderName,
       account_holder_type: details.type,
       object: 'bank_account',
+
       account_number: details.iban,
+
       country: country.code(),
       currency: country.currency()
     }
