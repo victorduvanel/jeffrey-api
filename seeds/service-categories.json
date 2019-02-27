@@ -227,29 +227,10 @@
             }
           },
           {
-            "id": "8777adf2-3c48-45ee-8380-679354a059f2",
-            "slug": "pet-care",
-            "color": "green",
-            "icon": "repair",
-            "ordinalPosition": 1,
-            "defaultAttibutesId": "e024ff02-8eb4-4850-8cc9-9d676f70deea",
-            "attributes": {
-              "en": {
-                "id": "e024ff02-8eb4-4850-8cc9-9d676f70deea",
-                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "name": "Pet care"
-              },
-              "fr": {
-                "id": "1bfdffc7-49a7-4d4a-9fde-ee134413a3d1",
-                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
-                "name": "Promenade d’animaux"
-              }
-            }
-          },
-          {
             "id": "80a7e127-bede-42b9-987e-e626b4069a9a",
             "slug": "car-wash",
             "color": "green",
+            "icon": "car",
             "ordinalPosition": 2,
             "defaultAttibutesId": "86f1889b-431d-487a-8017-623c8068dab4",
             "attributes": {
@@ -268,6 +249,7 @@
           {
             "id": "8323bef9-69ee-4d9f-91ff-6054b731923c",
             "slug": "gardening",
+            "icon": "gardening",
             "color": "green",
             "ordinalPosition": 3,
             "defaultAttibutesId": "d80d102b-5950-44a9-b0f0-ccc51cadcc13",
@@ -308,6 +290,7 @@
           {
             "id": "0aafbf63-f1cf-4cf2-9d04-9a8d9b8194a9",
             "slug": "housekeeping",
+            "icon": "house",
             "color": "purple",
             "ordinalPosition": 0,
             "defaultAttibutesId": "ac3303d0-502f-4390-8b5a-53c2767488ba",
@@ -328,6 +311,7 @@
             "id": "6b2b3351-60f4-43bf-bd7d-cb8a704fd9aa",
             "slug": "cleaning",
             "color": "purple",
+            "icon": "cleaning",
             "ordinalPosition": 1,
             "defaultAttibutesId": "931cca81-4afb-429c-9f7f-dc51a5afbd97",
             "attributes": {
@@ -347,6 +331,7 @@
             "id": "f13224d4-3021-4b28-bac7-78d950f00529",
             "slug": "administrative-help",
             "color": "purple",
+            "icon": "admin",
             "ordinalPosition": 2,
             "defaultAttibutesId": "28c18dc9-dfab-4da9-ac31-6d4734d10486",
             "attributes": {
@@ -366,6 +351,7 @@
             "id": "40f07533-fa5f-4de9-8587-a483c2150e52",
             "slug": "senior-care",
             "color": "purple",
+            "icon": "yoga",
             "ordinalPosition": 3,
             "defaultAttibutesId": "e8153330-52cc-4024-ac05-c6a2ff6afeb2",
             "attributes": {
@@ -385,6 +371,7 @@
             "id": "baaf0bbe-0250-475e-8e24-6dbfa93a2ec2",
             "slug": "pet-sitting",
             "color": "purple",
+            "icon": "animal",
             "ordinalPosition": 4,
             "defaultAttibutesId": "8f942305-b876-49d5-ba00-b975f832e343",
             "attributes": {
@@ -403,6 +390,7 @@
           {
             "id": "c8f80a6c-e2ca-4225-9fd3-8e8e646e1dce",
             "slug": "cooking",
+            "icon": "cook",
             "color": "purple",
             "ordinalPosition": 5,
             "defaultAttibutesId": "bf69e2e7-1d76-4c0c-abfa-5210dfdcc973",
@@ -444,6 +432,7 @@
             "id": "35f7f436-daa0-4093-91c0-da744dcf45e5",
             "slug": "heavy-delivery",
             "color": "turquoise",
+            "icon": "heavy-delivery",
             "ordinalPosition": 0,
             "defaultAttibutesId": "3430c390-09c9-41f8-a57e-6d3233b4965f",
             "attributes": {
@@ -463,6 +452,7 @@
             "id": "f6aa5715-42b9-4320-b5e0-4f7432514835",
             "slug": "light-delivery",
             "color": "turquoise",
+            "icon": "light-delivery",
             "ordinalPosition": 1,
             "defaultAttibutesId": "e9b02f86-8f88-4e11-b0c2-fc6818d6b76f",
             "attributes": {
@@ -482,6 +472,7 @@
             "id": "e742e1a5-36dc-4d83-8dbe-362cbd976d74",
             "slug": "food-delivery",
             "color": "turquoise",
+            "icon": "food-delivery",
             "ordinalPosition": 2,
             "defaultAttibutesId": "69ad32d2-bb2a-4351-8fa6-c04407758c93",
             "attributes": {
@@ -501,6 +492,7 @@
             "id": "b11017be-907e-4795-9d6f-a3a66ca15221",
             "slug": "speed-delivery",
             "color": "turquoise",
+            "icon": "fast-delivery",
             "ordinalPosition": 3,
             "defaultAttibutesId": "e0aba54f-57c9-479c-a040-cd543675613a",
             "attributes": {
@@ -520,6 +512,7 @@
             "id": "74672ec0-fe12-48f8-a5b0-a098562766e8",
             "slug": "shopping-delivery",
             "color": "turquoise",
+            "icon": "shopping-delivery",
             "ordinalPosition": 4,
             "defaultAttibutesId": "da6de945-0f4c-44a2-b50f-bdfcf7672e4d",
             "attributes": {
@@ -560,6 +553,7 @@
             "id": "27d330d9-af69-4738-afef-57533f279467",
             "slug": "personal-trainer",
             "color": "yellow",
+            "icon": "personal-trainer",
             "ordinalPosition": 0,
             "defaultAttibutesId": "7a3fe88e-c7a2-4fc0-a4d3-7dad5c7ad627",
             "attributes": {
@@ -579,6 +573,7 @@
             "id": "a8c7c490-75c3-4071-9e0d-8bcae7443a4a",
             "slug": "hockey-personal-trainer",
             "color": "yellow",
+            "icon": "hockey",
             "ordinalPosition": 1,
             "defaultAttibutesId": "c018dd40-762d-4929-83c8-5b8bf7fc8fb2",
             "attributes": {
@@ -598,6 +593,7 @@
             "id": "29d27cf2-d906-4774-8f6a-f074517de3c0",
             "slug": "tennis-personal-trainer",
             "color": "yellow",
+            "icon": "tennis",
             "ordinalPosition": 2,
             "defaultAttibutesId": "06926476-ef34-41f3-a854-0bedb9c9b8fc",
             "attributes": {
@@ -638,6 +634,7 @@
             "id": "b930e352-bb63-4017-b4dd-f96813464825",
             "slug": "yoga",
             "color": "red",
+            "icon": "yoga",
             "ordinalPosition": 0,
             "defaultAttibutesId": "fda34ff2-ad44-4a2d-bdb8-5cb0ea9ccf2e",
             "attributes": {
@@ -657,6 +654,7 @@
             "id": "76a9a6a0-7842-4c89-946c-ae9c48a4b417",
             "slug": "pedicure",
             "color": "red",
+            "icon": "pedicure",
             "ordinalPosition": 1,
             "defaultAttibutesId": "85346630-8a65-48f2-b911-5ebc834972d3",
             "attributes": {
@@ -676,6 +674,7 @@
             "id": "56464bd3-f1c1-41f8-920f-5882640fa72e",
             "slug": "manicure",
             "color": "red",
+            "icon": "manucure",
             "ordinalPosition": 2,
             "defaultAttibutesId": "05dfd877-b4aa-4f36-8a3f-d53875423680",
             "attributes": {
@@ -695,6 +694,7 @@
             "id": "9cfa0bdd-49c4-4d58-b6e1-d0d391e70843",
             "slug": "massage",
             "color": "red",
+            "icon": "massage",
             "ordinalPosition": 3,
             "defaultAttibutesId": "d4f76281-c39e-4827-9ff1-b34feae032ce",
             "attributes": {
@@ -755,6 +755,7 @@
             "id": "d7d74881-f183-43fc-a7d5-4fd326d14982",
             "slug": "drive-limousing",
             "color": "yellow",
+            "icon": "limo",
             "defaultAttibutesId": "01c223d3-6709-4099-9775-39962d3513dc",
             "attributes": {
               "fr": {
@@ -773,6 +774,7 @@
             "id": "983b1e51-bab1-4c42-b614-132031b0e254",
             "slug": "drive-van",
             "color": "yellow",
+            "icon": "van",
             "defaultAttibutesId": "2a0a45bb-ff7d-41dc-95fe-3d0632e0db48",
             "attributes": {
               "fr": {
@@ -791,6 +793,7 @@
             "id": "10678dd1-5cb8-4250-ac3c-54e323e51bd1",
             "slug": "drive-moto",
             "color": "yellow",
+            "icon": "moto",
             "defaultAttibutesId": "64d32d46-7c32-471f-8c2e-577a378de227",
             "attributes": {
               "fr": {
@@ -830,6 +833,7 @@
             "id": "cfceb483-53f9-47fe-bbc4-45ab5375d6aa",
             "slug": "amateur-cook",
             "color": "green",
+            "icon": "cook",
             "defaultAttibutesId": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
             "attributes": {
               "en": {
@@ -853,6 +857,7 @@
             "id": "0713b7ef-dc36-4363-b450-b39cc4911ec3",
             "slug": "carless-driver",
             "color": "green",
+            "icon": "driver",
             "defaultAttibutesId": "91440125-89b7-4718-979e-8ea859ab222a",
             "attributes": {
               "fr": {
@@ -871,6 +876,7 @@
             "id": "300f531b-8449-4a1a-a6b4-cd17c09e818f",
             "slug": "administrative-assistant",
             "color": "green",
+            "icon": "admin",
             "defaultAttibutesId": "25c87c93-b29f-4645-97d2-8ed072d8bcf7",
             "attributes": {
               "fr": {
@@ -889,6 +895,7 @@
             "id": "9be89169-9c4e-4479-b5ca-a9824553a88c",
             "slug": "house-tidy-up",
             "color": "green",
+            "icon": "light-delivery",
             "defaultAttibutesId": "c230fcac-7e8d-44f7-8693-8490beeff196",
             "attributes": {
               "fr": {
@@ -907,6 +914,7 @@
             "id": "e521a41c-ab4e-4dec-b98d-9612d1a6eb44",
             "slug": "purchase-and-delivery",
             "color": "green",
+            "icon": "delivery",
             "defaultAttibutesId": "6f79e871-0434-4274-93ed-5b201ccdd035",
             "attributes": {
               "fr": {
@@ -925,6 +933,7 @@
             "id": "b0fa3256-5dbe-4b04-abf6-ea28208ce847",
             "slug": "city-guide",
             "color": "green",
+            "icon": "compass",
             "defaultAttibutesId": "c09ed857-f9b5-4fe1-b509-ea2ac77704f5",
             "attributes": {
               "fr": {
@@ -948,6 +957,7 @@
             "id": "db5ba203-2336-465b-827f-d8812d431762",
             "slug": "pet-sitting",
             "color": "green",
+            "icon": "animal",
             "defaultAttibutesId": "88f59a8c-19ca-4e33-a6e4-f124a8258131",
             "attributes": {
               "fr": {
@@ -992,6 +1002,7 @@
             "id": "67b28970-7764-4afd-bb1d-9eb68002443a",
             "slug": "house-cleaning",
             "color": "blue",
+            "icon": "house-cleaning",
             "defaultAttibutesId": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
             "attributes": {
               "en": {
@@ -1015,6 +1026,7 @@
             "id": "b3aa9943-0ed1-4130-a7e3-942c78640d01",
             "slug": "car-washing",
             "color": "blue",
+            "icon": "car",
             "defaultAttibutesId": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
             "attributes": {
               "en": {
@@ -1038,6 +1050,7 @@
             "id": "211797db-3e5b-4e37-8fd2-35b13d083c9a",
             "slug": "swimming-pool-cleaning",
             "color": "blue",
+            "icon": "swimming-pool",
             "defaultAttibutesId": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
             "attributes": {
               "en": {
@@ -1087,6 +1100,7 @@
             "id": "df28122b-dc01-4e7a-a126-8007a6b3812c",
             "slug": "home-appliance",
             "color": "purple",
+            "icon": "home-appliance",
             "defaultAttibutesId": "ea930d53-72d7-4f5f-8a13-782addde52bf",
             "attributes": {
               "en": {
@@ -1110,6 +1124,7 @@
             "id": "6a9b91aa-9f40-4e40-be77-1ba29644dbfe",
             "slug": "electronics",
             "color": "purple",
+            "icon": "elec",
             "defaultAttibutesId": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
             "attributes": {
               "en": {
@@ -1133,6 +1148,7 @@
             "id": "4c9c4ffe-9a02-4fea-a96d-98a2ae9a9ac8",
             "slug": "computers",
             "color": "purple",
+            "icon": "computer",
             "defaultAttibutesId": "69b37a25-f207-4c9b-8606-85fb534ea76e",
             "attributes": {
               "en": {
@@ -1182,6 +1198,7 @@
             "id": "323d02c3-874d-428a-972d-2bf139312822",
             "slug": "makeup",
             "color": "red",
+            "icon": "makeup",
             "defaultAttibutesId": "035ec6be-0cb5-46ef-95de-7a6bd8a440af",
             "attributes": {
               "fr": {
@@ -1200,6 +1217,7 @@
             "id": "d77ed666-8dd2-416c-81a8-6de40ca5c34d",
             "slug": "manucure",
             "color": "red",
+            "icon": "manucure",
             "defaultAttibutesId": "eaaa9b62-a858-49ff-bd22-5e7891be4385",
             "attributes": {
               "fr": {
@@ -1218,6 +1236,7 @@
             "id": "e13e1029-d8d3-49e1-ac44-eed39a2a9c87",
             "slug": "pedicure",
             "color": "red",
+            "icon": "pedicure",
             "defaultAttibutesId": "989c2bb7-48df-4241-8b9e-b146420f7ec8",
             "attributes": {
               "fr": {
@@ -1236,6 +1255,7 @@
             "id": "7702027c-5ff0-41d1-bc1c-32dba0d61899",
             "slug": "hairstyle",
             "color": "red",
+            "icon": "haircut",
             "defaultAttibutesId": "768b2ff4-3cad-4624-9e6b-87a8ee2a7bbe",
             "attributes": {
               "fr": {
@@ -1252,8 +1272,9 @@
           },
           {
             "id": "1423813a-8c53-491a-a14b-2d4ff8d76385",
-            "slug": "epilation",
+            "slug": "waxing",
             "color": "red",
+            "slug": "waxing",
             "defaultAttibutesId": "29e6e859-47b2-426a-aebd-41e62c45057a",
             "attributes": {
               "fr": {
@@ -1298,6 +1319,7 @@
             "id": "d05fcb3f-e1ee-42e1-b506-25ae41bb0bd2",
             "slug": "sport",
             "color": "turquoise",
+            "icon": "personal-trainer",
             "defaultAttibutesId": "aec0d585-7d88-406f-b10b-1304f9220d84",
             "attributes": {
               "fr": {
@@ -1316,6 +1338,7 @@
             "id": "3bc39634-42d7-4754-836e-8683abd75e28",
             "slug": "yoga",
             "color": "turquoise",
+            "icon": "yoga",
             "defaultAttibutesId": "3a4ce26b-29b5-4cf6-8ac9-584b117c1517",
             "attributes": {
               "fr": {
@@ -1334,6 +1357,7 @@
             "id": "dab9803d-7cce-442d-a55a-3e0c3884678f",
             "slug": "perosnal-trainer",
             "color": "turquoise",
+            "icon": "perosnal-trainer",
             "defaultAttibutesId": "e214330c-27df-4143-ada1-95bcb3a63cf2",
             "attributes": {
               "en": {
@@ -1357,6 +1381,7 @@
             "id": "341a9bec-011f-4baa-9f9d-79d1a311c33a",
             "slug": "massage",
             "color": "turquoise",
+            "icon": "massage",
             "defaultAttibutesId": "d730af4d-98df-4d50-bdae-7544af0fbaf1",
             "attributes": {
               "fr": {

@@ -11,14 +11,13 @@ exports.seed = (knex) => {
     const insertAttrs = async (props) => {
       return knex.raw(
         `INSERT INTO service_category_attributes
-          (id, lang, name, icon, symbol, service_category_id, created_at, updated_at)
-          VALUES (:id, :lang, :name, :icon, :symbol, :serviceCategoryId, NOW(), NOW())
+          (id, lang, name, icon, service_category_id, created_at, updated_at)
+          VALUES (:id, :lang, :name, :icon, :serviceCategoryId, NOW(), NOW())
           ON CONFLICT (id) DO UPDATE
           SET
             lang = EXCLUDED.lang,
             name = EXCLUDED.name,
             icon = EXCLUDED.icon,
-            symbol = EXCLUDED.symbol,
             updated_at = NOW()
         `,
         props

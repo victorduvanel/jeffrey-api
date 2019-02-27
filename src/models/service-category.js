@@ -108,8 +108,7 @@ const ServiceCategory = Base.extend({
       if (res.length) {
         return {
           name: res[0].name,
-          icon: res[0].icon,
-          symbol: res[0].symbol
+          icon: res[0].icon
         };
       }
     }
@@ -117,8 +116,7 @@ const ServiceCategory = Base.extend({
     const res = await bookshelf.knex('service_categories')
       .select(
         'service_category_attributes.name',
-        'service_category_attributes.icon',
-        'service_category_attributes.symbol',
+        'service_category_attributes.icon'
       )
       .leftJoin('service_category_attributes', 'service_categories.default_attibutes_id', 'service_category_attributes.id')
       .where({
@@ -128,15 +126,13 @@ const ServiceCategory = Base.extend({
     if (res.length) {
       return {
         name: res[0].name,
-        icon: res[0].icon,
-        symbol: res[0].symbol
+        icon: res[0].icon
       };
     }
 
     return {
       name: null,
-      icon: null,
-      symbol: null
+      icon: null
     };
   }
 }, {
