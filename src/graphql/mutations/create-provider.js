@@ -23,7 +23,7 @@ const createProvider = async (_, __, { user }) => {
   const onboarindgCompleted = !!ONBOARDING_STEPS.find(step => onboardingProgress.includes(step));
 
   if (onboarindgCompleted) {
-    await user.syncStripeAccount();
+    // await user.syncStripeAccount();
     user.set('isProvider', true);
     user.set('isAvailable', true);
     await user.save();

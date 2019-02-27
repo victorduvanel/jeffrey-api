@@ -698,14 +698,14 @@ const User = Base.extend({
       progress.push('tos');
     }
 
-    const stripeAccount = await this.stripeAccount(false);
-    if (stripeAccount && stripeAccount.get('hasExternalAccount')) {
-      progress.push('bank-details');
-    }
+    // const stripeAccount = await this.stripeAccount(false);
+    // if (stripeAccount && stripeAccount.get('hasExternalAccount')) {
+    //   progress.push('bank-details');
+    // }
 
-    if (await this.hasIdentityDocument()) {
-      progress.push('identity-document');
-    }
+    // if (await this.hasIdentityDocument()) {
+    //   progress.push('identity-document');
+    // }
 
     return progress;
   },
