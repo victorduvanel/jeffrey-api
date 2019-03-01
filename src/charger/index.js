@@ -3,7 +3,7 @@ import Promise                  from 'bluebird';
 import request                  from 'request-promise';
 import bookshelf                from '../services/bookshelf';
 import knex                     from '../services/knex';
-import { render}                from '../services/handlebars';
+import { render }               from '../services/handlebars';
 import Mission, { SERVICE_FEE } from '../models/mission';
 
 export const processPayout = async () => {

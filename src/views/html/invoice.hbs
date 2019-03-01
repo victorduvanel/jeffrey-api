@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Facture Prestine</title>
+    <title>Invoice</title>
     <style>
     .invoice-box{
         max-width:800px;
@@ -76,10 +76,17 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="https://static.prestine.io/assets/images/logo-f21333b61745fa4258abe3e04c44e2a1.png" width="125">
+                                Jeffrey
                             </td>
                             <td>
-                                N° de facture: {{ invoiceId }}<br>
+                                Invoice #: {{ mission.id }}<br>
+                                Date: {{ invoiceDate }}<br>
+                                Price: {{ mission.price }}<br>
+                                Currency: {{ mission.currency }}<br>
+                                Total Cost: {{ mission.totalCost }}
+                            </td>
+                            <td>
+                                N° de facture: {{ mission.id }}<br>
                                 Date de facture: {{ invoiceDate }}
                             </td>
                         </tr>
@@ -90,7 +97,7 @@
                 <td colspan="3">
                     <table>
                         <tr>
-                            <td>Prestine</td>
+                            <td>Jeffrey</td>
                             <td>
                               {{ customer.fullName }}<br>
                               {{ customer.email }}

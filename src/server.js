@@ -124,6 +124,8 @@ post('/stripe/webhook', routes.stripe.webhook.post);
 
 get('/pay', routes.pay.get);
 
+get('/invoice/:missionId', routes.invoice.get);
+
 let _listenProm = null;
 export const listen = () => {
   if (!_listenProm) {
