@@ -13,6 +13,7 @@ import config                          from './config';
 import routes                          from './routes';
 
 import { subscriptionServer }          from './services/graphql';
+import firebase                        from './services/firebase';
 
 import logger                          from './middlewares/logger';
 import i18n                            from './middlewares/i18n';
@@ -58,6 +59,16 @@ subscriptionServer(httpServer);
 
 // ROUTES
 get('/', async (req, res) => {
+  const message = {
+    notification: {
+      // title: 'Super title',
+      body: 'Coucou !'
+    },
+    token: 'e4rchy0hweo:APA91bF8IC8eJURh7NZdblNcpK42eKV9Z7HcP2xiQCI85ifUvUUyJpIaGfU0T1XxmYNz_5gKAmzWvyfbFXqNlkuXx2w5kTq56Z32OhHlVaHlYW6h4IG7w3Ekhm4e_jkV6nZlbF-pCDTr'
+  };
+
+  await firebase.messaging().send(message);
+
   res.send({
     hello: 'world'
   });
