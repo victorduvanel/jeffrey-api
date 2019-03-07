@@ -41,6 +41,7 @@ type User {
   bio: String
   prices: [ProviderPrice]
   price(serviceCategoryId: ID): Price
+  avgPrice: Price
   paymentMethodStatus: String
   subscriptionStatus: String
   country: Country
@@ -102,6 +103,14 @@ const resolver = {
       const prices = user.related('providerPrices');
 
       return prices.toArray().map(price => price.serialize());
+    },
+
+    avgPrice: async (user) => {
+      return ProviderPrice
+        .where({
+          user_id: user.id,
+        })
+        .fetch();
     },
 
     price: async (user, { serviceCategoryId }) => {

@@ -32,7 +32,7 @@ const createMissionMessage = async (mission, provider, client) => {
         serviceCategory: {
           id: serviceCategory.get('id'),
           color: serviceCategory.get('color'),
-          icon: serviceCategoryAttributes.symbol
+          icon: serviceCategory.get('icon')
         }
       }
     }
