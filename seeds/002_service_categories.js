@@ -1,6 +1,29 @@
 import Promise    from 'bluebird';
 import categories from './service-categories';
 
+// import uuid from 'uuid/v4';
+//
+// const ids = [];
+// const updateIds = (svc) => {
+//   svc.id = uuid();
+//   const defaultAttibutesId = svc.defaultAttibutesId;
+//   Object.keys(svc.attributes).forEach((key) => {
+//     const attr = svc.attributes[key];
+//     if (attr.id === defaultAttibutesId) {
+//       attr.id = uuid();
+//       svc.defaultAttibutesId = attr.id;
+//     } else {
+//       attr.id = uuid();
+//     }
+//   });
+//
+//   if (svc.services) {
+//     svc.services.forEach(updateIds);
+//   }
+// };
+//
+// categories.services.CH.forEach(updateIds);
+
 const onError = (err) => {
   console.error(err);
   process.exit(1);
@@ -44,6 +67,11 @@ exports.seed = (knex) => {
     };
 
     const insertService = (props) => {
+      if (ids.indexOf(props.id) !== -1) {
+        console.log(props.id);
+      }
+      ids.push(props.id);
+
       return knex.raw(
         `INSERT INTO service_categories
           (id, country_id, slug, parent_id, root_id, ordinal_position, color, icon, created_at, updated_at)

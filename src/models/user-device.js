@@ -42,8 +42,16 @@ const UserDevice = Base.extend({
       case 'fcm': {
         const message = {
           notification: {
-            // title: 'Super title',
+            title: notif.title,
             body: notif.body
+          },
+          android: {
+            // ttl: 3600 * 1000,
+            notification: {
+              icon: 'ic_stat_notify',
+              color: '#A6CB88',
+              // sound: 'definite.mp3',
+            },
           },
           token: deviceToken
         };
