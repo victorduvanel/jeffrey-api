@@ -13,6 +13,10 @@ const ServiceCategory = Base.extend({
     return this.belongsTo('ServiceCategory', 'parent_id');
   },
 
+  country() {
+    return this.belongsTo('Country', 'country_id');
+  },
+
   subCategories() {
     if (this._subcategories) {
       return this._subcategories;
@@ -53,6 +57,12 @@ const ServiceCategory = Base.extend({
 
   slug() {
     return this.get('slug');
+  },
+
+  async currency() {
+    await this.load(['country']);
+    const country = this.related('country');
+    return country.currency();
   },
 
   async parent() {

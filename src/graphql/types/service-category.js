@@ -10,6 +10,7 @@ type ServiceCategory {
   slug: String!
   color: String!
   icon: String
+  currency: String!
   subCategories: [ServiceCategory]
   root: ServiceCategory
   parent: ServiceCategory

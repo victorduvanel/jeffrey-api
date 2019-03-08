@@ -6,4 +6,4 @@ dropdb --if-exists jeffrey
 createdb jeffrey
 npm run migrate
 npm run seed
-npm run seed -- --dev
+# npm run seed -- --dev

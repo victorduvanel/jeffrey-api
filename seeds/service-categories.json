@@ -717,6 +717,7 @@
       {
         "id": "0f3be6c8-c229-4d54-9120-c994dc4cfc30",
         "slug": "drive",
+        "icon": "drive",
         "color": "yellow",
         "ordinalPosition": 1,
         "defaultAttibutesId": "b98a1279-932d-46d1-8662-81b4b121ef53",
@@ -736,6 +737,7 @@
           {
             "id": "9f7f1c92-8315-4a7e-bf8c-a9738aa83a27",
             "slug": "drive-berline",
+            "icon": "berline",
             "color": "yellow",
             "defaultAttibutesId": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
             "attributes": {
@@ -754,8 +756,8 @@
           {
             "id": "d7d74881-f183-43fc-a7d5-4fd326d14982",
             "slug": "drive-limousing",
-            "color": "yellow",
             "icon": "limo",
+            "color": "yellow",
             "defaultAttibutesId": "01c223d3-6709-4099-9775-39962d3513dc",
             "attributes": {
               "fr": {
@@ -1274,7 +1276,7 @@
             "id": "1423813a-8c53-491a-a14b-2d4ff8d76385",
             "slug": "waxing",
             "color": "red",
-            "slug": "waxing",
+            "icon": "waxing",
             "defaultAttibutesId": "29e6e859-47b2-426a-aebd-41e62c45057a",
             "attributes": {
               "fr": {
@@ -1357,7 +1359,7 @@
             "id": "dab9803d-7cce-442d-a55a-3e0c3884678f",
             "slug": "perosnal-trainer",
             "color": "turquoise",
-            "icon": "perosnal-trainer",
+            "icon": "personal-trainer",
             "defaultAttibutesId": "e214330c-27df-4143-ada1-95bcb3a63cf2",
             "attributes": {
               "en": {
