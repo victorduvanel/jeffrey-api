@@ -107,14 +107,6 @@ const resolver = {
       return prices.toArray().map(price => price.serialize());
     },
 
-    avgPrice: async (user) => {
-      return ProviderPrice
-        .where({
-          user_id: user.id,
-        })
-        .fetch();
-    },
-
     price: async (user, { serviceCategoryId }) => {
       if (!serviceCategoryId) {
         return null;

@@ -273,6 +273,31 @@ const User = Base.extend({
     return parseInt(res.rows[0].total_review, 10);
   },
 
+  async avgPrice() {
+    const userId = this.get('id');
+    const res = await knex
+      .raw(`
+        select
+        avg(price) as amount,
+        price_currency as currency
+        from missions
+        where provider_id = :userId
+        group by price_currency
+        limit 1
+      `, {
+        userId
+      });
+
+    if (res.rowCount) {
+      const { amount, currency } = res.rows[0];
+
+      return {
+        amount: parseInt(amount, 10),
+        currency
+      };
+    }
+  },
+
   async rank() {
     const userId = this.get('id');
     const res = await knex
