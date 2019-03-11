@@ -46,6 +46,11 @@ const oauth2 = async (req) => {
 export default async (req, res, next) => {
   try {
     const{ accessToken, user } = await oauth2(req);
+
+    if (user) {
+      user.bumpLastActivity();
+    }
+
     req.user = user;
     req.accessToken = accessToken;
     next();

@@ -341,6 +341,14 @@ const User = Base.extend({
     return livechatToken;
   }),
 
+  lastActivityAt() {
+    return this.get('lastActivityAt');
+  },
+
+  createdAt() {
+    return this.get('createdAt');
+  },
+
   /* !GRAPHQL PROPS */
 
   async country() {
@@ -517,6 +525,22 @@ const User = Base.extend({
 
   createAccessToken({ singleUse = false } = {}) {
     return AccessToken.create({ user: this, singleUse });
+  },
+
+  bumpLastActivity() {
+    const userId = this.get('id');
+    return knex
+      .raw(`
+        UPDATE users
+        SET last_activity_at = NOW()
+        WHERE
+          id = :userId
+        AND
+          (last_activity_at < NOW() OR last_activity_at IS NULL)
+      `, {
+        userId
+      })
+      .then();
   },
 
   business() {
@@ -891,6 +915,7 @@ const User = Base.extend({
     return this.forge({
       id,
       isTester: !config.PRODUCTION,
+      lastActivityAt: knex.raw('NOW()'),
       ...props
     })
       .save(null, { method: 'insert' })

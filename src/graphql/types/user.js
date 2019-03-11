@@ -49,6 +49,8 @@ type User {
   identityDocuments: [UserDocument]
   bankAccounts: BankAccount
   livechatToken: String
+  createdAt: Date!
+  lastActivityAt: Date!
 }
 `;
 

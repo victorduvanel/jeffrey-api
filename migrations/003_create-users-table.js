@@ -29,6 +29,7 @@ function up(knex) {
       table.string('livechat_token').unique();
       table.dateTime('created_at');
       table.dateTime('updated_at');
+      table.dateTime('last_activity_at');
     });
 }
 
