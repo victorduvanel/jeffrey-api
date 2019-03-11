@@ -67,10 +67,10 @@ exports.seed = (knex) => {
     };
 
     const insertService = (props) => {
-      if (ids.indexOf(props.id) !== -1) {
-        console.log(props.id);
-      }
-      ids.push(props.id);
+      // if (ids.indexOf(props.id) !== -1) {
+      //   console.log(props.id);
+      // }
+      // ids.push(props.id);
 
       return knex.raw(
         `INSERT INTO service_categories
