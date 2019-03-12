@@ -34,8 +34,6 @@ const UserDevice = Base.extend({
 
         notification.topic = 'com.jeffrey.client';
 
-        console.log('notification', notification);
-
         await apnProvider.send(notification, deviceToken);
       } break;
 
