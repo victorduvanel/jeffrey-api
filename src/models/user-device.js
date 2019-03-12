@@ -45,6 +45,9 @@ const UserDevice = Base.extend({
             title: notif.title,
             body: notif.body
           },
+          data: {
+            ...notif.payload
+          },
           android: {
             // ttl: 3600 * 1000,
             notification: {

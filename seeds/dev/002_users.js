@@ -58,7 +58,7 @@ exports.seed = async function(knex, Promise) {
     isAvailable: true,
     isTester: true,
     profilePicture: 'https://storage.googleapis.com/eu-jffr/profile-pictures/6203cdf5-16e1-42a3-96d8-098f6ce65133/original.jpg',
-    phoneNumber: null,
+    phoneNumber: '+34657636966',
     password: '$2a$04$SHtbpSUdGyjGRJfxFF30heWuOPYLV9j3qx0wCxxBcipTuhrnJaoZS'
   });
 
@@ -68,13 +68,13 @@ exports.seed = async function(knex, Promise) {
       "first_name", "last_name", "profile_picture",
       "phone_number", "password", "lat", "lng", "postal_address_id",
       "is_provider", "is_available", "is_tester",
-      "locale", "created_at", "updated_at"
+      "locale", "created_at", "updated_at", "last_activity_at"
     ) VALUES (
       :id, :email, :facebookId, :gender, :firstName,
       :lastName, :profilePicture, :phoneNumber,
       :password, :lat, :lng, :postalAddress,
       :isProvider, :isAvailable, :isTester,
-      'en-US', NOW(), NOW()
+      'en-US', NOW(), NOW(), NOW()
     )
     ON CONFLICT DO NOTHING
   `, { postalAddress: 'b36c1144-d6d3-4b67-ac0f-64a98c2e238a', ...user }));

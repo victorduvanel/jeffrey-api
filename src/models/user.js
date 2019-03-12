@@ -187,20 +187,58 @@ const User = Base.extend({
     return reviews;
   },
 
-  async color(_, { user }) {
-    if (user) {
-      const res = await knex.select('service_categories.color')
-        .from('missions')
-        .leftJoin('service_categories', 'missions.service_category_id', 'service_categories.id')
-        .where('client_id', user.get('id'))
-        .where('provider_id', this.get('id'))
-        .orderBy('missions.created_at', 'DESC')
-        .limit(1);
+  async color() {
+    const res = await knex.raw(`
+      select
+        count(service_categories.id), service_categories.color
+      from missions
+      left join
+        service_categories on service_categories.id = missions.service_category_id
+      where
+        missions.provider_id = :providerId
+      and
+        missions.status = 'terminated'
+      group by
+        service_categories.id
+    `, {
+      providerId: this.get('id')
+    });
 
-      if (res.length) {
-        return res[0].color;
-      }
+    if (res.rowCount) {
+      const rows = res.rows.map((row) => ({
+        color: row.color,
+        count: parseInt(row.count, 10)
+      }));
+      const total = rows.reduce((acc, row) => acc + row.count, 0);
+
+      const colors = rows
+        .map((row) => ({
+          color: row.color,
+          amount: row.count / total
+        }))
+        .sort((a, b) => b.amount - a.amount);
+
+      return colors;
     }
+    return null;
+  },
+
+  async totalMission() {
+    const res = await knex.raw(`
+      select count(*) as total
+      from missions
+      where
+        provider_id = :providerId
+      and
+        status = 'terminated'
+    `, {
+      providerId: this.get('id')
+    });
+
+    if (res.rowCount) {
+      return parseInt(res.rows[0].total, 10);
+    }
+
     return null;
   },
 

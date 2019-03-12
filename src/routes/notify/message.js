@@ -7,8 +7,8 @@ export const post = [
   async (req, res) => {
     const { userId, notification } = req.body;
 
-    const u = await User.find(userId);
-    u.pushNotification(notification);
+    const user = await User.find(userId);
+    user.pushNotification(notification);
     res.send({
       success: true
     });

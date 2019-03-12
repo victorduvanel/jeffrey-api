@@ -19,6 +19,10 @@ input PersonalDetails {
   postalCode: String
   state: String
 }
+type UserColor {
+  amount: Float!
+  color: String!
+}
 type User {
   id: ID!
   unseenActivity: Boolean
@@ -28,7 +32,7 @@ type User {
   firstName: String
   lastName: String
   dateOfBirth: String
-  color: String
+  color: [UserColor]
   email: String
   gender: Gender
   profilePicture: String
@@ -38,6 +42,7 @@ type User {
   serviceCategories: [ServiceCategory]
   rank: Float
   totalReview: Int
+  totalMission: Int
   bio: String
   prices: [ProviderPrice]
   price(serviceCategoryId: ID): Price
