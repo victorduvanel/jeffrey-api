@@ -101,49 +101,6 @@ const User = Base.extend({
     return this.getSubscriptionStatus();
   }),
 
-  /**
-    * serviceCategories
-    * @description Get user's categories for which a price have been defined
-    * @param options Parameters of fetching
-    * @param options.childrenOf Only fetch children categories of this one
-    */
-  async serviceCategories(options = { childrenOf: undefined }) {
-
-    // Get the categories with price + parents of this categories
-    const categoriesWithPrice = knex.raw(`
-      WITH RECURSIVE recursive (id, slug) as
-      (
-        SELECT id, slug, parent_id
-        FROM service_categories
-        WHERE id IN(
-          SELECT service_category_id AS id
-          FROM provider_prices
-          WHERE user_id = :userId
-        )
-        UNION ALL
-        SELECT service_categories.id, service_categories.slug, service_categories.parent_id
-        FROM recursive, service_categories
-        WHERE service_categories.id = recursive.parent_id
-      )
-      SELECT DISTINCT id
-      FROM recursive
-    `, {
-      userId: this.get('id')
-    });
-
-    const categories = await ServiceCategory
-      .query((query) => {
-        query.whereIn('id', categoriesWithPrice);
-
-        if (typeof options.childrenOf !== 'undefined') {
-          query = query.where('parent_id', options.childrenOf);
-        }
-      })
-      .fetchAll();
-
-    return categories;
-  },
-
   async identifyDocuments() {
     const documents = UserDocument
       .where({
