@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>INVOICE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+.container {
+  height: 100vh;
+  background: linear-gradient(150deg, #CAEEE1 15%, #BBE3E7 100%);
+}
+
+html, body {
+	font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 16px;
+}
+
+.header {
+  height: 25%;
+  padding: 5%;
+  box-sizing: border-box;
+  font-size: 2em;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.top-border {
+  height: 10%;
+  clip-path: polygon(100% 0%, 100% 100%, 0 100%);
+  background-color: white;
+}
+
+.bottom-border {
+  height: 10%;
+  clip-path: polygon(100% 0%, 0 0, 0 100%);
+  background-color: white;
+}
+.body {
+  background-color: #FFFFFF;
+  padding: 2em;
+  box-sizing: border-box;
+}
+th {
+  border-bottom: solid 1px black;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>FACTURE</h1>
+      </div>
+      <div class="top-border"></div>
+      <div class="body">
+        <table class="table">
+          <thead>
+            <tr class="recap-head">
+              <th scope="col">
+                Début du service
+              </th>
+              <th scope="col">
+                Fin du service
+              </th>
+              <th scope="col">
+                Durée totale
+              </th>
+              <th scope="col">
+                Tarif horaire
+              </th>
+              <th scope="col">
+                Catégorie de service
+              </th>
+              <th scope="col">
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                25/03/2019 09h33
+              </td>
+              <th>
+                25/03/2019 10h45
+              </td>
+              <td>
+                1h08
+              </td>
+              <td>
+                20 €
+              </td>
+              <td>
+                Kids
+              </td>
+              <td>
+                22 €
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>
+                Sous-total
+              </th>
+              <td>
+                22 €
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Taxes
+              </th>
+              <td>
+                15 %
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>
+                Total
+              </th>
+              <td>
+                22 €
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="terms">
+          <h4>Facture établie en ces termes:<h4>
+          <p>Lorsque vous réservez un Jeffrey sur notre plateforme, c’est lui, en qualité de travailleur indépendant, d’assumer l’émission de la facture tout comme la qualité de son travail. Jeffrey Holding SA, entreprise Suisse, ne fait que jouer un rôle de mise en relation à travers des solutions informatiques et ne peut être en aucun cas apparenté à une entreprise de placement de personnel. Le tarif horaire a été fixé librement par le travailleur autonome. Le travailleur autonome s’engage à avoir une couverture d’assurance à responsabilité civile couvrant les éventuels dommages causés lors d’un service. Jeffrey Holding SA, même basée en Suisse, paye ses taxes sur ses revenus, comme toute entreprise exerçant une activité au Canada.</p>
+        </div>
+      </div>
+      <div class="bottom-border"></div>
+      <div class="footer">
+        <a href="https://www.jeffrey.app/">www.jeffrey.app</h1>
+      </div>
+    </div>
+  </body>
+</html>

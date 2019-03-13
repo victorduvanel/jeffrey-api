@@ -1,6 +1,7 @@
-import puppeteer  from 'puppeteer';
+import puppeteer from 'puppeteer';
 import Mission from '../models/mission';
 import { render } from '../services/handlebars';
+import config from '../config';
 
 export const get = [
   async (req, res) => {
@@ -20,7 +21,15 @@ export const get = [
             }
         });
 
-        const browser = await puppeteer.launch();
+        let options;
+        if (config.PRODUCTION) {
+          options = {
+            executablePath: '/usr/bin/google-chrome-stable',
+            args: [ '--no-sandbox' ]
+          };
+        }
+
+        const browser = await puppeteer.launch(options);
         const page = await browser.newPage();
         await page.setContent(html);
         await page.emulateMedia('screen');

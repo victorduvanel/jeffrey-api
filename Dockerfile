@@ -4,16 +4,25 @@ MAINTAINER William Riancho <william@reptilians.io>
 ARG NODE_VERSION=v10.15.3
 
 RUN apt-get update
-RUN apt-get install -y curl xz-utils \
+RUN apt-get install -y --no-install-recommends \
+  curl xz-utils \
   xfonts-base xfonts-utils xfonts-75dpi build-essential \
   libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
 
 RUN curl -OL https://nodejs.org/dist/$NODE_VERSION/node-$NODE_VERSION-linux-x64.tar.xz
 RUN tar -xJf node-$NODE_VERSION-linux-x64.tar.xz --strip-components=1 -C /usr/local
 RUN rm node-$NODE_VERSION-linux-x64.tar.xz
+
+RUN curl -sS https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google.list
+
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install yarn -y
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends \
+  yarn \
+  google-chrome-stable
 
 RUN curl -OL https://jffr.ams3.digitaloceanspaces.com/static/wkhtmltox_0.12.5-1.bionic_amd64.deb
 RUN dpkg -i wkhtmltox_0.12.5-1.bionic_amd64.deb
