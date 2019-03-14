@@ -4,7 +4,7 @@ MAINTAINER William Riancho <william@reptilians.io>
 ARG NODE_VERSION=v10.15.3
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get install -y \
   curl xz-utils \
   xfonts-base xfonts-utils xfonts-75dpi build-essential \
   libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
