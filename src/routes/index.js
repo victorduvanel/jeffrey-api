@@ -13,7 +13,6 @@ import * as appRedirect     from './app-redirect';
 import * as contactDetails  from './contact-details';
 import * as profilePic      from './profile-pic';
 import * as userDocuments   from './user-documents';
-import * as graphiql        from './graphiql';
 import * as userDevice      from './user-device';
 import * as ping            from './ping';
 import * as phoneNumber     from './phone-number';
@@ -38,7 +37,7 @@ export default {
   resetPassword, ms, tos,
   fixtureMessages, apple, appLink,
   appRedirect, contactDetails,
-  profilePic, graphiql, userDocuments,
+  profilePic, userDocuments,
   userDevice, ping, phoneNumber,
   bankAccounts, providers,
   stripe, logout, cron, payoutAlert,

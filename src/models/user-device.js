@@ -57,7 +57,15 @@ const UserDevice = Base.extend({
           token: deviceToken
         };
 
-        await firebase.messaging().send(message);
+        try {
+          await firebase.messaging().send(message);
+        } catch (err) {
+          if (err.code === 'messaging/registration-token-not-registered') {
+            await this.destroy();
+          } else {
+            throw err;
+          }
+        }
       } break;
 
       case 'expo':

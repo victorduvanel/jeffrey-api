@@ -1,5 +1,4 @@
 import './user-device';
-import './new-message';
 import './business-details';
 import './update-password';
 import './bank-account';
@@ -18,7 +17,6 @@ import './create-provider';
 import './current-location';
 import './payment-method';
 import './new-review';
-import './conversation-seen';
 import './new-mission-request';
 import './accept-mission';
 import './mission-paid';

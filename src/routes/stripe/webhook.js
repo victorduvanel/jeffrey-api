@@ -1,6 +1,5 @@
 import bodyParser from 'body-parser';
 import stripe     from '../../services/stripe';
-import logger     from '../../services/logger';
 import config     from '../../config';
 
 export const post = [
@@ -11,9 +10,9 @@ export const post = [
 
     try {
       const event = stripe.webhooks.constructEvent(req.body, stripeSignature, config.stripe.webhookSecret);
-      logger.info('stripe', { event });
+      console.log('stripe', { event });
     } catch (err) {
-      logger.error(err);
+      console.error(err);
     }
 
     res.send({

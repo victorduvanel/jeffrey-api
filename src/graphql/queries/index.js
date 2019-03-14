@@ -8,8 +8,6 @@ import './provider-history';
 import './service-categories';
 import './provider-service-categories';
 import './service-category';
-import './conversation';
-import './conversations';
 import './business-details';
 import './payment-methods';
 import './provider-location';

@@ -20,7 +20,7 @@ import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
 import { router, get, post }           from './middlewares/router';
-import graphqlRoute                    from './routes/graphql';
+import graphqServer, { middlewares as graphqlMiddlewares } from './routes/graphql';
 
 import './graphql/types';
 import './graphql/mutations';
@@ -71,9 +71,6 @@ post('/process-payout', routes.processPayout.post);
 post('/payout-alert', routes.payoutAlert.post);
 
 post('/cron', routes.cron.post);
-
-router.use('/graphql', ...(graphqlRoute()));
-get('/graphiql', routes.graphiql.get);
 
 post('/ping', routes.ping.post);
 
@@ -126,6 +123,12 @@ post('/stripe/webhook', routes.stripe.webhook.post);
 get('/pay', routes.pay.get);
 
 get('/invoice/:missionId', routes.invoice.get);
+
+router.use('/graphql', ...graphqlMiddlewares);
+graphqServer().applyMiddleware({
+  app: router,
+  path: '/graphql'
+});
 
 let _listenProm = null;
 export const listen = () => {
