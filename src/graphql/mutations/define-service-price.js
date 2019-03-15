@@ -1,4 +1,5 @@
 import Promise              from 'bluebird';
+import _                    from 'lodash';
 import { combineResolvers } from 'graphql-resolvers';
 import ProviderPrice        from '../../models/provider-price';
 import ServiceCategory      from '../../models/service-category';
@@ -7,7 +8,7 @@ import auth                 from '../middlewares/auth';
 
 const def = 'defineServicePrice(serviceCategoryId: ID!, price: Int, currency: String, isEnabled: Boolean): Boolean';
 
-const defineServicePrice = async (_, { serviceCategoryId, ...props }, { user }) => {
+const defineServicePrice = async (__, { serviceCategoryId, ...props }, { user }) => {
   const serviceCategory = await ServiceCategory.find(serviceCategoryId);
   if (!serviceCategory) {
     return false;
@@ -27,12 +28,12 @@ const defineServicePrice = async (_, { serviceCategoryId, ...props }, { user }) 
 
     if (prices.length) {
       ['price', 'currency', 'isEnabled'].forEach((propertyName) => {
-        if (typeof props[propertyName] !== 'undefined') {
+        if (!_.isNil(props[propertyName])) {
           prices.models[0].set(propertyName, props[propertyName]);
         }
       });
       return prices.models[0].save();
-    } else if (serviceCategory && price && currency && typeof isEnabled !== 'undefined') {
+    } else if (serviceCategory && price && currency && !_.isNil(isEnabled)) {
       await ProviderPrice
         .create({
           user,
