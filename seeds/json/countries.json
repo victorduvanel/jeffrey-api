@@ -416,6 +416,7 @@
     "currency_code": "CAD",
     "is_enabled": true,
     "alpha_support": false,
+    "sms_from": "+14065103658",
     "region": "",
     "flag": "\ud83c\udde8\ud83c\udde6"
   },
@@ -1755,6 +1756,7 @@
     "phone_code": 1,
     "currency_code": "USD",
     "is_enabled": false,
+    "alpha_support": false,
     "alpha_support": false,
     "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddf7"
