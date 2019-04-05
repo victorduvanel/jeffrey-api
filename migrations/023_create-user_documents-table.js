@@ -4,7 +4,7 @@ function up(knex) {
 
     table.string('mime');
     table.string('uri');
-    table.enum('purpose', ['identity_document']);
+    table.string('purpose');
 
     table
       .uuid('owner_id')

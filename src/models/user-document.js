@@ -1,22 +1,26 @@
 import Promise     from 'bluebird';
 import uuid        from 'uuid';
 import fileTypeLib from 'file-type';
+import { S3 }      from '../services/aws';
 import bookshelf   from '../services/bookshelf';
-import buckets     from '../services/google/storage';
 import Base        from './base';
 
-const uploadDocument = ({ bucket, mime, buffer, path }) => {
+const uploadDocument = (document, mime, path) => {
   return new Promise((resolve, reject) => {
-    const file = bucket.file(path);
-    const fileStream = file.createWriteStream({
-      metadata: {
-        contentType: mime
+    S3.upload({
+      Key: path,
+      Body: document,
+      ContentType: mime,
+      ACL: 'authenticated-read'
+    }, (err) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+        return;
       }
-    });
 
-    fileStream.on('error', reject);
-    fileStream.on('finish', resolve);
-    fileStream.end(buffer);
+      resolve();
+    });
   });
 };
 
@@ -35,7 +39,7 @@ const UserDocument = Base.extend({
     return this.get('updatedAt');
   }
 }, {
-  create: async function({ purpose, user, buffer, region = 'EU' }) {
+  create: async function({ purpose, user, buffer }) {
     let mime = null;
 
     const fileType = fileTypeLib(buffer);
@@ -44,12 +48,11 @@ const UserDocument = Base.extend({
     }
 
     const id = uuid.v4();
-    const bucket = buckets[region];
+    const path = `user-documents/${user.get('id')}/${id}`;
 
-    const path = `documents/${user.get('id')}/${id}`;
-    const uri = `https://storage.googleapis.com/${bucket.name}/${path}`;
+    const uri = `https://jffr.ams3.digitaloceanspaces.com/${path}`;
 
-    await uploadDocument({ bucket, buffer, path, mime });
+    await uploadDocument(buffer, mime, path);
 
     return this.forge({ id, purpose, uri, mime, ownerId: user.get('id') })
       .save(null, { method: 'insert' });

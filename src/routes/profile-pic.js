@@ -2,7 +2,6 @@ import Promise                 from 'bluebird';
 import uuid                    from 'uuid';
 import Busboy                  from 'busboy';
 import { createCanvas, Image } from 'canvas';
-import Buckets                 from '../services/google/storage';
 import { S3 }                  from '../services/aws';
 import oauth2                  from '../middlewares/oauth2';
 import { applyExifRotation }   from '../lib/exif';
