@@ -22,6 +22,10 @@ const Country = Base.extend({
 
   currency() {
     return this.get('currencyCode');
+  },
+
+  requiresCivilLiabilityInsurance() {
+    return this.get('requiresCivilLiabilityInsurance');
   }
 }, {
   findByCode: function(code) {

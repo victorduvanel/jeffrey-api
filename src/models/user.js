@@ -667,10 +667,15 @@ const User = Base.extend({
     }
   },
 
-  async hasIdentityDocument() {
-    const idDocument = await UserDocument.findIdentifyDocuments(this);
+  async hasDocument(documentType) {
+    const idDocument = await UserDocument.findDocuments(this, documentType);
     return idDocument.length > 0;
   },
+
+  async hasIdentityDocument() {
+    return this.hasDocuments('identity_document');
+  },
+
 
   async updatePassword(newPassword) {
     const saltRounds = 10;
@@ -750,6 +755,13 @@ const User = Base.extend({
     // if (await this.hasIdentityDocument()) {
     //   progress.push('identity-document');
     // }
+
+    const country = await this.country();
+    if (country && country.get('requiresCivilLiabilityInsurance')) {
+      if (await this.hasDocument('civil_liability_insurance')) {
+        progress.push('civil-liability-insurance');
+      }
+    }
 
     return progress;
   },

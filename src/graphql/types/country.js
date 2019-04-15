@@ -8,6 +8,7 @@ const def = `
     flag: String!
     code: String!
     currency: String
+    requiresCivilLiabilityInsurance: Boolean
   }
 `;
 

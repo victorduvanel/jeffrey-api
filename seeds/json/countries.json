@@ -418,7 +418,8 @@
     "alpha_support": false,
     "sms_from": "+14065103658",
     "region": "",
-    "flag": "\ud83c\udde8\ud83c\udde6"
+    "flag": "\ud83c\udde8\ud83c\udde6",
+    "requires_civil_liability_insurance": true
   },
   {
     "name": "Cayman Islands",
@@ -798,7 +799,8 @@
     "is_enabled": true,
     "alpha_support": true,
     "region": "",
-    "flag": "\ud83c\uddeb\ud83c\uddf7"
+    "flag": "\ud83c\uddeb\ud83c\uddf7",
+    "requires_civil_liability_insurance": true
   },
   {
     "name": "French Guiana",

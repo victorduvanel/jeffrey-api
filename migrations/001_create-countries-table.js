@@ -9,6 +9,7 @@ function up(knex) {
     table.string('flag');
     table.string('currency_code');
     table.boolean('is_enabled');
+    table.boolean('requires_civil_liability_insurance');
     table.string('sms_from');
 
     table.dateTime('created_at');

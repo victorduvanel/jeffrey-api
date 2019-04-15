@@ -8,11 +8,13 @@ exports.seed = (knex, Promise) => {
       INSERT INTO countries (
         id, name, code, phone_code, region,
         is_enabled, sms_from, flag,
-        currency_code, created_at, updated_at
+        currency_code, requires_civil_liability_insurance,
+        created_at, updated_at
       ) VALUES (
         :id, :name, :code, :phone_code, :region,
         :is_enabled, :sms_from, :flag,
-        :currency_code, NOW(), NOW()
+        :currency_code, :requires_civil_liability_insurance,
+        NOW(), NOW()
       )
       ON CONFLICT (code) DO UPDATE
       SET
@@ -21,6 +23,7 @@ exports.seed = (knex, Promise) => {
     `, {
       id: uuid.v4(),
       sms_from: country.alpha_support ? config.app.name : (country.sms_from || null),
+      requires_civil_liability_insurance: false,
       ...country
     });
   });

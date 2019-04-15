@@ -58,10 +58,10 @@ const UserDocument = Base.extend({
       .save(null, { method: 'insert' });
   },
 
-  findIdentifyDocuments: function(owner) {
+  findDocuments: function(owner, type) {
     return UserDocument.where({
       owner_id: owner.get('id'),
-      purpose: 'identity_document'
+      purpose: type
     })
       .fetchAll();
   }
