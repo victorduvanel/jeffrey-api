@@ -29,7 +29,6 @@ import * as pay             from './pay';
 import * as login           from './login';
 import * as notify          from './notify';
 import * as invoice         from './invoice';
-import * as deviceToken     from './device-token';
 
 export default {
   oauth, me, activate, signup,
@@ -42,5 +41,5 @@ export default {
   bankAccounts, providers,
   stripe, logout, cron, payoutAlert,
   processPayout, info, pay,
-  login, notify, invoice, deviceToken
+  login, notify, invoice
 };

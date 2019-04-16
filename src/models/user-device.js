@@ -13,6 +13,10 @@ const UserDevice = Base.extend({
     return this.belongsTo('User');
   },
 
+  accessToken() {
+    return this.belongsTo('AccessToken');
+  },
+
   async pushNotification(notif /* { body, sound } */) {
     const deviceToken = this.get('token');
     const type = this.get('type');
@@ -81,17 +85,30 @@ const UserDevice = Base.extend({
     }
   }
 }, {
-  create: async function({ user, token, type, locale }) {
+  create: async function({ user, token, type, locale, accessToken }) {
     const id = uuid.v4();
 
+    let accessTokenId = null;
+    if (accessToken) {
+      accessTokenId = accessToken.get('id');
+    }
+
     await bookshelf.knex.raw(
-      `INSERT INTO user_devices
-         (id, token, owner_id, type, locale, created_at, updated_at)
-       VALUES (:id, :token, :ownerId, :type, :locale, NOW(), NOW())
+      `INSERT INTO user_devices(
+         id, token, owner_id, type, locale,
+         access_token_id,
+         created_at, updated_at
+       )
+       VALUES (
+         :id, :token, :ownerId, :type, :locale,
+         :accessTokenId,
+         NOW(), NOW()
+       )
        ON CONFLICT (token, type) DO UPDATE
        SET
          owner_id = EXCLUDED.owner_id,
          locale = EXCLUDED.locale,
+          access_token_id = EXCLUDED.access_token_id,
          updated_at = NOW()
       `,
       {
@@ -99,7 +116,8 @@ const UserDevice = Base.extend({
         token,
         ownerId: user.get('id'),
         type,
-        locale
+        locale,
+        accessTokenId
       }
     );
 

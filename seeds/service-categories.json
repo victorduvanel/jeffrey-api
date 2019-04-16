@@ -231,7 +231,7 @@
                         "slug": "car-wash",
                         "color": "green",
                         "icon": "car",
-                        "ordinalPosition": 2,
+                        "ordinalPosition": 1,
                         "defaultAttibutesId": "86f1889b-431d-487a-8017-623c8068dab4",
                         "attributes": {
                             "en": {
@@ -251,7 +251,7 @@
                         "slug": "gardening",
                         "icon": "gardening",
                         "color": "green",
-                        "ordinalPosition": 3,
+                        "ordinalPosition": 2,
                         "defaultAttibutesId": "d80d102b-5950-44a9-b0f0-ccc51cadcc13",
                         "attributes": {
                             "en": {
@@ -263,6 +263,26 @@
                                 "id": "9a1688a5-bcf0-4fff-bcb0-e3a283677291",
                                 "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Jardinage en tout genre"
+                            }
+                        }
+                    },
+                    {
+                        "id": "e645e262-5208-4340-b176-5ea8ace41824",
+                        "slug": "mover",
+                        "icon": "mover",
+                        "color": "green",
+                        "ordinalPosition": 3,
+                        "defaultAttibutesId": "d784b03b-c503-4bab-8281-b63c462aaff7",
+                        "attributes": {
+                            "en": {
+                                "id": "d784b03b-c503-4bab-8281-b63c462aaff7",
+                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
+                                "name": "Mover"
+                            },
+                            "fr": {
+                                "id": "d949b788-3f35-4c52-8b12-addf31a3e229",
+                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
+                                "name": "Déménageur"
                             }
                         }
                     }

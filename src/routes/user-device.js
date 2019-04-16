@@ -7,6 +7,8 @@ export const post = [
   bodyParser.json(),
 
   async (req, res) => {
+    console.log(req);
+
     const { user } = req;
     const { token, type } = req.body;
 

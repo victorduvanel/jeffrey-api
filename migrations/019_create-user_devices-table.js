@@ -6,6 +6,12 @@ function up(knex) {
     table.string('type');
 
     table
+      .uuid('access_token_id')
+      .references('access_tokens.id')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
+
+    table
       .uuid('owner_id')
       .references('users.id')
       .onUpdate('CASCADE')

@@ -104,7 +104,6 @@ get('/fixture/messages', routes.fixtureMessages.get);
 post('/apple/ios-receipt', routes.apple.iosReceipt.post);
 post('/apple/subscription-status', routes.apple.subscriptionStatus.post);
 
-post('/device-token', routes.deviceToken.post);
 get('/app-link', routes.appLink.get);
 get('/app-redirect/:action', routes.appRedirect.get);
 post('/profile-pic', routes.profilePic.post);
