@@ -54,15 +54,15 @@ const started = new Status({
   triggeredBy: [ provider ]
 });
 
-const aborted = new Status({
-  name: 'aborted',
+const confirmed = new Status({
+  name: 'confirmed',
   mustBe: started,
   triggeredBy: [ client ]
 });
 
-const confirmed = new Status({
-  name: 'confirmed',
-  mustBe: started,
+const aborted = new Status({
+  name: 'aborted',
+  mustBe: [ started, confirmed ],
   triggeredBy: [ client ]
 });
 

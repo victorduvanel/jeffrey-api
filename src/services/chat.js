@@ -22,3 +22,4 @@ export const getToken = async (user) => {
 
   return null;
 };
+
