@@ -62,6 +62,11 @@ const stackDriverIps = [
 ];
 
 const logger = (req, res, next) => {
+  if (req.url === '/graphql') {
+    next();
+    return;
+  }
+
   if (stackDriverIps.includes(req.ip)) {
     next();
     return;

@@ -106,6 +106,14 @@ const Mission = Base.extend({
     return this.get('lng');
   },
 
+  providerLat() {
+    return this.get('providerLat');
+  },
+
+  providerLng() {
+    return this.get('providerLng');
+  },
+
   /* !graphql props */
 
   client() {

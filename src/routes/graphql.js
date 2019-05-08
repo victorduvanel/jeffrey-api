@@ -18,9 +18,15 @@ export default () => {
 
       return {
         req,
+        res,
         user: req.user,
         locale: acceptLanguage
       };
+    },
+    formatError: (err) => {
+      console.error(err);
+      throw err;
+      return err;
     }
   });
   return server;

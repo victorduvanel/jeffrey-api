@@ -36,6 +36,8 @@ type Mission {
   lat: Float
   lng: Float
   location: String
+  providerLat: Float
+  providerLng: Float
   serviceCategory: ServiceCategory
   reviews: [Review]
 }

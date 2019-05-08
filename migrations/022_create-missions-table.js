@@ -16,8 +16,10 @@ function up(knex) {
 
     table.float('lat');
     table.float('lng');
-
     table.string('location');
+
+    table.float('provider_lat');
+    table.float('provider_lng');
 
     table
       .uuid('provider_id')

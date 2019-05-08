@@ -2394,6 +2394,15 @@ convert-source-map@^1.5.0, convert-source-map@^1.5.1:
   dependencies:
     safe-buffer "~5.1.1"
 
+cookie-session@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/cookie-session/-/cookie-session-1.3.3.tgz#54fa63881bf87c4961863f7c059670be7517fdae"
+  integrity sha512-GrMdrU1YTQWtmVTo0Rj3peeZRMc2xJrBslFYtZcYTo+hrSLmrcf69OrRkDi84xTfylgCy2wgpRHyY4le6lE5+A==
+  dependencies:
+    cookies "0.7.3"
+    debug "2.6.9"
+    on-headers "~1.0.2"
+
 cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
@@ -2408,6 +2417,14 @@ cookiejar@^2.1.0, cookiejar@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.2.tgz#dd8a235530752f988f9a0844f3fc589e3111125c"
   integrity sha512-Mw+adcfzPxcPeI+0WlvRrr/3lGVO0bD75SxX6811cxSh1Wbxx7xZBGK1eVtDf6si8rg2lhnUjsVLMFMfbRIuwA==
+
+cookies@0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/cookies/-/cookies-0.7.3.tgz#7912ce21fbf2e8c2da70cf1c3f351aecf59dadfa"
+  integrity sha512-+gixgxYSgQLTaTIilDHAdlNPZDENDQernEMiIcZpYYP14zgHsCt4Ce1FEjFtcp6GefhozebB6orvhAAWx/IS0A==
+  dependencies:
+    depd "~1.1.2"
+    keygrip "~1.0.3"
 
 copy-descriptor@^0.1.0:
   version "0.1.1"
@@ -4885,6 +4902,11 @@ jws@^3.1.4, jws@^3.1.5, jws@^3.2.1:
     jwa "^1.2.0"
     safe-buffer "^5.0.1"
 
+keygrip@~1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.3.tgz#399d709f0aed2bab0a059e0cdd3a5023a053e1dc"
+  integrity sha512-/PpesirAIfaklxUzp4Yb7xBper9MwP6hNRA6BGGUFCgbJ+BM5CKBtsoxinNXkLHAr+GXS1/lSlF2rP7cv5Fl+g==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -6107,14 +6129,14 @@ object.pick@^1.2.0, object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
-on-finished@~2.3.0:
+on-finished@^2.3.0, on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
   integrity sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
   dependencies:
     ee-first "1.1.1"
 
-on-headers@~1.0.1:
+on-headers@^1.0.2, on-headers@~1.0.1, on-headers@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
   integrity sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==
@@ -6425,10 +6447,10 @@ pg-types@~2.0.0:
     postgres-date "~1.0.0"
     postgres-interval "^1.1.0"
 
-pg@7.8.2:
-  version "7.8.2"
-  resolved "https://registry.yarnpkg.com/pg/-/pg-7.8.2.tgz#d53ffcbbaa789e15e80ffec570603294d90116e8"
-  integrity sha512-5U4fjV43DnQxelkhyPdU3YfUbYVa21bNmreXRCM/gFFw09YxWaitWWITm/u0twUNF5EYOSDhkgyEAocgtpP9JQ==
+pg@7.10.0:
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/pg/-/pg-7.10.0.tgz#2a359ee29ed1971344ac7f44317a9d1bcd80a8ff"
+  integrity sha512-aE6FZomsyn3OeGv1oM50v7Xu5zR75c15LXdOCwA9GGrfjXsQjzwYpbcTS6OwEMhYfZQS6m/FVU/ilPLiPzJDCw==
   dependencies:
     buffer-writer "2.0.0"
     packet-reader "1.0.0"
