@@ -17,6 +17,20 @@ const UserDevice = Base.extend({
     return this.belongsTo('AccessToken');
   },
 
+  async setBadge(value) {
+    const deviceToken = this.get('token');
+    const type = this.get('type');
+
+    switch (type) {
+      case 'apn': {
+        const notification = new apn.Notification();
+        notification.badge = value;
+        notification.topic = 'com.jeffrey.client';
+        await apnProvider.send(notification, deviceToken);
+      } break;
+    }
+  },
+
   async pushNotification(notif /* { body, sound } */) {
     const deviceToken = this.get('token');
     const type = this.get('type');

@@ -774,6 +774,12 @@ const User = Base.extend({
     return UserDevice.create({ user: this, token, type, locale });
   },
 
+  async setBadge(value) {
+    await this.load(['devices']);
+    const devices = this.related('devices');
+    return Promise.all(devices.map(device => device.setBadge(value)));
+  },
+
   async pushNotification(notification) {
     await this.load(['devices']);
 

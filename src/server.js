@@ -64,6 +64,7 @@ get('/', async (req, res) => {
 });
 
 post('/notify/message', routes.notify.message.post);
+post('/notify/unread-conversations', routes.notify.unreadConversations.post);
 
 get('/info', routes.info.get);
 
