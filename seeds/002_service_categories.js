@@ -1,9 +1,12 @@
 import Promise    from 'bluebird';
+import _          from 'lodash';
 import categories from './service-categories';
+
+const ids = [];
+const attrIds = [];
 
 // import uuid from 'uuid/v4';
 //
-// const ids = [];
 // const updateIds = (svc) => {
 //   svc.id = uuid();
 //   const defaultAttibutesId = svc.defaultAttibutesId;
@@ -32,6 +35,12 @@ const onError = (err) => {
 exports.seed = (knex) => {
   return knex.transaction((trx) => {
     const insertAttrs = async (props) => {
+
+      if (attrIds.indexOf(props.id) !== -1) {
+        console.error(`${props.id} already inserted`);
+      }
+      attrIds.push(props.id);
+
       return knex.raw(
         `INSERT INTO service_category_attributes
           (id, lang, name, icon, service_category_id, created_at, updated_at)
@@ -67,10 +76,10 @@ exports.seed = (knex) => {
     };
 
     const insertService = (props) => {
-      // if (ids.indexOf(props.id) !== -1) {
-      //   console.log(props.id);
-      // }
-      // ids.push(props.id);
+      if (ids.indexOf(props.id) !== -1) {
+        console.error(`${props.id} already inserted`);
+      }
+      ids.push(props.id);
 
       return knex.raw(
         `INSERT INTO service_categories
@@ -123,6 +132,11 @@ exports.seed = (knex) => {
           });
 
           if (svc.defaultAttibutesId) {
+
+            if (!_.find(svc.attributes, (attr) => attr.id === svc.defaultAttibutesId)) {
+              console.error(`invalid default attributes id for ${svc.id}`);
+            }
+
             proms.push(updateDefaultAttributes(svc.id, svc.defaultAttibutesId));
           }
         }

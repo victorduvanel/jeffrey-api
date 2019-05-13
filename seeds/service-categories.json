@@ -30,12 +30,10 @@
                         "attributes": {
                             "en": {
                                 "id": "9de36364-b7df-4d16-8da9-4e365a1c61db",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                 "name": "Babysitting"
                             },
                             "fr": {
                                 "id": "8f8c5637-3724-4801-a519-a6089d4699f7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                 "name": "Garde d’enfants"
                             }
                         }
@@ -50,12 +48,10 @@
                         "attributes": {
                             "en": {
                                 "id": "37fd11e4-30eb-4e32-8e5b-3d1a16f9b4aa",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                 "name": "Homework support"
                             },
                             "fr": {
                                 "id": "cf89efd8-4e05-40f8-a9ed-2f4cbf07025d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                 "name": "Aide à la maison"
                             }
                         }
@@ -70,12 +66,10 @@
                         "attributes": {
                             "en": {
                                 "id": "99376385-47c2-43b0-995d-2d92188ac745",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                 "name": "Learning support"
                             },
                             "fr": {
                                 "id": "5113b95d-07a4-407f-b481-30fa3b548010",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                 "name": "Accompagnement scolaire"
                             }
                         },
@@ -90,12 +84,10 @@
                                 "attributes": {
                                     "en": {
                                         "id": "f6c48917-edc6-4a50-b158-0ee85c132699",
-                                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                         "name": "7 to 12 years old"
                                     },
                                     "fr": {
                                         "id": "5f9aba81-f6d8-44f7-a55b-793ec286ad04",
-                                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                         "name": "7 à 12 ans"
                                     }
                                 }
@@ -110,12 +102,10 @@
                                 "attributes": {
                                     "en": {
                                         "id": "2bdc081a-c145-4cd9-9a9f-a1493db8fecf",
-                                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                         "name": "12 to 18 years old"
                                     },
                                     "fr": {
                                         "id": "8b0950ef-9c90-40ad-94ba-234a393b1531",
-                                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/kids.png",
                                         "name": "12 à 18 ans"
                                     }
                                 }
@@ -154,12 +144,10 @@
                         "attributes": {
                             "en": {
                                 "id": "82b96acc-fa27-4fef-9899-c07938bed986",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "House repair"
                             },
                             "fr": {
                                 "id": "fba410b1-bb42-4f8b-b37b-587f343cc425",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Réparation maison"
                             }
                         }
@@ -174,12 +162,10 @@
                         "attributes": {
                             "en": {
                                 "id": "86f1889b-431d-487a-8017-623c8068dab4",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Car Wash"
                             },
                             "fr": {
                                 "id": "5d49d75e-77bd-4629-bba0-a7a21487f8f9",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Nettoyage de voiture"
                             }
                         }
@@ -194,12 +180,10 @@
                         "attributes": {
                             "en": {
                                 "id": "d80d102b-5950-44a9-b0f0-ccc51cadcc13",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Garden Maintenance"
                             },
                             "fr": {
                                 "id": "9a1688a5-bcf0-4fff-bcb0-e3a283677291",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Jardinage en tout genre"
                             }
                         }
@@ -214,12 +198,10 @@
                         "attributes": {
                             "en": {
                                 "id": "d784b03b-c503-4bab-8281-b63c462aaff7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Mover"
                             },
                             "fr": {
                                 "id": "d949b788-3f35-4c52-8b12-addf31a3e229",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
                                 "name": "Déménageur"
                             }
                         }
@@ -255,12 +237,10 @@
                         "attributes": {
                             "en": {
                                 "id": "ac3303d0-502f-4390-8b5a-53c2767488ba",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Housekeeping"
                             },
                             "fr": {
                                 "id": "7c598fbf-324c-4a38-a439-f12f7992acdf",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Gardiennage de maison"
                             }
                         }
@@ -275,12 +255,10 @@
                         "attributes": {
                             "en": {
                                 "id": "931cca81-4afb-429c-9f7f-dc51a5afbd97",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Cleaning"
                             },
                             "fr": {
                                 "id": "fca0cbdf-ccb9-41ce-9260-dd68156690c1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Nettoyage"
                             }
                         }
@@ -295,12 +273,10 @@
                         "attributes": {
                             "en": {
                                 "id": "28c18dc9-dfab-4da9-ac31-6d4734d10486",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Administrative Help"
                             },
                             "fr": {
                                 "id": "106f56e7-9097-4d50-b8f8-be6d64819f28",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Aide administrative"
                             }
                         }
@@ -315,12 +291,10 @@
                         "attributes": {
                             "en": {
                                 "id": "e8153330-52cc-4024-ac05-c6a2ff6afeb2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Senior Care"
                             },
                             "fr": {
                                 "id": "e1116225-fb0b-4d2e-954c-271eebe55bc8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Accompagnement personne âgée"
                             }
                         }
@@ -335,12 +309,10 @@
                         "attributes": {
                             "en": {
                                 "id": "8f942305-b876-49d5-ba00-b975f832e343",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Pet sitting"
                             },
                             "fr": {
                                 "id": "b084bf21-a922-4fad-a824-9817dd4cfa5f",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Garde d’animaux"
                             }
                         }
@@ -355,12 +327,10 @@
                         "attributes": {
                             "en": {
                                 "id": "bf69e2e7-1d76-4c0c-abfa-5210dfdcc973",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Cooking"
                             },
                             "fr": {
                                 "id": "52c85ee7-f07b-4ba9-8f22-3b6e95c1fa01",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
                                 "name": "Cuisinier(ère) amateur(e)"
                             }
                         }
@@ -396,12 +366,10 @@
                         "attributes": {
                             "en": {
                                 "id": "3430c390-09c9-41f8-a57e-6d3233b4965f",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Heavy Delivery"
                             },
                             "fr": {
                                 "id": "14754cbb-c626-4ffd-913d-5f7130df330e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Livraison de colis lourd"
                             }
                         }
@@ -416,12 +384,10 @@
                         "attributes": {
                             "en": {
                                 "id": "e9b02f86-8f88-4e11-b0c2-fc6818d6b76f",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Light Delivery"
                             },
                             "fr": {
                                 "id": "4c036670-76cc-4a05-bda6-3f554b72407a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Livraison de colis léger"
                             }
                         }
@@ -436,12 +402,10 @@
                         "attributes": {
                             "en": {
                                 "id": "69ad32d2-bb2a-4351-8fa6-c04407758c93",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Food Delivery"
                             },
                             "fr": {
                                 "id": "e8d3c216-d2a0-47d9-b189-9a95bcb236b5",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Livraison de nourriture (restaurant de votre choix)"
                             }
                         }
@@ -456,12 +420,10 @@
                         "attributes": {
                             "en": {
                                 "id": "e0aba54f-57c9-479c-a040-cd543675613a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Speed Delivery"
                             },
                             "fr": {
                                 "id": "e36654a4-ea40-4c99-bf11-752dd0d1afa8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Livraison hyper rapide"
                             }
                         }
@@ -476,12 +438,10 @@
                         "attributes": {
                             "en": {
                                 "id": "da6de945-0f4c-44a2-b50f-bdfcf7672e4d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Shopping"
                             },
                             "fr": {
                                 "id": "a2b85d2c-5743-4b7b-812c-c589435a2df2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/delivery.png",
                                 "name": "Faire votre shopping"
                             }
                         }
@@ -517,12 +477,10 @@
                         "attributes": {
                             "en": {
                                 "id": "7a3fe88e-c7a2-4fc0-a4d3-7dad5c7ad627",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
                                 "name": "Personal Trainer"
                             },
                             "fr": {
                                 "id": "efde8e0d-eda1-4359-95e3-3e822503fd7d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
                                 "name": "Entraineur personnel"
                             }
                         }
@@ -537,12 +495,10 @@
                         "attributes": {
                             "en": {
                                 "id": "c018dd40-762d-4929-83c8-5b8bf7fc8fb2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
                                 "name": "Personal Hockey Coach"
                             },
                             "fr": {
                                 "id": "834ffe95-7785-4cd7-a5e3-b1c37a68443d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
                                 "name": "Entraineur personnel pour le Hockey"
                             }
                         }
@@ -557,12 +513,10 @@
                         "attributes": {
                             "en": {
                                 "id": "06926476-ef34-41f3-a854-0bedb9c9b8fc",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
                                 "name": "Personal Tennis Coach"
                             },
                             "fr": {
                                 "id": "459247eb-f4f3-4f1c-bf1e-a568c55fdb62",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/sport.png",
                                 "name": "Entraineur de Tennis"
                             }
                         }
@@ -598,12 +552,10 @@
                         "attributes": {
                             "en": {
                                 "id": "fda34ff2-ad44-4a2d-bdb8-5cb0ea9ccf2e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Yoga"
                             },
                             "fr": {
                                 "id": "f488404f-f411-4975-8a79-62f51ae93f3e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Yoga"
                             }
                         }
@@ -618,12 +570,10 @@
                         "attributes": {
                             "en": {
                                 "id": "85346630-8a65-48f2-b911-5ebc834972d3",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Pedicure"
                             },
                             "fr": {
                                 "id": "5204aba6-0f5d-4133-a32a-1d91ad214269",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Pédicure"
                             }
                         }
@@ -638,12 +588,10 @@
                         "attributes": {
                             "en": {
                                 "id": "05dfd877-b4aa-4f36-8a3f-d53875423680",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Manicure"
                             },
                             "fr": {
                                 "id": "ff9f6120-7c4d-4b0c-bb81-141ed53cd61c",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Manucure"
                             }
                         }
@@ -658,12 +606,10 @@
                         "attributes": {
                             "en": {
                                 "id": "d4f76281-c39e-4827-9ff1-b34feae032ce",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Massage"
                             },
                             "fr": {
                                 "id": "bfc0fc06-6784-4eee-9159-b94e1bdf33a7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness.png",
                                 "name": "Massage"
                             }
                         }
@@ -685,8 +631,8 @@
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                         "name": "Drive"
                     },
-                    "es": {
-                        "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
+                    "en": {
+                        "id": "7914fcd0-0c6d-4a22-b1f9-831db2ca2ed0",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                         "name": "Drive"
                     }
@@ -694,38 +640,34 @@
                 "services": [
                     {
                         "id": "eb8379b3-9c7a-401f-8b54-b92712b0148f",
-                        "slug": "drive-berline",
+                        "slug": "drive-sedan",
                         "icon": "berline",
                         "color": "yellow",
                         "defaultAttibutesId": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
                         "attributes": {
                             "fr": {
                                 "id": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Berline"
                             },
-                            "es": {
-                                "id": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                                "name": "Berline"
+                            "en": {
+                                "id": "354cfa0b-0c48-446b-a283-f505d329dabe",
+                                "name": "Sedan"
                             }
                         }
                     },
                     {
                         "id": "d55fef86-97a6-4b68-8a72-37343b3e9aba",
-                        "slug": "drive-limousing",
+                        "slug": "drive-limousine",
                         "icon": "limo",
                         "color": "yellow",
                         "defaultAttibutesId": "01c223d3-6709-4099-9775-39962d3513dc",
                         "attributes": {
                             "fr": {
                                 "id": "01c223d3-6709-4099-9775-39962d3513dc",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Limousine"
                             },
-                            "es": {
-                                "id": "01c223d3-6709-4099-9775-39962d3513dc",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                            "en": {
+                                "id": "475add3f-4c6d-4338-aa9c-ca3f47885de6",
                                 "name": "Limousine"
                             }
                         }
@@ -739,12 +681,10 @@
                         "attributes": {
                             "fr": {
                                 "id": "2a0a45bb-ff7d-41dc-95fe-3d0632e0db48",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Van"
                             },
-                            "es": {
-                                "id": "2a0a45bb-ff7d-41dc-95fe-3d0632e0db48",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                            "en": {
+                                "id": "918b49c5-5a87-4c82-a0d3-d7496ebe4061",
                                 "name": "Van"
                             }
                         }
@@ -758,13 +698,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "64d32d46-7c32-471f-8c2e-577a378de227",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Transport moto"
                             },
-                            "es": {
-                                "id": "64d32d46-7c32-471f-8c2e-577a378de227",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                                "name": "Transport moto"
+                            "en": {
+                                "id": "8df254ba-d3b0-4988-9970-aeeec8e75089",
+                                "name": "Moto"
                             }
                         }
                     }
@@ -782,10 +720,10 @@
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                         "name": "Majordome"
                     },
-                    "es": {
-                        "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
+                    "en": {
+                        "id": "fec7490f-68f3-4e84-bc53-f13b42a2e6c9",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                        "name": "Majordome"
+                        "name": "Butler"
                     }
                 },
                 "services": [
@@ -796,20 +734,13 @@
                         "icon": "cook",
                         "defaultAttibutesId": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
                         "attributes": {
-                            "en": {
-                                "id": "284322f0-05d6-41cf-884e-bbcaefe1a2d2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Amateur cook"
-                            },
                             "fr": {
                                 "id": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Cusinier amateur"
                             },
-                            "es": {
-                                "id": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Cusinier amateur"
+                            "en": {
+                                "id": "284322f0-05d6-41cf-884e-bbcaefe1a2d2",
+                                "name": "Amateur cook"
                             }
                         }
                     },
@@ -822,13 +753,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "91440125-89b7-4718-979e-8ea859ab222a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Chauffeur sans voiture"
                             },
-                            "es": {
-                                "id": "91440125-89b7-4718-979e-8ea859ab222a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Chauffeur sans voiture"
+                            "en": {
+                                "id": "74345346-34d9-4613-9094-d2d947dd487e",
+                                "name": "Driver without car"
                             }
                         }
                     },
@@ -841,13 +770,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "25c87c93-b29f-4645-97d2-8ed072d8bcf7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Assistant administratif"
                             },
-                            "es": {
-                                "id": "25c87c93-b29f-4645-97d2-8ed072d8bcf7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Assistant administratif"
+                            "en": {
+                                "id": "db502243-8df7-44de-9ca9-c072091efe81",
+                                "name": "Administrative help"
                             }
                         }
                     },
@@ -860,13 +787,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "c230fcac-7e8d-44f7-8693-8490beeff196",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Rangement maison"
                             },
-                            "es": {
-                                "id": "c230fcac-7e8d-44f7-8693-8490beeff196",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Rangement maison"
+                            "en": {
+                                "id": "c17d2639-4dfb-4967-a214-3f10b6ddd489",
+                                "name": "House tidy up"
                             }
                         }
                     },
@@ -879,13 +804,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "6f79e871-0434-4274-93ed-5b201ccdd035",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Achats & Livraisons"
                             },
-                            "es": {
-                                "id": "6f79e871-0434-4274-93ed-5b201ccdd035",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Achats & Livraisons"
+                            "en": {
+                                "id": "b2eff711-27bc-493a-a3d9-2b7cbb2682b2",
+                                "name": "Purchase and delivery"
                             }
                         }
                     },
@@ -898,18 +821,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "c09ed857-f9b5-4fe1-b509-ea2ac77704f5",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Guide touristique"
                             },
                             "en": {
                                 "id": "8bcdd4ce-5aa5-4e95-b491-f9e06d93b6b4",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "City guide"
-                            },
-                            "es": {
-                                "id": "c09ed857-f9b5-4fe1-b509-ea2ac77704f5",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Guide touristique"
                             }
                         }
                     },
@@ -922,12 +838,10 @@
                         "attributes": {
                             "fr": {
                                 "id": "88f59a8c-19ca-4e33-a6e4-f124a8258131",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/animals.png",
-                                "name": "Pet sitting"
+                                "name": "Garde d'animaux"
                             },
-                            "es": {
-                                "id": "88f59a8c-19ca-4e33-a6e4-f124a8258131",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/animals.png",
+                            "en": {
+                                "id": "b48f9483-4031-4aa0-bda8-f0ae6d800ac9",
                                 "name": "Pet sitting"
                             }
                         }
@@ -941,20 +855,15 @@
                 "ordinalPosition": 3,
                 "defaultAttibutesId": "8b9a24b7-942c-4426-8e2e-742a408ab7ed",
                 "attributes": {
-                    "en": {
-                        "id": "695c4036-07c8-40e6-b4a2-c28d7f892bca",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                        "name": "Cleaning"
-                    },
                     "fr": {
                         "id": "8b9a24b7-942c-4426-8e2e-742a408ab7ed",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                         "name": "Nettoyage"
                     },
-                    "es": {
-                        "id": "8b9a24b7-942c-4426-8e2e-742a408ab7ed",
+                    "en": {
+                        "id": "695c4036-07c8-40e6-b4a2-c28d7f892bca",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                        "name": "Nettoyage"
+                        "name": "Cleaning"
                     }
                 },
                 "services": [
@@ -965,20 +874,13 @@
                         "icon": "house-cleaning",
                         "defaultAttibutesId": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
                         "attributes": {
-                            "en": {
-                                "id": "0f03ff92-a359-4b85-868a-6564bc5ed39b",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "House cleaning"
-                            },
                             "fr": {
                                 "id": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                                 "name": "Nettoyage maison / appartement"
                             },
-                            "es": {
-                                "id": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage maison / appartement"
+                            "en": {
+                                "id": "0f03ff92-a359-4b85-868a-6564bc5ed39b",
+                                "name": "House cleaning"
                             }
                         }
                     },
@@ -989,20 +891,13 @@
                         "icon": "car",
                         "defaultAttibutesId": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
                         "attributes": {
-                            "en": {
-                                "id": "17f59da9-fcb6-4985-8bd4-f23008750af6",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Car washing"
-                            },
                             "fr": {
                                 "id": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                                 "name": "Nettoyage voiture"
                             },
-                            "es": {
-                                "id": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage voiture"
+                            "en": {
+                                "id": "17f59da9-fcb6-4985-8bd4-f23008750af6",
+                                "name": "Car washing"
                             }
                         }
                     },
@@ -1013,20 +908,13 @@
                         "icon": "swimming-pool",
                         "defaultAttibutesId": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
                         "attributes": {
-                            "en": {
-                                "id": "48f962d0-ab99-45af-968f-0eaf1b59ee01",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Swimming pool cleaning"
-                            },
                             "fr": {
                                 "id": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                                 "name": "Nettoyage piscine"
                             },
-                            "es": {
-                                "id": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage piscine"
+                            "en": {
+                                "id": "48f962d0-ab99-45af-968f-0eaf1b59ee01",
+                                "name": "Swimming pool cleaning"
                             }
                         }
                     }
@@ -1039,20 +927,15 @@
                 "ordinalPosition": 4,
                 "defaultAttibutesId": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
                 "attributes": {
-                    "en": {
-                        "id": "b9c6056d-49a2-4e18-bb89-cf3f9ac9ca47",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                        "name": "Technology"
-                    },
                     "fr": {
                         "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                         "name": "Technologie"
                     },
-                    "es": {
-                        "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
+                    "en": {
+                        "id": "b9c6056d-49a2-4e18-bb89-cf3f9ac9ca47",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                        "name": "Technologie"
+                        "name": "Technology"
                     }
                 },
                 "services": [
@@ -1063,20 +946,13 @@
                         "icon": "home-appliance",
                         "defaultAttibutesId": "ea930d53-72d7-4f5f-8a13-782addde52bf",
                         "attributes": {
-                            "en": {
-                                "id": "d2aefc53-be5f-4483-951f-ccc2bb66efe0",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Home appliance"
-                            },
                             "fr": {
                                 "id": "ea930d53-72d7-4f5f-8a13-782addde52bf",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                                 "name": "Électroménager"
                             },
-                            "es": {
-                                "id": "ea930d53-72d7-4f5f-8a13-782addde52bf",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Électroménager"
+                            "en": {
+                                "id": "d2aefc53-be5f-4483-951f-ccc2bb66efe0",
+                                "name": "Home appliance"
                             }
                         }
                     },
@@ -1087,20 +963,13 @@
                         "icon": "elec",
                         "defaultAttibutesId": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
                         "attributes": {
-                            "en": {
-                                "id": "b082a5ff-5800-41f8-ab3b-492ef6104a97",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Electronics"
-                            },
                             "fr": {
                                 "id": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                                 "name": "Électronique"
                             },
-                            "es": {
-                                "id": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Électronique"
+                            "en": {
+                                "id": "b082a5ff-5800-41f8-ab3b-492ef6104a97",
+                                "name": "Electronics"
                             }
                         }
                     },
@@ -1111,20 +980,13 @@
                         "icon": "computer",
                         "defaultAttibutesId": "69b37a25-f207-4c9b-8606-85fb534ea76e",
                         "attributes": {
-                            "en": {
-                                "id": "1a0c72db-5968-4d75-9d1b-dbeb74078454",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Computers"
-                            },
                             "fr": {
                                 "id": "69b37a25-f207-4c9b-8606-85fb534ea76e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                                 "name": "Informatique"
                             },
-                            "es": {
-                                "id": "69b37a25-f207-4c9b-8606-85fb534ea76e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Informatique"
+                            "en": {
+                                "id": "1a0c72db-5968-4d75-9d1b-dbeb74078454",
+                                "name": "Computers"
                             }
                         }
                     }
@@ -1137,20 +999,15 @@
                 "ordinalPosition": 6,
                 "defaultAttibutesId": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
                 "attributes": {
-                    "en": {
-                        "id": "87261bc3-ce77-4f4b-b8f1-ee4ca0b0b144",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauty"
-                    },
                     "fr": {
                         "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                         "name": "Beauté"
                     },
-                    "es": {
-                        "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
+                    "en": {
+                        "id": "87261bc3-ce77-4f4b-b8f1-ee4ca0b0b144",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauté"
+                        "name": "Beauty"
                     }
                 },
                 "services": [
@@ -1163,13 +1020,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "035ec6be-0cb5-46ef-95de-7a6bd8a440af",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Maquillage"
                             },
-                            "es": {
-                                "id": "035ec6be-0cb5-46ef-95de-7a6bd8a440af",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Maquillage"
+                            "en": {
+                                "id": "6ccefc0f-8c03-48fc-8519-ef63691cfd2a",
+                                "name": "Makeup"
                             }
                         }
                     },
@@ -1182,12 +1037,10 @@
                         "attributes": {
                             "fr": {
                                 "id": "eaaa9b62-a858-49ff-bd22-5e7891be4385",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Manucure"
                             },
-                            "es": {
-                                "id": "eaaa9b62-a858-49ff-bd22-5e7891be4385",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                            "en": {
+                                "id": "22e938cb-7ece-497a-9b2e-197a2cdaf507",
                                 "name": "Manucure"
                             }
                         }
@@ -1201,13 +1054,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "989c2bb7-48df-4241-8b9e-b146420f7ec8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Pédicure"
                             },
-                            "es": {
-                                "id": "989c2bb7-48df-4241-8b9e-b146420f7ec8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Pédicure"
+                            "en": {
+                                "id": "a09600f4-02e8-4410-8dc8-e07b4e976b8f",
+                                "name": "Pedicure"
                             }
                         }
                     },
@@ -1220,13 +1071,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "768b2ff4-3cad-4624-9e6b-87a8ee2a7bbe",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Coiffure"
                             },
-                            "es": {
-                                "id": "768b2ff4-3cad-4624-9e6b-87a8ee2a7bbe",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Coiffure"
+                            "en": {
+                                "id": "c4377dc4-2acc-4c55-b79f-7ef39f3776d0",
+                                "name": "Hairdresser"
                             }
                         }
                     },
@@ -1239,13 +1088,11 @@
                         "attributes": {
                             "fr": {
                                 "id": "29e6e859-47b2-426a-aebd-41e62c45057a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Épilation"
                             },
-                            "es": {
-                                "id": "29e6e859-47b2-426a-aebd-41e62c45057a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Épilation"
+                            "en": {
+                                "id": "6bad8cc9-1951-4c26-8afa-7a31d7428ca7",
+                                "name": "Waxing"
                             }
                         }
                     }
@@ -1258,20 +1105,15 @@
                 "ordinalPosition": 7,
                 "defaultAttibutesId": "baf70f55-1857-4273-9345-07481d0356d6",
                 "attributes": {
-                    "en": {
-                        "id": "d6687c19-9e4c-4041-a09d-835d4104feca",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Wellness"
-                    },
                     "fr": {
                         "id": "baf70f55-1857-4273-9345-07481d0356d6",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                         "name": "Bien-être"
                     },
-                    "es": {
-                        "id": "baf70f55-1857-4273-9345-07481d0356d6",
+                    "en": {
+                        "id": "d6687c19-9e4c-4041-a09d-835d4104feca",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Bien-être"
+                        "name": "Wellness"
                     }
                 },
                 "services": [
@@ -1284,12 +1126,10 @@
                         "attributes": {
                             "fr": {
                                 "id": "aec0d585-7d88-406f-b10b-1304f9220d84",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Sport"
                             },
-                            "es": {
-                                "id": "aec0d585-7d88-406f-b10b-1304f9220d84",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "4a6ebd66-b2ef-4e9e-81b6-79be316cac06",
                                 "name": "Sport"
                             }
                         }
@@ -1303,12 +1143,6 @@
                         "attributes": {
                             "fr": {
                                 "id": "3a4ce26b-29b5-4cf6-8ac9-584b117c1517",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Yoga"
-                            },
-                            "es": {
-                                "id": "3a4ce26b-29b5-4cf6-8ac9-584b117c1517",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Yoga"
                             }
                         }
@@ -1320,20 +1154,13 @@
                         "icon": "personal-trainer",
                         "defaultAttibutesId": "e214330c-27df-4143-ada1-95bcb3a63cf2",
                         "attributes": {
-                            "en": {
-                                "id": "69f1507c-3134-4b96-90b8-58f78866aa02",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Personal trainer"
-                            },
                             "fr": {
                                 "id": "e214330c-27df-4143-ada1-95bcb3a63cf2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Coach personnel"
                             },
-                            "es": {
-                                "id": "e214330c-27df-4143-ada1-95bcb3a63cf2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Coach personnel"
+                            "en": {
+                                "id": "69f1507c-3134-4b96-90b8-58f78866aa02",
+                                "name": "Personal trainer"
                             }
                         }
                     },
@@ -1346,12 +1173,10 @@
                         "attributes": {
                             "fr": {
                                 "id": "d730af4d-98df-4d50-bdae-7544af0fbaf1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Massage"
                             },
-                            "es": {
-                                "id": "d730af4d-98df-4d50-bdae-7544af0fbaf1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "9e43657b-e709-469a-8b78-b335cfa3991c",
                                 "name": "Massage"
                             }
                         }
@@ -1366,15 +1191,15 @@
                 "icon": "drive",
                 "color": "yellow",
                 "ordinalPosition": 1,
-                "defaultAttibutesId": "0fc78b0f-2282-483d-a03d-5fb3abff2545",
+                "defaultAttibutesId": "6ed13758-4640-45ac-976f-e17693eadfec",
                 "attributes": {
                     "fr": {
                         "id": "6ed13758-4640-45ac-976f-e17693eadfec",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                         "name": "Drive"
                     },
-                    "es": {
-                        "id": "0fc78b0f-2282-483d-a03d-5fb3abff2545",
+                    "en": {
+                        "id": "d284dd91-c2d5-4e31-8e56-3c3a7481425a",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                         "name": "Drive"
                     }
@@ -1382,38 +1207,34 @@
                 "services": [
                     {
                         "id": "e29d03de-ace9-4832-a479-2c1faa0e30e1",
-                        "slug": "drive-berline",
+                        "slug": "drive-sedan",
                         "icon": "berline",
                         "color": "yellow",
-                        "defaultAttibutesId": "8baceb5c-22cb-4d6a-aa9d-8191cd78ee42",
+                        "defaultAttibutesId": "64914fd6-523a-4dbe-aa77-3a5d207519d7",
                         "attributes": {
                             "fr": {
                                 "id": "64914fd6-523a-4dbe-aa77-3a5d207519d7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Berline"
                             },
-                            "es": {
-                                "id": "8baceb5c-22cb-4d6a-aa9d-8191cd78ee42",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                                "name": "Berline"
+                            "en": {
+                                "id": "c6565288-5b0a-41e8-8141-f146993afe8f",
+                                "name": "Sedan"
                             }
                         }
                     },
                     {
                         "id": "4bc2e400-4a1a-4392-8c88-aa01b89a0b90",
-                        "slug": "drive-limousing",
+                        "slug": "drive-limousine",
                         "icon": "limo",
                         "color": "yellow",
-                        "defaultAttibutesId": "7a37c486-9288-445f-9530-79e298d58fff",
+                        "defaultAttibutesId": "f6fa7232-5d5c-4cfe-9a01-d62711a4f3fd",
                         "attributes": {
                             "fr": {
                                 "id": "f6fa7232-5d5c-4cfe-9a01-d62711a4f3fd",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Limousine"
                             },
-                            "es": {
-                                "id": "7a37c486-9288-445f-9530-79e298d58fff",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                            "en": {
+                                "id": "76e2f831-59a2-42b8-92f6-e7cdc144a709",
                                 "name": "Limousine"
                             }
                         }
@@ -1423,16 +1244,14 @@
                         "slug": "drive-van",
                         "color": "yellow",
                         "icon": "van",
-                        "defaultAttibutesId": "3ef4f829-a1ec-4db7-9ab1-3a82b358f76b",
+                        "defaultAttibutesId": "5b29f9d9-d536-462c-9bc1-4f700c1b7206",
                         "attributes": {
                             "fr": {
                                 "id": "5b29f9d9-d536-462c-9bc1-4f700c1b7206",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Van"
                             },
-                            "es": {
-                                "id": "3ef4f829-a1ec-4db7-9ab1-3a82b358f76b",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                            "en": {
+                                "id": "1b1b0e60-b437-408d-966e-4cf97048dbf6",
                                 "name": "Van"
                             }
                         }
@@ -1442,17 +1261,15 @@
                         "slug": "drive-moto",
                         "color": "yellow",
                         "icon": "moto",
-                        "defaultAttibutesId": "9dda0b6d-f7ee-406b-ac9a-b83abade2753",
+                        "defaultAttibutesId": "90faa286-49eb-4ff1-9b0b-e064d218ec92",
                         "attributes": {
                             "fr": {
                                 "id": "90faa286-49eb-4ff1-9b0b-e064d218ec92",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                                 "name": "Transport moto"
                             },
-                            "es": {
-                                "id": "9dda0b6d-f7ee-406b-ac9a-b83abade2753",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                                "name": "Transport moto"
+                            "en": {
+                                "id": "006cdc17-d667-458a-8518-8f300616d8ba",
+                                "name": "Moto"
                             }
                         }
                     }
@@ -1463,17 +1280,17 @@
                 "slug": "modern-majordome",
                 "color": "green",
                 "ordinalPosition": 2,
-                "defaultAttibutesId": "a5dfc4db-6165-4f0c-a3a2-b8d0d0d81856",
+                "defaultAttibutesId": "5aad4099-affb-4ca7-9ff1-c98c3e3fd5a2",
                 "attributes": {
                     "fr": {
                         "id": "5aad4099-affb-4ca7-9ff1-c98c3e3fd5a2",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                         "name": "Majordome"
                     },
-                    "es": {
-                        "id": "a5dfc4db-6165-4f0c-a3a2-b8d0d0d81856",
+                    "en": {
+                        "id": "13053aea-85fc-46c9-85a1-50cefda095b1",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                        "name": "Majordome"
+                        "name": "Butler"
                     }
                 },
                 "services": [
@@ -1482,22 +1299,15 @@
                         "slug": "amateur-cook",
                         "color": "green",
                         "icon": "cook",
-                        "defaultAttibutesId": "3842a349-ab75-4d9b-a976-e8644f41b2e9",
+                        "defaultAttibutesId": "fc859728-3a0f-4068-ac0e-dde630643728",
                         "attributes": {
-                            "en": {
-                                "id": "263e1ab1-5ea8-42cd-a8db-36423edecb5b",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Amateur cook"
-                            },
                             "fr": {
                                 "id": "fc859728-3a0f-4068-ac0e-dde630643728",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Cusinier amateur"
                             },
-                            "es": {
-                                "id": "3842a349-ab75-4d9b-a976-e8644f41b2e9",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Cusinier amateur"
+                            "en": {
+                                "id": "263e1ab1-5ea8-42cd-a8db-36423edecb5b",
+                                "name": "Amateur cook"
                             }
                         }
                     },
@@ -1509,14 +1319,12 @@
                         "defaultAttibutesId": "76fe09fd-9635-48f8-8777-25183339b76f",
                         "attributes": {
                             "fr": {
-                                "id": "03973f3e-8e36-4c4e-b6a0-b02b50e36bab",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "76fe09fd-9635-48f8-8777-25183339b76f",
                                 "name": "Chauffeur sans voiture"
                             },
-                            "es": {
-                                "id": "76fe09fd-9635-48f8-8777-25183339b76f",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Chauffeur sans voiture"
+                            "en": {
+                                "id": "a90c979e-3f47-4144-b5d6-af304b1446f8",
+                                "name": "Driver without car"
                             }
                         }
                     },
@@ -1528,14 +1336,12 @@
                         "defaultAttibutesId": "11827416-4e34-4129-8228-6bc6fd0c748e",
                         "attributes": {
                             "fr": {
-                                "id": "7bf485e8-89f4-476e-b80d-bfe0d924cd88",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "11827416-4e34-4129-8228-6bc6fd0c748e",
                                 "name": "Assistant administratif"
                             },
-                            "es": {
-                                "id": "11827416-4e34-4129-8228-6bc6fd0c748e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Assistant administratif"
+                            "en": {
+                                "id": "5c730dea-bd6b-40a5-a076-f4ddd5ff4d68",
+                                "name": "Administrative help"
                             }
                         }
                     },
@@ -1544,17 +1350,15 @@
                         "slug": "house-tidy-up",
                         "color": "green",
                         "icon": "light-delivery",
-                        "defaultAttibutesId": "bbf17361-3268-4b34-bc25-b03ea686ad42",
+                        "defaultAttibutesId": "5707974a-a6d5-4b9a-8b36-da35d1d06c1d",
                         "attributes": {
                             "fr": {
                                 "id": "5707974a-a6d5-4b9a-8b36-da35d1d06c1d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Rangement maison"
                             },
-                            "es": {
-                                "id": "bbf17361-3268-4b34-bc25-b03ea686ad42",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Rangement maison"
+                            "en": {
+                                "id": "d4deb7d4-f1a9-4ab6-89d8-4e925951c29e",
+                                "name": "House tidy up"
                             }
                         }
                     },
@@ -1563,17 +1367,15 @@
                         "slug": "purchase-and-delivery",
                         "color": "green",
                         "icon": "delivery",
-                        "defaultAttibutesId": "630f991a-57e1-4c9b-9a05-791ae13e8dab",
+                        "defaultAttibutesId": "6174f069-d6b0-48df-ac61-fa2b93784175",
                         "attributes": {
                             "fr": {
                                 "id": "6174f069-d6b0-48df-ac61-fa2b93784175",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Achats & Livraisons"
                             },
-                            "es": {
-                                "id": "630f991a-57e1-4c9b-9a05-791ae13e8dab",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Achats & Livraisons"
+                            "en": {
+                                "id": "52a733cb-f102-4a5f-b43b-24181ce96672",
+                                "name": "Purchase and delivery"
                             }
                         }
                     },
@@ -1582,22 +1384,15 @@
                         "slug": "city-guide",
                         "color": "green",
                         "icon": "compass",
-                        "defaultAttibutesId": "a4ad650a-3f2f-4549-bc77-0625df34a387",
+                        "defaultAttibutesId": "3f8c32db-2e48-432a-a1b2-de0d1cbefc50",
                         "attributes": {
                             "fr": {
                                 "id": "3f8c32db-2e48-432a-a1b2-de0d1cbefc50",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "Guide touristique"
                             },
                             "en": {
                                 "id": "eec95a50-7d16-40ab-935b-d4431176a031",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                                 "name": "City guide"
-                            },
-                            "es": {
-                                "id": "a4ad650a-3f2f-4549-bc77-0625df34a387",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Guide touristique"
                             }
                         }
                     },
@@ -1606,16 +1401,14 @@
                         "slug": "pet-sitting",
                         "color": "green",
                         "icon": "animal",
-                        "defaultAttibutesId": "0febcf72-463f-4fdc-8843-2c62ffce9fb7",
+                        "defaultAttibutesId": "fbba81f2-71ff-4209-bc7d-967b8c2b32af",
                         "attributes": {
                             "fr": {
                                 "id": "fbba81f2-71ff-4209-bc7d-967b8c2b32af",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/animals.png",
-                                "name": "Pet sitting"
+                                "name": "Garde d'animaux"
                             },
-                            "es": {
-                                "id": "0febcf72-463f-4fdc-8843-2c62ffce9fb7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/animals.png",
+                            "en": {
+                                "id": "98d311a7-0e84-4cd7-95e9-8b5582bd0e71",
                                 "name": "Pet sitting"
                             }
                         }
@@ -1627,22 +1420,15 @@
                 "slug": "cleaning",
                 "color": "blue",
                 "ordinalPosition": 3,
-                "defaultAttibutesId": "f63bb560-5ed0-4e3b-a819-d71b03dfa01b",
+                "defaultAttibutesId": "2354c572-dcdd-4673-afc3-2150b60ab897",
                 "attributes": {
-                    "en": {
-                        "id": "8816a3e6-03cc-4872-962a-32869673b209",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                        "name": "Cleaning"
-                    },
                     "fr": {
                         "id": "2354c572-dcdd-4673-afc3-2150b60ab897",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                         "name": "Nettoyage"
                     },
-                    "es": {
-                        "id": "f63bb560-5ed0-4e3b-a819-d71b03dfa01b",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                        "name": "Nettoyage"
+                    "en": {
+                        "id": "8816a3e6-03cc-4872-962a-32869673b209",
+                        "name": "Cleaning"
                     }
                 },
                 "services": [
@@ -1651,22 +1437,15 @@
                         "slug": "house-cleaning",
                         "color": "blue",
                         "icon": "house-cleaning",
-                        "defaultAttibutesId": "4993c812-8db5-46c9-976a-6a92210bfc0f",
+                        "defaultAttibutesId": "567c91b1-e6e0-439f-aa3d-d2213131d18b",
                         "attributes": {
-                            "en": {
-                                "id": "b269c9ff-6d4d-48a2-8f93-5538e3f580f0",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "House cleaning"
-                            },
                             "fr": {
                                 "id": "567c91b1-e6e0-439f-aa3d-d2213131d18b",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                                 "name": "Nettoyage maison / appartement"
                             },
-                            "es": {
-                                "id": "4993c812-8db5-46c9-976a-6a92210bfc0f",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage maison / appartement"
+                            "en": {
+                                "id": "b269c9ff-6d4d-48a2-8f93-5538e3f580f0",
+                                "name": "House cleaning"
                             }
                         }
                     },
@@ -1675,22 +1454,15 @@
                         "slug": "car-washing",
                         "color": "blue",
                         "icon": "car",
-                        "defaultAttibutesId": "9563cdec-76e6-402a-9a0d-9a77b329cea1",
+                        "defaultAttibutesId": "33389131-0175-4e87-b998-778c9ef9a142",
                         "attributes": {
-                            "en": {
-                                "id": "4bf1ffd1-e706-4ddc-85e3-b85a1bf12d6d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Car washing"
-                            },
                             "fr": {
                                 "id": "33389131-0175-4e87-b998-778c9ef9a142",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                                 "name": "Nettoyage voiture"
                             },
-                            "es": {
-                                "id": "9563cdec-76e6-402a-9a0d-9a77b329cea1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage voiture"
+                            "en": {
+                                "id": "4bf1ffd1-e706-4ddc-85e3-b85a1bf12d6d",
+                                "name": "Car washing"
                             }
                         }
                     },
@@ -1699,22 +1471,15 @@
                         "slug": "swimming-pool-cleaning",
                         "color": "blue",
                         "icon": "swimming-pool",
-                        "defaultAttibutesId": "7d0cb8e7-a03e-4bca-93eb-177e941b86e3",
+                        "defaultAttibutesId": "bd802b15-ec27-4f97-9020-711b63d36699",
                         "attributes": {
-                            "en": {
-                                "id": "0116b255-01fd-4923-b579-185642c72fe1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Swimming pool cleaning"
-                            },
                             "fr": {
                                 "id": "bd802b15-ec27-4f97-9020-711b63d36699",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                                 "name": "Nettoyage piscine"
                             },
-                            "es": {
-                                "id": "7d0cb8e7-a03e-4bca-93eb-177e941b86e3",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage piscine"
+                            "en": {
+                                "id": "0116b255-01fd-4923-b579-185642c72fe1",
+                                "name": "Swimming pool cleaning"
                             }
                         }
                     }
@@ -1725,22 +1490,15 @@
                 "slug": "technology",
                 "color": "purple",
                 "ordinalPosition": 4,
-                "defaultAttibutesId": "6646c80b-48c3-44b8-b7e0-a00b1c08afcb",
+                "defaultAttibutesId": "401fdebd-7702-430a-97be-e53ad6a85a64",
                 "attributes": {
-                    "en": {
-                        "id": "284d638c-654c-4137-aa8c-d62a7121fed0",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                        "name": "Technology"
-                    },
                     "fr": {
                         "id": "401fdebd-7702-430a-97be-e53ad6a85a64",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                         "name": "Technologie"
                     },
-                    "es": {
-                        "id": "6646c80b-48c3-44b8-b7e0-a00b1c08afcb",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                        "name": "Technologie"
+                    "en": {
+                        "id": "284d638c-654c-4137-aa8c-d62a7121fed0",
+                        "name": "Technology"
                     }
                 },
                 "services": [
@@ -1749,22 +1507,15 @@
                         "slug": "home-appliance",
                         "color": "purple",
                         "icon": "home-appliance",
-                        "defaultAttibutesId": "ed1b5deb-8ae1-4e89-aa2a-455de9490e2a",
+                        "defaultAttibutesId": "3c1f0867-66a4-4480-b7d9-f9eebc6824d0",
                         "attributes": {
-                            "en": {
-                                "id": "549614f4-8d05-41ae-b591-b3ff3a66c2c8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Home appliance"
-                            },
                             "fr": {
                                 "id": "3c1f0867-66a4-4480-b7d9-f9eebc6824d0",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                                 "name": "Électroménager"
                             },
-                            "es": {
-                                "id": "ed1b5deb-8ae1-4e89-aa2a-455de9490e2a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Électroménager"
+                            "en": {
+                                "id": "549614f4-8d05-41ae-b591-b3ff3a66c2c8",
+                                "name": "Home appliance"
                             }
                         }
                     },
@@ -1773,22 +1524,15 @@
                         "slug": "electronics",
                         "color": "purple",
                         "icon": "elec",
-                        "defaultAttibutesId": "6580e873-6334-4a14-bd21-379b725787f1",
+                        "defaultAttibutesId": "422a02ac-3ff0-4620-b35e-3d5b16a614a1",
                         "attributes": {
-                            "en": {
-                                "id": "d8af3e56-17f8-4c03-b200-662a3ad7d2e9",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Electronics"
-                            },
                             "fr": {
                                 "id": "422a02ac-3ff0-4620-b35e-3d5b16a614a1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                                 "name": "Électronique"
                             },
-                            "es": {
-                                "id": "6580e873-6334-4a14-bd21-379b725787f1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Électronique"
+                            "en": {
+                                "id": "d8af3e56-17f8-4c03-b200-662a3ad7d2e9",
+                                "name": "Electronics"
                             }
                         }
                     },
@@ -1797,22 +1541,15 @@
                         "slug": "computers",
                         "color": "purple",
                         "icon": "computer",
-                        "defaultAttibutesId": "eb96cb01-8751-4dbd-9402-40363db2ecd6",
+                        "defaultAttibutesId": "ba296a89-ccd4-487a-be24-f26e291c792a",
                         "attributes": {
-                            "en": {
-                                "id": "fd71d74c-f716-4142-8d25-c57495e9f30d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Computers"
-                            },
                             "fr": {
                                 "id": "ba296a89-ccd4-487a-be24-f26e291c792a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                                 "name": "Informatique"
                             },
-                            "es": {
-                                "id": "eb96cb01-8751-4dbd-9402-40363db2ecd6",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Informatique"
+                            "en": {
+                                "id": "fd71d74c-f716-4142-8d25-c57495e9f30d",
+                                "name": "Computers"
                             }
                         }
                     }
@@ -1823,22 +1560,17 @@
                 "slug": "beauty",
                 "color": "red",
                 "ordinalPosition": 6,
-                "defaultAttibutesId": "79812c4c-3d0c-46db-905d-980be0b5d2bb",
+                "defaultAttibutesId": "19711035-4f49-46e1-a9b2-32564aef0815",
                 "attributes": {
-                    "en": {
-                        "id": "7733c92b-12ac-4e3d-b479-3a6bf9022de6",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauty"
-                    },
                     "fr": {
                         "id": "19711035-4f49-46e1-a9b2-32564aef0815",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                         "name": "Beauté"
                     },
-                    "es": {
-                        "id": "79812c4c-3d0c-46db-905d-980be0b5d2bb",
+                    "en": {
+                        "id": "7733c92b-12ac-4e3d-b479-3a6bf9022de6",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauté"
+                        "name": "Beauty"
                     }
                 },
                 "services": [
@@ -1847,17 +1579,15 @@
                         "slug": "makeup",
                         "color": "red",
                         "icon": "makeup",
-                        "defaultAttibutesId": "d11ff1fe-63da-446c-b63d-d5abdeadfd2d",
+                        "defaultAttibutesId": "7413c8da-647c-4be1-8733-246b80e4d396",
                         "attributes": {
                             "fr": {
                                 "id": "7413c8da-647c-4be1-8733-246b80e4d396",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Maquillage"
                             },
-                            "es": {
-                                "id": "d11ff1fe-63da-446c-b63d-d5abdeadfd2d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Maquillage"
+                            "en": {
+                                "id": "4727f73b-2202-412f-805d-fc517eeacd9a",
+                                "name": "Makeup"
                             }
                         }
                     },
@@ -1866,16 +1596,14 @@
                         "slug": "manucure",
                         "color": "red",
                         "icon": "manucure",
-                        "defaultAttibutesId": "26fde441-bb9c-4f18-b44e-86acbddee54f",
+                        "defaultAttibutesId": "84aad0ba-c09d-446b-833c-7c835302816e",
                         "attributes": {
                             "fr": {
                                 "id": "84aad0ba-c09d-446b-833c-7c835302816e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Manucure"
                             },
-                            "es": {
-                                "id": "26fde441-bb9c-4f18-b44e-86acbddee54f",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                            "en": {
+                                "id": "5a3ab5ec-6dda-435b-bf12-9ad2a04021be",
                                 "name": "Manucure"
                             }
                         }
@@ -1885,17 +1613,15 @@
                         "slug": "pedicure",
                         "color": "red",
                         "icon": "pedicure",
-                        "defaultAttibutesId": "698001b9-0119-418c-a5f1-5b876f5c8975",
+                        "defaultAttibutesId": "cb810858-5104-407d-a48c-8e3971620c55",
                         "attributes": {
                             "fr": {
                                 "id": "cb810858-5104-407d-a48c-8e3971620c55",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Pédicure"
                             },
-                            "es": {
-                                "id": "698001b9-0119-418c-a5f1-5b876f5c8975",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Pédicure"
+                            "en": {
+                                "id": "082ddeaa-8bb7-491d-827d-6dcdd08969ec",
+                                "name": "Pedicure"
                             }
                         }
                     },
@@ -1904,17 +1630,15 @@
                         "slug": "hairstyle",
                         "color": "red",
                         "icon": "haircut",
-                        "defaultAttibutesId": "752a1474-a340-49d1-8f02-b5f4c3de92ee",
+                        "defaultAttibutesId": "0975208b-67bd-4889-9d30-45eb57896d9a",
                         "attributes": {
                             "fr": {
                                 "id": "0975208b-67bd-4889-9d30-45eb57896d9a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Coiffure"
                             },
-                            "es": {
-                                "id": "752a1474-a340-49d1-8f02-b5f4c3de92ee",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Coiffure"
+                            "en": {
+                                "id": "bbb98bd3-a2d9-4668-bfda-c4607f04e5a6",
+                                "name": "Hairdresser"
                             }
                         }
                     },
@@ -1923,17 +1647,15 @@
                         "slug": "waxing",
                         "color": "red",
                         "icon": "waxing",
-                        "defaultAttibutesId": "dd044f02-2376-4877-9686-2820ea077b74",
+                        "defaultAttibutesId": "de0f9925-40be-4412-9e94-1bda4b592169",
                         "attributes": {
                             "fr": {
                                 "id": "de0f9925-40be-4412-9e94-1bda4b592169",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                                 "name": "Épilation"
                             },
-                            "es": {
-                                "id": "dd044f02-2376-4877-9686-2820ea077b74",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Épilation"
+                            "en": {
+                                "id": "119eff39-61da-40d1-831e-d91d89801dfd",
+                                "name": "Waxing"
                             }
                         }
                     }
@@ -1944,22 +1666,17 @@
                 "slug": "coach-and-wellness",
                 "color": "turquoise",
                 "ordinalPosition": 7,
-                "defaultAttibutesId": "40b856c7-aa84-431c-8fc9-6680f711ef2f",
+                "defaultAttibutesId": "eac2c9c1-9c4d-406b-9a65-b0c1c69cfd99",
                 "attributes": {
-                    "en": {
-                        "id": "86c1f9d2-1ddf-4afb-b28e-a32cc24c8a6e",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Wellness"
-                    },
                     "fr": {
                         "id": "eac2c9c1-9c4d-406b-9a65-b0c1c69cfd99",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                         "name": "Bien-être"
                     },
-                    "es": {
-                        "id": "40b856c7-aa84-431c-8fc9-6680f711ef2f",
+                    "en": {
+                        "id": "86c1f9d2-1ddf-4afb-b28e-a32cc24c8a6e",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Bien-être"
+                        "name": "Wellness"
                     }
                 },
                 "services": [
@@ -1968,16 +1685,14 @@
                         "slug": "sport",
                         "color": "turquoise",
                         "icon": "personal-trainer",
-                        "defaultAttibutesId": "2cde4c82-5888-4fd2-b9b8-f41008313ab2",
+                        "defaultAttibutesId": "e200fa3c-55d1-4d1b-8e94-bce9d7f7e7a4",
                         "attributes": {
                             "fr": {
                                 "id": "e200fa3c-55d1-4d1b-8e94-bce9d7f7e7a4",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Sport"
                             },
-                            "es": {
-                                "id": "2cde4c82-5888-4fd2-b9b8-f41008313ab2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "979407ed-e654-4131-b703-c6b4bb3e6665",
                                 "name": "Sport"
                             }
                         }
@@ -1987,16 +1702,14 @@
                         "slug": "yoga",
                         "color": "turquoise",
                         "icon": "yoga",
-                        "defaultAttibutesId": "9fef0f53-8703-4058-b6c3-33c9938b465c",
+                        "defaultAttibutesId": "0c971b49-bfc3-47b2-ba1d-c63676e93eed",
                         "attributes": {
                             "fr": {
                                 "id": "0c971b49-bfc3-47b2-ba1d-c63676e93eed",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Yoga"
                             },
-                            "es": {
-                                "id": "9fef0f53-8703-4058-b6c3-33c9938b465c",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "b7397cc1-715c-49fa-b38c-26ddafb93b9a",
                                 "name": "Yoga"
                             }
                         }
@@ -2006,22 +1719,15 @@
                         "slug": "perosnal-trainer",
                         "color": "turquoise",
                         "icon": "personal-trainer",
-                        "defaultAttibutesId": "ed0a88fd-327e-462b-a51b-bceb0519c569",
+                        "defaultAttibutesId": "4111215d-8a1e-4d06-848e-69be78e13f66",
                         "attributes": {
-                            "en": {
-                                "id": "1aeb7de5-99f2-4221-afbd-5c0d00029e3a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Personal trainer"
-                            },
                             "fr": {
                                 "id": "4111215d-8a1e-4d06-848e-69be78e13f66",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Coach personnel"
                             },
-                            "es": {
-                                "id": "ed0a88fd-327e-462b-a51b-bceb0519c569",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Coach personnel"
+                            "en": {
+                                "id": "1aeb7de5-99f2-4221-afbd-5c0d00029e3a",
+                                "name": "Personal trainer"
                             }
                         }
                     },
@@ -2030,16 +1736,14 @@
                         "slug": "massage",
                         "color": "turquoise",
                         "icon": "massage",
-                        "defaultAttibutesId": "7117f436-db4c-4255-b84a-6fc85efd96dd",
+                        "defaultAttibutesId": "6b8d4ce9-ab88-40f1-afef-dbb18e36b93e",
                         "attributes": {
                             "fr": {
                                 "id": "6b8d4ce9-ab88-40f1-afef-dbb18e36b93e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                                 "name": "Massage"
                             },
-                            "es": {
-                                "id": "7117f436-db4c-4255-b84a-6fc85efd96dd",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "e56aeb0d-8f36-4483-beed-df52363672ce",
                                 "name": "Massage"
                             }
                         }
@@ -2051,17 +1755,23 @@
             {
                 "id": "7acddb0e-96b6-49aa-b07d-d9877a1ad1c3",
                 "slug": "drive",
+                "icon": "drive",
                 "color": "yellow",
                 "ordinalPosition": 1,
-                "defaultAttibutesId": "b98a1279-932d-46d1-8662-81b4b121ef53",
+                "defaultAttibutesId": "dc74c653-2835-4b34-b32f-7e0269a83062",
                 "attributes": {
-                    "fr": {
-                        "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
+                    "es": {
+                        "id": "dc74c653-2835-4b34-b32f-7e0269a83062",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                         "name": "Drive"
                     },
-                    "es": {
-                        "id": "b98a1279-932d-46d1-8662-81b4b121ef53",
+                    "fr": {
+                        "id": "491b2e03-11c0-4f06-aa4b-e5240cd894a1",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                        "name": "Drive"
+                    },
+                    "en": {
+                        "id": "c427a796-09ac-434d-ba63-f8da35b6106b",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
                         "name": "Drive"
                     }
@@ -2069,36 +1779,42 @@
                 "services": [
                     {
                         "id": "9f7f1c92-8315-4a7e-bf8c-a9738aa83a27",
-                        "slug": "drive-berline",
+                        "slug": "drive-sedan",
+                        "icon": "berline",
                         "color": "yellow",
-                        "defaultAttibutesId": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
+                        "defaultAttibutesId": "f7a2748c-59fa-44b3-bb1e-c26504b68545",
                         "attributes": {
+                            "es": {
+                                "id": "f7a2748c-59fa-44b3-bb1e-c26504b68545",
+                                "name": "Sedán"
+                            },
                             "fr": {
-                                "id": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                                "id": "3d6325af-9d97-4b85-bb17-3251e91c1622",
                                 "name": "Berline"
                             },
-                            "es": {
-                                "id": "fccf77fc-6815-4cdf-aa10-5af5219a6c59",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                                "name": "Berline"
+                            "en": {
+                                "id": "e2f9403e-f85e-48c1-8f1f-140b5f61cf1a",
+                                "name": "Sedan"
                             }
                         }
                     },
                     {
                         "id": "d7d74881-f183-43fc-a7d5-4fd326d14982",
-                        "slug": "drive-limousing",
+                        "slug": "drive-limousine",
+                        "icon": "limo",
                         "color": "yellow",
-                        "defaultAttibutesId": "01c223d3-6709-4099-9775-39962d3513dc",
+                        "defaultAttibutesId": "9b93ed24-7e42-4dbd-b6fe-785b5a5d50ef",
                         "attributes": {
+                            "es": {
+                                "id": "9b93ed24-7e42-4dbd-b6fe-785b5a5d50ef",
+                                "name": "Limusina"
+                            },
                             "fr": {
-                                "id": "01c223d3-6709-4099-9775-39962d3513dc",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                                "id": "1beee2f8-15d5-4c11-bceb-340de9c188a5",
                                 "name": "Limousine"
                             },
-                            "es": {
-                                "id": "01c223d3-6709-4099-9775-39962d3513dc",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                            "en": {
+                                "id": "d335b5fd-5469-483f-a33e-e9d5b6775a25",
                                 "name": "Limousine"
                             }
                         }
@@ -2107,16 +1823,19 @@
                         "id": "983b1e51-bab1-4c42-b614-132031b0e254",
                         "slug": "drive-van",
                         "color": "yellow",
-                        "defaultAttibutesId": "2a0a45bb-ff7d-41dc-95fe-3d0632e0db48",
+                        "icon": "van",
+                        "defaultAttibutesId": "996a6f60-f123-4f10-86bc-b8e37d4d5e2a",
                         "attributes": {
+                            "es": {
+                                "id": "996a6f60-f123-4f10-86bc-b8e37d4d5e2a",
+                                "name": "Furgoneta"
+                            },
                             "fr": {
-                                "id": "2a0a45bb-ff7d-41dc-95fe-3d0632e0db48",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                                "id": "57ead791-af16-45a6-a56a-b4fbb46f2973",
                                 "name": "Van"
                             },
-                            "es": {
-                                "id": "2a0a45bb-ff7d-41dc-95fe-3d0632e0db48",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                            "en": {
+                                "id": "d3b6e631-e5fe-4a3b-b03a-b708490006bd",
                                 "name": "Van"
                             }
                         }
@@ -2125,17 +1844,20 @@
                         "id": "10678dd1-5cb8-4250-ac3c-54e323e51bd1",
                         "slug": "drive-moto",
                         "color": "yellow",
-                        "defaultAttibutesId": "64d32d46-7c32-471f-8c2e-577a378de227",
+                        "icon": "moto",
+                        "defaultAttibutesId": "d443439c-43a0-4428-922c-1cb3662adca8",
                         "attributes": {
+                            "es": {
+                                "id": "d443439c-43a0-4428-922c-1cb3662adca8",
+                                "name": "Motocicleta"
+                            },
                             "fr": {
-                                "id": "64d32d46-7c32-471f-8c2e-577a378de227",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
+                                "id": "77dacc93-cd31-4193-9acc-4e6942dc5bdc",
                                 "name": "Transport moto"
                             },
-                            "es": {
-                                "id": "64d32d46-7c32-471f-8c2e-577a378de227",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                                "name": "Transport moto"
+                            "en": {
+                                "id": "bf62141d-b8bd-4779-9c9b-d0875f8f78e5",
+                                "name": "Moto"
                             }
                         }
                     }
@@ -2146,40 +1868,43 @@
                 "slug": "modern-majordome",
                 "color": "green",
                 "ordinalPosition": 2,
-                "defaultAttibutesId": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
+                "defaultAttibutesId": "545384ca-8d23-4dee-aeee-c7e04a0befdf",
                 "attributes": {
+                    "es": {
+                        "id": "545384ca-8d23-4dee-aeee-c7e04a0befdf",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                        "name": "Mayordomo"
+                    },
                     "fr": {
-                        "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
+                        "id": "424006b1-e93b-4272-b6e1-46ea764bc451",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
                         "name": "Majordome"
                     },
-                    "es": {
-                        "id": "0062bc93-133b-47ea-b070-3c8f1eaf8143",
+                    "en": {
+                        "id": "0bdc1a49-1a79-4917-8b62-ccf452242a4b",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                        "name": "Majordome"
+                        "name": "Butler"
                     }
                 },
                 "services": [
                     {
                         "id": "5fe8dd7e-8212-4015-af01-af05149608f7",
                         "slug": "amateur-cook",
+                        "icon": "cook",
                         "color": "green",
-                        "defaultAttibutesId": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
+                        "defaultAttibutesId": "cf68f7ac-bc83-4899-a3ca-c0a2648a2c0b",
                         "attributes": {
-                            "en": {
-                                "id": "284322f0-05d6-41cf-884e-bbcaefe1a2d2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Amateur cook"
+                            "es": {
+                                "id": "cf68f7ac-bc83-4899-a3ca-c0a2648a2c0b",
+                                "name": "Cocinero aficionado"
                             },
                             "fr": {
-                                "id": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "f0b2997f-5cec-488b-9d39-7cbc5d265f66",
                                 "name": "Cusinier amateur"
                             },
-                            "es": {
-                                "id": "6f3da358-e525-4018-9fdb-fa1dc91c1280",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Cusinier amateur"
+                            "en": {
+                                "id": "9fdfbae5-571c-4413-9821-a6f359417914",
+                                "name": "Amateur cook"
                             }
                         }
                     },
@@ -2187,35 +1912,41 @@
                         "id": "0713b7ef-dc36-4363-b450-b39cc4911ec3",
                         "slug": "carless-driver",
                         "color": "green",
-                        "defaultAttibutesId": "91440125-89b7-4718-979e-8ea859ab222a",
+                        "icon": "driver",
+                        "defaultAttibutesId": "978f6ebe-eaaa-4ac9-aa0a-a388762df452",
                         "attributes": {
+                            "es": {
+                                "id": "978f6ebe-eaaa-4ac9-aa0a-a388762df452",
+                                "name": "Conductor sin coche"
+                            },
                             "fr": {
-                                "id": "91440125-89b7-4718-979e-8ea859ab222a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "d7f1f9b6-661f-474a-9aa0-c07699feea59",
                                 "name": "Chauffeur sans voiture"
                             },
-                            "es": {
-                                "id": "91440125-89b7-4718-979e-8ea859ab222a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Chauffeur sans voiture"
+                            "en": {
+                                "id": "a3f910cd-aa00-4f29-a18c-2ec39a4496f0",
+                                "name": "Driver without car"
                             }
                         }
                     },
                     {
                         "id": "9890cf03-0510-42e4-b7ae-2fa294463987",
                         "slug": "administrative-assistant",
+                        "icon": "admin",
                         "color": "green",
-                        "defaultAttibutesId": "25c87c93-b29f-4645-97d2-8ed072d8bcf7",
+                        "defaultAttibutesId": "a7ab9621-b42e-488e-b73e-48996c289103",
                         "attributes": {
+                            "es": {
+                                "id": "a7ab9621-b42e-488e-b73e-48996c289103",
+                                "name": "Auxiliar administrativo"
+                            },
                             "fr": {
-                                "id": "25c87c93-b29f-4645-97d2-8ed072d8bcf7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "56fa0092-f1bf-4683-8147-ba4e993c9c04",
                                 "name": "Assistant administratif"
                             },
-                            "es": {
-                                "id": "25c87c93-b29f-4645-97d2-8ed072d8bcf7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Assistant administratif"
+                            "en": {
+                                "id": "b8113dec-02d5-4209-8f0d-ce1285c80615",
+                                "name": "Administrative help"
                             }
                         }
                     },
@@ -2223,17 +1954,20 @@
                         "id": "ea3e9397-7eff-41d1-a08c-6dd24c4f16cc",
                         "slug": "house-tidy-up",
                         "color": "green",
-                        "defaultAttibutesId": "c230fcac-7e8d-44f7-8693-8490beeff196",
+                        "icon": "light-delivery",
+                        "defaultAttibutesId": "bab8d220-9595-437e-af37-a6699e8137c0",
                         "attributes": {
+                            "es": {
+                                "id": "bab8d220-9595-437e-af37-a6699e8137c0",
+                                "name": "Almacenamiento en el hogar"
+                            },
                             "fr": {
-                                "id": "c230fcac-7e8d-44f7-8693-8490beeff196",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "603c809b-612b-4dd8-ad8e-f5cc6d6a22ef",
                                 "name": "Rangement maison"
                             },
-                            "es": {
-                                "id": "c230fcac-7e8d-44f7-8693-8490beeff196",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Rangement maison"
+                            "en": {
+                                "id": "c79364f2-25fb-4f52-8a82-216a5ba9adc3",
+                                "name": "House tidy up"
                             }
                         }
                     },
@@ -2241,17 +1975,20 @@
                         "id": "e1b777cb-fb75-438c-ae24-4f21a86ced4a",
                         "slug": "purchase-and-delivery",
                         "color": "green",
-                        "defaultAttibutesId": "6f79e871-0434-4274-93ed-5b201ccdd035",
+                        "icon": "delivery",
+                        "defaultAttibutesId": "3710e08e-32de-4a2c-abcd-2169c353c34a",
                         "attributes": {
+                            "es": {
+                                "id": "3710e08e-32de-4a2c-abcd-2169c353c34a",
+                                "name": "Compras y Entregas"
+                            },
                             "fr": {
-                                "id": "6f79e871-0434-4274-93ed-5b201ccdd035",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "393039cb-62cd-49e6-a344-8192c503b757",
                                 "name": "Achats & Livraisons"
                             },
-                            "es": {
-                                "id": "6f79e871-0434-4274-93ed-5b201ccdd035",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Achats & Livraisons"
+                            "en": {
+                                "id": "5711e930-c984-4485-ae1e-e35951e65f1b",
+                                "name": "Purchase & Delivery"
                             }
                         }
                     },
@@ -2259,22 +1996,20 @@
                         "id": "b0fa3256-5dbe-4b04-abf6-ea28208ce847",
                         "slug": "city-guide",
                         "color": "green",
-                        "defaultAttibutesId": "c09ed857-f9b5-4fe1-b509-ea2ac77704f5",
+                        "icon": "compass",
+                        "defaultAttibutesId": "597ddef0-0264-4fe2-bf51-5d4348510950",
                         "attributes": {
+                            "es": {
+                                "id": "597ddef0-0264-4fe2-bf51-5d4348510950",
+                                "name": "Guide touristique"
+                            },
                             "fr": {
-                                "id": "c09ed857-f9b5-4fe1-b509-ea2ac77704f5",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "fd066b61-30be-4428-a869-a0e62cf12551",
                                 "name": "Guide touristique"
                             },
                             "en": {
-                                "id": "8bcdd4ce-5aa5-4e95-b491-f9e06d93b6b4",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
+                                "id": "9b8765c5-4320-4525-8361-523c53f5bf74",
                                 "name": "City guide"
-                            },
-                            "es": {
-                                "id": "c09ed857-f9b5-4fe1-b509-ea2ac77704f5",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                                "name": "Guide touristique"
                             }
                         }
                     },
@@ -2282,16 +2017,19 @@
                         "id": "db5ba203-2336-465b-827f-d8812d431762",
                         "slug": "pet-sitting",
                         "color": "green",
-                        "defaultAttibutesId": "88f59a8c-19ca-4e33-a6e4-f124a8258131",
+                        "icon": "animal",
+                        "defaultAttibutesId": "11127c4d-f367-4725-b4b1-9c6f3617d3bf",
                         "attributes": {
-                            "fr": {
-                                "id": "88f59a8c-19ca-4e33-a6e4-f124a8258131",
-                                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
-                                "name": "Pet sitting"
-                            },
                             "es": {
-                                "id": "88f59a8c-19ca-4e33-a6e4-f124a8258131",
-                                "icon": "https://storage.googleapis.com/eu-jffr/static/images/purchase-and-delivery%403x.png",
+                                "id": "11127c4d-f367-4725-b4b1-9c6f3617d3bf",
+                                "name": "Cuidado de mascotas"
+                            },
+                            "fr": {
+                                "id": "9ba45ed9-46ce-4d42-95e0-18495e50679f",
+                                "name": "Garde d'animaux"
+                            },
+                            "en": {
+                                "id": "2c2d83a7-5ed6-4035-bf6c-b13d7607baa9",
                                 "name": "Pet sitting"
                             }
                         }
@@ -2303,22 +2041,22 @@
                 "slug": "cleaning",
                 "color": "blue",
                 "ordinalPosition": 3,
-                "defaultAttibutesId": "8b9a24b7-942c-4426-8e2e-742a408ab7ed",
+                "defaultAttibutesId": "2da38be0-1fa3-4645-af1a-f6acc3dc76de",
                 "attributes": {
-                    "en": {
-                        "id": "695c4036-07c8-40e6-b4a2-c28d7f892bca",
+                    "es": {
+                        "id": "2da38be0-1fa3-4645-af1a-f6acc3dc76de",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                        "name": "Cleaning"
+                        "name": "Limpieza"
                     },
                     "fr": {
-                        "id": "8b9a24b7-942c-4426-8e2e-742a408ab7ed",
+                        "id": "00d1b943-1afe-4864-8df2-f8f4443caac1",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                         "name": "Nettoyage"
                     },
-                    "es": {
-                        "id": "8b9a24b7-942c-4426-8e2e-742a408ab7ed",
+                    "en": {
+                        "id": "b594e8ba-4dbf-4b81-bffa-565ed358da60",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                        "name": "Nettoyage"
+                        "name": "Cleaning"
                     }
                 },
                 "services": [
@@ -2326,22 +2064,20 @@
                         "id": "81aa8526-6aab-4f5a-99a0-40817ea3d6ea",
                         "slug": "house-cleaning",
                         "color": "blue",
-                        "defaultAttibutesId": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
+                        "icon": "house-cleaning",
+                        "defaultAttibutesId": "033eb66b-edff-4a50-b187-6abb7700e80a",
                         "attributes": {
-                            "en": {
-                                "id": "0f03ff92-a359-4b85-868a-6564bc5ed39b",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "House cleaning"
+                            "es": {
+                                "id": "033eb66b-edff-4a50-b187-6abb7700e80a",
+                                "name": "Limpieza de casa / apartamento"
                             },
                             "fr": {
-                                "id": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
+                                "id": "d4768243-f409-4b5c-8ebc-82c7c65604f4",
                                 "name": "Nettoyage maison / appartement"
                             },
-                            "es": {
-                                "id": "b5a2e6e8-856d-4946-ac0c-567da6ab169d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage maison / appartement"
+                            "en": {
+                                "id": "3029bc7f-84e5-4998-a96d-efafac16d4e2",
+                                "name": "House cleaning"
                             }
                         }
                     },
@@ -2349,22 +2085,20 @@
                         "id": "b3aa9943-0ed1-4130-a7e3-942c78640d01",
                         "slug": "car-washing",
                         "color": "blue",
-                        "defaultAttibutesId": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
+                        "icon": "car",
+                        "defaultAttibutesId": "f78836e4-9cbb-477a-832d-1ae9b8342bab",
                         "attributes": {
-                            "en": {
-                                "id": "17f59da9-fcb6-4985-8bd4-f23008750af6",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Car washing"
+                            "es": {
+                                "id": "f78836e4-9cbb-477a-832d-1ae9b8342bab",
+                                "name": "Limpieza de coche"
                             },
                             "fr": {
-                                "id": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
+                                "id": "f5a2d37d-da4d-4999-b98a-b0a615bf5c31",
                                 "name": "Nettoyage voiture"
                             },
-                            "es": {
-                                "id": "05b7639c-fed9-4a10-9caa-593c7c9d6b13",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage voiture"
+                            "en": {
+                                "id": "f5b92607-ee58-4495-a224-b7b0de368766",
+                                "name": "Car wash"
                             }
                         }
                     },
@@ -2372,22 +2106,20 @@
                         "id": "556f8540-dba8-45c0-b1c5-c14a803a6f25",
                         "slug": "swimming-pool-cleaning",
                         "color": "blue",
-                        "defaultAttibutesId": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
+                        "icon": "swimming-pool",
+                        "defaultAttibutesId": "a7f5dc65-3469-4a94-b2e4-9ac6774467dc",
                         "attributes": {
-                            "en": {
-                                "id": "48f962d0-ab99-45af-968f-0eaf1b59ee01",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Swimming pool cleaning"
+                            "es": {
+                                "id": "a7f5dc65-3469-4a94-b2e4-9ac6774467dc",
+                                "name": "Limpieza de piscina"
                             },
                             "fr": {
-                                "id": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage piscine"
+                                "id": "87ecf23b-5d4c-4065-bd04-70062e6475e9",
+                                "name": "Nettoyage de piscine"
                             },
-                            "es": {
-                                "id": "59ebe3f3-3882-4d96-b4e1-6d9739c12de7",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
-                                "name": "Nettoyage piscine"
+                            "en": {
+                                "id": "ed245786-545c-4a4c-aa10-b8f140e15a10",
+                                "name": "Swimming pool cleaning"
                             }
                         }
                     }
@@ -2398,22 +2130,22 @@
                 "slug": "technology",
                 "color": "purple",
                 "ordinalPosition": 4,
-                "defaultAttibutesId": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
+                "defaultAttibutesId": "e22082b1-c718-421a-9ea9-c3b7cd4e4254",
                 "attributes": {
-                    "en": {
-                        "id": "b9c6056d-49a2-4e18-bb89-cf3f9ac9ca47",
+                    "es": {
+                        "id": "e22082b1-c718-421a-9ea9-c3b7cd4e4254",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                        "name": "Technology"
+                        "name": "Tecnología"
                     },
                     "fr": {
-                        "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
+                        "id": "5dc33805-ab10-48f2-8d7a-f301d2e61973",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
                         "name": "Technologie"
                     },
-                    "es": {
-                        "id": "6b9accdd-4b06-438c-a0c6-5cb057e7ad44",
+                    "en": {
+                        "id": "d6b54b4c-8ce2-41e8-b8f9-c9690aefe7b4",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                        "name": "Technologie"
+                        "name": "Technology"
                     }
                 },
                 "services": [
@@ -2421,22 +2153,20 @@
                         "id": "ea9306ca-b64c-4cce-a117-9a55cfeb1526",
                         "slug": "home-appliance",
                         "color": "purple",
-                        "defaultAttibutesId": "ea930d53-72d7-4f5f-8a13-782addde52bf",
+                        "icon": "home-appliance",
+                        "defaultAttibutesId": "f35ba69b-af60-4936-8ddc-44e8b25e6947",
                         "attributes": {
-                            "en": {
-                                "id": "d2aefc53-be5f-4483-951f-ccc2bb66efe0",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Home appliance"
+                            "es": {
+                                "id": "f35ba69b-af60-4936-8ddc-44e8b25e6947",
+                                "name": "Accesorios"
                             },
                             "fr": {
-                                "id": "ea930d53-72d7-4f5f-8a13-782addde52bf",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
+                                "id": "81b470e9-48df-4b6a-83dc-20a916f8784b",
                                 "name": "Électroménager"
                             },
-                            "es": {
-                                "id": "ea930d53-72d7-4f5f-8a13-782addde52bf",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Électroménager"
+                            "en": {
+                                "id": "83fb2b3d-1023-4c5b-a97a-b94a09d815f1",
+                                "name": "Home appliance"
                             }
                         }
                     },
@@ -2444,22 +2174,20 @@
                         "id": "6a9b91aa-9f40-4e40-be77-1ba29644dbfe",
                         "slug": "electronics",
                         "color": "purple",
-                        "defaultAttibutesId": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
+                        "icon": "elec",
+                        "defaultAttibutesId": "81000944-d627-42b1-85a7-9d910e0d7b4c",
                         "attributes": {
-                            "en": {
-                                "id": "b082a5ff-5800-41f8-ab3b-492ef6104a97",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Electronics"
+                            "es": {
+                                "id": "81000944-d627-42b1-85a7-9d910e0d7b4c",
+                                "name": "Electrónico"
                             },
                             "fr": {
-                                "id": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
+                                "id": "e3780501-9c9a-4b30-82c6-cfecb7ba99cd",
                                 "name": "Électronique"
                             },
-                            "es": {
-                                "id": "f1c1915d-88d7-413b-a5f6-45ef45798a6d",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Électronique"
+                            "en": {
+                                "id": "aed4625c-0c1f-423a-a737-3fb39c19aeac",
+                                "name": "Electronics"
                             }
                         }
                     },
@@ -2467,22 +2195,20 @@
                         "id": "b3cada85-83db-4d77-8c04-2ea3acdd4a5c",
                         "slug": "computers",
                         "color": "purple",
-                        "defaultAttibutesId": "69b37a25-f207-4c9b-8606-85fb534ea76e",
+                        "icon": "computer",
+                        "defaultAttibutesId": "1cc8bbdd-2444-45b6-b751-3d4e998901fe",
                         "attributes": {
-                            "en": {
-                                "id": "1a0c72db-5968-4d75-9d1b-dbeb74078454",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Computers"
+                            "es": {
+                                "id": "1cc8bbdd-2444-45b6-b751-3d4e998901fe",
+                                "name": "Informática"
                             },
                             "fr": {
-                                "id": "69b37a25-f207-4c9b-8606-85fb534ea76e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Informatique"
+                                "id": "c9f9b1cd-a4b1-4388-8e58-f68cd4f139d2",
+                                "name": "Informatiques"
                             },
-                            "es": {
-                                "id": "69b37a25-f207-4c9b-8606-85fb534ea76e",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/technology.png",
-                                "name": "Informatique"
+                            "en": {
+                                "id": "2867da4a-196d-46ba-be2e-3ddd19522b79",
+                                "name": "Computers"
                             }
                         }
                     }
@@ -2493,40 +2219,43 @@
                 "slug": "beauty",
                 "color": "red",
                 "ordinalPosition": 6,
-                "defaultAttibutesId": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
+                "defaultAttibutesId": "7fbdd635-76b6-486c-9e1b-dcc82eee032d",
                 "attributes": {
-                    "en": {
-                        "id": "87261bc3-ce77-4f4b-b8f1-ee4ca0b0b144",
+                    "es": {
+                        "id": "7fbdd635-76b6-486c-9e1b-dcc82eee032d",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauty"
+                        "name": "Belleza"
                     },
                     "fr": {
-                        "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
+                        "id": "e68e1bed-f08a-4ac2-a2c6-c238362de957",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
                         "name": "Beauté"
                     },
-                    "es": {
-                        "id": "0c0290b3-4fe0-4635-a074-d4b47b6ebf8c",
+                    "en": {
+                        "id": "f6953918-7243-4eca-af10-fb59e8147105",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauté"
+                        "name": "Beauty"
                     }
                 },
                 "services": [
                     {
                         "id": "925fc68a-fddd-4903-a2cb-bf8f67c4cb43",
                         "slug": "makeup",
+                        "icon": "makeup",
                         "color": "red",
-                        "defaultAttibutesId": "035ec6be-0cb5-46ef-95de-7a6bd8a440af",
+                        "defaultAttibutesId": "d3a6bfa8-76e2-4e64-9f80-d61e3322afc8",
                         "attributes": {
+                            "es": {
+                                "id": "d3a6bfa8-76e2-4e64-9f80-d61e3322afc8",
+                                "name": "Maquillaje"
+                            },
                             "fr": {
-                                "id": "035ec6be-0cb5-46ef-95de-7a6bd8a440af",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                                "id": "6464466f-d62a-4f2a-85b5-b85f38ffcf9e",
                                 "name": "Maquillage"
                             },
-                            "es": {
-                                "id": "035ec6be-0cb5-46ef-95de-7a6bd8a440af",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Maquillage"
+                            "en": {
+                                "id": "796201a4-fe38-462a-91b1-0fca15871e70",
+                                "name": "Makeup"
                             }
                         }
                     },
@@ -2534,16 +2263,19 @@
                         "id": "6cf83366-bf50-4ff8-ba36-606180471f6d",
                         "slug": "manucure",
                         "color": "red",
-                        "defaultAttibutesId": "eaaa9b62-a858-49ff-bd22-5e7891be4385",
+                        "icon": "manucure",
+                        "defaultAttibutesId": "b5e1f53d-c6ee-41c2-8244-3f81b83d7c4e",
                         "attributes": {
+                            "es": {
+                                "id": "b5e1f53d-c6ee-41c2-8244-3f81b83d7c4e",
+                                "name": "Manicura"
+                            },
                             "fr": {
-                                "id": "eaaa9b62-a858-49ff-bd22-5e7891be4385",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                                "id": "1039aa99-d748-4173-be93-638d55cb33ce",
                                 "name": "Manucure"
                             },
-                            "es": {
-                                "id": "eaaa9b62-a858-49ff-bd22-5e7891be4385",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                            "en": {
+                                "id": "d9ab3d72-cbc0-4ce8-bf54-fcd74f6cf160",
                                 "name": "Manucure"
                             }
                         }
@@ -2552,17 +2284,20 @@
                         "id": "e13e1029-d8d3-49e1-ac44-eed39a2a9c87",
                         "slug": "pedicure",
                         "color": "red",
-                        "defaultAttibutesId": "989c2bb7-48df-4241-8b9e-b146420f7ec8",
+                        "icon": "pedicure",
+                        "defaultAttibutesId": "555870ff-306a-4641-bad0-111823cd14cd",
                         "attributes": {
+                            "es": {
+                                "id": "555870ff-306a-4641-bad0-111823cd14cd",
+                                "name": "Pedicura"
+                            },
                             "fr": {
-                                "id": "989c2bb7-48df-4241-8b9e-b146420f7ec8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                                "id": "c601e51d-1b1d-4db3-80ca-9c5395af7233",
                                 "name": "Pédicure"
                             },
-                            "es": {
-                                "id": "989c2bb7-48df-4241-8b9e-b146420f7ec8",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Pédicure"
+                            "en": {
+                                "id": "42996d65-1103-4333-9ebc-bd683b27c9e4",
+                                "name": "Pedicure"
                             }
                         }
                     },
@@ -2570,35 +2305,41 @@
                         "id": "7702027c-5ff0-41d1-bc1c-32dba0d61899",
                         "slug": "hairstyle",
                         "color": "red",
-                        "defaultAttibutesId": "768b2ff4-3cad-4624-9e6b-87a8ee2a7bbe",
+                        "icon": "haircut",
+                        "defaultAttibutesId": "b0981895-8b64-42c3-8be6-bce270b3b979",
                         "attributes": {
+                            "es": {
+                                "id": "b0981895-8b64-42c3-8be6-bce270b3b979",
+                                "name": "Peluquería"
+                            },
                             "fr": {
-                                "id": "768b2ff4-3cad-4624-9e6b-87a8ee2a7bbe",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                                "id": "57b4db44-0ebc-4702-99a0-d5307376666f",
                                 "name": "Coiffure"
                             },
-                            "es": {
-                                "id": "768b2ff4-3cad-4624-9e6b-87a8ee2a7bbe",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Coiffure"
+                            "en": {
+                                "id": "eead6332-c56a-4303-bc5d-c8be750f0c30",
+                                "name": "Hairdresser"
                             }
                         }
                     },
                     {
                         "id": "32d21052-2111-4404-9faf-727e83319738",
-                        "slug": "epilation",
+                        "slug": "waxing",
                         "color": "red",
-                        "defaultAttibutesId": "29e6e859-47b2-426a-aebd-41e62c45057a",
+                        "icon": "waxing",
+                        "defaultAttibutesId": "afdd3c54-51f1-4412-95c4-6a6e28688cca",
                         "attributes": {
+                            "es": {
+                                "id": "afdd3c54-51f1-4412-95c4-6a6e28688cca",
+                                "name": "Depilación"
+                            },
                             "fr": {
-                                "id": "29e6e859-47b2-426a-aebd-41e62c45057a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                                "id": "2b24d77e-76e2-405e-8e4a-b46c695250e4",
                                 "name": "Épilation"
                             },
-                            "es": {
-                                "id": "29e6e859-47b2-426a-aebd-41e62c45057a",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                                "name": "Épilation"
+                            "en": {
+                                "id": "49853a52-7ff3-4d61-bda8-e30ed47f2900",
+                                "name": "Waxing"
                             }
                         }
                     }
@@ -2606,25 +2347,25 @@
             },
             {
                 "id": "fb769d13-0286-4c55-9b6d-60099d5a983c",
-                "slug": "coach-and-wellness",
+                "slug": "wellness",
                 "color": "turquoise",
                 "ordinalPosition": 7,
-                "defaultAttibutesId": "baf70f55-1857-4273-9345-07481d0356d6",
+                "defaultAttibutesId": "8cfc726b-b4eb-401b-b946-082866c887c8",
                 "attributes": {
-                    "en": {
-                        "id": "d6687c19-9e4c-4041-a09d-835d4104feca",
+                    "es": {
+                        "id": "8cfc726b-b4eb-401b-b946-082866c887c8",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Wellness"
+                        "name": "Bienestar"
                     },
                     "fr": {
-                        "id": "baf70f55-1857-4273-9345-07481d0356d6",
+                        "id": "588de022-1dcb-4f2a-ac75-518ed431419b",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
                         "name": "Bien-être"
                     },
-                    "es": {
-                        "id": "baf70f55-1857-4273-9345-07481d0356d6",
+                    "en": {
+                        "id": "987aa325-f7c4-4ac2-adee-ee630fee4941",
                         "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Bien-être"
+                        "name": "Wellness"
                     }
                 },
                 "services": [
@@ -2632,16 +2373,19 @@
                         "id": "9405dd96-e1aa-455d-8d4e-2b3a930528d3",
                         "slug": "sport",
                         "color": "turquoise",
-                        "defaultAttibutesId": "aec0d585-7d88-406f-b10b-1304f9220d84",
+                        "defaultAttibutesId": "8328c07c-0e74-4edd-8369-0a06ea3e7d16",
+                        "icon": "personal-trainer",
                         "attributes": {
+                            "es": {
+                                "id": "8328c07c-0e74-4edd-8369-0a06ea3e7d16",
+                                "name": "Deporte"
+                            },
                             "fr": {
-                                "id": "aec0d585-7d88-406f-b10b-1304f9220d84",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                                "id": "652a21b0-4ece-409f-a966-c096d5b185c7",
                                 "name": "Sport"
                             },
-                            "es": {
-                                "id": "aec0d585-7d88-406f-b10b-1304f9220d84",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "f8b408fa-9710-48bf-ae60-3cef5b977ad5",
                                 "name": "Sport"
                             }
                         }
@@ -2649,17 +2393,20 @@
                     {
                         "id": "a93c767f-f4e6-4c09-b9d0-cbeec1e65719",
                         "slug": "yoga",
+                        "icon": "yoga",
                         "color": "turquoise",
-                        "defaultAttibutesId": "3a4ce26b-29b5-4cf6-8ac9-584b117c1517",
+                        "defaultAttibutesId": "6d458d21-5f56-4cb6-9d53-e0f4f8205d43",
                         "attributes": {
-                            "fr": {
-                                "id": "3a4ce26b-29b5-4cf6-8ac9-584b117c1517",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "es": {
+                                "id": "6d458d21-5f56-4cb6-9d53-e0f4f8205d43",
                                 "name": "Yoga"
                             },
-                            "es": {
-                                "id": "3a4ce26b-29b5-4cf6-8ac9-584b117c1517",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "fr": {
+                                "id": "f55fc3f3-ea7a-45cd-88e5-f89c2809c5a8",
+                                "name": "Yoga"
+                            },
+                            "en": {
+                                "id": "cf2622ef-d489-411e-a014-27c5b1f1b925",
                                 "name": "Yoga"
                             }
                         }
@@ -2667,40 +2414,41 @@
                     {
                         "id": "c7e97984-facf-43ba-bcf2-d6abfb9bafb3",
                         "slug": "perosnal-trainer",
+                        "icon": "personal-trainer",
                         "color": "turquoise",
-                        "defaultAttibutesId": "e214330c-27df-4143-ada1-95bcb3a63cf2",
+                        "defaultAttibutesId": "114f25ab-64be-43e1-8212-7e2f6c5784d3",
                         "attributes": {
-                            "en": {
-                                "id": "69f1507c-3134-4b96-90b8-58f78866aa02",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Personal trainer"
+                            "es": {
+                                "id": "114f25ab-64be-43e1-8212-7e2f6c5784d3",
+                                "name": "Entrenador personal"
                             },
                             "fr": {
-                                "id": "e214330c-27df-4143-ada1-95bcb3a63cf2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                                "id": "77f7c286-4825-4b36-9b6c-6e0cc8209de9",
                                 "name": "Coach personnel"
                             },
-                            "es": {
-                                "id": "e214330c-27df-4143-ada1-95bcb3a63cf2",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                                "name": "Coach personnel"
+                            "en": {
+                                "id": "1d8c7aca-240e-4c41-9985-178b3b50c1d4",
+                                "name": "Personal trainer"
                             }
                         }
                     },
                     {
                         "id": "341a9bec-011f-4baa-9f9d-79d1a311c33a",
                         "slug": "massage",
+                        "icon": "massage",
                         "color": "turquoise",
-                        "defaultAttibutesId": "d730af4d-98df-4d50-bdae-7544af0fbaf1",
+                        "defaultAttibutesId": "69be2a28-bae8-447b-9d2f-3fde491d1778",
                         "attributes": {
+                            "es": {
+                                "id": "69be2a28-bae8-447b-9d2f-3fde491d1778",
+                                "name": "Masaje"
+                            },
                             "fr": {
-                                "id": "d730af4d-98df-4d50-bdae-7544af0fbaf1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                                "id": "4219eba0-8ac1-4b6c-b020-427f42d35780",
                                 "name": "Massage"
                             },
-                            "es": {
-                                "id": "d730af4d-98df-4d50-bdae-7544af0fbaf1",
-                                "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                            "en": {
+                                "id": "d1c577d3-b604-46f5-aef0-7cca029c3ea0",
                                 "name": "Massage"
                             }
                         }

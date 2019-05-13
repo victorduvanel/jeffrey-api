@@ -5,12 +5,12 @@ import nativeBcrypt     from 'bcryptjs';
 import uuid             from 'uuid/v4';
 import _                from 'lodash';
 
-import buckets          from '../services/google/storage';
+// import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
 import knex             from '../services/knex';
 import stripeSvc        from '../services/stripe';
 import braintree        from '../services/braintree';
-import googleService    from '../services/google';
+// import googleService    from '../services/google';
 import { sendEmail }    from '../services/mailjet';
 
 import { getLocale }    from '../locales';
@@ -34,7 +34,7 @@ import Country          from './country';
 import './adyen-card';
 import './postal-address';
 import './business';
-import AppleIosReceipts from './apple-ios-receipt';
+// import AppleIosReceipts from './apple-ios-receipt';
 
 import { Unauthorized } from '../graphql/errors';
 import { AppError}      from '../errors';
@@ -83,23 +83,23 @@ const User = Base.extend({
 
   /* GRAPHQL PROPS */
 
-  async getSubscriptionStatus() {
-    const receipt = await AppleIosReceipts
-      .query((qb) => {
-        qb.where('user_id', this.get('id'));
-        qb.whereRaw('NOW() BETWEEN purchase_date and expires_date');
-      })
-      .fetch();
+  // async getSubscriptionStatus() {
+  //   const receipt = await AppleIosReceipts
+  //     .query((qb) => {
+  //       qb.where('user_id', this.get('id'));
+  //       qb.whereRaw('NOW() BETWEEN purchase_date and expires_date');
+  //     })
+  //     .fetch();
 
-    if (receipt) {
-      return 'ok';
-    }
-    return 'ko';
-  },
+  //   if (receipt) {
+  //     return 'ok';
+  //   }
+  //   return 'ko';
+  // },
 
-  subscriptionStatus: currentUserOnly(function() {
-    return this.getSubscriptionStatus();
-  }),
+  // subscriptionStatus: currentUserOnly(function() {
+  //   return this.getSubscriptionStatus();
+  // }),
 
   async identifyDocuments() {
     const documents = UserDocument
@@ -473,12 +473,13 @@ const User = Base.extend({
     const idDocument = documents[documents.length - 1];
     const filename = idDocument.get('uri').split('/').splice(4).join('/');
 
-    const region = 'EU';
-    const bucket = buckets[region];
+    // const region = 'EU';
+    // const bucket = buckets[region];
 
-    const fileContent = await bucket
-      .file(filename)
-      .download();
+    // const fileContent = await bucket
+    //   .file(filename)
+    //   .download();
+    throw new Error('User file storage not implemented');
 
     const stripeAccount = await this.stripeAccount();
 
@@ -921,25 +922,25 @@ const User = Base.extend({
     });
   },
 
-  googleAuthenticate: async function(token) {
-    const googleUser = await googleService.verifyToken(token);
-    const user = await this.forge({ googleId: googleUser.id }).fetch();
+  // googleAuthenticate: async function(token) {
+  //   const googleUser = await googleService.verifyToken(token);
+  //   const user = await this.forge({ googleId: googleUser.id }).fetch();
 
-    if (user) {
-      return user;
-    }
+  //   if (user) {
+  //     return user;
+  //   }
 
-    if (!googleUser.verified) {
-      throw new Error('User not verified');
-    }
+  //   if (!googleUser.verified) {
+  //     throw new Error('User not verified');
+  //   }
 
-    return this.create({
-      googleId: googleUser.id,
-      email: googleUser.email,
-      firstName: googleUser.firstName,
-      lastName: googleUser.lastName
-    });
-  },
+  //   return this.create({
+  //     googleId: googleUser.id,
+  //     email: googleUser.email,
+  //     firstName: googleUser.firstName,
+  //     lastName: googleUser.lastName
+  //   });
+  // },
 
   find: function(id) {
     return this.forge({ id }).fetch();

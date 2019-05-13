@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import 'babel-polyfill';
-import './services/google/datastore';
 
 import chalk                           from 'chalk';
 import http                            from 'http';
@@ -73,7 +72,7 @@ post('/payout-alert', routes.payoutAlert.post);
 
 post('/cron', routes.cron.post);
 
-post('/ping', routes.ping.post);
+// post('/ping', routes.ping.post);
 
 post('/signup', routes.signup.post);
 
@@ -102,11 +101,11 @@ get('/reset-password/:token', routes.resetPassword.get);
 get('/ms', routes.ms.get);
 get('/fixture/messages', routes.fixtureMessages.get);
 
-post('/apple/ios-receipt', routes.apple.iosReceipt.post);
-post('/apple/subscription-status', routes.apple.subscriptionStatus.post);
+// post('/apple/ios-receipt', routes.apple.iosReceipt.post);
+// post('/apple/subscription-status', routes.apple.subscriptionStatus.post);
 
-get('/app-link', routes.appLink.get);
-get('/app-redirect/:action', routes.appRedirect.get);
+// get('/app-link', routes.appLink.get);
+// get('/app-redirect/:action', routes.appRedirect.get);
 post('/profile-pic', routes.profilePic.post);
 post('/user-documents', routes.userDocuments.post);
 post('/user-device', routes.userDevice.post);
@@ -114,13 +113,13 @@ post('/user-device', routes.userDevice.post);
 post('/phone-number', routes.phoneNumber.post);
 post('/phone-number/verify', routes.phoneNumber.verify.post);
 
-post('/tos', routes.tos.post);
-post('/bank-accounts', routes.bankAccounts.post);
-post('/providers', routes.providers.post);
+// post('/tos', routes.tos.post);
+// post('/bank-accounts', routes.bankAccounts.post);
+// post('/providers', routes.providers.post);
 
 post('/stripe/webhook', routes.stripe.webhook.post);
 
-get('/pay', routes.pay.get);
+// get('/pay', routes.pay.get);
 
 get('/invoice/:missionId', routes.invoice.get);
 

@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER William Riancho <william@reptilians.io>
 
-ARG NODE_VERSION=v10.15.3
+ARG NODE_VERSION=v12.2.0
 
 RUN apt-get update
 RUN apt-get install -y \
