@@ -18,6 +18,7 @@ import i18n                            from './middlewares/i18n';
 import corsPolicy                      from './middlewares/cors-policy';
 import notFound                        from './middlewares/not-found';
 import errorHandler                    from './middlewares/error-handler';
+import rateLimiter                     from './middlewares/rate-limiter';
 import { router, get, post }           from './middlewares/router';
 import graphqServer, { middlewares as graphqlMiddlewares } from './routes/graphql';
 
@@ -46,6 +47,7 @@ app.use(
   logger,
   corsPolicy,
   i18n,
+  rateLimiter,
   router,
   notFound,
   errorHandler
