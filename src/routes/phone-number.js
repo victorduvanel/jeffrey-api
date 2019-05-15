@@ -1,5 +1,6 @@
 import bodyParser                  from 'body-parser';
 import { RateLimiterRedis }        from 'rate-limiter-flexible';
+import config                      from '../config';
 import redisClient                 from '../services/redis';
 import PhoneNumberVerificationCode from '../models/phone-number-verification-code';
 import User                        from '../models/user';
@@ -16,6 +17,11 @@ export const post = [
   bodyParser.json(),
 
   async (req, res, next) => {
+    if (!config.PRODUCTION) {
+      next();
+      return;
+    }
+
     try {
       await rateLimiter.consume(req.ip, 1);
       next();

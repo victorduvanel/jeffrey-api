@@ -7,12 +7,10 @@ export const post = [
   bodyParser.json(),
 
   async (req, res) => {
-    console.log(req);
-
     const { user } = req;
-    const { token, type } = req.body;
+    const { token, type, locale } = req.body;
 
-    await UserDevice.create({ user, token, type });
+    await UserDevice.create({ user, token, type, locale });
 
     res.send({
       success: true
