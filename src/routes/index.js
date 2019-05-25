@@ -29,6 +29,8 @@ import * as info            from './info';
 import * as login           from './login';
 import * as notify          from './notify';
 import * as invoice         from './invoice';
+import * as newsletterSubscribe from './newsletter-subscribe';
+import * as supportMessage from './support-message';
 
 export default {
   oauth, me, activate, signup,
@@ -42,6 +44,7 @@ export default {
   processPayout, info,
   login, notify, invoice,
 
+  newsletterSubscribe, supportMessage
   /*
   ping, apple, appLink, appRedirect,
   tos, bankAccounts, providers, pay,

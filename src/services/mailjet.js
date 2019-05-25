@@ -10,3 +10,5 @@ export const sendEmail = (opts) => {
 
   return request;
 };
+
+export default client;

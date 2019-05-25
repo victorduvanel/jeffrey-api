@@ -121,6 +121,9 @@ post('/phone-number/verify', routes.phoneNumber.verify.post);
 
 post('/stripe/webhook', routes.stripe.webhook.post);
 
+post('/newsletter-subscribe', routes.newsletterSubscribe.post);
+post('/support-message', routes.supportMessage.post);
+
 // get('/pay', routes.pay.get);
 
 get('/invoice/:missionId', routes.invoice.get);
