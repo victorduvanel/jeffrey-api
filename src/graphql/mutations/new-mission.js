@@ -1,3 +1,4 @@
+import _                    from 'lodash';
 import { combineResolvers } from 'graphql-resolvers';
 import request              from 'request-promise';
 import auth                 from '../middlewares/auth';
@@ -44,10 +45,11 @@ const def = `
     startDate: String!,
     price: Int!,
     clientId: ID!,
+    type: MissionType!,
     serviceCategoryId: ID!
   ): String`;
 
-const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, { user }) => {
+const newMission = async (__, { startDate, clientId, price, type, serviceCategoryId }, { user }) => {
   const client = await User.find(clientId);
   if (!client) {
     throw new Error('Client unknown');
@@ -69,7 +71,8 @@ const newMission = async (_, { startDate, clientId, price, serviceCategoryId }, 
     currency: country.currency(),
     provider: user,
     client,
-    serviceCategory
+    serviceCategory,
+    type: _.kebabCase(type)
   });
 
   try {

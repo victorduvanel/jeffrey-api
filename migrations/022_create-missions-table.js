@@ -39,6 +39,12 @@ function up(knex) {
       .onDelete('RESTRICT');
 
     table
+      .uuid('canceled_by')
+      .references('users.id')
+      .onUpdate('CASCADE')
+      .onDelete('RESTRICT');
+
+    table
       .uuid('service_category_id')
       .references('service_categories.id')
       .onUpdate('CASCADE')

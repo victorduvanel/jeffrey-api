@@ -26,6 +26,7 @@ input MissionDetails {
 type Mission {
   id: ID!
   status: MissionStatus!
+  canceledBy: String
   client: User
   provider: User
   # description: String

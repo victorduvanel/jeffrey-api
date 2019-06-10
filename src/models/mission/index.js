@@ -59,6 +59,10 @@ const Mission = Base.extend({
     return this.get('status');
   },
 
+  canceledBy() {
+    return this.get('canceledBy');
+  },
+
   startDate() {
     return this.get('startDate');
   },
@@ -236,6 +240,11 @@ const Mission = Base.extend({
 
     status[newStatus].trigger(currentStatus, isProvider ? 'provider' : 'client');
     this.set('status', newStatus);
+
+    if (newStatus === CANCELED) {
+      this.set('canceledBy', user.get('id'));
+    }
+
     await this.save();
 
     if (newStatus === TERMINATED) {
