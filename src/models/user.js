@@ -273,11 +273,13 @@ const User = Base.extend({
     const res = await knex
       .raw(`
         select
-        avg(price) as amount,
-        price_currency as currency
+          avg(price) as amount,
+          price_currency as currency
         from missions
-        where provider_id = :userId
-        group by price_currency
+        where
+          provider_id = :userId
+        group by
+          price_currency
         limit 1
       `, {
         userId
@@ -987,7 +989,6 @@ const User = Base.extend({
         qb.where('users.is_available', '=', true);
         qb.where('provider_prices.service_category_id', '=', serviceCategoryId);
         // qb.whereRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) <= ${AREA_RADIUS}`);
-        qb.whereNotNull('provider_prices.price');
         qb.where('provider_prices.is_enabled', '=', true);
         qb.orderByRaw(`point(users.lat, users.lng) <@> point(${lat}, ${lng}) asc`);
         qb.limit(limit);

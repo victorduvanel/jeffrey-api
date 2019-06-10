@@ -11,8 +11,6 @@ exports.seed = async (knex, Promise) => {
         id: uuid(),
         userId: user.id,
         serviceCategoryId: category.id,
-        price: 1400,
-        currency: 'EUR',
         isEnabled: true
       });
     });
@@ -22,7 +20,7 @@ exports.seed = async (knex, Promise) => {
     return knex.raw(
       `
         INSERT INTO "provider_prices" (
-          "id", "user_id", "service_category_id", "price", "is_enabled", "currency", "created_at",
+          "id", "user_id", "service_category_id", "is_enabled", "created_at",
           "updated_at"
         ) VALUES (
           :id, :userId, :serviceCategoryId, :price, :isEnabled, :currency, NOW(), NOW()

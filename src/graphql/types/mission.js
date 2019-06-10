@@ -1,6 +1,10 @@
 import { registerType } from '../registry';
 
 const def = `
+enum MissionType {
+  fixedPrice
+  hourlyRate
+}
 enum MissionStatus {
   pending
   canceled
@@ -24,8 +28,8 @@ type Mission {
   status: MissionStatus!
   client: User
   provider: User
-  description: String
-  paymentMethod: String
+  # description: String
+  # paymentMethod: String
   price: Int!
   currency: String!
   startDate: Date!

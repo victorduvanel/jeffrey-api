@@ -1,4 +1,5 @@
 import Promise          from 'bluebird';
+import _                from 'lodash';
 import uuid             from 'uuid';
 import assert           from 'assert';
 import bookshelf        from '../../services/bookshelf';
@@ -33,6 +34,9 @@ export const ABORTED    = 'aborted';
 export const CONFIRMED  = 'confirmed';
 export const TERMINATED = 'terminated';
 
+/* type enum */
+export const HOURLY_RATE = 'hourly-rate';
+export const FIXED_PRICE = 'fixed-price';
 
 const Mission = Base.extend({
   tableName: 'missions',
@@ -86,16 +90,20 @@ const Mission = Base.extend({
     return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
   },
 
-  paymentMethod() {
-    return this.get('paymentMethod');
-  },
+  // paymentMethod() {
+  //   return this.get('paymentMethod');
+  // },
 
   location() {
     return this.get('location');
   },
 
-  description() {
-    return this.get('description');
+  // description() {
+  //   return this.get('description');
+  // },
+
+  type() {
+    return _.camelCase(this.get('type'));
   },
 
   lat() {
@@ -352,6 +360,7 @@ const Mission = Base.extend({
     provider = null,
     client,
     serviceCategory,
+    type,
     description = null,
     paymentMethod = null,
     lat = null,
@@ -370,6 +379,7 @@ const Mission = Base.extend({
         providerId: provider ? provider.get('id') : null,
         clientId: client.get('id'),
         serviceCategoryId: serviceCategory.get('id'),
+        type,
         status: 'pending',
         description,
         paymentMethod,

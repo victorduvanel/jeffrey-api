@@ -5,13 +5,18 @@ function up(knex) {
     table.integer('price');
     table.string('price_currency');
 
-    table.text('description');
+    // table.text('description');
 
-    table.enum('payment_method', [
-      'credit-card-at-delivery',
-      'credit-card-in-app',
-      'cash-at-delivery',
-      'paypal'
+    // table.enum('payment_method', [
+    //   'credit-card-at-delivery',
+    //   'credit-card-in-app',
+    //   'cash-at-delivery',
+    //   'paypal'
+    // ]);
+
+    table.enum('type', [
+      'fixed-price',
+      'hourly-rate'
     ]);
 
     table.float('lat');

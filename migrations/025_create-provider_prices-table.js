@@ -11,16 +11,6 @@ function up(knex) {
       .references('service_categories.id')
       .onUpdate('CASCADE')
       .onDelete('RESTRICT');
-    table.integer('price');
-    table.enum('currency', [
-      'CAD',
-      'GBP',
-      'EUR',
-      'USD',
-      'KRW',
-      'JPY',
-      'CHF'
-    ]);
     table.boolean('is_enabled');
     table.dateTime('created_at');
     table.dateTime('updated_at');

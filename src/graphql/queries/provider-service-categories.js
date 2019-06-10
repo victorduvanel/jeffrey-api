@@ -31,8 +31,6 @@ const providerServiceCategories = async (_, { parentId = null }, { user }) => {
 
     prices.forEach((price) => {
       user.providerPricesCache[price.get('serviceCategoryId')] = {
-        amount: price.get('price'),
-        currency: price.get('currency'),
         isEnabled: price.get('isEnabled')
       };
     });

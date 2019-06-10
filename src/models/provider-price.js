@@ -20,10 +20,8 @@ const ProviderPrice = Base.extend({
   serialize() {
     return {
       id: this.get('id'),
-      price: this.get('price'),
       serviceCategoryId: this.get('serviceCategoryId'),
-      isEnabled: this.get('isEnabled'),
-      currency: this.get('currency')
+      isEnabled: this.get('isEnabled')
     };
   },
 
@@ -39,26 +37,23 @@ const ProviderPrice = Base.extend({
     return this.forge({ id }).fetch();
   },
 
-  create: async function({ user, price, currency, serviceCategory, isEnabled }) {
+  create: async function({ user, serviceCategory, isEnabled }) {
     const id = uuid.v4();
 
     const res = await bookshelf.knex.raw(
       `INSERT INTO provider_prices
-         (id, user_id, service_category_id, price, is_enabled, currency, created_at, updated_at)
+         (id, user_id, service_category_id, is_enabled, created_at, updated_at)
        VALUES (
          :id,
          :userId,
          :serviceCategoryId,
-         :price,
          :isEnabled,
-         :currency,
          NOW(),
          NOW()
        )
        ON CONFLICT (user_id, service_category_id) DO UPDATE
        SET
-         price = EXCLUDED.price,
-         currency = EXCLUDED.currency,
+         is_enabled = EXCLUDED.is_enabled,
          updated_at = NOW()
        RETURNING id
       `,
@@ -66,9 +61,7 @@ const ProviderPrice = Base.extend({
         id,
         userId: user.id,
         serviceCategoryId: serviceCategory.id,
-        price,
-        isEnabled,
-        currency
+        isEnabled
       }
     );
 
