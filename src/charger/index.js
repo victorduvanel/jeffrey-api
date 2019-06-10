@@ -1,10 +1,10 @@
-import _                        from 'lodash';
-import Promise                  from 'bluebird';
-import request                  from 'request-promise';
-import bookshelf                from '../services/bookshelf';
-import knex                     from '../services/knex';
-import { render }               from '../services/handlebars';
-import Mission, { SERVICE_FEE } from '../models/mission';
+import _          from 'lodash';
+import Promise    from 'bluebird';
+import request    from 'request-promise';
+import bookshelf  from '../services/bookshelf';
+import knex       from '../services/knex';
+import { render } from '../services/handlebars';
+import Mission    from '../models/mission';
 
 export const processPayout = async () => {
   const missionIds = await knex
@@ -201,14 +201,14 @@ export const payoutAlert = async () => {
 
   _.forEach(currencyTotals, (total, currency) => {
     worldwideStats.total += total * currencyRates.rates[currency];
-    worldwideStats.grossIncome += total * SERVICE_FEE * currencyRates.rates[currency];
+    worldwideStats.grossIncome += total * currencyRates.rates[currency];
   });
 
   const html = await render('html/payout-alert', {
     currencyStats: currencyStats.map(stat => ({
       ...stat,
       total: currencyTotals[stat.currency],
-      grossIncome: currencyTotals[stat.currency] * SERVICE_FEE
+      grossIncome: currencyTotals[stat.currency]
     })),
     globalStats,
     missionsStats,

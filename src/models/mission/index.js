@@ -22,7 +22,49 @@ import { Unauthorized } from '../../graphql/errors';
 
 import status, { InvalidNewStatus } from './status';
 
-export const SERVICE_FEE = 0.2;
+const serviceFees = [
+  {
+    max: 1000, fee: 0.2
+  },
+  {
+    max: 1500, fee: 0.18
+  },
+  {
+    max: 1800, fee: 0.15
+  },
+  {
+    max: 2000, fee: 0.12
+  },
+  {
+    max: 2500, fee: 0.1
+  },
+  {
+    max: 3000, fee: 0.08
+  },
+  {
+    max: 3500, fee: 0.07
+  },
+  {
+    max: 4500, fee: 0.06
+  },
+  {
+    max: Number.MAX_SAFE_INTEGER, fee: 0.06
+  }
+];
+
+export const getServiceFee = (price) => {
+  let serviceFee = 0.2;
+
+  _.forEach(serviceFees, (fee) => {
+    if (price > fee.max) {
+      serviceFee = fee.fee;
+    } else {
+      return false;
+    }
+  });
+
+  return serviceFee;
+};
 
 /* status enum */
 export const PENDING    = 'pending';
@@ -91,6 +133,9 @@ const Mission = Base.extend({
     if (!this.get('startedDate') || !this.get('endedDate') || !this.get('price')) {
       return null;
     }
+
+
+
     return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
   },
 
@@ -491,9 +536,10 @@ const Mission = Base.extend({
   },
 
   computeProviderGain(startDate, endDate, pricePerHour) {
+    const serviceFee = getServiceFee(pricePerHour);
     const totalCost = Mission.computeMissionTotalCost(startDate, endDate, pricePerHour);
-    const serviceFee = Math.ceil(totalCost * SERVICE_FEE);
-    return totalCost - serviceFee;
+    const totalServiceFee = Math.ceil(totalCost * serviceFee);
+    return totalCost - totalServiceFee;
   }
 });
 
