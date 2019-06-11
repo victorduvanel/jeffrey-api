@@ -1186,565 +1186,417 @@
         ],
         "CH": [
             {
-                "id": "cd9d436a-94d5-405b-b53c-839ac1a40aee",
-                "slug": "drive",
-                "icon": "drive",
-                "color": "yellow",
+                "id": "8df04fd1-3769-48ee-9b08-0ddff6406f83",
+                "slug": "laundry",
+                "color": "turquoise",
                 "ordinalPosition": 1,
-                "defaultAttibutesId": "6ed13758-4640-45ac-976f-e17693eadfec",
+                "defaultAttibutesId": "b81c0007-9110-4407-a61c-e79bd1ec1582",
                 "attributes": {
                     "fr": {
-                        "id": "6ed13758-4640-45ac-976f-e17693eadfec",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                        "name": "Drive"
+                        "id": "b81c0007-9110-4407-a61c-e79bd1ec1582",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                        "name": "Pressing"
                     },
                     "en": {
-                        "id": "d284dd91-c2d5-4e31-8e56-3c3a7481425a",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/drive.png",
-                        "name": "Drive"
+                        "id": "9b069da4-be7a-4f17-9554-cefd859066bc",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
+                        "name": "Laundry"
                     }
                 },
                 "services": [
                     {
-                        "id": "e29d03de-ace9-4832-a479-2c1faa0e30e1",
-                        "slug": "drive-sedan",
-                        "icon": "berline",
-                        "color": "yellow",
-                        "defaultAttibutesId": "64914fd6-523a-4dbe-aa77-3a5d207519d7",
+                        "id": "8e374b63-0270-4d15-bbb4-9827da8ba0ef",
+                        "slug": "laundry-shirt",
+                        "color": "turquoise",
+                        "icon": "cleaning",
+                        "defaultAttibutesId": "7f74db0d-f9cf-42c9-a00f-0f9dcd8075cf",
                         "attributes": {
                             "fr": {
-                                "id": "64914fd6-523a-4dbe-aa77-3a5d207519d7",
-                                "name": "Berline"
+                                "id": "7f74db0d-f9cf-42c9-a00f-0f9dcd8075cf",
+                                "name": "Chemises"
                             },
                             "en": {
-                                "id": "c6565288-5b0a-41e8-8141-f146993afe8f",
-                                "name": "Sedan"
+                                "id": "c6da7e64-e8a2-4f7d-b447-0d8b4ce8d83c",
+                                "name": "Shirts"
                             }
                         }
                     },
                     {
-                        "id": "4bc2e400-4a1a-4392-8c88-aa01b89a0b90",
-                        "slug": "drive-limousine",
-                        "icon": "limo",
-                        "color": "yellow",
-                        "defaultAttibutesId": "f6fa7232-5d5c-4cfe-9a01-d62711a4f3fd",
+                        "id": "50ba30b7-90d4-4855-b305-dad05c39a52b",
+                        "slug": "laundry-weight",
+                        "color": "turquoise",
+                        "icon": "cleaning",
+                        "defaultAttibutesId": "2764eeaa-90f6-4b2e-bed7-8134e9bcdaa9",
                         "attributes": {
                             "fr": {
-                                "id": "f6fa7232-5d5c-4cfe-9a01-d62711a4f3fd",
-                                "name": "Limousine"
+                                "id": "2764eeaa-90f6-4b2e-bed7-8134e9bcdaa9",
+                                "name": "Au kilo"
                             },
                             "en": {
-                                "id": "76e2f831-59a2-42b8-92f6-e7cdc144a709",
-                                "name": "Limousine"
+                                "id": "48f6b4b1-5743-464b-b608-9d8105d95d20",
+                                "name": "By weight"
                             }
                         }
                     },
                     {
-                        "id": "5ee8961f-97cb-4fad-bfab-66a0d280d234",
-                        "slug": "drive-van",
-                        "color": "yellow",
-                        "icon": "van",
-                        "defaultAttibutesId": "5b29f9d9-d536-462c-9bc1-4f700c1b7206",
+                        "id": "a7027087-fc2d-487e-9c44-9e194a8ce57a",
+                        "slug": "laundry-bedding",
+                        "color": "turquoise",
+                        "icon": "cleaning",
+                        "defaultAttibutesId": "15b592e6-08d6-455d-8a76-4f191d48ce02",
                         "attributes": {
                             "fr": {
-                                "id": "5b29f9d9-d536-462c-9bc1-4f700c1b7206",
-                                "name": "Van"
+                                "id": "15b592e6-08d6-455d-8a76-4f191d48ce02",
+                                "name": "Literie"
                             },
                             "en": {
-                                "id": "1b1b0e60-b437-408d-966e-4cf97048dbf6",
-                                "name": "Van"
+                                "id": "dd10f55e-70f9-4c4b-a01a-0cf48645a468",
+                                "name": "Bedding"
                             }
                         }
                     },
                     {
-                        "id": "0a29ea8c-91ae-4dd0-8829-5eb0c3d18b72",
-                        "slug": "drive-moto",
-                        "color": "yellow",
-                        "icon": "moto",
-                        "defaultAttibutesId": "90faa286-49eb-4ff1-9b0b-e064d218ec92",
+                        "id": "ea960a43-943d-408c-877e-093ba24bbf31",
+                        "slug": "laundry-other",
+                        "color": "turquoise",
+                        "icon": "cleaning",
+                        "defaultAttibutesId": "15260b81-f6cd-411b-ab9c-9e3a350f090f",
                         "attributes": {
                             "fr": {
-                                "id": "90faa286-49eb-4ff1-9b0b-e064d218ec92",
-                                "name": "Transport moto"
+                                "id": "15260b81-f6cd-411b-ab9c-9e3a350f090f",
+                                "name": "Autre"
                             },
                             "en": {
-                                "id": "006cdc17-d667-458a-8518-8f300616d8ba",
-                                "name": "Moto"
+                                "id": "27f6847a-9a8e-492c-a954-450dffce5193",
+                                "name": "Other"
                             }
                         }
                     }
                 ]
             },
             {
-                "id": "9e3bc047-194b-4a94-9405-ba8639ed956d",
-                "slug": "modern-majordome",
-                "color": "green",
+                "id": "446ee593-d083-49ac-ab73-d30ab7ec7685",
+                "slug": "hairdresser",
+                "color": "red",
                 "ordinalPosition": 2,
-                "defaultAttibutesId": "5aad4099-affb-4ca7-9ff1-c98c3e3fd5a2",
+                "defaultAttibutesId": "2500f390-2b0f-40cd-bb85-ddeed76827f3",
                 "attributes": {
                     "fr": {
-                        "id": "5aad4099-affb-4ca7-9ff1-c98c3e3fd5a2",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                        "name": "Majordome"
+                        "id": "2500f390-2b0f-40cd-bb85-ddeed76827f3",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                        "name": "Coiffure"
                     },
                     "en": {
-                        "id": "13053aea-85fc-46c9-85a1-50cefda095b1",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majordome-green.png",
-                        "name": "Butler"
+                        "id": "db53e137-1ff9-4aef-be3f-31f280d9b201",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
+                        "name": "Hairdresser"
                     }
                 },
                 "services": [
                     {
-                        "id": "64245ce4-b8aa-4c8e-be0d-525121078d92",
-                        "slug": "amateur-cook",
-                        "color": "green",
-                        "icon": "cook",
-                        "defaultAttibutesId": "fc859728-3a0f-4068-ac0e-dde630643728",
+                        "id": "66409721-b658-4f78-878c-cebdc7de1279",
+                        "slug": "hairdresser-man",
+                        "color": "red",
+                        "icon": "haircut",
+                        "defaultAttibutesId": "b9167637-934b-4c6b-8945-da9ce715700f",
                         "attributes": {
                             "fr": {
-                                "id": "fc859728-3a0f-4068-ac0e-dde630643728",
-                                "name": "Cusinier amateur"
+                                "id": "b9167637-934b-4c6b-8945-da9ce715700f",
+                                "name": "Coupe homme"
                             },
                             "en": {
-                                "id": "263e1ab1-5ea8-42cd-a8db-36423edecb5b",
-                                "name": "Amateur cook"
+                                "id": "1106bb31-1bf2-4f1e-af4b-4d1e7db12c09",
+                                "name": "Men's haircut"
                             }
                         }
                     },
                     {
-                        "id": "6256394b-6da4-4a49-a285-f602660082cd",
-                        "slug": "carless-driver",
-                        "color": "green",
-                        "icon": "driver",
-                        "defaultAttibutesId": "76fe09fd-9635-48f8-8777-25183339b76f",
+                        "id": "7f97a16c-8cd2-47d7-b9d1-815b70a9172d",
+                        "slug": "hairdresser-woman",
+                        "color": "red",
+                        "icon": "haircut",
+                        "defaultAttibutesId": "abf6003a-867e-43bf-8e28-7f4ca44ff2a0",
                         "attributes": {
                             "fr": {
-                                "id": "76fe09fd-9635-48f8-8777-25183339b76f",
-                                "name": "Chauffeur sans voiture"
+                                "id": "abf6003a-867e-43bf-8e28-7f4ca44ff2a0",
+                                "name": "Coupe femme"
                             },
                             "en": {
-                                "id": "a90c979e-3f47-4144-b5d6-af304b1446f8",
-                                "name": "Driver without car"
+                                "id": "3296247c-bda4-4ed3-a54a-aa9bfedd3478",
+                                "name": "Women's cut"
                             }
                         }
                     },
                     {
-                        "id": "c8b26dfc-2bb1-4775-89f5-74c118c624a4",
-                        "slug": "administrative-assistant",
-                        "color": "green",
-                        "icon": "admin",
-                        "defaultAttibutesId": "11827416-4e34-4129-8228-6bc6fd0c748e",
+                        "id": "1a2b14a2-b619-43c7-9762-c7e40841ff65",
+                        "slug": "hairdresser-other",
+                        "color": "red",
+                        "icon": "haircut",
+                        "defaultAttibutesId": "408b193d-16f3-456d-8a5c-8298f03e5014",
                         "attributes": {
                             "fr": {
-                                "id": "11827416-4e34-4129-8228-6bc6fd0c748e",
-                                "name": "Assistant administratif"
+                                "id": "408b193d-16f3-456d-8a5c-8298f03e5014",
+                                "name": "Autre demande"
                             },
                             "en": {
-                                "id": "5c730dea-bd6b-40a5-a076-f4ddd5ff4d68",
-                                "name": "Administrative help"
-                            }
-                        }
-                    },
-                    {
-                        "id": "be68f17f-b945-4bb7-ad02-2a1a6d04f584",
-                        "slug": "house-tidy-up",
-                        "color": "green",
-                        "icon": "light-delivery",
-                        "defaultAttibutesId": "5707974a-a6d5-4b9a-8b36-da35d1d06c1d",
-                        "attributes": {
-                            "fr": {
-                                "id": "5707974a-a6d5-4b9a-8b36-da35d1d06c1d",
-                                "name": "Rangement maison"
-                            },
-                            "en": {
-                                "id": "d4deb7d4-f1a9-4ab6-89d8-4e925951c29e",
-                                "name": "House tidy up"
-                            }
-                        }
-                    },
-                    {
-                        "id": "eb82b17c-b56d-49b5-8625-8db1ca0f0374",
-                        "slug": "purchase-and-delivery",
-                        "color": "green",
-                        "icon": "delivery",
-                        "defaultAttibutesId": "6174f069-d6b0-48df-ac61-fa2b93784175",
-                        "attributes": {
-                            "fr": {
-                                "id": "6174f069-d6b0-48df-ac61-fa2b93784175",
-                                "name": "Achats & Livraisons"
-                            },
-                            "en": {
-                                "id": "52a733cb-f102-4a5f-b43b-24181ce96672",
-                                "name": "Purchase and delivery"
-                            }
-                        }
-                    },
-                    {
-                        "id": "443a4025-abb1-4b4d-ba20-4d64b5bddf91",
-                        "slug": "city-guide",
-                        "color": "green",
-                        "icon": "compass",
-                        "defaultAttibutesId": "3f8c32db-2e48-432a-a1b2-de0d1cbefc50",
-                        "attributes": {
-                            "fr": {
-                                "id": "3f8c32db-2e48-432a-a1b2-de0d1cbefc50",
-                                "name": "Guide touristique"
-                            },
-                            "en": {
-                                "id": "eec95a50-7d16-40ab-935b-d4431176a031",
-                                "name": "City guide"
-                            }
-                        }
-                    },
-                    {
-                        "id": "b916b08d-8142-4fb8-ae1f-1448ac4dd1f4",
-                        "slug": "pet-sitting",
-                        "color": "green",
-                        "icon": "animal",
-                        "defaultAttibutesId": "fbba81f2-71ff-4209-bc7d-967b8c2b32af",
-                        "attributes": {
-                            "fr": {
-                                "id": "fbba81f2-71ff-4209-bc7d-967b8c2b32af",
-                                "name": "Garde d'animaux"
-                            },
-                            "en": {
-                                "id": "98d311a7-0e84-4cd7-95e9-8b5582bd0e71",
-                                "name": "Pet sitting"
+                                "id": "87c03744-c426-4882-a70a-ab85adf06447",
+                                "name": "Other request"
                             }
                         }
                     }
                 ]
             },
             {
-                "id": "da0da76b-1738-422c-ad41-2360d8dd44c8",
+                "id": "1b711f37-16c0-47eb-9941-f8897f1b80f6",
                 "slug": "cleaning",
                 "color": "blue",
                 "ordinalPosition": 3,
-                "defaultAttibutesId": "2354c572-dcdd-4673-afc3-2150b60ab897",
+                "defaultAttibutesId": "878ccb8f-a2a3-4d9a-9319-7fa2699b95d4",
                 "attributes": {
                     "fr": {
-                        "id": "2354c572-dcdd-4673-afc3-2150b60ab897",
+                        "id": "878ccb8f-a2a3-4d9a-9319-7fa2699b95d4",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                         "name": "Nettoyage"
                     },
                     "en": {
-                        "id": "8816a3e6-03cc-4872-962a-32869673b209",
+                        "id": "ce729606-9a2d-4929-9804-f508421680b9",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/cleaning.png",
                         "name": "Cleaning"
                     }
                 },
                 "services": [
                     {
-                        "id": "a6b07812-efb5-469f-9cd9-e6bc898862ad",
+                        "id": "3786d9e0-bd92-4992-9823-2e8db5db597c",
                         "slug": "house-cleaning",
                         "color": "blue",
                         "icon": "house-cleaning",
-                        "defaultAttibutesId": "567c91b1-e6e0-439f-aa3d-d2213131d18b",
+                        "defaultAttibutesId": "bef73c6a-27e0-4491-bebe-507749684454",
                         "attributes": {
                             "fr": {
-                                "id": "567c91b1-e6e0-439f-aa3d-d2213131d18b",
-                                "name": "Nettoyage maison / appartement"
+                                "id": "bef73c6a-27e0-4491-bebe-507749684454",
+                                "name": "À la maison"
                             },
                             "en": {
-                                "id": "b269c9ff-6d4d-48a2-8f93-5538e3f580f0",
-                                "name": "House cleaning"
+                                "id": "24e30596-0250-4846-b132-1593ababa55e",
+                                "name": "At home"
                             }
                         }
                     },
+
                     {
-                        "id": "4c9bee59-09d0-4ca0-8f4d-dfbad7b12dda",
-                        "slug": "car-washing",
+                        "id": "910de7e4-6e98-4a61-a39a-ba00670f2004",
+                        "slug": "office-cleaning",
                         "color": "blue",
-                        "icon": "car",
-                        "defaultAttibutesId": "33389131-0175-4e87-b998-778c9ef9a142",
+                        "icon": "admin",
+                        "defaultAttibutesId": "faa398ad-7661-4452-9f36-4d591bd2e6c0",
                         "attributes": {
                             "fr": {
-                                "id": "33389131-0175-4e87-b998-778c9ef9a142",
-                                "name": "Nettoyage voiture"
+                                "id": "faa398ad-7661-4452-9f36-4d591bd2e6c0",
+                                "name": "Au bureau"
                             },
                             "en": {
-                                "id": "4bf1ffd1-e706-4ddc-85e3-b85a1bf12d6d",
-                                "name": "Car washing"
-                            }
-                        }
-                    },
-                    {
-                        "id": "75bf4cf8-d7f1-4f35-8574-033a7d73d4f3",
-                        "slug": "swimming-pool-cleaning",
-                        "color": "blue",
-                        "icon": "swimming-pool",
-                        "defaultAttibutesId": "bd802b15-ec27-4f97-9020-711b63d36699",
-                        "attributes": {
-                            "fr": {
-                                "id": "bd802b15-ec27-4f97-9020-711b63d36699",
-                                "name": "Nettoyage piscine"
-                            },
-                            "en": {
-                                "id": "0116b255-01fd-4923-b579-185642c72fe1",
-                                "name": "Swimming pool cleaning"
+                                "id": "04a13496-03d8-4d43-9e5d-ec08a84cbfa7",
+                                "name": "In the office"
                             }
                         }
                     }
                 ]
             },
             {
-                "id": "31468dba-2b3a-48d3-9414-591426267346",
-                "slug": "technology",
-                "color": "purple",
+                "id": "ee4be025-0757-4d43-96f1-dbe14bdced7e",
+                "slug": "gardening",
+                "color": "green",
                 "ordinalPosition": 4,
-                "defaultAttibutesId": "401fdebd-7702-430a-97be-e53ad6a85a64",
+                "defaultAttibutesId": "3e9cd994-09f0-4f4a-98b5-a29287c840e3",
                 "attributes": {
                     "fr": {
-                        "id": "401fdebd-7702-430a-97be-e53ad6a85a64",
-                        "name": "Technologie"
+                        "id": "3e9cd994-09f0-4f4a-98b5-a29287c840e3",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
+                        "name": "Jardinage"
                     },
                     "en": {
-                        "id": "284d638c-654c-4137-aa8c-d62a7121fed0",
-                        "name": "Technology"
+                        "id": "99643445-a0bb-4149-b51e-91426425b1a5",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/outdoor.png",
+                        "name": "Gardening"
                     }
                 },
                 "services": [
                     {
-                        "id": "c4a8eeda-d916-4da3-824f-3b341d4ad202",
-                        "slug": "home-appliance",
-                        "color": "purple",
-                        "icon": "home-appliance",
-                        "defaultAttibutesId": "3c1f0867-66a4-4480-b7d9-f9eebc6824d0",
+                        "id": "4c305a39-e173-4aaa-a00a-6e5019879a26",
+                        "slug": "gardening-lawn",
+                        "color": "green",
+                        "icon": "gardening",
+                        "defaultAttibutesId": "4017da4d-1257-4a17-baaf-2ce162767f89",
                         "attributes": {
                             "fr": {
-                                "id": "3c1f0867-66a4-4480-b7d9-f9eebc6824d0",
-                                "name": "Électroménager"
+                                "id": "4017da4d-1257-4a17-baaf-2ce162767f89",
+                                "name": "Pelouse"
                             },
                             "en": {
-                                "id": "549614f4-8d05-41ae-b591-b3ff3a66c2c8",
-                                "name": "Home appliance"
+                                "id": "864304f3-c1b4-4c4d-ac82-77be227fcd18",
+                                "name": "Lawn"
                             }
                         }
                     },
                     {
-                        "id": "c1593db4-71cf-49a2-b192-36ca6135fe0a",
-                        "slug": "electronics",
-                        "color": "purple",
-                        "icon": "elec",
-                        "defaultAttibutesId": "422a02ac-3ff0-4620-b35e-3d5b16a614a1",
+                        "id": "91158981-4960-44cb-bc01-b5b5275a7b43",
+                        "slug": "gardening-hedge",
+                        "color": "green",
+                        "icon": "gardening",
+                        "defaultAttibutesId": "08e9e291-d063-4734-9da8-4e9558910d47",
                         "attributes": {
                             "fr": {
-                                "id": "422a02ac-3ff0-4620-b35e-3d5b16a614a1",
-                                "name": "Électronique"
+                                "id": "08e9e291-d063-4734-9da8-4e9558910d47",
+                                "name": "Haie"
                             },
                             "en": {
-                                "id": "d8af3e56-17f8-4c03-b200-662a3ad7d2e9",
-                                "name": "Electronics"
+                                "id": "3c8da456-a159-4011-958a-7b77535d6bb2",
+                                "name": "Hedge"
                             }
                         }
                     },
                     {
-                        "id": "4b288541-b0bf-4771-a3f5-9e072d704c15",
-                        "slug": "computers",
-                        "color": "purple",
-                        "icon": "computer",
-                        "defaultAttibutesId": "ba296a89-ccd4-487a-be24-f26e291c792a",
+                        "id": "1d56c916-3a5d-4556-9267-30b838650b40",
+                        "slug": "gardening-help",
+                        "color": "green",
+                        "icon": "gardening",
+                        "defaultAttibutesId": "0d06213c-e02b-4dd4-ab9e-1ce6d7ece03b",
                         "attributes": {
                             "fr": {
-                                "id": "ba296a89-ccd4-487a-be24-f26e291c792a",
-                                "name": "Informatique"
+                                "id": "0d06213c-e02b-4dd4-ab9e-1ce6d7ece03b",
+                                "name": "Aide auxiliaire"
                             },
                             "en": {
-                                "id": "fd71d74c-f716-4142-8d25-c57495e9f30d",
-                                "name": "Computers"
+                                "id": "e7a1da56-8325-4acc-8133-d8376e61a688",
+                                "name": "Auxiliary help"
+                            }
+                        }
+                    },
+                    {
+                        "id": "962e5cb8-3f77-4302-86ec-96e519ba13f5",
+                        "slug": "gardening-other",
+                        "color": "green",
+                        "icon": "gardening",
+                        "defaultAttibutesId": "53bb57c6-9a22-46d3-92e7-ca0a6e6ad211",
+                        "attributes": {
+                            "fr": {
+                                "id": "53bb57c6-9a22-46d3-92e7-ca0a6e6ad211",
+                                "name": "Autre demande"
+                            },
+                            "en": {
+                                "id": "64da8807-9257-427f-87c6-54310bae0f7a",
+                                "name": "Other request"
                             }
                         }
                     }
+
                 ]
             },
             {
-                "id": "cb429a40-1cd2-4354-9293-416ff9571271",
-                "slug": "beauty",
-                "color": "red",
-                "ordinalPosition": 6,
-                "defaultAttibutesId": "19711035-4f49-46e1-a9b2-32564aef0815",
+                "id": "fa2e8578-47d6-4979-9fbf-51cd3f58b6dc",
+                "slug": "animals",
+                "color": "yellow",
+                "ordinalPosition": 5,
+                "defaultAttibutesId": "fbd9ecab-e080-4722-87c7-f6be0a3d47c4",
                 "attributes": {
                     "fr": {
-                        "id": "19711035-4f49-46e1-a9b2-32564aef0815",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauté"
+                        "id": "fbd9ecab-e080-4722-87c7-f6be0a3d47c4",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/animals.png",
+                        "name": "Animaux"
                     },
                     "en": {
-                        "id": "7733c92b-12ac-4e3d-b479-3a6bf9022de6",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/beauty.png",
-                        "name": "Beauty"
+                        "id": "2bd12ee5-47fd-4786-8731-489c0a0bb6d6",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/animals.png",
+                        "name": "Animals"
                     }
                 },
                 "services": [
                     {
-                        "id": "853e570c-3e6e-48f9-89df-4d4f0f2e4a5a",
-                        "slug": "makeup",
-                        "color": "red",
-                        "icon": "makeup",
-                        "defaultAttibutesId": "7413c8da-647c-4be1-8733-246b80e4d396",
-                        "attributes": {
-                            "fr": {
-                                "id": "7413c8da-647c-4be1-8733-246b80e4d396",
-                                "name": "Maquillage"
-                            },
-                            "en": {
-                                "id": "4727f73b-2202-412f-805d-fc517eeacd9a",
-                                "name": "Makeup"
-                            }
-                        }
-                    },
-                    {
-                        "id": "14c6ed7e-5d41-470a-adfe-cee66efec04d",
-                        "slug": "manucure",
-                        "color": "red",
-                        "icon": "manucure",
-                        "defaultAttibutesId": "84aad0ba-c09d-446b-833c-7c835302816e",
-                        "attributes": {
-                            "fr": {
-                                "id": "84aad0ba-c09d-446b-833c-7c835302816e",
-                                "name": "Manucure"
-                            },
-                            "en": {
-                                "id": "5a3ab5ec-6dda-435b-bf12-9ad2a04021be",
-                                "name": "Manucure"
-                            }
-                        }
-                    },
-                    {
-                        "id": "32f8d4f2-e3d2-4d48-b82e-d0f2ce401a0b",
-                        "slug": "pedicure",
-                        "color": "red",
-                        "icon": "pedicure",
-                        "defaultAttibutesId": "cb810858-5104-407d-a48c-8e3971620c55",
-                        "attributes": {
-                            "fr": {
-                                "id": "cb810858-5104-407d-a48c-8e3971620c55",
-                                "name": "Pédicure"
-                            },
-                            "en": {
-                                "id": "082ddeaa-8bb7-491d-827d-6dcdd08969ec",
-                                "name": "Pedicure"
-                            }
-                        }
-                    },
-                    {
-                        "id": "4d469d01-279c-4997-a9a5-f1b856c734b8",
-                        "slug": "hairstyle",
-                        "color": "red",
+                        "id": "98d2978b-aa36-423b-a0b4-acdcfc7a7437",
+                        "slug": "animals-grooming",
+                        "color": "yellow",
                         "icon": "haircut",
-                        "defaultAttibutesId": "0975208b-67bd-4889-9d30-45eb57896d9a",
+                        "defaultAttibutesId": "21d03efe-89aa-417f-89fa-0e82e4f1da32",
                         "attributes": {
                             "fr": {
-                                "id": "0975208b-67bd-4889-9d30-45eb57896d9a",
-                                "name": "Coiffure"
+                                "id": "21d03efe-89aa-417f-89fa-0e82e4f1da32",
+                                "name": "Toilettage"
                             },
                             "en": {
-                                "id": "bbb98bd3-a2d9-4668-bfda-c4607f04e5a6",
-                                "name": "Hairdresser"
+                                "id": "6e55c8e8-2673-43d6-b5eb-e572ded63499",
+                                "name": "Grooming"
                             }
                         }
                     },
                     {
-                        "id": "9264a568-1a1b-4c99-b9be-4577387d32c9",
-                        "slug": "waxing",
-                        "color": "red",
-                        "icon": "waxing",
-                        "defaultAttibutesId": "de0f9925-40be-4412-9e94-1bda4b592169",
+                        "id": "71a38e7e-2762-4f10-901a-18af21289ecb",
+                        "slug": "animals-walk",
+                        "color": "yellow",
+                        "icon": "compass",
+                        "defaultattibutesid": "0576374f-8c2f-4109-80fc-f57313b12e79",
                         "attributes": {
                             "fr": {
-                                "id": "de0f9925-40be-4412-9e94-1bda4b592169",
-                                "name": "Épilation"
+                                "id": "0576374f-8c2f-4109-80fc-f57313b12e79",
+                                "name": "Promenade"
                             },
                             "en": {
-                                "id": "119eff39-61da-40d1-831e-d91d89801dfd",
-                                "name": "Waxing"
+                                "id": "b17cbd97-ef2f-421a-9434-7870a3df0420",
+                                "name": "Walk"
+                            }
+                        }
+                    },
+                    {
+                        "id": "6d101825-5d2a-4074-a7dd-355eed333bec",
+                        "slug": "animals-other",
+                        "color": "yellow",
+                        "icon": "animal",
+                        "defaultattibutesid": "db1d8480-1634-44ed-a146-36d6cf29b39d",
+                        "attributes": {
+                            "fr": {
+                                "id": "db1d8480-1634-44ed-a146-36d6cf29b39d",
+                                "name": "Autre demande"
+                            },
+                            "en": {
+                                "id": "6bf34310-8b28-4611-9463-e47804f31058",
+                                "name": "Other request"
                             }
                         }
                     }
                 ]
             },
             {
-                "id": "c86f2d67-9a24-4a7b-8b02-4cfdbfe77832",
-                "slug": "coach-and-wellness",
-                "color": "turquoise",
-                "ordinalPosition": 7,
-                "defaultAttibutesId": "eac2c9c1-9c4d-406b-9a65-b0c1c69cfd99",
+                "id": "5ac16e3e-5729-4ff8-b51c-dc8b9655538c",
+                "slug": "other",
+                "color": "purple",
+                "ordinalPosition": 6,
+                "defaultAttibutesId": "b62994a5-e250-48b0-b36f-eada127c6971",
                 "attributes": {
                     "fr": {
-                        "id": "eac2c9c1-9c4d-406b-9a65-b0c1c69cfd99",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Bien-être"
+                        "id": "b62994a5-e250-48b0-b36f-eada127c6971",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
+                        "name": "Autre demande"
                     },
                     "en": {
-                        "id": "86c1f9d2-1ddf-4afb-b28e-a32cc24c8a6e",
-                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/wellness-turquoise.png",
-                        "name": "Wellness"
+                        "id": "4c4e1dcf-473f-4364-9225-58376ac8aee2",
+                        "icon": "https://jffr.ams3.cdn.digitaloceanspaces.com/assets/categories/majorodme.png",
+                        "name": "Other request"
                     }
                 },
                 "services": [
                     {
-                        "id": "b606ffa4-d33d-4a67-824f-46ee1c84734b",
-                        "slug": "sport",
-                        "color": "turquoise",
-                        "icon": "personal-trainer",
-                        "defaultAttibutesId": "e200fa3c-55d1-4d1b-8e94-bce9d7f7e7a4",
+                        "id": "1797a1cb-bd02-4030-b111-9ce1e131e91c",
+                        "slug": "other-request",
+                        "color": "purple",
+                        "icon": "food-delivery",
+                        "defaultAttibutesId": "37acb9ab-66e2-441a-9840-81cc15a78695",
                         "attributes": {
                             "fr": {
-                                "id": "e200fa3c-55d1-4d1b-8e94-bce9d7f7e7a4",
-                                "name": "Sport"
+                                "id": "37acb9ab-66e2-441a-9840-81cc15a78695",
+                                "name": "Demandez-nous n’importe quoi"
                             },
                             "en": {
-                                "id": "979407ed-e654-4131-b703-c6b4bb3e6665",
-                                "name": "Sport"
-                            }
-                        }
-                    },
-                    {
-                        "id": "ad473797-8714-4339-8861-7cea0df74e16",
-                        "slug": "yoga",
-                        "color": "turquoise",
-                        "icon": "yoga",
-                        "defaultAttibutesId": "0c971b49-bfc3-47b2-ba1d-c63676e93eed",
-                        "attributes": {
-                            "fr": {
-                                "id": "0c971b49-bfc3-47b2-ba1d-c63676e93eed",
-                                "name": "Yoga"
-                            },
-                            "en": {
-                                "id": "b7397cc1-715c-49fa-b38c-26ddafb93b9a",
-                                "name": "Yoga"
-                            }
-                        }
-                    },
-                    {
-                        "id": "c4257394-75fb-4e60-8af6-90cdba77371b",
-                        "slug": "perosnal-trainer",
-                        "color": "turquoise",
-                        "icon": "personal-trainer",
-                        "defaultAttibutesId": "4111215d-8a1e-4d06-848e-69be78e13f66",
-                        "attributes": {
-                            "fr": {
-                                "id": "4111215d-8a1e-4d06-848e-69be78e13f66",
-                                "name": "Coach personnel"
-                            },
-                            "en": {
-                                "id": "1aeb7de5-99f2-4221-afbd-5c0d00029e3a",
-                                "name": "Personal trainer"
-                            }
-                        }
-                    },
-                    {
-                        "id": "f2a19434-5b0c-4995-ae01-a96fea638942",
-                        "slug": "massage",
-                        "color": "turquoise",
-                        "icon": "massage",
-                        "defaultAttibutesId": "6b8d4ce9-ab88-40f1-afef-dbb18e36b93e",
-                        "attributes": {
-                            "fr": {
-                                "id": "6b8d4ce9-ab88-40f1-afef-dbb18e36b93e",
-                                "name": "Massage"
-                            },
-                            "en": {
-                                "id": "e56aeb0d-8f36-4483-beed-df52363672ce",
-                                "name": "Massage"
+                                "id": "5df942b3-1ef2-4026-a8b6-404b6b71073c",
+                                "name": "Ask us anything"
                             }
                         }
                     }
