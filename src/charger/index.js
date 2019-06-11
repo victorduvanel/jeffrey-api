@@ -158,7 +158,8 @@ export const payoutAlert = async () => {
          missions.price,
          missions.price_currency,
          missions.started_date,
-         missions.ended_date
+         missions.ended_date,
+         missions.type
        from missions
        left join users as providers on missions.provider_id = providers.id
        left join users as clients on missions.client_id = clients.id
@@ -170,13 +171,22 @@ export const payoutAlert = async () => {
       { currency }
     )
     .then(res => {
-      const rows = res.rows.map(row => {
-        return {
-          ...row,
-          length: row.length * 1000,
-          price: row.price / 100,
-          totalCost: Mission.computeMissionTotalCost(row.started_date, row.ended_date, row.price) / 100
-        };
+      const rows = res.rows.map((row) => {
+        if (row.type === 'hourly-rate') {
+          return {
+            ...row,
+            length: row.length * 1000,
+            price: row.price / 100,
+            totalCost: Mission.computeMissionTotalCost(row.started_date, row.ended_date, row.price) / 100
+          };
+        } else {
+          return {
+            ...row,
+            length: row.length * 1000,
+            price: row.price / 100,
+            totalCost: row.price / 100
+          };
+        }
       });
 
       const total = rows.reduce((total, mission) => total + mission.totalCost, 0);

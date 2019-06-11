@@ -29,6 +29,7 @@ type Mission {
   canceledBy: String
   client: User
   provider: User
+  type: MissionType
   # description: String
   # paymentMethod: String
   price: Int!

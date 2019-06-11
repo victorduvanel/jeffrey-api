@@ -130,11 +130,13 @@ const Mission = Base.extend({
   },
 
   totalCost() {
+    if (this.get('type') === 'fixed-price') {
+      return this.get('price');
+    }
+
     if (!this.get('startedDate') || !this.get('endedDate') || !this.get('price')) {
       return null;
     }
-
-
 
     return Mission.computeMissionTotalCost(this.get('startedDate'), this.get('endedDate'), this.get('price'));
   },
@@ -415,8 +417,8 @@ const Mission = Base.extend({
     client,
     serviceCategory,
     type,
-    description = null,
-    paymentMethod = null,
+    // description = null,
+    // paymentMethod = null,
     lat = null,
     lng = null,
     location = null
@@ -435,8 +437,8 @@ const Mission = Base.extend({
         serviceCategoryId: serviceCategory.get('id'),
         type,
         status: 'pending',
-        description,
-        paymentMethod,
+        // description,
+        // paymentMethod,
         lat,
         lng,
         location

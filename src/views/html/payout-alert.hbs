@@ -149,7 +149,8 @@
                     <th scope="col">Provider</th>
                     <th scope="col">Customer</th>
                     <th scope="col">Length</th>
-                    <th scope="col">Cost (per hour)</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Unit cost</th>
                     <th scope="col">Total cost</th>
                   </tr>
                 </thead>
@@ -162,6 +163,7 @@
                       <td>{{ provider }}</td>
                       <td>{{ client }}</td>
                       <td>{{duration length}}</td>
+                      <td>{{ type }}</td>
                       <td>
                         {{formatNumber
                           price

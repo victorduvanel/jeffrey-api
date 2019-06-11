@@ -29,23 +29,21 @@ const ServiceCategory = Base.extend({
       .fetchAll();
   },
 
-  async avgPrice() {
-    const res = await bookshelf.knex
-      .avg('price')
-      .select('currency')
-      .groupBy('currency')
-      .from('provider_prices')
-      .where('service_category_id', this.id);
-
-    if (res.length && res[0].avg) {
-      return {
-        amount: parseInt(res[0].avg, 10),
-        currency: res[0].currency
-      };
-    }
-
-    return null;
-  },
+  // async avgPrice() {
+  //   const res = await bookshelf.knex
+  //     .avg('price')
+  //     .select('currency')
+  //     .groupBy('currency')
+  //     .from('provider_prices')
+  //     .where('service_category_id', this.id);
+  //   if (res.length && res[0].avg) {
+  //     return {
+  //       amount: parseInt(res[0].avg, 10),
+  //       currency: res[0].currency
+  //     };
+  //   }
+  //   return null;
+  // },
 
   color() {
     return this.get('color');
