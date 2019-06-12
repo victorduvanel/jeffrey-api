@@ -27,7 +27,10 @@ export default () => {
       console.error(err);
       throw err;
       return err;
-    }
+    },
+
+    introspection: true,
+    playground: true
   });
   return server;
 };
