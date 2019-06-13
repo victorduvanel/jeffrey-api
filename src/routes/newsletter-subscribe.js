@@ -1,17 +1,17 @@
 import bodyParser from 'body-parser';
-import recaptcha from '../services/recaptcha';
+// import recaptcha from '../services/recaptcha';
 import mailjet from '../services/mailjet';
 
 export const post = [
   bodyParser.json(),
 
   async (req, res) => {
-    const { token, email } = req.body;
+    const { /* token, */ email } = req.body;
 
     try {
-      const captchaRes = await recaptcha(token, req.ip);
+      // const captchaRes = await recaptcha(token, req.ip);
 
-      if (captchaRes.score > 0.4) {
+      // if (captchaRes.score > 0.4) {
         await mailjet
           .post('contact')
           .action('managemanycontacts')
@@ -28,7 +28,7 @@ export const post = [
               }
             ]
           });
-      }
+      // }
 
       res.send({
         success: true

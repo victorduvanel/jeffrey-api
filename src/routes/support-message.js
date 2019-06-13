@@ -1,5 +1,5 @@
 import bodyParser from 'body-parser';
-import recaptcha from '../services/recaptcha';
+// import recaptcha from '../services/recaptcha';
 import { sendEmail } from '../services/mailgun';
 import { render } from '../services/handlebars';
 
@@ -7,11 +7,11 @@ export const post = [
   bodyParser.json(),
 
   async (req, res) => {
-    const { token, email, firstName, lastName, message } = req.body;
+    const { /* token, */ email, firstName, lastName, message } = req.body;
 
-    const captchaRes = await recaptcha(token, req.ip);
+    // const captchaRes = await recaptcha(token, req.ip);
 
-    if (captchaRes.score > 0.4) {
+    // if (captchaRes.score > 0.4) {
       const content = await render('html/contact-message', {
         email,
         firstName,
@@ -31,7 +31,7 @@ export const post = [
         success: true
       });
       return;
-    }
+    // }
 
     res.send({
       success: false
