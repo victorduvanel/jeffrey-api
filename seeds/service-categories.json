@@ -1533,7 +1533,7 @@
                         "slug": "animals-walk",
                         "color": "yellow",
                         "icon": "compass",
-                        "defaultattibutesid": "0576374f-8c2f-4109-80fc-f57313b12e79",
+                        "defaultAttibutesId": "0576374f-8c2f-4109-80fc-f57313b12e79",
                         "attributes": {
                             "fr": {
                                 "id": "0576374f-8c2f-4109-80fc-f57313b12e79",
@@ -1550,7 +1550,7 @@
                         "slug": "animals-other",
                         "color": "yellow",
                         "icon": "animal",
-                        "defaultattibutesid": "db1d8480-1634-44ed-a146-36d6cf29b39d",
+                        "defaultAttibutesId": "db1d8480-1634-44ed-a146-36d6cf29b39d",
                         "attributes": {
                             "fr": {
                                 "id": "db1d8480-1634-44ed-a146-36d6cf29b39d",
