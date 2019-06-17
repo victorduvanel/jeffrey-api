@@ -1,25 +1,25 @@
 import _ from 'lodash';
 import 'babel-polyfill';
 
-import chalk                           from 'chalk';
-import http                            from 'http';
-import express                         from 'express';
-import Promise                         from 'bluebird';
+import chalk from 'chalk';
+import http from 'http';
+import express from 'express';
+import Promise from 'bluebird';
 
-import { ApolloEngine }                from 'apollo-engine';
+import { ApolloEngine } from 'apollo-engine';
 
-import config                          from './config';
-import routes                          from './routes';
+import config from './config';
+import routes from './routes';
 
-import { subscriptionServer }          from './services/graphql';
+import { subscriptionServer } from './services/graphql';
 
-import logger                          from './middlewares/logger';
-import i18n                            from './middlewares/i18n';
-import corsPolicy                      from './middlewares/cors-policy';
-import notFound                        from './middlewares/not-found';
-import errorHandler                    from './middlewares/error-handler';
-import rateLimiter                     from './middlewares/rate-limiter';
-import { router, get, post }           from './middlewares/router';
+import logger from './middlewares/logger';
+import i18n from './middlewares/i18n';
+import corsPolicy from './middlewares/cors-policy';
+import notFound from './middlewares/not-found';
+import errorHandler from './middlewares/error-handler';
+import rateLimiter from './middlewares/rate-limiter';
+import { router, get, post } from './middlewares/router';
 import graphqServer, { middlewares as graphqlMiddlewares } from './routes/graphql';
 
 import './graphql/types';
@@ -27,8 +27,8 @@ import './graphql/mutations';
 import './graphql/subscriptions';
 import './graphql/queries';
 
-import locales                         from './locales';
-import { loadLocale }                  from './lib/i18n';
+import locales from './locales';
+import { loadLocale } from './lib/i18n';
 
 _.forEach(locales, (messages, locale) => {
   loadLocale(locale, messages);
@@ -58,12 +58,6 @@ httpServer.on('request', app);
 subscriptionServer(httpServer);
 
 // ROUTES
-get('/', async (req, res) => {
-  res.send({
-    hello: 'world'
-  });
-});
-
 post('/notify/message', routes.notify.message.post);
 post('/notify/unread-conversations', routes.notify.unreadConversations.post);
 
@@ -74,10 +68,6 @@ post('/payout-alert', routes.payoutAlert.post);
 
 post('/cron', routes.cron.post);
 
-// post('/ping', routes.ping.post);
-
-post('/signup', routes.signup.post);
-
 get('/me', routes.me.get);
 post('/me', routes.me.post);
 
@@ -87,27 +77,12 @@ post('/login', routes.login.post);
 
 post('/oauth/token', routes.oauth.token.post);
 post('/oauth/revoke', routes.oauth.revoke.post);
-post('/oauth/single-use-token', routes.oauth.singleUseToken.post);
 
 post('/payment-methods', routes.paymentMethods.post);
 get('/payment-methods', routes.paymentMethods.get);
 
 post('/contact-details', routes.contactDetails.post);
 
-get('/messages', routes.messages.get);
-post('/messages', routes.messages.post);
-
-post('/reset-password', routes.resetPassword.post);
-get('/reset-password/:token', routes.resetPassword.get);
-
-get('/ms', routes.ms.get);
-get('/fixture/messages', routes.fixtureMessages.get);
-
-// post('/apple/ios-receipt', routes.apple.iosReceipt.post);
-// post('/apple/subscription-status', routes.apple.subscriptionStatus.post);
-
-// get('/app-link', routes.appLink.get);
-// get('/app-redirect/:action', routes.appRedirect.get);
 post('/profile-pic', routes.profilePic.post);
 post('/user-documents', routes.userDocuments.post);
 post('/user-device', routes.userDevice.post);
@@ -115,16 +90,10 @@ post('/user-device', routes.userDevice.post);
 post('/phone-number', routes.phoneNumber.post);
 post('/phone-number/verify', routes.phoneNumber.verify.post);
 
-// post('/tos', routes.tos.post);
-// post('/bank-accounts', routes.bankAccounts.post);
-// post('/providers', routes.providers.post);
-
 post('/stripe/webhook', routes.stripe.webhook.post);
 
 post('/newsletter-subscribe', routes.newsletterSubscribe.post);
 post('/support-message', routes.supportMessage.post);
-
-// get('/pay', routes.pay.get);
 
 get('/invoice/:missionId', routes.invoice.get);
 

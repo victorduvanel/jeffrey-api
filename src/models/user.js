@@ -1,28 +1,16 @@
 import Promise          from 'bluebird';
 import moment           from 'moment';
-import request          from 'request-promise';
-import nativeBcrypt     from 'bcryptjs';
 import uuid             from 'uuid/v4';
 import _                from 'lodash';
-
-// import buckets          from '../services/google/storage';
 import bookshelf        from '../services/bookshelf';
 import knex             from '../services/knex';
 import stripeSvc        from '../services/stripe';
-import braintree        from '../services/braintree';
-// import googleService    from '../services/google';
-import { sendEmail }    from '../services/mailjet';
-
-import { getLocale }    from '../locales';
-import i18n             from '../lib/i18n';
 
 import config           from '../config';
 
 import Base             from './base';
 import AccessToken      from './access-token';
-import LoginToken       from './login-token';
 import UserDocument     from './user-document';
-import ServiceCategory  from './service-category';
 import PostalAddress    from './postal-address';
 import Business         from './business';
 import Review           from './review';
@@ -31,19 +19,14 @@ import TOSAcceptance    from './tos-acceptance';
 import StripeAccount    from './stripe-account';
 import Country          from './country';
 
-import './adyen-card';
 import './postal-address';
 import './business';
-// import AppleIosReceipts from './apple-ios-receipt';
 
 import { Unauthorized } from '../graphql/errors';
 import { AppError}      from '../errors';
 
 export const InvalidCredentials = () => new AppError('Invalid Credentials');
 export const DuplicatedUser = () => new AppError('Duplicated User');
-export const PasswordComplexity = () => new AppError('PasswordComplexity');
-
-const bcrypt = Promise.promisifyAll(nativeBcrypt);
 
 const currentUserOnly = function(callback) {
   return function(_, { user }) {
@@ -69,37 +52,11 @@ const User = Base.extend({
     return this.hasMany('Review', 'author_id');
   },
 
-  AppleIosReceipts() {
-    return this.hasMany('AppleIosReceipt');
-  },
-
-  adyenCard() {
-    return this.hasMany('AdyenCard');
-  },
-
   stripeCard() {
     return this.hasMany('StripeCard');
   },
 
   /* GRAPHQL PROPS */
-
-  // async getSubscriptionStatus() {
-  //   const receipt = await AppleIosReceipts
-  //     .query((qb) => {
-  //       qb.where('user_id', this.get('id'));
-  //       qb.whereRaw('NOW() BETWEEN purchase_date and expires_date');
-  //     })
-  //     .fetch();
-
-  //   if (receipt) {
-  //     return 'ok';
-  //   }
-  //   return 'ko';
-  // },
-
-  // subscriptionStatus: currentUserOnly(function() {
-  //   return this.getSubscriptionStatus();
-  // }),
 
   async identifyDocuments() {
     const documents = UserDocument
@@ -110,15 +67,6 @@ const User = Base.extend({
       .fetchAll();
     return documents;
   },
-
-  unseenActivity: currentUserOnly(async function() {
-    const res = await knex('conversation_participants')
-      .where('user_id', this.get('id'))
-      .whereNotNull('last_unseen_activity_at')
-      .limit(1);
-
-    return res.length > 0;
-  }),
 
   async reviews() {
     const userId = this.id;
@@ -349,20 +297,6 @@ const User = Base.extend({
     }
   }),
 
-  livechatToken: currentUserOnly(async function() {
-    let livechatToken = this.get('livechatToken');
-
-    if (!livechatToken) {
-      const token = uuid().split('-').join('');
-      const rid = uuid().split('-').join('');
-
-      livechatToken = `${token}-${rid}`;
-      this.set('livechatToken', livechatToken);
-      await this.save();
-    }
-    return livechatToken;
-  }),
-
   lastActivityAt() {
     return this.get('lastActivityAt');
   },
@@ -383,20 +317,6 @@ const User = Base.extend({
       }
     }
     return null;
-  },
-
-  async braintreeCustomer() {
-    try {
-      return await braintree.customer.find(this.get('id'));
-    } catch (err) {
-      if (err.type === 'notFoundError') {
-        const res = await braintree.customer.create({
-          id: this.get('id')
-        });
-        return res.customer;
-      }
-      throw err;
-    }
   },
 
   async bankAccounts() {
@@ -546,8 +466,8 @@ const User = Base.extend({
     await stripe.accounts.update(stripeAccount.get('id'), accountAttributes);
   },
 
-  createAccessToken({ singleUse = false } = {}) {
-    return AccessToken.create({ user: this, singleUse });
+  createAccessToken() {
+    return AccessToken.create({ user: this });
   },
 
   bumpLastActivity() {
@@ -680,21 +600,6 @@ const User = Base.extend({
   },
 
 
-  async updatePassword(newPassword) {
-    const saltRounds = 10;
-
-    const checks = [/.{6,200}/, /[A-Z]/, /[a-z]/, /\d/];
-    const ok = !checks.find(test => !test.test(newPassword));
-
-    if (!ok) {
-      throw PasswordComplexity();
-    }
-
-    const hash = await bcrypt.hashAsync(newPassword, saltRounds);
-    this.set('password', hash);
-    await this.save();
-  },
-
   async stripeCustomer() {
     if (this.get('stripeCustomerId')) {
       return this.get('stripeCustomerId');
@@ -793,55 +698,6 @@ const User = Base.extend({
     }));
   },
 
-  async sendLoginEmail(rawLocale, uriPrefix) {
-    const locale = getLocale(rawLocale);
-    const emailAddress = this.get('email');
-    const loginToken = await LoginToken.create({ user: this });
-
-    const prefix = uriPrefix || `${config.webappProtocol}://${config.webappHost}/`;
-    const loginLink = `${prefix}login/${loginToken.get('id')}`;
-    const appRedirectLink = `${config.webappProtocol}://${config.webappHost}/app-link?link=${encodeURIComponent(loginLink)}`;
-
-    let templateId = i18n[locale].formatMessage({
-      id: 'emails.loginEmail.id',
-      defaultMessage: '601157'
-    });
-
-    templateId = parseInt(templateId, 10);
-
-    return sendEmail({
-      Messages: [{
-        TemplateID: templateId,
-        TemplateLanguage: true,
-        From: {
-          Email: i18n[locale].formatMessage({
-            id: 'emails.loginEmail.fromEmail',
-            defaultMessage: 'no-reply@jeffrey.app'
-          }),
-          Name: i18n[locale].formatMessage({
-            id: 'emails.loginEmail.fromName',
-            defaultMessage: 'Jeffrey'
-          })
-        },
-        To: [{
-          Email: emailAddress
-        }],
-        Subject: i18n[locale].formatMessage({
-          id: 'emails.loginEmail.subject',
-          defaultMessage: 'Jeffrey - Sign in',
-        }),
-        Variables: {
-          user: {
-            firstName: this.get('firstName'),
-            lastName: this.get('lastName'),
-            gender: this.get('gender')
-          },
-          loginLink: appRedirectLink
-        }
-      }]
-    });
-  },
-
   async getTokens() {
     const accessToken = await this.createAccessToken({});
 
@@ -849,101 +705,8 @@ const User = Base.extend({
       access_token: accessToken.get('token'),
       token_type: 'Bearer'
     };
-  },
-
-  toJSON() {
-    let attrs = Base.prototype.toJSON.apply(this, arguments);
-    delete attrs.password;
-    return attrs;
   }
 }, {
-  authenticate: async function({ email, password }) {
-    const user = await this.forge({ email }).fetch();
-
-    if (user && user.get('password') !== null) {
-      const passwordMatch = await bcrypt.compareAsync(password, user.get('password'));
-
-      if (passwordMatch) {
-        return user;
-      }
-    }
-
-    throw InvalidCredentials();
-  },
-
-  facebookAuthenticate: async function(token) {
-    const response = await request({
-      method: 'GET',
-      uri: 'https://graph.facebook.com/v3.1/me?fields=id,first_name,last_name,email',
-      auth: {
-        bearer: token
-      },
-      form: {
-        id_token: token
-      }
-    });
-
-    const facebookUser = JSON.parse(response);
-
-    let user = await this.forge({
-      facebookId: facebookUser.id
-    }).fetch();
-
-    if (user) {
-      if (facebookUser.email && !user.get('email')) {
-        user.set('email', facebookUser.email);
-      }
-
-      if (facebookUser.first_name && !user.get('firstName')) {
-        user.set('firstName', facebookUser.first_name);
-      }
-
-      if (facebookUser.last_name && !user.get('lastName')) {
-        user.set('lastName', facebookUser.last_name);
-      }
-
-      if (user.hasChanged()) {
-        await user.save();
-      }
-      return user;
-    }
-
-    if (facebookUser.email) {
-      user = await this.forge({ email: facebookUser.email }).fetch();
-
-      if (user) {
-        return user;
-      }
-    }
-
-    return this.create({
-      facebookId: facebookUser.id,
-      firstName: facebookUser.first_name,
-      lastName: facebookUser.last_name,
-      email: facebookUser.email
-    });
-  },
-
-  // googleAuthenticate: async function(token) {
-  //   const googleUser = await googleService.verifyToken(token);
-  //   const user = await this.forge({ googleId: googleUser.id }).fetch();
-
-  //   if (user) {
-  //     return user;
-  //   }
-
-  //   if (!googleUser.verified) {
-  //     throw new Error('User not verified');
-  //   }
-
-  //   return this.create({
-  //     googleId: googleUser.id,
-  //     email: googleUser.email,
-  //     firstName: googleUser.firstName,
-  //     lastName: googleUser.lastName
-  //   });
-  // },
-
   find: function(id) {
     return this.forge({ id }).fetch();
   },

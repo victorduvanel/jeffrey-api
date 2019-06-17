@@ -13,12 +13,12 @@ const AccessToken = Base.extend({
     return this.belongsTo('User');
   }
 }, {
-  create: async function({ user, singleUse }) {
+  create: async function({ user }) {
     const id = uuid.v4();
     const token = (await randomBytes(32)).toString('hex');
 
     return this.forge({
-      id, token, userId: user.get('id'), singleUse
+      id, token, userId: user.get('id')
     })
       .save(null, { method: 'insert' });
   },

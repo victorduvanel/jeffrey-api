@@ -5,34 +5,18 @@ const oauth2 = async (req) => {
   let accessToken;
 
   let authorization = req.get('authorization');
+  authorization = authorization.split(' ');
 
-  if (authorization) {
-    authorization = authorization.split(' ');
-
-    if (authorization[0] !== 'Bearer') {
-      throw Unauthorized;
-    }
-
-    authorization.shift();
-
-    const token = authorization.join();
-
-    accessToken = await AccessToken.find(token);
-  } else {
-    const token = req.query.access_token;
-
-    if (!token) {
-      throw Unauthorized;
-    }
-
-    accessToken = await AccessToken.find(token);
-
-    if (accessToken.get('singleUse')) {
-      await accessToken.destroy();
-    } else {
-      throw Unauthorized;
-    }
+  if (authorization[0] !== 'Bearer') {
+    throw Unauthorized;
   }
+
+  authorization.shift();
+
+  const token = authorization.join();
+
+
+  accessToken = await AccessToken.find(token);
 
   if (!accessToken) {
     throw Unauthorized;

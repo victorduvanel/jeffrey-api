@@ -2,13 +2,7 @@ function up(knex) {
   return knex.schema
     .createTable('users', (table) => {
       table.uuid('id').primary();
-      table.string('country');
-      table.string('email').unique();
-      table.string('google_id').unique();
-      table.string('facebook_id').unique();
       table.string('stripe_customer_id').unique();
-      table.string('password');
-      table.string('locale');
       table.enum('gender', ['male', 'female']);
       table.string('first_name');
       table.string('last_name');
@@ -26,7 +20,6 @@ function up(knex) {
         .references('postal_addresses.id')
         .onUpdate('CASCADE')
         .onDelete('RESTRICT');
-      table.string('livechat_token').unique();
       table.dateTime('created_at');
       table.dateTime('updated_at');
       table.dateTime('last_activity_at');

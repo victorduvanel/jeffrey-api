@@ -1,6 +1,7 @@
 function up(knex) {
-  return knex.schema.createTable('login_tokens', (table) => {
+  return knex.schema.createTable('access_tokens', (table) => {
     table.uuid('id').primary();
+    table.string('token').unique();
 
     table
       .uuid('user_id')
@@ -14,7 +15,7 @@ function up(knex) {
 }
 
 function down(knex) {
-  return knex.schema.dropTable('login_tokens');
+  return knex.schema.dropTable('access_tokens');
 }
 
 module.exports = { up, down };

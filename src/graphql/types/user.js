@@ -25,7 +25,6 @@ type UserColor {
 }
 type User {
   id: ID!
-  unseenActivity: Boolean
   isProvider: Boolean
   isAvailable: Boolean
   isTester: Boolean
@@ -53,7 +52,6 @@ type User {
   phoneNumber: String
   identityDocuments: [UserDocument]
   bankAccounts: BankAccount
-  livechatToken: String
   createdAt: Date!
   lastActivityAt: Date!
 }

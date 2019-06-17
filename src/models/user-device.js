@@ -2,7 +2,6 @@ import uuid        from 'uuid';
 import apn         from 'apn';
 import bookshelf   from '../services/bookshelf';
 import apnProvider from '../services/apn';
-import expo        from '../services/expo';
 import firebase    from '../services/firebase';
 import Base        from './base';
 
@@ -85,17 +84,6 @@ const UserDevice = Base.extend({
           }
         }
       } break;
-
-      case 'expo':
-        expo.sendPushNotificationAsync({
-          to: deviceToken,
-          sound: 'default',
-          body: notif.body,
-          data: {
-            withSome: 'data'
-          },
-        });
-        break;
     }
   }
 }, {

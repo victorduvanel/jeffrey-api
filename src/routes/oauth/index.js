@@ -1,5 +1,4 @@
-import * as token          from './token';
-import * as revoke         from './revoke';
-import * as singleUseToken from './single-use-token';
+import * as token from './token';
+import * as revoke from './revoke';
 
-export { token, revoke, singleUseToken };
+export { token, revoke };
