@@ -13,8 +13,6 @@ function up(knex) {
       table.boolean('is_provider');
       table.boolean('is_available');
       table.boolean('is_tester');
-      table.float('lat');
-      table.float('lng');
       table
         .uuid('postal_address_id')
         .references('postal_addresses.id')

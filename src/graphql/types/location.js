@@ -4,6 +4,7 @@ const def = `
   type Location {
     lat: Float!
     lng: Float!
+    description: String
   }
 `;
 

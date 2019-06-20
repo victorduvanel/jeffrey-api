@@ -305,6 +305,27 @@ const User = Base.extend({
     return this.get('createdAt');
   },
 
+  location: currentUserOnly(async function() {
+    const res = await knex('user_locations')
+      .select('lat', 'lng', 'description')
+      .where({
+        user_id: this.get('id')
+      })
+      .orderBy('timestamp', 'DESC')
+      .limit(1);
+
+    if (res.length) {
+      const [ location ] = res;
+
+      return {
+        lat: location.lat,
+        lng: location.lng,
+        description: location.description
+      };
+    }
+  }),
+
+
   /* !GRAPHQL PROPS */
 
   async country() {

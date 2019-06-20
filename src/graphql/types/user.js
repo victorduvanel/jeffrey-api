@@ -54,6 +54,7 @@ type User {
   bankAccounts: BankAccount
   createdAt: Date!
   lastActivityAt: Date!
+  location: Location
 }
 `;
 
