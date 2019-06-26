@@ -12,6 +12,9 @@ export const up = async (knex) => {
     table.string('description_locale');
     table.dateTime('timestamp');
 
+    table.string('country');
+    table.string('locality');
+
     table.dateTime('created_at');
   });
 };

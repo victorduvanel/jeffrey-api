@@ -3,10 +3,9 @@
     "name": "Taiwan",
     "code": "TW",
     "phone_code": 886,
-    "currency_code": "",
+    "currency_code": "TWD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddfc"
   },
   {
@@ -16,7 +15,6 @@
     "currency_code": "AFN",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddeb"
   },
   {
@@ -26,7 +24,6 @@
     "currency_code": "ALL",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddf1"
   },
   {
@@ -36,7 +33,6 @@
     "currency_code": "DZD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde9\ud83c\uddff"
   },
   {
@@ -46,7 +42,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddf8"
   },
   {
@@ -54,10 +49,10 @@
     "code": "AD",
     "phone_code": 376,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde6\ud83c\udde9"
+    "flag": "\ud83c\udde6\ud83c\udde9",
+    "is_eu": true
   },
   {
     "name": "Angola",
@@ -66,7 +61,6 @@
     "currency_code": "AOA",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddf4"
   },
   {
@@ -74,10 +68,10 @@
     "code": "AI",
     "phone_code": "1-264",
     "currency_code": "XCD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde6\ud83c\uddee"
+    "flag": "\ud83c\udde6\ud83c\uddee",
+    "is_eu": true
   },
   {
     "name": "Antarctica",
@@ -86,7 +80,6 @@
     "currency_code": "",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddf6"
   },
   {
@@ -96,7 +89,6 @@
     "currency_code": "XCD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddec"
   },
   {
@@ -106,7 +98,6 @@
     "currency_code": "ARS",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddf7"
   },
   {
@@ -116,7 +107,6 @@
     "currency_code": "AMD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddf2"
   },
   {
@@ -126,7 +116,6 @@
     "currency_code": "AWG",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddfc"
   },
   {
@@ -136,7 +125,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddfa"
   },
   {
@@ -144,10 +132,10 @@
     "code": "AT",
     "phone_code": 43,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde6\ud83c\uddf9"
+    "flag": "\ud83c\udde6\ud83c\uddf9",
+    "is_eu": true
   },
   {
     "name": "Azerbaijan",
@@ -156,7 +144,6 @@
     "currency_code": "AZN",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddff"
   },
   {
@@ -166,7 +153,6 @@
     "currency_code": "BSD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddf8"
   },
   {
@@ -176,7 +162,6 @@
     "currency_code": "BHD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\udded"
   },
   {
@@ -186,7 +171,6 @@
     "currency_code": "BDT",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\udde9"
   },
   {
@@ -196,7 +180,6 @@
     "currency_code": "BBD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\udde7"
   },
   {
@@ -206,7 +189,6 @@
     "currency_code": "BYN",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddfe"
   },
   {
@@ -214,10 +196,10 @@
     "code": "BE",
     "phone_code": 32,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udde7\ud83c\uddea"
+    "flag": "\ud83c\udde7\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Belize",
@@ -226,7 +208,6 @@
     "currency_code": "BZD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddff"
   },
   {
@@ -236,7 +217,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddef"
   },
   {
@@ -246,7 +226,6 @@
     "currency_code": "BMD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddf2"
   },
   {
@@ -256,7 +235,6 @@
     "currency_code": "INR,BTN",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddf9"
   },
   {
@@ -266,7 +244,6 @@
     "currency_code": "BOB",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddf4"
   },
   {
@@ -274,10 +251,10 @@
     "code": "BQ",
     "phone_code": 599,
     "currency_code": "USD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udde7\ud83c\uddf6"
+    "flag": "\ud83c\udde7\ud83c\uddf6",
+    "is_eu": true
   },
   {
     "name": "Bosnia and Herzegovina",
@@ -286,7 +263,6 @@
     "currency_code": "BAM",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\udde6"
   },
   {
@@ -296,7 +272,6 @@
     "currency_code": "BWP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddfc"
   },
   {
@@ -306,7 +281,6 @@
     "currency_code": "NOK",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddfb"
   },
   {
@@ -316,7 +290,6 @@
     "currency_code": "BRL",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddf7"
   },
   {
@@ -326,7 +299,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf4"
   },
   {
@@ -334,10 +306,10 @@
     "code": "VG",
     "phone_code": "1-284",
     "currency_code": "USD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddfb\ud83c\uddec"
+    "flag": "\ud83c\uddfb\ud83c\uddec",
+    "is_eu": true
   },
   {
     "name": "Brunei Darussalam",
@@ -346,7 +318,6 @@
     "currency_code": "BND",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddf3"
   },
   {
@@ -354,10 +325,10 @@
     "code": "BG",
     "phone_code": 359,
     "currency_code": "BGN",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde7\ud83c\uddec"
+    "flag": "\ud83c\udde7\ud83c\uddec",
+    "is_eu": true
   },
   {
     "name": "Burkina Faso",
@@ -366,7 +337,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddeb"
   },
   {
@@ -376,7 +346,6 @@
     "currency_code": "BIF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde7\ud83c\uddee"
   },
   {
@@ -386,7 +355,6 @@
     "currency_code": "CVE",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddfb"
   },
   {
@@ -396,7 +364,6 @@
     "currency_code": "KHR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\udded"
   },
   {
@@ -406,7 +373,6 @@
     "currency_code": "XAF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddf2"
   },
   {
@@ -417,7 +383,6 @@
     "is_enabled": true,
     "alpha_support": false,
     "sms_from": "+14065103658",
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\udde6",
     "requires_civil_liability_insurance": true
   },
@@ -428,7 +393,6 @@
     "currency_code": "KYD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddfe"
   },
   {
@@ -438,7 +402,6 @@
     "currency_code": "XAF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddeb"
   },
   {
@@ -448,7 +411,6 @@
     "currency_code": "XAF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\udde9"
   },
   {
@@ -458,7 +420,6 @@
     "currency_code": "CLP",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddf1"
   },
   {
@@ -468,7 +429,6 @@
     "currency_code": "CNY",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddf3"
   },
   {
@@ -478,7 +438,6 @@
     "currency_code": "HKD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udded\ud83c\uddf0"
   },
   {
@@ -488,7 +447,6 @@
     "currency_code": "MOP",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf4"
   },
   {
@@ -498,7 +456,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddfd"
   },
   {
@@ -508,7 +465,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\udde8"
   },
   {
@@ -518,7 +474,6 @@
     "currency_code": "COP",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddf4"
   },
   {
@@ -528,7 +483,6 @@
     "currency_code": "KMF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddf2"
   },
   {
@@ -538,7 +492,6 @@
     "currency_code": "XAF",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddec"
   },
   {
@@ -548,7 +501,6 @@
     "currency_code": "NZD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddf0"
   },
   {
@@ -558,7 +510,6 @@
     "currency_code": "CRC",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddf7"
   },
   {
@@ -566,10 +517,10 @@
     "code": "HR",
     "phone_code": 385,
     "currency_code": "HRK",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udded\ud83c\uddf7"
+    "flag": "\ud83c\udded\ud83c\uddf7",
+    "is_eu": true
   },
   {
     "name": "Cuba",
@@ -578,7 +529,6 @@
     "currency_code": "CUP,CUC",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddfa"
   },
   {
@@ -588,7 +538,6 @@
     "currency_code": "ANG",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddfc"
   },
   {
@@ -596,20 +545,20 @@
     "code": "CY",
     "phone_code": 357,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde8\ud83c\uddfe"
+    "flag": "\ud83c\udde8\ud83c\uddfe",
+    "is_eu": true
   },
   {
     "name": "Czechia",
     "code": "CZ",
     "phone_code": 420,
     "currency_code": "CZK",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udde8\ud83c\uddff"
+    "flag": "\ud83c\udde8\ud83c\uddff",
+    "is_eu": true
   },
   {
     "name": "Côte d'Ivoire",
@@ -618,7 +567,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\uddee"
   },
   {
@@ -628,7 +576,6 @@
     "currency_code": "KPW",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddf5"
   },
   {
@@ -638,7 +585,6 @@
     "currency_code": "CDF",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde8\ud83c\udde9"
   },
   {
@@ -646,10 +592,10 @@
     "code": "DK",
     "phone_code": 45,
     "currency_code": "DKK",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde9\ud83c\uddf0"
+    "flag": "\ud83c\udde9\ud83c\uddf0",
+    "is_eu": true
   },
   {
     "name": "Djibouti",
@@ -658,7 +604,6 @@
     "currency_code": "DJF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde9\ud83c\uddef"
   },
   {
@@ -668,7 +613,6 @@
     "currency_code": "XCD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde9\ud83c\uddf2"
   },
   {
@@ -678,7 +622,6 @@
     "currency_code": "DOP",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udde9\ud83c\uddf4"
   },
   {
@@ -688,7 +631,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddea\ud83c\udde8"
   },
   {
@@ -698,7 +640,6 @@
     "currency_code": "EGP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddea\ud83c\uddec"
   },
   {
@@ -708,7 +649,6 @@
     "currency_code": "SVC,USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddfb"
   },
   {
@@ -718,7 +658,6 @@
     "currency_code": "XAF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddf6"
   },
   {
@@ -728,7 +667,6 @@
     "currency_code": "ERN",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddea\ud83c\uddf7"
   },
   {
@@ -736,10 +674,10 @@
     "code": "EE",
     "phone_code": 372,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddea\ud83c\uddea"
+    "flag": "\ud83c\uddea\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Ethiopia",
@@ -748,18 +686,17 @@
     "currency_code": "ETB",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddea\ud83c\uddf9"
   },
   {
     "name": "Falkland Islands (Malvinas)",
     "code": "FK",
     "phone_code": 500,
-    "currency_code": "",
-    "is_enabled": false,
+    "currency_code": "FKP",
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddeb\ud83c\uddf0"
+    "flag": "\ud83c\uddeb\ud83c\uddf0",
+    "is_eu": true
   },
   {
     "name": "Faroe Islands",
@@ -768,7 +705,6 @@
     "currency_code": "DKK",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddeb\ud83c\uddf4"
   },
   {
@@ -778,7 +714,6 @@
     "currency_code": "FJD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddeb\ud83c\uddef"
   },
   {
@@ -786,10 +721,10 @@
     "code": "FI",
     "phone_code": 358,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddeb\ud83c\uddee"
+    "flag": "\ud83c\uddeb\ud83c\uddee",
+    "is_eu": true
   },
   {
     "name": "France",
@@ -798,39 +733,39 @@
     "currency_code": "EUR",
     "is_enabled": true,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddeb\ud83c\uddf7",
-    "requires_civil_liability_insurance": true
+    "requires_civil_liability_insurance": true,
+    "is_eu": true
   },
   {
     "name": "French Guiana",
     "code": "GF",
     "phone_code": 594,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddec\ud83c\uddeb"
+    "flag": "\ud83c\uddec\ud83c\uddeb",
+    "is_eu": true
   },
   {
     "name": "French Polynesia",
     "code": "PF",
     "phone_code": 689,
     "currency_code": "XPF",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf5\ud83c\uddeb"
+    "flag": "\ud83c\uddf5\ud83c\uddeb",
+    "is_eu": true
   },
   {
     "name": "French Southern Territories",
     "code": "TF",
     "phone_code": 262,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf9\ud83c\uddeb"
+    "flag": "\ud83c\uddf9\ud83c\uddeb",
+    "is_eu": true
   },
   {
     "name": "Gabon",
@@ -839,7 +774,6 @@
     "currency_code": "XAF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\udde6"
   },
   {
@@ -849,7 +783,6 @@
     "currency_code": "GMD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddf2"
   },
   {
@@ -859,7 +792,6 @@
     "currency_code": "GEL",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddea"
   },
   {
@@ -867,10 +799,10 @@
     "code": "DE",
     "phone_code": 49,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde9\ud83c\uddea"
+    "flag": "\ud83c\udde9\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Ghana",
@@ -879,7 +811,6 @@
     "currency_code": "GHS",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\udded"
   },
   {
@@ -889,7 +820,6 @@
     "currency_code": "GIP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddee"
   },
   {
@@ -897,20 +827,20 @@
     "code": "GR",
     "phone_code": 30,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddec\ud83c\uddf7"
+    "flag": "\ud83c\uddec\ud83c\uddf7",
+    "is_eu": true
   },
   {
     "name": "Greenland",
     "code": "GL",
     "phone_code": 299,
     "currency_code": "DKK",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddec\ud83c\uddf1"
+    "flag": "\ud83c\uddec\ud83c\uddf1",
+    "is_eu": true
   },
   {
     "name": "Grenada",
@@ -919,7 +849,6 @@
     "currency_code": "XCD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\udde9"
   },
   {
@@ -927,10 +856,10 @@
     "code": "GP",
     "phone_code": 590,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddec\ud83c\uddf5"
+    "flag": "\ud83c\uddec\ud83c\uddf5",
+    "is_eu": true
   },
   {
     "name": "Guam",
@@ -939,7 +868,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddfa"
   },
   {
@@ -949,7 +877,6 @@
     "currency_code": "GTQ",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddf9"
   },
   {
@@ -959,7 +886,6 @@
     "currency_code": "GBP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddec"
   },
   {
@@ -969,7 +895,6 @@
     "currency_code": "GNF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddf3"
   },
   {
@@ -979,7 +904,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddfc"
   },
   {
@@ -989,7 +913,6 @@
     "currency_code": "GYD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddfe"
   },
   {
@@ -999,7 +922,6 @@
     "currency_code": "HTG,USD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udded\ud83c\uddf9"
   },
   {
@@ -1009,7 +931,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udded\ud83c\uddf2"
   },
   {
@@ -1017,10 +938,10 @@
     "code": "VA",
     "phone_code": "39-06",
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddfb\ud83c\udde6"
+    "flag": "\ud83c\uddfb\ud83c\udde6",
+    "is_eu": true
   },
   {
     "name": "Honduras",
@@ -1029,7 +950,6 @@
     "currency_code": "HNL",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\udded\ud83c\uddf3"
   },
   {
@@ -1037,10 +957,10 @@
     "code": "HU",
     "phone_code": 36,
     "currency_code": "HUF",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udded\ud83c\uddfa"
+    "flag": "\ud83c\udded\ud83c\uddfa",
+    "is_eu": true
   },
   {
     "name": "Iceland",
@@ -1049,7 +969,6 @@
     "currency_code": "ISK",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf8"
   },
   {
@@ -1059,7 +978,6 @@
     "currency_code": "INR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf3"
   },
   {
@@ -1069,7 +987,6 @@
     "currency_code": "IDR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\udde9"
   },
   {
@@ -1079,7 +996,6 @@
     "currency_code": "IRR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf7"
   },
   {
@@ -1089,7 +1005,6 @@
     "currency_code": "IQD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf6"
   },
   {
@@ -1097,10 +1012,10 @@
     "code": "IE",
     "phone_code": 353,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddee\ud83c\uddea"
+    "flag": "\ud83c\uddee\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Isle of Man",
@@ -1109,7 +1024,6 @@
     "currency_code": "GBP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf2"
   },
   {
@@ -1119,7 +1033,6 @@
     "currency_code": "ILS",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddee\ud83c\uddf1"
   },
   {
@@ -1127,10 +1040,10 @@
     "code": "IT",
     "phone_code": 39,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddee\ud83c\uddf9"
+    "flag": "\ud83c\uddee\ud83c\uddf9",
+    "is_eu": true
   },
   {
     "name": "Jamaica",
@@ -1139,7 +1052,6 @@
     "currency_code": "JMD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddef\ud83c\uddf2"
   },
   {
@@ -1149,7 +1061,6 @@
     "currency_code": "JPY",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddef\ud83c\uddf5"
   },
   {
@@ -1159,7 +1070,6 @@
     "currency_code": "GBP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddef\ud83c\uddea"
   },
   {
@@ -1169,7 +1079,6 @@
     "currency_code": "JOD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddef\ud83c\uddf4"
   },
   {
@@ -1179,7 +1088,6 @@
     "currency_code": "KZT",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddff"
   },
   {
@@ -1189,7 +1097,6 @@
     "currency_code": "KES",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddea"
   },
   {
@@ -1199,7 +1106,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddee"
   },
   {
@@ -1209,7 +1115,6 @@
     "currency_code": "KWD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddfc"
   },
   {
@@ -1219,7 +1124,6 @@
     "currency_code": "KGS",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddec"
   },
   {
@@ -1229,7 +1133,6 @@
     "currency_code": "LAK",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\udde6"
   },
   {
@@ -1237,10 +1140,10 @@
     "code": "LV",
     "phone_code": 371,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf1\ud83c\uddfb"
+    "flag": "\ud83c\uddf1\ud83c\uddfb",
+    "is_eu": true
   },
   {
     "name": "Lebanon",
@@ -1249,7 +1152,6 @@
     "currency_code": "LBP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\udde7"
   },
   {
@@ -1259,7 +1161,6 @@
     "currency_code": "LSL,ZAR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\uddf8"
   },
   {
@@ -1269,7 +1170,6 @@
     "currency_code": "LRD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\uddf7"
   },
   {
@@ -1279,7 +1179,6 @@
     "currency_code": "LYD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\uddfe"
   },
   {
@@ -1287,30 +1186,30 @@
     "code": "LI",
     "phone_code": 423,
     "currency_code": "CHF",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf1\ud83c\uddee"
+    "flag": "\ud83c\uddf1\ud83c\uddee",
+    "is_eu": true
   },
   {
     "name": "Lithuania",
     "code": "LT",
     "phone_code": 370,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf1\ud83c\uddf9"
+    "flag": "\ud83c\uddf1\ud83c\uddf9",
+    "is_eu": true
   },
   {
     "name": "Luxembourg",
     "code": "LU",
     "phone_code": 352,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf1\ud83c\uddfa"
+    "flag": "\ud83c\uddf1\ud83c\uddfa",
+    "is_eu": true
   },
   {
     "name": "Madagascar",
@@ -1319,7 +1218,6 @@
     "currency_code": "MGA",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddec"
   },
   {
@@ -1329,7 +1227,6 @@
     "currency_code": "MWK",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddfc"
   },
   {
@@ -1339,7 +1236,6 @@
     "currency_code": "MYR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddfe"
   },
   {
@@ -1349,7 +1245,6 @@
     "currency_code": "MVR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddfb"
   },
   {
@@ -1359,7 +1254,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf1"
   },
   {
@@ -1367,10 +1261,10 @@
     "code": "MT",
     "phone_code": 356,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf2\ud83c\uddf9"
+    "flag": "\ud83c\uddf2\ud83c\uddf9",
+    "is_eu": true
   },
   {
     "name": "Marshall Islands",
@@ -1379,7 +1273,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\udded"
   },
   {
@@ -1387,10 +1280,10 @@
     "code": "MQ",
     "phone_code": 596,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf2\ud83c\uddf6"
+    "flag": "\ud83c\uddf2\ud83c\uddf6",
+    "is_eu": true
   },
   {
     "name": "Mauritania",
@@ -1399,7 +1292,6 @@
     "currency_code": "MRO",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf7"
   },
   {
@@ -1409,7 +1301,6 @@
     "currency_code": "MUR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddfa"
   },
   {
@@ -1417,10 +1308,10 @@
     "code": "YT",
     "phone_code": 262,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddfe\ud83c\uddf9"
+    "flag": "\ud83c\uddfe\ud83c\uddf9",
+    "is_eu": true
   },
   {
     "name": "Mexico",
@@ -1429,7 +1320,6 @@
     "currency_code": "MXN",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddfd"
   },
   {
@@ -1439,7 +1329,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddeb\ud83c\uddf2"
   },
   {
@@ -1447,10 +1336,10 @@
     "code": "MC",
     "phone_code": 377,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf2\ud83c\udde8"
+    "flag": "\ud83c\uddf2\ud83c\udde8",
+    "is_eu": true
   },
   {
     "name": "Mongolia",
@@ -1459,7 +1348,6 @@
     "currency_code": "MNT",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf3"
   },
   {
@@ -1467,20 +1355,20 @@
     "code": "ME",
     "phone_code": 382,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf2\ud83c\uddea"
+    "flag": "\ud83c\uddf2\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Montserrat",
     "code": "MS",
     "phone_code": "1-664",
     "currency_code": "XCD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf2\ud83c\uddf8"
+    "flag": "\ud83c\uddf2\ud83c\uddf8",
+    "is_eu": true
   },
   {
     "name": "Morocco",
@@ -1489,7 +1377,6 @@
     "currency_code": "MAD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\udde6"
   },
   {
@@ -1499,7 +1386,6 @@
     "currency_code": "MZN",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddff"
   },
   {
@@ -1509,7 +1395,6 @@
     "currency_code": "MMK",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf2"
   },
   {
@@ -1519,7 +1404,6 @@
     "currency_code": "NAD,ZAR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\udde6"
   },
   {
@@ -1529,7 +1413,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddf7"
   },
   {
@@ -1539,7 +1422,6 @@
     "currency_code": "NPR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddf5"
   },
   {
@@ -1547,20 +1429,20 @@
     "code": "NL",
     "phone_code": 31,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf3\ud83c\uddf1"
+    "flag": "\ud83c\uddf3\ud83c\uddf1",
+    "is_eu": true
   },
   {
     "name": "New Caledonia",
     "code": "NC",
     "phone_code": 687,
     "currency_code": "XPF",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf3\ud83c\udde8"
+    "flag": "\ud83c\uddf3\ud83c\udde8",
+    "is_eu": true
   },
   {
     "name": "New Zealand",
@@ -1569,7 +1451,6 @@
     "currency_code": "NZD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddff"
   },
   {
@@ -1579,7 +1460,6 @@
     "currency_code": "NIO",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddee"
   },
   {
@@ -1589,7 +1469,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddea"
   },
   {
@@ -1599,7 +1478,6 @@
     "currency_code": "NGN",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddec"
   },
   {
@@ -1609,7 +1487,6 @@
     "currency_code": "NZD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddfa"
   },
   {
@@ -1619,7 +1496,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddeb"
   },
   {
@@ -1629,7 +1505,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf5"
   },
   {
@@ -1639,7 +1514,6 @@
     "currency_code": "NOK",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf3\ud83c\uddf4"
   },
   {
@@ -1649,7 +1523,6 @@
     "currency_code": "OMR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf4\ud83c\uddf2"
   },
   {
@@ -1659,7 +1532,6 @@
     "currency_code": "PKR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddf0"
   },
   {
@@ -1669,7 +1541,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddfc"
   },
   {
@@ -1679,7 +1550,6 @@
     "currency_code": "PAB,USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\udde6"
   },
   {
@@ -1689,7 +1559,6 @@
     "currency_code": "PGK",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddec"
   },
   {
@@ -1699,7 +1568,6 @@
     "currency_code": "PYG",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddfe"
   },
   {
@@ -1709,7 +1577,6 @@
     "currency_code": "PEN",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddea"
   },
   {
@@ -1719,7 +1586,6 @@
     "currency_code": "PHP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\udded"
   },
   {
@@ -1727,30 +1593,30 @@
     "code": "PN",
     "phone_code": 870,
     "currency_code": "NZD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf5\ud83c\uddf3"
+    "flag": "\ud83c\uddf5\ud83c\uddf3",
+    "is_eu": true
   },
   {
     "name": "Poland",
     "code": "PL",
     "phone_code": 48,
     "currency_code": "PLN",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf5\ud83c\uddf1"
+    "flag": "\ud83c\uddf5\ud83c\uddf1",
+    "is_eu": true
   },
   {
     "name": "Portugal",
     "code": "PT",
     "phone_code": 351,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf5\ud83c\uddf9"
+    "flag": "\ud83c\uddf5\ud83c\uddf9",
+    "is_eu": true
   },
   {
     "name": "Puerto Rico",
@@ -1760,7 +1626,6 @@
     "is_enabled": false,
     "alpha_support": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddf7"
   },
   {
@@ -1770,7 +1635,6 @@
     "currency_code": "QAR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf6\ud83c\udde6"
   },
   {
@@ -1778,9 +1642,8 @@
     "code": "KR",
     "phone_code": 82,
     "currency_code": "KRW",
-    "is_enabled": true,
+    "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddf7"
   },
   {
@@ -1790,7 +1653,6 @@
     "currency_code": "MDL",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\udde9"
   },
   {
@@ -1798,10 +1660,10 @@
     "code": "RO",
     "phone_code": 40,
     "currency_code": "RON",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf7\ud83c\uddf4"
+    "flag": "\ud83c\uddf7\ud83c\uddf4",
+    "is_eu": true
   },
   {
     "name": "Russian Federation",
@@ -1810,7 +1672,6 @@
     "currency_code": "RUB",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf7\ud83c\uddfa"
   },
   {
@@ -1820,7 +1681,6 @@
     "currency_code": "RWF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf7\ud83c\uddfc"
   },
   {
@@ -1828,30 +1688,30 @@
     "code": "RE",
     "phone_code": 262,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf7\ud83c\uddea"
+    "flag": "\ud83c\uddf7\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Saint Barthélemy",
     "code": "BL",
     "phone_code": 590,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udde7\ud83c\uddf1"
+    "flag": "\ud83c\udde7\ud83c\uddf1",
+    "is_eu": true
   },
   {
     "name": "Saint Helena",
     "code": "SH",
     "phone_code": 290,
     "currency_code": "SHP",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf8\ud83c\udded"
+    "flag": "\ud83c\uddf8\ud83c\udded",
+    "is_eu": true
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -1860,7 +1720,6 @@
     "currency_code": "XCD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf0\ud83c\uddf3"
   },
   {
@@ -1870,7 +1729,6 @@
     "currency_code": "XCD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\udde8"
   },
   {
@@ -1878,20 +1736,20 @@
     "code": "MF",
     "phone_code": 590,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf2\ud83c\uddeb"
+    "flag": "\ud83c\uddf2\ud83c\uddeb",
+    "is_eu": true
   },
   {
     "name": "Saint Pierre and Miquelon",
     "code": "PM",
     "phone_code": 508,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf5\ud83c\uddf2"
+    "flag": "\ud83c\uddf5\ud83c\uddf2",
+    "is_eu": true
   },
   {
     "name": "Saint Vincent and the Grenadines",
@@ -1900,7 +1758,6 @@
     "currency_code": "XCD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddfb\ud83c\udde8"
   },
   {
@@ -1910,7 +1767,6 @@
     "currency_code": "WST",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddfc\ud83c\uddf8"
   },
   {
@@ -1918,10 +1774,10 @@
     "code": "SM",
     "phone_code": 378,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf8\ud83c\uddf2"
+    "flag": "\ud83c\uddf8\ud83c\uddf2",
+    "is_eu": true
   },
   {
     "name": "Sao Tome and Principe",
@@ -1930,18 +1786,7 @@
     "currency_code": "STD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddf9"
-  },
-  {
-    "name": "Sark",
-    "code": "",
-    "phone_code": "",
-    "currency_code": "",
-    "is_enabled": false,
-    "alpha_support": false,
-    "region": "",
-    "flag": ""
   },
   {
     "name": "Saudi Arabia",
@@ -1950,7 +1795,6 @@
     "currency_code": "SAR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\udde6"
   },
   {
@@ -1960,7 +1804,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddf3"
   },
   {
@@ -1970,7 +1813,6 @@
     "currency_code": "RSD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf7\ud83c\uddf8"
   },
   {
@@ -1980,7 +1822,6 @@
     "currency_code": "SCR",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\udde8"
   },
   {
@@ -1990,7 +1831,6 @@
     "currency_code": "SLL",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddf1"
   },
   {
@@ -2000,7 +1840,6 @@
     "currency_code": "SGD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddec"
   },
   {
@@ -2008,30 +1847,30 @@
     "code": "SX",
     "phone_code": "1-721",
     "currency_code": "ANG",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf8\ud83c\uddfd"
+    "flag": "\ud83c\uddf8\ud83c\uddfd",
+    "is_eu": true
   },
   {
     "name": "Slovakia",
     "code": "SK",
     "phone_code": 421,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf8\ud83c\uddf0"
+    "flag": "\ud83c\uddf8\ud83c\uddf0",
+    "is_eu": true
   },
   {
     "name": "Slovenia",
     "code": "SI",
     "phone_code": 386,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf8\ud83c\uddee"
+    "flag": "\ud83c\uddf8\ud83c\uddee",
+    "is_eu": true
   },
   {
     "name": "Solomon Islands",
@@ -2040,7 +1879,6 @@
     "currency_code": "SBD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\udde7"
   },
   {
@@ -2050,7 +1888,6 @@
     "currency_code": "SOS",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddf4"
   },
   {
@@ -2060,17 +1897,15 @@
     "currency_code": "ZAR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddff\ud83c\udde6"
   },
   {
     "name": "South Georgia and the South Sandwich Islands",
     "code": "GS",
     "phone_code": 500,
-    "currency_code": "",
+    "currency_code": "FKP",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddec\ud83c\uddf8"
   },
   {
@@ -2080,7 +1915,6 @@
     "currency_code": "SSP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddf8"
   },
   {
@@ -2090,8 +1924,8 @@
     "currency_code": "EUR",
     "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddea\ud83c\uddf8"
+    "flag": "\ud83c\uddea\ud83c\uddf8",
+    "is_eu": true
   },
   {
     "name": "Sri Lanka",
@@ -2100,17 +1934,15 @@
     "currency_code": "LKR",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf1\ud83c\uddf0"
   },
   {
     "name": "State of Palestine",
     "code": "PS",
     "phone_code": 970,
-    "currency_code": "",
+    "currency_code": "EGP,ILS,JOD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf5\ud83c\uddf8"
   },
   {
@@ -2120,7 +1952,6 @@
     "currency_code": "SDG",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\udde9"
   },
   {
@@ -2130,7 +1961,6 @@
     "currency_code": "SRD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddf7"
   },
   {
@@ -2140,7 +1970,6 @@
     "currency_code": "NOK",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddef"
   },
   {
@@ -2150,7 +1979,6 @@
     "currency_code": "SZL",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddff"
   },
   {
@@ -2158,10 +1986,10 @@
     "code": "SE",
     "phone_code": 46,
     "currency_code": "SEK",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\uddf8\ud83c\uddea"
+    "flag": "\ud83c\uddf8\ud83c\uddea",
+    "is_eu": true
   },
   {
     "name": "Switzerland",
@@ -2170,8 +1998,8 @@
     "currency_code": "CHF",
     "is_enabled": true,
     "alpha_support": true,
-    "region": "",
-    "flag": "\ud83c\udde8\ud83c\udded"
+    "flag": "\ud83c\udde8\ud83c\udded",
+    "is_eu": true
   },
   {
     "name": "Syrian Arab Republic",
@@ -2180,7 +2008,6 @@
     "currency_code": "SYP",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf8\ud83c\uddfe"
   },
   {
@@ -2190,7 +2017,6 @@
     "currency_code": "TJS",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddef"
   },
   {
@@ -2200,7 +2026,6 @@
     "currency_code": "THB",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\udded"
   },
   {
@@ -2210,7 +2035,6 @@
     "currency_code": "MKD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf2\ud83c\uddf0"
   },
   {
@@ -2220,7 +2044,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf1"
   },
   {
@@ -2230,7 +2053,6 @@
     "currency_code": "XOF",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddec"
   },
   {
@@ -2240,7 +2062,6 @@
     "currency_code": "NZD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf0"
   },
   {
@@ -2250,7 +2071,6 @@
     "currency_code": "TOP",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf4"
   },
   {
@@ -2260,7 +2080,6 @@
     "currency_code": "TTD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf9"
   },
   {
@@ -2270,7 +2089,6 @@
     "currency_code": "TND",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf3"
   },
   {
@@ -2280,7 +2098,6 @@
     "currency_code": "TRY",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf7"
   },
   {
@@ -2290,7 +2107,6 @@
     "currency_code": "TMT",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddf2"
   },
   {
@@ -2298,10 +2114,10 @@
     "code": "TC",
     "phone_code": "1-649",
     "currency_code": "USD",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddf9\ud83c\udde8"
+    "flag": "\ud83c\uddf9\ud83c\udde8",
+    "is_eu": true
   },
   {
     "name": "Tuvalu",
@@ -2310,7 +2126,6 @@
     "currency_code": "AUD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddfb"
   },
   {
@@ -2320,7 +2135,6 @@
     "currency_code": "UGX",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddfa\ud83c\uddec"
   },
   {
@@ -2330,7 +2144,6 @@
     "currency_code": "UAH",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddfa\ud83c\udde6"
   },
   {
@@ -2340,7 +2153,6 @@
     "currency_code": "AED",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\udde6\ud83c\uddea"
   },
   {
@@ -2350,8 +2162,8 @@
     "currency_code": "GBP",
     "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddec\ud83c\udde7"
+    "flag": "\ud83c\uddec\ud83c\udde7",
+    "is_eu": true
   },
   {
     "name": "United Republic of Tanzania",
@@ -2360,7 +2172,6 @@
     "currency_code": "TZS",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddf9\ud83c\uddff"
   },
   {
@@ -2370,7 +2181,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddfa\ud83c\uddf2"
   },
   {
@@ -2380,7 +2190,6 @@
     "currency_code": "USD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddfb\ud83c\uddee"
   },
   {
@@ -2388,10 +2197,9 @@
     "code": "US",
     "phone_code": 1,
     "currency_code": "USD",
-    "is_enabled": true,
+    "is_enabled": false,
     "alpha_support": false,
     "sms_from": "+14065103658",
-    "region": "",
     "flag": "\ud83c\uddfa\ud83c\uddf8"
   },
   {
@@ -2401,7 +2209,6 @@
     "currency_code": "UYU",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddfa\ud83c\uddfe"
   },
   {
@@ -2411,7 +2218,6 @@
     "currency_code": "UZS",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddfa\ud83c\uddff"
   },
   {
@@ -2421,7 +2227,6 @@
     "currency_code": "VUV",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddfb\ud83c\uddfa"
   },
   {
@@ -2431,7 +2236,6 @@
     "currency_code": "VEF",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddfb\ud83c\uddea"
   },
   {
@@ -2441,7 +2245,6 @@
     "currency_code": "VND",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddfb\ud83c\uddf3"
   },
   {
@@ -2449,10 +2252,10 @@
     "code": "WF",
     "phone_code": 681,
     "currency_code": "XPF",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\uddfc\ud83c\uddeb"
+    "flag": "\ud83c\uddfc\ud83c\uddeb",
+    "is_eu": true
   },
   {
     "name": "Western Sahara",
@@ -2461,7 +2264,6 @@
     "currency_code": "MAD",
     "is_enabled": false,
     "alpha_support": false,
-    "region": "",
     "flag": "\ud83c\uddea\ud83c\udded"
   },
   {
@@ -2471,7 +2273,6 @@
     "currency_code": "YER",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddfe\ud83c\uddea"
   },
   {
@@ -2481,7 +2282,6 @@
     "currency_code": "ZMW",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddff\ud83c\uddf2"
   },
   {
@@ -2491,7 +2291,6 @@
     "currency_code": "ZWL",
     "is_enabled": false,
     "alpha_support": true,
-    "region": "",
     "flag": "\ud83c\uddff\ud83c\uddfc"
   },
   {
@@ -2499,9 +2298,9 @@
     "code": "AX",
     "phone_code": 358,
     "currency_code": "EUR",
-    "is_enabled": false,
+    "is_enabled": true,
     "alpha_support": false,
-    "region": "",
-    "flag": "\ud83c\udde6\ud83c\uddfd"
+    "flag": "\ud83c\udde6\ud83c\uddfd",
+    "is_eu": true
   }
 ]

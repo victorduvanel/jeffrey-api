@@ -1,9 +1,3 @@
-import verifyToken from './verify-token';
-import geocode     from './geocode';
-import storage     from './storage';
+import geocode from './geocode';
 
-export default {
-  verifyToken,
-  geocode,
-  storage
-};
+export default { geocode };

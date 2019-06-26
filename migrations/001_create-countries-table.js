@@ -10,6 +10,7 @@ function up(knex) {
     table.string('currency_code');
     table.boolean('is_enabled');
     table.boolean('requires_civil_liability_insurance');
+    table.boolean('is_eu');
     table.string('sms_from');
 
     table.dateTime('created_at');

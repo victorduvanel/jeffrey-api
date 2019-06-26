@@ -1,14 +1,15 @@
 import request from 'request-promise';
-// import config  from '../../config';
+import config  from '../../config';
 
 const geocode = async ({ lat, lng }) => {
-  const latlng = `${lat},${lng}`;
-  // @TODO: use key
-  // const key = config.google.apiKey;
-
   const response = await request({
     method: 'GET',
-    uri: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latlng}`
+    uri: 'https://maps.googleapis.com/maps/api/geocode/json',
+    qs: {
+      latlng: `${lat},${lng}`,
+      key: config.google.mapsApiKey,
+      language: 'en'
+    }
   });
 
   const payload = JSON.parse(response);
