@@ -1,4 +1,4 @@
-import apm from 'elastic-apm-node/start';
+// import apm from 'elastic-apm-node/start';
 import 'loggg';
 
 import commander      from 'commander';

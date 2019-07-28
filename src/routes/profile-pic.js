@@ -90,7 +90,6 @@ const retreiveImage = async (req) => {
   }
 };
 
-
 const uploadImage = (image, path) => {
   return new Promise((resolve, reject) => {
     const canvas = createCanvas(image.width, image.height);
@@ -129,7 +128,7 @@ export const post = [
     await uploadImage(smallImage, `profile-pictures/${dest}/small.jpg`);
     await uploadImage(mediumImage, `profile-pictures/${dest}/medium.jpg`);
 
-    const profilePicture = `https://jffr.ams3.cdn.digitaloceanspaces.com/profile-pictures/${dest}/medium.jpg`;
+    const profilePicture = `https://cdn.jeffrey.app/jeffrey/profile-pictures/${dest}/medium.jpg`;
 
     user.set('profilePicture', profilePicture);
     await user.save();
