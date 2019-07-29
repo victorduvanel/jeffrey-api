@@ -1,5 +1,5 @@
 import Promise                 from 'bluebird';
-import uuid                    from 'uuid';
+import uuid                    from 'uuid/v4';
 import Busboy                  from 'busboy';
 import { createCanvas, Image } from 'canvas';
 import { S3 }                  from '../services/aws';
@@ -99,6 +99,7 @@ const uploadImage = (image, path) => {
     const imageStream = canvas.jpegStream({ progressive: true });
 
     S3.upload({
+      Bucket: 'profile-pictures',
       Key: path,
       Body: imageStream,
       ACL: 'public-read'
@@ -122,13 +123,13 @@ export const post = [
     const smallImage = await resizeImage(image, { width: 50, height: 50 });
     const mediumImage = await resizeImage(image, { width: 250, height: 250 });
 
-    const dest = uuid.v4();
+    const dest = uuid();
 
-    await uploadImage(image, `profile-pictures/${dest}/original.jpg`);
-    await uploadImage(smallImage, `profile-pictures/${dest}/small.jpg`);
-    await uploadImage(mediumImage, `profile-pictures/${dest}/medium.jpg`);
+    await uploadImage(image, `${dest}/original.jpg`);
+    await uploadImage(smallImage, `${dest}/small.jpg`);
+    await uploadImage(mediumImage, `${dest}/medium.jpg`);
 
-    const profilePicture = `https://cdn.jeffrey.app/jeffrey/profile-pictures/${dest}/medium.jpg`;
+    const profilePicture = `https://cdn.jeffrey.app/profile-pictures/${dest}/medium.jpg`;
 
     user.set('profilePicture', profilePicture);
     await user.save();

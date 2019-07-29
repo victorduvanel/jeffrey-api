@@ -8,6 +8,7 @@ import Base        from './base';
 const uploadDocument = (document, mime, path) => {
   return new Promise((resolve, reject) => {
     S3.upload({
+      Bucket: 'user-documents',
       Key: path,
       Body: document,
       ContentType: mime,
@@ -48,9 +49,9 @@ const UserDocument = Base.extend({
     }
 
     const id = uuid.v4();
-    const path = `user-documents/${user.get('id')}/${id}`;
+    const path = `${user.get('id')}/${id}`;
 
-    const uri = `https://jffr.ams3.digitaloceanspaces.com/${path}`;
+    const uri = `https://cdn.jeffrey.app/${path}`;
 
     await uploadDocument(buffer, mime, path);
 
